@@ -167,6 +167,37 @@ th{color:var(--ink-2);font-size:12px;text-transform:uppercase;letter-spacing:.4p
 .gun-kart .meta{font-size:12.5px;color:var(--ink-2)}
 .gun-kart .govde{flex:1;min-width:0}
 
+/* ---------- yol haritası / adımlar ---------- */
+.gun-secici{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 20px}
+.gun-chip{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;transition:.15s}
+.gun-chip:hover{border-color:var(--accent-2);transform:translateY(-1px)}
+.gun-chip.aktif{background:var(--accent-2);color:#fff;border-color:var(--accent-2)}
+.yol-haritasi{display:flex;flex-direction:column;gap:16px}
+.adim-kart{display:flex;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--golge);padding:22px 24px}
+.adim-no{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:linear-gradient(135deg,var(--accent-2),#7c3aed);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800}
+.adim-kart:nth-child(2) .adim-no{background:linear-gradient(135deg,var(--iyi),#059669)}
+.adim-kart:nth-child(3) .adim-no{background:linear-gradient(135deg,var(--accent),#ea580c)}
+.adim-ic{flex:1;min-width:0}
+.adim-ic h2{font-size:18px;margin-bottom:4px}
+.adim-ic > .meta{margin-bottom:12px}
+.adim-satir{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fafbfe;flex-wrap:wrap}
+.adim-satir.okundu{background:#f0fdf4;border-color:#bbf7d0}
+.adim-bilgi{flex:1;min-width:180px}
+.adim-bilgi b{display:block;font-size:14px}
+.adim-bilgi span{font-size:12.5px;color:var(--ink-2)}
+.adim-butonlar,.adim-alt{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.adim-alt{margin-top:12px}
+.gun-no.mini{width:38px;height:38px;border-radius:11px;font-size:15px}
+.konu-ozet{margin:10px 0;display:flex;flex-wrap:wrap;gap:2px}
+.konu-soru-link{margin-top:14px;font-size:13.5px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.konu-soru-link .chip{background:#eef2ff;color:#3730a3;font-weight:600}
+.ust-yol{font-size:12.5px;color:var(--ink-2);margin-bottom:12px}
+.ust-yol a{color:var(--accent-2);font-weight:600}
+.sonraki-adim{margin-top:26px;background:linear-gradient(120deg,#f0fdf4,#ecfdf5);border:2px solid #86efac;border-radius:16px;padding:20px 22px}
+.sonraki-adim h3{margin-top:0;color:var(--iyi)}
+.motivasyon{margin-top:16px;border-left:5px solid var(--accent);font-size:14.5px}
+details summary:hover{color:var(--accent-2)}
+
 /* ---------- responsive ---------- */
 @media (max-width:900px){
   .sidebar{position:fixed;left:-260px;z-index:60;transition:.25s}

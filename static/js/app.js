@@ -1,6 +1,6 @@
 /* =========================================================
    KPSS Ortaöğretim — 10 Günlük Hızlandırılmış Kamp
-   Uygulama motoru: adaptif soru seçimi, hata defteri, deneme
+   Sade akış: 1) Konu anlatımını oku → 2) Soru çöz → 3) Deneme
    ========================================================= */
 "use strict";
 
@@ -17,19 +17,26 @@ const KULLANICI = "varsayilan";
 const V = {
   meta: null, program: null, dersler: {}, sorular: {}, soruIdx: {},
   denemeler: null, denemeIdx: {}, kayit: null, oturum: null, denemeOturum: null,
+  tumSorular: {}, etiketIdx: {}, konuListe: {},
 };
 
 /* ---------------- ilerleme ---------------- */
 function bosKayit() {
-  return { kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {}, denemeler: [], oturumlar: [] };
+  return { kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {}, denemeler: [], oturumlar: [], okunan: {} };
 }
 async function kayitYukle() {
   try {
     const r = await fetch(`/api/ilerleme/${KULLANICI}`);
     V.kayit = await r.json();
     if (!V.kayit || !V.kayit.etiketler) V.kayit = bosKayit();
+    if (!V.kayit.okunan) V.kayit.okunan = {};
+    if (!V.kayit.gorevler) V.kayit.gorevler = {};
+    if (!V.kayit.oturumlar) V.kayit.oturumlar = [];
+    if (!V.kayit.denemeler) V.kayit.denemeler = [];
+    if (!V.kayit.soru_kayit) V.kayit.soru_kayit = {};
   } catch {
     V.kayit = JSON.parse(localStorage.getItem("kpss-kayit") || "null") || bosKayit();
+    if (!V.kayit.okunan) V.kayit.okunan = {};
   }
 }
 let kayitTimer = null;
@@ -49,6 +56,7 @@ function soruKaydi(id) {
 function etiketKaydi(t) {
   return (V.kayit.etiketler[t] = V.kayit.etiketler[t] || { d: 0, y: 0, tekrar: 0 });
 }
+const okumaAnahtar = (d, gun) => `${d}|${gun}`;
 
 /* ---------------- veri ---------------- */
 async function veriYukle() {
@@ -66,15 +74,22 @@ async function veriYukle() {
       V.soruIdx[d] = {}; V.sorular[d].forEach((s) => (V.soruIdx[d][s.id] = s));
     })
   );
-  // her sorunun dersine göre genel index
-  V.tumSorular = {}; V.etiketIdx = {};
-  for (const d of Object.keys(DERSLER))
+  V.tumSorular = {}; V.etiketIdx = {}; V.konuListe = {};
+  for (const d of Object.keys(DERSLER)) {
+    const konular = new Map();
     for (const s of V.sorular[d]) {
       V.tumSorular[s.id] = s;
       (s.etiketler || []).forEach((t) => {
         (V.etiketIdx[t] = V.etiketIdx[t] || []).push(s.id);
       });
+      if (!konular.has(s.konu)) konular.set(s.konu, []);
+      konular.get(s.konu).push(s);
     }
+    // güne göre sıralı konu listesi
+    V.konuListe[d] = [...konular.entries()]
+      .map(([konu, liste]) => ({ konu, adet: liste.length, gunler: [...new Set(liste.map((s) => s.gun))].sort((a, b) => a - b) }))
+      .sort((a, b) => (a.gunler[0] ?? 0) - (b.gunler[0] ?? 0) || a.konu.localeCompare(b.konu, "tr"));
+  }
 }
 
 /* ---------------- adaptif motor ---------------- */
@@ -97,7 +112,6 @@ function gunlukSet(ders, gun, adet = 20) {
   const havuz = V.sorular[ders];
   const gunluk = havuz.filter((s) => s.gun === gun);
   const karisik = havuz.filter((s) => s.gun !== gun);
-  // önce görülmemişler, sonra eskiler
   const sirala = (a) =>
     [...a].sort((x, y) => {
       const kx = V.kayit.soru_kayit[x.id], ky = V.kayit.soru_kayit[y.id];
@@ -114,6 +128,9 @@ function gunlukSet(ders, gun, adet = 20) {
   const gunPayi = Math.min(ana.length, Math.round(adet * 0.6));
   it(ana.slice(0, gunPayi)); it(zayif); it(kalan); it(ana);
   return sec.slice(0, adet);
+}
+function konuSeti(ders, konu) {
+  return (V.sorular[ders] || []).filter((s) => s.konu === konu);
 }
 function hataSeti(ders, limit = 500) {
   const havuz = [...V.sorular[ders]];
@@ -152,19 +169,20 @@ const paragrafla = (t) =>
 function sinavSayaci() {
   const simdi = new Date();
   const sinav = new Date(V.meta.sinav.tarih + "T10:00:00");
-  const gun = Math.max(0, Math.ceil((sinav - simdi) / 86400000));
-  return gun;
+  return Math.max(0, Math.ceil((sinav - simdi) / 86400000));
 }
 function bugunKampGunu() {
   const iso = new Date().toISOString().slice(0, 10);
   const g = V.program.gunler.find((x) => x.tarih === iso);
   if (g) return g.no;
-  // sınavdan geriye say: 24 Ekim = 10. gün
   const sinav = new Date(V.meta.sinav.tarih + "T12:00:00");
-  const simdi = new Date();
-  const fark = Math.round((sinav - simdi) / 86400000); // 25 ekim -> 0
-  const no = 10 - fark + 1; // 24 ekim (fark=1) -> 10
-  return Math.min(10, Math.max(1, no));
+  const fark = Math.round((sinav - new Date()) / 86400000);
+  return Math.min(10, Math.max(1, 10 - fark + 1));
+}
+function topbar(b) { $("#topbar-baslik").textContent = b; }
+function gunSecici(aktif) {
+  return `<div class="gun-secici">${V.program.gunler.map((g) =>
+    `<a class="gun-chip ${g.no === aktif ? "aktif" : ""}" href="#/gun/${g.no}">${g.no}. Gün</a>`).join("")}</div>`;
 }
 
 /* ---------------- ROUTER ---------------- */
@@ -178,269 +196,334 @@ window.addEventListener("load", async () => {
 function route() {
   const h = location.hash.replace(/^#\//, "") || "panel";
   const p = h.split("/");
-  $$(".nav a").forEach((a) => a.classList.toggle("aktif", a.dataset.r === p[0]));
+  $$(".nav a").forEach((a) => a.classList.toggle("aktif", a.dataset.r === p[0] || (p[0] === "gun" && a.dataset.r === "panel") || (p[0] === "ders" && a.dataset.r === "konular")));
   $(".sidebar").classList.remove("acik");
   window.scrollTo(0, 0);
   const v = $("#view");
   if (V.oturum && p[0] !== "coz") V.oturum = null;
   if (V.denemeOturum && p[0] !== "deneme-run") V.denemeOturum = null;
   switch (p[0]) {
-    case "panel": return viewPanel();
-    case "takvim": return viewTakvim();
+    case "panel": return viewGun(bugunKampGunu());
     case "gun": return viewGun(+p[1]);
-    case "kitaplik": return viewKitaplik();
+    case "konular": return p[1] ? viewKonularDers(p[1]) : viewKonular();
     case "ders": return viewDers(p[1], +p[2]);
-    case "coz": return viewCoz(p[1], p[2], +p[3]);
+    case "coz": return p[1] ? viewCoz(p[1], p[2], decodeURIComponent(p[3] || "")) : viewCozHub();
     case "denemeler": return viewDenemeler();
     case "deneme": return viewDenemeBilgi(p[1]);
     case "deneme-run": return viewDenemeRun(p[1]);
     case "hata": return viewHata();
     case "istatistik": return viewIstatistik();
     case "ayarlar": return viewAyarlar();
-    default: v.innerHTML = "<p>Sayfa bulunamadı.</p>";
+    default: v.innerHTML = "<p>Sayfa bulunamadı. <a href='#/panel'>Ana sayfaya dön</a></p>";
   }
 }
 
-/* ---------------- PANEL ---------------- */
-function viewPanel() {
-  const gun = bugunKampGunu();
-  const g = V.program.gunler.find((x) => x.no === gun);
+/* =========================================================
+   GÜN REHBERİ — "Bugün ne yapacağım?" (panel + gün sayfası)
+   ========================================================= */
+function viewGun(no) {
+  const g = V.program.gunler.find((x) => x.no === no);
+  if (!g) return (location.hash = "#/panel");
+  const den = V.denemeler.denemeler.find((d) => d.gun === no);
   const kalan = sinavSayaci();
   $("#kalan-gun").innerHTML = `SINAVA<br><b>${kalan}</b>gün`;
-  const gorevler = g.plan.filter((x) => x.tip !== "kapanis" || true);
-  let dk = 0;
-  const planHtml = g.plan.map((x, i) => {
-    const anahtar = `g${g.no}-p${i}`;
-    const d = V.kayit.gorevler[anahtar] ? "dolu" : "";
-    const sure = x.tip === "deneme" || x.tip === "deneme-buyuk" ? x.dk || (x.tip === "deneme-buyuk" ? 40 : 12) : x.dk;
-    const etiket = sure ? `${sure} dk` : "5 dk";
-    return `<li>
-      <input class="tik ${d}" type="checkbox" data-gorev="${anahtar}" ${d ? "checked" : ""}>
-      <div class="dk">${etiket}</div>
-      <div class="gorev"><b>${esc(x.baslik)}</b><span>${esc(x.aciklama)}</span></div>
-    </li>`;
-  }).join("");
 
-  const dersHtml = g.dersler.map((d) => {
-    const info = DERSLER[d.ders];
-    const bitti = V.kayit.gorevler[`g${g.no}-d-${d.ders}`];
-    return `<div class="ders-kart ${d.ders}">
-      <span class="badge ${d.ders}">${info.ad}</span>
-      <h3>${d.konular[0]}</h3>
-      <div class="konular">${d.konular.map(esc).join(" · ")}${d.soru_sayisi ? `<br><b>${d.soru_sayisi} soru</b> · ~${d.sure_min} dk` : "<br>Özet tekrar"}</div>
-      <div class="aksiyonlar">
-        <a class="btn kucuk seffaf" href="#/ders/${d.ders}/${g.no}">📖 Anlatım</a>
-        ${d.soru_sayisi ? `<a class="btn kucuk" href="#/coz/gunluk/${d.ders}/${g.no}">✏️ ${d.soru_sayisi} Soru</a>` : ""}
-        <button class="btn kucuk turuncu" onclick="hataAtolyesi('${d.ders}')">🎯 Hata Atölyesi</button>
+  /* --- ADIM 1: konu anlatımları --- */
+  const okumaSatir = g.dersler.map((d) => {
+    const okundu = V.kayit.okunan[okumaAnahtar(d.ders, no)];
+    return `<div class="adim-satir ${okundu ? "okundu" : ""}">
+      <span class="badge ${d.ders}">${DERSLER[d.ders].ad}</span>
+      <div class="adim-bilgi">
+        <b>${esc(d.konular.join(" · "))}</b>
+        <span>${okundu ? "✅ Okundu" : "Okuma süresi ~" + Math.round((d.sure_min || 15) * 0.45) + " dk"}</span>
       </div>
+      <a class="btn kucuk" href="#/ders/${d.ders}/${no}">${okundu ? "📖 Tekrar Oku" : "📖 Konu Anlatımını Oku"}</a>
     </div>`;
   }).join("");
 
-  const zayif = zayifEtiketler("tarih", 3).concat(zayifEtiketler("cografya", 2), zayifEtiketler("vatandaslik", 2), zayifEtiketler("turkce", 2), zayifEtiketler("guncel", 1));
-  const zayifHtml = zayif.length
-    ? zayif.map((t) => {
-        const k = V.kayit.etiketler[t];
-        return `<span class="chip ${k && k.y > 0 ? "zayif" : ""}">${esc(t)}${k ? ` · ${k.y} yanlış` : ""}</span>`;
-      }).join("")
-    : `<span class="meta">Henüz hata kaydı yok — soru çözdükçe burası dolacak.</span>`;
+  /* --- ADIM 2: soru çözümü --- */
+  const soruSatir = g.dersler.map((d) => {
+    if (!d.soru_sayisi) return "";
+    return `<div class="adim-satir">
+      <span class="badge ${d.ders}">${DERSLER[d.ders].ad}</span>
+      <div class="adim-bilgi">
+        <b>${d.soru_sayisi} soru — ${esc(d.konular[0])} ağırlıklı</b>
+        <span>Yanlışta 2 benzer soru eklenir · ~${d.sure_min} dk</span>
+      </div>
+      <a class="btn kucuk yesil" href="#/coz/gunluk/${d.ders}/${no}">✏️ Soruları Çöz</a>
+    </div>`;
+  }).join("");
+
+  /* --- ADIM 3: deneme --- */
+  const denemeBitti = V.kayit.denemeler.some((x) => x.id === den.id);
+
+  /* gün özeti: okunan + çözülen */
+  const okunanAdet = g.dersler.filter((d) => V.kayit.okunan[okumaAnahtar(d.ders, no)]).length;
 
   $("#view").innerHTML = `
     <div class="hero">
-      <span class="etiket">🚀 HIZLANDIRILMIŞ KAMP · ${g.no}. GÜN</span>
+      <span class="etiket">🎯 ${g.no}. GÜN REHBERİ · ${tarihTR(g.tarih)}</span>
       <h1>${esc(g.tema)}</h1>
       <p>${esc(g.hedef)}</p>
       <div class="sayac">
         <div><b>${kalan}</b>gün kaldı</div>
         <div><b>${g.no}/10</b>kamp günü</div>
-        <div><b>2 sa</b>bugünkü plan</div>
-        <div><b>${g.dersler.length}</b>ders bugün</div>
+        <div><b>${okunanAdet}/5</b>anlatım okundu</div>
+        <div><b>~2 sa</b>bugün çalış</div>
       </div>
     </div>
 
-    <div class="baslik-satir"><h2>📋 Bugünün Dakika Dakika Planı</h2>
-      <a class="btn kucuk turuncu" href="#/gun/${g.no}">Gün sayfası →</a></div>
-    <div class="kart"><ul class="zaman" id="plan-liste">${planHtml}</ul></div>
+    ${gunSecici(g.no)}
 
-    <div class="baslik-satir"><h2>📚 Bugünün Dersleri</h2></div>
-    <div class="grid grid-2">${dersHtml}</div>
+    <div class="yol-haritasi">
+      <div class="adim-kart">
+        <div class="adim-no">1</div>
+        <div class="adim-ic">
+          <h2>📖 Konu Anlatımlarını Oku</h2>
+          <p class="meta">Önce anlatımları oku. Konu anlatımları sade; sadece okuyarak öğrenilecek şekilde yazıldı. Her dersin altında "Cebe Kart" ve "Ağız Tekrarı" var.</p>
+          ${okumaSatir}
+          <div class="adim-alt">
+            <a class="btn seffaf kucuk" href="#/konular">Tüm konu anlatımları →</a>
+          </div>
+        </div>
+      </div>
 
-    <div class="baslik-satir"><h2>✍️ Gün Sonu Denemesi</h2></div>
-    <div class="kart">
-      <h3>${esc(g.deneme.ad)} — ${g.deneme.soru_sayisi} soru / ${g.deneme.sure_dk} dk</h3>
-      <p class="meta">${esc(g.deneme.odak)}. 4 yanlış 1 doğruyu götürür; net = D − Y/4.</p>
-      <div style="margin-top:12px"><a class="btn yesil" href="#/deneme/${V.denemeler.denemeler.find(d=>d.gun===g.no).id}">Denemeye Başla →</a></div>
+      <div class="adim-kart">
+        <div class="adim-no">2</div>
+        <div class="adim-ic">
+          <h2>✏️ Soruları Çöz</h2>
+          <p class="meta">Anlatımı okuduktan sonra o dersin sorularını çöz. Yanlış yaparsan <b>2 benzer soru</b> anında gelir; konu anlatımı da hatırlatılır.</p>
+          ${soruSatir}
+          <div class="adim-alt">
+            <a class="btn seffaf kucuk" href="#/coz">Konuya göre soru çöz →</a>
+            <a class="btn turuncu kucuk" href="#/hata">Hata Atölyesi →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="adim-kart">
+        <div class="adim-no">3</div>
+        <div class="adim-ic">
+          <h2>📝 Gün Sonu Denemesi</h2>
+          <p class="meta">${esc(den.ad)} — ${den.soru_sayisi} soru / ${den.sure_dk} dakika. ${esc(g.deneme.odak)}. Sonuçların ertesi günün planını şekillendirir.</p>
+          <div class="adim-satir">
+            <span class="badge gri">${denemeBitti ? "Çözüldü ✅" : "Sıradaki adım"}</span>
+            <div class="adim-bilgi"><b>${esc(g.deneme.ad)}</b><span>4 yanlış 1 doğruyu götürür · net = D − Y/4</span></div>
+            <a class="btn yesil kucuk" href="#/deneme/${den.id}">📝 Denemeyi Aç</a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="baslik-satir"><h2>🎯 Zayıf Konuların (Hata Defteri)</h2><a class="btn kucuk seffaf" href="#/hata">Tümü</a></div>
-    <div class="kart">${zayifHtml}</div>
+    <details class="kart" style="margin-top:18px">
+      <summary style="cursor:pointer;font-weight:700">⏱ Dakika dakika plan (istersen)</summary>
+      <ul class="zaman" style="margin-top:12px">${g.plan.map((x) => `
+        <li><div class="dk">${x.dk ? x.dk + " dk" : "5 dk"}</div>
+        <div class="gorev"><b>${esc(x.baslik)}</b><span>${esc(x.aciklama)}</span></div></li>`).join("")}
+      </ul>
+    </details>
 
-    <div class="baslik-satir"><h2>💬 Günün Motivasyonu</h2></div>
-    <div class="kart"><p class="meta">${esc(g.motivasyon)}</p></div>
+    <div class="kart motivasyon"><b>💬 ${esc(g.motivasyon)}</b></div>
   `;
-  $$("#plan-liste .tik").forEach((t) =>
-    t.onchange = () => {
-      V.kayit.gorevler[t.dataset.gorev] = t.checked;
-      t.classList.toggle("dolu", t.checked);
-      kaydet();
-    }
-  );
   topbar(`${g.no}. Gün — ${g.tema.split("—")[0]}`);
 }
 
-function topbar(b) { $("#topbar-baslik").textContent = b; }
-
-/* ---------------- TAKVİM ---------------- */
-function viewTakvim() {
-  const kartlar = V.program.gunler.map((g) => {
-    const bitenler = g.plan.filter((_, i) => V.kayit.gorevler[`g${g.no}-p${i}`]).length;
-    const oran = Math.round((bitenler / g.plan.length) * 100);
-    return `<a class="gun-kart ${oran === 100 ? "bitti" : ""}" href="#/gun/${g.no}">
-      <div class="gun-no">${g.no}</div>
-      <div class="govde">
-        <h3>${esc(g.tema)}</h3>
-        <div class="meta">${tarihTR(g.tarih)} · ${g.dersler.map((d) => DERSLER[d.ders].ad).join(", ")}</div>
-        <div class="ilerleme-cubuk" style="margin-top:8px"><span style="width:${oran}%"></span></div>
-      </div>
-      <span class="badge ${oran === 100 ? "yesil" : oran > 0 ? "turuncu" : "gri"}">${oran}%</span>
+/* =========================================================
+   KONU ANLATIMLARI — sadece okuma bölümü
+   ========================================================= */
+function viewKonular() {
+  const html = Object.keys(DERSLER).map((d) => {
+    const okunan = V.dersler[d].gunler.filter((gg) => V.kayit.okunan[okumaAnahtar(d, gg.gun)]).length;
+    return `<a class="ders-kart ${d}" href="#/konular/${d}">
+      <h3>${DERSLER[d].ad}</h3>
+      <p class="meta">10 konu anlatımı · ${V.sorular[d].length} soru bankada</p>
+      <div class="konu-ozet">${V.dersler[d].gunler.map((gg) => `<span class="chip">${gg.gun}. ${esc(gg.baslik.slice(0, 26))}${gg.baslik.length > 26 ? "…" : ""}</span>`).join("")}</div>
+      <div class="aksiyonlar"><span class="btn kucuk">${okunan}/10 okundu →</span></div>
     </a>`;
   }).join("");
   $("#view").innerHTML = `
     <div class="hero">
-      <span class="etiket">🗓 10 GÜNLÜK KAMP TAKVİMİ</span>
-      <h1>15–24 Ekim 2026 · Sınav: 25 Ekim Pazar</h1>
-      <p>Her gün 5 ders sırayla: Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel. Sonunda gün sonu denemesi. Hataların ertesi güne miras kalır!</p>
+      <span class="etiket">📖 KONU ANLATIMLARI</span>
+      <h1>Sadece oku — 5 ders, 50 konu anlatımı</h1>
+      <p>Burada sadece konu anlatımları var; soru yok, telaş yok. Bir ders seç, konu anlatımını oku, sonra "Soru Çöz" bölümünden o konunun sorularını çöz.</p>
     </div>
-    <div class="grid" style="gap:12px">${kartlar}</div>
-    <div class="baslik-satir"><h2>📌 Temel Kurallar</h2></div>
-    <div class="kart"><ul style="margin-left:18px">${V.program.temel_kurallar.map((k) => `<li style="margin-bottom:6px;font-size:14px">${esc(k)}</li>`).join("")}</ul></div>`;
-  topbar("10 Günlük Kamp Takvimi");
+    <div class="grid grid-2">${html}</div>`;
+  topbar("Konu Anlatımları");
 }
 
-/* ---------------- GÜN SAYFASI ---------------- */
-function viewGun(no) {
-  const g = V.program.gunler.find((x) => x.no === no);
-  if (!g) return (location.hash = "#/takvim");
-  const den = V.denemeler.denemeler.find((d) => d.gun === no);
-  $("#view").innerHTML = `
-    <div class="hero">
-      <span class="etiket">${g.no}. GÜN · ${tarihTR(g.tarih)}</span>
-      <h1>${esc(g.tema)}</h1>
-      <p>${esc(g.hedef)}</p>
-    </div>
-    <div class="baslik-satir"><h2>⏱ 2 Saatlik Çekirdek Plan</h2></div>
-    <div class="kart"><ul class="zaman">${g.plan.map((x) => `
-      <li><div class="dk">${x.dk ? x.dk + " dk" : "5 dk"}</div>
-      <div class="gorev"><b>${esc(x.baslik)}</b><span>${esc(x.aciklama)}</span></div></li>`).join("")}
-    </ul></div>
-
-    <div class="baslik-satir"><h2>📚 Ders Blokları</h2></div>
-    <div class="grid grid-2">
-      ${g.dersler.map((d) => `<div class="ders-kart ${d.ders}">
-        <span class="badge ${d.ders}">${DERSLER[d.ders].ad}</span>
-        <h3>${esc(d.konular[0])}</h3>
-        <div class="konular">${d.konular.map(esc).join(" · ")}</div>
-        <div class="aksiyonlar">
-          <a class="btn kucuk seffaf" href="#/ders/${d.ders}/${no}">📖 Anlatım</a>
-          ${d.soru_sayisi ? `<a class="btn kucuk" href="#/coz/gunluk/${d.ders}/${no}">✏️ 20 Soru</a>` : ""}
-          <button class="btn kucuk turuncu" onclick="hataAtolyesi('${d.ders}')">🎯 Hata Atölyesi (≤500)</button>
-        </div></div>`).join("")}
-    </div>
-
-    <div class="baslik-satir"><h2>✍️ Gün Sonu Denemesi</h2></div>
-    <div class="kart">
-      <h3>${esc(g.deneme.ad)}</h3>
-      <p class="meta">${g.deneme.soru_sayisi} soru · ${g.deneme.sure_dk} dakika · ${esc(g.deneme.odak)}</p>
-      <div style="margin-top:12px"><a class="btn yesil" href="#/deneme/${den.id}">Denemeyi Aç →</a></div>
-    </div>
-
-    <div class="baslik-satir"><h2>🚀 Genişletilmiş Bloklar (istediğin kadar)</h2></div>
-    <div class="grid grid-2">
-      ${g.genisletilmis.map((x) => `<div class="kart"><h3>${esc(x.baslik)}</h3>
-        <p class="meta">${esc(x.aciklama)}</p>
-        ${x.max_soru ? `<p class="meta" style="margin-top:6px"><b>Tavan: ${x.max_soru} soru</b></p>` : x.sure_dk ? `<p class="meta" style="margin-top:6px"><b>~${x.sure_dk} dk</b></p>` : ""}
-      </div>`).join("")}
-    </div>
-
-    <div class="baslik-satir"><h2>💬 Motivasyon</h2></div>
-    <div class="kart"><p class="meta">${esc(g.motivasyon)}</p></div>`;
-  topbar(`${no}. Gün`);
-}
-
-/* ---------------- KİTAPLIK & DERS ---------------- */
-function viewKitaplik() {
-  const html = Object.keys(DERSLER).map((d) => {
-    const gunler = V.dersler[d].gunler.map((gg) => `
-      <a class="chip" href="#/ders/${d}/${gg.gun}">${gg.gun}. ${esc(gg.baslik.slice(0, 28))}${gg.baslik.length > 28 ? "…" : ""}</a>`).join("");
-    const n = V.sorular[d].length;
-    return `<div class="ders-kart ${d}">
-      <h3>${DERSLER[d].ad}</h3>
-      <p class="meta">10 konu modülü · ${n} soru bankada</p>
-      <div style="margin:10px 0">${gunler}</div>
-      <div class="aksiyonlar">
-        <button class="btn kucuk turuncu" onclick="hataAtolyesi('${d}')">🎯 Hata Atölyesi</button>
-        <a class="btn kucuk seffaf" href="#/coz/hata/${d}/0">Karışık çalış</a>
+function viewKonularDers(d) {
+  const dObj = V.dersler[d];
+  if (!dObj) return (location.hash = "#/konular");
+  const satirlar = dObj.gunler.map((gg) => {
+    const okundu = V.kayit.okunan[okumaAnahtar(d, gg.gun)];
+    const konuSoru = V.sorular[d].filter((s) => s.gun === gg.gun).length;
+    return `<div class="adim-satir ${okundu ? "okundu" : ""}">
+      <div class="gun-no mini">${gg.gun}</div>
+      <div class="adim-bilgi">
+        <b>${esc(gg.baslik)}</b>
+        <span>${esc((gg.konular || []).join(" · "))}${okundu ? " · ✅ Okundu" : ""}</span>
+      </div>
+      <div class="adim-butonlar">
+        <a class="btn kucuk" href="#/ders/${d}/${gg.gun}">📖 Oku</a>
+        ${konuSoru ? `<a class="btn kucuk seffaf" href="#/coz/gunluk/${d}/${gg.gun}">✏️ Soru</a>` : ""}
       </div>
     </div>`;
   }).join("");
   $("#view").innerHTML = `
-    <div class="hero"><span class="etiket">📖 DERS KÜTÜPHANESİ</span>
-    <h1>5 Ders · 50 Konu Modülü · ${Object.values(V.sorular).reduce((a, b) => a + b.length, 0)} Soru</h1>
-    <p>Konu anlatımları meslek lisesi seviyesinde, sade ve sınav odaklı. Her modülde 2 farklı soru çözüm yöntemi + sık yapılan hatalar + cebe kart özet var.</p></div>
-    <div class="grid grid-2">${html}</div>`;
-  topbar("Ders Kütüphanesi");
+    <div class="hero">
+      <span class="etiket">📖 KONU ANLATIMLARI · ${DERSLER[d].ad.toUpperCase()}</span>
+      <h1>${DERSLER[d].ad} — 10 konu anlatımı</h1>
+      <p>İstediğin konudan başla. Her konu anlatımının sonunda o konunun sorularını çözebileceğin buton var.</p>
+    </div>
+    <div class="kart">${satirlar}</div>
+    <div class="sonuc-satir" style="margin-top:16px">
+      <a class="btn seffaf" href="#/konular">← Tüm dersler</a>
+      <a class="btn turuncu" href="#/coz/karma/${d}/0">✏️ ${DERSLER[d].ad} soruları</a>
+    </div>`;
+  topbar(`Konu Anlatımları · ${DERSLER[d].ad}`);
 }
 
 function viewDers(d, gun) {
   const dObj = V.dersler[d];
-  if (!dObj) return (location.hash = "#/kitaplik");
+  if (!dObj) return (location.hash = "#/konular");
   const g = dObj.gunler.find((x) => x.gun === gun) || dObj.gunler[0];
   const sonraki = dObj.gunler.find((x) => x.gun === g.gun + 1);
+  const gunlukSoru = V.sorular[d].filter((s) => s.gun === g.gun);
+  const konular = [...new Set(gunlukSoru.map((s) => s.konu))];
+  const okundu = V.kayit.okunan[okumaAnahtar(d, g.gun)];
   $("#view").innerHTML = `
     <div class="anlatim">
+      <div class="ust-yol"><a href="#/konular">Konu Anlatımları</a> → <a href="#/konular/${d}">${DERSLER[d].ad}</a> → ${g.gun}. Konu</div>
       <span class="badge ${d}">${DERSLER[d].ad}</span>
       <h2 style="margin-top:8px">${g.gun}. ${esc(g.baslik)}</h2>
       ${g.kilit ? `<div class="kilit">🔑 ${esc(g.kilit)}</div>` : ""}
       ${paragrafla(g.giris)}
-      ${g.bolumler.map((b) => `<h3>${esc(b.baslik)}</h3>${paragrafla(b.html)}`).join("")}
-      ${g.yontemler.map((y) => `<div class="yontem-kutu"><h4>🧭 ${esc(y.ad)}</h4>${paragrafla(y.html)}</div>`).join("")}
+      ${Object.entries(g.bolumler).map(([ad, html]) => `<h3>${esc(ad)}</h3>${paragrafla(html)}`).join("")}
+      ${Object.entries(g.yontemler).map(([ad, html]) => `<div class="yontem-kutu"><h4>🧭 ${esc(ad)}</h4>${paragrafla(html)}</div>`).join("")}
       ${g.sik_hatalar.length ? `<div class="hata"><h4>⚠️ Sık Yapılan Hatalar</h4><ul>${g.sik_hatalar.map((s) => `<li>${esc(s)}</li>`).join("")}</ul></div>` : ""}
       ${g.kart ? `<div class="kart-cep"><h4>🃏 Cebe Kart — bu cebinde dursun</h4>${paragrafla(g.kart)}</div>` : ""}
       ${g.agiz_tekrari.length ? `<h3>🗣 Ağız Tekrarı (sesli cevapla)</h3><ul>${g.agiz_tekrari.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
-      <div class="sonuc-satir">
-        <a class="btn" href="#/coz/gunluk/${d}/${g.gun}">✏️ Bu Konudan 20 Soru Çöz</a>
-        <button class="btn turuncu" onclick="hataAtolyesi('${d}')">🎯 Hata Atölyesi</button>
-        ${sonraki ? `<a class="btn seffaf" href="#/ders/${d}/${sonraki.gun}">Sonraki Modül →</a>` : `<a class="btn seffaf" href="#/kitaplik">← Kütüphane</a>`}
+
+      <div class="sonraki-adim">
+        <h3>✅ Okudun mu? Sıradaki adım: Soru Çöz</h3>
+        <p class="meta">Bu konu anlatımını bitirdiysen aşağıdaki sorularla pekiştir. Yanlış yaparsan 2 benzer soru eklenir.</p>
+        <div class="sonuc-satir">
+          <button class="btn yesil" id="okudum-btn">${okundu ? "✅ Okundu olarak işaretli" : "📖 Okudum — sorulara geç"}</button>
+          ${gunlukSoru.length ? `<a class="btn" href="#/coz/gunluk/${d}/${g.gun}">✏️ Bu Günün ${gunlukSoru.length} Sorusunu Çöz</a>` : ""}
+          ${sonraki ? `<a class="btn seffaf" href="#/ders/${d}/${sonraki.gun}">Sonraki konu →</a>` : `<a class="btn seffaf" href="#/konular/${d}">← Konu listesi</a>`}
+        </div>
+        ${konular.length ? `<div class="konu-soru-link">
+          <b>Konuya göre çöz:</b>
+          ${konular.map((k) => `<a class="chip" href="#/coz/konu/${d}/${encodeURIComponent(k)}">${esc(k)} (${gunlukSoru.filter((s) => s.konu === k).length} soru)</a>`).join("")}
+        </div>` : ""}
       </div>
     </div>`;
-  topbar(`${DERSLER[d].ad} · ${g.gun}. Modül`);
+  topbar(`${DERSLER[d].ad} · ${g.gun}. Konu Anlatımı`);
+  const btn = $("#okudum-btn");
+  btn.onclick = () => {
+    V.kayit.okunan[okumaAnahtar(d, g.gun)] = true; kaydet();
+    btn.textContent = "✅ Okundu olarak işaretli";
+    if (gunlukSoru.length) location.hash = `#/coz/gunluk/${d}/${g.gun}`;
+  };
 }
 
-/* ---------------- SORU ÇÖZME (QUİZ) ---------------- */
-function viewCoz(mod, ders, gun) {
-  if (!V.oturum || V.oturum.mod !== mod || V.oturum.ders !== ders || V.oturum.gun !== gun) {
-    let liste;
-    if (mod === "gunluk") liste = gunlukSet(ders, gun, gun ? 20 : 20);
-    else if (mod === "hata") liste = hataSeti(ders, 500);
-    else if (mod === "etiket") liste = (V.etiketIdx[ders] || []).map((id) => V.tumSorular[id]);
-    else liste = hataSeti(ders, 50);
+/* =========================================================
+   SORU ÇÖZ — önce seçim, sonra quiz
+   ========================================================= */
+function viewCozHub() {
+  const gunler = V.program.gunler.map((g) => `
+    <a class="gun-chip" href="#/gun/${g.no}">${g.no}. Gün</a>`).join("");
+  const dersKart = Object.keys(DERSLER).map((d) => {
+    const k = V.konuListe[d];
+    return `<div class="ders-kart ${d}">
+      <h3>${DERSLER[d].ad}</h3>
+      <p class="meta">${k.length} konu · ${V.sorular[d].length} soru</p>
+      <div class="konu-ozet">${k.slice(0, 8).map((x) => `<a class="chip" href="#/coz/konu/${d}/${encodeURIComponent(x.konu)}">${esc(x.konu)} (${x.adet})</a>`).join("")}${k.length > 8 ? `<a class="chip" href="#/konular/${d}">…tümü</a>` : ""}</div>
+      <div class="aksiyonlar">
+        <a class="btn kucuk" href="#/coz/konu-ders/${d}/">Karışık çöz (${V.sorular[d].length})</a>
+        <a class="btn kucuk turuncu" href="#/coz/hata/${d}/0">🎯 Hata Atölyesi</a>
+      </div>
+    </div>`;
+  }).join("");
+  $("#view").innerHTML = `
+    <div class="hero">
+      <span class="etiket">✏️ SORU ÇÖZ</span>
+      <h1>Nasıl soru çözmek istersin?</h1>
+      <p>Günün soruları için "Bugünün Rehberi"ni kullan. Buradan tek bir konuya çalışabilir, konu konu veya karışık soru çözebilirsin.</p>
+    </div>
+    <div class="baslik-satir"><h2>📅 Günlük set için gün seç</h2></div>
+    <div class="gun-secici">${gunler}</div>
+    <div class="baslik-satir"><h2>📚 Derse göre — konu seç, o konunun sorularını çöz</h2></div>
+    <div class="grid grid-2">${dersKart}</div>`;
+  topbar("Soru Çöz");
+}
+
+function viewCoz(mod, ders, arg) {
+  if (!ders || !DERSLER[ders]) return (location.hash = "#/coz");
+  if (mod === "konu-ders") {
+    // dersin karışık tüm soruları — konu seçim sayfası
+    return viewKonuSec(ders);
+  }
+  if (!V.oturum || V.oturum.mod !== mod || V.oturum.ders !== ders || V.oturum.arg !== arg) {
+    let liste, baslik = "";
+    if (mod === "gunluk") {
+      const gun = +arg || 0;
+      liste = gunlukSet(ders, gun, 20);
+      baslik = `${gun}. Gün — günlük set`;
+    } else if (mod === "konu") {
+      liste = konuSeti(ders, arg);
+      baslik = `${arg} — ${liste.length} soru`;
+      if (!liste.length) return (location.hash = "#/coz");
+    } else if (mod === "hata") {
+      liste = hataSeti(ders, 500);
+      baslik = `Hata Atölyesi — ${liste.length} soru`;
+    } else if (mod === "karma") {
+      liste = hataSeti(ders, 60);
+      baslik = `${DERSLER[ders].ad} karışık — ${liste.length} soru`;
+    } else return (location.hash = "#/coz");
     V.oturum = {
-      mod, ders, gun, sira: 0, dogru: 0, yanlis: 0, kuyruk: liste.map((s) => ({ s, tip: "ana" })),
-      gorulen: [], bas: Date.now(), bitis: false,
+      mod, ders, arg, baslik, sira: 0, dogru: 0, yanlis: 0,
+      kuyruk: liste.map((s) => ({ s, tip: "ana" })),
+      gorulen: [], bas: Date.now(),
     };
     V.oturumTecih = {};
     liste.forEach((s) => (V.oturumTecih[s.id] = 1));
   }
   renderQuiz();
 }
+
+function viewKonuSec(ders) {
+  const k = V.konuListe[ders];
+  $("#view").innerHTML = `
+    <div class="hero">
+      <span class="etiket">✏️ ${DERSLER[ders].ad.toUpperCase()} — KONU SEÇ</span>
+      <h1>Bir konu seç, sadece o konunun sorularını çöz</h1>
+      <p>İstersen karışık da çözebilirsin. Yanlış yaptığın konular Hata Defteri'ne eklenir.</p>
+    </div>
+    <div class="kart">
+      ${k.map((x) => `<div class="adim-satir">
+        <div class="gun-no mini">${x.gunler[0] || "-"}</div>
+        <div class="adim-bilgi"><b>${esc(x.konu)}</b><span>${x.adet} soru · ${x.gunler.map((gg) => gg + ". gün").join(", ")}</span></div>
+        <a class="btn kucuk" href="#/coz/konu/${ders}/${encodeURIComponent(x.konu)}">Çöz →</a>
+      </div>`).join("")}
+      <div class="adim-alt" style="margin-top:14px">
+        <a class="btn" href="#/coz/karma/${ders}/0">🔀 Karışık çalış (${V.sorular[ders].length} soru)</a>
+        <a class="btn turuncu" href="#/coz/hata/${ders}/0">🎯 Hata Atölyesi (≤500)</a>
+      </div>
+    </div>`;
+  topbar(`${DERSLER[ders].ad} · Konu Seç`);
+}
+
 function renderQuiz() {
   const o = V.oturum;
   if (o.sira >= o.kuyruk.length) return quizBitti();
   const { s, tip } = o.kuyruk[o.sira];
   const k = o.gorulen[o.sira];
-  const ad = tip === "pekiştirme" ? "🧩 Pekiştirme sorusu (benzer)" : tip === "tekrar" ? "🔁 Tekrar sorusu" : "";
+  const ad = tip === "pekiştirme" ? "🧩 Pekiştirme (benzer soru)" : tip === "tekrar" ? "🔁 Tekrar" : "";
   $("#view").innerHTML = `<div class="quiz">
     <div class="quiz-ust">
       <div>
+        <a class="btn kucuk seffaf" href="#/coz">← Çözüm menüsü</a>
         <span class="badge ${o.ders}">${DERSLER[o.ders].ad}</span>
         ${ad ? `<span class="badge turuncu">${ad}</span>` : ""}
         <span class="badge gri">${esc(s.konu)}</span>
@@ -462,12 +545,12 @@ function renderQuiz() {
       ${k ? cozumHtml(s, k) : ""}
       <div class="sonuc-satir" id="quiz-aks">
         ${k ? `<button class="btn" id="sonraki-btn">${o.sira + 1 >= o.kuyruk.length ? "Sonuçları Gör →" : "Sonraki Soru →"}</button>
-              <button class="btn seffaf" onclick="konuTekrari(${JSON.stringify(s.ders).replace(/"/g, "&quot;")},${s.gun})">📖 Konu anlatımına dön</button>
+              <a class="btn seffaf" href="#/ders/${s.ders}/${s.gun}">📖 Konu anlatımını oku</a>
               <button class="btn seffaf" onclick="isaretleGec()">İşaretle ve geç</button>`
-            : `<span class="meta">Klavyeden A–E ile de cevap verebilirsin. Bir şıkka dokun.</span>`}
+            : `<span class="meta">Bir şıkka dokun veya klavyeden A–E ile cevapla.</span>`}
       </div>
     </div>
-    <div class="benzer-not">💡 <b>Nasıl çalışır?</b> Yanlış yaparsan o konudan <b>2 benzer soru</b> anında kuyruğa girer; konudaki yanlışların 2'yi geçerse konu anlatımı tekrar hatırlatılır. Hataların ertesi günün setinde %40 ağırlıkla geri gelir.</div>
+    <div class="benzer-not">💡 Yanlış yaparsan o konudan <b>2 benzer soru</b> kuyruğa eklenir. Aynı konuda hata birikirse konu anlatımı hatırlatılır.</div>
   </div>`;
   $$(".sik").forEach((el) => el.onclick = () => cevapla(+el.dataset.sik));
   const sb = $("#sonraki-btn"); if (sb) sb.onclick = () => { o.sira++; renderQuiz(); };
@@ -500,63 +583,52 @@ function cevapla(i) {
   if (!dogru) {
     const ben = benzerler(s, 2, o.kuyruk.map((x) => x.s.id));
     ben.forEach((b) => { o.kuyruk.push({ s: b, tip: "pekiştirme" }); V.oturumTecih[b.id] = 1; });
-    const etY = (s.etiketler || []).map((t) => V.kayit.etiketler[t]).filter(Boolean);
-    if (etY.some((e) => e.y >= 2)) {
-      // konu tekrarı kartı: anlatımı hatırlat
-      o.kuyruk.splice(o.sira + 1, 0, { s, tip: "tekrar-tekrar", konuHatirlat: true });
-    }
   }
   kaydet();
   renderQuiz();
 }
-function isaretleGec() { const o = V.oturum; if (o) { o.sira++; renderQuiz(); } }
-function konuTekrari(ders, gun) {
-  const g = (V.oturum && V.oturum.gun) || gun || 1;
-  location.hash = `#/ders/${ders}/${g}`;
-}
-function hataAtolyesi(ders) { location.hash = `#/coz/hata/${ders}/0`; }
-window.hataAtolyesi = hataAtolyesi; window.konuTekrari = konuTekrari; window.isaretleGec = isaretleGec;
+window.isaretleGec = () => { const o = V.oturum; if (o) { o.sira++; renderQuiz(); } };
 
 function quizBitti() {
   const o = V.oturum;
   const toplam = o.dogru + o.yanlis;
   const net = (o.dogru - o.yanlis / 4).toFixed(2);
   const dk = Math.max(1, Math.round((Date.now() - o.bas) / 60000));
-  // oturum kaydı
   V.kayit.oturumlar.push({ tarih: new Date().toISOString(), ders: o.ders, mod: o.mod, dogru: o.dogru, yanlis: o.yanlis, dk });
   V.kayit.oturumlar = V.kayit.oturumlar.slice(-200);
   kaydet();
   const zayif = zayifEtiketler(o.ders, 8);
+  const gun = (o.mod === "gunluk" ? +o.arg : (o.kuyruk[0] ? o.kuyruk[0].s.gun : 1));
   V.oturum = null; V.oturumTecih = {};
   $("#view").innerHTML = `<div class="quiz">
-    <div class="hero"><span class="etiket">🎉 OTURUM BİTTİ</span><h1>${toplam} soruda ${o.dogru} doğru, ${o.yanlis} yanlış</h1>
-    <p>${dk} dakikada tamamladın. Hata yaptığın konular Hata Defteri'ne eklendi; yarının setinde öncelikle onlar gelecek.</p></div>
+    <div class="hero"><span class="etiket">🎉 TEBRİKLER — TUR BİTTİ</span>
+      <h1>${toplam} soruda ${o.dogru} doğru, ${o.yanlis} yanlış</h1>
+      <p>${dk} dakikada tamamladın. ${o.yanlis ? "Yanlışların Hata Defteri'ne eklendi." : "Hatasız! 🎉"}</p></div>
     <div class="net-kutu">
       <div><b style="color:var(--iyi)">${o.dogru}</b>Doğru</div>
       <div><b style="color:var(--kotu)">${o.yanlis}</b>Yanlış</div>
       <div><b>${net}</b>Net</div>
       <div><b>${dk}′</b>Süre</div>
     </div>
-    <div class="baslik-satir"><h2>🎯 Zayıf konuların (bu ders)</h2><a class="btn kucuk seffaf" href="#/hata">Hata Defteri</a></div>
-    <div class="kart">${zayif.map((t) => {
-      const k = V.kayit.etiketler[t];
-      return `<span class="chip ${k && k.y > 0 ? "zayif" : ""}">${esc(t)} · ❌${k.y} ✅${k.d}</span>`;
-    }).join("")}</div>
     <div class="sonuc-satir" style="margin-top:18px">
-      <a class="btn" href="#/panel">Bugünkü plana dön</a>
-      <button class="btn turuncu" onclick="hataAtolyesi('${o.ders}')">Hata Atölyesi ile devam</button>
+      <a class="btn" href="#/gun/${gun}">Günün rehberine dön</a>
+      <a class="btn turuncu" href="#/hata">🎯 Hata Defteri</a>
+      <a class="btn seffaf" href="#/coz">Başka soru seti</a>
+      <a class="btn seffaf" href="#/ders/${o.ders}/${gun}">📖 Konu anlatımına dön</a>
     </div>
   </div>`;
 }
 
-/* ---------------- DENEMELER ---------------- */
+/* =========================================================
+   DENEMELER
+   ========================================================= */
 function viewDenemeler() {
   const satirlar = V.denemeler.denemeler.map((d) => {
     const gecmis = V.kayit.denemeler.filter((x) => x.id === d.id).slice(-1)[0];
     return `<div class="kart" style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
       <div>
         <h3>${esc(d.ad)}</h3>
-        <p class="meta">${d.soru_sayisi} soru · ${d.sure_dk} dk · ${d.tur === "buyuk" ? "🏆 Büyük Deneme" : "Mini deneme"}</p>
+        <p class="meta">${d.soru_sayisi} soru · ${d.sure_dk} dk · ${d.tur === "buyuk" ? "🏆 Büyük Deneme" : "Mini deneme"} · ${d.gun}. gün</p>
       </div>
       <div style="display:flex;gap:10px;align-items:center">
         ${gecmis ? `<span class="badge yesil">Net: ${gecmis.net}</span><span class="badge gri">D${gecmis.dogru} Y${gecmis.yanlis}</span>` : `<span class="badge gri">Henüz çözülmedi</span>`}
@@ -573,7 +645,6 @@ function viewDenemeler() {
 }
 function viewDenemeBilgi(id) {
   const d = V.denemeIdx[id]; if (!d) return (location.hash = "#/denemeler");
-  const g = V.program.gunler.find((x) => x.no === d.gun);
   $("#view").innerHTML = `<div class="quiz">
     <div class="hero"><span class="etiket">${esc(d.ad)}</span>
       <h1>${d.soru_sayisi} soru · ${d.sure_dk} dakika</h1>
@@ -582,12 +653,12 @@ function viewDenemeBilgi(id) {
       <h3>Kurallar</h3>
       <ul style="margin-left:18px;font-size:14px">
         <li>Her soru 5 şıklı (A–E). Klavyeden 1–5 veya A–E ile cevap verebilirsin.</li>
-        <li>Takıldığında işaretle ve geç — 3. turda geri dönersin.</li>
+        <li>Takıldığında işaretle ve geç — daha sonra geri dönersin.</li>
         <li>Bitir'de: net, konu analizi ve tüm çözümler gösterilir.</li>
-        <li>Yanlışların Hata Defteri'ne işlenir; yarının setinde %40 ağırlıkla gelir.</li>
+        <li>Yanlışların Hata Defteri'ne işlenir; ertesi günün setinde %40 ağırlıkla gelir.</li>
       </ul>
       <div class="sonuc-satir"><a class="btn yesil" href="#/deneme-run/${id}">⏱ Süreyi Başlat</a>
-      <a class="btn seffaf" href="#/gun/${d.gun}">Gün sayfasına dön</a></div>
+      <a class="btn seffaf" href="#/gun/${d.gun}">Günün rehberine dön</a></div>
     </div>
   </div>`;
   topbar(d.ad);
@@ -648,8 +719,9 @@ function renderDeneme() {
     o.cevaplar[s.id] = +el.dataset.sik; renderDeneme();
   });
   document.onkeydown = (e) => {
-    const i = "abcde12345".indexOf(e.key.toLowerCase()) % 5;
-    if (["a","b","c","d","e","1","2","3","4","5"].includes(e.key.toLowerCase()) && V.denemeOturum) {
+    const key = e.key.toLowerCase();
+    const i = "abcde12345".indexOf(key) % 5;
+    if (["a","b","c","d","e","1","2","3","4","5"].includes(key) && V.denemeOturum) {
       V.denemeOturum.cevaplar[s.id] = i; renderDeneme();
     }
   };
@@ -698,14 +770,16 @@ window.denemeBitir = function () {
       ${cozumHtml(s, { dogru: false })}
     </div>`).join("") : `<div class="kart"><p>Harika! Yanlış yok 🎉</p></div>`}
     <div class="sonuc-satir" style="margin:18px 0 40px">
-      <a class="btn" href="#/panel">Bugünkü plana dön</a>
-      <a class="btn turuncu" href="#/hata">Hata Defteri'ne bak</a>
+      <a class="btn" href="#/gun/${o.d.gun}">Günün rehberine dön</a>
+      <a class="btn turuncu" href="#/hata">🎯 Hata Defteri'ne bak</a>
       <a class="btn seffaf" href="#/denemeler">Denemeler</a>
     </div>
   </div>`;
 };
 
-/* ---------------- HATA DEFTERİ ---------------- */
+/* =========================================================
+   HATA DEFTERİ
+   ========================================================= */
 function viewHata() {
   const t = Object.entries(V.kayit.etiketler).filter(([, v]) => v.y > 0)
     .sort((a, b) => b[1].y - a[1].y);
@@ -717,24 +791,25 @@ function viewHata() {
   $("#view").innerHTML = `
     <div class="hero"><span class="etiket">🎯 HATA DEFTERİ</span>
       <h1>Hata yaptığın yerler, kazandığın puanların fabrikası</h1>
-      <p>En çok yanlış yaptığın konular yukarıda. Sistem her yanlış için 2 benzer soru üretir; aynı konu 2 kez yanlışlanırsa konu anlatımı tekrar hatırlatılır. Ertesi günün 20 sorusunun 8'i buradan gelir.</p></div>
-    <div class="baslik-satir"><h2>🔥 Zayıf Konu Sıralaması</h2></div>
+      <p>En çok yanlış yaptığın konular aşağıda. Her yanlış için 2 benzer soru üretilir. Ertesi günün 20 sorusunun 8'i buradan gelir.</p></div>
+    <div class="baslik-satir"><h2>🔥 Zayıf Konuların</h2></div>
     <div class="kart">
       ${t.length ? t.map(([tag, v]) => `<span class="chip zayif">${esc(tag)} · ❌${v.y} ✅${v.d}</span>`).join("") : "<p class='meta'>Henüz hata yok.</p>"}
     </div>
-    <div class="baslik-satir"><h2>⚔️ Zayıf Konu Atağı</h2></div>
+    <div class="baslik-satir"><h2>⚔️ Zayıf Konu Atağı — soru çöz</h2></div>
     <div class="grid grid-3">
       ${Object.keys(DERSLER).map((d) => `<div class="ders-kart ${d}">
         <h3>${DERSLER[d].ad}</h3>
         <p class="meta">Zayıf konulardan ≤500 soruluk kişisel set</p>
-        <div class="aksiyonlar"><button class="btn kucuk turuncu" onclick="hataAtolyesi('${d}')">Saldırıyı başlat</button></div>
+        <div class="aksiyonlar"><a class="btn kucuk turuncu" href="#/coz/hata/${d}/0">Saldırıyı başlat</a></div>
       </div>`).join("")}
     </div>
     <div class="baslik-satir"><h2>📕 Yanlış Yaptığın Sorular (${yanlisSorular.length})</h2></div>
     ${yanlisSorular.slice(0, 30).map((s, i) => {
       const k = V.kayit.soru_kayit[s.id];
       return `<div class="soru-kart" style="margin-bottom:12px">
-        <div class="quiz-ust"><span class="badge ${s.ders}">${DERSLER[s.ders].ad}</span><span class="badge kirmizi">❌${k.y} ✅${k.d}</span></div>
+        <div class="quiz-ust"><span class="badge ${s.ders}">${DERSLER[s.ders].ad}</span><span class="badge kirmizi">❌${k.y} ✅${k.d}</span>
+        <a class="btn kucuk seffaf" href="#/ders/${s.ders}/${s.gun}">📖 Konu anlatımı</a></div>
         <div class="soru-kok">${i + 1}. ${esc(s.kok)}</div>
         <div class="meta" style="margin-top:8px">Doğru: ${SIK_HARF[s.dogru]}) ${esc(s.siklar[s.dogru])}</div>
         ${(s.cozumler || []).map((c, j) => `<div class="yontem" style="margin-top:8px"><b>Yöntem ${j + 1} — ${esc(c.yontem)}:</b> ${esc(c.metin)}</div>`).join("")}
@@ -743,7 +818,9 @@ function viewHata() {
   topbar("Hata Defteri");
 }
 
-/* ---------------- İSTATİSTİK ---------------- */
+/* =========================================================
+   İSTATİSTİK & AYARLAR
+   ========================================================= */
 function viewIstatistik() {
   const toplam = Object.values(V.kayit.soru_kayit);
   const d = toplam.reduce((a, x) => a + x.d, 0), y = toplam.reduce((a, x) => a + x.y, 0);
@@ -754,10 +831,11 @@ function viewIstatistik() {
     g.d += v.d; g.y += v.y;
   });
   const den = V.kayit.denemeler.slice(-5);
+  const okunan = Object.keys(V.kayit.okunan).length;
   $("#view").innerHTML = `
     <div class="hero"><span class="etiket">📊 İSTATİSTİK</span>
-      <h1>${d + y} soru çözdün — net doğruluk oranı: ${d + y ? Math.round((d / (d + y)) * 100) : 0}%</h1>
-      <p>Rakamlar yalan söylemez: nerede güçlüsün, nerede takılıyorsun?</p></div>
+      <h1>${d + y} soru çözdün — doğruluk oranı: ${d + y ? Math.round((d / (d + y)) * 100) : 0}%</h1>
+      <p>${okunan}/50 konu anlatımı okundu · ${V.kayit.denemeler.length} deneme çözüldü.</p></div>
     <div class="net-kutu">
       <div><b>${d + y}</b>Çözülen</div>
       <div><b style="color:var(--iyi)">${d}</b>Doğru</div>
@@ -781,7 +859,6 @@ function viewIstatistik() {
   topbar("İstatistik");
 }
 
-/* ---------------- AYARLAR ---------------- */
 function viewAyarlar() {
   $("#view").innerHTML = `
     <div class="hero"><span class="etiket">⚙️ AYARLAR</span><h1>Veriler ve Sıfırlama</h1>
@@ -804,8 +881,11 @@ function viewAyarlar() {
     const f = e.target.files[0]; if (!f) return;
     const ok = new FileReader();
     ok.onload = () => {
-      try { V.kayit = JSON.parse(ok.result); kaydet(); alert("Yedek yüklendi!"); location.hash = "#/panel"; }
-      catch { alert("Geçersiz dosya"); }
+      try {
+        V.kayit = JSON.parse(ok.result);
+        if (!V.kayit.okunan) V.kayit.okunan = {};
+        kaydet(); alert("Yedek yüklendi!"); location.hash = "#/panel";
+      } catch { alert("Geçersiz dosya"); }
     };
     ok.readAsText(f);
   };
