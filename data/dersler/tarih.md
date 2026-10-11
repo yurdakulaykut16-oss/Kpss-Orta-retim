@@ -1,5 +1,5 @@
 # GUN 1 | Kök Türkler'den Uygurlara — Türk Tarihinin Kayıt Altına Alınışı
-Konular: Kök Türkler (Göktürkler); Uygurlar; Göktürk Yazıtları; İlk Türk devletlerinin ortak özellikleri
+Konular: Kök Türkler (Göktürkler); Uygurlar; Göktürk Yazıtları; İlk Türk devletlerinin ortak özellikleri; Karahanlılar ve Gazneliler
 Kilit: Tarihimiz yazılı kaynakla Orhun'da başlar: "Bilge Kaan, Tonyukuk, Kül Tigin" üçlüsüne bugün sahip çık.
 ## Giriş
 Merhaba! Bu kamp meslek lisesi mezunu bir adayın seviyesinden hazırlandı. Uzun akademik cümle yok; "neyi, neden, nasıl sorarlar?" var. Tarih dersinin ilk konusu çok değerli çünkü KPSS'de ilk Türk devletlerinden her yıl soru gelir ve bu sorular EZBER bilgiyle çözülür — yani doğru yöntemi kullanırsan puanı sen alırsın. Unutma: KPSS tarih sorularının üç anahtarı vardır — TARİH, SIRA, ÖZELLİK. Bir olayı öğrenirken bu üçlüyü sor: Ne zaman? Sıradaki ne? Onu özel kılan ne?
@@ -7,17 +7,16 @@ Merhaba! Bu kamp meslek lisesi mezunu bir adayın seviyesinden hazırlandı. Uzu
 ## Anlatım | Asya Hun Devleti (M.Ö. 220 – M.S. 216)
 Bilinen ilk Türk devleti Asya Hun (Büyük Hun) Devleti'dir. Kurucusu Teoman'dır; ama sınavın yıldızı oğlu METE HAN'dır. Mete Han orduyu 10'lu sisteme göre düzenlemiştir (ONLUK SİSTEM — bunu sor!). Çinlilerle savaştı, Çin'i vergiye bağladı; Çin Seddi'nin sebebi Hun akınlarıdır (bu da soru!). Devlet en geniş sınırlarına Mete Han zamanında ulaştı. Dikkat: "İlk Türk devletinin kurucusu?" = Teoman; "onluk sistemi getiren?" = Mete. Bu ayrım klasik tuzaktır.
 
-## Anlatım | Avrupa Hunları ve Akhunlar
-Attila (M.S. 434-453) döneminde Avrupa Hunları Batı'ya göç etti, Katalon Ovası Savaşı ile Avrupa'da "Tanrının Kırbacı" unvanını aldı. Doğu ile Çin arasındaki ipek yolu ticaretini kontrol eden Akhunlar (Eftalitler) ise Hint-Türk kültürünü geliştirdi. KPSS bunları "devamı olan devletler" diye sorar: Asya Hun → Göktürk mü Avrupa Hun mu? AYRIM: Asya Hun'un doğrudan devamı Göktürkler'dir (Orta Asya'da aynı coğrafya).
+## Anlatım | İlk Türk Devletlerinin Ortak Özellikleri
+KPSS'nin klasik "hangisi ortak özellik DEĞİLDİR" sorusu bu bölümü bilmeden çözülmez. Bütün İlk Türk devletleri şunları paylaşır: (1) göçebe (konargöçer) bozkır kültürü, (2) Şamanizm / Gök Tanrı inancı, (3) ordu-millet düzeni (ordu = devlet), (4) Kut anlayışı ve akrabalık (türeyiş-evlilik) efsaneleri, (5) tarımın az, hayvancılığın (özellikle at ve koyun) geçimin temeli olması. TEK İSTİSNA UYGURLAR'dır: yerleşik hayata geçen ilk Türk devleti onlardır. Soru "yerleşik hayat sürdüler" şıkkını veriyorsa: "ortak değildir" sorusunda cevap bu şıktır, "ortak olan" sorusunda asla işaretlenmez!
 
 ## Anlatım | Kök Türkler (Göktürkler, 552-744)
-Bumin Kaan tarafından kuruldu; tarihte "Türk" adını kullanan İLK devlettir (çok sorulur!). 552'de Bumin, 582'de Doğu-Batı olarak ikiye ayrıldı. Ünlü hükümdarları: İstemİ Yabgu (Batı), Bumin (Doğu), Bilge Kaan (hükümdar), Kül Tigin (komutan), Tonyukuk (bilge vezir). Başkentleri ÖTÜKEN'dir (yerleşik hayat yok, göçebe bozkır kültürü). Sasanilerle birlikte Akhunları yıktılar; Bizans'la ittifak kurdular (İpek Yolu!). En önemli belgeleri ORHUN (GÖKTÜRK) YAZITLARI'dır: Bilge Kaan ve Kül Tigin adına dikildi, Tonyukuk yazdırdı. Türkçenin ilk sözlüğü/grameri: DIVANÜ LÜGAT-İ TÜRK (Kaşgarlı Mahmud) — ama ona sonra geleceğiz; Göktürk alfabesi 38 harftir ve sağdan sola yazılır.
+Bumin Kaan tarafından kuruldu; tarihte "Türk" adını kullanan İLK devlettir (çok sorulur!). 552'de Bumin, 582'de Doğu-Batı olarak ikiye ayrıldı. Ünlü hükümdarları: İstemİ Yabgu (Batı), Bumin (Doğu), Bilge Kaan (hükümdar), Kül Tigin (komutan), Tonyukuk (bilge vezir). Başkentleri ÖTÜKEN'dir (yerleşik hayat yok, göçebe bozkır kültürü). Sasanilerle uzun süre savaştılar; Bizans'la ittifak kurdular (İpek Yolu!). En önemli belgeleri ORHUN (GÖKTÜRK) YAZITLARI'dır: Bilge Kaan ve Kül Tigin adına dikildi, Tonyukuk yazdırdı. Türkçenin ilk sözlüğü/grameri: DIVANÜ LÜGAT-İ TÜRK (Kaşgarlı Mahmud) — ama ona sonra geleceğiz; Göktürk alfabesi 38 harftir ve sağdan sola yazılır.
 
 ## Anlatım | Uygurlar (744-840)
-Göktürklerden sonra Ötüken merkezli kuruldu. Kurucusu Kutluk Bilge Kül Kaan'dır. UYGURLAR YERLEŞİK HAYATA GEÇEN İLK TÜRK DEVLETİDİR (altın soru!). Mani dinini benimsediler; Tolga abidelerini bıraktılar. Kendi alfabeleri vardı (Uygur alfabesi 18 harf; Moğollar bu alfabeyle yazdı). Ticaret ve zanaat gelişti; tanrı dağlarının güneyinde tarım yaptılar. Uygurların çöküş sebebi: Kırgız baskını. Hafıza köprüsü: "UyguR = Rezidans (yerleşik), Mani dinini seçti."
+Göktürklerden sonra Ötüken merkezli kuruldu. Kurucusu Kutluk Bilge Kül Kaan'dır. UYGURLAR YERLEŞİK HAYATA GEÇEN İLK TÜRK DEVLETİDİR (altın soru!). Mani dinini benimsediler; Uygur abideleri (Turfan vesikaları) bıraktılar. Kendi alfabeleri vardı (Uygur alfabesi 18 harf; Moğollar bu alfabeyle yazdı). Ticaret ve zanaat gelişti; tanrı dağlarının güneyinde tarım yaptılar. Uygurların çöküş sebebi: Kırgız baskını. Hafıza köprüsü: "UyguR = Rezidans (yerleşik), Mani dinini seçti."
 
-## Anlatım | Diğer Erken Devletler (kısa kısa)
-Karluklar: Süleymançık (Beşbalık) merkez; ilk Müslüman Türk hanedanı KARAHANLILAR'a zemin hazırladılar. Kırgızlar: Yenisey Kırgızları, Çin kaynaklarında "Hakas"; Uygurları yıkan devlet. Hazarlar: DENİZCİ Türk devleti (İstanbul'u 626'da kuşattılar), Museviliği benimsediler (tek Türk devleti!). Avarlar: İstanbul'u kuşattılar ama alamadılar; "Tığ" adlı parayı kullanıp ilk Türk parasını bastırdılar (bazı kaynaklarda Hunlar... KPSS'de Avar tığ'ı kabul görür). Bulgarlar: Asparuh Bulgaristan'ı kurdu; Danubya ve İtil Bulgarları.
+
 
 ## Anlatım | TÜRK-İSLAM TARİHİNE KÖPRÜ: Karahanlılar ve Gazneliler
 Karahanlılar: İlk MÜSLÜMAN TÜRK DEVLETİ (süper soru!). Satuk Buğra Han İslamiyet'i kabul etti. Türk diline önem verdiler: KUTADGU BİLİG (Yusuf Has Hacip - devlet yönetimi), DİVANÜ LÜGAT-İ TÜRK (Kaşgarlı Mahmud - Türkçe sözlük/atlas), ATABETÜ'L-HAKAYIK (Edip Ahmet Yükneki), KUTBNAME (Ahmed Yesevi'nin dervişlerinden). Gazneliler: Sebük Tegin ve GAZNE SULTANI MAHMUD devrinde Hindistan'a 17 sefer düzenlendi; Türk-İslam tarihinde "Sultan" unvanını ilk GAZNELİ MAHMUD kullandı. Hintler İslamiyet'le bu seferler sayesinde tanıştı.
@@ -33,10 +32,9 @@ Kökte tarih sorusu genelde üç kalıptan biridir: (1) "X'i kim yaptı?" (2) "H
 - Göktürklerin Türk adını ilk kullanan devlet olduğunu unutmak — "Türk" kelimesi ilk kez Göktürklerde.
 - Uygurları göçebe sanmak — yerleşik hayatı onlar getirdi.
 - Divanü Lügat-î Türk'ü Gazneliye ait sanmak — Karahanlı Kaşgarlı Mahmud.
-- Hazarları denizci değil zannedip atlamak — Hazarlar İtil/Volga denizci tüccarlarıydı.
 
 ## Cebe Kart
-Asya Hun: kurucu Teoman → Mete (onluk sistem, Çin Seddi sebebi). Göktürkler: ilk "Türk" adı, başkent ÖTÜKEN, Orhun Yazıtları (Bilge, Kül Tigin, Tonyukuk). Uygurlar: yerleşik + Mani dini + 18 harf alfabe. Hazarlar: denizci + Musevilik. Avarlar: tığ para + İstanbul kuşatma. Karahanlılar: ilk Müslüman Türk, Kutadgu Bilig-Atabetü'l-Hakayık-Divanü Lügat. Gazneliler: Mahmud "Sultan", 17 Hindistan seferi.
+Asya Hun: kurucu Teoman → Mete (onluk sistem, Çin Seddi sebebi). Göktürkler: ilk "Türk" adı, başkent ÖTÜKEN, Orhun Yazıtları (Bilge, Kül Tigin, Tonyukuk). Uygurlar: yerleşik + Mani dini + 18 harf alfabe. Karahanlılar: ilk Müslüman Türk, Kutadgu Bilig-Atabetü'l-Hakayık-Divanü Lügat. Gazneliler: Mahmud "Sultan", 17 Hindistan seferi.
 
 ## Ağız Tekrarı
 - İlk Türk devletinin kurucusu kim, onluk sistemi kuran kim? (İki ayrı isim!)
@@ -44,7 +42,7 @@ Asya Hun: kurucu Teoman → Mete (onluk sistem, Çin Seddi sebebi). Göktürkler
 - Yerleşik hayata geçen ilk Türk devleti, dinleri, alfabe harf sayısı?
 - Divanü Lügat-î Türk'ü yazan ve devleti?
 - "Sultan" unvanını ilk kullanan kim, hangi seferlerle ünlü?
-- Denizci Türk devleti hangisi, dinleri?
+- İlk Türk devletlerinin ortak özellikleri neler, tek istisnası hangi devlet?
 # GUN 2 | Anadolu'nun Kapısı: Selçuklu'dan Osmanlı Kuruluşu
 Konular: Anadolu Selçuklu Devleti; Beylikler dönemi; Osmanlı Devleti'nin kuruluşu; Rumeli'ye geçiş
 Kilit: Anadolu bir "kâğıt üzerinde" vatan olmadı: Miryokefalon 1176'da kapıyı açtı, Malazgirt 1071'de anahtarı verdi.

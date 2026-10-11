@@ -59,6 +59,11 @@ Ardından tarayıcınızda **<http://localhost:5000>** adresini açın. Hepsi bu
   olduğundan süreler orantılı ölçeklenmiştir.
 - Sorular **geçmiş KPSS sorularından yeniden düzenlenmiş** ya da **KPSS formatında**
   özgün sorulardır; her sorunun `kaynak` alanında bu bilgi yer alır.
+- **Kapsam kuralı:** Müfredat yalnızca **geçmiş KPSS sınavlarında çıkmış konularla**
+  sınırlıdır. ÖSYM'nin soru dağılımında yer almayan konular (ör. Avarlar, Akhunlar,
+  Avrupa Hunları, Hazarlar gibi devletler) ders anlatımlarına ve soru bankasına
+  **bilinçli olarak alınmamıştır**; yalnızca soru şıklarında ayırt edici unsur olarak
+  geçebilirler.
 - Her sorunun **iki farklı çözüm yöntemi** vardır (biri hikâye/şaka/benzerlik, diğeri
   kural/teknik) — hata yapılan konu tekrar edildiğinde anlatım **farklı yöntemle** sunulur.
 
