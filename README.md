@@ -123,15 +123,16 @@ kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak y
 
 | Yıl | Soru | Not |
 |-----|------|-----|
-| 2014-KPSS | 84 | ÖSYM'nin tam kitapçığından aktarıldı |
+| 2014-KPSS | 84 | Tam kitapçık; ÖSYM'nin **cevap anahtarlı** %10 kitapçığıyla doğrulandı |
 | 2016-KPSS | 86 | ÖSYM'nin kitapçık içi **resmî cevap anahtarıyla** doğrulandı |
-| 2018-KPSS | 86 | Tam kitapçık; %10'luk kitapçık cevaplarıyla çapraz kontrol edildi |
-| 2020-KPSS | 85 | Tam kitapçık |
+| 2018-KPSS | 86 | Tam kitapçık; %10'luk kitapçık **resmî cevaplarıyla** doğrulandı |
+| 2020-KPSS | 85 | Tam kitapçık; %10'luk kitapçık **resmî cevaplarıyla** doğrulandı |
 | 2024-KPSS | 9 | ÖSYM'nin %10'luk Temel Soru Kitapçığı'ndaki tam metinli sorular + resmî cevaplar |
 
 - Test Çöz sayfasında **🎯 Gerçek Çıkmış KPSS Soruları** paneli: yıla göre (2014…2024) ya da karışık test.
 - Günlük denemeler çıkmış sorulara öncelik verir (deneme başına ~%80 gerçek çıkmış).
 - `/api/sorular/<ders>?cikmis=1` uç noktası yalnızca yıl etiketli çıkmışları döndürür.
+- Bütün yıl etiketli cevaplar ÖSYM'nin resmî cevap anahtarlarıyla karşılaştırılıp doğrulanmıştır.
 
 ## Veri & Araçlar
 
