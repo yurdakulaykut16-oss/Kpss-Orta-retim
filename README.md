@@ -32,8 +32,9 @@ Tarayıcıda aç: **http://localhost:5000**
 
 Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
-> 📌 **Hafta sonu ek programı (hafta içi iş/okul olmayınca):** Günde 500 soruya kadar çıkan maraton günleri.
-> 1. turla 500 soru maratonu (4 saat) — 5. gün ile 10. gün arası hafta sonları ideal.
+> 📌 **Günlük soru hedefi (yeni):** Her derse günlük **minimum 500 soru** (toplam 2.500) — hepsi **10'ar soruluk testler** hâlinde.
+> Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
+> Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
 
 ---
 
@@ -57,7 +58,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 ### 3. Ustalık Sistemi
 - Her konunun ustalığı takip edilir: **son 10 soruda 8+ doğru = Usta** (rozet yeşile döner).
 - Usta olmadığın konular öncelikli gelir; ustalaştığın konular geri planda kalır.
-- Günde **500 soruya kadar** çıkabilirsin — havuz her gün yüzlerce soru sunar ama **durumuna göre** karşına çıkar.
+- Her derste günlük **500 soru** hedeflenir (toplam **2.500**); havuz her ders için 500+ soru içerir, **durumuna göre** karşına çıkar, aynı soru tekrar etmez.
 
 ### 4. Aynı Soru Tekrar Gelmez
 - Bir soruyu **bugün** çözdüysen o gün tekrar gelmez (anti-tekrar).
@@ -76,18 +77,19 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 | Ders | Kapsam | Soru bankası |
 |------|--------|--------------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 274 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 162 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 122 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 129 |
-| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 111 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 500 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 526 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 501 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 503 |
+| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 500 |
 
-> 📚 **Toplam: 798 soru** — her biri 2 farklı çözüm yöntemiyle. Havuz her gün yüzlerce soru sunar,
-> karşıya durumuna göre 10'luk setler halinde gelir. Her 10 soruda otomatik kontrol + telafi döngüsü.
+> 📚 **Toplam: 2.530 soru** (+ 350 gerçek çıkmış = 2.880) — her biri 2 farklı çözüm yöntemiyle.
+> Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
+> Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
-> ⚠️ **Geçmiş KPSS çıkmış sorular için PDF bekleniyor.** Şu anki banka ÖSYM mantığına uygun üretildi
-> ve tümü geçmiş sınav konularından. PDF'lerini bu repo'ya koyarsan (veya linkini verirsen) gerçek
-> çıkmış soruları `kaynak` alanıyla "2018-KPSS" gibi etiketleyip ekleriz.
+> ✅ **Gerçek çıkmış sorular eklendi:** 2014/2016/2018/2020/2024 KPSS kitapçıklarından **350 gerçek
+> çıkmış soru**, resmî ÖSYM cevap anahtarlarıyla doğrulanmış hâlde `kaynak` etiketiyle ("2018-KPSS"
+> gibi) bankada duruyor.
 
 **Konu seçimi kuralı:** *Sadece geçmiş KPSS sınavlarında çıkmış konular.* Hiç sorulmamış devletler
 (Avarlar, Akhunlar, Avrupa Hunları, Hazarlar, Bulgarlar, Karluklar, Kırgızlar…) konu olarak anlatılmaz;
@@ -111,7 +113,7 @@ Gün sonu denemesi bitince **yanlış/boş bıraktığın konular** otomatik ola
 - **✏️ Test Çöz** — Günün Maratonu / Konu Testi (10) / Yanlış Telafisi / Hata Atölyesi — hepsi 10'luk
 - **📝 Denemeler** — 10 deneme + çözüm analizi
 - **🎯 Hata Defteri** — zayıf konular + yanlış sorular + saldırı butonları
-- **📊 İstatistik** — ustalık, günlük 500 sayaç, net takibi
+- **📊 İstatistik** — ustalık, ders başı 500 / toplam 2.500 günlük sayaç, net takibi
 - **⚙️ Ayarlar** — yedekle / geri yükle / sıfırla
 
 ---
@@ -150,4 +152,4 @@ Yeni soru eklemek için `data/kaynaklar/*.tsv` dosyasına `id|gun|konu|zorluk|ka
 
 ---
 
-*Başarılar! İlk 2 günde konuları bitir, sonra yanlışlarından ustalığa — her gün 500 soruya kadar, aynı soru tekrar etmeden.* 🚀
+*Başarılar! İlk 2 günde konuları bitir, sonra yanlışlarından ustalığa — her ders günde 500 soru (10'arlık testler), konular bitince karışık testler, aynı soru tekrar etmeden.* 🚀

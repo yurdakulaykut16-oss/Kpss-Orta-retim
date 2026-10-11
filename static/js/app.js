@@ -13,7 +13,8 @@ const DERSLER = {
 };
 const SIK_HARF = ["A", "B", "C", "D", "E"];
 const KULLANICI = "varsayilan";
-const GUNLUK_HEDEF = 500;
+const DERS_HEDEF = 500;              // her ders için günlük minimum
+const GUNLUK_HEDEF = DERS_HEDEF * 5;  // toplam günlük hedef
 const BATCH = 10;
 
 const V = {
@@ -28,7 +29,7 @@ function bosKayit() {
     kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {},
     denemeler: [], oturumlar: [], okunan: {},
     ustalik: {}, gunluk: { tarih: null, sayi: 0, ids: {} }, konu_okuma: {},
-    odak: {},
+    odak: {}, ders_gunluk: {}, ders_akis: {},
   };
 }
 async function kayitYukle() {
@@ -112,6 +113,26 @@ function ustalikOrani(key) {
   const u = V.kayit.ustalik[key];
   if (!u || !u.g.length) return 0;
   return Math.round((u.g.reduce((a, b) => a + b, 0) / u.g.length) * 100);
+}
+function dersGunlukKaydi(d) {
+  const bugun = new Date().toISOString().slice(0, 10);
+  const b = (V.kayit.ders_gunluk[d] = V.kayit.ders_gunluk[d] || { tarih: null, sayi: 0, ids: {} });
+  if (b.tarih !== bugun) { b.tarih = bugun; b.sayi = 0; b.ids = {}; }
+  return b;
+}
+function dersAkisKaydi(d) {
+  const bugun = new Date().toISOString().slice(0, 10);
+  const a = (V.kayit.ders_akis[d] = V.kayit.ders_akis[d] || { gun: bugun, biten: [] });
+  if (a.gun !== bugun) { a.gun = bugun; a.biten = []; }
+  return a;
+}
+function dersAkisSonraki(d) {
+  // önce konu testleri (müfredat sırasıyla), bitti ise karışık
+  const a = dersAkisKaydi(d);
+  const konular = (V.konuListe[d] || []).map((x) => x.konu);
+  const siradaki = konular.find((k) => !a.biten.includes(k));
+  if (siradaki) return { tip: "konu", konu: siradaki, kalan: konular.filter((k) => !a.biten.includes(k)).length };
+  return { tip: "karisik" };
 }
 function gunlukSayac() {
   const bugun = new Date().toISOString().slice(0, 10);
@@ -230,6 +251,7 @@ function route() {
     case "gun": return viewGun(+p[1]);
     case "konular": return p[1] ? viewKonularDers(p[1]) : viewKonular();
     case "ders": return viewDers(p[1], +p[2]);
+    case "akis": return viewDersAkis(p[1]);
     case "coz":
       if (!p[1]) return viewCozHub();
       if (p[1] === "test") return viewCoz("test", p[3] || "", decodeURIComponent(p.slice(4).join("/") || ""), p[2]);
@@ -333,7 +355,7 @@ function viewGun(no) {
           <p class="meta">Her 10 soruda otomatik kontrol yapılır, yanlışların çözümleri + <b>farklı anlatım</b> kartları gösterilir; o konulara uygun <b>yeni sorular</b> gelir ve tekrar çözersin. <b>Usta olana kadar</b> devam!</p>
           ${testSatir}
           <div class="adim-alt">
-            <a class="btn yesil kucuk" href="#/coz/maraton/0/0">🚀 Günün Maratonu (500'e kadar)</a>
+            ${Object.keys(DERSLER).map((x) => `<a class="btn yesil kucuk" href="#/akis/${x}">📅 ${DERSLER[x].ad} Akışı</a>`).join("")}
             <a class="btn turuncu kucuk" href="#/coz/telafi/0/0">🔁 Yanlış Telafisi</a>
             <a class="btn seffaf kucuk" href="#/hata">🎯 Hata Atölyesi</a>
           </div>
@@ -365,6 +387,60 @@ function viewGun(no) {
     <div class="kart motivasyon"><b>💬 ${esc(g.motivasyon)}</b></div>
   `;
   topbar(`${g.no}. Gün — ${g.tema.split("—")[0]}`);
+}
+
+/* =========================================================
+   GÜNLÜK DERS AKIŞI — konu testleri → karışık (10'ar soru, ders başına 500)
+   ========================================================= */
+function viewDersAkis(d) {
+  if (!DERSLER[d]) return (location.hash = "#/coz");
+  const a = dersAkisKaydi(d);
+  const dg = dersGunlukKaydi(d);
+  const konular = V.konuListe[d] || [];
+  const biten = a.biten.length;
+  const sonraki = dersAkisSonraki(d);
+  const hepsiBitti = biten >= konular.length;
+  const konuSatir = konular.map((x, i) => {
+    const bitti = a.biten.includes(x.konu);
+    const sirada = sonraki.tip === "konu" && sonraki.konu === x.konu;
+    return `<div class="adim-satir ${bitti ? "okundu" : ""}">
+      <span class="badge ${bitti ? "yesil" : sirada ? "turuncu" : "gri"}">${bitti ? "✓" : i + 1}</span>
+      <div class="adim-bilgi"><b>${esc(x.konu)}</b><span>${x.adet} soru · 10'luk test</span></div>
+      ${sirada ? `<a class="btn kucuk yesil" href="#/coz/test/konu/${d}/${encodeURIComponent(x.konu)}">▶ Sıradaki</a>`
+        : `<a class="btn kucuk seffaf" href="#/coz/test/konu/${d}/${encodeURIComponent(x.konu)}">${bitti ? "Tekrar" : "Test"}</a>`}
+    </div>`;
+  }).join("");
+  const karisikKilit = !hepsiBitti;
+  $("#view").innerHTML = `
+    <div class="hero">
+      <span class="etiket">📅 GÜNLÜK DERS AKIŞI ${gunlukRozet()}</span>
+      <h1>${DERSLER[d].ad} — bugün ${DERS_HEDEF} soru</h1>
+      <p>Önce <b>konuların testleri</b> (10'ar soru, sırayla): son konu bitene kadar karışık test yok. Konular bitince <b>tüm konulardan karışık testlere</b> geçersin. Her test 10 sorudur, bitince otomatik kontrol yapılır.</p>
+      <div class="sayac">
+        <div><b>${dg.sayi}/${DERS_HEDEF}</b>bugün bu ders</div>
+        <div><b>${biten}/${konular.length}</b>konu testi bitti</div>
+        <div><b>${gunlukSayac().sayi}/${GUNLUK_HEDEF}</b>bugün toplam</div>
+      </div>
+    </div>
+    <div class="baslik-satir"><h2>1️⃣ Konu Testleri — ${hepsiBitti ? "hepsi bitti ✅" : biten + " bitti, " + (konular.length - biten) + " kaldı"}</h2></div>
+    <div class="card">${konuSatir || "<p class='meta'>Konu yok.</p>"}</div>
+    <div class="baslik-satir"><h2>2️⃣ Karışık Testler — tüm konulardan</h2></div>
+    <div class="card">
+      <p class="meta">${karisikKilit ? "🔒 Önce konu testlerini bitir (kalan: " + (konular.length - biten) + "). Bittiğinde bu bölüm açılır." : "Tüm konular bitti! Karışık testlerle devam et — her 10 soruda otomatik kontrol."}</p>
+      <div class="aks">
+        ${karisikKilit
+          ? `<button class="btn" disabled>Karışık Test (kilitli)</button>`
+          : `<a class="btn yesil" href="#/coz/karisik/${d}">🔀 Karışık Test (10 soru)</a>
+             <a class="btn turuncu" href="#/coz/karisik/${d}">🔀 Bir Daha (yeni 10)</a>`}
+      </div>
+    </div>
+    <div class="aks" style="margin:18px 0 40px">
+      ${sonraki.tip === "konu" ? `<a class="btn yesil" href="#/coz/test/konu/${d}/${encodeURIComponent(sonraki.konu)}">🚀 Devam — Sıradaki Konu Testi</a>`
+        : `<a class="btn yesil" href="#/coz/karisik/${d}">🚀 Devam — Karışık Test</a>`}
+      <a class="btn seffaf" href="#/coz">Test menüsü</a>
+      ${Object.keys(DERSLER).filter((x) => x !== d).map((x) => `<a class="btn seffaf kucuk" href="#/akis/${x}">${DERSLER[x].ad}</a>`).join("")}
+    </div>`;
+  topbar(`${DERSLER[d].ad} — Günlük Akış`);
 }
 
 /* =========================================================
@@ -524,6 +600,7 @@ function viewCozHub() {
         return `<a class="chip ${u?.usta ? "guclu" : u ? "zayif" : ""}" href="#/coz/test/konu/${d}/${encodeURIComponent(x.konu)}">${esc(x.konu)} (${x.adet})</a>`;
       }).join("")}</div>
       <div class="aksiyonlar">
+        <a class="btn kucuk turuncu" href="#/akis/${d}">📅 Günlük Akış (${DERS_HEDEF})</a>
         <a class="btn kucuk yesil" href="#/coz/maraton/${d}/0">🚀 Maraton (10'lu)</a>
         <a class="btn kucuk turuncu" href="#/coz/telafi/${d}/0">🔁 Yanlış Telafisi</a>
         <a class="btn kucuk seffaf" href="#/coz/hata/${d}/0">🎯 Hata Atölyesi</a>
@@ -597,6 +674,9 @@ function viewCoz(mod, ders, arg, sub) {
     } else if (mod === "gunluk") {
       liste = testSeti(V.sorular[ders] || [], BATCH, {});
       baslik = `${dAd} — 10'luk test`;
+    } else if (mod === "karisik") {
+      liste = testSeti(V.sorular[ders] || [], BATCH, {});
+      baslik = `${dAd} — Karışık Test (tüm konular)`;
     } else if (mod === "odak") {
       const odaklar = new Set(Object.keys(V.kayit.odak || {}).filter((k) => V.kayit.odak[k] > 0));
       const havuz = Object.values(V.tumSorular).filter((s) => odaklar.has(konuAnahtar(s.ders, s.konu)));
@@ -702,6 +782,7 @@ function cevapla(i) {
   }
   const g = gunlukSayac();
   g.sayi++; g.ids[s.id] = 1;
+  const dg = dersGunlukKaydi(s.ders); dg.sayi++; dg.ids[s.id] = 1;
   if (!dogru) {
     const ben = benzerler(s, 2, o.kuyruk.map((x) => x.s.id));
     ben.forEach((b) => { o.kuyruk.push({ s: b, tip: "pekiştirme" }); V.oturumTecih[b.id] = 1; });
@@ -726,6 +807,11 @@ function testKontrol() {
   const dk = Math.max(1, Math.round((Date.now() - o.bas) / 60000));
   V.kayit.oturumlar.push({ tarih: new Date().toISOString(), ders: o.ders, mod: o.mod, dogru, yanlis, dk });
   V.kayit.oturumlar = V.kayit.oturumlar.slice(-200);
+  // konu testi bitti → günlük akışta işaretle
+  if (o.mod === "test" && o.sub === "konu" && o.ders && DERSLER[o.ders]) {
+    const a = dersAkisKaydi(o.ders);
+    if (!a.biten.includes(o.arg)) a.biten.push(o.arg);
+  }
   kaydet();
 
   /* yanlış konuları → farklı anlatım kartları */
@@ -774,11 +860,12 @@ function testKontrol() {
     <div class="sonuc-satir" style="margin:18px 0 40px">
       ${kalanVar ? `<button class="btn yesil" onclick="testDevam()">▶ Devam Et (sırada sorular var)</button>` : ""}
       ${yanliKonular.length ? `<a class="btn turuncu" href="#/coz/telafi/${sonrakiDers && DERSLER[sonrakiDers] ? sonrakiDers : "0"}/0">🔁 Bu Konulardan Yeni 10 Soru</a>` : ""}
+      ${sonrakiDers && DERSLER[sonrakiDers] ? `<a class="btn turuncu" href="#/akis/${sonrakiDers}">📅 Günlük Akışa Dön</a>` : ""}
       <a class="btn yesil" href="#/coz/maraton/${sonrakiDers && DERSLER[sonrakiDers] ? sonrakiDers : "0"}/0">🚀 Karışık Devam (10 soru)</a>
       <a class="btn" href="#/gun/${bugunKampGunu()}">Günün rehberi</a>
       <a class="btn seffaf" href="#/coz">Test menüsü</a>
     </div>
-    <div class="benzer-not">📊 Ustalık: ${Object.values(V.kayit.ustalik).filter((u) => u.usta).length} konuda usta · Bugün ${gunlukSayac().sayi}/${GUNLUK_HEDEF} soru · Aynı soru bugün tekrar gelmez.</div>
+    <div class="benzer-not">📊 Ustalık: ${Object.values(V.kayit.ustalik).filter((u) => u.usta).length} konuda usta · Bugün ${gunlukSayac().sayi}/${GUNLUK_HEDEF} soru${o.ders && DERSLER[o.ders] ? ` · ${DERSLER[o.ders].ad}: ${dersGunlukKaydi(o.ders).sayi}/${DERS_HEDEF}` : ""} · Aynı soru bugün tekrar gelmez.</div>
   </div>`;
   topbar("Otomatik Kontrol");
 }
