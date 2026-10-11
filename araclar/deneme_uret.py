@@ -7,6 +7,7 @@ Her gün için: 15 soruluk "Gün Sonu Denemesi" (gün içi %60 + karışık %40)
 """
 import json
 import random
+import re
 from pathlib import Path
 
 KOK = Path(__file__).resolve().parent.parent
@@ -36,10 +37,18 @@ for gun in range(1, 11):
 
     secilen = []
     for ders, adet in dagilim.items():
+        def oncelikle(pool):
+            # çıkmış KPSS soruları öncelikli (deneme gerçek sınav sorularıyla olsun)
+            cikmislar = [s for s in pool if re.match(r'^\d{4}-KPSS$', s.get('kaynak', ''))]
+            digerleri = [s for s in pool if s not in cikmislar]
+            return cikmislar + digerleri
+
         gunluk = [s for s in banka[ders] if s["gun"] == gun]
         karisik = [s for s in banka[ders] if s["gun"] < gun]
         random.shuffle(gunluk)
         random.shuffle(karisik)
+        gunluk = oncelikle(gunluk)
+        karisik = oncelikle(karisik)
         # %60 bu gün, %40 önceki günler (tekrar amaçlı)
         d_gun = min(len(gunluk), round(adet * 0.6))
         secilen.extend([s["id"] for s in gunluk[:d_gun]])

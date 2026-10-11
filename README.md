@@ -107,6 +107,23 @@ yalnızca "karıştırma şıkkı" olarak kullanılabilir.
 
 ---
 
+## Gerçek Çıkmış KPSS Soruları (2014–2024)
+
+ÖSYM'nin resmî soru kitapçıklarından birebir aktarılmış **350 gerçek çıkmış soru** bankada
+kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak yılı** görünür:
+
+| Yıl | Soru | Not |
+|-----|------|-----|
+| 2014-KPSS | 84 | ÖSYM'nin tam kitapçığından aktarıldı |
+| 2016-KPSS | 86 | ÖSYM'nin kitapçık içi **resmî cevap anahtarıyla** doğrulandı |
+| 2018-KPSS | 86 | Tam kitapçık; %10'luk kitapçık cevaplarıyla çapraz kontrol edildi |
+| 2020-KPSS | 85 | Tam kitapçık |
+| 2024-KPSS | 9 | ÖSYM'nin %10'luk Temel Soru Kitapçığı'ndaki tam metinli sorular + resmî cevaplar |
+
+- Test Çöz sayfasında **🎯 Gerçek Çıkmış KPSS Soruları** paneli: yıla göre (2014…2024) ya da karışık test.
+- Günlük denemeler çıkmış sorulara öncelik verir (deneme başına ~%80 gerçek çıkmış).
+- `/api/sorular/<ders>?cikmis=1` uç noktası yalnızca yıl etiketli çıkmışları döndürür.
+
 ## Veri & Araçlar
 
 - `data/sorular/*.jsonl` — soru bankası (id, konu, zorluk, **kaynak**, 2 çözüm, etiketler)

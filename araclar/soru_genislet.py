@@ -58,6 +58,7 @@ def main():
                     continue
                 sd, konu, gun, zorluk, kok, dogru, y1, y2, y3, y4, c1 = p[:11]
                 c2 = p[11] if len(p) > 11 and p[11].strip() else None
+                kaynak = p[12] if len(p) > 12 and p[12].strip() else "KPSS formatında"
                 if sd != d:
                     continue
                 if kok.strip().lower() in koklar:
@@ -71,13 +72,16 @@ def main():
                     "gun": int(gun),
                     "konu": konu,
                     "zorluk": int(zorluk),
-                    "kaynak": "KPSS formatında",
+                    "kaynak": kaynak,
                     "kok": kok,
                     "siklar": siklar,
                     "dogru": siklar.index(dogru),
                     "cozumler": [{"yontem": "Bilgi ile çözüm", "metin": c1}]
                     + ([{"yontem": "Kısa yol / eleme", "metin": c2}] if c2 else []),
-                    "etiketler": sorted({slug(konu), slug(kok.split()[0] if kok.split() else "soru")}),
+                    "etiketler": sorted(
+                        {slug(konu), slug(kok.split()[0] if kok.split() else "soru")}
+                        | ({"cikmis"} if kaynak != "KPSS formatında" else set())
+                    ),
                 }
                 eklenen.append(kayit)
                 koklar.add(kok.strip().lower())

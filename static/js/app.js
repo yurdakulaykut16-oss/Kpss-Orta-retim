@@ -531,6 +531,17 @@ function viewCozHub() {
       <a class="btn blok turuncu" href="#/coz/telafi/0/0">Yanlış Telafisi (10 soru)</a>
       <a class="btn blok" href="#/gun/${bugunKampGunu()}">Bugünün Rehberi</a>
     </div>
+    <div class="baslik-satir"><h2>🎯 Gerçek Çıkmış KPSS Soruları</h2><span class="chip chip-sm">Kaynakları etiketli · 2014–2024</span></div>
+    <div class="card">
+      <p class="meta">ÖSYM'nin gerçek sınav soruları; her sorunun kartında <b>kaynak yılı</b> yazar (2014-KPSS, 2016-KPSS...).</p>
+      <div class="aks">
+        ${["2014", "2016", "2018", "2020", "2024"].map((y) => {
+          const adet = Object.values(V.tumSorular).filter((s) => s.kaynak === `${y}-KPSS`).length;
+          return `<a class="btn kucuk" href="#/coz/cikmis/${y}">${y}-KPSS (${adet})</a>`;
+        }).join("")}
+        <a class="btn kucuk turuncu" href="#/coz/cikmis/karisik">🔀 Karışık Çıkmışlar</a>
+      </div>
+    </div>
     <div class="baslik-satir"><h2>📚 Konuya göre çalış</h2></div>
     <div class="grid grid-2">${dersKart}</div>`;
   topbar("Test Çöz");
@@ -570,6 +581,12 @@ function viewCoz(mod, ders, arg, sub) {
     } else if (mod === "gunluk") {
       liste = testSeti(V.sorular[ders] || [], BATCH, {});
       baslik = `${dAd} — 10'luk test`;
+    } else if (mod === "cikmis") {
+      const yil = ders && ders !== "karisik" ? ders : null;
+      let havuz = Object.values(V.tumSorular).filter((s) => /^\d{4}-KPSS$/.test(s.kaynak || ""));
+      if (yil) havuz = havuz.filter((s) => s.kaynak === `${yil}-KPSS`);
+      liste = testSeti(havuz, BATCH, {});
+      baslik = yil ? `🎯 ${yil}-KPSS Çıkmış Soruları` : "🎯 Çıkmış KPSS Soruları (karışık)";
     } else {
       return (location.hash = "#/coz");
     }
@@ -597,9 +614,11 @@ function renderQuiz() {
       <div>
         <a class="btn kucuk seffaf" href="#/coz">← Test menüsü</a>
         <span class="badge ${o.ders}">${DERSLER[o.ders]?.ad || "Karışık"}</span>
+        ${!DERSLER[o.ders] && o.baslik ? `<span class="badge turuncu">${esc(o.baslik)}</span>` : ""}
         ${ad ? `<span class="badge turuncu">${ad}</span>` : ""}
         <span class="badge gri">${esc(s.konu)}</span>
         <span class="badge gri">${["", "Kolay", "Orta", "Zor"][s.zorluk] || ""}</span>
+        ${/^\d{4}-KPSS$/.test(s.kaynak || "") ? `<span class="badge turuncu" title="Gerçek ÖSYM çıkmış sorusu">🎯 ${esc(s.kaynak)}</span>` : ""}
       </div>
       <div class="quiz-sayac">Soru <b>${o.sira + 1}</b> / ${o.kuyruk.length} · ✅${o.dogru} ❌${o.yanlis} · ${gunlukRozet()}</div>
     </div>

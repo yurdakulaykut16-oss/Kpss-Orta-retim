@@ -277,7 +277,10 @@ def api_sorular(ders: str):
     c = her_seyi_yukle()
     if ders not in c["sorular"]:
         return jsonify({"hata": "ders yok"}), 404
-    return jsonify(c["sorular"][ders])
+    veri = c["sorular"][ders]
+    if request.args.get("cikmis"):
+        return jsonify([s for s in veri if re.match(r"^\d{4}-KPSS$", s.get("kaynak", ""))])
+    return jsonify(veri)
 
 
 @app.get("/api/soru/<sid>")
