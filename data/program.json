@@ -19,156 +19,172 @@
   "gunler": [
     {
       "no": 1,
+      "gun_ad": "1. gun",
       "tarih": "2026-10-15",
-      "gun_ad": "Perşembe",
-      "tema": "TEMEL AT — İlk Türk Devletleri & Harita & Hukukun Üstünlüğü & Sözcükte Anlam & 2026 Türkiye'si",
-      "hedef": "Beyin hafıza kasını çalıştır: en sık çıkan ezber bloklarla başla. Bugün %70 doğruluk bile büyük başarıdır.",
-      "motivasyon": "Meslek lisesi mezunu olman dezavantaj değil; KPSS'de ezber+mantık dengesi var ve bu kamp tam ona göre kurgulandı. 10 gün sonra elinde binlerce soruluk deneyim olacak.",
+      "tema": "Konu Maratonu I — 5 derste TÜM konular",
+      "hedef": "İlk 2 günde 5 dersin TÜM konuları bitirilir: hızlı tur + farklı anlatım oku, her konudan 10'ar soruluk test çöz. Yanlış yaptıkça konu başka türlü anlatılır.",
       "plan": [
         {
-          "dk": 8,
-          "tip": "acilis",
-          "baslik": "Gün Açılışı & Sınav Zihniyeti",
-          "aciklama": "Bugünün planına göz at. Masaya su, kalem, silgi, 1 A4 kâğıt al. A4'e 'GÜN 1 HATA DEFTERİ' başlığını yaz — yanlış yaptığın her konunun adını oraya yazacaksın. Telefonu başka odaya koy."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Tarih — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih Anlatım: İlk Türk Devletleri",
-          "aciklama": "Kök Türkler, Uygurlar, Göktürk Yazıtları. 'Tarih için 3 soru tekniği: tarih-sıra-özellik' kuralını öğren."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "Süreyi tut. Her yanlışta çözümü İKİ yöntemle oku. Bilmediğin kelimeyi A4'e yaz."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Coğrafya — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya Anlatım: Harita ve Koordinat",
-          "aciklama": "Ölçek, paralel, meridyen, koordinat, projeksiyon. Harita soruları hep formül gibidir — ezber değil işlem."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Koordinat sorularında parmağınla haritada ilerle. 'Kıta mı ülke mi' tuzaklarına dikkat."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Vatandaşlık — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık Anlatım: Hukukun Üstünlüğü",
-          "aciklama": "Hukuk türleri, emredici-hüküm-dispozitif kural, kanun önünde eşitlik. Vatandaşlık 'kelime eşleştirme' dersidir."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "Her soruda 'tanım mı, örnek mü, aykırı mı?' diye soru köküne bak."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Türkçe — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe Anlatım: Sözcükte Anlam",
-          "aciklama": "Gerçek-mecaz, eş-zıt anlam, eş sesli, çok anlamlılık, anlam kayması."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Kelimeyi cümle içindeki rolüyle oku. Sözlük bilgisi değil 'bağlam' bilgisi kazan."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Güncel Bilgiler — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: 2026 Türkiye Panoraması",
-          "aciklama": "Kabine kim, Merkez Bankası başkanı kim, 2026'da Türkiye'de neler oldu — hafıza kartları."
-        },
-        {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Güncel sorular kısa sürede çözülür; takılınca işaretle, sayfa sonunda 2 kez tekrar et."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru / 12 dk)",
-          "aciklama": "Süreye uy, boş bırakma ama saçmalama. Bitince NET hesapla (4 yanlış 1 doğruyu götürür). Yanlış konuları A4'e ekle."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış Ritüeli (5 dk)",
-          "aciklama": "A4'teki hata listesini oku. Her başlığa 3 saniye bak ve 'yarın bunlardan 8 soru gelecek' de. Kampın ilk günü bitti — devamı gelecek."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Kök Türkler (Göktürkler)",
+            "İlk Türk Devletleri",
+            "Göktürkler",
             "Uygurlar",
-            "Göktürk Yazıtları",
-            "İlk Türk devletlerinin ortak özellikleri",
-            "Karahanlılar ve Gazneliler (Türk-İslam Devletleri)"
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu",
+            "Beylikler",
+            "Osmanlı Kuruluş",
+            "Fatih Dönemi",
+            "Kanuni Dönemi",
+            "Duraklama",
+            "Lale Devri",
+            "Islahatlar",
+            "Tanzimat",
+            "Meşrutiyet",
+            "Milli Mücadele",
+            "Lozan",
+            "Devrimler",
+            "Çağdaş Tarih"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "cografya",
           "konular": [
-            "Harita bilgisi",
-            "Ölçek türleri",
-            "Paralel ve meridyen",
-            "Koordinat sistemi"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler",
+            "Dış Kuvvetler",
+            "Kayaçlar",
+            "Nüfus",
+            "Tarım",
+            "Madenler",
+            "Enerji",
+            "Bölgeler",
+            "Afetler",
+            "Çevre",
+            "Su Kaynakları"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Hukukun üstünlüğü",
-            "Hukuk kurallarının türleri",
-            "Kanun önünde eşitlik",
-            "Hak-ödev ilişkisi"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM",
+            "Yürütme",
+            "Yargı",
+            "Kamu Hizmetleri",
+            "İnsan Hakları",
+            "Seçimler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "turkce",
           "konular": [
-            "Sözcükte anlam",
-            "Gerçek ve mecaz anlam",
-            "Eş ve zıt anlam",
-            "Eş sesli (sesteş) sözcükler"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi",
+            "Yazım",
+            "Noktalama",
+            "Yapı Bilgisi",
+            "Cümle Türleri",
+            "Anlatım Bozuklukları"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "guncel",
           "konular": [
-            "2026 Türkiye'sinde yönetim: kabine",
-            "Merkez Bankası ve ekonomi yönetimi",
-            "2026 Türkiye olayları"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim",
+            "Kültür",
+            "Son Olaylar"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         }
       ],
       "deneme": {
@@ -179,1569 +195,1447 @@
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Bugün yanlış yaptığın konulardan ek 20'lik turlar at. Her tur 20 soru. İstediğin kadar tur — maksimum 500 soruya kadar sistem sana set kurar.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Sesli Tekrar",
-          "aciklama": "Cebe Kart'ları yüksek sesle oku, kapatarak anlat.",
-          "sure_dk": 10
-        },
-        {
-          "baslik": "50 Soruluk Maraton",
-          "aciklama": "Hazırsan karışık 50 soruluk ek maraton.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 2,
+      "gun_ad": "2. gun",
       "tarih": "2026-10-16",
-      "gun_ad": "Cuma",
-      "tema": "YÜKSELİŞ — Osmanlı Kuruluş & Türkiye İklimleri & Devletin Temeli (Anayasa) & Cümlede Anlam & Dünya 2026",
-      "hedef": "Dünün hatalarını bugün 8 soruyla geri avla. Osmanlı kronolojisine 'ruh' kat: her padişah = 1 anahtar kelime.",
-      "motivasyon": "Bugün tarihin en sevilen bölümüne giriyorsun: Osmanlı'nın kuruluş hikâyesi. Ezber değil hikâye kur, sorular kendiliğinden gelir.",
+      "tema": "Konu Maratonu II — 5 derste TÜM konular",
+      "hedef": "İlk 2 günde 5 dersin TÜM konuları bitirilir: hızlı tur + farklı anlatım oku, her konudan 10'ar soruluk test çöz. Yanlış yaptıkça konu başka türlü anlatılır.",
       "plan": [
         {
-          "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Dünün Hata Avı",
-          "aciklama": "Gün 1 A4'ünü aç. Hata Defteri'nden 8 soru hazır (uygulama otomatik verir). Yanlışlarını yine yaz."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Tarih — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: Osmanlı Kuruluş ve Beylikler",
-          "aciklama": "Anadolu Selçuklu, Moğol baskısı, Osmanlı kuruluş, Osman Bey, Orhan Bey, Rumeli'ye geçiş."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru (8'i dünün hatalarından)",
-          "aciklama": "Osmanlı kuruluş sorularında tarih-sıra üçgenini kullan: kim, ne zaman, sıradaki ne?"
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Coğrafya — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Türkiye İklim Tipleri",
-          "aciklama": "Akdeniz, Karasal, Karadeniz, geçiş iklimleri; bitki örtüsü bağlantısı; Marmara'nın özel durumu."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "İklim sorularında 'yağış grafiği' becerisi: kışın yağışlı = Akdeniz tipi ipucu."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Vatandaşlık — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Anayasanın Genel Esasları",
-          "aciklama": "1982 Anayasası, değişmez maddeler (1-3), devletin nitelikleri (6. madde)."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "Madde numaraları KPSS'de severek sorulur: 1-3-6 üçlüsünü ezberle."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Türkçe — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Cümlede Anlam",
-          "aciklama": "Öneri cümleleri, bağlaçlar, aktarma (dolaylı anlatım), cümle tamamlama mantığı."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         },
         {
-          "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Cümle tamamlamada bağlacın yönü belirler: 'buna karşın' = zıtlık."
+          "tip": "okuma",
+          "dk": 12,
+          "baslik": "Güncel Bilgiler — Konu Maratonu (hızlı tur)",
+          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Dünya 2026",
-          "aciklama": "İran-ABD gerilimi, NATO Ankara Zirvesi, Mekke Savunma Anlaşması, Ukrayna savaşı."
-        },
-        {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Olayları ülke-olay-yıl üçlüsüyle kodla."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "Dünkü netini geçmeye bak. Geçemezsen sorun değil — konu dağılımı değişiyor."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış",
-          "aciklama": "Hata listesi güncelle. 2 gün üst üste yanlış yaptığın konuya yarın kırmızı kalemle çiz."
+          "tip": "test",
+          "dk": 12,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Anadolu Selçuklu Devleti",
-            "Beylikler dönemi",
-            "Osmanlı Devleti'nin kuruluşu",
-            "Rumeli'ye geçiş"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu",
+            "Beylikler",
+            "Osmanlı Kuruluş",
+            "Fatih Dönemi",
+            "Kanuni Dönemi",
+            "Duraklama",
+            "Lale Devri",
+            "Islahatlar",
+            "Tanzimat",
+            "Meşrutiyet",
+            "Milli Mücadele",
+            "Lozan",
+            "Devrimler",
+            "Çağdaş Tarih"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "cografya",
           "konular": [
-            "Türkiye iklim tipleri",
-            "Akdeniz iklimi",
-            "Karadeniz ve karasal iklim",
-            "İklim-bitki örtüsü ilişkisi"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler",
+            "Dış Kuvvetler",
+            "Kayaçlar",
+            "Nüfus",
+            "Tarım",
+            "Madenler",
+            "Enerji",
+            "Bölgeler",
+            "Afetler",
+            "Çevre",
+            "Su Kaynakları"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "1982 Anayasası",
-            "Değiştirilemez maddeler",
-            "Devletin temel nitelikleri",
-            "Anayasanın yürürlüğü"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM",
+            "Yürütme",
+            "Yargı",
+            "Kamu Hizmetleri",
+            "İnsan Hakları",
+            "Seçimler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "turkce",
           "konular": [
-            "Cümlede anlam",
-            "Öneri cümleleri",
-            "Bağlaçlar",
-            "Dolaylı (aktarma) anlatım"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi",
+            "Yazım",
+            "Noktalama",
+            "Yapı Bilgisi",
+            "Cümle Türleri",
+            "Anlatım Bozuklukları"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         },
         {
           "ders": "guncel",
           "konular": [
-            "2026 dünya gündemi",
-            "İran-ABD gerilimi",
-            "NATO Ankara Zirvesi (2026)",
-            "Mekke Savunma Anlaşması"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim",
+            "Kültür",
+            "Son Olaylar"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 24,
+          "soru_sayisi": 50
         }
       ],
       "deneme": {
         "ad": "2. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Gün 1+2 konularının karışımı"
+        "odak": "Günün konuları + genel kültür nabzı"
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Dünün + bugünün hatalarından ek turlar (20'şer). Maksimum 500 soru.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Padişah Kartları",
-          "aciklama": "Osmanlı padişahlarını sıra ile say: her padişaha 1 eser/1 olay.",
-          "sure_dk": 10
-        },
-        {
-          "baslik": "Karışık 50 Maraton",
-          "aciklama": "Bugüne kadar işlenen konulardan 50 soru.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 3,
+      "gun_ad": "3. gun",
       "tarih": "2026-10-17",
-      "gun_ad": "Cumartesi",
-      "tema": "ALTIN ÇAĞ — Osmanlı Yükselme & Türkiye Yer Şekilleri & Temel Haklar & Paragrafta Anlatım & Spor 2026",
-      "hedef": "Hafta sonu = fırsat günü. Vaktin bolysa anlatımları uzun oku, ek turları artır. Paragrafta 'ana düşünce' refleksini kur.",
-      "motivasyon": "Fatih ve Kanuni dönemi KPSS'nin 'çok soru getiren' bloğu. Bugün tarihi film gibi izliyorsun.",
+      "tema": "Ustalık Günü 1 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Hata Avı + Ritim Testi",
-          "aciklama": "Hata Defteri'nden 8 soru. Kaç gün üst üste aynı konuyu yazdın? 2+ ise bugün o konu kırmızı etiketli."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: Osmanlı Yükselme Dönemi",
-          "aciklama": "I. Murad, Kosova, Niğbolu, Ankara Savaşı, Fetih, Kanuni, İmparatorluk düzeni."
-        },
-        {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "Savaşlar sorularda 'kim kime karşı' sorulur — 3 sütunlu tablo tut."
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Türkiye'nin Yer Şekilleri",
-          "aciklama": "Toroslar, Kuzey Anadolu Dağları, platolar, ovalar, akarsular; Fırat-Dicle."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "'Hangi bölgede?' sorularında önce dağ silsilesini hatırla, sonra ovayı."
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Temel Haklar ve Ödevler",
-          "aciklama": "Kişinin hakları, sosyal-ekonomik haklar, ödevler, hakların sınırı."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "'Aşağıdakilerden hangisi sosyal haktır?' tipinde ayırıcı çizelgeyi kur."
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Paragrafta Anlatım ve Yapı",
-          "aciklama": "Giriş-gelişme-sonuç, ana düşünce, yardımcı düşünce, paragrafın akışı."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Paragraf sorusunu önce soru kökü, sonra metin diye oku. 35 saniyede karar ver."
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Spor 2026",
-          "aciklama": "Dünya Kupası İspanya, Milletler Ligi (Filenin Sultanları), Akdeniz Oyunları, Zeynep Sönmez."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Spor soruları 'şampiyon-ikinci-organizasyon' üçlüsüyle kodlanır."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "Bu denemede Türkçe paragraf ağırlıklı gelecek. Sakin oku."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış",
-          "aciklama": "Hafta sonu ek turlarına hazırlan: bugün vaktin varsa Hata Atölyesi'nden 2 tur at."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Osmanlı yükselme dönemi",
-            "Kosova ve Niğbolu",
-            "Ankara Savaşı",
-            "İstanbul'un Fethi",
-            "Kanuni dönemi"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Türkiye'nin dağları",
-            "Platolar ve ovalar",
-            "Türkiye akarsuları",
-            "Göller"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Kişinin hakları",
-            "Sosyal ve ekonomik haklar",
-            "Temel ödevler",
-            "Hakların sınırı"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Paragrafta yapı",
-            "Ana düşünce",
-            "Yardımcı düşünce",
-            "Paragrafta akış"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "2026 FIFA Dünya Kupası",
-            "Voleybol Milletler Ligi 2026",
-            "Akdeniz Oyunları 2026",
-            "Türk sporcular 2026"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
         "ad": "3. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Yükselme dönemi + yer şekilleri"
+        "odak": "Günün konuları + genel kültür nabzı"
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Zayıf konularından 20'lik turlar. Üst limit 500 soru.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Harita Zihin Haritası",
-          "aciklama": "A4'e Türkiye'nin kabartma haritasını çiz, dağları yaz.",
-          "sure_dk": 15
-        },
-        {
-          "baslik": "Karışık 50 Maraton",
-          "aciklama": "Gün 1-3 karışık.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 4,
+      "gun_ad": "4. gun",
       "tarih": "2026-10-18",
-      "gun_ad": "Pazar",
-      "tema": "KRİZ VE REFORM — 17. Yüzyıl İslahatları & İç-Dış Kuvvetler & TBMM & Yapı Bilgisi & Bilim-Uzay 2026",
-      "hedef": "Pazar günü tembellik yok: kampın %40'ı bittiğinde bitecek. İkinci Dünya Savaşı öncesi diplomasiyi bugünden kur.",
-      "motivasyon": "Bugün TBMM'nin kuruluşunu okuyacaksın: sınavda en çok soru gelen 'kuruluş' bloklarından biri.",
+      "tema": "Ustalık Günü 2 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Hata Avı",
-          "aciklama": "Hata Defteri'nden 8 soru + kırmızı konu varsa önce onun Cebe Kart'ını oku."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: 17. Yüzyıl İslahatları",
-          "aciklama": "Köprülüler, Karlofça, 18. yüzyıl islahatları, Lale Devri, Patrona Halil."
-        },
-        {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "İslahat sorularında 'neden başarısız?' alt metnini ara."
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: İç ve Dış Kuvvetler",
-          "aciklama": "Volkanizma, deprem, kayaçlar, akarsu aşındırması, kıyı tipleri, kalker araziler."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Peribacası, traverten, obruk — 'hangi kayaç' üçlüsünü ezberle."
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: TBMM",
-          "aciklama": "23 Nisan 1920, meclisin üstünlüğü, milletvekilliği, seçim, yasama faaliyetleri."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "TBMM'nin yetkileri 'tecrit etme, yasa yapma, denetleme' üçlüsüyle kodlanır."
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Sözcükte Yapı ve Yapım Ekleri",
-          "aciklama": "Kök, gövde, yapım ekleri, ek-fiil, yapım eklerinin getirdiği anlamlar."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Sözcüğü parçala: kökü bul, eki soyutla, anlamı öyle yaz."
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Bilim, Nobel ve Uzay 2026",
-          "aciklama": "Nobel 2026 kazananları, Ay Araştırma Programı, TEKNOFEST, Uzay Kongresi."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Nobel soruları: dal + isim + ülke eşleştirmesi yap."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "İlk büyük deneme öncesi son mini deneme."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış",
-          "aciklama": "Yarın 5. GÜN: yarı kamp. Uyu, yarın 50 soruluk büyük deneme var."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "17. yüzyıl duraklama",
-            "Köprülüler dönemi",
-            "Karlofça Antlaşması",
-            "18. yüzyıl islahatları",
-            "Lale Devri"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "İç kuvvetler",
-            "Volkanizma ve deprem",
-            "Kayaçlar",
-            "Dış kuvvetler",
-            "Kıyı tipleri"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "TBMM'nin kuruluşu",
-            "Milletvekilliği",
-            "TBMM'nin yetkileri",
-            "Yasama faaliyeti"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Sözcükte yapı",
-            "Yapım ekleri",
-            "Kök ve gövde",
-            "Ek-fiil"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "Nobel Ödülleri 2026",
-            "Türkiye uzay programı",
-            "TEKNOFEST 2026",
-            "Bilim ve teknoloji"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
         "ad": "4. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "17-18. yüzyıl + iç-dış kuvvetler"
+        "odak": "Günün konuları + genel kültür nabzı"
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Kırmızı konulardan 3 tur (60 soru).",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Kronoloji Kamçısı",
-          "aciklama": "Kuruluş'tan Karlofça'ya kadar olayları sıraya diz.",
-          "sure_dk": 12
-        },
-        {
-          "baslik": "Karışık 50 Maraton",
-          "aciklama": "Gün 1-4 karışık.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 5,
+      "gun_ad": "5. gun",
       "tarih": "2026-10-19",
-      "gun_ad": "Pazartesi",
-      "tema": "YARI KAMP BÜYÜK DENEME GÜNÜ — Tanzimat'tan Kurtuluş'a & Nüfus-Göç & Yargı & Anlatım Bozukluğuna Giriş & Ekonomi 2026",
-      "hedef": "50 soruluk büyük deneme ile kendini test et. Bu deneme 'hangi konuya yarım gün ayıracağın' raporunu sana verecek.",
-      "motivasyon": "Kampın yarısı! Bugüne kadar öğrendiklerinle 50 soruluk gerçek prova. Netini yaz — 10. günde bunun 2 katı hedefleyeceğiz.",
+      "tema": "Ustalık Günü 3 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Hata Avı",
-          "aciklama": "Hata Defteri'nden 8 soru. Büyük deneme öncesi moral = sakinlik."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: 19. Yüzyıl Osmanlı'dan Kurtuluş'a",
-          "aciklama": "Tanzimat, Islahat, Meşrutiyet, II. Abdülhamit, Jön Türkler, Trablus, Balkan, I. Dünya Savaşı başlangıcı."
-        },
-        {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "Belge-fesih-sözleşme sorularında önce tarihi bul, sonra içeriği."
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Nüfus ve Göç",
-          "aciklama": "Nüfus politikaları, göç türleri, iç-dış göç, nüfus piramidi, şehirleşme."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Piramit sorularında 'geniş taban = yüksek doğum' ezberini kullan."
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Yargı ve Mahkemeler",
-          "aciklama": "AYM, Yargıtay, Danıştay, Sayıştay, mahkeme türleri, yargının bağımsızlığı."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "Mahkeme görev karıştırma tuzakları: 'idari dava = Danıştay' kuralı."
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Anlatım Bozuklukları – Giriş",
-          "aciklama": "Özne-yüklem uyumsuzluğu, nesne eksikliği, sıfat tamlaması bozuklukları."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Her cümleyi 'yüklemi bul' ile oku: bozukluklar hep yüklemin etrafında."
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Ekonomi 2026 (sade anlatım)",
-          "aciklama": "Enflasyon, Merkez Bankası, faiz, fon soruşturması, altın — basit terimlerle."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Ekonomi sorularında kurum-başkan eşleştirmesine dikkat."
-        },
-        {
-          "dk": 20,
-          "tip": "deneme-buyuk",
-          "baslik": "YARI KAMP BÜYÜK DENEME (50 soru / 40 dk önerilir)",
-          "aciklama": "GERÇEK SINAV GİBİ: 50 soru, kesintisiz, telefon yok. Süre sonunda bitir. NET = D - Y/4. Konu analizini mutlaka incele."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış: Yarım Kamp Raporu",
-          "aciklama": "Netini günlüğüne yaz. Konu analizinde %50 altı kalan her konu = önümüzdeki 5 günün önceliği."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Tanzimat Fermanı",
-            "Islahat Fermanı",
-            "I. ve II. Meşrutiyet",
-            "II. Abdülhamit",
-            "Balkan Savaşları"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Nüfus politikaları",
-            "Göç türleri",
-            "Nüfus piramidi",
-            "Şehirleşme"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Yargı erki",
-            "AYM",
-            "Yargıtay ve Danıştay",
-            "Mahkeme türleri"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Anlatım bozuklukları I",
-            "Özne-yüklem uyumu",
-            "Nesne eksikliği",
-            "Tamlayan-tamlanan"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "Ekonomi terimleri",
-            "Merkez Bankası",
-            "Fon soruşturması 2026",
-            "Altın ve piyasa"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
-        "ad": "Yarı Kamp Büyük Denemesi",
+        "ad": "5. Gün Büyük Denemesi",
         "soru_sayisi": 50,
         "sure_dk": 40,
-        "odak": "Gün 1-5'in tamamı — gerçek prova"
+        "odak": "Tüm konular karma — gerçek sınav provası"
       },
       "genisletilmis": [
         {
-          "baslik": "Deneme Sonrası Hata Operasyonu",
-          "aciklama": "Büyük denemedeki her yanlış için 3 ek soru. İstersen 500'e kadar.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Zayıf Konu Ders Tekrarı",
-          "aciklama": "Analizde kırmızı çıkan konuların anlatımını YÖNTEMLERİYLE yeniden oku.",
-          "sure_dk": 20
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 6,
+      "gun_ad": "6. gun",
       "tarih": "2026-10-20",
-      "gun_ad": "Salı",
-      "tema": "MİLLİ MÜCADELE — Kurtuluş Savaşı Cepheleri & Ekonomik Coğrafya & Kamu Hizmetleri & Ses Bilgisi & Kültür-Sanat 2026",
-      "hedef": "Büyük denemenin hatalarını bugün 'av' listesine al. Kurtuluş Savaşı kronolojisi = 10 soruluk altın blok.",
-      "motivasyon": "Milli Mücadele soruları her yıl mutlaka gelir ve hep aynı 12 olay üzerinden döner. Bugün o 12 olayı sahiplen.",
+      "tema": "Ustalık Günü 4 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Büyük Deneme Hata Avı",
-          "aciklama": "Dünkü 50 soruluk denemedeki yanlışların 8 tanesini çöz. Amaç: aynı hatayı sınavda yapmamak."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: Kurtuluş Savaşı – Cepheler",
-          "aciklama": "İzmir'in işgali, Amasya Genelgesi, kongreler, Misak-ı Milli, TBMM, cepheler, Mudanya."
-        },
-        {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "Cepheler sorusunda 'yer + amaç + sonucu' üçlüsü çalışır."
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Ekonomik Faaliyetler",
-          "aciklama": "Tarım, hayvancılık, madenler, enerji kaynakları; Türkiye'nin maden haritası."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Maden sorularında şehir-ad eşleştirmesi (Zonguldak-kömür vb.)."
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Kamu Hizmetleri",
-          "aciklama": "Kamu tüzel kişileri, memuriyet, kamu hizmetinin nitelikleri, disiplin."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "'Kamu tüzel kişiliği kimde?' sorularında belediye-özel idare-üniversite üçlüsü."
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Ses Bilgisi",
-          "aciklama": "Ünlü-ünsüz uyumları, yumuşama-sertleşme, ikilemeler, hece."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Ses olayı sorularında sözcüğü sesli oku: kulağın yanlış yapmaz."
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Kültür-Sanat ve Yıldönümleri",
-          "aciklama": "Altın Portakal, özel günler, Ankara'nın başkent oluşu, BM Günü, Cumhuriyet'in 103. yılı."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Tarih-gün eşleştirmesi yap: 13 Ekim, 24 Ekim, 29 Ekim."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "Kurtuluş Savaşı ağırlıklı deneme."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış",
-          "aciklama": "Hata Defteri'nde kaç konu kaldı? 5'ten azsa çok iyi gidiyorsun."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "İzmir'in işgali",
-            "Amasya Genelgesi",
-            "Kongreler",
-            "Misak-ı Milli",
-            "Kurtuluş Savaşı cepheleri",
-            "Mudanya Ateşkesi"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Tarım",
-            "Hayvancılık",
-            "Madenler",
-            "Enerji kaynakları"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Kamu hizmeti",
-            "Kamu tüzel kişileri",
-            "Memuriyet",
-            "Disiplin ve sorumluluk"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Ses bilgisi",
-            "Ünlü-ünsüz uyumu",
-            "Ses olayları",
-            "İkilemeler"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "Özel günler ve yıldönümleri",
-            "Altın Portakal 2026",
-            "Cumhuriyet'in 103. yılı",
-            "BM Günü"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
         "ad": "6. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Milli Mücadele + madenler"
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Büyük deneme yanlışlarından türeyen 20'lik turlar.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Cephe Haritası",
-          "aciklama": "A4'e cepheleri çiz; her cepheye 1 cümle yaz.",
-          "sure_dk": 15
-        },
-        {
-          "baslik": "Karışık 50 Maraton",
-          "aciklama": "Gün 1-6 karışık.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 7,
+      "gun_ad": "7. gun",
       "tarih": "2026-10-21",
-      "gun_ad": "Çarşamba",
-      "tema": "CUMHURİYET — Lozan & Devrimler & Coğrafya Bölgeleri & İnsan Hakları & Yazım Kuralları & Kurumlar 2026",
-      "hedef": "Atatürk ilkeleri ve devrimler 'eşleştirme' sorularına karşı tablo kur. Yazım kurallarında tek seferde tam net yapmayı hedefle.",
-      "motivasyon": "Lozan ve devrimler, KPSS'nin her yıl garantili bloğu. Bugün atadığın her tarih sınavda puan olacak.",
+      "tema": "Ustalık Günü 5 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Hata Avı",
-          "aciklama": "Hata Defteri'nden 8 soru. Dünkü denemenin konu analizinden en düşük 2 konuya da 1'er dakika bak."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: Lozan ve Atatürk İlkeleri",
-          "aciklama": "Lozan maddeleri, ilk anayasa, halifelik, inkılaplar: siyasi, hukuki, sosyal."
-        },
-        {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "İlke-devrim eşleştirmesinde kural: Halkçılık ↔ 'kimsesizlerin kimi'."
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Türkiye'nin Bölgeleri",
-          "aciklama": "Yedi coğrafi bölge; her bölgenin 1 iklimi, 1 ürünü, 1 şehri."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Bölge sorularında 'ürün-şehir' tarayıcısı kullan."
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: İnsan Hakları",
-          "aciklama": "İnsan haklarının gelişimi, AİHS, bireysel başvuru, ombudsman."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "Kurum-görev eşleştirmesinde kısaltmalara dikkat: AYM, AİHM, TBMM."
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Yazım Kuralları",
-          "aciklama": "Büyük harf, tırnak, kesme, birleşik sözcükler, sayılarda yazım."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Yazım sorularında gözü 'büyük harf + kesme + tırnak' üçlüsüne kilitle."
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Türkiye Kurumları 2026",
-          "aciklama": "YSK Başkanı, bakanlıklar, Merkez Bankası, TÜİK; kim ne iş yapar."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Kurum-görev-işlev sorularını artık rahat çözmelisin."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "Lozan + devrimler odaklı."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış",
-          "aciklama": "3 gün kaldı! Yarın son teknik konular, öbür gün 2. Dünya Savaşı ve diplomasi."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Lozan Barış Antlaşması",
-            "Saltanatın ve halifeliğin kaldırılması",
-            "Atatürk ilkeleri",
-            "Siyasi ve hukuki inkılaplar",
-            "Sosyal inkılaplar"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Marmara Bölgesi",
-            "Ege ve Akdeniz",
-            "İç Anadolu ve Karadeniz",
-            "Doğu ve Güneydoğu Anadolu"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "İnsan haklarının gelişimi",
-            "AİHS",
-            "Bireysel başvuru",
-            "Ombudsman"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Yazım kuralları",
-            "Büyük harf kullanımı",
-            "Kesme işareti",
-            "Birleşik sözcükler"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "YSK",
-            "Bakanlıklar ve görevleri",
-            "Merkez Bankası",
-            "TÜİK"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
         "ad": "7. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Lozan + inkılaplar + bölgeler"
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Ek turlar — maksimum 500 soru.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "İlke Hafıza Kartları",
-          "aciklama": "6 ilkeyi 6 kavramla eşleştir, yüksek sesle say.",
-          "sure_dk": 8
-        },
-        {
-          "baslik": "Karışık 50 Maraton",
-          "aciklama": "Gün 1-7 karışık.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 8,
+      "gun_ad": "8. gun",
       "tarih": "2026-10-22",
-      "gun_ad": "Perşembe",
-      "tema": "ÇAĞDAŞ DÜNYA — II. Dünya Savaşı & Doğal Afetler & Seçimler & Noktalama & Son 3 Ay",
-      "hedef": "Kronolojiyi 'çağdaş dünya' ile tamamla. Noktalama tekniğine gir, paragrafta hız kazan.",
-      "motivasyon": "2. Dünya Savaşı'ndan bugüne uzanan çizgi, güncel bilgilerle birleşince 'çift puan' getirir.",
+      "tema": "Ustalık Günü 6 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Hata Avı",
-          "aciklama": "Hata Defteri'nden 8 soru. Artık soruların %80'i geçmiş günlerden geliyor — bu bilinçli."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: II. Dünya Savaşı ve Sonrası",
-          "aciklama": "Savaşın nedenleri, Türkiye'nin savaşa girmeyişi, Soğuk Savaş, Truman, Marshall, NATO, Kıbrıs."
-        },
-        {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru",
-          "aciklama": "Antlaşma-kurum eşleştirmesi: NATO 1949, BM 1945."
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Doğal Afetler ve Çevre",
-          "aciklama": "Deprem, sel, heyelan, çığ, kuraklık; afet öncesi-sonrası; çevre sorunları."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Afet-bölge eşleştirmesi: heyelan = Karadeniz."
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Seçimler ve Siyasi Partiler",
-          "aciklama": "Seçme-seçilme, seçim türleri, siyasi partilerin kurulması, Anayasa değişikliği."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "Yaş ve oy kullanma şartları soruları çok gelir: 18 yaş + seçmen kütüğü."
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Noktalama İşaretleri",
-          "aciklama": "Virgül, nokta, iki nokta, üç nokta, tırnak, soru, ünlem, kesme."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
           "dk": 14,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Noktalama sorusunda cümleyi sesli oku; nefes aldığın yer = virgül adayı."
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Son 3 Ay Olayları",
-          "aciklama": "Temmuz-Ekim 2026: Ankara Zirvesi, Milletler Ligi, fon soruşturması, Ekim olayları."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Son 3 ay sorularında 'ay + olay' kodlaması yap."
-        },
-        {
-          "dk": 11,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "Çağdaş tarih + afetler odaklı."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış",
-          "aciklama": "2 gün sonra final denemesi. Yarın tam 'hata avı' günü."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "II. Dünya Savaşı",
-            "Savaş sonrası dünya",
-            "Soğuk Savaş",
-            "Türkiye ve NATO",
-            "Kıbrıs Barış Harekatı"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Deprem",
-            "Sel ve heyelan",
-            "Çığ ve kuraklık",
-            "Çevre sorunları"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Seçme ve seçilme hakkı",
-            "Seçim türleri",
-            "Siyasi partiler",
-            "Anayasa değişikliği"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Noktalama işaretleri",
-            "Virgül ve nokta",
-            "Tırnak ve kesme",
-            "Soru ve ünlem"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 22,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "Temmuz-Ekim 2026 olayları",
-            "Ankara Zirvesi",
-            "Fon soruşturması",
-            "Ekim 2026 gündemi"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 17,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
         "ad": "8. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Çağdaş tarih + doğal afetler"
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "Hata Atölyesi",
-          "aciklama": "Ek turlar — maksimum 500 soru.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Karışık 50 Maraton",
-          "aciklama": "Gün 1-8 karışık.",
-          "max_soru": 50
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 9,
+      "gun_ad": "9. gun",
       "tarih": "2026-10-23",
-      "gun_ad": "Cuma",
-      "tema": "SÜPER TEKRAR — Tarih Komplo Kronolojisi & Su-Çevre & Vatandaşlık Mikro Özet & Paragraf Taktikleri & Ekim 2026",
-      "hedef": "Bugün yeni konu yok: TEKRAR + HATA AVI günü. 5 dersten 'Cebe Kart' okuma turu + 100 soruluk maraton.",
-      "motivasyon": "Beynin öğrendiklerini son 24-48 saatte pekiştirir. Bugün o pekiştirme günü — en az yeni konu kadar değerli.",
+      "tema": "Genel Tekrar — zayıf konu atağı",
+      "hedef": "Hata defterindeki tüm konulara saldır; ustalaşamadığın konularda 10'luk testleri arka arkaya çöz. Büyük prova yarın!",
       "plan": [
         {
-          "dk": 10,
-          "tip": "acilis",
-          "baslik": "Açılış: Hata Defteri Tam Tarama",
-          "aciklama": "Tüm kampın hatalarını gözden geçir. Sıralama: en çok hata → en az hata. İlk 3 konuya bugün özel ilgi."
-        },
-        {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: Komplo Kronoloji (600 yıllık tur)",
-          "aciklama": "Kuruluş'tan bugüne 40 kritik olayı 8 dakikada say. Takıldığın yerler A4'e."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 12,
-          "tip": "soru",
-          "ders": "tarih",
-          "baslik": "Tarih: 20 Soru (tamamı hata konularından)",
-          "aciklama": "Bugün tarih 20 soru = hata defterinden. Ezberin test günü."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Su, Çevre ve Kaynaklar",
-          "aciklama": "Su kaynakları, kirlilik, sürdürülebilirlik, korunan alanlar, yenilenebilir enerji."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 12,
-          "tip": "soru",
-          "ders": "cografya",
-          "baslik": "Coğrafya: 20 Soru",
-          "aciklama": "Çevre soruları güncel bilgiyle birleşik gelebilir."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Mikro Özet",
-          "aciklama": "Anayasa 1-3-6, haklar, üç erk, yargı, seçim, insan hakları — 8 dakikalık şok tekrar."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 12,
-          "tip": "soru",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: 20 Soru",
-          "aciklama": "Vatandaşlıkta hızlan: tanım soruları 20 saniyedir."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Paragraf Taktikleri (Final)",
-          "aciklama": "3 tuzak tipi, 4 çözüm adımı, süre yönetimi. Anlatım bozukluğu 'çok sorulur' listesi."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 12,
-          "tip": "soru",
-          "ders": "turkce",
-          "baslik": "Türkçe: 20 Soru",
-          "aciklama": "Paragrafta 40 saniye sınırı. İşaretle-geç taktiğini uygula."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         },
         {
-          "dk": 7,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Ekim 2026 ve Son Dakika Turu",
-          "aciklama": "Ekim başı olayları, Nobel'lerin açıklanması, gram altın, Türkiye-İtalya, son 1 ay."
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 10,
-          "tip": "soru",
-          "ders": "guncel",
-          "baslik": "Güncel Bilgiler: 20 Soru",
-          "aciklama": "Son tur güncel! Yarın sadece tekrar."
-        },
-        {
-          "dk": 17,
-          "tip": "deneme",
-          "baslik": "Gün Sonu Denemesi (15 soru)",
-          "aciklama": "Hibrit deneme: eski hataların karışımı. Bu denemenin neti sınav tahminin."
-        },
-        {
-          "dk": 0,
-          "tip": "kapanis",
-          "baslik": "Kapanış: Final Arifesi",
-          "aciklama": "Yarın son gün: 50 soruluk final denemesi + sakin tekrar. Uyku düzenine dikkat."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Genel kronoloji tekrarı",
-            "En çok sorulan 40 olay",
-            "Sık karıştırılanlar"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 20,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Su kaynakları",
-            "Çevre sorunları",
-            "Korunan alanlar",
-            "Yenilenebilir enerji"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 20,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Anayasa özeti",
-            "Haklar özeti",
-            "Yargı özeti",
-            "Seçim özeti"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 20,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Paragrafta tuzaklar",
-            "Süre yönetimi",
-            "Anlatım bozukluğu listesi",
-            "Genel tekrar"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 20,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "Ekim 2026",
-            "Son bir ay",
-            "Güncel tekrar kartları"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 15,
-          "soru_sayisi": 20
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
         "ad": "9. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Hibrit: geçmiş hataların karışımı"
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "100 Soruluk Tekrar Maratonu",
-          "aciklama": "Hata Atölyesi'nden 100 soru (5 tur). İstersen 500'e kadar.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Cebe Kart Gecesi",
-          "aciklama": "5 dersin tüm kartlarını sesli oku (~25 dk).",
-          "sure_dk": 25
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     },
     {
       "no": 10,
+      "gun_ad": "10. gun",
       "tarih": "2026-10-24",
-      "gun_ad": "Cumartesi",
-      "tema": "FİNAL GÜNÜ — Büyük Genel Deneme + Süper Özet + Sınav Günü Stratejisi",
-      "hedef": "Sabah 50 soruluk FINAL denemesi. Öğleden sonra sadece özet + hafif tekrar. Akşam dinlen: yarın sınav!",
-      "motivasyon": "10 gün önce 'derslerim çok iyi değil' diyordun. Bugün elinde: ~1000+ soruluk pratik, 12 deneme, tam bir kamp. Artık hazırsın. Yarın kâğıtta seni bekleyenlerin çoğu senin çözdüklerinin kardeşi.",
+      "tema": "Final Provası — büyük deneme günü",
+      "hedef": "50 soruluk büyük deneme ile kendini test et; net hesapla, eksiklerini son kez kapat.",
       "plan": [
         {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "acilis",
-          "baslik": "Açılış: Son Hata Avı",
-          "aciklama": "Hata Defteri'nden 8 soru. Son kez. Moralini yüksek tut: yanlışlar artık 'yol gösterici'."
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "tarih",
-          "baslik": "Tarih: Süper Özet",
-          "aciklama": "10 günlük tarihi tek sayfada: kronoloji + 20 sihirli tarih."
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "cografya",
-          "baslik": "Coğrafya: Süper Özet",
-          "aciklama": "Harita formülleri, iklim-ürün-bölge üçlüsü, afet tablosu."
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "vatandaslik",
-          "baslik": "Vatandaşlık: Süper Özet",
-          "aciklama": "1-3-6, erkler, yargı, haklar, seçim — tek sayfa."
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
           "dk": 8,
-          "tip": "ders",
-          "ders": "turkce",
-          "baslik": "Türkçe: Süper Özet",
-          "aciklama": "Paragraf 4 adım, yazım 8 kural, anlatım bozukluğu 10 kalıp."
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
         },
         {
-          "dk": 6,
-          "tip": "ders",
-          "ders": "guncel",
-          "baslik": "Güncel: Son Kartlar",
-          "aciklama": "2026 olayları, Nobel, Dünya Kupası, kabine — son okuma."
-        },
-        {
-          "dk": 44,
-          "tip": "deneme-buyuk",
-          "baslik": "FİNAL GENEL DENEMESİ (50 soru / 40 dk)",
-          "aciklama": "Gerçek sınav simülasyonu: 10:00'da başla, 40 dakika, mola yok. Bu denemenin neti = tahmini puanının göstergesi."
-        },
-        {
-          "dk": 20,
-          "tip": "analiz",
-          "baslik": "Final Analizi + Sınav Günü Planı",
-          "aciklama": "Yanlışlarını 3 sınıfa ayır: (1) Bilgi eksiği → Cebe Kart'ı 1 kez oku, (2) Dikkat hatası → 'yavaş oku' kuralı, (3) Süre yetmedi → işaretle-geç."
-        },
-        {
-          "dk": 12,
-          "tip": "kapanis",
-          "baslik": "Kapanış: Sınav Günü Stratejisi",
-          "aciklama": "Yarın 25 Ekim Pazar: kalk, hafif kahvaltı, sınav evrakını kontrol et. Sınavda: 1. tur kolay sorular (40 dk), 2. tur işaretliler (30 dk), 3. tur zorlar (20 dk). 4 yanlış 1 doğruyu götürür — tahmin etme, bilgin yoksa boş bırakma sayılır ama bilgin varsa yine de şıklardan 2'yi ele. Gece 23:00'te yat."
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
         {
           "ders": "tarih",
           "konular": [
-            "Süper özet",
-            "20 sihirli tarih",
-            "Karıştırılanlar"
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
           ],
-          "sure_min": 8,
-          "soru_sayisi": 0
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "cografya",
           "konular": [
-            "Süper özet",
-            "Formül kartları"
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
           ],
-          "sure_min": 8,
-          "soru_sayisi": 0
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "vatandaslik",
           "konular": [
-            "Süper özet"
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
           ],
-          "sure_min": 8,
-          "soru_sayisi": 0
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "turkce",
           "konular": [
-            "Süper özet",
-            "Paragraf taktikleri"
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
           ],
-          "sure_min": 8,
-          "soru_sayisi": 0
+          "sure_min": 12,
+          "soru_sayisi": 100
         },
         {
           "ders": "guncel",
           "konular": [
-            "Son kartlar"
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
           ],
-          "sure_min": 6,
-          "soru_sayisi": 0
+          "sure_min": 12,
+          "soru_sayisi": 100
         }
       ],
       "deneme": {
-        "ad": "Final Genel Denemesi",
+        "ad": "10. Gün Büyük Denemesi",
         "soru_sayisi": 50,
         "sure_dk": 40,
-        "odak": "10 günün tam kapsamlı final provası"
+        "odak": "Tüm konular karma — gerçek sınav provası"
       },
       "genisletilmis": [
         {
-          "baslik": "İstersen Son Hata Atölyesi",
-          "aciklama": "Kendini iyi hissediyorsan 20 soruluk son tur. Hissetmiyorsan ÇALIŞMA — dinlen de yeterli.",
+          "baslik": "Soru Maratonu (500'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
           "max_soru": 500
         },
         {
-          "baslik": "Sınav Çantası Kontrolü",
-          "aciklama": "Sınav giriş belgesi, TC kimlik, 2 kalem, silgi, kalemtraş, su, saat. Geçerli kimlik = TC kimlik kartı/pasaport.",
-          "sure_dk": 5
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 500
         }
-      ]
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
     }
   ]
 }

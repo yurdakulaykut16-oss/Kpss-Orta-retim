@@ -187,6 +187,7 @@ def her_seyi_yukle(zorla: bool = False):
         _cache.clear()
         _cache["program"] = program_yukle()
         _cache["denemeler"] = denemeler_yukle()
+        _cache["konu_yeniden"] = _json_oku(VERI / "konu_yeniden.json") if (VERI / "konu_yeniden.json").exists() else {}
         _cache["dersler"] = {d: ders_md_bol(d) for d in DERSLER}
         for d in DERSLER:
             _cache["dersler"][d]["bilgi"] = DERSLER[d]
@@ -256,6 +257,11 @@ def api_meta():
 @app.get("/api/program")
 def api_program():
     return jsonify(her_seyi_yukle()["program"])
+
+
+@app.get("/api/konu-yeniden")
+def api_konu_yeniden():
+    return jsonify(her_seyi_yukle().get("konu_yeniden", {}))
 
 
 @app.get("/api/ders/<ders>")

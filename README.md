@@ -1,123 +1,126 @@
-# 🎯 KPSS Ortaöğretim — 10 Günlük Hızlandırılmış Kamp (15–25 Ekim 2026)
+# KPSS Ortaöğretim — Hızlandırılmış Kamp
 
-**25 Ekim 2026 Pazar** günü yapılacak KPSS Ortaöğretim sınavına hazırlanan, temeli zayıf
-(meslek lisesi çıkışlı) bir öğrenci için tasarlanmış, **tamamen Türkçe** ve **tek ekrandan**
-yönetilen bir çalışma kampı.
+**Sınav: 25 Ekim 2026 (Pazar) — Saat 10:15** · Senin için özel 10 günlük hızlandırılmış kamp (**15–24 Ekim 2026**).
+Python/Flask + vanilla JS — kurulumu tek komut.
 
-Kamp takvimi: **15 Ekim – 24 Ekim 2026** (10 gün) → **Sınav: 25 Ekim 2026**.
-
-Her gün **5 ders (Tarih, Coğrafya, Vatandaşlık, Türkçe, Güncel Bilgiler)** sırayla işlenir;
-gün sonunda **deneme sınavı** çözülür; sonuçlara göre ertesi günün içeriği **otomatik
-genişletilir** (zayıf konudan ek sorular + anlatım tekrarı; hata sürerse 500 soruya kadar
-yoğunlaştırılmış tekrar).
+> ✅ İlk 2 günde **tüm konular** bitirilir (Konu Maratonu). Sonrasında **yanlışlarına göre** konular sana **farklı
+> anlatımla** tekrar anlatılır ve o konudan **yeni sorular** gelir. Her konuda **ustalana kadar** çalışırsın.
+> Her gün yüzlerce soruluk havuzdan **durumuna uygun** sorular çıkar; **aynı soru iki kez gelmez**.
 
 ---
 
-## 🚀 Projeyi Çalıştırma
-
-Gereksinimler: **Python 3.9+** ve `pip`.
+## Hızlı Kurulum
 
 ```bash
-# 1) Bu klasöre girin
-cd Kpss-Orta-retim
-
-# 2) Sanal ortam oluşturun (önerilir)
-python3 -m venv .venv
-# Windows:  .venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
-
-# 3) Bağımlılıkları yükleyin
 pip install -r requirements.txt
-
-# 4) Sunucuyu başlatın
 python app.py
 ```
 
-Ardından tarayıcınızda **<http://localhost:5000>** adresini açın. Hepsi bu kadar!
-
-> Veri kontrolü isterseniz: `python araclar/veri_kontrol.py`
-> Denemeleri yeniden üretmek için: `python araclar/deneme_uret.py`
+Tarayıcıda aç: **http://localhost:5000**
 
 ---
 
-## 📚 İçerik
+## 10 Günlük Kamp (15–24 Ekim 2026)
 
-| Ders | Konu anlatımı (10 gün × modül) | Soru bankası |
-|---|---|---|
-| Tarih | ✅ | 140 soru |
-| Coğrafya | ✅ | 85 soru |
-| Vatandaşlık | ✅ | 62 soru |
-| Türkçe | ✅ | 61 soru |
-| Güncel Bilgiler | ✅ | 63 soru |
-| **Toplam** | **50 ders modülü** | **411 soru + 10 deneme** |
+| Gün | Tarih | Tema |
+|-----|-------|------|
+| 1. gün | 15 Ekim Perşembe | **Konu Maratonu I** — 5 derste TÜM konular (hızlı tur + 10'luk testler) |
+| 2. gün | 16 Ekim Cuma | **Konu Maratonu II** — tur tamamlama + konu testleri (ustalana kadar) |
+| 3–8. gün | 17–22 Ekim | **Ustalık Günleri** — hatalardan ustalığa; zayıf konu tekrarı + test |
+| 9. gün | 23 Ekim Perşembe | Genel Tekrar — zayıf konu atağı |
+| 10. gün | 24 Ekim Cuma | **Final Provası** — 50 soruluk büyük deneme |
 
-- **Her gün, 5 dersin tamamı** sırayla işlenir (tek ders günü yoktur).
-- Her ders günü: **önce sade anlatım** (günlük hayat diliyle), sonra **20 soruluk çalışma seti**.
-- **Günün sonunda deneme:** 1–4. günler 15 soruluk mini deneme (12 dk),
-  **5. ve 10. günler 50 soruluk geniş deneme** (40 dk). Gerçek KPSS'de 120 soru / 130 dk
-  olduğundan süreler orantılı ölçeklenmiştir.
-- Sorular **geçmiş KPSS sorularından yeniden düzenlenmiş** ya da **KPSS formatında**
-  özgün sorulardır; her sorunun `kaynak` alanında bu bilgi yer alır.
-- **Kapsam kuralı:** Müfredat yalnızca **geçmiş KPSS sınavlarında çıkmış konularla**
-  sınırlıdır. ÖSYM'nin soru dağılımında yer almayan konular (ör. Avarlar, Akhunlar,
-  Avrupa Hunları, Hazarlar gibi devletler) ders anlatımlarına ve soru bankasına
-  **bilinçli olarak alınmamıştır**; yalnızca soru şıklarında ayırt edici unsur olarak
-  geçebilirler.
-- Her sorunun **iki farklı çözüm yöntemi** vardır (biri hikâye/şaka/benzerlik, diğeri
-  kural/teknik) — hata yapılan konu tekrar edildiğinde anlatım **farklı yöntemle** sunulur.
+Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
-## 🧠 Uyarlanabilir Sistem ("Yanlış nereden geliyorsa oradan")
-
-1. **Gün içi:** Yanlış cevapladığınız her sorudan sonra **2 benzer soru** eklenir
-   (aynı kök, farklı kelimeler), ardından konu kısa tekrarla pekiştirilir.
-2. **Deneme sonrası:** Deneme sonucundaki zayıf etiketler tespit edilir; ertesi günün
-   20 soruluk setinin **%60'ı yeni konu, %40'ı zayıf konudan** oluşturulur.
-3. **Hata Atölyesi:** Hata defterindeki her konu için tekrar seti açılır. Aynı konuda
-   hatalar sürerse sistem **yoğunlaştırılmış tekrar** başlatır ve günlük **500 soruluk
-   üst sınır** dolana kadar (sadece sınavda çıkan konulardan) soru yağdırır.
-4. **Benzer soru mantığı:** Her sorunun `kok` (soru kökü) ve `etiketler` alanları vardır;
-   pekiştirme soruları aynı kökten seçilir — "aynı sorunun tekrarı" hissi yaratır.
-
-## 🖥️ Uygulama Bölümleri
-
-| Bölüm | Ne yapar |
-|---|---|
-| **Bugünün Paneli** | Günün planı (saat saat), ders kartları, görev tikleri, zayıf konular |
-| **10 Günlük Takvim** | 15–24 Ekim tam program; her günün teması ve deneme bağlantısı |
-| **Günün Dersi** | Ders modülü: giriş, sade anlatım, 2 yöntem, sık hatalar, cebe kart, ağız tekrarı |
-| **Soru Çözümü** | Günlük set / hata seti / konu seti; şık anında renklenir, çözüm 2 yöntemle |
-| **Denemeler** | Süreli deneme; soru ızgarası, net (D − Y/4) hesapları |
-| **Hata Defteri** | Yanlışlar; "tekrar" butonu ile benzer soru seti |
-| **İstatistik** | Doğruluk, ders/konu performansı, 500 soru ilerlemesi, deneme geçmişi |
-| **Ayarlar** | İlerlemeyi dışa/içe aktarma, sıfırlama |
-
-İlerlemeniz **otomatik kaydedilir** (tarayıcı + sunucudaki `data/ilerleme/` klasörü).
-
-## 📁 Proje Yapısı
-
-```
-Kpss-Orta-retim/
-├── app.py                  # Flask sunucu + veri API'si (/api/...)
-├── requirements.txt
-├── data/
-│   ├── program.json        # 10 günlük kamp planı, sınav bilgileri
-│   ├── denemeler.json      # 10 denemenin içerik listesi (üretilmiş)
-│   ├── dersler/*.md        # 50 ders modülü (sade anlatım, yöntemler, kartlar)
-│   ├── sorular/*.jsonl     # 411 soru (kök, 5 şık, 2 çözüm, etiketler)
-│   └── ilerleme/           # kayıtlı ilerleme (çalışma zamanı)
-├── static/                 # Arayüz (HTML/CSS/JS — tek sayfa uygulama)
-└── araclar/
-    ├── veri_kontrol.py     # bütünlük testi (id benzersizliği, alan kontrolü)
-    └── deneme_uret.py      # denemeleri soru bankasından üretir (tohum: 20261025)
-```
-
-## 🎨 Tasarım
-
-- Koyu kenar çubuğu + açık çalışma alanı, ders başına renk kodlu kartlar
-  (Tarih 🟠, Coğrafya 🟢, Vatandaşlık 🔵, Türkçe 🟣, Güncel 🟡).
-- Cep telefonu uyumlu (mobil menü), yazdırma dostu görünüm, yumuşak animasyonlar.
-- Sınav temasına özel hero: geri sayım, net rozetleri, motivasyon cümlesi.
+> 📌 **Hafta sonu ek programı (hafta içi iş/okul olmayınca):** Günde 500 soruya kadar çıkan maraton günleri.
+> 1. turla 500 soru maratonu (4 saat) — 5. gün ile 10. gün arası hafta sonları ideal.
 
 ---
-*Başarılar! 25 Ekim'de görüşürüz. 🗓️*
+
+## Sistem Nasıl Çalışıyor?
+
+### 1. Konu Maratonu (ilk 2 gün) — tüm konular
+- **55 konu** (sadece KPSS'de çıkmış konular) — her konuda:
+  - **Hızlı tur** (özet) → **Farklı anlatım** (hikâyeyle) → **Sınav tuzağı** → **Nasıl sorulur**
+  - Hemen altında **o konudan 10 soruluk test**
+- 50 derin **konu modülü** (10 günlük dersler) de hazır; istersen detaylı okursun.
+
+### 2. 10'luk Testler + Otomatik Kontrol
+- Öğrendiğin her konudan **10'ar soruluk testler** çözersin.
+- **Her 10 soruda otomatik kontrol** yapılır:
+  - ✅/❌ sonucun ve netin
+  - ❌ **Yanlışların çözümleri** (2 farklı yöntemle)
+  - 🎭 **Yanlış konuların FARKLI anlatımı** (hikâye + tuzak kartları)
+  - 🔁 O konulara uygun **yeni 10 soru** (tekrar çöz)
+- Yanlış yaparsan benzer 2 soru pekiştirme olarak kuyruğa girer.
+
+### 3. Ustalık Sistemi
+- Her konunun ustalığı takip edilir: **son 10 soruda 8+ doğru = Usta** (rozet yeşile döner).
+- Usta olmadığın konular öncelikli gelir; ustalaştığın konular geri planda kalır.
+- Günde **500 soruya kadar** çıkabilirsin — havuz her gün yüzlerce soru sunar ama **durumuna göre** karşına çıkar.
+
+### 4. Aynı Soru Tekrar Gelmez
+- Bir soruyu **bugün** çözdüysen o gün tekrar gelmez (anti-tekrar).
+- **Hiç görmediğin** sorular öncelikli gelir; eskiden çözdüklerin zamanla geri döner.
+- Yanlış yaptıkların **ustalana kadar** tekrar; doğru bildiklerin arka plana düşer.
+
+### 5. Denemeler
+- 10 deneme (**DEN-01…DEN-10**), her gün 1 tanesi o günün rehberine bağlı: 5. ve 10. gün
+  **50 soruluk büyük prova**, diğer günler 15 soruluk mini.
+- Denemeler her dersi dengeli dağıtır, şıklar karışık gelir (sınav gibi).
+- Süre geri sayar; bitirince **net + ders analizi + tüm çözümler**.
+
+---
+
+## Kapsam (Sınav Mufredatı — geçmiş KPSS konuları)
+
+| Ders | Kapsam | Soru bankası |
+|------|--------|--------------|
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 274 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 162 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 122 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 129 |
+| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 111 |
+
+> 📚 **Toplam: 798 soru** — her biri 2 farklı çözüm yöntemiyle. Havuz her gün yüzlerce soru sunar,
+> karşıya durumuna göre 10'luk setler halinde gelir. Her 10 soruda otomatik kontrol + telafi döngüsü.
+>
+> ⚠️ **Geçmiş KPSS çıkmış sorular için PDF bekleniyor.** Şu anki banka ÖSYM mantığına uygun üretildi
+> ve tümü geçmiş sınav konularından. PDF'lerini bu repo'ya koyarsan (veya linkini verirsen) gerçek
+> çıkmış soruları `kaynak` alanıyla "2018-KPSS" gibi etiketleyip ekleriz.
+
+**Konu seçimi kuralı:** *Sadece geçmiş KPSS sınavlarında çıkmış konular.* Hiç sorulmamış devletler
+(Avarlar, Akhunlar, Avrupa Hunları, Hazarlar, Bulgarlar, Karluklar, Kırgızlar…) konu olarak anlatılmaz;
+yalnızca "karıştırma şıkkı" olarak kullanılabilir.
+
+---
+
+## Sayfalar
+
+- **🏠 Bugünün Rehberi** — 1. gün…10. gün numaralı, her gün için 3 adım: konu turu → 10'luk testler → deneme
+- **📖 Konu Anlatımları** — 55 konunun hızlı turu + farklı anlatımı + 50 derin modül
+- **✏️ Test Çöz** — Günün Maratonu / Konu Testi (10) / Yanlış Telafisi / Hata Atölyesi — hepsi 10'luk
+- **📝 Denemeler** — 10 deneme + çözüm analizi
+- **🎯 Hata Defteri** — zayıf konular + yanlış sorular + saldırı butonları
+- **📊 İstatistik** — ustalık, günlük 500 sayaç, net takibi
+- **⚙️ Ayarlar** — yedekle / geri yükle / sıfırla
+
+---
+
+## Veri & Araçlar
+
+- `data/sorular/*.jsonl` — soru bankası (id, konu, zorluk, **kaynak**, 2 çözüm, etiketler)
+- `data/konu_yeniden.json` — 55 konu için farklı anlatım kartları (özet + hikâye + tuzak + kalıp)
+- `data/dersler/*.md` — günlük konu modülleri
+- `data/program.json` — 10 günlük plan
+- `data/denemeler.json` — 10 deneme
+- `data/ilerleme/` — ilerleme kaydı (otomatik yedek)
+- `araclar/soru_genislet.py` — yeni soru ekleme (TSV → JSONL)
+- `araclar/deneme_uret.py` — denemeleri yeniden üret
+- `araclar/veri_kontrol.py` — banka bütünlük kontrolü (`python3 araclar/veri_kontrol.py`)
+
+Yeni soru eklemek için `data/kaynaklar/*.tsv` dosyasına `id|gun|konu|zorluk|kaynak|kok|sik1..sik5|dogru|cozum1|cozum2|etiketler` yazıp `python3 araclar/soru_genislet.py` çalıştır.
+
+---
+
+*Başarılar! İlk 2 günde konuları bitir, sonra yanlışlarından ustalığa — her gün 500 soruya kadar, aynı soru tekrar etmeden.* 🚀

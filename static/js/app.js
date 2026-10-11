@@ -1,6 +1,6 @@
 /* =========================================================
-   KPSS Ortaöğretim — 10 Günlük Hızlandırılmış Kamp
-   Sade akış: 1) Konu anlatımını oku → 2) Soru çöz → 3) Deneme
+   KPSS Ortaöğretim — Hızlandırılmış Kamp
+   10'luk testler · otomatik kontrol · yanlış telafisi · ustalık
    ========================================================= */
 "use strict";
 
@@ -13,30 +13,34 @@ const DERSLER = {
 };
 const SIK_HARF = ["A", "B", "C", "D", "E"];
 const KULLANICI = "varsayilan";
+const GUNLUK_HEDEF = 500;
+const BATCH = 10;
 
 const V = {
   meta: null, program: null, dersler: {}, sorular: {}, soruIdx: {},
   denemeler: null, denemeIdx: {}, kayit: null, oturum: null, denemeOturum: null,
-  tumSorular: {}, etiketIdx: {}, konuListe: {},
+  tumSorular: {}, etiketIdx: {}, konuListe: {}, konuYeniden: {},
 };
 
 /* ---------------- ilerleme ---------------- */
 function bosKayit() {
-  return { kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {}, denemeler: [], oturumlar: [], okunan: {} };
+  return {
+    kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {},
+    denemeler: [], oturumlar: [], okunan: {},
+    ustalik: {}, gunluk: { tarih: null, sayi: 0, ids: {} }, konu_okuma: {},
+  };
 }
 async function kayitYukle() {
   try {
     const r = await fetch(`/api/ilerleme/${KULLANICI}`);
     V.kayit = await r.json();
     if (!V.kayit || !V.kayit.etiketler) V.kayit = bosKayit();
-    if (!V.kayit.okunan) V.kayit.okunan = {};
-    if (!V.kayit.gorevler) V.kayit.gorevler = {};
-    if (!V.kayit.oturumlar) V.kayit.oturumlar = [];
-    if (!V.kayit.denemeler) V.kayit.denemeler = [];
-    if (!V.kayit.soru_kayit) V.kayit.soru_kayit = {};
+    const b = bosKayit();
+    for (const k of Object.keys(b)) if (V.kayit[k] === undefined) V.kayit[k] = b[k];
   } catch {
     V.kayit = JSON.parse(localStorage.getItem("kpss-kayit") || "null") || bosKayit();
-    if (!V.kayit.okunan) V.kayit.okunan = {};
+    const b = bosKayit();
+    for (const k of Object.keys(b)) if (V.kayit[k] === undefined) V.kayit[k] = b[k];
   }
 }
 let kayitTimer = null;
@@ -57,6 +61,7 @@ function etiketKaydi(t) {
   return (V.kayit.etiketler[t] = V.kayit.etiketler[t] || { d: 0, y: 0, tekrar: 0 });
 }
 const okumaAnahtar = (d, gun) => `${d}|${gun}`;
+const konuAnahtar = (d, konu) => `${d}|${konu}`;
 
 /* ---------------- veri ---------------- */
 async function veriYukle() {
@@ -67,6 +72,7 @@ async function veriYukle() {
   ]);
   V.meta = meta; V.program = program; V.denemeler = denemeler;
   V.denemeIdx = {}; denemeler.denemeler.forEach((d) => (V.denemeIdx[d.id] = d));
+  V.konuYeniden = await fetch("/api/konu-yeniden").then((r) => r.json()).catch(() => ({}));
   await Promise.all(
     Object.keys(DERSLER).map(async (d) => {
       V.dersler[d] = await fetch(`/api/ders/${d}`).then((r) => r.json());
@@ -85,14 +91,55 @@ async function veriYukle() {
       if (!konular.has(s.konu)) konular.set(s.konu, []);
       konular.get(s.konu).push(s);
     }
-    // güne göre sıralı konu listesi
     V.konuListe[d] = [...konular.entries()]
-      .map(([konu, liste]) => ({ konu, adet: liste.length, gunler: [...new Set(liste.map((s) => s.gun))].sort((a, b) => a - b) }))
+      .map(([konu, liste]) => ({ konu, liste, adet: liste.length, gunler: [...new Set(liste.map((s) => s.gun))].sort((a, b) => a - b) }))
       .sort((a, b) => (a.gunler[0] ?? 0) - (b.gunler[0] ?? 0) || a.konu.localeCompare(b.konu, "tr"));
   }
 }
 
-/* ---------------- adaptif motor ---------------- */
+/* ---------------- ustalık & anti-tekrar ---------------- */
+function ustalikKaydi(key) {
+  return (V.kayit.ustalik[key] = V.kayit.ustalik[key] || { g: [], usta: false });
+}
+function ustalikGuncelle(s, dogru) {
+  const u = ustalikKaydi(konuAnahtar(s.ders, s.konu));
+  u.g.push(dogru ? 1 : 0);
+  if (u.g.length > 10) u.g = u.g.slice(-10);
+  u.usta = u.g.length >= 10 && u.g.reduce((a, b) => a + b, 0) >= 8;
+}
+function ustalikOrani(key) {
+  const u = V.kayit.ustalik[key];
+  if (!u || !u.g.length) return 0;
+  return Math.round((u.g.reduce((a, b) => a + b, 0) / u.g.length) * 100);
+}
+function gunlukSayac() {
+  const bugun = new Date().toISOString().slice(0, 10);
+  if (!V.kayit.gunluk || V.kayit.gunluk.tarih !== bugun) {
+    V.kayit.gunluk = { tarih: bugun, sayi: 0, ids: {} };
+  }
+  return V.kayit.gunluk;
+}
+function secimPuani(s, opts = {}) {
+  const k = V.kayit.soru_kayit[s.id];
+  const g = V.kayit.gunluk || { ids: {} };
+  const u = V.kayit.ustalik[konuAnahtar(s.ders, s.konu)];
+  let p = Math.random() * 12;
+  if (!k || !k.son) p += 120;                 // hiç görülmemiş → öncelik
+  if (g.ids[s.id]) p -= 260;                  // bugün çıktı → gelmesin
+  if (k) {
+    if (k.y > k.d) p += 55;                   // yanlışlı → ustalana kadar tekrar
+    if (k.d >= 2 && k.y === 0) p -= 110;      // ustalaştı → uzak
+    p += Math.min(35, (Date.now() - k.son) / 3.6e9); // eski gören öncelik
+  }
+  if (u && u.usta) p -= 70;
+  if (opts.zayifOdak && k && k.y > 0) p += 45;
+  return p;
+}
+function testSeti(havuz, adet, opts = {}) {
+  return [...havuz]
+    .sort((a, b) => secimPuani(b, opts) - secimPuani(a, opts))
+    .slice(0, adet);
+}
 function etiketZayiflik(t) {
   const k = V.kayit.etiketler[t] || { d: 0, y: 0 };
   return k.y * 3 - k.d + (k.tekrar || 0) * 0.5;
@@ -104,42 +151,11 @@ function zayifEtiketler(ders, limit = 30) {
   t.sort((a, b) => etiketZayiflik(b) - etiketZayiflik(a));
   return t.slice(0, limit);
 }
-function gorulduSirasi(id) {
-  const k = V.kayit.soru_kayit[id];
-  return k && k.son ? k.son : 0;
-}
-function gunlukSet(ders, gun, adet = 20) {
-  const havuz = V.sorular[ders];
-  const gunluk = havuz.filter((s) => s.gun === gun);
-  const karisik = havuz.filter((s) => s.gun !== gun);
-  const sirala = (a) =>
-    [...a].sort((x, y) => {
-      const kx = V.kayit.soru_kayit[x.id], ky = V.kayit.soru_kayit[y.id];
-      const hx = kx ? kx.y - kx.d : -1, hy = ky ? ky.y - ky.d : -1;
-      return hy - hx || gorulduSirasi(x.id) - gorulduSirasi(y.id);
-    });
-  const ana = sirala(gunluk);
-  const zayif = sirala(karisik.filter((s) =>
-    (s.etiketler || []).some((t) => etiketZayiflik(t) > 0)
-  ));
-  const kalan = sirala(karisik);
-  const sec = [];
-  const it = (l) => { for (const s of l) if (!sec.includes(s) && sec.length < adet) sec.push(s); };
-  const gunPayi = Math.min(ana.length, Math.round(adet * 0.6));
-  it(ana.slice(0, gunPayi)); it(zayif); it(kalan); it(ana);
-  return sec.slice(0, adet);
-}
-function konuSeti(ders, konu) {
-  return (V.sorular[ders] || []).filter((s) => s.konu === konu);
-}
-function hataSeti(ders, limit = 500) {
-  const havuz = [...V.sorular[ders]];
-  havuz.sort((x, y) => {
-    const kx = V.kayit.soru_kayit[x.id], ky = V.kayit.soru_kayit[y.id];
-    const hx = kx ? kx.y * 2 - kx.d : -0.5, hy = ky ? ky.y * 2 - ky.d : -0.5;
-    return hy - hx || gorulduSirasi(x.id) - gorulduSirasi(y.id);
-  });
-  return havuz.slice(0, limit);
+function zayifKonular(ders, limit = 8) {
+  return (V.konuListe[ders] || [])
+    .filter((x) => !V.kayit.ustalik[konuAnahtar(ders, x.konu)]?.usta)
+    .sort((a, b) => ustalikOrani(konuAnahtar(ders, a.konu)) - ustalikOrani(konuAnahtar(ders, b.konu)))
+    .slice(0, limit);
 }
 function benzerler(soru, n = 2, haric = []) {
   const et = soru.etiketler || [];
@@ -184,6 +200,10 @@ function gunSecici(aktif) {
   return `<div class="gun-secici">${V.program.gunler.map((g) =>
     `<a class="gun-chip ${g.no === aktif ? "aktif" : ""}" href="#/gun/${g.no}">${g.no}. Gün</a>`).join("")}</div>`;
 }
+function gunlukRozet() {
+  const g = gunlukSayac();
+  return `<span class="badge ${g.sayi >= GUNLUK_HEDEF ? "yesil" : "turuncu"}">Bugün: ${g.sayi}/${GUNLUK_HEDEF} soru</span>`;
+}
 
 /* ---------------- ROUTER ---------------- */
 window.addEventListener("hashchange", route);
@@ -207,7 +227,10 @@ function route() {
     case "gun": return viewGun(+p[1]);
     case "konular": return p[1] ? viewKonularDers(p[1]) : viewKonular();
     case "ders": return viewDers(p[1], +p[2]);
-    case "coz": return p[1] ? viewCoz(p[1], p[2], decodeURIComponent(p[3] || "")) : viewCozHub();
+    case "coz":
+      if (!p[1]) return viewCozHub();
+      if (p[1] === "test") return viewCoz("test", p[3] || "", decodeURIComponent(p.slice(4).join("/") || ""), p[2]);
+      return viewCoz(p[1], p[2] || "", decodeURIComponent(p[3] || ""), null);
     case "denemeler": return viewDenemeler();
     case "deneme": return viewDenemeBilgi(p[1]);
     case "deneme-run": return viewDenemeRun(p[1]);
@@ -219,7 +242,7 @@ function route() {
 }
 
 /* =========================================================
-   GÜN REHBERİ — "Bugün ne yapacağım?" (panel + gün sayfası)
+   GÜN REHBERİ
    ========================================================= */
 function viewGun(no) {
   const g = V.program.gunler.find((x) => x.no === no);
@@ -227,37 +250,34 @@ function viewGun(no) {
   const den = V.denemeler.denemeler.find((d) => d.gun === no);
   const kalan = sinavSayaci();
   $("#kalan-gun").innerHTML = `SINAVA<br><b>${kalan}</b>gün`;
+  const maraton = no <= 2;
+  const gk = gunlukSayac();
 
-  /* --- ADIM 1: konu anlatımları --- */
+  /* ADIM 1 — konu anlatımı */
   const okumaSatir = g.dersler.map((d) => {
     const okundu = V.kayit.okunan[okumaAnahtar(d.ders, no)];
     return `<div class="adim-satir ${okundu ? "okundu" : ""}">
       <span class="badge ${d.ders}">${DERSLER[d.ders].ad}</span>
       <div class="adim-bilgi">
-        <b>${esc(d.konular.join(" · "))}</b>
-        <span>${okundu ? "✅ Okundu" : "Okuma süresi ~" + Math.round((d.sure_min || 15) * 0.45) + " dk"}</span>
+        <b>${esc((d.konular || []).slice(0, 4).join(" · "))}${(d.konular || []).length > 4 ? "…" : ""}</b>
+        <span>${okundu ? "✅ Okundu" : maraton ? "Konu Maratonu — tüm konular hızlı tur" : "Zayıf konularını farklı anlatımla tekrar et"}</span>
       </div>
-      <a class="btn kucuk" href="#/ders/${d.ders}/${no}">${okundu ? "📖 Tekrar Oku" : "📖 Konu Anlatımını Oku"}</a>
+      <a class="btn kucuk" href="${maraton ? `#/konular/${d.ders}` : `#/ders/${d.ders}/${no}`}">📖 ${maraton ? "Konu Turu" : "Anlatım"}</a>
     </div>`;
   }).join("");
 
-  /* --- ADIM 2: soru çözümü --- */
-  const soruSatir = g.dersler.map((d) => {
-    if (!d.soru_sayisi) return "";
-    return `<div class="adim-satir">
+  /* ADIM 2 — 10'luk testler */
+  const testSatir = g.dersler.map((d) => `
+    <div class="adim-satir">
       <span class="badge ${d.ders}">${DERSLER[d.ders].ad}</span>
       <div class="adim-bilgi">
-        <b>${d.soru_sayisi} soru — ${esc(d.konular[0])} ağırlıklı</b>
-        <span>Yanlışta 2 benzer soru eklenir · ~${d.sure_min} dk</span>
+        <b>10'luk test — ${esc(d.konular[0])} ağırlıklı</b>
+        <span>Her 10 soruda otomatik kontrol · yanlışlar söylenir · ustalana kadar tekrar</span>
       </div>
-      <a class="btn kucuk yesil" href="#/coz/gunluk/${d.ders}/${no}">✏️ Soruları Çöz</a>
-    </div>`;
-  }).join("");
+      <a class="btn kucuk yesil" href="#/coz/test/gun/${d.ders}/${no}">✏️ 10 Soru</a>
+    </div>`).join("");
 
-  /* --- ADIM 3: deneme --- */
   const denemeBitti = V.kayit.denemeler.some((x) => x.id === den.id);
-
-  /* gün özeti: okunan + çözülen */
   const okunanAdet = g.dersler.filter((d) => V.kayit.okunan[okumaAnahtar(d.ders, no)]).length;
 
   $("#view").innerHTML = `
@@ -268,8 +288,8 @@ function viewGun(no) {
       <div class="sayac">
         <div><b>${kalan}</b>gün kaldı</div>
         <div><b>${g.no}/10</b>kamp günü</div>
-        <div><b>${okunanAdet}/5</b>anlatım okundu</div>
-        <div><b>~2 sa</b>bugün çalış</div>
+        <div><b>${gk.sayi}/${GUNLUK_HEDEF}</b>bugün çözülen</div>
+        <div><b>${okunanAdet}/5</b>tur tamam</div>
       </div>
     </div>
 
@@ -279,11 +299,13 @@ function viewGun(no) {
       <div class="adim-kart">
         <div class="adim-no">1</div>
         <div class="adim-ic">
-          <h2>📖 Konu Anlatımlarını Oku</h2>
-          <p class="meta">Önce anlatımları oku. Konu anlatımları sade; sadece okuyarak öğrenilecek şekilde yazıldı. Her dersin altında "Cebe Kart" ve "Ağız Tekrarı" var.</p>
+          <h2>📖 ${maraton ? "Konu Maratonı — Tüm Konuları Bitir" : "Konu Tekrarı (Farklı Anlatım)"}</h2>
+          <p class="meta">${maraton
+            ? "İlk 2 günde 5 dersin TÜM konuları bitirilir: her konunun özeti (hızlı tur) + farklı anlatımı (hikâye + tuzak) var. Oku, sonra 10'luk teste geç."
+            : "Yanlış yaptığın konuları farklı anlatımla (hikâye + tuzak) tekrar oku. Konu Anlatımları'nda tüm konuların hızlı turu var."}</p>
           ${okumaSatir}
           <div class="adim-alt">
-            <a class="btn seffaf kucuk" href="#/konular">Tüm konu anlatımları →</a>
+            <a class="btn seffaf kucuk" href="#/konular">📖 Konu Anlatımları (hızlı tur + modüller)</a>
           </div>
         </div>
       </div>
@@ -291,12 +313,13 @@ function viewGun(no) {
       <div class="adim-kart">
         <div class="adim-no">2</div>
         <div class="adim-ic">
-          <h2>✏️ Soruları Çöz</h2>
-          <p class="meta">Anlatımı okuduktan sonra o dersin sorularını çöz. Yanlış yaparsan <b>2 benzer soru</b> anında gelir; konu anlatımı da hatırlatılır.</p>
-          ${soruSatir}
+          <h2>✏️ 10'ar Soruluk Testler ${gunlukRozet()}</h2>
+          <p class="meta">Her 10 soruda otomatik kontrol yapılır, yanlışların çözümleri + <b>farklı anlatım</b> kartları gösterilir; o konulara uygun <b>yeni sorular</b> gelir ve tekrar çözersin. <b>Usta olana kadar</b> devam!</p>
+          ${testSatir}
           <div class="adim-alt">
-            <a class="btn seffaf kucuk" href="#/coz">Konuya göre soru çöz →</a>
-            <a class="btn turuncu kucuk" href="#/hata">Hata Atölyesi →</a>
+            <a class="btn yesil kucuk" href="#/coz/maraton/0/0">🚀 Günün Maratonu (500'e kadar)</a>
+            <a class="btn turuncu kucuk" href="#/coz/telafi/0/0">🔁 Yanlış Telafisi</a>
+            <a class="btn seffaf kucuk" href="#/hata">🎯 Hata Atölyesi</a>
           </div>
         </div>
       </div>
@@ -329,25 +352,48 @@ function viewGun(no) {
 }
 
 /* =========================================================
-   KONU ANLATIMLARI — sadece okuma bölümü
+   KONU ANLATIMLARI — hızlı tur (maraton) + modüller
    ========================================================= */
 function viewKonular() {
-  const html = Object.keys(DERSLER).map((d) => {
+  const dersHtml = Object.keys(DERSLER).map((d) => {
+    const liste = V.konuListe[d];
     const okunan = V.dersler[d].gunler.filter((gg) => V.kayit.okunan[okumaAnahtar(d, gg.gun)]).length;
-    return `<a class="ders-kart ${d}" href="#/konular/${d}">
+    const konuSatir = liste.map((x) => {
+      const key = konuAnahtar(d, x.konu);
+      const u = V.kayit.ustalik[key];
+      const oku = V.kayit.konu_okuma[key];
+      const rozet = u?.usta ? `<span class="badge yesil">Usta</span>` : u ? `<span class="badge turuncu">%${ustalikOrani(key)}</span>` : "";
+      return `<div class="adim-satir ${oku ? "okundu" : ""}">
+        <div class="adim-bilgi">
+          <b>${esc(x.konu)} ${rozet}</b>
+          <span>${esc((V.konuYeniden[konuAnahtar(d, x.konu)]?.ozet || "").slice(0, 90))}${(V.konuYeniden[key]?.ozet || "").length > 90 ? "…" : ""}</span>
+        </div>
+        <div class="adim-butonlar">
+          <button class="btn kucuk seffaf" onclick="konuAc('${d}', this)" data-konu="${esc(x.konu)}">📖 Hızlı Tur + Farklı Anlatım</button>
+          <a class="btn kucuk" href="#/coz/test/konu/${d}/${encodeURIComponent(x.konu)}">✏️ 10 Soru</a>
+        </div>
+      </div>`;
+    }).join("");
+    return `<div class="ders-kart ${d}" style="margin-bottom:16px">
       <h3>${DERSLER[d].ad}</h3>
-      <p class="meta">10 konu anlatımı · ${V.sorular[d].length} soru bankada</p>
-      <div class="konu-ozet">${V.dersler[d].gunler.map((gg) => `<span class="chip">${gg.gun}. ${esc(gg.baslik.slice(0, 26))}${gg.baslik.length > 26 ? "…" : ""}</span>`).join("")}</div>
-      <div class="aksiyonlar"><span class="btn kucuk">${okunan}/10 okundu →</span></div>
-    </a>`;
+      <p class="meta">${liste.length} konu · ${V.sorular[d].length} soru · ${okunan}/10 modül okundu</p>
+      ${konuSatir}
+      <div class="aksiyonlar" style="margin-top:10px">
+        <a class="btn kucuk" href="#/konular/${d}">📚 10 derin modül</a>
+        <a class="btn kucuk yesil" href="#/coz/maraton/${d}/0">🚀 ${DERSLER[d].ad} Maratonu</a>
+      </div>
+    </div>`;
   }).join("");
   $("#view").innerHTML = `
     <div class="hero">
       <span class="etiket">📖 KONU ANLATIMLARI</span>
-      <h1>Sadece oku — 5 ders, 50 konu anlatımı</h1>
-      <p>Burada sadece konu anlatımları var; soru yok, telaş yok. Bir ders seç, konu anlatımını oku, sonra "Soru Çöz" bölümünden o konunun sorularını çöz.</p>
+      <h1>Hızlı Tur + Farklı Anlatım — ${Object.values(V.konuListe).reduce((a, b) => a + b.length, 0)} konu</h1>
+      <p><b>İlk 2 günde tüm konuları buradan bitir:</b> her konunun özeti, sınav tuzağı ve <b>farklı anlatımı</b> (hikâye ile) var. Okuduktan sonra hemen 10 soruluk test çöz; yanlış yaptıkça sistem konuyu yeniden, başka türlü anlatır.</p>
+      <div class="sayac"><div><b>${Object.keys(V.kayit.konu_okuma).length}</b>konu okundu</div>
+      <div><b>${Object.values(V.kayit.ustalik).filter((u) => u.usta).length}</b>konuda usta</div>
+      <div>${gunlukRozet()}</div></div>
     </div>
-    <div class="grid grid-2">${html}</div>`;
+    ${dersHtml}`;
   topbar("Konu Anlatımları");
 }
 
@@ -356,30 +402,22 @@ function viewKonularDers(d) {
   if (!dObj) return (location.hash = "#/konular");
   const satirlar = dObj.gunler.map((gg) => {
     const okundu = V.kayit.okunan[okumaAnahtar(d, gg.gun)];
-    const konuSoru = V.sorular[d].filter((s) => s.gun === gg.gun).length;
     return `<div class="adim-satir ${okundu ? "okundu" : ""}">
       <div class="gun-no mini">${gg.gun}</div>
-      <div class="adim-bilgi">
-        <b>${esc(gg.baslik)}</b>
-        <span>${esc((gg.konular || []).join(" · "))}${okundu ? " · ✅ Okundu" : ""}</span>
-      </div>
+      <div class="adim-bilgi"><b>${esc(gg.baslik)}</b><span>${esc((gg.konular || []).join(" · "))}${okundu ? " · ✅ Okundu" : ""}</span></div>
       <div class="adim-butonlar">
         <a class="btn kucuk" href="#/ders/${d}/${gg.gun}">📖 Oku</a>
-        ${konuSoru ? `<a class="btn kucuk seffaf" href="#/coz/gunluk/${d}/${gg.gun}">✏️ Soru</a>` : ""}
+        <a class="btn kucuk seffaf" href="#/coz/test/gun/${d}/${gg.gun}">✏️ 10 Soru</a>
       </div>
     </div>`;
   }).join("");
   $("#view").innerHTML = `
     <div class="hero">
-      <span class="etiket">📖 KONU ANLATIMLARI · ${DERSLER[d].ad.toUpperCase()}</span>
-      <h1>${DERSLER[d].ad} — 10 konu anlatımı</h1>
-      <p>İstediğin konudan başla. Her konu anlatımının sonunda o konunun sorularını çözebileceğin buton var.</p>
+      <span class="etiket">📖 ${DERSLER[d].ad.toUpperCase()} — DERİN MODÜLLER</span>
+      <h1>${DERSLER[d].ad} — 10 konu modülü</h1>
+      <p>Detaylı anlatım isteyenler için. Kısa tur için <a href="#/konular" style="text-decoration:underline">Konu Anlatımları</a> sayfasına dön.</p>
     </div>
-    <div class="kart">${satirlar}</div>
-    <div class="sonuc-satir" style="margin-top:16px">
-      <a class="btn seffaf" href="#/konular">← Tüm dersler</a>
-      <a class="btn turuncu" href="#/coz/karma/${d}/0">✏️ ${DERSLER[d].ad} soruları</a>
-    </div>`;
+    <div class="kart">${satirlar}</div>`;
   topbar(`Konu Anlatımları · ${DERSLER[d].ad}`);
 }
 
@@ -393,7 +431,7 @@ function viewDers(d, gun) {
   const okundu = V.kayit.okunan[okumaAnahtar(d, g.gun)];
   $("#view").innerHTML = `
     <div class="anlatim">
-      <div class="ust-yol"><a href="#/konular">Konu Anlatımları</a> → <a href="#/konular/${d}">${DERSLER[d].ad}</a> → ${g.gun}. Konu</div>
+      <div class="ust-yol"><a href="#/konular">Konu Anlatımları</a> → <a href="#/konular/${d}">${DERSLER[d].ad}</a> → ${g.gun}. Modül</div>
       <span class="badge ${d}">${DERSLER[d].ad}</span>
       <h2 style="margin-top:8px">${g.gun}. ${esc(g.baslik)}</h2>
       ${g.kilit ? `<div class="kilit">🔑 ${esc(g.kilit)}</div>` : ""}
@@ -405,84 +443,139 @@ function viewDers(d, gun) {
       ${g.agiz_tekrari.length ? `<h3>🗣 Ağız Tekrarı (sesli cevapla)</h3><ul>${g.agiz_tekrari.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
 
       <div class="sonraki-adim">
-        <h3>✅ Okudun mu? Sıradaki adım: Soru Çöz</h3>
-        <p class="meta">Bu konu anlatımını bitirdiysen aşağıdaki sorularla pekiştir. Yanlış yaparsan 2 benzer soru eklenir.</p>
+        <h3>✅ Sıradaki adım: 10'luk Test</h3>
+        <p class="meta">Okuduktan sonra testi çöz. Yanlış yaparsan konu <b>farklı anlatım</b>la tekrar anlatılır ve o konudan yeni sorular gelir.</p>
         <div class="sonuc-satir">
-          <button class="btn yesil" id="okudum-btn">${okundu ? "✅ Okundu olarak işaretli" : "📖 Okudum — sorulara geç"}</button>
-          ${gunlukSoru.length ? `<a class="btn" href="#/coz/gunluk/${d}/${g.gun}">✏️ Bu Günün ${gunlukSoru.length} Sorusunu Çöz</a>` : ""}
-          ${sonraki ? `<a class="btn seffaf" href="#/ders/${d}/${sonraki.gun}">Sonraki konu →</a>` : `<a class="btn seffaf" href="#/konular/${d}">← Konu listesi</a>`}
+          <button class="btn yesil" id="okudum-btn">${okundu ? "✅ Okundu" : "📖 Okudum"}</button>
+          <a class="btn" href="#/coz/test/gun/${d}/${g.gun}">✏️ 10 Soruluk Test</a>
+          ${sonraki ? `<a class="btn seffaf" href="#/ders/${d}/${sonraki.gun}">Sonraki modül →</a>` : `<a class="btn seffaf" href="#/konular/${d}">← Modül listesi</a>`}
         </div>
-        ${konular.length ? `<div class="konu-soru-link">
-          <b>Konuya göre çöz:</b>
-          ${konular.map((k) => `<a class="chip" href="#/coz/konu/${d}/${encodeURIComponent(k)}">${esc(k)} (${gunlukSoru.filter((s) => s.konu === k).length} soru)</a>`).join("")}
+        ${konular.length ? `<div class="konu-soru-link"><b>Konuya göre 10'luk test:</b>
+          ${konular.map((k) => `<a class="chip" href="#/coz/test/konu/${d}/${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}
         </div>` : ""}
       </div>
     </div>`;
-  topbar(`${DERSLER[d].ad} · ${g.gun}. Konu Anlatımı`);
-  const btn = $("#okudum-btn");
-  btn.onclick = () => {
+  topbar(`${DERSLER[d].ad} · ${g.gun}. Modül`);
+  $("#okudum-btn").onclick = () => {
     V.kayit.okunan[okumaAnahtar(d, g.gun)] = true; kaydet();
-    btn.textContent = "✅ Okundu olarak işaretli";
-    if (gunlukSoru.length) location.hash = `#/coz/gunluk/${d}/${g.gun}`;
+    $("#okudum-btn").textContent = "✅ Okundu";
+    if (gunlukSoru.length) location.hash = `#/coz/test/gun/${d}/${g.gun}`;
   };
 }
 
+/* hızlı tur kartı */
+window.konuAc = (d, btn) => {
+  const konu = btn.dataset.konu;
+  const key = konuAnahtar(d, konu);
+  const k = V.konuYeniden[key] || {};
+  V.kayit.konu_okuma[key] = true; kaydet();
+  const kart = document.createElement("div");
+  kart.className = "cozum";
+  kart.innerHTML = `
+    <h4>📖 ${esc(konu)} — Hızlı Tur</h4>
+    <p>${esc(k.ozet || "Bu konunun özeti yakında eklenecek.")}</p>
+    <h4>🎭 Farklı Anlatım (hikâyeyle)</h4>
+    <p>${esc(k.hikaye || "")}</p>
+    <h4>⚠️ Sınav Tuzağı</h4>
+    <p>${esc(k.tuzak || "")}</p>
+    <h4>🎯 Nasıl Sorulur?</h4>
+    <p>${esc(k.nasil_sorulur || "")}</p>
+    <div class="sonuc-satir">
+      <a class="btn" href="#/coz/test/konu/${d}/${encodeURIComponent(konu)}">✏️ Bu Konudan 10 Soru</a>
+    </div>`;
+  const satir = btn.closest(".adim-satir");
+  satir.classList.add("okundu");
+  if (satir.nextElementSibling && satir.nextElementSibling.classList.contains("konu-kart")) {
+    satir.nextElementSibling.remove();
+  } else {
+    kart.classList.add("konu-kart");
+    satir.after(kart);
+  }
+};
+
 /* =========================================================
-   SORU ÇÖZ — önce seçim, sonra quiz
+   TEST ÇÖZ — 10'luk testler, otomatik kontrol, telafi
    ========================================================= */
 function viewCozHub() {
-  const gunler = V.program.gunler.map((g) => `
-    <a class="gun-chip" href="#/gun/${g.no}">${g.no}. Gün</a>`).join("");
   const dersKart = Object.keys(DERSLER).map((d) => {
     const k = V.konuListe[d];
+    const usta = k.filter((x) => V.kayit.ustalik[konuAnahtar(d, x.konu)]?.usta).length;
     return `<div class="ders-kart ${d}">
-      <h3>${DERSLER[d].ad}</h3>
-      <p class="meta">${k.length} konu · ${V.sorular[d].length} soru</p>
-      <div class="konu-ozet">${k.slice(0, 8).map((x) => `<a class="chip" href="#/coz/konu/${d}/${encodeURIComponent(x.konu)}">${esc(x.konu)} (${x.adet})</a>`).join("")}${k.length > 8 ? `<a class="chip" href="#/konular/${d}">…tümü</a>` : ""}</div>
+      <h3>${DERSLER[d].ad} <span class="badge ${usta === k.length ? "yesil" : "gri"}">${usta}/${k.length} usta</span></h3>
+      <div class="konu-ozet">${k.map((x) => {
+        const key = konuAnahtar(d, x.konu);
+        const u = V.kayit.ustalik[key];
+        return `<a class="chip ${u?.usta ? "guclu" : u ? "zayif" : ""}" href="#/coz/test/konu/${d}/${encodeURIComponent(x.konu)}">${esc(x.konu)} (${x.adet})</a>`;
+      }).join("")}</div>
       <div class="aksiyonlar">
-        <a class="btn kucuk" href="#/coz/konu-ders/${d}/">Karışık çöz (${V.sorular[d].length})</a>
-        <a class="btn kucuk turuncu" href="#/coz/hata/${d}/0">🎯 Hata Atölyesi</a>
+        <a class="btn kucuk yesil" href="#/coz/maraton/${d}/0">🚀 Maraton (10'lu)</a>
+        <a class="btn kucuk turuncu" href="#/coz/telafi/${d}/0">🔁 Yanlış Telafisi</a>
+        <a class="btn kucuk seffaf" href="#/coz/hata/${d}/0">🎯 Hata Atölyesi</a>
       </div>
     </div>`;
   }).join("");
   $("#view").innerHTML = `
     <div class="hero">
-      <span class="etiket">✏️ SORU ÇÖZ</span>
-      <h1>Nasıl soru çözmek istersin?</h1>
-      <p>Günün soruları için "Bugünün Rehberi"ni kullan. Buradan tek bir konuya çalışabilir, konu konu veya karışık soru çözebilirsin.</p>
+      <span class="etiket">✏️ TEST ÇÖZ ${gunlukRozet()}</span>
+      <h1>10'ar soruluk testler — ustalana kadar</h1>
+      <p>Her 10 soruda otomatik kontrol: yanlışların çözümleri ve <b>farklı anlatım</b> kartları çıkar, o konulardan <b>yeni sorular</b> gelir. Her gün yüzlerce soru; ama durumuna göre karşıına gelir, aynı soru tekrar etmez.</p>
+      <div class="sayac">
+        <div><b>${gunlukSayac().sayi}</b>bugün çözülen</div>
+        <div><b>${Object.values(V.kayit.ustalik).filter((u) => u.usta).length}</b>usta konu</div>
+        <div><b>${Object.keys(V.kayit.soru_kayit).length}</b>görülen soru</div>
+      </div>
     </div>
-    <div class="baslik-satir"><h2>📅 Günlük set için gün seç</h2></div>
-    <div class="gun-secici">${gunler}</div>
-    <div class="baslik-satir"><h2>📚 Derse göre — konu seç, o konunun sorularını çöz</h2></div>
+    <div class="baslik-satir"><h2>🚀 Hızlı Başlangıç</h2></div>
+    <div class="grid grid-3">
+      <a class="btn blok yesil" href="#/coz/maraton/0/0">Günün Maratonu (10 soru)</a>
+      <a class="btn blok turuncu" href="#/coz/telafi/0/0">Yanlış Telafisi (10 soru)</a>
+      <a class="btn blok" href="#/gun/${bugunKampGunu()}">Bugünün Rehberi</a>
+    </div>
+    <div class="baslik-satir"><h2>📚 Konuya göre çalış</h2></div>
     <div class="grid grid-2">${dersKart}</div>`;
-  topbar("Soru Çöz");
+  topbar("Test Çöz");
 }
 
-function viewCoz(mod, ders, arg) {
-  if (!ders || !DERSLER[ders]) return (location.hash = "#/coz");
-  if (mod === "konu-ders") {
-    // dersin karışık tüm soruları — konu seçim sayfası
-    return viewKonuSec(ders);
-  }
-  if (!V.oturum || V.oturum.mod !== mod || V.oturum.ders !== ders || V.oturum.arg !== arg) {
-    let liste, baslik = "";
-    if (mod === "gunluk") {
+function viewCoz(mod, ders, arg, sub) {
+  {
+    let liste = [], baslik = "";
+    const dAd = ders && DERSLER[ders] ? DERSLER[ders].ad : null;
+    if (mod === "test" && sub === "gun") {
       const gun = +arg || 0;
-      liste = gunlukSet(ders, gun, 20);
-      baslik = `${gun}. Gün — günlük set`;
-    } else if (mod === "konu") {
-      liste = konuSeti(ders, arg);
-      baslik = `${arg} — ${liste.length} soru`;
-      if (!liste.length) return (location.hash = "#/coz");
+      const gunluk = (V.sorular[ders] || []).filter((s) => s.gun === gun);
+      liste = testSeti(gunluk.length ? gunluk : (V.sorular[ders] || []), BATCH, {});
+      baslik = `${dAd} ${gun}. gün — 10'luk test`;
+    } else if (mod === "test" && sub === "konu") {
+      liste = testSeti((V.sorular[ders] || []).filter((s) => s.konu === arg), BATCH, {});
+      baslik = `${dAd} — ${arg}`;
+    } else if (mod === "maraton") {
+      const havuz = ders && DERSLER[ders] ? V.sorular[ders] : Object.values(V.sorular).flat();
+      liste = testSeti(havuz, BATCH, { zayifOdak: true });
+      baslik = `${dAd ? dAd + " " : ""}Maratonu — 10'luk tur`;
+    } else if (mod === "telafi") {
+      const hatalar = Object.entries(V.kayit.soru_kayit)
+        .filter(([, v]) => v.y > 0)
+        .map(([id]) => V.tumSorular[id])
+        .filter(Boolean);
+      const konular = new Set(hatalar.map((s) => konuAnahtar(s.ders, s.konu)));
+      let havuz = Object.values(V.tumSorular).filter((s) => konular.has(konuAnahtar(s.ders, s.konu)));
+      if (ders && DERSLER[ders]) havuz = havuz.filter((s) => s.ders === ders);
+      if (!havuz.length) havuz = (ders && DERSLER[ders] ? V.sorular[ders] : Object.values(V.sorular).flat());
+      liste = testSeti(havuz, BATCH, { zayifOdak: true });
+      baslik = `Yanlış Telafisi — ${liste.length} soru`;
     } else if (mod === "hata") {
-      liste = hataSeti(ders, 500);
+      const havuz = ders && DERSLER[ders] ? V.sorular[ders] : Object.values(V.sorular).flat();
+      liste = testSeti(havuz, BATCH, { zayifOdak: true });
       baslik = `Hata Atölyesi — ${liste.length} soru`;
-    } else if (mod === "karma") {
-      liste = hataSeti(ders, 60);
-      baslik = `${DERSLER[ders].ad} karışık — ${liste.length} soru`;
-    } else return (location.hash = "#/coz");
+    } else if (mod === "gunluk") {
+      liste = testSeti(V.sorular[ders] || [], BATCH, {});
+      baslik = `${dAd} — 10'luk test`;
+    } else {
+      return (location.hash = "#/coz");
+    }
+    if (!liste.length) return (location.hash = "#/coz");
     V.oturum = {
-      mod, ders, arg, baslik, sira: 0, dogru: 0, yanlis: 0,
+      mod, ders, arg, sub, baslik, sira: 0, dogru: 0, yanlis: 0,
       kuyruk: liste.map((s) => ({ s, tip: "ana" })),
       gorulen: [], bas: Date.now(),
     };
@@ -492,44 +585,23 @@ function viewCoz(mod, ders, arg) {
   renderQuiz();
 }
 
-function viewKonuSec(ders) {
-  const k = V.konuListe[ders];
-  $("#view").innerHTML = `
-    <div class="hero">
-      <span class="etiket">✏️ ${DERSLER[ders].ad.toUpperCase()} — KONU SEÇ</span>
-      <h1>Bir konu seç, sadece o konunun sorularını çöz</h1>
-      <p>İstersen karışık da çözebilirsin. Yanlış yaptığın konular Hata Defteri'ne eklenir.</p>
-    </div>
-    <div class="kart">
-      ${k.map((x) => `<div class="adim-satir">
-        <div class="gun-no mini">${x.gunler[0] || "-"}</div>
-        <div class="adim-bilgi"><b>${esc(x.konu)}</b><span>${x.adet} soru · ${x.gunler.map((gg) => gg + ". gün").join(", ")}</span></div>
-        <a class="btn kucuk" href="#/coz/konu/${ders}/${encodeURIComponent(x.konu)}">Çöz →</a>
-      </div>`).join("")}
-      <div class="adim-alt" style="margin-top:14px">
-        <a class="btn" href="#/coz/karma/${ders}/0">🔀 Karışık çalış (${V.sorular[ders].length} soru)</a>
-        <a class="btn turuncu" href="#/coz/hata/${ders}/0">🎯 Hata Atölyesi (≤500)</a>
-      </div>
-    </div>`;
-  topbar(`${DERSLER[ders].ad} · Konu Seç`);
-}
-
 function renderQuiz() {
   const o = V.oturum;
-  if (o.sira >= o.kuyruk.length) return quizBitti();
+  if (o.sira >= o.kuyruk.length) return testKontrol();
   const { s, tip } = o.kuyruk[o.sira];
   const k = o.gorulen[o.sira];
-  const ad = tip === "pekiştirme" ? "🧩 Pekiştirme (benzer soru)" : tip === "tekrar" ? "🔁 Tekrar" : "";
+  const ad = tip === "pekiştirme" ? "🧩 Pekiştirme (benzer soru)" : "";
+  const g = gunlukSayac();
   $("#view").innerHTML = `<div class="quiz">
     <div class="quiz-ust">
       <div>
-        <a class="btn kucuk seffaf" href="#/coz">← Çözüm menüsü</a>
-        <span class="badge ${o.ders}">${DERSLER[o.ders].ad}</span>
+        <a class="btn kucuk seffaf" href="#/coz">← Test menüsü</a>
+        <span class="badge ${o.ders}">${DERSLER[o.ders]?.ad || "Karışık"}</span>
         ${ad ? `<span class="badge turuncu">${ad}</span>` : ""}
         <span class="badge gri">${esc(s.konu)}</span>
         <span class="badge gri">${["", "Kolay", "Orta", "Zor"][s.zorluk] || ""}</span>
       </div>
-      <div class="quiz-sayac">Soru <b>${o.sira + 1}</b> / ${o.kuyruk.length} · ✅${o.dogru} ❌${o.yanlis}</div>
+      <div class="quiz-sayac">Soru <b>${o.sira + 1}</b> / ${o.kuyruk.length} · ✅${o.dogru} ❌${o.yanlis} · ${gunlukRozet()}</div>
     </div>
     <div class="soru-kart">
       <div class="soru-kok">${esc(s.kok)}</div>
@@ -544,13 +616,13 @@ function renderQuiz() {
       }).join("")}
       ${k ? cozumHtml(s, k) : ""}
       <div class="sonuc-satir" id="quiz-aks">
-        ${k ? `<button class="btn" id="sonraki-btn">${o.sira + 1 >= o.kuyruk.length ? "Sonuçları Gör →" : "Sonraki Soru →"}</button>
-              <a class="btn seffaf" href="#/ders/${s.ders}/${s.gun}">📖 Konu anlatımını oku</a>
+        ${k ? `<button class="btn" id="sonraki-btn">${o.sira + 1 >= o.kuyruk.length ? "Kontrol Et →" : "Sonraki Soru →"}</button>
+              <a class="btn seffaf" href="#/ders/${s.ders}/${s.gun}">📖 Konu anlatımı</a>
               <button class="btn seffaf" onclick="isaretleGec()">İşaretle ve geç</button>`
-            : `<span class="meta">Bir şıkka dokun veya klavyeden A–E ile cevapla.</span>`}
+            : `<span class="meta">Bir şıkka dokun veya klavyeden A–E ile cevapla. (Bugün ${g.sayi}/${GUNLUK_HEDEF})</span>`}
       </div>
     </div>
-    <div class="benzer-not">💡 Yanlış yaparsan o konudan <b>2 benzer soru</b> kuyruğa eklenir. Aynı konuda hata birikirse konu anlatımı hatırlatılır.</div>
+    <div class="benzer-not">💡 10 soru bitince <b>otomatik kontrol</b> yapılır: yanlışların çözümleri + <b>farklı anlatım</b> kartları gösterilir, o konudan yeni sorular gelir. Aynı soru bugün tekrar gelmez.</div>
   </div>`;
   $$(".sik").forEach((el) => el.onclick = () => cevapla(+el.dataset.sik));
   const sb = $("#sonraki-btn"); if (sb) sb.onclick = () => { o.sira++; renderQuiz(); };
@@ -580,47 +652,100 @@ function cevapla(i) {
     const ek = etiketKaydi(t);
     if (dogru) ek.d++; else { ek.y++; ek.tekrar++; }
   });
+  ustalikGuncelle(s, dogru);
+  const g = gunlukSayac();
+  g.sayi++; g.ids[s.id] = 1;
   if (!dogru) {
     const ben = benzerler(s, 2, o.kuyruk.map((x) => x.s.id));
     ben.forEach((b) => { o.kuyruk.push({ s: b, tip: "pekiştirme" }); V.oturumTecih[b.id] = 1; });
   }
   kaydet();
+  const cevapAdet = o.gorulen.filter(Boolean).length;
+  if (cevapAdet > 0 && cevapAdet % BATCH === 0) return testKontrol();
   renderQuiz();
 }
 window.isaretleGec = () => { const o = V.oturum; if (o) { o.sira++; renderQuiz(); } };
 
-function quizBitti() {
+/* ---------------- OTOMATİK KONTROL (checkpoint) ---------------- */
+function testKontrol() {
   const o = V.oturum;
-  const toplam = o.dogru + o.yanlis;
-  const net = (o.dogru - o.yanlis / 4).toFixed(2);
+  if (!o) return (location.hash = "#/coz");
+  const gorulenler = o.gorulen.map((g, i) => ({ g, i })).filter((x) => x.g);
+  const batch = gorulenler.slice(-BATCH);
+  const yanlislar = batch.filter((x) => !x.g.dogru).map((x) => o.kuyruk[x.i].s);
+  const dogru = batch.filter((x) => x.g.dogru).length;
+  const yanlis = batch.length - dogru;
+  const net = (dogru - yanlis / 4).toFixed(2);
   const dk = Math.max(1, Math.round((Date.now() - o.bas) / 60000));
-  V.kayit.oturumlar.push({ tarih: new Date().toISOString(), ders: o.ders, mod: o.mod, dogru: o.dogru, yanlis: o.yanlis, dk });
+  V.kayit.oturumlar.push({ tarih: new Date().toISOString(), ders: o.ders, mod: o.mod, dogru, yanlis, dk });
   V.kayit.oturumlar = V.kayit.oturumlar.slice(-200);
   kaydet();
-  const zayif = zayifEtiketler(o.ders, 8);
-  const gun = (o.mod === "gunluk" ? +o.arg : (o.kuyruk[0] ? o.kuyruk[0].s.gun : 1));
-  V.oturum = null; V.oturumTecih = {};
+
+  /* yanlış konuları → farklı anlatım kartları */
+  const yanliKonular = [...new Set(yanlislar.map((s) => konuAnahtar(s.ders, s.konu)))];
+  const anlatimlar = yanliKonular.map((key) => {
+    const k = V.konuYeniden[key] || {};
+    const [d, ...rest] = key.split("|");
+    const konu = rest.join("|");
+    return `<div class="cozum">
+      <h4>🎭 ${esc(konu)} — bu konu sana <b>farklı</b> anlatımla</h4>
+      <p><b>Hızlı tur:</b> ${esc(k.ozet || "")}</p>
+      <p><b>Hikâyeyle:</b> ${esc(k.hikaye || "")}</p>
+      <p><b>Sınav tuzağı:</b> ${esc(k.tuzak || "")}</p>
+      <div class="sonuc-satir">
+        <a class="btn kucuk" href="#/coz/test/konu/${d}/${encodeURIComponent(konu)}">✏️ Bu konudan yeni 10 soru</a>
+      </div>
+    </div>`;
+  }).join("");
+
+  const yanlisHtml = yanlislar.map((s, i) => `<div class="soru-kart" style="margin-bottom:12px">
+    <div class="quiz-ust"><span class="badge ${s.ders}">${DERSLER[s.ders].ad}</span><span class="badge gri">${esc(s.konu)}</span></div>
+    <div class="soru-kok">${i + 1}. ${esc(s.kok)}</div>
+    ${s.siklar.map((sx, j) => `<div class="sik ${j === s.dogru ? "dogru" : ""} kapali"><span class="harf">${SIK_HARF[j]}</span><span>${esc(sx)}</span></div>`).join("")}
+    ${cozumHtml(s, { dogru: false })}
+  </div>`).join("");
+
+  const sonrakiMod = o.mod;
+  const sonrakiDers = o.ders;
+  const kalanVar = o.kuyruk.some((_, i) => !o.gorulen[i]);
+  if (!kalanVar) { V.oturum = null; V.oturumTecih = {}; }
+
   $("#view").innerHTML = `<div class="quiz">
-    <div class="hero"><span class="etiket">🎉 TEBRİKLER — TUR BİTTİ</span>
-      <h1>${toplam} soruda ${o.dogru} doğru, ${o.yanlis} yanlış</h1>
-      <p>${dk} dakikada tamamladın. ${o.yanlis ? "Yanlışların Hata Defteri'ne eklendi." : "Hatasız! 🎉"}</p></div>
+    <div class="hero">
+      <span class="etiket">📋 OTOMATİK KONTROL — ${yanlis ? yanlis + " yanlış" : "HATASIZ! 🎉"}</span>
+      <h1>${batch.length} soru · ${dogru} doğru, ${yanlis} yanlış</h1>
+      <p>${yanlis ? "Aşağıda yanlışların çözümleri ve o konuların FARKLI ANLATIMI var. Yeni sorularla tekrar çözmeye devam et — ustalana kadar!" : "Harika! Devam edersen yeni sorular gelir; aynı soru bugün tekrar etmez."}</p>
+    </div>
     <div class="net-kutu">
-      <div><b style="color:var(--iyi)">${o.dogru}</b>Doğru</div>
-      <div><b style="color:var(--kotu)">${o.yanlis}</b>Yanlış</div>
+      <div><b style="color:var(--iyi)">${dogru}</b>Doğru</div>
+      <div><b style="color:var(--kotu)">${yanlis}</b>Yanlış</div>
       <div><b>${net}</b>Net</div>
-      <div><b>${dk}′</b>Süre</div>
+      <div><b>${gunlukSayac().sayi}</b>Bugün</div>
     </div>
-    <div class="sonuc-satir" style="margin-top:18px">
-      <a class="btn" href="#/gun/${gun}">Günün rehberine dön</a>
-      <a class="btn turuncu" href="#/hata">🎯 Hata Defteri</a>
-      <a class="btn seffaf" href="#/coz">Başka soru seti</a>
-      <a class="btn seffaf" href="#/ders/${o.ders}/${gun}">📖 Konu anlatımına dön</a>
+    ${yanlislar.length ? `<div class="baslik-satir"><h2>❌ Yanlışların (${yanlislar.length})</h2></div>${yanlisHtml}` : ""}
+    ${anlatimlar ? `<div class="baslik-satir"><h2>🎭 Yanlış Konuların Farklı Anlatımı</h2></div>${anlatimlar}` : ""}
+    <div class="sonuc-satir" style="margin:18px 0 40px">
+      ${kalanVar ? `<button class="btn yesil" onclick="testDevam()">▶ Devam Et (sırada sorular var)</button>` : ""}
+      ${yanliKonular.length ? `<a class="btn turuncu" href="#/coz/telafi/${sonrakiDers && DERSLER[sonrakiDers] ? sonrakiDers : "0"}/0">🔁 Bu Konulardan Yeni 10 Soru</a>` : ""}
+      <a class="btn yesil" href="#/coz/maraton/${sonrakiDers && DERSLER[sonrakiDers] ? sonrakiDers : "0"}/0">🚀 Karışık Devam (10 soru)</a>
+      <a class="btn" href="#/gun/${bugunKampGunu()}">Günün rehberi</a>
+      <a class="btn seffaf" href="#/coz">Test menüsü</a>
     </div>
+    <div class="benzer-not">📊 Ustalık: ${Object.values(V.kayit.ustalik).filter((u) => u.usta).length} konuda usta · Bugün ${gunlukSayac().sayi}/${GUNLUK_HEDEF} soru · Aynı soru bugün tekrar gelmez.</div>
   </div>`;
+  topbar("Otomatik Kontrol");
 }
+window.testDevam = () => {
+  const o = V.oturum;
+  if (!o) return (location.hash = "#/coz");
+  for (let i = 0; i < o.kuyruk.length; i++) {
+    if (!o.gorulen[i]) { o.sira = i; return renderQuiz(); }
+  }
+  return testKontrol();
+};
 
 /* =========================================================
-   DENEMELER
+   DENEMELER (aynı kaldı)
    ========================================================= */
 function viewDenemeler() {
   const satirlar = V.denemeler.denemeler.map((d) => {
@@ -742,8 +867,8 @@ window.denemeBitir = function () {
     const ek = (konular[s.ders] = konular[s.ders] || { d: 0, y: 0, b: 0 });
     const sk = soruKaydi(s.id); sk.son = Date.now();
     if (c == null) { b++; ek.b++; }
-    else if (c === s.dogru) { d++; ek.d++; sk.d++; (s.etiketler || []).forEach((t) => etiketKaydi(t).d++); }
-    else { y++; ek.y++; sk.y++; (s.etiketler || []).forEach((t) => { etiketKaydi(t).y++; etiketKaydi(t).tekrar++; }); }
+    else if (c === s.dogru) { d++; ek.d++; sk.d++; ustalikGuncelle(s, true); (s.etiketler || []).forEach((t) => etiketKaydi(t).d++); }
+    else { y++; ek.y++; sk.y++; ustalikGuncelle(s, false); (s.etiketler || []).forEach((t) => { etiketKaydi(t).y++; etiketKaydi(t).tekrar++; }); }
   });
   const net = +(d - y / 4).toFixed(2);
   V.kayit.denemeler.push({ id: o.d.id, ad: o.d.ad, tarih: new Date().toISOString(), dogru: d, yanlis: y, bos: b, net, sure: Math.floor((Date.now() - o.bas) / 1000) });
@@ -770,8 +895,8 @@ window.denemeBitir = function () {
       ${cozumHtml(s, { dogru: false })}
     </div>`).join("") : `<div class="kart"><p>Harika! Yanlış yok 🎉</p></div>`}
     <div class="sonuc-satir" style="margin:18px 0 40px">
+      <a class="btn turuncu" href="#/coz/telafi/0/0">🔁 Yanlış Telafisi (10 soru)</a>
       <a class="btn" href="#/gun/${o.d.gun}">Günün rehberine dön</a>
-      <a class="btn turuncu" href="#/hata">🎯 Hata Defteri'ne bak</a>
       <a class="btn seffaf" href="#/denemeler">Denemeler</a>
     </div>
   </div>`;
@@ -791,17 +916,18 @@ function viewHata() {
   $("#view").innerHTML = `
     <div class="hero"><span class="etiket">🎯 HATA DEFTERİ</span>
       <h1>Hata yaptığın yerler, kazandığın puanların fabrikası</h1>
-      <p>En çok yanlış yaptığın konular aşağıda. Her yanlış için 2 benzer soru üretilir. Ertesi günün 20 sorusunun 8'i buradan gelir.</p></div>
+      <p>Her yanlış için 2 benzer soru üretilir; konular farklı anlatımla tekrar edilir. Ustalana kadar tekrar!</p></div>
     <div class="baslik-satir"><h2>🔥 Zayıf Konuların</h2></div>
     <div class="kart">
       ${t.length ? t.map(([tag, v]) => `<span class="chip zayif">${esc(tag)} · ❌${v.y} ✅${v.d}</span>`).join("") : "<p class='meta'>Henüz hata yok.</p>"}
     </div>
-    <div class="baslik-satir"><h2>⚔️ Zayıf Konu Atağı — soru çöz</h2></div>
+    <div class="baslik-satir"><h2>⚔️ Saldırı — 10'luk testler</h2></div>
     <div class="grid grid-3">
       ${Object.keys(DERSLER).map((d) => `<div class="ders-kart ${d}">
         <h3>${DERSLER[d].ad}</h3>
-        <p class="meta">Zayıf konulardan ≤500 soruluk kişisel set</p>
-        <div class="aksiyonlar"><a class="btn kucuk turuncu" href="#/coz/hata/${d}/0">Saldırıyı başlat</a></div>
+        <p class="meta">Yanlışlarından uygun sorular</p>
+        <div class="aksiyonlar"><a class="btn kucuk turuncu" href="#/coz/telafi/${d}/0">Telafi (10 soru)</a>
+        <a class="btn kucuk seffaf" href="#/coz/hata/${d}/0">Atölye</a></div>
       </div>`).join("")}
     </div>
     <div class="baslik-satir"><h2>📕 Yanlış Yaptığın Sorular (${yanlisSorular.length})</h2></div>
@@ -809,7 +935,7 @@ function viewHata() {
       const k = V.kayit.soru_kayit[s.id];
       return `<div class="soru-kart" style="margin-bottom:12px">
         <div class="quiz-ust"><span class="badge ${s.ders}">${DERSLER[s.ders].ad}</span><span class="badge kirmizi">❌${k.y} ✅${k.d}</span>
-        <a class="btn kucuk seffaf" href="#/ders/${s.ders}/${s.gun}">📖 Konu anlatımı</a></div>
+        <a class="btn kucuk seffaf" href="#/ders/${s.ders}/${s.gun}">📖 Farklı anlatım</a></div>
         <div class="soru-kok">${i + 1}. ${esc(s.kok)}</div>
         <div class="meta" style="margin-top:8px">Doğru: ${SIK_HARF[s.dogru]}) ${esc(s.siklar[s.dogru])}</div>
         ${(s.cozumler || []).map((c, j) => `<div class="yontem" style="margin-top:8px"><b>Yöntem ${j + 1} — ${esc(c.yontem)}:</b> ${esc(c.metin)}</div>`).join("")}
@@ -831,16 +957,17 @@ function viewIstatistik() {
     g.d += v.d; g.y += v.y;
   });
   const den = V.kayit.denemeler.slice(-5);
-  const okunan = Object.keys(V.kayit.okunan).length;
+  const okunan = Object.keys(V.kayit.okunan).length + Object.keys(V.kayit.konu_okuma).length;
+  const usta = Object.values(V.kayit.ustalik).filter((u) => u.usta).length;
   $("#view").innerHTML = `
     <div class="hero"><span class="etiket">📊 İSTATİSTİK</span>
       <h1>${d + y} soru çözdün — doğruluk oranı: ${d + y ? Math.round((d / (d + y)) * 100) : 0}%</h1>
-      <p>${okunan}/50 konu anlatımı okundu · ${V.kayit.denemeler.length} deneme çözüldü.</p></div>
+      <p>${okunan} konu okundu · ${usta} konuda ustalık · ${V.kayit.denemeler.length} deneme · Bugün ${gunlukSayac().sayi}/${GUNLUK_HEDEF} soru.</p></div>
     <div class="net-kutu">
       <div><b>${d + y}</b>Çözülen</div>
       <div><b style="color:var(--iyi)">${d}</b>Doğru</div>
       <div><b style="color:var(--kotu)">${y}</b>Yanlış</div>
-      <div><b>${V.kayit.denemeler.length}</b>Deneme</div>
+      <div><b>${usta}</b>Usta Konu</div>
     </div>
     <div class="baslik-satir"><h2>📚 Derslere Göre</h2></div>
     <div class="kart"><table><tr><th>Ders</th><th>Çözülen</th><th>Doğru</th><th>Yanlış</th><th>Başarı</th></tr>
@@ -851,6 +978,10 @@ function viewIstatistik() {
         <td><div class="ilerleme-cubuk"><span style="width:${t ? Math.round((g.d / t) * 100) : 0}%"></span></div></td></tr>`;
       }).join("")}
     </table></div>
+    <div class="baslik-satir"><h2>🏅 Ustalık Durumu</h2></div>
+    <div class="kart">${Object.entries(V.kayit.ustalik).length
+      ? Object.entries(V.kayit.ustalik).map(([key, u]) => `<span class="chip ${u.usta ? "guclu" : "zayif"}">${esc(key.split("|").slice(1).join("|"))} ${u.usta ? "🎓" : "%" + ustalikOrani(key)}</span>`).join("")
+      : "<p class='meta'>Henüz test çözülmedi.</p>"}</div>
     <div class="baslik-satir"><h2>📝 Son Denemeler</h2></div>
     <div class="kart"><table><tr><th>Deneme</th><th>Tarih</th><th>Net</th><th>D / Y / B</th></tr>
       ${den.length ? den.map((x) => `<tr><td>${esc(x.ad)}</td><td>${new Date(x.tarih).toLocaleDateString("tr-TR")}</td><td><b>${x.net}</b></td><td>${x.dogru} / ${x.yanlis} / ${x.bos}</td></tr>`).join("")
@@ -883,7 +1014,8 @@ function viewAyarlar() {
     ok.onload = () => {
       try {
         V.kayit = JSON.parse(ok.result);
-        if (!V.kayit.okunan) V.kayit.okunan = {};
+        const b = bosKayit();
+        for (const k of Object.keys(b)) if (V.kayit[k] === undefined) V.kayit[k] = b[k];
         kaydet(); alert("Yedek yüklendi!"); location.hash = "#/panel";
       } catch { alert("Geçersiz dosya"); }
     };
