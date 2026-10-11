@@ -95,6 +95,15 @@ yalnızca "karıştırma şıkkı" olarak kullanılabilir.
 
 ---
 
+## Deneme Sonuçları Ertesi Günü Şekillendirir
+
+Gün sonu denemesi bitince **yanlış/boş bıraktığın konular** otomatik olarak "odak listene" yazılır:
+
+- Ertesi günün rehberinde **"🎯 Dünkü Denemeden Gelen Odakların"** paneli çıkar.
+- Maraton ve testlerde bu konulardan gelen sorular **öncelikli** gelir.
+- **Odak Testi** (10 soru) ile zayıf konularını doğrudan çalışabilirsin.
+- Bir konudan doğru çözdükçe o konu listeden silinir — ta ustalaşana kadar.
+
 ## Sayfalar
 
 - **🏠 Bugünün Rehberi** — 1. gün…10. gün numaralı, her gün için 3 adım: konu turu → 10'luk testler → deneme

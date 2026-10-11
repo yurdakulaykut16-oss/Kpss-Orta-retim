@@ -574,5 +574,23 @@
   "hikaye": "Vatandaşlık dersinin defterini tek seferde kapatırız: kavramlar, kurumlar, ilkeler.",
   "tuzak": "Finalde en sık karıştırılanlar: yasama-yürütme-yargı görevleri, temel hakların sınırlanma sebepleri, idari-adli ayrımı.",
   "nasil_sorulur": "Karma vatandaşlık soruları; kurum-kavram eşleştirmeleri ve örnek durumlar."
+ },
+ "tarih|I. Dünya Savaşı": {
+  "ozet": "I. Dünya Savaşı (1914-1918): Osmanlı, İttifak Devletleri (Almanya, Avusturya-Macaristan) yanında savaşa girdi. Cepheler: Çanakkale, Kafkas, Kanal, Irak, Sina-Filistin, Makedonya. Amaç: savaştan toprak bütünlüğüyle çıkmak. Sonuç: Mondros Ateşkesi (30 Ekim 1918) ile kayıtsız şartsız teslim.",
+  "hikaye": "Hasta yatağındaki adam (Osmanlı) kumar masasına oturdu: Almanya'nın takımını seçti. En parlak maçı Çanakkale'de kazandı, ama diğer maçları kaybedince 1918'de Mondros'ta teslim kâğıdını imzaladı.",
+  "tuzak": "Tuzak: savaşın BİTTİĞİ antlaşma Mondros'tur (ateşkes), barış antlaşması Sevr'dir (1920, uygulanmadı). Çanakkale'de donanma geçti ama kara savaşını biz kazandık' — İtilaf devletleri Çanakkale'yi GEÇEMEDİ. En uzun cephe Kafkas, en çok kayıp orada (Soğanlı, Sarıkamış).",
+  "nasil_sorulur": "Sınavda: cepheler ve amaçları, Mondros maddeleri (sınır kapıları terk, asker terhis), komutanlar (Enver Paşa, Mustafa Kemal - Çanakkale), savaşa giriş gerekçeleri sorulur. 'Osmanlı savaşa neden girdi' = Almanya'nın savaşı kısa sürede kazanacağı beklentisi + kapitülasyonları kaldırmak."
+ },
+ "tarih|Türk-İslam Kültürü": {
+  "ozet": "Türk-İslam kültüründe kurumlar: Divan (danışma), Medrese (eğitim, Nizamülmülk), Tekke (dini-tasavvufi), Ahilik (esnaf teşkilatı, Ahi Evran). Bilim: Farabi, İbn Sina (El-Kanun fi't-Tıp), Biruni, Uluğ Bey (rasathane). Edebiyat: Kutadgu Bilig (Yusuf Has Hacip), Divanü Lügati't-Türk (Kaşgarlı Mahmud), Atabetü'l-Hakayık (Edip Ahmet Yükneki), Divan-ı Hikmet (Ahmed Yesevi). Mimari: kümbet, şadırvan, kervansaray.",
+  "hikaye": "Bir Selçuklu şehri düşün: meydanda divan toplanıyor, köşede medrese eğitim veriyor, tekke insanları topluyor, çarşıda Ahilik düzeni kuruyor. Bilim insanları rasathanede yıldızları, hastanede şifayı araştırıyor; şairler Türkçeyi kitaba döküyor.",
+  "tuzak": "Tuzak: Divanü Lügati't-Türk bir SÖZLÜKTÜR (Türkçe sözlük), Kutadgu Bilig bir SİYASETNAME'dir (kutlu kılavuz). İbn Sina = tıp (El-Kanun), Farabi = felsefe (İkinci Muallim), Biruni = astronomi/coğrafya, Uluğ Bey = rasathane. 'İlk Türkçe sözlük' Divanü Lügati't-Türk, 'ilk Türkçe siyasetname' Kutadgu Bilig.",
+  "nasil_sorulur": "Sınavda: eser-yazar eşleştirmesi, kurumların görevleri (medrese/ticaret/ahilik), bilim insanı-branş eşleştirmesi sık sorulur. 'Türkçeyi yaşatmak için yazılan eser' = Divanü Lügati't-Türk."
+ },
+ "cografya|Madencilik": {
+  "ozet": "Türkiye maden zenginliği: BOR (dünya 1.), krom (dünya ilk sıralarda), taşkömürü (Zonguldak — tek!), linyit (Soma, Turgutalp, Çayırhan, Afşin-Elbistan), bakır (Murgul-Artvin, Kastamonu-Küre, Sivas-Divriği demir), boksit (Seydişehir-Konya, Akseki-Antalya), demir (Divriği, Hekimhan, Çermik), tuz (Tuz Gölü, Çankırı, Kars), mermer (Afyon, Burdur), altın (Mastra-Gümüşhane, Çöpler-Erzincan).",
+  "hikaye": "Türkiye maden marketi: rafların en üstünde DÜNYA BİRİNCİSİ bor, yanında krom; kasap reyonunda Zonguldak taşkömürü; torba torba Soma linyiti; bakır tencereler Murgul'dan; tuz Tuz Gölü'nden; altın Mastra'dan.",
+  "tuzak": "Tuzak: Taşkömürü SADECE Zonguldak'tadır (Türkiye'nin tek taşkömürü havzası) — linyit birçok yerdedir. Bor = Eskişehir-Kırka, Balıkesir-Bigadiç, Kütahya-Emet/Seyitömer. 'Türkiye'de çıkarılan ama işlenmeyen maden' = krom/bor (hammadde satılır). Boksit = alüminyum hammaddesi.",
+  "nasil_sorulur": "Sınavda: maden-yer eşleştirmesi (Zonguldak-Soma-Murgul-Divriği klasik), Türkiye'nin dünya sırası (bor 1., krom üst sıralar), 'hangi maden nerede' harita yorumuyla sorulur. Madenlerin işlendiği tesisler de (İskenderun demir-çelik, Karabük, Ereğli) eşleştirilir."
  }
 }

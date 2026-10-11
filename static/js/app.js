@@ -28,6 +28,7 @@ function bosKayit() {
     kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {},
     denemeler: [], oturumlar: [], okunan: {},
     ustalik: {}, gunluk: { tarih: null, sayi: 0, ids: {} }, konu_okuma: {},
+    odak: {},
   };
 }
 async function kayitYukle() {
@@ -133,6 +134,8 @@ function secimPuani(s, opts = {}) {
   }
   if (u && u.usta) p -= 70;
   if (opts.zayifOdak && k && k.y > 0) p += 45;
+  const odak = (V.kayit.odak || {})[konuAnahtar(s.ders, s.konu)];
+  if (odak > 0) p += 50 + Math.min(40, odak * 10);  // deneme zayıflığı → öncelikli
   return p;
 }
 function testSeti(havuz, adet, opts = {}) {
@@ -294,6 +297,19 @@ function viewGun(no) {
     </div>
 
     ${gunSecici(g.no)}
+    ${(() => {
+      const od = Object.entries(V.kayit.odak || {}).sort((a, b) => b[1] - a[1]);
+      if (!od.length) return "";
+      return `<div class="kart" style="border-left:4px solid var(--turuncu);margin:14px 0">
+        <b>🎯 Dünkü Denemeden Gelen Odakların</b>
+        <p class="meta">Son denemenin sonuçları bugünün planını şekillendirdi: bu konular soru seçiminde öncelikli.</p>
+        <div class="aks">${od.slice(0, 10).map(([k, n]) => {
+          const ko = k.split("|")[1];
+          return `<span class="chip chip-sm">${esc(ko)}${n > 1 ? " ×" + n : ""}</span>`;
+        }).join("")}</div>
+        <div class="adim-alt"><a class="btn turuncu kucuk" href="#/coz/odak/0">🎯 Odak Testi Çöz (10 soru)</a></div>
+      </div>`;
+    })()}
 
     <div class="yol-haritasi">
       <div class="adim-kart">
@@ -581,6 +597,11 @@ function viewCoz(mod, ders, arg, sub) {
     } else if (mod === "gunluk") {
       liste = testSeti(V.sorular[ders] || [], BATCH, {});
       baslik = `${dAd} — 10'luk test`;
+    } else if (mod === "odak") {
+      const odaklar = new Set(Object.keys(V.kayit.odak || {}).filter((k) => V.kayit.odak[k] > 0));
+      const havuz = Object.values(V.tumSorular).filter((s) => odaklar.has(konuAnahtar(s.ders, s.konu)));
+      liste = testSeti(havuz.length ? havuz : Object.values(V.tumSorular), BATCH, { zayifOdak: true });
+      baslik = "🎯 Deneme Odak Testi — zayıf konuların";
     } else if (mod === "cikmis") {
       const yil = ders && ders !== "karisik" ? ders : null;
       let havuz = Object.values(V.tumSorular).filter((s) => /^\d{4}-KPSS$/.test(s.kaynak || ""));
@@ -672,6 +693,13 @@ function cevapla(i) {
     if (dogru) ek.d++; else { ek.y++; ek.tekrar++; }
   });
   ustalikGuncelle(s, dogru);
+  if (dogru) {
+    const ok = konuAnahtar(s.ders, s.konu);
+    if (V.kayit.odak && V.kayit.odak[ok] > 0) {
+      V.kayit.odak[ok]--;
+      if (V.kayit.odak[ok] <= 0) delete V.kayit.odak[ok];
+    }
+  }
   const g = gunlukSayac();
   g.sayi++; g.ids[s.id] = 1;
   if (!dogru) {
@@ -891,6 +919,15 @@ window.denemeBitir = function () {
   });
   const net = +(d - y / 4).toFixed(2);
   V.kayit.denemeler.push({ id: o.d.id, ad: o.d.ad, tarih: new Date().toISOString(), dogru: d, yanlis: y, bos: b, net, sure: Math.floor((Date.now() - o.bas) / 1000) });
+  // deneme sonuçları ertesi günü yönetsin: yanlış/boşların konuları odak listesine
+  V.kayit.odak = V.kayit.odak || {};
+  o.d.soru_nesneleri.forEach((s) => {
+    const c = o.cevaplar[s.id];
+    if (c == null || c !== s.dogru) {
+      const ok = konuAnahtar(s.ders, s.konu);
+      V.kayit.odak[ok] = (V.kayit.odak[ok] || 0) + 1;
+    }
+  });
   kaydet();
   V.denemeOturum = null; document.onkeydown = null;
   const yanlislar = o.d.soru_nesneleri.filter((s) => o.cevaplar[s.id] != null && o.cevaplar[s.id] !== s.dogru);
@@ -903,6 +940,12 @@ window.denemeBitir = function () {
       <div><b>${b}</b>Boş</div>
       <div><b>${net}</b>Net</div>
     </div>
+    ${Object.keys(V.kayit.odak || {}).length ? `<div class="kart" style="border-left:4px solid var(--turuncu)"><b>🎯 Yarının Odağı (deneme sonuçlarından):</b>
+      ${Object.entries(V.kayit.odak).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([k, n]) => {
+        const [dr, ko] = k.split("|");
+        return `<a class="chip chip-sm" href="#/coz/odak/0">${esc(ko)}${n > 1 ? " ×" + n : ""}</a>`;
+      }).join(" ")}
+      <p class="meta">Bu konular yarının planında öncelikli gelecek; doğru çözdükçe listeden silinir.</p></div>` : ""}
     <div class="baslik-satir"><h2>📊 Ders Dağılımı</h2></div>
     <div class="kart"><table><tr><th>Ders</th><th>Doğru</th><th>Yanlış</th><th>Boş</th></tr>
       ${Object.entries(konular).map(([k, v]) => `<tr><td><span class="badge ${k}">${DERSLER[k].ad}</span></td><td>${v.d}</td><td>${v.y}</td><td>${v.b}</td></tr>`).join("")}
