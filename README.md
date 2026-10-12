@@ -85,19 +85,20 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 | Ders | Kapsam | Soru bankası |
 |------|--------|--------------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 500 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 526 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 501 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 503 |
-| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 500 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 509 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 534 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 503 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 519 |
+| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 501 |
 
-> 📚 **Toplam: 2.530 soru** (+ 350 gerçek çıkmış = 2.880) — her biri 2 farklı çözüm yöntemiyle.
+> 📚 **Toplam: 2.566 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli).
 > Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
 > Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
-> ✅ **Gerçek çıkmış sorular eklendi:** 2014/2016/2018/2020/2024 KPSS kitapçıklarından **350 gerçek
-> çıkmış soru**, resmî ÖSYM cevap anahtarlarıyla doğrulanmış hâlde `kaynak` etiketiyle ("2018-KPSS"
-> gibi) bankada duruyor.
+> ✅ **Gerçek çıkmış sorular eklendi:** 2014–2026 arası resmî ÖSYM kitapçıklarından (Ortaöğretim +
+> Ön Lisans + Lisans oturumları) **381 gerçek çıkmış soru**; cevapların tamamı kitapçıkların resmî
+> cevap anahtarlarından alınmıştır. Her sorunun altında ve çözümünde `kaynak` etiketi yazar
+> ("2018-KPSS", "2026-KPSS Lisans" gibi).
 
 **Konu seçimi kuralı:** *Sadece geçmiş KPSS sınavlarında çıkmış konular.* Hiç sorulmamış devletler
 (Avarlar, Akhunlar, Avrupa Hunları, Hazarlar, Bulgarlar, Karluklar, Kırgızlar…) konu olarak anlatılmaz;
@@ -126,10 +127,10 @@ Gün sonu denemesi bitince **yanlış/boş bıraktığın konular** otomatik ola
 
 ---
 
-## Gerçek Çıkmış KPSS Soruları (2014–2024)
+## Gerçek Çıkmış KPSS Soruları (2014–2026)
 
-ÖSYM'nin resmî soru kitapçıklarından birebir aktarılmış **350 gerçek çıkmış soru** bankada
-kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak yılı** görünür:
+ÖSYM'nin resmî soru kitapçıklarından birebir aktarılmış **381 gerçek çıkmış soru** bankada
+kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak** görünür:
 
 | Yıl | Soru | Not |
 |-----|------|-----|
@@ -137,9 +138,16 @@ kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak y
 | 2016-KPSS | 86 | ÖSYM'nin kitapçık içi **resmî cevap anahtarıyla** doğrulandı |
 | 2018-KPSS | 86 | Tam kitapçık; %10'luk kitapçık **resmî cevaplarıyla** doğrulandı |
 | 2020-KPSS | 85 | Tam kitapçık; %10'luk kitapçık **resmî cevaplarıyla** doğrulandı |
+| 2022-KPSS | 6 | Ortaöğretim kitapçığı; resmî cevap anahtarlı |
+| 2022-KPSS Ön Lisans | 7 | Ön Lisans oturumu (Ortaöğretim'den farklı set); resmî anahtarlı |
+| 2023-KPSS Lisans | 6 | Lisans GY-GK oturumu; resmî anahtarlı |
 | 2024-KPSS | 9 | ÖSYM'nin %10'luk Temel Soru Kitapçığı'ndaki tam metinli sorular + resmî cevaplar |
+| 2024-KPSS Ön Lisans | 5 | Ön Lisans oturumu; resmî anahtarlı |
+| 2025-KPSS Lisans | 6 | Lisans GY-GK oturumu; resmî anahtarlı |
+| 2026-KPSS Lisans | 6 | 6 Eylül 2026 oturumu; resmî anahtarlı |
 
-- Test Çöz sayfasında **🎯 Gerçek Çıkmış KPSS Soruları** paneli: yıla göre (2014…2024) ya da karışık test.
+- Test Çöz sayfasında **🎯 Gerçek Çıkmış KPSS Soruları** paneli: yıla göre (2014…2026) ya da karışık test.
+- Cevaplar **yalnızca** kitapçıkların resmî "DOĞRU CEVAP" kayıtlarından alınır; hiçbir soru için cevap üretilmez/yorumlanmaz.
 - Günlük denemeler çıkmış sorulara öncelik verir (deneme başına ~%80 gerçek çıkmış).
 - `/api/sorular/<ders>?cikmis=1` uç noktası yalnızca yıl etiketli çıkmışları döndürür.
 - Bütün yıl etiketli cevaplar ÖSYM'nin resmî cevap anahtarlarıyla karşılaştırılıp doğrulanmıştır.

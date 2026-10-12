@@ -624,12 +624,12 @@ function viewCozHub() {
       <a class="btn blok turuncu" href="#/coz/telafi/0/0">Yanlış Telafisi (10 soru)</a>
       <a class="btn blok" href="#/gun/${bugunKampGunu()}">Bugünün Rehberi</a>
     </div>
-    <div class="baslik-satir"><h2>🎯 Gerçek Çıkmış KPSS Soruları</h2><span class="chip chip-sm">Kaynakları etiketli · 2014–2024</span></div>
+    <div class="baslik-satir"><h2>🎯 Gerçek Çıkmış KPSS Soruları</h2><span class="chip chip-sm">Kaynakları etiketli · 2014–2026</span></div>
     <div class="card">
       <p class="meta">ÖSYM'nin gerçek sınav soruları; her sorunun kartında <b>kaynak yılı</b> yazar (2014-KPSS, 2016-KPSS...).</p>
       <div class="aks">
-        ${["2014", "2016", "2018", "2020", "2022", "2024"].map((y) => {
-          const adet = Object.values(V.tumSorular).filter((s) => s.kaynak === `${y}-KPSS`).length;
+        ${["2014", "2016", "2018", "2020", "2022", "2023", "2024", "2025", "2026"].map((y) => {
+          const adet = Object.values(V.tumSorular).filter((s) => String(s.kaynak || "").startsWith(`${y}-KPSS`)).length;
           return `<a class="btn kucuk" href="#/coz/cikmis/${y}">${y}-KPSS (${adet})</a>`;
         }).join("")}
         <a class="btn kucuk turuncu" href="#/coz/cikmis/karisik">🔀 Karışık Çıkmışlar</a>
@@ -684,8 +684,8 @@ function viewCoz(mod, ders, arg, sub) {
       baslik = "🎯 Deneme Odak Testi — zayıf konuların";
     } else if (mod === "cikmis") {
       const yil = ders && ders !== "karisik" ? ders : null;
-      let havuz = Object.values(V.tumSorular).filter((s) => /^\d{4}-KPSS$/.test(s.kaynak || ""));
-      if (yil) havuz = havuz.filter((s) => s.kaynak === `${yil}-KPSS`);
+      let havuz = Object.values(V.tumSorular).filter((s) => /^\d{4}-KPSS/.test(s.kaynak || ""));
+      if (yil) havuz = havuz.filter((s) => String(s.kaynak || "").startsWith(`${yil}-KPSS`));
       liste = testSeti(havuz, BATCH, {});
       baslik = yil ? `🎯 ${yil}-KPSS Çıkmış Soruları` : "🎯 Çıkmış KPSS Soruları (karışık)";
     } else {
@@ -719,7 +719,7 @@ function renderQuiz() {
         ${ad ? `<span class="badge turuncu">${ad}</span>` : ""}
         <span class="badge gri">${esc(s.konu)}</span>
         <span class="badge gri">${["", "Kolay", "Orta", "Zor"][s.zorluk] || ""}</span>
-        ${/^\d{4}-KPSS$/.test(s.kaynak || "") ? `<span class="badge turuncu" title="Gerçek ÖSYM çıkmış sorusu">🎯 ${esc(s.kaynak)}</span>` : ""}
+        ${/^\d{4}-KPSS/.test(s.kaynak || "") ? `<span class="badge turuncu" title="Gerçek ÖSYM çıkmış sorusu">🎯 ${esc(s.kaynak)}</span>` : ""}
       </div>
       <div class="quiz-sayac">Soru <b>${o.sira + 1}</b> / ${o.kuyruk.length} · ✅${o.dogru} ❌${o.yanlis} · ${gunlukRozet()}</div>
     </div>
