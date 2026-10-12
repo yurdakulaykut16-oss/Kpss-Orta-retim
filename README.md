@@ -18,6 +18,14 @@ python app.py
 
 Tarayıcıda aç: **http://localhost:5000**
 
+Otomatik kontrol (jsdom smoke — 40 test):
+
+```bash
+python3 araclar/refresh_fixtures.py               # sunucu açıkken
+(cd /tmp/kpss_test && npm i jsdom >/dev/null)
+NODE_PATH=/tmp/kpss_test/node_modules node araclar/smoke_test.js
+```
+
 ---
 
 ## 10 Günlük Kamp (15–24 Ekim 2026)
@@ -147,8 +155,10 @@ kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak y
 - `araclar/soru_genislet.py` — yeni soru ekleme (TSV → JSONL)
 - `araclar/deneme_uret.py` — denemeleri yeniden üret
 - `araclar/veri_kontrol.py` — banka bütünlük kontrolü (`python3 araclar/veri_kontrol.py`)
+- `araclar/refresh_fixtures.py` — sunucudan smoke fixture'ları çeker
+- `araclar/smoke_test.js` — jsdom ile uçtan uca arayüz testi (40 test)
 
-Yeni soru eklemek için `data/kaynaklar/*.tsv` dosyasına `id|gun|konu|zorluk|kaynak|kok|sik1..sik5|dogru|cozum1|cozum2|etiketler` yazıp `python3 araclar/soru_genislet.py` çalıştır.
+Yeni soru eklemek için `data/kaynaklar/*.tsv` dosyasına `ders|konu|gun|zorluk|kok|dogru|sikA..sikD|cozum1|cozum2|kaynak` yazıp `python3 araclar/soru_genislet.py` çalıştır.
 
 ---
 

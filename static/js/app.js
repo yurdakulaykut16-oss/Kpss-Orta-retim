@@ -628,7 +628,7 @@ function viewCozHub() {
     <div class="card">
       <p class="meta">ÖSYM'nin gerçek sınav soruları; her sorunun kartında <b>kaynak yılı</b> yazar (2014-KPSS, 2016-KPSS...).</p>
       <div class="aks">
-        ${["2014", "2016", "2018", "2020", "2024"].map((y) => {
+        ${["2014", "2016", "2018", "2020", "2022", "2024"].map((y) => {
           const adet = Object.values(V.tumSorular).filter((s) => s.kaynak === `${y}-KPSS`).length;
           return `<a class="btn kucuk" href="#/coz/cikmis/${y}">${y}-KPSS (${adet})</a>`;
         }).join("")}
