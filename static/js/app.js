@@ -141,6 +141,11 @@ function gunlukSayac() {
   }
   return V.kayit.gunluk;
 }
+function kitapSorusu(s) {
+  // Yayınevi soru bankasından birebir alınmış sorular (Pegem / Öğreti Akademi "… Soru Bankası" etiketli)
+  const k = s.kaynak || "";
+  return /Soru Bankası/.test(k) && !/^\d{4}-KPSS/.test(k);
+}
 function secimPuani(s, opts = {}) {
   const k = V.kayit.soru_kayit[s.id];
   const g = V.kayit.gunluk || { ids: {} };
@@ -154,6 +159,7 @@ function secimPuani(s, opts = {}) {
     p += Math.min(35, (Date.now() - k.son) / 3.6e9); // eski gören öncelik
   }
   if (u && u.usta) p -= 70;
+  if (kitapSorusu(s) && !(k && k.d >= 2 && k.y === 0)) p += 150; // 📚 kitap soruları önce (ustalanana dek)
   if (opts.zayifOdak && k && k.y > 0) p += 45;
   const odak = (V.kayit.odak || {})[konuAnahtar(s.ders, s.konu)];
   if (odak > 0) p += 50 + Math.min(40, odak * 10);  // deneme zayıflığı → öncelikli
@@ -411,15 +417,21 @@ function viewDersAkis(d) {
     </div>`;
   }).join("");
   const karisikKilit = !hepsiBitti;
+  const kitaplar = (V.sorular[d] || []).filter(kitapSorusu);
+  const kitapKalan = kitaplar.filter((x) => {
+    const k = V.kayit.soru_kayit[x.id];
+    return !(k && k.d >= 2 && k.y === 0);
+  }).length;
   $("#view").innerHTML = `
     <div class="hero">
       <span class="etiket">📅 GÜNLÜK DERS AKIŞI ${gunlukRozet()}</span>
       <h1>${DERSLER[d].ad} — bugün ${DERS_HEDEF} soru</h1>
-      <p>Önce <b>konuların testleri</b> (10'ar soru, sırayla): son konu bitene kadar karışık test yok. Konular bitince <b>tüm konulardan karışık testlere</b> geçersin. Her test 10 sorudur, bitince otomatik kontrol yapılır.</p>
+      <p>Önce <b>konuların testleri</b> (10'ar soru, sırayla): son konu bitene kadar karışık test yok. Konular bitince <b>tüm konulardan karışık testlere</b> geçersin. Her test 10 sorudur, bitince otomatik kontrol yapılır. <b>📚 Her sette önce kitap soruları</b> (Pegem / Öğreti — altlarında 📌 Kaynak yazar) gelir; bitince diğer sorularla devam edersin.</p>
       <div class="sayac">
         <div><b>${dg.sayi}/${DERS_HEDEF}</b>bugün bu ders</div>
         <div><b>${biten}/${konular.length}</b>konu testi bitti</div>
         <div><b>${gunlukSayac().sayi}/${GUNLUK_HEDEF}</b>bugün toplam</div>
+        <div><b>${kitapKalan}/${kitaplar.length}</b>kitap sorusu kaldı</div>
       </div>
     </div>
     <div class="baslik-satir"><h2>1️⃣ Konu Testleri — ${hepsiBitti ? "hepsi bitti ✅" : biten + " bitti, " + (konular.length - biten) + " kaldı"}</h2></div>
@@ -720,6 +732,7 @@ function renderQuiz() {
         <span class="badge gri">${esc(s.konu)}</span>
         <span class="badge gri">${["", "Kolay", "Orta", "Zor"][s.zorluk] || ""}</span>
         ${/^\d{4}-KPSS/.test(s.kaynak || "") ? `<span class="badge turuncu" title="Gerçek ÖSYM çıkmış sorusu">🎯 ${esc(s.kaynak)}</span>` : ""}
+        ${kitapSorusu(s) ? `<span class="badge turuncu" title="Yayınevi soru bankası — kendi cevap anahtarıyla">📚 Kitap</span>` : ""}
       </div>
       <div class="quiz-sayac">Soru <b>${o.sira + 1}</b> / ${o.kuyruk.length} · ✅${o.dogru} ❌${o.yanlis} · ${gunlukRozet()}</div>
     </div>
