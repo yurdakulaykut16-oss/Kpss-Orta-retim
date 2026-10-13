@@ -85,14 +85,14 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 | Ders | Kapsam | Soru bankası |
 |------|--------|--------------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 524 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 534 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 539 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 540 |
 | **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 516 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 538 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 558 |
 | **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 501 |
 
-> 📚 **Toplam: 2.613 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli),
-> **47'si yayınevi soru bankasından** (kitabın kendi cevap anahtarıyla, `📌 Kaynak` notlu).
+> 📚 **Toplam: 2.654 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli),
+> **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 > Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
 > Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
@@ -110,6 +110,9 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > | 2022 Pegem Ezberbozan Tarih Soru Bankası | Tarih | İlk Türk Devletleri | 15 |
 > | 2024 Pegem Ezberbozan Türkçe Soru Bankası | Türkçe | Sözcükte Anlam | 19 |
 > | 2026 Pegem Ezberbozan Vatandaşlık Soru Bankası | Vatandaşlık | Hukuk | 13 |
+> | 2024 Öğreti Akademi Efsane Tarih Soru Bankası | Tarih | İlk Türk Devletleri | 15 |
+> | 2024 Öğreti Akademi Efsane Türkçe Soru Bankası | Türkçe | Sözcükte Anlam | 20 |
+> | 2024 Öğreti Akademi Efsane Coğrafya Soru Bankası | Coğrafya | Koordinat (Konum) | 6 |
 
 **Konu seçimi kuralı:** *Sadece geçmiş KPSS sınavlarında çıkmış konular.* Hiç sorulmamış devletler
 (Avarlar, Akhunlar, Avrupa Hunları, Hazarlar, Bulgarlar, Karluklar, Kırgızlar…) konu olarak anlatılmaz;
