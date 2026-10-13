@@ -93,6 +93,10 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 > 📚 **Toplam: 2.654 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli),
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
+>
+> 📚 **Günlük 500 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
+> kitap soruları gelir (ustalanana dek), bitince bankanın diğer sorularıyla devam edersin. Setin
+> başındaki `📚 Kitap` rozeti ve soru altındaki `📌 Kaynak` satırı hangi kitaptan olduğunu gösterir.
 > Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
 > Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
