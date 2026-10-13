@@ -725,6 +725,7 @@ function renderQuiz() {
     </div>
     <div class="soru-kart">
       <div class="soru-kok">${esc(s.kok)}</div>
+      ${s.kaynak ? `<div class="meta" style="font-size:11px;margin:-4px 0 10px">📌 Kaynak: ${esc(s.kaynak)}</div>` : ""}
       ${s.siklar.map((sx, i) => {
         let cls = "sik";
         if (k) {
@@ -964,6 +965,7 @@ function renderDeneme() {
     </div>
     <div class="soru-kart">
       <div class="soru-kok">${esc(s.kok)}</div>
+      ${s.kaynak ? `<div class="meta" style="font-size:11px;margin:-4px 0 10px">📌 Kaynak: ${esc(s.kaynak)}</div>` : ""}
       ${s.siklar.map((sx, i) => `<div class="sik ${cevap === i ? "dogru" : ""}" data-sik="${i}"><span class="harf">${SIK_HARF[i]}</span><span>${esc(sx)}</span></div>`).join("")}
       <div class="sonuc-satir">
         <button class="btn seffaf" onclick="denemeGit(${o.sira - 1})" ${o.sira === 0 ? "disabled" : ""}>← Önceki</button>

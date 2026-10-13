@@ -85,13 +85,14 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 | Ders | Kapsam | Soru bankası |
 |------|--------|--------------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 509 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 524 |
 | **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 534 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 503 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 519 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 516 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 538 |
 | **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 501 |
 
-> 📚 **Toplam: 2.566 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli).
+> 📚 **Toplam: 2.613 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli),
+> **47'si yayınevi soru bankasından** (kitabın kendi cevap anahtarıyla, `📌 Kaynak` notlu).
 > Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
 > Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
@@ -99,6 +100,16 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > Ön Lisans + Lisans oturumları) **381 gerçek çıkmış soru**; cevapların tamamı kitapçıkların resmî
 > cevap anahtarlarından alınmıştır. Her sorunun altında ve çözümünde `kaynak` etiketi yazar
 > ("2018-KPSS", "2026-KPSS Lisans" gibi).
+
+> ✅ **Yayınevi kitap soruları eklendi (12 Ekim):** 47 zorlu soru, yayınevi soru bankalarının **kendi
+> basılı çözümleriyle** birebir aktarıldı; her sorunun altında `📌 Kaynak: <yıl> <yayınevi> <kitap>`
+> yazıyor. Cevaplar yalnızca kitabın cevap anahtarından alınmıştır.
+>
+> | Kaynak (sorunun altında yazan) | Ders | Konu | Soru |
+> |---|---|---|---|
+> | 2022 Pegem Ezberbozan Tarih Soru Bankası | Tarih | İlk Türk Devletleri | 15 |
+> | 2024 Pegem Ezberbozan Türkçe Soru Bankası | Türkçe | Sözcükte Anlam | 19 |
+> | 2026 Pegem Ezberbozan Vatandaşlık Soru Bankası | Vatandaşlık | Hukuk | 13 |
 
 **Konu seçimi kuralı:** *Sadece geçmiş KPSS sınavlarında çıkmış konular.* Hiç sorulmamış devletler
 (Avarlar, Akhunlar, Avrupa Hunları, Hazarlar, Bulgarlar, Karluklar, Kırgızlar…) konu olarak anlatılmaz;

@@ -80,7 +80,7 @@ def main():
                     + ([{"yontem": "Kısa yol / eleme", "metin": c2}] if c2 else []),
                     "etiketler": sorted(
                         {slug(konu), slug(kok.split()[0] if kok.split() else "soru")}
-                        | ({"cikmis"} if kaynak != "KPSS formatında" else set())
+                        | ({"cikmis"} if __import__("re").match(r"\d{4}-KPSS", kaynak or "") else set())
                     ),
                 }
                 eklenen.append(kayit)
