@@ -85,13 +85,13 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 | Ders | Kapsam | Soru bankası |
 |------|--------|--------------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 539 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 610 |
 | **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 557 |
 | **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 516 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 558 |
-| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 501 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 634 |
+| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 548 |
 
-> 📚 **Toplam: 2.671 soru** — bunların **404'ü KPSS yıl/oturum etiketi taşıyor**,
+> 📚 **Toplam: 2.865 soru** — bunların **404'ü KPSS yıl/oturum etiketi taşıyor**,
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 >
 > **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız
@@ -99,13 +99,31 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > yazılıyor: senaryolu/anlamlı kökler, olumsuz sorular, I-II-III kombinasyonları,
 > eşleştirme; ayırt edici tuzak şıklar; her soruda "KPSS mantığı ile çözüm"
 > (doğru + tuzak açıklaması). `araclar/soru_yukselt.py` ile yerinde güncellenir;
-> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **Yeniden yazım ilerlemesi: 800/2116 özgün soru.** Bu sayı kalan soruların
-> gözden geçirildiği veya zorluğun aday verileriyle kalibre edildiği anlamına gelmez.
+> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **İlk havuzdaki yeniden yazım: 2106/2116; ayrıca 194 yeni özgün soru.**
+> Toplam 2310 özgün kaydın 2300'ü yeni editoryal kapsamda; kalan 10 kayıt Coğrafya (6)
+> ve Vatandaşlık (4) derslerinde. Bu sayılar güçlük kalibrasyonu veya tam puan garantisi değildir.
 > İkinci parti: 50 yeni yeniden yazım; önceki partide ayrıca 25 içerik düzeltmesi.
 > Üçüncü parti: her dersten 10 olmak üzere 50 özgün soru daha yenilendi; toplam 200.
 > Dördüncü parti: her dersten 20 olmak üzere **100 özgün soru** yenilendi; toplam 300.
-> Beşinci parti: **her dersten 100, toplam 500 özgün soru** yenilendi; kalan **1316**.
-> Yeni parti büyüklüğü ders başına 100'dür. Bu, günlük hedefi değiştirmez.
+> Beşinci parti: **her dersten 100, toplam 500 özgün soru** yenilendi; o parti sonunda kalan **1316** idi.
+> Altıncı parti: **her dersten 300, toplam 1500 soru**: 1306 mevcut kayıt yeniden yazıldı,
+> Tarih'e 71, Türkçe'ye 76, Güncel'e 47 yeni kayıt eklendi. Parti büyüklüğü artık
+> **ders başına 300**; günlük ders başı 500 hedefi değişmedi.
+> `parti_1500_editor.txt` ve `parti_1500_senaryolar.txt` toplam **459 doğru/yanlış bilgi-çıkarım çifti**,
+> 51 konu grubu içerir. `python3 araclar/parti_1500_uret.py` bunlardan 20–24 numaralı TSV'leri üretir.
+> Aynı bilgiler farklı kümelerde yeniden ölçülebilir: bu **1500 ayrı elle yazılmış senaryo değildir**.
+> 899 üç öncüllü, 306 yanlış yargıyı seçme, 295 doğru yargıyı seçme maddesi vardır. Aynı
+> bilgi kümesi yalnız sırası veya doğruluk deseni değiştirilerek ikinci kez sayılmaz.
+> `parti_1500_plan.json` hedefleri, yeni/eski ayrımını ve önce/sonra SHA-256 özetlerini sabitler.
+> Önceden yenilenmiş 800 kayıt ve korumalı 555 kayıt bu tur değişmedi. Eski özgün kayıtların
+> **734 konu etiketi yeni içeriğe uygun başlığa taşındı**; id, ders ve günleri değişmedi.
+> Her yargı çözümde açıklanır; yanlış yargının doğru biçimi gösterilir. Açıklamadaki numaralar
+> kökteki yargıya atıf yapar; A–E şıkları karıştırıldığında açıklama kaymaz.
+> Kaynaklar özgün çalışma etiketiyle gösterilir; tahminî 2026 atama/ödül bilgileri eklenmez.
+> Yeni id ekleme ve konu geçişi de kaynak korumasına tabidir; planla dahi çıkmış/kitap kaydı
+> değiştirilemez. Beklenmeyen yerel düzenleme, eksik TSV veya son içerik uyuşmazlığı yazmayı durdurur.
+> Hedef planı yalnız ilk hazırlamada `--plan` ile oluşturulmuştur; normal tekrar üretimde
+> bu seçenek kullanılmaz. Plan var olduğunda üzerine yazma reddedilir.
 > `parti_500_editor.json` elle hazırlanmış bilgi/cümle tablolarını ve sabit hedef id'lerini içerir;
 > `python3 araclar/parti_500_uret.py` bunlardan yeniden üretilebilir TSV'ler hazırlar.
 > Öncüllü eşleştirmeler, cümle değerlendirmeleri ve bağlam soruları kullanılır.
@@ -113,6 +131,9 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > doğru eşleşmeleri tek tek gösterir. Bunlar **özgün çalışma sorularıdır**, kitap alıntısı değildir.
 > TSV'de `\n` ile saklanan kök satır sonları, uygulamada öncülleri ayrı satırlarda gösterir.
 > `python3 -m unittest discover -s araclar -p 'test_*.py' -v` aktarım ve üretim testlerini çalıştırır.
+> Bu sürümde 31 test başarılıdır. Güncel sunucudan fixture çekilerek çalıştırılan
+> `araclar/smoke_test.js` 80 kontrolü geçer; her derste hem üç öncüllü hem beş yargılı
+> kaydın satır sonu, kaynak, doğru şık ve çözüm gösterimi ayrıca kontrol edilir.
 > Bu teknik testler editoryal bilgi doğruluğunu veya sınavla eş güçlüğü tek başına kanıtlamaz.
 > Tüm yeniden yazımların şık, cevap ve çözüm aktarımı `test_yukselt_banka.py` ile denetlenir.
 > Gerçek çıkmışlar ve yayınevi soruları araç tarafından değişikliğe karşı korunur.

@@ -30,6 +30,37 @@ def yukseltilen_banka(kok):
                 raise ValueError(f"Bankada yinelenen id: {soru['id']}")
             kayitlar[soru["id"]] = soru
 
+    # 1500'lük partinin yeni kayıtları ve konu düzeltmeleri açık, sabit bir
+    # geçiş planındadır. Kaynak koruması, önce/sonra özeti ve tüm TSV'ler
+    # bellekte doğrulanır; herhangi bir hatada main hiçbir dosyaya yazmaz.
+    plan_yolu = kok / 'data/kaynaklar/parti_1500_plan.json'
+    plan = None
+    if plan_yolu.exists():
+        from parti_1500_uret import digest
+        plan = json.loads(plan_yolu.read_text(encoding='utf-8'))
+        hedefler = plan['targets']
+        if (len(hedefler) != 1500 or len({t['id'] for t in hedefler}) != 1500
+                or any(sum(t['ders'] == d for t in hedefler) != 300 for d in DERSLER)
+                or sum(t['new'] for t in hedefler) != 194):
+            raise ValueError('1500 planı: sayı/kimlik uyumsuz')
+        for t in hedefler:
+            s = kayitlar.get(t['id'])
+            if s is None:
+                if not t['new']:
+                    raise ValueError(f"Plan: bulunamayan eski id {t['id']}")
+                s = dict(id=t['id'], ders=t['ders'], gun=t['gun'], konu=t['konu'],
+                         kaynak=OZGUN_KAYNAK, etiketler=[])
+                kayitlar[t['id']] = s
+                by_ders[t['ders']][1].append(s)
+            else:
+                if s.get('kaynak') not in (OZGUN_KAYNAK, ESKI_ETIKET):
+                    raise ValueError(f"Plan: çıkmış/kitap/kaynaklı soru değiştirilemez ({t['id']})")
+                if digest(s) not in (t.get('before'), t.get('after')):
+                    raise ValueError(f"Plan: beklenmeyen içerik değişikliği ({t['id']})")
+                if s['ders'] != t['ders'] or s['gun'] != t['gun']:
+                    raise ValueError(f"Plan: ders/gün kimliği değiştirilemez ({t['id']})")
+                s['konu'] = t['konu']
+
     gorulen = set()
     sayilar = dict.fromkeys(DERSLER, 0)
     for tsv in sorted((kok / "data" / "kaynaklar").glob("yukselt_*.tsv")):
@@ -66,6 +97,11 @@ def yukseltilen_banka(kok):
                 etiketler=[t for t in soru.get("etiketler", []) if t != "cikmis"],
             )
             sayilar[soru["ders"]] += 1
+
+    if plan is not None:
+        for t in plan['targets']:
+            if t['id'] not in gorulen or digest(kayitlar[t['id']]) != t['after']:
+                raise ValueError(f"Plan/TSV/banka son içerik uyuşmazlığı: {t['id']}")
 
     # Yeniden yazılmış kökler başka bir kayıtla çakışmasın.
     koklar = {}

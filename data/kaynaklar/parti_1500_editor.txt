@@ -1,0 +1,462 @@
+# Özgün editoryal karar çiftleri: doğru yargı | yakın fakat yanlış yargı | gerekçe.
+# Kitap/ÖSYM alıntısı değildir. Tarihe bağlı tahminî 2026 atama/ödülleri kullanılmaz.
+# Gruplar içinde aynı bilgi kümesi, sırası/cevabı değiştirilerek tekrar sayılmaz.
+@tarih|İlk Türk Devletleri
+Kut anlayışı hükümdarlığa ilahî dayanak sağlar, ruhban yönetimi kurmaz.|Kut anlayışı devletin din adamlarınca yönetilmesini zorunlu kılar.|Kut, hanedanın yönetme yetkisinin kaynağıdır; teokrasiyle özdeş değildir.
+Ülkenin hanedanın ortak malı sayılması taht mücadelelerini kolaylaştırır.|Ülkenin hanedanın ortak malı sayılması merkezî otoriteyi sürekli güçlendirir.|Birden fazla hanedan üyesinin hak iddiası parçalanma riski yaratır.
+Kurultayın varlığı, halkın tamamının doğrudan yönetime katıldığını kanıtlamaz.|Kurultayın varlığı modern anlamda genel oy uygulandığını kanıtlar.|Kurultay danışma ve karar organıdır; modern parlamento değildir.
+İkili yönetimde batı kanadının yöneticisi doğudaki hakana bağlıdır.|İkili yönetimde iki kanat birbirinden bağımsız devletlerdir.|İkili teşkilat, egemenlik bağının bulunmadığı anlamına gelmez.
+Töre yazısız hukuk kurallarını içerir ve koşullarla değişebilir.|Töre yazılı anayasa niteliğinde olup hiçbir hükmü değiştirilemez.|Adalet gibi temel ilkelerle uygulamadaki kurallar ayrılmalıdır.
+Orhun metinlerindeki birlik öğütleri siyasal deneyimin aktarımını gösterir.|Orhun metinlerindeki birlik öğütleri yalnız dinî ibadetleri düzenler.|Metinlerde devlet, yönetici ve halk ilişkisi öne çıkar.
+Uygurlarda yerleşik yaşam mimari eserlerin yaygınlaşmasını desteklemiştir.|Uygurlarda yerleşik yaşam taşınabilir sanat eserlerini zorunlu kılmıştır.|Kalıcı yapılar yerleşik yaşamın göstergelerindendir.
+Mete'nin onlu askerî teşkilatı askerlerin düzenli birliklere ayrılmasını sağlar.|Mete'nin onlu askerî teşkilatı ordunun yalnız ücretli yabancılardan oluşmasıdır.|Onlu sistem birliklerin örgütlenmesidir; asker kaynağı değildir.
+@tarih|Selçuklu
+İkta gelirinin hizmet karşılığı tahsisi toprağın özel mülkiyetinin devri değildir.|İkta verilmesi toprağın mülkiyetinin askere kesin olarak devredilmesidir.|İkta, vergi gelirinden yararlanma hakkıyla ilgilidir.
+Atabeyin meliki yetiştirmesi, melikin merkezden bağımsızlaşmasını her zaman önlememiştir.|Atabeylik uygulaması taşrada bağımsız hanedan oluşmasını kesin olarak önlemiştir.|Melik ve atabeylerin güçlenmesi merkez için risk de doğurmuştur.
+Nizamiye medreseleri eğitim yoluyla devletin düşünsel dayanağını güçlendirmiştir.|Nizamiye medreseleri yalnız ticaret yollarının güvenliğini sağlamak için açılmıştır.|Medresenin temel işlevi eğitimdir; kervansarayla karıştırılmaz.
+Kervansaraylarda tüccarın korunması ticareti teşvik eden devlet politikasını gösterir.|Kervansaraylarda tüccarın korunması dış ticaretin yasaklandığını gösterir.|Güvenlik ve konaklama maliyetini azaltmak ticareti destekler.
+Dandanakan, Büyük Selçukluların Gazneliler karşısındaki başarısıyla ilişkilidir.|Dandanakan, Anadolu Selçuklularının Bizans karşısındaki başarısıdır.|Dandanakan 1040; taraflar Selçuklular ve Gaznelilerdir.
+Miryokefalon Bizans'ın Anadolu'yu geri alma ümidini zayıflatmıştır.|Miryokefalon, Anadolu'daki Türk egemenliğini sona erdirmiştir.|1176 zaferi Türk varlığının kalıcılığını pekiştirir.
+Kösedağ yenilgisi Anadolu Selçuklularını Moğol baskısına açık hâle getirmiştir.|Kösedağ zaferi Anadolu Selçuklularının Moğolları bölgeden çıkarmasıdır.|1243 yenilgisinin siyasal sonucu bağımlılığın artmasıdır.
+Kutadgu Bilig yöneticiye öğüt verir; Divanü Lügati't-Türk Türkçeyi tanıtır.|Kutadgu Bilig Türkçe sözlük, Divanü Lügati't-Türk siyasetnamedir.|Yusuf Has Hacip ile Kaşgarlı Mahmut'un eserleri ayrılmalıdır.
+@tarih|Osmanlı Kuruluş
+İskân politikasında nüfusun yerleştirilmesi fethedilen yerde kalıcılığı destekler.|İskân politikasının temel amacı fethedilen yerleri nüfussuz bırakmaktır.|Üretim ve güvenlik için yerleşim düzeni oluşturulur.
+İstimalet, farklı inanç gruplarının bağlılığını artırmayı amaçlayan hoşgörü siyasetidir.|İstimalet, yalnız hanedan üyelerinin sancağa gönderilmesini düzenler.|İstimalet ile şehzade eğitimi farklı uygulamalardır.
+Tımar gelirinin sipahiye bırakılması merkez hazinesinin nakit asker giderini azaltır.|Tımar gelirinin sipahiye bırakılması bütün asker maaşlarının hazineden nakit ödenmesidir.|Dirlik geliri karşılığında asker beslenir.
+Devşirme, kapıkulu ve yönetici yetiştirmek için insan kaynağı sağlar.|Devşirme, yalnız toprak vergilerinin kayıt altına alınmasıdır.|İnsan kaynağı toplama ile tahrir birbirinden ayrıdır.
+Ahilerin üretim ve meslek ahlakını düzenlemesi ekonomik örgütlenmeye örnektir.|Ahilerin üretim ve meslek ahlakını düzenlemesi yalnız askerî örgütlenmedir.|Ahilik meslek dayanışmasıyla da ilgilidir.
+Bursa'nın alınması Osmanlılara önemli bir idari ve ekonomik merkez sağlamıştır.|Bursa'nın alınması Osmanlıların ilk kez Rumeli'ye geçmesini sağlamıştır.|Rumeli'ye geçişte Çimpe Kalesi ayırt edici gelişmedir.
+Çimpe Kalesi Rumeli fetihlerinde askerî üs işlevi görmüştür.|Çimpe Kalesi Anadolu'da Türk siyasal birliğini kesin olarak sağlamıştır.|Üs edinmek ile Anadolu birliği aynı sonuç değildir.
+Ankara Savaşı sonrası Fetret Devri merkezî otoritenin zayıflamasını gösterir.|Ankara Savaşı sonrası Fetret Devri kesintisiz taht birliğini gösterir.|Şehzadeler arası mücadele 1402 sonrasının ayırt edici özelliğidir.
+@tarih|Islahatlar
+Koçi Bey'in sorunlara eski düzeni düzeltme yoluyla çözüm araması gelenekçi ıslahattır.|Koçi Bey'in çözüm arayışı Avrupa hukukunu bütünüyle aktarma esasına dayanır.|XVII. yüzyıl ıslahatları çoğunlukla eski düzeni canlandırmaya yöneliktir.
+Lale Devri'nde Avrupa'ya geçici elçiler gönderilmesi Batı'yı tanıma arayışını gösterir.|Lale Devri'nde geçici elçiler gönderilmesi daimî elçilik ağının tamamlanmasıdır.|Daimî elçilikler III. Selim döneminde açılır.
+İbrahim Müteferrika matbaası, Lale Devri'nde Müslümanların Türkçe eser basmasıyla ilişkilidir.|İbrahim Müteferrika matbaası Osmanlı ülkesinde her dilde ilk baskının başlamasıdır.|Azınlık matbaaları daha eskidir; kapsam sınırlaması önemlidir.
+Hendesehane'nin açılması askerî eğitimde teknik bilgiye verilen önemi gösterir.|Hendesehane'nin açılması yalnız dinî eğitimin genişletilmesidir.|Matematik ve geometri askerî teknikle ilişkilidir.
+Nizamıcedit ordusu III. Selim'in askerî yenileşme girişimidir.|Nizamıcedit ordusu II. Mahmut'un Yeniçeri Ocağını kaldırmasından sonra kurulmuştur.|III. Selim'in ordusu 1826'dan önce kurulmuştur.
+İradıcedit Hazinesi yeni ordunun giderleri için ayrı kaynak oluşturma çabasıdır.|İradıcedit Hazinesi yeni ordunun yerine kurulan bir mahkemedir.|Adındaki hazine, mali kaynak işlevini gösterir.
+Sened-i İttifak merkez ile ayanlar arasındaki güç dengesini yansıtır.|Sened-i İttifak genel oyla seçilmiş ilk meclisin anayasasıdır.|1808 belgesi modern anayasa ve halk meclisi değildir.
+Yeniçeri Ocağının kaldırılması II. Mahmut'un askerî dönüşümünü kolaylaştırmıştır.|Yeniçeri Ocağının kaldırılması III. Selim'in Nizamıcedit ordusunu kurmasıdır.|Vakayıhayriye 1826'dadır; iki gelişme karıştırılmamalıdır.
+@tarih|Tanzimat
+Tanzimat Fermanı'ndaki can ve mal güvenliği, padişahın hukuka bağlılık sözüyle ilişkilidir.|Tanzimat Fermanı'ndaki güvence, egemenliğin seçilmiş meclise devredilmesidir.|1839'da parlamento açılmamıştır.
+Tanzimat Fermanı vergilerin ödeme gücüne göre alınmasını öngörür.|Tanzimat Fermanı bütün vergilerin kaldırılmasını öngörür.|Adil vergi ilkesi vergisizlik anlamına gelmez.
+Islahat Fermanı gayrimüslimlerin kamu görevlerine erişimini genişletmeyi amaçlar.|Islahat Fermanı yalnız Müslümanların kamu görevlerine alınmasını amaçlar.|1856 düzenlemesinde gayrimüslimlere ilişkin eşitlik hükümleri belirgindir.
+Vilayet Nizamnamesi taşra yönetiminin yeniden düzenlenmesine yöneliktir.|Vilayet Nizamnamesi yalnız merkezdeki meclisin seçim usulünü belirler.|1864 düzenlemesi idari taksimatla ilgilidir.
+Mecelle medeni hukuk alanının bir bölümünü derleyen hukuk çalışmasıdır.|Mecelle siyasal hakları düzenleyen ilk Osmanlı anayasasıdır.|Mecelle ile Kanunuesasi farklı türde metinlerdir.
+Darülmualliminin açılması öğretmen yetiştirmeye verilen önemi gösterir.|Darülmualliminin açılması yalnız askerî hekim yetiştirmeye yöneliktir.|Muallim öğretmendir; kurumun yetiştirdiği meslek ayırt edicidir.
+Galatasaray Sultanisinin açılması modern ortaöğretimin gelişmesine örnektir.|Galatasaray Sultanisinin açılması medrese eğitimini aynı gün tamamen sona erdirmiştir.|Yeni okul açılması eski kurumların tümünün kapandığını göstermez.
+Şirketihayriye Boğaziçi'nde vapur ulaşımının örgütlenmesiyle ilişkilidir.|Şirketihayriye Osmanlı'da yalnız demir yolu taşımacılığını işletmek için kurulmuştur.|Şirketihayriye Boğaziçi vapurlarını işletmiştir; demir yolu şirketi değildir.
+@tarih|Meşrutiyet
+Kanunuesasi ile meclisin açılması hükümdarın yetkilerini tümüyle sona erdirmemiştir.|Kanunuesasi ile meclisin açılması saltanatın kaldırılmasıdır.|1876'da sınırlı meşrutiyet kurulmuştur; saltanat sürer.
+Meclisimebusan üyeleri seçimle, Meclisiayan üyeleri padişahça belirlenirdi.|Meclisimebusan üyeleri padişahça, Meclisiayan üyeleri seçimle belirlenirdi.|İki kanadın oluşum yolları farklıdır.
+II. Meşrutiyet, 1908'de anayasanın yeniden uygulanmasıyla ilişkilidir.|II. Meşrutiyet, 1908'de ilk kez anayasa hazırlanmasıdır.|İlk anayasa 1876'dır; 1908 yeniden yürürlüktür.
+31 Mart Olayı meşrutiyet yönetimine karşı bir ayaklanmadır.|31 Mart Olayı II. Meşrutiyet'in ilanını sağlayan ilk anayasal halkoylamasıdır.|II. Meşrutiyet 1908'de ilan edildi; 31 Mart 1909'da bu yönetime karşı ayaklanmadır.
+1909 değişiklikleri padişahın yetkilerini daraltıp parlamentoyu güçlendirmiştir.|1909 değişiklikleri parlamentoyu kaldırıp mutlak yönetime geçirmiştir.|Meşruti niteliğin güçlenmesi temel yöndür.
+Düyunuumumiye bazı gelirleri alacaklılar adına denetleyerek mali bağımsızlığı daraltmıştır.|Düyunuumumiye dış borçları karşılıksız silerek mali bağımsızlığı kesinleştirmiştir.|1881 idaresi borç tahsilini güvenceye alır.
+Osmanlıcılık, farklı unsurları ortak Osmanlı vatandaşlığında birleştirmeyi amaçlar.|Osmanlıcılık yalnız Türk dili konuşanları ortak devlet çatısına almayı amaçlar.|Vatandaşlık bağı, etnik kökenle sınırlandırılmaz.
+İslamcılık Müslüman toplulukları halifelik çevresinde birleştirmeyi amaçlar.|İslamcılık bütün gayrimüslimleri dil birliğinde toplamayı amaçlar.|Düşünce akımının birleştirici dayanağı dindir.
+@tarih|Karıştırılanlar
+Trablusgarp'ta Osmanlı subaylarının yerel direnişi örgütlemesi donanma gücü eksikliğini telafi arayışıdır.|Trablusgarp'ta yerel direniş Osmanlı donanmasının İtalya'yı abluka altına almasıdır.|Osmanlı bölgeye düzenli kuvvet ulaştırmakta zorlanmıştır.
+Uşi Antlaşması Trablusgarp Savaşı'nı sona erdirmiştir.|Uşi Antlaşması I. Balkan Savaşı'nı sona erdirmiştir.|1912 Uşi, Osmanlı-İtalya savaşıyla ilgilidir.
+I. Balkan Savaşı sonunda Osmanlı Devleti Balkanlarda büyük toprak kaybetmiştir.|I. Balkan Savaşı sonunda Osmanlı Devleti Balkan egemenliğini genişletmiştir.|Savaşın temel sonucu geri çekilmedir.
+II. Balkan Savaşı'nda Balkan devletlerinin anlaşmazlığı Edirne'nin geri alınmasını kolaylaştırmıştır.|II. Balkan Savaşı'nda bütün Balkan devletleri yalnız Osmanlı'ya karşı ortak savaşmıştır.|İkinci savaş eski müttefiklerin kendi aralarındaki mücadeledir.
+Çanakkale'de İtilaf'ın başarısızlığı Rusya'ya deniz yoluyla yardım planını bozmuştur.|Çanakkale'de İtilaf'ın başarısızlığı Rusya ile kesintisiz deniz bağlantısı kurmuştur.|Boğazların geçilememesi yardım hedefinin gerçekleşmesini engeller.
+Kanal Cephesi'nde Süveyş'i ele geçirme hedefi İngiltere'nin sömürge bağlantısını kesmeye yöneliktir.|Kanal Cephesi'nin temel hedefi Rusya'nın Karadeniz limanlarını ele geçirmektir.|Süveyş, İngiltere'nin Hindistan bağlantısında önemlidir.
+Mondros'un 7. maddesi işgallere geniş yorumlanabilir gerekçe oluşturmuştur.|Mondros'un 7. maddesi işgalleri yalnız tek bir şehirle sınırlandırmıştır.|Güvenlik tehdidi gerekçesi açık uçludur.
+Wilson İlkeleri sömürgeciliğin her yerde fiilen sona erdiğini kanıtlamaz.|Wilson İlkeleri yayımlanınca bütün sömürgeler aynı anda bağımsız olmuştur.|İlke beyanı ile uygulama sonucu farklıdır.
+@tarih|Milli Mücadele
+Amasya Genelgesi milletin bağımsızlığını yine milletin kararıyla kurtarma esasını vurgular.|Amasya Genelgesi kurtuluşu yalnız yabancı bir devletin himayesine bağlar.|Millî egemenlik ve millî irade dayanağı öne çıkar.
+Erzurum Kongresi toplanış bakımından bölgesel, kararları bakımından millîdir.|Erzurum Kongresi kararlarının uygulanmasını yalnız Erzurum iliyle sınırlar.|Vatanın bütünlüğü ve manda karşıtlığı millî içeriktedir.
+Sivas Kongresi cemiyetleri tek çatı altında birleştirerek örgütlenmeyi merkezîleştirmiştir.|Sivas Kongresi bütün yararlı cemiyetleri birbirinden bağımsız bırakmayı esas almıştır.|Anadolu ve Rumeli Müdafaaihukuk Cemiyeti ortak çatı olmuştur.
+Misakımillî son Osmanlı Mebusan Meclisinde kabul edilmiştir.|Misakımillî ilk kez Lozan Konferansı'nda kabul edilmiştir.|Kararın kabul yeriyle uluslararası müzakere yeri ayrıdır.
+TBMM'nin yasama ve yürütmeyi üstlenmesi güçler birliği anlayışına örnektir.|TBMM'nin yasama ve yürütmeyi üstlenmesi katı güçler ayrılığına örnektir.|1921 düzeninde meclis üstünlüğü belirgindir.
+Gümrü Antlaşması TBMM'nin Ermenistan ile yaptığı ilk antlaşmadır.|Gümrü Antlaşması TBMM'nin Fransa ile yaptığı ilk antlaşmadır.|Gümrü, Doğu Cephesi başarısının diplomatik sonucudur.
+Sakarya sonrasında Fransa ile Ankara Antlaşması yapılması askerî başarının diplomasiye etkisidir.|Fransa ile Ankara Antlaşması Büyük Taarruz'dan sonra imzalanmıştır.|Ankara Antlaşması 1921; Büyük Taarruz 1922'dir.
+Mudanya Ateşkesi Doğu Trakya'nın savaşılmadan devralınmasını sağlayan süreci başlatmıştır.|Mudanya Ateşkesi yalnız Doğu Anadolu'daki Ermeni sınırını belirlemiştir.|Mudanya'nın ayırt edici alanı Doğu Trakya ve ateşkestir.
+@tarih|Devrimler
+Saltanatın kaldırılması Lozan'da ikili temsil sorununu önlemeye yöneliktir.|Saltanatın kaldırılması Lozan görüşmelerinden sonra alınmış bir karardır.|1 Kasım 1922 kararı konferans öncesindedir.
+Halifeliğin kaldırılması devlet yönetiminin laikleşmesiyle ilişkilidir.|Halifeliğin kaldırılması Osmanlı hanedanına yeni yürütme yetkisi verilmesidir.|3 Mart 1924 kararı dinî-siyasal otorite ayrımını güçlendirir.
+Tevhiditedrisat eğitim kurumlarını ortak yönetim altında toplamayı amaçlar.|Tevhiditedrisat her okulun bağımsız bir dinî otoriteye bağlanmasını amaçlar.|Eğitimde birlik esastır.
+Medeni Kanun'un kabulü aile hukukunda laik ve medeni düzeni güçlendirmiştir.|Medeni Kanun'un kabulü kadınlara milletvekili seçme hakkını veren düzenlemedir.|Siyasal haklarla medeni haklar ayrı düzenlemelerdir.
+Kabotaj Kanunu Türk limanları arasındaki deniz taşımacılığında millî egemenliği güçlendirir.|Kabotaj Kanunu yabancı gemilere Türk kıyılarında sınırsız ayrıcalık verir.|Ekonomik bağımsızlık ve milliyetçilikle ilişkilidir.
+Aşar vergisinin kaldırılması çiftçinin vergi yükünü hafifletmiştir.|Aşar vergisinin kaldırılması tarımsal ürünlerden alınan payı artırmıştır.|1925'te kaldırılan vergi tarımsal üretici üzerindeki yüktür.
+Millet Mektepleri yeni harflerle yetişkin okuryazarlığını yaygınlaştırmayı amaçlar.|Millet Mektepleri yalnız üniversite öğretim üyesi yetiştirmeyi amaçlar.|Harf değişikliğinin topluma yayılması hedeflenir.
+Devletçilik özel girişimi bütünüyle yasaklamak anlamına gelmez.|Devletçilik bütün özel işletmelerin zorunlu olarak kapatılmasıdır.|Devletin ekonomide etkinliği ile özel girişim birlikte bulunabilir.
+@tarih|Lozan
+Lozan'da kapitülasyonların kaldırılması ekonomik ve hukuki bağımsızlığı güçlendirmiştir.|Lozan'da kapitülasyonların kaldırılması yabancı devletlere yeni yargı ayrıcalıkları vermiştir.|Ayrıcalıkların kaldırılması egemenlik alanını genişletir.
+Lozan'da Musul sorunu kesin çözülemeyip sonraki görüşmelere bırakılmıştır.|Lozan'da Musul'un Türkiye'ye bırakılması kesin hükme bağlanmıştır.|Musul, 1926 Ankara Antlaşması sürecinde sonuçlanır.
+Lozan Boğazlar düzeninde uluslararası komisyon bulunması tam yetkiyi sınırlamıştır.|Lozan Boğazlar düzeni Montrö'den önce bütün sınırlamaları kaldırmıştır.|1936 Montrö ile Türkiye'nin yetkileri güçlenir.
+Nüfus mübadelesinde İstanbul Rumları ile Batı Trakya Türkleri istisna tutulmuştur.|Nüfus mübadelesinde hiçbir yerleşim grubu istisna tutulmamıştır.|Mübadele kararının coğrafi istisnaları vardır.
+Hatay'ın Türkiye'ye katılması Lozan'dan sonraki bir gelişmedir.|Hatay'ın Türkiye'ye katılması Lozan imzalanmadan önce tamamlanmıştır.|Hatay 1939'da katılmıştır.
+Balkan Antantı Türkiye, Yunanistan, Yugoslavya ve Romanya arasında yapılmıştır.|Balkan Antantı Türkiye, İran, Irak ve Afganistan arasında yapılmıştır.|İkinci ülke grubu Sadabat Paktı'nı çağrıştırır.
+Sadabat Paktı 1937'de bölgesel güvenlik iş birliğine örnek oluşturur.|Sadabat Paktı I. Dünya Savaşı öncesinde kurulmuştur.|1937, iki dünya savaşı arasındaki dönemdir.
+Türkiye'nin Milletler Cemiyetine katılması 1932'de gerçekleşmiştir.|Türkiye Milletler Cemiyetinin 1919'daki kurucu üyelerinden biridir.|Kuruluş ile sonradan katılım tarihleri ayrıdır.
+@cografya|Harita
+Aynı kâğıtta büyük ölçekli harita daha dar alanı daha ayrıntılı gösterir.|Aynı kâğıtta büyük ölçekli harita daha geniş alanı daha ayrıntılı gösterir.|Ölçek büyüdükçe gösterilen alan daralır.
+İzohipslerin sıklaşması eğimin artmasına işaret eder.|İzohipslerin sıklaşması yükseltinin her yerde azalmasını kanıtlar.|Sıklık eğimi gösterir; mutlak yükseltiyi tek başına vermez.
+Eş yükselti aralığı sabitken aynı uzaklıkta daha çok eğri dik yamacı gösterir.|Eş yükselti aralığı sabitken daha çok eğri daha az eğimi gösterir.|Yükselti farkı yatay uzaklığa oranlanır.
+Aynı enlemdeki iki merkezde boylam farkı yerel güneş saatini değiştirir.|Aynı enlemdeki iki merkezde boylam farkı gündüz süresini zorunlu olarak değiştirir.|Aynı tarih ve enlemde gündüz süresi aynıdır.
+Doğudaki merkezin yerel güneş saati batıdakinden ileridir.|Doğudaki merkezin yerel güneş saati batıdakinden geridir.|Dünya batıdan doğuya döner; resmî saat ayrı konudur.
+Türkiye'de güneyden kuzeye gidildikçe genel olarak Güneş ışınlarının geliş açısı küçülür.|Türkiye'de güneyden kuzeye gidildikçe Güneş ışınları yıl boyunca dikleşir.|Enlem arttıkça ışınların açısı küçülür.
+Bir haritada bozulmanın bulunması küresel yüzeyin düzleme aktarılmasıyla ilgilidir.|Bir haritada bozulmanın bulunması yalnız kullanılan renklerin sayısına bağlıdır.|Küre yüzeyi bütünüyle bozulmasız düzleme açılamaz.
+Haritada yön ve ölçek bilinmeden yalnız iki noktanın çizimdeki uzaklığı gerçek uzaklığı vermez.|İki noktanın haritadaki uzaklığı ölçek bilinmese de gerçek uzaklığı kesin verir.|Çizim uzaklığı ölçekle ilişkilendirilmelidir.
+@cografya|yeryuzu_sekilleri
+Delta oluşumunda akarsuyun biriktirmesi ve kıyı akıntılarının zayıflığı elverişlidir.|Delta oluşumu için kıyı akıntılarının taşınan malzemeyi sürekli uzaklaştırması gerekir.|Malzemenin ağızda birikebilmesi gerekir.
+Akarsuyun denge profiline yaklaşması aşındırma gücünün azalmasıyla ilişkilidir.|Denge profiline yaklaşan akarsuyun yatak eğimi sürekli büyür.|Yatak eğiminin azalması aşındırmayı yavaşlatır.
+Karstik şekillerin dağılışı çözünebilen kayaçlarla ilişkilidir.|Karstik şekillerin dağılışı yalnız yıllık sıcaklık ortalamasıyla açıklanır.|Kireç taşı gibi kayaçların varlığı temel etkendir.
+Buzul vadilerinin yüksek dağlarda görülmesi yükseltiyle sıcaklığın azalmasıyla ilişkilidir.|Buzul vadileri yalnız deniz seviyesindeki kıyılarda oluşabilir.|Buzul oluşumunda düşük sıcaklık ve kalıcı kar önemlidir.
+Falezli kıyıda dağların denize yakın uzanması kıyı derinliğini artırabilir.|Falezli kıyı her zaman geniş bir delta ovasının varlığını kanıtlar.|Falez aşınım, delta birikim şeklidir.
+Mendereslerin yaygınlaşması yatak eğiminin azalmasıyla ilişkilidir.|Mendereslerin yaygınlaşması akarsu eğiminin her yerde arttığını gösterir.|Yana aşındırma düşük eğimli alanlarda belirginleşir.
+Peribacalarında farklı dirençte tabakaların aşınması etkilidir.|Peribacaları yalnız buzulların biriktirdiği morenlerden oluşur.|Volkanik malzeme üzerindeki seçici aşınma ayırt edicidir.
+Graben çöküntü, horst ise göreli yüksek kalan kırık bloktur.|Graben yükselen, horst çöken kırık bloktur.|Ege'deki horst-graben sistemi faylanmayla ilişkilidir.
+@cografya|iklim_bitki_orfu
+Kıyı ile iç kesim arasındaki sıcaklık farkında denizellik ve karasallık etkilidir.|Kıyı ile iç kesim arasındaki sıcaklık farkı yalnız boylama bağlıdır.|Denizler daha yavaş ısınıp soğur.
+Karadeniz kıyısında dağların uzanışı nemli havanın yükselerek yağış bırakmasını destekler.|Karadeniz kıyısındaki yamaç yağışı yalnız yer altı sularının buharlaşmasıdır.|Orografik yükselme soğuma ve yoğunlaşma sağlar.
+Akdeniz ikliminde yaz kuraklığı doğal bitkilerde kuraklığa uyumu destekler.|Akdeniz ikliminde yaz yağışlarının sürekliliği makinin temel nedenidir.|Maki yaz kuraklığına uyumlu bitkiler içerir.
+Yükselti arttıkça aynı dağın yamaçlarında bitki kuşakları değişebilir.|Aynı dağda yükselti farkı bitki kuşaklarını hiçbir biçimde etkilemez.|Sıcaklığın yükseltiyle azalması kuşaklaşma yaratır.
+Bakı etkisi Türkiye'de güneye dönük yamaçların daha fazla enerji almasını açıklar.|Bakı etkisi Türkiye'de kuzeye dönük yamaçların yıl boyu daha fazla enerji almasıdır.|Türkiye Kuzey Yarım Küre'dedir.
+Föhn rüzgârının yamaçtan inerken ısınması bağıl nemi azaltabilir.|Föhn rüzgârının yamaçtan inerken ısınması bağıl nemi zorunlu olarak artırır.|Sıcaklık artışı havanın nem taşıma kapasitesini artırır.
+Aynı miktarda su buharı içeren hava soğutulursa bağıl nemi artar.|Aynı miktarda su buharı içeren hava soğutulursa bağıl nemi azalır.|Soğuyan havanın doygunluk kapasitesi küçülür.
+Donlu gün sayısının artması bazı tarım ürünlerinin yetişme alanını sınırlar.|Donlu gün sayısının artması bütün tarım ürünlerinin alanını genişletir.|Ürünlerin sıcaklık istekleri ve don hassasiyeti farklıdır.
+@cografya|tarim_hayvancilik
+Nadasın yaygınlığı sulama imkânı kısıtlı kurak tarım koşullarıyla ilişkilidir.|Nadas, yeterli sulamanın bulunduğu her yerde üretimi artırmanın zorunlu yoludur.|Nadas toprağın su biriktirmesi için boş bırakılmasıdır.
+Sulamanın artması nadası azaltıp ürün çeşitliliğini artırabilir.|Sulamanın artması nadas alanlarını zorunlu olarak genişletir.|Su yetersizliği azalınca aynı tarlada daha sık üretim mümkündür.
+Çayın Doğu Karadeniz kıyılarında yoğunlaşması nem ve yağış isteğiyle ilişkilidir.|Çayın Doğu Karadeniz'de yoğunlaşması belirgin yaz kuraklığı istemesindendir.|Çay yıl içine yayılan yağış ve nem ister.
+Pamukta olgunlaşma döneminin sıcak ve kurak olması hasadı kolaylaştırır.|Pamuk hasadında yağışın sürekli artması lif kalitesini her durumda yükseltir.|Olgunlaşma ve hasat yağışı lifte sorun yaratabilir.
+Küçükbaş hayvancılığın bozkırlarda yaygınlığı otlak niteliğiyle ilişkilidir.|Küçükbaş hayvancılığın bozkırlarda yaygınlığı gür orman zorunluluğundandır.|Bozkır otlakları küçükbaş için elverişlidir.
+Büyükbaş mera hayvancılığında gür çayırlar elverişli ortam sağlar.|Büyükbaş mera hayvancılığı için bitki örtüsünün bulunmaması gerekir.|Çayır ve yem kaynağı önemlidir.
+Seracılıkta ılık kış koşulları ısıtma giderini azaltabilir.|Seracılıkta ılık kış koşulları ısıtma giderini zorunlu olarak artırır.|Akdeniz kıyılarının avantajlarından biri düşük ısıtma ihtiyacıdır.
+Tarımda verim artışı, ekili alan büyümeden üretimi artırabilir.|Üretim artışı her durumda ekili alanın genişlediğini kanıtlar.|Üretim, alan ve birim alan veriminin birlikte sonucudur.
+@cografya|sanayi
+Demir-çelikte ham madde ve enerji erişimi kuruluş yeri seçiminde etkilidir.|Demir-çelik fabrikalarının kuruluş yeri yalnız tüketici nüfusuna bağlıdır.|Ağır sanayide taşıma maliyeti ve enerji önemlidir.
+Çabuk bozulan ürünleri işleyen tesislerde ham maddeye yakınlık önem kazanır.|Çabuk bozulan ürünleri işleyen tesislerde ham maddeden uzaklık zorunlu avantajdır.|Bozulma riski taşıma süresini önemli kılar.
+Petrol rafinerisinin limana yakınlığı ithal ham petrol taşımacılığını kolaylaştırabilir.|Rafinerinin kıyıda olması çevresinde mutlaka petrol çıkarıldığını kanıtlar.|İşleme yeri ile çıkarma yeri aynı olmak zorunda değildir.
+Alüminyum üretiminde elektrik gereksinimi enerji maliyetini önemli kılar.|Alüminyum üretiminde elektrik maliyeti kuruluş yeriyle ilişkisizdir.|Enerji yoğun üretimde ucuz elektrik avantajdır.
+Şeker fabrikasının pancar alanına yakınlığı ham madde taşıma yükünü azaltır.|Şeker fabrikalarının deniz kıyısında kurulması her durumda zorunludur.|Pancarın kısa sürede işlenmesi ve hacmi önemlidir.
+Taş kömürü ile linyit aynı kömür türü değildir.|Türkiye'deki bütün kömür yatakları taş kömürüdür.|Zonguldak taş kömürü; linyit birçok havzada bulunur.
+Jeotermal enerji faylı alanlardaki sıcak su kaynaklarıyla ilişkilidir.|Jeotermal enerji yalnız karla kaplı yüksek dağlarda elde edilir.|Yer içi ısısı ve yer altı suyu dolaşımı belirleyicidir.
+Hidroelektrik üretim yağış ve akım değişiminden etkilenebilir.|Hidroelektrik üretim akarsu debisinden tamamen bağımsızdır.|Su miktarı enerji üretim kapasitesini etkiler.
+@cografya|ulasim
+Dağların kıyıya paralel uzanması kıyı ile iç kesim bağlantısını zorlaştırabilir.|Dağların kıyıya paralel uzanması her yerde iç kesime geçişi kolaylaştırır.|Geçit ve tünel ihtiyacı artabilir.
+Ege'de dağların kıyıya dik uzanması doğal ulaşım koridorları oluşturur.|Ege'deki doğu-batı vadileri iç kesimle bağlantıyı bütünüyle engeller.|Vadiler kıyı ile iç kesim arasında koridor sağlar.
+Demir yolu ağır ve hacimli yüklerin uzun mesafeli taşınmasında avantaj sağlayabilir.|Demir yolunun bütün mesafelerde kapıdan kapıya teslim zorunluluğu vardır.|Avantaj yük ve mesafeye bağlıdır; karayolu esnekliği farklıdır.
+Deniz yolu büyük hacimli yüklerin birim taşıma maliyetini düşürebilir.|Deniz yolu yalnız bozulabilir küçük paketlerin taşınmasına uygundur.|Büyük taşıma kapasitesi ölçek avantajı sağlar.
+Hava yolu zamanın önemli olduğu uzun mesafelerde tercih edilebilir.|Hava yolu her tür yük için daima en ucuz ulaşım biçimidir.|Hız ile maliyet ayrı ölçütlerdir.
+Bir limanın hinterlandının genişliği iç kesimle ulaşım bağlantılarına bağlıdır.|Bir limanın hinterlandı yalnız iskelesinin uzunluğuyla belirlenir.|Hinterlant limanın etki alanıdır.
+Boru hatları sıvı ve gaz ürünlerin sürekli taşınmasına uygundur.|Boru hatları bütün yolcu taşımacılığının temel aracıdır.|Taşınan malın fiziksel niteliği önemlidir.
+Kışın kar nedeniyle yol kapanması ulaşımın iklim koşullarından etkilendiğini gösterir.|Kar nedeniyle yol kapanması yalnız nüfus miktarıyla açıklanır.|Doğal koşullar ulaşım sürekliliğini etkiler.
+@cografya|nufus_yerlesme
+Doğal nüfus artışı doğum ve ölüm farkıdır; göç bu tanıma katılmaz.|Doğal nüfus artışı doğumlarla ülkeye gelen göçmenlerin toplamıdır.|Toplam değişim için net göç ayrıca değerlendirilir.
+Genç nüfus oranının azalması tek başına toplam nüfusun azaldığını kanıtlamaz.|Genç nüfus oranının azalması toplam nüfusun mutlaka azaldığını kanıtlar.|Oran ile mutlak sayı farklı göstergelerdir.
+Aritmetik nüfus yoğunluğu toplam nüfusun yüz ölçümüne oranıdır.|Aritmetik nüfus yoğunluğu yalnız tarım alanındaki nüfusun oranıdır.|Tarım alanıyla yapılan yoğunluk hesapları farklıdır.
+Mevsimlik tarım işçisi hareketi kalıcı yerleşme değişikliği olmak zorunda değildir.|Mevsimlik tarım işçisinin her hareketi kalıcı dış göçtür.|Süre ve yerleşme amacı göç türünü ayırır.
+İş imkânlarının yoğunlaşması bir merkezin göç almasını destekleyebilir.|İş imkânlarının artması bütün merkezlerde zorunlu göç verme nedenidir.|Ekonomik çekicilik nüfus hareketinde etkendir.
+Dağınık yerleşmede suyun yaygınlığı ve engebeli arazi etkili olabilir.|Dağınık yerleşme yalnız susuz ve dümdüz arazide ortaya çıkar.|Doğal koşullar yerleşme dokusunu etkiler.
+Kırsalda makineleşme tarımsal iş gücü ihtiyacını azaltarak göçü etkileyebilir.|Kırsalda makineleşme iş gücü ihtiyacını her koşulda artırır.|Emek ihtiyacındaki değişim itici etken olabilir.
+Yaşlı nüfus oranının yükselmesi bakım ve sağlık hizmeti ihtiyacını etkiler.|Yaşlı nüfus oranının yükselmesi okul çağındaki nüfusun kesin arttığını gösterir.|Yaş gruplarının hizmet ihtiyaçları farklıdır.
+@cografya|cevre
+Erozyonda toprak taşınır; heyelanda kütle yamaç boyunca yer değiştirir.|Erozyon ile heyelan toprağın aynı biçimde topluca kaymasıdır.|Yüzeysel taşınma ile kütle hareketi ayrıdır.
+Bitki örtüsünün tahribi yüzey akışını ve erozyon riskini artırabilir.|Bitki örtüsünün tahribi toprağı su aşındırmasına karşı her zaman korur.|Kökler toprağı tutar; örtü yağmurun etkisini azaltır.
+Sulama suyunun yanlış kullanımı kurak alanlarda tuzlanmaya yol açabilir.|Kurak alanlarda aşırı sulama toprak tuzlanmasını her durumda engeller.|Buharlaşma ve yetersiz drenaj tuzu biriktirebilir.
+Akarsu yatağına yapılaşma taşkının zarara dönüşmesini kolaylaştırır.|Akarsu yatağına yapılaşma taşkın riskini kendiliğinden ortadan kaldırır.|Tehlike ile maruziyet birlikte değerlendirilir.
+Depremde yapı niteliği kaybı etkiler; büyüklük tek başına hasarı belirlemez.|Aynı büyüklükteki her deprem her yerleşmede aynı hasarı oluşturur.|Zemin, uzaklık ve yapı kalitesi de etkilidir.
+Geri dönüşüm ham madde kullanımını azaltabilir; atık oluşumunu tümüyle önlemez.|Geri dönüşüm uygulanınca bütün atıklar kendiliğinden yok olur.|Geri dönüşüm atık yönetiminin bir parçasıdır.
+Sulak alanların kurutulması biyolojik çeşitliliği olumsuz etkileyebilir.|Sulak alanların kurutulması bütün canlıların yaşam alanını genişletir.|Sulak alanlar birçok türün habitatıdır.
+Yenilenebilir enerji kaynakları da yer seçimine bağlı çevresel etki oluşturabilir.|Yenilenebilir enerji tesislerinin hiçbir koşulda çevresel etkisi olmaz.|Yenilenebilirlik sıfır etki anlamına gelmez.
+@cografya|dis_ticaret
+İhracatın ithalatı karşılama oranı ihracatın ithalata oranıyla hesaplanır.|İhracatın ithalatı karşılama oranı ithalatın ihracata oranıdır.|Pay ihracat, payda ithalattır.
+İthalat ihracattan fazlaysa mal ticareti açığı vardır.|İthalat ihracattan fazlaysa mal ticareti fazlası vardır.|İhracat eksi ithalat negatiftir.
+İhracat artarken ithalat daha hızlı artarsa ticaret açığı büyüyebilir.|İhracatın artması tek başına ticaret açığının kapandığını kanıtlar.|İki büyüklüğün birlikte değişimi gerekir.
+Transit ticarette ülke taşıma ve hizmet geliri elde edebilir.|Transit ticarette geçen bütün mallar ülke içinde tüketilmek zorundadır.|Transit geçiş son tüketim ithalatıyla aynı değildir.
+Ham maddeyi işleyerek satmak katma değeri artırabilir.|Ham maddeyi işleyerek satmak ürünün değerini her durumda sıfırlar.|İşleme ve teknoloji birim değeri artırabilir.
+Turizm gelirleri hizmet ihracatı kapsamında değerlendirilebilir.|Turizm gelirleri yalnız mal ithalatı kalemidir.|Dış ticaret ve hizmet işlemlerinin kapsamı ayrıdır.
+Dış ticaret ortaklarının çeşitlenmesi tek pazara bağımlılığı azaltabilir.|Dış ticaret ortaklarının çeşitlenmesi tek pazara bağımlılığı zorunlu olarak artırır.|Pazar riski birden fazla ülkeye dağılabilir.
+Bir ürünün hem ithal hem ihraç edilmesi çeşit ve kalite farkıyla açıklanabilir.|Bir ürün grubunun ithalatı varsa aynı grubun ihracatı imkânsızdır.|Toplulaştırılmış ürün grupları farklı nitelikler içerir.
+@cografya|turizm
+Kış turizmi için kar örtüsünün süresi ve pist koşulları önemlidir.|Kış turizmi yalnız yaz sıcaklığının yüksekliğiyle belirlenir.|Yeterli ve süreklilik gösteren kar gerekir.
+Termal turizmde sıcak su kaynaklarının niteliği ve tesisler etkilidir.|Termal turizm için deniz kıyısında bulunmak zorunludur.|Jeotermal kaynak iç kesimlerde de olabilir.
+Kültür turizmi tarihî ve kültürel mirasla ilişkilidir.|Kültür turizmi yalnız plajda yüzmeye dayalı faaliyetlerdir.|Turizm türü başlıca çekiciliğe göre ayrılır.
+Kongre turizmi ulaşım ve konaklama altyapısından etkilenir.|Kongre turizmi için ulaşım bağlantılarının bulunmaması temel avantajdır.|Katılımcıların erişimi önemlidir.
+Turizmin yıl içine yayılması mevsimlik iş dalgalanmasını azaltabilir.|Turizmin yıl içine yayılması bütün çalışanların yalnız yazın çalışmasını zorunlu kılar.|Mevsimsel yoğunluk dengelenebilir.
+Doğal alanlarda taşıma kapasitesinin aşılması koruma sorunları doğurabilir.|Doğal alanlarda ziyaretçi sayısının sınırsız artışı hiçbir koruma riski yaratmaz.|Kullanım baskısı ekosistemi etkiler.
+Kıyı turizminin gelişmesi yalnız enlemle açıklanamaz.|Aynı enlemdeki bütün kıyılar eşit turizm geliri elde eder.|Ulaşım, tesis, tanıtım ve kıyı niteliği de önemlidir.
+Ekoturizmde yerel halkın katılımı ve doğanın korunması birlikte önem taşır.|Ekoturizm doğal çevrenin kullanımdan bağımsız olarak tahrip edilmesini esas alır.|Sürdürülebilirlik temel yaklaşımdır.
+@vatandaslik|Hukuk
+Tarafların aksini kararlaştıramadığı hüküm emredici hukuk kuralıdır.|Tarafların aksini kararlaştıramadığı hüküm tamamlayıcı hukuk kuralıdır.|Sözleşme serbestisinin sınırı ayırt edicidir.
+Taraflar hüküm koymamışsa uygulanan kural tamamlayıcı nitelikte olabilir.|Taraflar hüküm koymadığında boşluğu dolduran kural her durumda emredicidir.|Kuralın işlevi boşluğu doldurmaktır.
+Hukuka aykırı işlemde iptal ile suçta ceza aynı yaptırım türü değildir.|İdari işlemin iptali ile hapis cezası aynı yaptırım türüdür.|Geçersizlik ve ceza farklı hukuki sonuçlardır.
+Dürüstlük kuralı hakların kullanılmasında da gözetilir.|Dürüstlük kuralı yalnız yazılı sözleşme yapılırken uygulanır.|Hak kullanımı ve borcun ifası kapsamındadır.
+İyiniyet, hakkın kazanılmasına engel durumu bilmemeyle ilgili olabilir.|İyiniyet her durumda borcun zamanında ödenmesiyle aynı kavramdır.|İyiniyet ile dürüst davranma birbirinden ayrılır.
+Çocuk, sağ doğmak koşuluyla ana rahmine düştüğü andan itibaren hak ehliyetini elde eder.|Çocuğun hak ehliyeti ancak doğumdan sonra nüfusa tescil edildiği tarihte başlar.|TMK 28: kişilik sağ ve tam doğumla; hak ehliyeti sağ doğmak koşuluyla ana rahmine düşmeyle ilişkilidir.
+Tam fiil ehliyeti için ayırt etme gücü, erginlik ve kısıtlı olmama aranır.|Tam fiil ehliyeti için ergin olmak yeterlidir; ayırt etme gücü aranmaz.|Erginlik tek başına yetmez; ayırt etme gücü ve kısıtlı olmama da aranır.
+Ölüm karinesi ile gaiplik kararı aynı usulle ortaya çıkmaz.|Gaiplik, her kaybolmada mahkeme kararı olmadan kendiliğinden oluşur.|Gaiplik için kanuni koşullar ve mahkeme kararı gerekir.
+@vatandaslik|Anayasa
+Devletin şeklinin cumhuriyet olduğu hükmü değiştirilemez hükümler arasındadır.|Devletin şeklinin cumhuriyet olduğu hükmü olağan kanunla değiştirilebilir.|Anayasanın ilk üç maddesi ve değişiklik yasağı birlikte değerlendirilir.
+Egemenliğin millete ait olması yetkinin anayasal organlarca kullanılmasına engel değildir.|Egemenliğin millete ait olması bütün yetkilerin yalnız referandumla kullanılmasını zorunlu kılar.|Anayasa yetkili organlar eliyle kullanımı öngörür.
+Anayasanın üstünlüğü kanunların anayasaya aykırı olamamasını gerektirir.|Anayasanın üstünlüğü yönetmeliklerin kanundan üstte olmasını gerektirir.|Normlar hiyerarşisinde anayasa üst normdur.
+Hukuk devleti idarenin hukukla bağlı ve yargısal denetime açık olmasını gerektirir.|Hukuk devleti yürütmenin bütün işlemlerini hukukun dışında bırakır.|Keyfiliğin önlenmesi ve hukuki güvenlik esastır.
+Sosyal devlet dezavantajlı grupları destekleyen tedbirler alabilir.|Sosyal devletin bütün bireyleri aynı mesleğe zorlaması gerekir.|Sosyal adalet eşit meslek veya eşit gelir zorunluluğu değildir.
+Laiklik din ve vicdan özgürlüğünü de güvence altına alır.|Laiklik herkesin aynı dinî inancı benimsemesini zorunlu kılar.|Devletin dinler karşısındaki konumu ile bireysel özgürlük birlikte ele alınır.
+Eşitlik aynı hukuki durumda olanlara aynı kuralların uygulanmasını gerektirir.|Eşitlik her farklı hukuki durumun mutlaka aynı biçimde düzenlenmesini gerektirir.|Nesnel farklılıklar makul düzenleme farkına dayanak olabilir.
+Kadınlar, çocuklar ve engelliler için alınan koruyucu tedbirler eşitliğe aykırı sayılmaz.|Engelliler için koruyucu tedbir alınması her durumda eşitliği ihlal eder.|Anayasa bazı gruplar lehine tedbirlere izin verir.
+@vatandaslik|Haklar
+Temel hakların sınırlanmasında kanunilik ve ölçülülük birlikte gözetilir.|Temel haklar yalnız bir genelgeyle sınırsız biçimde kaldırılabilir.|Anayasanın 13. maddesindeki güvenceler birlikte uygulanır.
+Olağan dönemde sınırlama hakkın özüne dokunamaz.|Olağan dönemde bir hakkın özü sınırsızca ortadan kaldırılabilir.|Sınırlama hakkı kullanılamaz hâle getirmemelidir.
+Yaşama ve kişi dokunulmazlığı hakları kişi hakları arasında yer alır.|Yaşama hakkı yalnız ekonomik ve sosyal haklar grubundadır.|Hakların anayasal sınıflandırması önemlidir.
+Eğitim hakkı sosyal ve ekonomik haklar arasında düzenlenir.|Eğitim hakkı yalnız milletvekillerine tanınmış siyasi haktır.|Eğitim hakkı vatandaşların siyasi göreviyle sınırlanmaz.
+Dilekçe hakkı siyasal hak ve ödevler bölümünde düzenlenir.|Dilekçe hakkı yalnız mülkiyet hakkının bir alt türüdür.|Anayasal tasnif ile günlük kullanım birbirinden ayrılır.
+Konut dokunulmazlığı kamu görevlilerinin her koşulda izinsiz girmesine izin vermez.|Konut dokunulmazlığı kamu görevlisinin kimliğini göstermesiyle kendiliğinden kalkar.|Müdahale için anayasal ve kanuni koşullar aranır.
+Suçluluğu hükmen sabit oluncaya kadar kişi suçlu sayılamaz.|Bir kişinin şüpheli olması kesin suçlu sayılması için yeterlidir.|Masumiyet karinesi soruşturma ile mahkûmiyeti ayırır.
+Suç ve cezaların geçmişe yürütülmemesi kanunilik güvencesiyle ilişkilidir.|Bir fiile sonradan ceza konulması her durumda geçmişe uygulanabilir.|Lehe düzenleme istisnası ile aleyhe geriye yürüme ayrılmalıdır.
+@vatandaslik|İnsan Hakları
+AİHM başvurusu kural olarak iç hukuk yollarının tüketilmesini gerektirir.|AİHM her uyuşmazlıkta iç hukuk yollarından önce başvurulacak ilk mahkemedir.|Uluslararası denetim ikincil niteliktedir.
+AİHM Avrupa Konseyi sisteminde yer alır.|AİHM Avrupa Birliğinin yasama organıdır.|Avrupa Konseyi ile Avrupa Birliği farklı örgütlerdir.
+Anayasa Mahkemesine bireysel başvuru her kanunun doğrudan soyut iptal yolu değildir.|Bireysel başvuru herkesin bütün kanunları soyut olarak iptal ettirme yoludur.|Hak ihlali ve başvuru koşulları aranır.
+Ombudsman idarenin işleyişine ilişkin şikâyetleri inceler; mahkeme gibi iptal kararı vermez.|Ombudsman idari işlemleri mahkeme hükmüyle kesin olarak iptal eden yüksek mahkemedir.|Kamu Denetçiliği Kurumu tavsiye niteliğinde kararlar verir.
+İşkence yasağı kişinin suçlandığı fiilin ağırlığıyla ortadan kalkmaz.|İşkence yasağı ağır suç şüphesinde bütünüyle uygulanmaz.|İnsan onurunun korunması suç isnadına bağlı değildir.
+Hak arama özgürlüğü yetkili mercilere başvurabilmeyi kapsar.|Hak arama özgürlüğü yalnız davayı mutlaka kazanma hakkıdır.|Başvuru hakkı ile sonucun lehte olması farklıdır.
+Özel hayatın gizliliği kişisel verilerin korunmasıyla da ilişkilidir.|Kişisel veriler özel hayatla hiçbir bağlantısı olmayan ekonomik mallardır.|Veri işleme özel yaşam güvencelerini ilgilendirir.
+Toplantı hakkının kullanımı için kural olarak önceden izin alınması gerekmez.|Barışçıl toplantı hakkı anayasal olarak her durumda ön izne bağlanmıştır.|Bildirim ile izin farklı hukuki kavramlardır.
+@vatandaslik|TBMM
+TBMM altı yüz milletvekilinden oluşur.|TBMM beş yüz elli milletvekilinden oluşur.|Güncel anayasal üye tam sayısı 600'dür.
+Kanun teklifini milletvekilleri verebilir.|Olağan kanun teklifini yalnız bakanlar kurulu verebilir.|Cumhurbaşkanlığı sisteminde bakanlar kurulu yoktur.
+Bütçe kanun teklifini Cumhurbaşkanı sunar.|Bütçe kanun teklifini yalnız Sayıştay sunar.|Bütçe teklifi olağan teklif yetkisinden ayrılan özel durumdur.
+Yazılı soru Cumhurbaşkanı yardımcıları ve bakanlara yöneltilir.|Yazılı soru doğrudan Cumhurbaşkanına yöneltilen denetim yoludur.|Anayasa muhatapları yardımcılar ve bakanlar olarak belirler.
+Meclis araştırması belli bir konuda bilgi edinmek için yapılan incelemedir.|Meclis araştırması bakanı yargılayıp hapis cezası verme işlemidir.|Araştırma bilgi edinmeye yöneliktir; cezai sorumluluğu hükme bağlamaz.
+Gensoru güncel hükûmet sisteminde TBMM'nin denetim yollarından biri değildir.|Gensoru güncel sistemde hükûmeti güvenoyuyla düşürmenin olağan yoludur.|2017 değişikliği sonrası güvenoyu-gensoru düzeni kaldırılmıştır.
+Yasama sorumsuzluğu meclis çalışmalarındaki oy ve sözlere ilişkin güvencedir.|Yasama sorumsuzluğu milletvekilinin bütün özel yaşam fiillerini cezasız bırakır.|Sorumsuzluk ile dokunulmazlık farklı kapsamdadır.
+TBMM seçimleri ile Cumhurbaşkanlığı seçimleri kural olarak beş yılda bir birlikte yapılır.|TBMM seçimleri kural olarak üç yılda bir, Cumhurbaşkanlığı seçiminden ayrı yapılır.|Anayasa ortak beş yıllık seçim dönemi öngörür.
+@vatandaslik|Yürütme
+Cumhurbaşkanı devletin başıdır ve yürütme yetkisi ona aittir.|Yürütme yetkisi güncel sistemde TBMM Başkanına aittir.|Devlet başkanlığı ile meclis başkanlığı ayrıdır.
+Bakanlar Cumhurbaşkanı tarafından atanır ve görevden alınır.|Bakanlar TBMM üyeleri tarafından ayrı ayrı halkoyuyla seçilir.|Atama yetkisi Cumhurbaşkanındadır.
+Milletvekili bakan olarak atanırsa milletvekilliği sona erer.|Milletvekili bakan olunca iki görevi anayasal zorunlulukla birlikte sürdürür.|Yasama üyeliği ile bakanlık ayrılmıştır.
+Cumhurbaşkanlığı kararnamesiyle temel hakların tamamı düzenlenemez.|Cumhurbaşkanlığı kararnamesiyle siyasi haklar sınırsızca düzenlenebilir.|Anayasanın 104. maddesinde konu sınırları bulunur.
+Kanunla kararname çatışırsa kanun uygulanır.|Kanunla Cumhurbaşkanlığı kararnamesi çatışırsa daima kararname uygulanır.|Kanun üstünlüğü esastır.
+Cumhurbaşkanı yardımcıları halk tarafından ayrı bir seçimle belirlenmez.|Cumhurbaşkanı yardımcıları milletvekili genel seçiminde doğrudan seçilir.|Yardımcıları Cumhurbaşkanı atar.
+Yönetmelik kanuna ve Cumhurbaşkanlığı kararnamesine aykırı olamaz.|Yönetmelik kanunla çatıştığında daha yeni tarihli olması nedeniyle her zaman uygulanır.|Alt norm üst normu değiştiremez.
+Olağanüstü hâl ilanı TBMM'nin onayına sunulur.|Olağanüstü hâl ilanı TBMM'nin hiçbir denetimine sunulamaz.|Yürütmenin olağanüstü yetkileri de anayasal usule bağlıdır.
+@vatandaslik|Yargı
+Hâkimler görevlerinde bağımsızdır; hiçbir organ onlara talimat veremez.|Hâkimler karar verirken yürütmenin dosyaya özel talimatına uymak zorundadır.|Mahkeme bağımsızlığı yargısal güvencedir.
+Anayasa Mahkemesi kanunların anayasaya uygunluğunu denetler.|Kanunların anayasaya uygunluğunun olağan denetimini Sayıştay yapar.|Sayıştayın temel alanı mali denetimdir.
+Danıştay idari yargının yüksek mahkemesidir.|Danıştay adli yargının ceza dairelerinden oluşan yüksek mahkemedir.|Adli yargıda yüksek mahkeme Yargıtaydır.
+Yargıtay adli yargı kararlarının kanuni koşullarla temyiz merciidir.|Yargıtay idari işlemlerin iptal davalarında genel yüksek mahkemedir.|Yargıtay adli yargı; Danıştay idari yargı alanındadır.
+Uyuşmazlık Mahkemesi adli ve idari yargı arasındaki görev ve hüküm uyuşmazlıklarını çözer.|Uyuşmazlık Mahkemesi TBMM ile Cumhurbaşkanı arasındaki bütün siyasi anlaşmazlıkları çözer.|Görev alanı yargı kolları arasındaki uyuşmazlıktır.
+Sayıştay TBMM adına kamu mali denetimi yapar.|Sayıştay bütün adli mahkeme kararlarının olağan temyiz merciidir.|Sayıştay mali denetim yapar; adli mahkeme kararlarının olağan temyiz mercii Yargıtaydır.
+Mahkeme kararlarına uymak yasama, yürütme ve idare için zorunludur.|İdare mahkeme kararını uygun bulmadığında uygulamaktan serbestçe kaçınabilir.|Hukuk devleti yargı kararlarının bağlayıcılığını gerektirir.
+Hâkimlik teminatı hâkimin her eyleminin denetimsiz olması demek değildir.|Hâkimlik teminatı hâkimin hiçbir hukuki sorumluluğunun bulunmamasıdır.|Bağımsızlık ve sorumsuzluk aynı kavram değildir.
+@vatandaslik|İdare
+Merkezden yönetimde taşra teşkilatı ayrı tüzel kişilik taşımaz.|Bakanlığın il teşkilatı merkezden tamamen ayrı bir kamu tüzel kişisidir.|Devlet tüzel kişiliği içinde örgütlenir.
+Yetki genişliği merkezden yönetimin taşrada uygulanmasını kolaylaştırır.|Yetki genişliği ilin bağımsız bir devlet olmasını sağlar.|Valiye tanınan yetki merkezî yönetim çerçevesindedir.
+İdari vesayet farklı kamu tüzel kişileri arasındaki kanuni denetimdir.|İdari vesayet aynı tüzel kişi içindeki her amir-memur ilişkisidir.|Aynı tüzel kişideki üst-alt ilişkisi hiyerarşidir.
+Hiyerarşi aynı idari teşkilat içindeki üst-alt bağına dayanır.|Hiyerarşi yalnız iki bağımsız belediye arasındaki ilişkidir.|Tüzel kişilik ve örgütsel bağ önemlidir.
+Belediye yerinden yönetim kuruluşudur.|Belediye bakanlığın tüzel kişiliği bulunmayan şubesidir.|Mahallî idarelerin kamu tüzel kişiliği vardır.
+Kamu tüzel kişiliği kanunla veya Cumhurbaşkanlığı kararnamesiyle kurulabilir.|Kamu tüzel kişiliği yalnız özel kişiler arasındaki sözlü anlaşmayla kurulur.|Anayasanın 123. maddesi kuruluş yollarını belirler.
+İdarenin bütünlüğü yerinden yönetimin bulunmadığı anlamına gelmez.|İdarenin bütünlüğü bütün belediyelerin kaldırılmasını gerektirir.|Vesayet gibi bağlar bütünlüğü sağlar.
+Kamu hizmetinin sürekliliği hizmetin niteliğine uygun düzenli yürütülmesini gerektirir.|Süreklilik ilkesi bütün kamu hizmetlerinin aynı saatlerde verilmesini zorunlu kılar.|Kesintisizlik ihtiyacı hizmetin türüne göre değerlendirilir.
+@vatandaslik|Memuriyet
+Memur kamu görevini yürütürken tarafsızlık ilkesine uymalıdır.|Memurun kamu hizmetini siyasi yakınlığa göre sunması tarafsızlık gereğidir.|Hizmette parti ve kişi ayrımı yapılamaz.
+Memurlar siyasi partiye üye olamaz.|Memurların siyasi parti üyeliği görevlerinin zorunlu şartıdır.|Anayasal siyasi faaliyet sınırları vardır.
+Disiplin cezası ile ceza mahkemesinin yaptırımı aynı süreç değildir.|Bir memura disiplin cezası verilmesi her durumda hapis cezası demektir.|İdari disiplin ve ceza sorumluluğu ayrı alanlardır.
+Disiplin cezası verilmeden önce savunma hakkı tanınmalıdır.|Disiplin cezasında savunma hakkı tamamen idarenin isteğine bağlıdır.|Savunma anayasal ve kanuni güvencedir.
+Konusu suç olan emir hiçbir şekilde yerine getirilmez.|Konusu suç olan emir amir yazılı verirse mutlaka uygulanır.|Suç teşkil eden emirde yazılı ısrar sorumluluğu kaldırmaz.
+Liyakat göreve giriş ve ilerlemede görevin gerektirdiği nitelikleri esas alır.|Liyakat göreve girişte yalnız aile yakınlığını esas alır.|Nesnel mesleki yeterlilik amaçlanır.
+Memurun görev sırasında öğrendiği gizli bilgiyi açıklaması yükümlülük ihlali doğurabilir.|Memuriyet görevi bütün gizli bilgileri serbestçe yayımlama yetkisi verir.|Gizli bilgiye görev gereği erişim, bu bilgiyi açıklama serbestisi vermez.
+Kamu görevlisinin kusurundan zarar gören kişi kanuni koşullarla idareye başvurabilir.|Kamu hizmetinden doğan zararlar hiçbir durumda yargıya taşınamaz.|İdarenin sorumluluğu ve rücu kuralları bulunur.
+@vatandaslik|Seçimler
+Seçimlerin genel yönetim ve denetimi yargı organlarınca yapılır.|Seçimlerin kesin denetimi yalnız iktidar partisinin organlarınca yapılır.|Anayasa seçim yargısına güvence sağlar.
+YSK kararları aleyhine başka bir mercie başvurulamaz.|YSK'nın kesin seçim kararlarının olağan temyiz mercii TBMM'dir.|Anayasanın 79. maddesindeki kesinlik kuralı önemlidir.
+Gizli oy seçmenin tercihinin gizliliğini korur.|Gizli oy sayımın da mutlaka gizli yapılmasını gerektirir.|Oy gizli, sayım ve döküm açıktır.
+Genel oy belirli servet veya eğitim şartına dayalı oy hakkıyla bağdaşmaz.|Genel oy yalnız belirli gelir üstündeki kişilerin oy kullanmasıdır.|Seçmenlik kanuni yaş ve diğer şartlara tabidir; servet şartı değildir.
+On sekiz yaşını dolduran Türk vatandaşı kanuni şartlarla seçme hakkına sahiptir.|Seçme yaşı güncel anayasada yirmi beştir.|Seçme yaşı ile farklı makamlara seçilme koşulları karıştırılmaz.
+Siyasi partiler önceden izin almadan kurulabilir.|Siyasi parti kurmak için her durumda Bakanlar Kurulu izni gerekir.|Kuruluş serbestisi kanuni usullere tabidir; ön izin değildir.
+Siyasi partilerin mali denetimi Anayasa Mahkemesince yapılır.|Siyasi partilerin mali denetimini yalnız YSK yapar.|Seçim denetimiyle parti mali denetimi farklı görevlerdir.
+Seçim kanunundaki değişiklikler bir yıl içinde yapılacak seçimlerde uygulanmaz.|Seçim kanunundaki her değişiklik ertesi günkü seçimde mutlaka uygulanır.|Anayasal bir yıllık uygulama güvencesi vardır.
+@turkce|sozcukte_anlam
+“Bu sözler aramızdaki buzları eritti.” cümlesinde buz sözcüğü mecazdır.|“Bu sözler aramızdaki buzları eritti.” cümlesinde buz sözcüğü bilimsel terimdir.|Soğukluk ve uzaklık somutlaştırılarak anlatılır.
+“Ameliyatta damar dikildi.” cümlesinde damar anatomi alanıyla ilişkilidir.|“Ameliyatta damar dikildi.” cümlesinde damar mutlaka mecazdır.|Bağlam sözcüğün kullanımını belirler.
+“Kalem” ile “yazı aracı” ilişkisi özelden genele doğrudur.|“Kalem” ile “yazı aracı” ilişkisi genelden özele doğrudur.|Yazı aracı daha çok varlığı kapsar.
+“Yüzünü yıkadı.” ile “Yüz sayfa okudu.” cümlelerinde yüz sesteştir.|Bu iki cümlede yüz sözcüğü aynı gerçek anlamı taşır.|Organ adı ile sayı arasında anlam bağı yoktur.
+“İnce düşüncesi bizi sevindirdi.” cümlesinde ince nezaket bildirir.|“İnce düşüncesi bizi sevindirdi.” cümlesinde ince kalınlığın azlığını bildirir.|Soyut nitelik, fiziksel özellikten farklıdır.
+“Bütün köy düğüne geldi.” cümlesinde yer adıyla insanlar anlatılmıştır.|“Bütün köy düğüne geldi.” cümlesinde köy ile insanlar arasında benzetme yapılmıştır.|Benzetme ilgisi olmadan ad aktarması vardır.
+“Çocuk aslan gibi mücadele etti.” cümlesinde açık benzetme vardır.|“Çocuk aslan gibi mücadele etti.” cümlesinde hiçbir karşılaştırma ilgisi yoktur.|Gibi sözü çocuk ile aslanı mücadele yönünden ilişkilendirir.
+“Aşağı yukarı yirmi kişi geldi.” cümlesinde ikileme yaklaşık sayı bildirir.|“Aşağı yukarı yirmi kişi geldi.” cümlesi tam yirmi kişiyi kesinleştirir.|İkileme burada tahmin anlamındadır.
+@turkce|cumlede_anlam
+“Geç kalmamak için erken çıktı.” cümlesi amaç-sonuç ilişkisi taşır.|“Geç kalmamak için erken çıktı.” cümlesi gerçekleşmiş bir neden bildirir.|Çıkışın hedefi geç kalmamaktır.
+“Yollar kapandığından gelemedik.” cümlesinde neden belirtilmiştir.|“Yollar kapandığından gelemedik.” cümlesinde yalnız amaç belirtilmiştir.|Geçmişteki engel gelmemenin gerekçesidir.
+“Düzenli çalışırsan ilerlersin.” cümlesi koşul bildirir.|“Düzenli çalışırsan ilerlersin.” cümlesi gerçekleşmiş sonucu kesin olarak bildirir.|İlerleme bir şarta bağlanmıştır.
+“Bu kitabı yeniden okudum.” cümlesi önceki bir okumayı sezdirir.|“Bu kitabı yeniden okudum.” cümlesi kitabın ilk kez okunduğunu sezdirir.|Yeniden sözcüğünün örtük anlamı önceki eylemdir.
+“Keşke seni daha önce dinleseydim.” geçmişe yönelik pişmanlık içerir.|“Keşke seni daha önce dinleseydim.” gelecek için kesin plan içerir.|Gerçekleşmemiş geçmiş eyleme yönelik dilek vardır.
+“Bunca emeğin karşılığı bu mu olmalıydı?” sitem bildirebilir.|“Bunca emeğin karşılığı bu mu olmalıydı?” yalnız nesnel ölçüm bildirir.|Soru biçimi duygusal tepkiyi dışlamaz.
+“Bu yıl geçen yıldan daha çok okudum.” karşılaştırma içerir.|“Bu yıl geçen yıldan daha çok okudum.” hiçbir karşılaştırma içermez.|Daha sözü iki dönemin miktarını karşılaştırır.
+“Anlaşılan toplantı erkenden bitmiş.” cümlesi çıkarıma dayalı yargıdır.|“Anlaşılan toplantı erkenden bitmiş.” cümlesi doğrudan gözlemi zorunlu kılar.|Anlaşılan sözü belirtilerden sonuca varmayı gösterir.
+@turkce|Paragraf
+Yalnız örneklerin artması bir paragrafın ana düşüncesinin değiştiğini kanıtlamaz.|Bir paragrafta örnek sayısı arttıkça ana düşünce zorunlu olarak değişir.|Örnekler aynı yargıyı destekleyebilir.
+“Şehirler büyüdü ama insanların karşılaşacağı ortak alanlar azaldı.” karşıtlık üzerine kuruludur.|Bu cümlede büyüme ile ortak alan kaybı arasında hiçbir karşıtlık kurulmamıştır.|Ama bağlacı beklenti ile sonucu karşılaştırır.
+“Bir dilin gücü, yeni durumları anlatabilme esnekliğindedir.” ana yargısı dilin uyum yeteneğidir.|Bu cümlenin temel yargısı bütün dillerin aynı sayıda sözcük içerdiğidir.|Metinde sözcük sayısı hakkında veri yoktur.
+“Öykücü gerçeği kopyalamaz; onu seçer ve yeniden kurar.” sanatın dönüştürücü yanını vurgular.|Bu cümle sanatçının gerçeği hiç değiştirmeden aktarmasını savunur.|Seçme ve yeniden kurma mekanik kopyanın karşıtıdır.
+“Bilgiye erişmek kolaylaştı; önemli olan güvenilir bilgiyi ayıklamak.” eleştirel seçimi öne çıkarır.|Bu cümle her çevrim içi bilginin aynı ölçüde güvenilir olduğunu savunur.|Erişilebilirlik ile güvenilirlik ayrılır.
+“Hatırlamak geçmişi aynen saklamak değil, bugünden yeniden anlamlandırmaktır.” bellek yorumunu öne çıkarır.|Bu cümle belleği hiç değişmeyen fotoğraf kaydı olarak tanımlar.|Yeniden anlamlandırma yorum içerir.
+“Okur, metindeki boşlukları kendi deneyimiyle tamamlar.” okurun etkinliğini vurgular.|Bu cümlede okur yalnız edilgen bir alıcı olarak gösterilir.|Tamamlama eylemi katılım gerektirir.
+“Bir kenti anlamak için binaları kadar gündelik ritmine de bakmalı.” çok yönlü gözlem önerir.|Bu cümle kentin yalnız mimari ölçülerle açıklanabileceğini savunur.|Kadar ve de sözleri bakış alanını genişletir.
+@turkce|ses_bilgisi
+“Ağaç” sözcüğünün “ağacı” biçiminde kullanılması ünsüz yumuşamasına örnektir.|“Ağacı” sözcüğünde örneklenen olay ünlü düşmesidir.|Ç ünsüzü c'ye dönüşmüştür.
+“Kitap” sözcüğünün “kitapta” biçiminde ek alması ünsüz benzeşmesidir.|“Kitapta” sözcüğünde p ünsüzü b'ye yumuşamıştır.|Sert ünsüzden sonra ek d yerine t ile başlar.
+“Ağız” sözcüğünün “ağzı” olması ünlü düşmesidir.|“Ağzı” sözcüğünde yeni bir ünlü türemiştir.|İkinci hecedeki ı düşmüştür.
+“Anla-yor” birleşmesinin “anlıyor” olması ünlü daralmasıdır.|“Anlıyor” sözcüğünde yalnız ünsüz türemesi vardır.|A geniş ünlüsü ı'ya daralır.
+“His” sözcüğünün “hissetmek” olması ünsüz türemesidir.|“Hissetmek” sözcüğünde s ünsüzü düşmüştür.|S ünsüzü ikizleşmiştir.
+“Biricik” sözcüğünde ünlü türemesi bulunur.|“Biricik” sözcüğünde ikinci hecedeki ünlü düşmüştür.|Bir ile -cik arasında i türemiştir.
+“Renk” sözcüğünün “rengi” olması ünsüz yumuşamasına örnektir.|“Rengi” sözcüğünde ünlü daralması vardır.|K ünsüzü g'ye dönüşmüştür.
+“Sabır” sözcüğünün “sabrı” olması ünlü düşmesidir.|“Sabrı” sözcüğünde yeni bir hece oluşmuştur.|İkinci hecedeki ı düşer; hece sayısı azalır.
+@turkce|sozcuk_yapisi
+“Gözlükler” sözcüğü yapım eki aldığı için türemiştir.|“Gözlükler” yalnız çoğul eki aldığı için basit yapılıdır.|-lük yapım, -ler çekim ekidir.
+“Evimizden” sözcüğündeki ekler sözcüğü türemiş yapmaz.|“Evimizden” sözcüğü ayrılma ekiyle fiilden isim olmuştur.|İyelik ve durum ekleri çekim ekleridir.
+“Balıkçı” sözcüğünde -çı meslek adı yapan yapım ekidir.|“Balıkçı” sözcüğündeki -çı bulunma durum ekidir.|Yeni sözcük türetmiştir.
+“Sevgi” sözcüğü fiil kökünden türemiştir.|“Sevgi” sözcüğü sev adlı bir isim köküne dayanır.|Sev- fiiline isim yapan ek gelmiştir.
+“Güzelleşmek” sözcüğü isimden fiil yapan ek içerir.|“Güzelleşmek” sözcüğünde hiçbir yapım eki bulunmaz.|Güzel sıfatına -leş fiilleştirici eki gelmiştir.
+“Koşucular” sözcüğünde yapım eki çekim ekinden önce gelmiştir.|“Koşucular” sözcüğünde çoğul eki yapım ekinden önce gelmiştir.|Koş-ucu-lar sıralaması vardır.
+“Kitaplıkta” sözcüğündeki -ta çekim, -lık yapım ekidir.|“Kitaplıkta” sözcüğündeki -ta yapım, -lık çekim ekidir.|Bulunma eki yeni sözcük oluşturmaz.
+“Çocukça davrandı.” cümlesindeki çocukça türemiş sözcüktür.|“Çocukça davrandı.” cümlesindeki çocukça hiçbir yapım eki almamıştır.|-ça yeni anlam ve görev kazandırır.
+@turkce|sozcuk_turu
+“Güzel bir resim seçti.” cümlesinde güzel sıfattır.|“Güzel bir resim seçti.” cümlesinde güzel fiili niteleyen zarftır.|Nitelediği sözcük resim ismidir.
+“Çok güzel konuştu.” cümlesinde güzel zarftır.|“Çok güzel konuştu.” cümlesinde güzel bir ismin sıfatıdır.|Konuşma eyleminin nasıl yapıldığı belirtilir.
+“Bazıları erkenden ayrıldı.” cümlesinde bazıları belgisiz zamirdir.|“Bazıları erkenden ayrıldı.” cümlesinde bazıları bir ismi niteleyen sıfattır.|İsim söylenmeden onun yerini tutmuştur.
+“Bu kitabı dün aldım.” cümlesinde bu işaret sıfatıdır.|“Bu kitabı dün aldım.” cümlesinde bu tek başına zamirdir.|Bu sözü kitap ismini belirtir.
+“Bunu dün aldım.” cümlesinde bunu işaret zamiridir.|“Bunu dün aldım.” cümlesinde bunu bir ismi niteleyen sıfattır.|İsmin yerini tutarak durum eki almıştır.
+“Senin için geldim.” cümlesinde için edattır.|“Senin için geldim.” cümlesinde için iki cümleyi bağlayan bağlaçtır.|Tek başına yargı bağlamaz; anlam ilişkisi kurar.
+“Ali ve Ece geldi.” cümlesinde ve bağlaçtır.|“Ali ve Ece geldi.” cümlesinde ve bir ismi niteleyen sıfattır.|Eş görevli iki ismi bağlar.
+“Ne güzel bir sabah!” sözünde ne derece bildiren zarftır.|“Ne güzel bir sabah!” sözünde ne mutlaka cevap bekleyen soru zamiridir.|Burada soru değil pekiştirme anlamı vardır.
+@turkce|cumle_olgulari
+“Çocuklar bahçede oynuyor.” cümlesinde bahçede dolaylı tümleçtir.|“Çocuklar bahçede oynuyor.” cümlesinde bahçede belirtili nesnedir.|Nerede sorusuna cevap verir.
+“Öğretmen kitabı masaya bıraktı.” cümlesinde kitabı belirtili nesnedir.|Bu cümlede kitabı yüklemin bildirdiği işi yapan öznedir.|Neyi sorusu kitabı ögesini verir.
+“Dün seni aradım.” cümlesinde özne yüklemdeki kişi ekinden anlaşılır.|“Dün seni aradım.” cümlesinde seni gizli öznedir.|Gizli özne ben; seni belirtili nesnedir.
+“Kapı aniden açıldı.” cümlesi olumlu bir fiil cümlesidir.|“Kapı aniden açıldı.” cümlesi yüklemi isim olan olumsuz cümledir.|Açıldı çekimli fiildir; olumsuzluk eki yoktur.
+“Ne aradı ne haber gönderdi.” cümlesi anlamca olumsuzdur.|“Ne aradı ne haber gönderdi.” cümlesi iki eylemin gerçekleştiğini bildirir.|Ne...ne bağlacı yüklemler olumlu biçimde olsa da olumsuzluk kurar.
+“Bu iş kolay değil.” cümlesi olumsuz isim cümlesidir.|“Bu iş kolay değil.” cümlesi olumlu fiil cümlesidir.|Yüklem sıfat ve değil unsurundan oluşur.
+“Okuduğum kitap masada.” cümlesinde okuduğum sıfat-fiildir.|“Okuduğum kitap masada.” cümlesinde okuduğum çekimli geçmiş zaman yüklemidir.|Kitabı niteleyen fiilimsi görevindedir.
+“Gülerek içeri girdi.” cümlesinde gülerek zarf-fiildir.|“Gülerek içeri girdi.” cümlesinde gülerek isim-fiildir.|Girme eyleminin yapılış biçimini bildirir.
+@turkce|yazim_kurallari
+“Ben de yarın geleceğim.” cümlesinde de ayrı yazılır.|“Ben de yarın geleceğim.” cümlesindeki de bitişik yazılmalıdır.|Bağlaç olan de ayrı yazılır.
+“Evde kimse yoktu.” cümlesindeki de bitişik yazılır.|“Evde kimse yoktu.” cümlesindeki de ayrı yazılmalıdır.|Bulunma durum eki sözcüğe bitişir.
+“Biliyorum ki başaracaksın.” cümlesinde ki ayrı yazılır.|“Biliyorum ki başaracaksın.” cümlesinde ki bitişik yazılmalıdır.|Bağlaç olan ki ayrı yazılır.
+“Masadaki defter benim.” cümlesindeki ki bitişik yazılır.|“Masadaki defter benim.” cümlesindeki ki bağlaçtır ve ayrı yazılmalıdır.|Sıfat yapan -ki ektir.
+“Sınav yarın mı yapılacak?” cümlesinde mı ayrı yazılır.|“Sınav yarın mı yapılacak?” cümlesinde mı önceki sözcüğe bitişir.|Soru eki önceki sözcükten ayrı yazılır.
+“Her şey zamanla değişir.” cümlesinde her şey ayrı yazılır.|Bu cümlede her şey tek sözcük olarak yazılmalıdır.|Şey sözcüğü bu yapıda ayrıdır.
+“Türk Dil Kurumuna başvurdum.” yazımında kurum adına gelen ek kesmeyle ayrılmaz.|“Türk Dil Kurumu'na başvurdum.” kurumun tam adı için doğru yazımdır.|Kurum ve kuruluş adlarına gelen ekler kesmeyle ayrılmaz.
+“TDK'nin sözlüğüne baktım.” yazımında ek kısaltmanın okunuşuna uyar.|“TDK'nın sözlüğüne baktım.” yazımında ek kısaltmanın harf okunuşuna uygundur.|K harfinin adı ke olduğundan TDK'nin yazılır.
+@turkce|noktalama_isaretleri
+Hitap sözünden sonra virgül kullanılabilir.|Hitap sözünden sonra hiçbir noktalama işareti kullanılamaz.|“Sevgili arkadaşlar,” buna örnektir.
+Bağlaç olan ve sözcüğünün hemen önüne sırf bağlaç geldiği için virgül konmaz.|Ve bağlacının bulunduğu her yerde önüne zorunlu virgül konur.|Bağlaç tek başına virgül gerekçesi değildir.
+Virgülle ayrılmış grupları ayırmak için noktalı virgül kullanılabilir.|Noktalı virgül yalnız soru anlamı taşıyan cümlelerin sonunda kullanılır.|İşaretin işlevi gruplar arasındaki ayrımı belirginleştirmektir.
+Tamamlanmış bir yargıdan sonra açıklama yapılacaksa iki nokta kullanılabilir.|İki nokta yalnız sözcüklerin hecelerini ayırmak için kullanılır.|Açıklama ve örnekleme öncesinde kullanılır.
+Tamamlanmamış anlatımın sonunda üç nokta kullanılabilir.|Üç nokta her durumda tamamlanmış kesin yargıyı zorunlu kılar.|Eksiltili anlatım işlevi vardır.
+Doğrudan soru içeren cümle sonunda soru işareti kullanılır.|Dolaylı olarak soru aktaran her cümle mutlaka soru işaretiyle biter.|“Ne zaman geleceğini sordum.” dolaylı sorudur.
+Ara sözün iki yanında kısa çizgi kullanılabilir.|Ara sözün başında kısa çizgi varsa kapanış işareti hiçbir zaman kullanılmaz.|Ara sözün başlangıç ve bitiş sınırları gösterilir.
+Sayıya gelen eki ayırmada kesme işareti kullanılır.|Sayıya gelen bütün ekler ayrı bir sözcük gibi boşlukla yazılır.|“2024'te” sayı eki ayrımına örnektir.
+@turkce|anlatim_bozuklugu
+“Yaklaşık tam iki saat bekledik.” ifadesinde çelişen sözler vardır.|“Yaklaşık tam iki saat bekledik.” ifadesinde anlamca hiçbir çelişki yoktur.|Yaklaşık tahmin, tam kesinlik bildirir.
+“Geri iade etti.” ifadesinde gereksiz sözcük kullanılmıştır.|“Geri iade etti.” ifadesindeki geri sözcüğü anlam için zorunludur.|İade etmek geri vermeyi içerir.
+“Onunla ilk kez burada tanıştık.” ifadesinde ilk kez gereksizdir.|“Onunla ilk kez burada tanıştık.” ifadesinde tanışma eylemi tekrar tekrar başlama anlamındadır.|Tanışmak ilk karşılaşmayı anlatır.
+“İstek ve arzularını söyledi.” ifadesinde eş anlamlı sözcükler gereksiz tekrarlanmıştır.|“İstek ve arzularını söyledi.” ifadesinde eş anlamlı hiçbir sözcük yoktur.|İstek ve arzu aynı anlam alanındadır.
+“Bu olayın sebebi dikkatsizliktendir.” cümlesinde sebep ile -den gereksiz yinelenmiştir.|“Bu olayın sebebi dikkatsizliktendir.” cümlesi sebep-sonuç bakımından kusursuzdur.|“Sebebi dikkatsizliktir.” veya “Dikkatsizliktendir.” denebilir.
+“Kitabı okudum ve çok beğendim.” cümlesinde ortak nesne kullanımı uygundur.|“Kitabı okudum ve çok beğendim.” cümlesinde iki fiil için mutlaka farklı nesneler gerekir.|İki yüklem de kitabı nesnesini alabilir.
+“Herkes geldi ama kimse konuşmadı.” cümlesinde özne-yüklem uyumsuzluğu yoktur.|“Herkes geldi ama kimse konuşmadı.” cümlesinde herkes sözcüğü mutlaka çoğul yüklem ister.|Belgisiz zamirler tekil yüklemle kullanılabilir.
+“Bahçedeki ağaçlar çiçek açtı.” cümlesinde özne-yüklem uyumu vardır.|“Bahçedeki ağaçlar çiçek açtı.” cümlesinde ağaçlar için çoğul yüklem zorunludur.|İnsan dışı çoğul özneyle tekil yüklem kullanılabilir.
+@turkce|Sözel Mantık
+A, B'den; B de C'den önceyse A kesinlikle C'den öncedir.|A, B'den; B de C'den önceyse C kesinlikle A'dan öncedir.|Öncelik ilişkisi geçişlidir.
+Ada, Ece ve Duru sıralanırken Ece son değil ve Ada'dan sonraysa sıra Ada-Ece-Duru olur.|Ada, Ece ve Duru sıralanırken Ece son değil ve Ada'dan sonraysa Ece ilk sıradadır.|Ece ortada; Ada ilk, Duru son olur.
+Dört kişiden yalnız birinin seçilmeyeceği durumda üç kişi seçilir.|Dört kişiden yalnız biri seçilmeyecekse iki kişi seçilir.|Toplamdan dışarıda kalan sayı çıkarılır.
+A ile B yan yana değilse aralarında en az bir konum bulunur.|A ile B yan yana değilse mutlaka sıranın iki ucundadır.|Yan yana olmama uçlarda bulunmayı zorunlu kılmaz.
+Beş sunumda ilk ve son yer doluysa kalan üç sunum orta üç konuma yerleşir.|Beş sunumda ilk ve son yer doluysa kalan sunumlar için iki konum kalır.|Konumların sayısı korunur.
+A veya B'den yalnız biri seçilecekse ikisinin birlikte seçilmesi koşulu ihlal eder.|A veya B'den yalnız biri seçilecekse ikisinin birlikte seçilmesi zorunludur.|Yalnız biri koşulu dışlayıcı seçimdir.
+A seçilirse B seçilecek kuralı, B seçildiğinde A'nın da seçildiğini tek başına göstermez.|A seçilirse B seçilecek kuralı, B seçildiğinde A'yı kesinleştirir.|Koşullu önermenin tersi zorunlu değildir.
+A seçilirse B seçilecek kuralında B seçilmemişse A da seçilmemiştir.|A seçilirse B seçilecek kuralında B seçilmemesi A'nın seçildiğini kanıtlar.|Karşıt ters çıkarım geçerlidir.
+@guncel|dunya_gundemi
+BM Güvenlik Konseyinin daimî üyeleri veto yetkisine sahiptir.|BM Güvenlik Konseyinin bütün geçici üyeleri daimî veto yetkisine sahiptir.|Daimî ve geçici üyelik yetkileri ayrılır.
+BM Genel Kurulu ile Güvenlik Konseyi aynı organ değildir.|BM Genel Kurulu yalnız beş daimî üyeden oluşur.|Genel Kurulda üye devletler temsil edilir.
+NATO kolektif savunma örgütüdür; Avrupa Birliğiyle özdeş değildir.|NATO Avrupa Birliğinin tek para politikasını belirleyen organıdır.|Güvenlik ittifakı ve ekonomik-siyasal birlik ayrıdır.
+Avrupa Konseyi Avrupa İnsan Hakları Sözleşmesi sistemiyle ilişkilidir.|Avrupa Konseyi yalnız avro kullanan ülkelerin merkez bankasıdır.|Avrupa Merkez Bankası başka bir kurumdur.
+Bir ülkenin AB üyeliği, avro bölgesine de katılmış olduğunu tek başına göstermez.|AB üyeliği bütün üye devletlerin bugün avro kullandığını gösterir.|AB ile avro bölgesinin üyelik kapsamı aynı değildir.
+UNESCO eğitim, bilim ve kültür alanlarında çalışan BM uzmanlık kuruluşudur.|UNESCO uluslararası sivil havacılığın uçuş güvenliği kuruluşudur.|Sivil havacılık alanındaki kuruluş ICAO'dur.
+WHO küresel sağlık alanında çalışan BM uzmanlık kuruluşudur.|WHO dünya ticaret kurallarını belirleyen ticaret örgütüdür.|WHO sağlık, WTO ticaret alanındadır.
+ILO çalışma yaşamı ve uluslararası çalışma standartlarıyla ilişkilidir.|ILO uluslararası ticarette gümrük tarifelerini düzenleyen örgüttür.|Çalışma standartları ILO; uluslararası ticaret kuralları WTO ile ilişkilidir.
+@guncel|Dünya
+Lahey Uluslararası Adalet Divanına ev sahipliği yapar.|Uluslararası Adalet Divanının merkezi Cenevre'dedir.|BM'nin başlıca yargı organı Lahey'dedir.
+NATO'nun merkezi Brüksel'dedir.|NATO'nun merkezi Viyana'dadır.|İttifakın siyasi merkezi Belçika'dadır.
+UNESCO'nun merkezi Paris'tedir.|UNESCO'nun merkezi Roma'dadır.|Roma, FAO merkezini çağrıştırır.
+WHO'nun merkezi Cenevre'dedir.|WHO'nun merkezi Londra'dadır.|Sağlık örgütü İsviçre'dedir.
+FAO'nun merkezi Roma'dadır.|FAO'nun merkezi Berlin'dedir.|Gıda ve Tarım Örgütü İtalya'dadır.
+IMF'nin merkezi Washington'dadır.|IMF'nin merkezi New York'tadır.|Washington ile BM merkezi olan New York ayrılmalıdır.
+IAEA'nın merkezi Viyana'dadır.|IAEA'nın merkezi Madrid'dedir.|Uluslararası Atom Enerjisi Ajansı Avusturya'dadır.
+OECD'nin merkezi Paris'tedir.|OECD'nin merkezi Helsinki'dedir.|Ekonomik iş birliği kuruluşu Fransa'dadır.
+@guncel|kultur_sanat
+Göbeklitepe Şanlıurfa'dadır ve UNESCO Dünya Mirası Listesindedir.|Göbeklitepe Mardin'dedir ve yalnız geçici listededir.|Kalıcı Dünya Mirası Listesine 2018'de alınmıştır.
+Arslantepe Höyüğü Malatya'dadır.|Arslantepe Höyüğü Şanlıurfa'dadır.|Arkeolojik alanın ili Malatya'dır.
+Çatalhöyük Neolitik Kenti Konya'dadır.|Çatalhöyük Neolitik Kenti Kayseri'dedir.|Yerleşme Konya'nın Çumra ilçesi yakınındadır.
+Troya Arkeolojik Alanı Çanakkale'dedir.|Troya Arkeolojik Alanı İzmir'dedir.|Troya ile Efes'in illeri karıştırılmamalıdır.
+Efes İzmir'de yer alan bir Dünya Mirası alanıdır.|Efes Antalya'da yer alan bir Dünya Mirası alanıdır.|Efes Selçuk ilçesindedir.
+Divriği Ulu Camii ve Darüşşifası Sivas'tadır.|Divriği Ulu Camii ve Darüşşifası Erzurum'dadır.|Yapı topluluğu Divriği ilçesindedir.
+Ani Arkeolojik Alanı Kars'tadır.|Ani Arkeolojik Alanı Ağrı'dadır.|Türkiye-Ermenistan sınırı yakınındaki alan Kars'tadır.
+Aphrodisias Aydın'dadır.|Aphrodisias Denizli'dedir.|Geyre yerleşimi yakınındaki alan Aydın'dadır.
+@guncel|Kültür
+Orhan Pamuk 2006 Nobel Edebiyat Ödülü'nü almıştır.|Orhan Pamuk 2015 Nobel Kimya Ödülü'nü almıştır.|Edebiyat ve kimya ödüllerinin sahipleri farklıdır.
+Aziz Sancar 2015 Nobel Kimya Ödülü'nü paylaşmıştır.|Aziz Sancar 2006 Nobel Edebiyat Ödülü'nü paylaşmıştır.|Ödül DNA onarımı çalışmalarına verilmiştir.
+Yaşar Kemal İnce Memed romanının yazarıdır.|İnce Memed romanının yazarı Orhan Kemal'dir.|Benzer adlı yazarlar birbirine karıştırılmamalıdır.
+Saatleri Ayarlama Enstitüsü Ahmet Hamdi Tanpınar'ın eseridir.|Saatleri Ayarlama Enstitüsü Peyami Safa'nın eseridir.|Roman Tanpınar'ındır.
+Kürk Mantolu Madonna Sabahattin Ali'nin romanıdır.|Kürk Mantolu Madonna Halide Edip Adıvar'ın romanıdır.|Eser-yazar eşleştirmesi Sabahattin Ali'dir.
+İstiklâl Marşı'nın bestecisi Osman Zeki Üngör'dür.|İstiklâl Marşı'nın bestecisi Mehmet Âkif Ersoy'dur.|Mehmet Âkif sözlerin yazarıdır.
+Dede Korkut mirası somut olmayan kültürel miras kapsamında yer alır.|Dede Korkut mirası yalnız bir fiziksel bina olarak Dünya Mirası alanıdır.|Anlatı ve gelenek ile taşınmaz kültür varlığı ayrılır.
+Karagöz geleneksel gölge oyunudur.|Karagöz yalnız yazılı bir destan türüdür.|Gösteri geleneği somut olmayan mirasla ilişkilidir.
+@guncel|spor
+Olimpiyat Oyunları ile FIFA Dünya Kupası farklı organizasyonlardır.|Olimpiyat Oyunlarını FIFA tek başına düzenler.|Olimpik hareketin kurumu IOC'dir.
+FIFA futbolun küresel yönetim kuruluşudur.|FIFA yalnız Avrupa futbolunu yöneten konfederasyondur.|Avrupa konfederasyonu UEFA'dır.
+UEFA Avrupa futboluyla ilişkilidir.|UEFA dünya atletizminin küresel federasyonudur.|Spor dalı ve coğrafi kapsam birlikte ayrılmalıdır.
+FIBA basketbolun uluslararası yönetim kuruluşudur.|FIBA uluslararası voleybol federasyonudur.|Voleybol kuruluşu FIVB'dir.
+FIVB voleybolla ilişkilidir.|FIVB uluslararası basketbol federasyonudur.|Satranç kuruluşu FIDE'dir.
+FIDE satrançla ilişkilidir.|FIDE uluslararası eskrim federasyonudur.|Kısaltma spor dalıyla eşleştirilmelidir.
+Grand Slam tenisinde Wimbledon çim kortta oynanır.|Wimbledon toprak kortta oynanan Grand Slam turnuvasıdır.|Roland Garros toprak kortuyla ayırt edilir.
+Roland Garros tenis turnuvası Fransa'da düzenlenir.|Roland Garros Avustralya'da düzenlenir.|Paris turnuvası ile Avustralya Açık farklıdır.
+@guncel|Spor
+2024 Yaz Olimpiyatları Paris'te düzenlenmiştir.|2024 Yaz Olimpiyatları Los Angeles'ta düzenlenmiştir.|Los Angeles 2028 ev sahibidir; 2024 Paris'tir.
+2020 adıyla anılan Tokyo Olimpiyatları 2021'de yapılmıştır.|Tokyo 2020 Olimpiyatları 2024'te yapılmıştır.|Pandemi nedeniyle bir yıl ertelenmiştir.
+2022 FIFA Dünya Kupası Katar'da düzenlenmiştir.|2022 FIFA Dünya Kupası Rusya'da düzenlenmiştir.|Rusya 2018 ev sahibidir.
+2024 Avrupa Futbol Şampiyonası Almanya'da düzenlenmiştir.|2024 Avrupa Futbol Şampiyonası İspanya'da düzenlenmiştir.|Ev sahibi ile şampiyon ülke aynı olmak zorunda değildir.
+2023 Kadınlar Avrupa Voleybol Şampiyonası'nı Türkiye kazanmıştır.|2023 Kadınlar Avrupa Voleybol Şampiyonası'nı Türkiye erkek millî takımı kazanmıştır.|Kadın millî takımının başarısıdır.
+2023 UEFA Şampiyonlar Ligi finali İstanbul'da oynanmıştır.|2023 UEFA Şampiyonlar Ligi finali Ankara'da oynanmıştır.|Final Atatürk Olimpiyat Stadı'ndadır.
+Mete Gazoz Tokyo Olimpiyatları'nda okçulukta altın madalya almıştır.|Mete Gazoz Tokyo Olimpiyatları'nda eskrimde altın madalya almıştır.|Sporcu okçuluk dalında yarışır.
+Naim Süleymanoğlu olimpiyat başarılarını halterde elde etmiştir.|Naim Süleymanoğlu olimpiyat başarılarını güreşte elde etmiştir.|Halter ile güreş farklı spor dallarıdır.
+@guncel|bilim_teknoloji
+TÜRKSAT 6A Türkiye'nin ilk yerli haberleşme uydusu olarak 2024'te fırlatılmıştır.|TÜRKSAT 6A Türkiye'nin ilk insanlı Ay aracı olarak fırlatılmıştır.|Haberleşme uydusu ile insanlı araç farklı amaç taşır.
+İMECE yüksek çözünürlüklü yer gözlem uydusudur.|İMECE televizyon yayınını aktarmak için tasarlanmış haberleşme uydusudur.|Uydu görüntüleme ve gözlem amacı taşır.
+Alper Gezeravcı Türkiye'nin ilk astronotu olarak 2024'te ISS görevine katılmıştır.|Alper Gezeravcı 2024'te Ay yüzeyinde yürüyen ilk Türk olmuştur.|ISS görevi Ay inişi değildir.
+James Webb Uzay Teleskobu özellikle kızılötesi gözlemler için tasarlanmıştır.|James Webb yalnız görünür ışıkta gözlem yapmak için tasarlanmıştır.|Teleskop elektromanyetik ışınımı gözler.
+CERN parçacık fiziği araştırmalarıyla ilişkilidir.|CERN Avrupa Uzay Ajansının uydu fırlatma merkezidir.|Büyük Hadron Çarpıştırıcısı CERN'dedir.
+ESA Avrupa Uzay Ajansıdır.|ESA, NASA'nın Avrupa'daki yerel temsilciliğidir.|ESA bağımsız bir Avrupa uzay iş birliği kuruluşudur; ABD uzay ajansı NASA'nın şubesi değildir.
+TÜBİTAK bilimsel ve teknolojik araştırmaları destekler.|TÜBİTAK Türkiye'nin bütün üniversitelerinde diploma veren tek yükseköğretim kurumudur.|Araştırma desteği kurumun alanıdır.
+TEKNOFEST havacılık, uzay ve teknoloji festivali olarak düzenlenir.|TEKNOFEST yalnız ticari uçak satışına izin verilen bir ihracat fuarıdır.|Teknoloji yarışmaları temel bileşenlerindendir.
+@guncel|Bilim
+DNA'nın çift sarmal yapısı kalıtsal bilginin moleküler temeliyle ilişkilidir.|DNA'nın temel görevi hücredeki bütün proteinleri doğrudan enzim olarak parçalamaktır.|DNA kalıtsal bilgi taşır.
+Aşı bağışıklık sisteminin belirli etkene yanıt geliştirmesini amaçlar.|Aşı her tür bakteriyel hastalık için aynı antibiyotik dozudur.|Aşı ile antibiyotik farklı korunma ve tedavi araçlarıdır.
+Yenilenebilir güneş enerjisi ışınımın dönüştürülmesiyle kullanılır.|Güneşten elektrik elde edilmesi için panellerin mutlaka su buharı üretmesi gerekir.|Kaynağın yenilenebilirliği ve dönüşüm süreci ayrılır.
+Yapay zekâ sisteminin çıktısı ayrıca doğrulama gerektirebilir.|Yapay zekânın verdiği her cevap doğruluğu kanıtlanmış bilgidir.|Üretim yeteneği doğruluk garantisi değildir.
+Karbon ayak izi sera gazı salımlarının eşdeğer miktarıyla ilişkilidir.|Karbon ayak izi yalnız katı atıkların kilogram cinsinden toplamıdır.|Çevresel gösterge salım hesabını ifade eder.
+Sıfır atık yaklaşımında atık oluşumunu önlemek geri dönüşümden önce değerlendirilir.|Sıfır atık yaklaşımında önleme yerine yalnız oluşan atığı geri dönüştürmek yeterlidir.|Önleme ve yeniden kullanım öncelikli basamaklardır.
+Küresel ısınma ile ozon tabakasındaki incelme aynı fiziksel süreç değildir.|Küresel ısınma yalnız ozon deliğinin başka adıdır.|Sera etkisi ve ozon kimyası ayrı mekanizmalardır.
+Ekonomi ödülü Nobel'in vasiyetindeki beş özgün ödül alanından biri değildir.|Ekonomi ödülü Nobel'in vasiyetindeki beş özgün ödül alanından biridir.|Ekonomi ödülü sonradan İsveç Merkez Bankası tarafından oluşturulmuştur.
+@guncel|turkiye_gundemi
+TCMB'nin temel amacı fiyat istikrarını sağlamaktır.|TCMB'nin temel amacı kamu bütçesindeki bütün harcamaları doğrudan finanse etmektir.|Merkez bankasının ana alanı para politikasıdır.
+TÜİK resmî istatistik üretimiyle ilişkilidir.|TÜİK politika faizini belirleyen para politikası otoritesidir.|TÜİK istatistik üretir; politika faizini TCMB Para Politikası Kurulu belirler.
+AFAD afet ve acil durum yönetimiyle ilişkilidir.|AFAD yalnız sigorta tazminatı ödeyen zorunlu deprem sigortası kurumudur.|AFAD afet yönetimiyle; DASK zorunlu deprem sigortasıyla ilişkilidir.
+TİKA kalkınma iş birliği projeleri yürütür.|TİKA yalnız Türk lirasının değerini belirleyen merkez bankası kuruludur.|TİKA kalkınma iş birliği yürütür; para politikası TCMB'nin alanıdır.
+Yunus Emre Enstitüsü Türk dili ve kültürünün tanıtımıyla ilişkilidir.|Yunus Emre Enstitüsü yalnız Türkiye içindeki yükseköğretim diplomalarını denkleştirir.|Enstitü kültürel diplomasi yürütür; yükseköğretim diploma denkliği YÖK'ün alanıdır.
+Türk Patent ve Marka Kurumu sınai mülkiyet alanıyla ilişkilidir.|Türk Patent ve Marka Kurumu yalnız edebî eserlerin telif haklarını tescil eden kurumdur.|Patent ve marka sınai mülkiyettir; edebî eserlerin telif hakları ayrı alandır.
+Türk Kızılay insani yardım alanında faaliyet gösterir.|Türk Kızılay kamu idaresinde bütün afet kararlarını tek başına alan bakanlıktır.|Türk Kızılay bir bakanlık değildir; insani yardım alanında faaliyet gösteren dernektir.
+Anayasa Mahkemesi ile Kamu Denetçiliği Kurumu aynı kurum değildir.|Kamu Denetçiliği Kurumu Anayasa Mahkemesinin yalnız diğer adıdır.|Görevleri ve kararlarının niteliği farklıdır.
+@guncel|Ekonomi
+Enflasyon genel fiyat düzeyinin sürekli artışıdır.|Tek bir ürünün bir günlük fiyat artışı her durumda genel enflasyonun tam ölçüsüdür.|Genel düzey ve süreklilik önemlidir.
+Dezenflasyon fiyat artış hızının yavaşlamasıdır.|Dezenflasyon bütün fiyatların mutlaka düşmesidir.|Enflasyon azalırken fiyat düzeyi yine yükselebilir.
+Deflasyon genel fiyat düzeyinin düşüşünü ifade eder.|Deflasyon yalnız fiyat artış hızının daha yavaş yükselmesidir.|Düzeyin düşmesiyle artış hızının düşmesi ayrılır.
+Nominal gelir artışı fiyat artışından düşükse satın alma gücü azalabilir.|Nominal gelirin artması satın alma gücünün her durumda arttığını kanıtlar.|Reel değerlendirmede fiyat değişimi dikkate alınır.
+Politika faizi ile döviz kuru aynı gösterge değildir.|Politika faizindeki her bir puanlık değişim döviz kurunu aynı oranda zorunlu değiştirir.|Göstergeler ilişkilidir ama özdeş veya mekanik değildir.
+İşsizlik oranının paydasında iş gücü yer alır.|İşsizlik oranının paydasında yalnız emekliler yer alır.|İş gücü, istihdamdakiler ile işsizlerden oluşur.
+Bütçe açığı kamu giderlerinin gelirlerini aşmasıyla oluşur.|Bütçe açığı yalnız mal ithalatının ihracatı aşmasıdır.|Bütçe dengesi ve dış ticaret dengesi farklıdır.
+Satın alma gücü karşılaştırması için yalnız para miktarı yeterli değildir.|İki ülkede eşit nominal ücret mutlaka eşit yaşam standardını kanıtlar.|Fiyatlar ve mal-hizmet maliyetleri de değerlendirilir.

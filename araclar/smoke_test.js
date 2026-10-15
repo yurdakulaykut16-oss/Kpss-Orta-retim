@@ -58,7 +58,13 @@ function mockFetch(url, opts) {
   win.fetch = mockFetch;
   win.confirm = () => true;
   win.scrollTo = () => {};
-  win.eval(appjs);
+  // Strict eval içindeki V dışarı sızmaz. Yalnız test ortamında, aynı
+  // leksik kapsamda bir render yardımcısı kur; üretim JS'sini değiştirme.
+  win.eval(appjs + `\nwindow.__smokeRenderQuestion = (ders, sid) => {
+    V.oturum = {mod:"test", ders, baslik:"İçerik kontrolü", sira:0,
+      dogru:0, yanlis:0, kuyruk:[{s:V.tumSorular[sid],tip:"ana"}],
+      gorulen:[], bas:Date.now()}; V.oturumTecih = {}; renderQuiz();
+  };`);
   win.dispatchEvent(new win.Event("load"));
   await tick(250);
 
@@ -172,6 +178,25 @@ function mockFetch(url, opts) {
   ok("akış: karışık test kilidi/uyarısı", has("karışık") || has("Karışık"));
   await go("#/ayarlar");
   ok("ayarlar: sıfırlama", has("Veriler ve Sıfırlama") && has("Sıfırla"));
+
+  /* ---------- 1500'lük parti: her derste iki yargı biçiminin gerçek kaydı ---------- */
+  const plan1500 = JSON.parse(fs.readFileSync(path.join(ROOT, "data/kaynaklar/parti_1500_plan.json"), "utf8"));
+  for (const ders of ["tarih", "cografya", "vatandaslik", "turkce", "guncel"]) {
+    const bank = loadFix(`sorular_${ders}.json`, []);
+    const targets = new Set(plan1500.targets.filter((t) => t.ders === ders).map((t) => t.id));
+    for (const [bicim, prefix] of [["üç öncül", "I. "], ["beş yargı", "1. "]]) {
+      const s = bank.find((s) => targets.has(s.id) && s.kok.startsWith(prefix));
+      if (!s) { ok(`${ders} ${bicim}: güncel API kaydı`, false); continue; }
+      // İzole bir test oturumu; mevcut rota/akış testlerinden bağımsız olarak
+      // gerçek API kaydının render ve cevap/çözüm eşleşmesini denetler.
+      win.__smokeRenderQuestion(ders, s.id);
+      ok(`${ders} ${bicim}: kök ve satır sonları`, doc.querySelector(".soru-kok")?.textContent === s.kok);
+      ok(`${ders} ${bicim}: 5 şık ve özgün kaynak`, doc.querySelectorAll(".sik").length === 5 && has("Kaynak: KPSS formatında"));
+      await sikSec(s.dogru);
+      ok(`${ders} ${bicim}: doğru şık eşleşmesi`, doc.querySelector(".sik.dogru")?.getAttribute("data-sik") === String(s.dogru));
+      ok(`${ders} ${bicim}: gerekçeli çözüm`, has(s.cozumler[0].metin.slice(0, 60)));
+    }
+  }
 
   console.log(`\nSONUÇ: ${pass} başarılı, ${fail} başarısız`);
   process.exit(fail ? 1 : 0);
