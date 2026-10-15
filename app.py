@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-KPSS Ortaöğretim — 10 Günlük Hızlandırılmış Kamp
+KPSS Ortaöğretim — 8 Günlük Hızlandırılmış Kamp (17–24 Ekim; 7 test günü + final provası)
 Flask sunucusu: tüm içerik (konu anlatımları, soru bankası, program, denemeler)
 data/ klasörünün içindedir; ilerleme verisi data/ilerleme/ altında saklanır.
 
@@ -196,7 +196,8 @@ def her_seyi_yukle(zorla: bool = False):
         active, report = filter_bank(raw, read_policy(KOK))
         program = program_yukle()
         exams = project_exams(denemeler_yukle(), raw, active)
-        target = summarize(load_target(KOK), active, exams, len(program['gunler']))
+        target = summarize(load_target(KOK), active, exams,
+                           sum(1 for g in program['gunler'] if g.get('test_hedefi', True)))
         fresh = dict(program=program, kapsam=report, sorular=active, calisma_hedefi=target,
                      denemeler=exams,
                      konu_yeniden=_json_oku(VERI / "konu_yeniden.json") if (VERI / "konu_yeniden.json").exists() else {},
@@ -300,7 +301,7 @@ def api_meta():
             "calisma_hedefi": c["calisma_hedefi"],
             "kapsam": {k: v for k, v in c['kapsam'].items() if k != 'bekleyen_kayitlar'},
             "gun_ozetleri": [
-                {"no": g["no"], "tarih": g["tarih"], "tema": g["tema"]} for g in program["gunler"]
+                {"no": g["no"], "tarih": g["tarih"], "tema": g["tema"], "test_hedefi": g.get("test_hedefi", True)} for g in program["gunler"]
             ],
             "denemeler": [
                 {"id": d["id"], "ad": d["ad"], "gun": d["gun"], "soru_sayisi": len(d["sorular"]), "sure_dk": d["sure_dk"]}

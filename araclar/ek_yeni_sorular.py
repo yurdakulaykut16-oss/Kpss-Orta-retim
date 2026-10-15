@@ -10,6 +10,8 @@ karıştırılır. Sütunlar (| ile):
 - id: TAR-YS-0001, COG-YS-…, VAT-YS-…, TUR-YS-…, GUN-YS-… (ön ek dersi belirler)
 - konu: bankadaki konu başlığı; kpss_kapsam.json içindeki bir konu takma adı olmalı
 - kökte satır sonu için \\n yazılır
+- yeni_parti_16_<ders>.tsv dosyaları elle yazılmaz; araclar/bilgi_soru_uret.py ile
+  araclar/bilgi_veri/<ders>.py bilgi tablolarından üretilir ve 'bilgi-tablosu' etiketi alır
 
 Kullanım:
     python3 araclar/ek_yeni_sorular.py --onayla   # kapsam onaylarını yazar
@@ -72,7 +74,8 @@ def build(root=ROOT):
             n = int(parts[2])
             s = dict(id=sid, ders=ders, gun=1 + (n - 1) % 10, konu=konu, zorluk=int(z),
                      kok=stem.replace(r'\n', '\n'), siklar=options, dogru=options.index(correct),
-                     kaynak='KPSS formatında', etiketler=['ozgun', 'yeni-parti'],
+                     kaynak='KPSS formatında',
+                     etiketler=['ozgun', 'yeni-parti'] + (['bilgi-tablosu'] if tsv.name.startswith('yeni_parti_16_') else []),
                      cozumler=[dict(yontem='KPSS mantığı ile çözüm', metin=rest[4])])
             root_key = question_key(s)
             if root_key in seen_roots:

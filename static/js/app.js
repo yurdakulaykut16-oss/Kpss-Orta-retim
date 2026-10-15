@@ -103,7 +103,7 @@ function kapsamHavuzUyarisi(d) {
     <p><b>Güncel ara havuz hedefi:</b> ${V.meta.havuz_hedefleri?.guncel || 3000} farklı soru. Şu an ${k.dersler.guncel.aktif} aktif; hedefe ${Math.max(0,(V.meta.havuz_hedefleri?.guncel || 3000)-k.dersler.guncel.aktif)} soru kaldı.</p>
     <p>Test ve deneme soruları ayrı tutulur. Havuz tükenirse eski soru ile doldurulmaz. Oturuma ayrılan sorular, cevaplanmadan çıkılsa da yeni oturumda verilmez.</p>
     ${dersler.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru; ${V.meta.calisma_hedefi.dersler[x].denemeye_ayrilan} soru denemeye ayrıldı; ${kalan[x]} kullanılmamış test sorusu.</p>`).join("")}
-    <p>Tekrarsız ${V.meta.calisma_hedefi.kamp_gun_sayisi} günlük kamp için her derste ${DERS_HEDEF*V.meta.calisma_hedefi.kamp_gun_sayisi} test sorusu ve bunlardan ayrı deneme havuzu gerekir. İlk gün kapasitesi, bütün kampın tamamlandığı anlamına gelmez.</p>
+    <p>Tekrarsız ${V.meta.calisma_hedefi.kamp_gun_sayisi} test günü (17–23 Ekim; 24 Ekim yalnız deneme/tekrar) için her derste ${DERS_HEDEF*V.meta.calisma_hedefi.kamp_gun_sayisi} test sorusu ve bunlardan ayrı deneme havuzu gerekir. İlk gün kapasitesi, bütün kampın tamamlandığı anlamına gelmez.</p>
     ${dar.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru var; geçmiş kullanım ve deneme rezervleri çıkarılınca ${kalan[x]} yeni test sorusu kaldı. ${DERS_HEDEF} farklı soruya yetmiyor. Hedefi doldurmak için kapsam dışı soru eklenmez.</p>`).join("")}
   </div>`;
 }
@@ -512,7 +512,8 @@ function bugunKampGunu() {
   if (g) return g.no;
   const sinav = new Date(V.meta.sinav.tarih + "T12:00:00");
   const fark = Math.round((sinav - new Date()) / 86400000);
-  return Math.min(10, Math.max(1, 10 - fark + 1));
+  const n = V.program.gunler.length;
+  return Math.min(n, Math.max(1, n - fark + 1));
 }
 function topbar(b) { $("#topbar-baslik").textContent = b; }
 function gunSecici(aktif) {
@@ -575,10 +576,12 @@ function route() {
 function viewGun(no) {
   const g = V.program.gunler.find((x) => x.no === no);
   if (!g) return (location.hash = "#/panel");
-  const den = V.denemeler.denemeler.find((d) => d.gun === no);
+  // Bir günde birden fazla deneme olabilir (ör. 1. gün: 15–16 Ekim'in iki mini denemesi).
+  const denler = V.denemeler.denemeler.filter((d) => d.gun === no);
+  const testGunu = g.test_hedefi !== false;
   const kalan = sinavSayaci();
   $("#kalan-gun").innerHTML = `SINAVA<br><b>${kalan}</b>gün`;
-  const maraton = no <= 2;
+  const maraton = !!g.maraton;
   const gk = gunlukSayac();
 
   /* ADIM 1 — konu anlatımı */
@@ -605,7 +608,14 @@ function viewGun(no) {
       <a class="btn kucuk yesil" href="#/coz/test/gun/${d.ders}/${no}">✏️ 10 Soru</a>
     </div>`).join("");
 
-  const denemeBitti = V.kayit.denemeler.some((x) => x.id === den.id);
+  const denemeSatir = denler.map((den) => {
+    const bitti = V.kayit.denemeler.some((x) => x.id === den.id);
+    return `<div class="adim-satir">
+            <span class="badge gri">${bitti ? "Çözüldü ✅" : "Sıradaki adım"}</span>
+            <div class="adim-bilgi"><b>${esc(den.ad)}</b><span>${den.soru_sayisi} soru / ${den.sure_dk} dk · 4 yanlış 1 doğruyu götürür · net = D − Y/4</span></div>
+            <a class="btn yesil kucuk" href="#/deneme/${den.id}">📝 Denemeyi Aç</a>
+          </div>`;
+  }).join("");
   const okunanAdet = g.dersler.filter((d) => V.kayit.okunan[okumaAnahtar(d.ders, no)]).length;
 
   $("#view").innerHTML = `
@@ -615,7 +625,7 @@ function viewGun(no) {
       <p>${esc(g.hedef)}</p>
       <div class="sayac">
         <div><b>${kalan}</b>gün kaldı</div>
-        <div><b>${g.no}/10</b>kamp günü</div>
+        <div><b>${g.no}/${V.program.gunler.length}</b>kamp günü</div>
         <div><b>${gk.sayi}/${GUNLUK_HEDEF}</b>bugün çözülen</div>
         <div><b>${okunanAdet}/5</b>tur tamam</div>
       </div>
@@ -643,7 +653,7 @@ function viewGun(no) {
         <div class="adim-ic">
           <h2>📖 ${maraton ? "Konu Maratonı — Tüm Konuları Bitir" : "Konu Tekrarı (Farklı Anlatım)"}</h2>
           <p class="meta">${maraton
-            ? "İlk 2 günde 5 dersin TÜM konuları bitirilir: her konunun özeti (hızlı tur) + farklı anlatımı (hikâye + tuzak) var. Oku, sonra 10'luk teste geç."
+            ? "Kampın ilk gününde (15–16 Ekim'in Konu Maratonu I–II birleşik) 5 dersin TÜM konuları bitirilir: her konunun özeti (hızlı tur) + farklı anlatımı (hikâye + tuzak) var. Oku, sonra 10'luk teste geç."
             : "Yanlış yaptığın konuları farklı anlatımla (hikâye + tuzak) tekrar oku. Konu Anlatımları'nda tüm konuların hızlı turu var."}</p>
           ${okumaSatir}
           <div class="adim-alt">
@@ -655,7 +665,8 @@ function viewGun(no) {
       <div class="adim-kart">
         <div class="adim-no">2</div>
         <div class="adim-ic">
-          <h2>✏️ 10'ar Soruluk Testler ${gunlukRozet()}</h2>
+          <h2>✏️ 10'ar Soruluk Testler ${testGunu ? gunlukRozet() : `<span class="badge gri">Bugün test hedefi yok</span>`}</h2>
+          ${testGunu ? "" : `<p class="meta"><b>Bugün (final provası) günlük 400 soru hedefi yoktur:</b> denemeleri çöz, yanlışlarını ve zayıf konularını tekrar et. İstersen aşağıdan ek test açabilirsin.</p>`}
           <p class="meta">Her 10 soruda otomatik kontrol yapılır, yanlışların çözümleri + <b>farklı anlatım</b> kartları gösterilir; o konulara uygun <b>yeni sorular</b> gelir ve tekrar çözersin. <b>Usta olana kadar</b> devam!</p>
           ${testSatir}
           <div class="adim-alt">
@@ -669,13 +680,9 @@ function viewGun(no) {
       <div class="adim-kart">
         <div class="adim-no">3</div>
         <div class="adim-ic">
-          <h2>📝 Gün Sonu Denemesi</h2>
-          <p class="meta">${esc(den.ad)} — ${den.soru_sayisi} soru / ${den.sure_dk} dakika. ${esc(g.deneme.odak)}. Sonuçların ertesi günün planını şekillendirir.</p>
-          <div class="adim-satir">
-            <span class="badge gri">${denemeBitti ? "Çözüldü ✅" : "Sıradaki adım"}</span>
-            <div class="adim-bilgi"><b>${esc(g.deneme.ad)}</b><span>4 yanlış 1 doğruyu götürür · net = D − Y/4</span></div>
-            <a class="btn yesil kucuk" href="#/deneme/${den.id}">📝 Denemeyi Aç</a>
-          </div>
+          <h2>📝 ${denler.length > 1 ? `Günün Denemeleri (${denler.length})` : "Gün Sonu Denemesi"}</h2>
+          <p class="meta">${esc(g.deneme.ad)} — ${esc(g.deneme.odak)}. Deneme soruları günlük 400 test hedefine dahil değildir. Sonuçların ertesi günün planını şekillendirir.</p>
+          ${denemeSatir || `<p class="meta">Bu güne deneme atanmadı.</p>`}
         </div>
       </div>
     </div>
