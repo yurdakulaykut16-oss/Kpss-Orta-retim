@@ -22418,6 +22418,2006 @@
         "g-spor"
       ],
       "reason": "Elle yazılmış günlük test havuzu eki; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0001": {
+      "sha256": "abc73c8da395e8263aaee3a61520abeab32a1f9bcc0c2fad539573dfb866ccd1",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0002": {
+      "sha256": "6de8dc4d4dbc874a5a3966964fb8a6c3146ab7d08723669793bbe883a9d93689",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0003": {
+      "sha256": "2a2ad51fd016b458dad43ca87590736c173e38dd7aa1d4bb807b30fe0fdbd272",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0004": {
+      "sha256": "123cba7882cdea70dfd0dfffd767ee671b86584819556448ce440395b307b0b8",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0005": {
+      "sha256": "ef8a88f518c013f988c4f2ab6f7323f8ef051482a246701a30449d47994aa205",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0006": {
+      "sha256": "16f3f033421075ed3248ec773eb4ce18a56e29d38d926e40c40fe26c1eb6aab1",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0007": {
+      "sha256": "4f0eec0a12beb29d958a4b82e04a25ade46039109d849ba68f8b8f43bf31302d",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0008": {
+      "sha256": "7644d207874df22d60996cc39fb8205db604a026c1c114a54afd91300a09d5b0",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0009": {
+      "sha256": "423436242b2ef28710fcfce1f998bc38244551d0ff11370c016b9550283cb80f",
+      "status": "aktif",
+      "topics": [
+        "v-hukuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0010": {
+      "sha256": "b7b4715a1514949704fa35d94bf77d5529c70c7a012e81c867a1fd3efe31966f",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0011": {
+      "sha256": "b95f00db90dd674f90537b84d7e0b8dd8b32079e75731f4abdbda49080f96da8",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0012": {
+      "sha256": "4191f1dbb2e479c170aa697800ab970565cc838e389bbff5fecbf1d7dd4723c7",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0013": {
+      "sha256": "57fd49cd681e461e9423edd778c214dffd89740e5f890092c50e450629442fc9",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0014": {
+      "sha256": "c13aff04f37f3dcaf061cf4eb0a2b5663f7e8fd260e1962c0ce79e578e1d20e8",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0015": {
+      "sha256": "7b49ca9a5830c6ada13b62ffba17d61986bd472061e3ad20e8bd57ab7f6f3338",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0016": {
+      "sha256": "18166f3559843545ddcbf16c9b825902010332b60f43114ea8157e0be4808679",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0017": {
+      "sha256": "e4824a72657da15fbb7569fafbbd3b48e12e5e981237be5d1eaefdaad19121ca",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0018": {
+      "sha256": "436e36182f4049250efb5974b0227ea8e7fad80be41e96b05904d0a62a36c107",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0019": {
+      "sha256": "0ded5d1d03cbaa56eda2d0275ffdaf6fef770886b6667d99e93c0df5c85771dd",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0020": {
+      "sha256": "26bc406fa4680155f31413b3bd077e17e808afaabf5dd288e5ea0456cde10160",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0021": {
+      "sha256": "634cfeb7cadd9d1cae63c55824d3c0166f8e775997d8f29ac33a026bfb15338d",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0022": {
+      "sha256": "23220c0d03d89fb68f055c13a2e3a8a7dcd966123b9adb0880ef90100ac8c9f2",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0023": {
+      "sha256": "6ad4c0e41ea4970842d2d62ef7ed827e1489882a6c254143d76cf2e343dd8516",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0024": {
+      "sha256": "4e434ec5b1c2f2522eb4e8b2a1e996519a7996f079edbcb2720d90580d7a0a28",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0025": {
+      "sha256": "05a3a4da93291ec5aa7db2047e44b3e30e6f940ae66a08516ef74d9fd33c8238",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0026": {
+      "sha256": "8cdda56a122ab28b6ff9cb59207d204b31e0e8dcd301af6cb9e9868242342d10",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0027": {
+      "sha256": "94b40c96544695795ff7927f6b7ddc3054842d389961de4996752be001350d1d",
+      "status": "aktif",
+      "topics": [
+        "v-anayasa"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0028": {
+      "sha256": "e027cd6c6698fa9bd764d08defd52b8e34e514d3e13aaa9d64f1d6923d101206",
+      "status": "aktif",
+      "topics": [
+        "v-tbmm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0029": {
+      "sha256": "fa7aaf6a20a1070f461786139fc39dd4162548f234d58a20c6c9506b42e7e93a",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0030": {
+      "sha256": "4c71ede61cfc6aa867480577047703057ee30e306347456699fcdaa36bc5c5ef",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0031": {
+      "sha256": "843a1181a4a474e711793379ce8ade8ffc50957af9499dbdca2fdab4424bb6cb",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0032": {
+      "sha256": "36e9aedf5518182fabf8d8872c12dd1311dfd9c2685d3becc2d37ebe8eda8a25",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0033": {
+      "sha256": "767483b94ed62e4b641c01ca39c2e4b9297b29f110de00dd40752a845d147e4e",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0034": {
+      "sha256": "78b4a991c7256598d482c011b74bcb8e661ce887da0ea1b32a4d653aff8b4c47",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0035": {
+      "sha256": "c09f25e4159091f2c48bb226558304de96a6041796a7a7a6ed4905c938f6654a",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0036": {
+      "sha256": "b596dd7ffab663ac9ad61dc63201af38e8c5a34c033d5010515814b148b871a6",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0037": {
+      "sha256": "ac466f5ef2fba5eb3dcf2488332f3a8a8af984fe37254ce8008c2f322207f28d",
+      "status": "aktif",
+      "topics": [
+        "v-yurutme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0038": {
+      "sha256": "c3d25498fd07d56da7088756663d99d1dbd2d95ffa3d5a89c5e79c442287c8b7",
+      "status": "aktif",
+      "topics": [
+        "v-yargi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0039": {
+      "sha256": "2d605d7d1647d49d66682530f9f2a41ccdd69d5c2e5c2110fe877ba194928445",
+      "status": "aktif",
+      "topics": [
+        "v-yargi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0040": {
+      "sha256": "221839ee149318a611e29a603bd021a0f3b1a942aa8bbf55c52fdaee6196b396",
+      "status": "aktif",
+      "topics": [
+        "v-yargi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0041": {
+      "sha256": "3562ecf3a0eb80c1b41b3a7b409e289235ebe432c20dbd5a776c4a0599143e65",
+      "status": "aktif",
+      "topics": [
+        "v-yargi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0042": {
+      "sha256": "384c832aa8f4a100f7725774b0b41559c309236399b05532d76c63c8d52682c7",
+      "status": "aktif",
+      "topics": [
+        "v-yargi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0043": {
+      "sha256": "dcb7617f4d4cfb45c80df00aabb3fb03f5c6612a00547dd670e9bf0944937978",
+      "status": "aktif",
+      "topics": [
+        "v-yargi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0044": {
+      "sha256": "414477a242b50b965748d2b1509863015675f455f3e86b126574f74beb736edc",
+      "status": "aktif",
+      "topics": [
+        "v-secim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0045": {
+      "sha256": "1221035e2395a439bc44f0f0347dd340fcd995f569c7886eee53eb8b4df66d2f",
+      "status": "aktif",
+      "topics": [
+        "v-secim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0046": {
+      "sha256": "0884a0825de849539d26a2b550f057550aae5b3a0b193834edf0294ba703ab27",
+      "status": "aktif",
+      "topics": [
+        "v-secim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0047": {
+      "sha256": "faa55a795046430b0c0c899f46c1a421b1dc396b3a43115b23b333b1a14fd378",
+      "status": "aktif",
+      "topics": [
+        "v-idare"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0048": {
+      "sha256": "a7a61304fafab7750b498fc0b1e001431786947f587c6e5abf9314d5855ca53a",
+      "status": "aktif",
+      "topics": [
+        "v-idare"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0049": {
+      "sha256": "3f2f1a6c7c463cbdf6fb4098b4743ba56b00489aa61dc969c0f749a9b1b3fdad",
+      "status": "aktif",
+      "topics": [
+        "v-memur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "VAT-YS-0050": {
+      "sha256": "b1d165b1956c750c86ff62c57277e1a36444c6336e12ca7fe19a1a0b3c313548",
+      "status": "aktif",
+      "topics": [
+        "v-idare"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0001": {
+      "sha256": "715dc8fb47dd15a92f211c3eb261360a4d3f7469aa9ad358f923f5b5bb81a538",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0002": {
+      "sha256": "dd99486bb6ec076da1c74f3b9273083cae5d1e29f8f34bf3758a032c639708c1",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0003": {
+      "sha256": "8e88b5deadc60b6a3314a6ccd47217997ca17c19db0cca131181cbb641c50ae3",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0004": {
+      "sha256": "0e7a8d88c9749bf1d8d563476ae1f808c6c2471e8e360b0feed511e94a1f0557",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0005": {
+      "sha256": "376d593e56627f7cbc626516bd8bcbef4c7e79a1455feaa4548794e7476ec07c",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0006": {
+      "sha256": "df86f79c9079d4affcddaf7883267a53cc0abd8505693264e7566a18d93a3f33",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0007": {
+      "sha256": "6725a30ccaeafe70fe2906c8649c1ab59796a738427d36b6a5622e740b6c9cfd",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0008": {
+      "sha256": "410f5ce0313f2816955e5746d6774f5c14088b4c27d28913de50e48bae6d2ff0",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0009": {
+      "sha256": "fcc0939b998bf97cf3ba42b7dfd59eb856b9d940260f03c54fe365e4518e4181",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0010": {
+      "sha256": "697a37eaefd060c6706f3095c010c8e101f671a9e1bbf3c88e42fd188bec3e23",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0011": {
+      "sha256": "d7f906ca9ee2f16ade658c3a8eee70ac63697216943ef835d1831baf98468e2c",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0012": {
+      "sha256": "820041d93a27c8c4f841eb123968b3d0102c7c0c70e32ad98acfbb5d957fc841",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0013": {
+      "sha256": "6e5d0bbd1c9914df435e4ee416dde64469facae9c97be893f5c351a6d0561adb",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0014": {
+      "sha256": "0d6343c0fb1728b42d27c6c21d431632f88e38a8ffba3121857e2f4960c423a9",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0015": {
+      "sha256": "74e8e3697cc679ec530dedaf452ca2f775c9c690b84c2837e2398e97f87be80a",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0016": {
+      "sha256": "fe30c64851de24baa6c2270f28010259b78efab1a3975439cd25000f188f2606",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0017": {
+      "sha256": "8a55969de230f4f10443e4f14d1497fb3fb4245d25af3b881157e2ab140a35d9",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0018": {
+      "sha256": "26e3851b330a1aaffd6fb99eee0456f82502dafa5a723d539fc890a61cc420e8",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0019": {
+      "sha256": "46f0a32fc51da354e34415c609a9b219fa289d7a0c181ddcd36a6a94d0cf78f6",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0020": {
+      "sha256": "adf2c0cd0a3fa29f4ccce3da811a5f072ec0b4a2e6a37ea9cd7a2b99257bf81b",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0021": {
+      "sha256": "5198e18deeeb2828d6451950c153ca6545042454625c9b3fe13c26f81d1aa3ae",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0022": {
+      "sha256": "5f31706ac32c5278a813b31ead08c2fc07806202332e2d41d7b0722ee80c4e1e",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0023": {
+      "sha256": "37b1e08ec46be47495810b6333c38d25f299b3f2ceb4c82d39edc779b80a3561",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0024": {
+      "sha256": "f4194b91c5b34fa31a5b4a02695ea09eea12c386e3b63e7439dd46ef8f23c115",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0025": {
+      "sha256": "527a9de0bd985ab7b928b52db70a84289520f3841bb5fc72ab411163701206a4",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0026": {
+      "sha256": "976ca5e76b77fad6b9e9044110d456829364b84115681db163e2bbf2237088be",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0027": {
+      "sha256": "8a0aa7c892c28a7d6e146232bb86e9976885223dfbd8aa6f8ffa39315a3eec06",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0028": {
+      "sha256": "559113ec270daac816370a287260fd20590de5cc72e12f1e534b3bec6951eed1",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0029": {
+      "sha256": "f9b5825fa73535a0a825be29f9d828797f81f177ff4764d10b10926d927a2f4e",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0030": {
+      "sha256": "e156ee37254c55cc2f991419f5c27930c4303366c7bbae447095eff3baecdde7",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0031": {
+      "sha256": "5a150440d4f3cac7c135576a02913a6da8745a9f2870c7316cdc7d6cd83a4c8e",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0032": {
+      "sha256": "710343138d1d4ab17ea727e8440f33bcd2bd224f9e51923b8638e8e76078fa39",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0033": {
+      "sha256": "95d4e5e413ea8b711ce52a313578b3c65996b35319676db7fb399ddd9531d1c2",
+      "status": "aktif",
+      "topics": [
+        "g-dunya"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0034": {
+      "sha256": "12082ba7e555d1c6425b8635635546e20532964a2417babd9f0a587869deb2c6",
+      "status": "aktif",
+      "topics": [
+        "g-dunya"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0035": {
+      "sha256": "5e3935fd6b48615f7bbf16eb9a47aa4f5607528fd1b0cb21f20bcc7a394922a1",
+      "status": "aktif",
+      "topics": [
+        "g-dunya"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0036": {
+      "sha256": "b46149b10602ee822ca7851023dd2459704e20237ec5d6a3e794ba5a7522167a",
+      "status": "aktif",
+      "topics": [
+        "g-dunya"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0037": {
+      "sha256": "c4ef66351d6205c7dcb01f7c6dde02573adc9d7fa16c7f352fe2513f9296fc11",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0038": {
+      "sha256": "167219c077c05c7f63a314bc326032537bec2df1ca6b4fceb170bdd94a63e61b",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0039": {
+      "sha256": "e444b0c4c8f6ec0a67979e1b5e675982a7768819207d5e450c1703f4fe903579",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0040": {
+      "sha256": "664a1f03e160e62cbe946fbd6869965e16a192badf2505f4efa6049dc47cd3d9",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0041": {
+      "sha256": "8570a8cf2c34785c36a0ac4a6569e3b56bb6c62ebfcdff42e30c4cc1518bc459",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0042": {
+      "sha256": "dac7c8fd9e7e29a99656ec1323998c37f9210496cedea5e61431697aa6ade388",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0043": {
+      "sha256": "f7690153910acb56006fa391a842445e4a5091b56b7d71ea9d3f7dfa0b948c6d",
+      "status": "aktif",
+      "topics": [
+        "g-spor"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0044": {
+      "sha256": "942452a8551ee968cdf12b3c13a191269a68770dafd03d0cad033397e0c0ede8",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0045": {
+      "sha256": "5f3a467cb71f1ed4cdc12dbd1b2df96588b007a1c5479683b65c241f16eb1506",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0046": {
+      "sha256": "b963312a93023a1d81994e8c7d4e8cdb6cd139f756bd12a0a509895e97c7f59d",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0047": {
+      "sha256": "3cd44604f05ff378ffb95a0ef2159227b0625f596c1c02fcb83f5610c60cf0c4",
+      "status": "aktif",
+      "topics": [
+        "g-olay"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0048": {
+      "sha256": "c744ef9e572f6c90989d9979b6f919c29000c873d656206ae63dd170e94a0258",
+      "status": "aktif",
+      "topics": [
+        "g-dunya"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0049": {
+      "sha256": "71a335d0710ab872a52c15ffec2a0b3647dce58300bc97c8680fa80fe8069b43",
+      "status": "aktif",
+      "topics": [
+        "g-kurum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "GUN-YS-0050": {
+      "sha256": "5f1edd52ff9153c599f56de8fdf351672ccec6aedcc30dedc2fd7579dbf4441f",
+      "status": "aktif",
+      "topics": [
+        "g-kultur"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0001": {
+      "sha256": "f044c7de5a57b29da024a3b6d61c017201458ebcdfb22e54cf5285b61299ac76",
+      "status": "aktif",
+      "topics": [
+        "t-ilk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0002": {
+      "sha256": "5c26dc86961224556ee914d4c5a84aea34dda12a9f352e95b8289315c3dad2f9",
+      "status": "aktif",
+      "topics": [
+        "t-ilk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0003": {
+      "sha256": "5736120b733ee707f599f9a71f9428e12866eb3228da15f47a58d2124b3e3517",
+      "status": "aktif",
+      "topics": [
+        "t-ilk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0004": {
+      "sha256": "3f19c665dd77474edcd1a6da0654956f902d111e7e284236024e7f34d3d3cb6a",
+      "status": "aktif",
+      "topics": [
+        "t-ilk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0005": {
+      "sha256": "34ea451a0d5b9d71d8b64860c44983c8f780dcb22c9d144a1bb7b7fe87b6f89b",
+      "status": "aktif",
+      "topics": [
+        "t-ilk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0006": {
+      "sha256": "53dc9c45a16bd2c6364516099816bf381faa6cfa5d019a61d7c5d934625c4178",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0007": {
+      "sha256": "412edda965948591658a2f9f127abfbe680f093b8c351b7fbf3907fca2a7364b",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0008": {
+      "sha256": "d43b9802d4e07e829558bcfd7646392e2ecb5876c47c4a96649a8ecc082c67ca",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0009": {
+      "sha256": "1e006e6005a4785b70b1d511ec948bb1376ea31074d9390477d2bc0d417ca017",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0010": {
+      "sha256": "aa7fd8449200950aba93170c68560cf5d57e138b64f5a5206bdc6a6b326f7722",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0011": {
+      "sha256": "ac53ac912518f0c6cb96950599c2d8bfb237eea6d0446d3e29f18761d15841a3",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0012": {
+      "sha256": "afe0224b296eda813da84d30f719a119552537438250267d458feee827517b98",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0013": {
+      "sha256": "1de3d9f6a8f4d2b32a3a8fe614df121f9c33db6e286ca7aec4ec0319ef29c6e5",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0014": {
+      "sha256": "b4641de76af4f09b79108ba6d8ec9efa1a42518837215f893c6f99c38698be6f",
+      "status": "aktif",
+      "topics": [
+        "t-islam"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0015": {
+      "sha256": "a0816265b7f20b326ce2b6c8270069ce9f5ab9db781bb29118d5ca4a67fe2b0c",
+      "status": "aktif",
+      "topics": [
+        "t-osmanli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0016": {
+      "sha256": "b6e3e536be7fe78aebe0277c19e188fefdfa2f6ebc5966adca2250da83fc4836",
+      "status": "aktif",
+      "topics": [
+        "t-osmanli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0017": {
+      "sha256": "3176d7fe10122dc877a2eedaa6467f30490dba1b75b5ebb80c0b96c30d11372c",
+      "status": "aktif",
+      "topics": [
+        "t-osmanli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0018": {
+      "sha256": "aa5bc0fbc4eb842e2b0c3b829fe203eb905a86e6d60b4211c1964fcdaf1e31fc",
+      "status": "aktif",
+      "topics": [
+        "t-osmanli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0019": {
+      "sha256": "4397dfc0901d3f9c3c240a0bfe379dc01e427f56c1ddfcbbac1252f7c092555b",
+      "status": "aktif",
+      "topics": [
+        "t-osmanli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0020": {
+      "sha256": "ec47c84d928cf36793c7f2d712f2e1d295b39d72bb1b0114d9f75d03cbdc9e27",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0021": {
+      "sha256": "91a09ba405798cedc4d989d16c2c6c111fe07779af1719876fb21d3c209a31bd",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0022": {
+      "sha256": "b0676016d690a2909d900b6691e4ff89689fd0933193f69a638388f5d4d11f77",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0023": {
+      "sha256": "62767f4ecb371ec57c132caeb6f43f414165f483865a6d357d86d58c4a374305",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0024": {
+      "sha256": "9358a2110d54fcbbc9386c10f990dd141d306f53fa4c7e3526246d0e5a0d4b73",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0025": {
+      "sha256": "8a9f2b747488f9bb8691f96e802d6529558efddf38ff5117eff12903588fc51e",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0026": {
+      "sha256": "a772215ae8bd311fd58254f4bc49a2324ce4f4058649bc2c622855a0b0e23697",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0027": {
+      "sha256": "5af64560019341d90287b4684c77702ec6d7105fa07f909e04a82190e52682f5",
+      "status": "aktif",
+      "topics": [
+        "t-yenilesme"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0028": {
+      "sha256": "06cf8cb720cc44072ef78c4cdf21b3b2d1a2b02eec7a105b09debeea8cb3ed14",
+      "status": "aktif",
+      "topics": [
+        "t-savasi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0029": {
+      "sha256": "fde7fa6608d0e63178ca3267417230c8627d6fdd68f721b37e65ec669d3a1c13",
+      "status": "aktif",
+      "topics": [
+        "t-savasi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0030": {
+      "sha256": "82b398aed84258e8f0ffbe8c53e9263db499a0d8f8cd03b68afcc01008d0dd86",
+      "status": "aktif",
+      "topics": [
+        "t-savasi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0031": {
+      "sha256": "5a22cc76dbea013ef8bc2a966fa21dae15aa757f92985fe77d037e3adeff8b2b",
+      "status": "aktif",
+      "topics": [
+        "t-savasi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0032": {
+      "sha256": "225a23a3ba77a48f1a9c9dcefe97f5b1bd98b80c29b825bbbb46e2247076615c",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0033": {
+      "sha256": "6558bdb6781a15f15750c5b7a1ac980205dd9a8befde86813366e5709017cad9",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0034": {
+      "sha256": "284ded5f537b9e57e69989a23511e882a9dc4f4a0f9244f56759351c375276f5",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0035": {
+      "sha256": "7db269cb45fbb6237a043cb79bd4c36607f9c4b1ef0d53977843bb73508e4d55",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0036": {
+      "sha256": "03f325f181214e3c57ad56d4f19c0450ad43a5fe49ce07e0e71e4ec11fe067c8",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0037": {
+      "sha256": "4062003b7170ba22e3b86b484c5792dd9c154bc6609363e422966dfb6f69d93b",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0038": {
+      "sha256": "a2e23f04a7653bb2bbf7172f88679636392140b1b2866d31a28c90b103012ba5",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0039": {
+      "sha256": "3bb5608dfa99d2ba2c60d7c1515b60642bdcc6d79cc9305b51bfbb661141ee70",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0040": {
+      "sha256": "8a5eff33a2853b38c6e23cd3184d86d2b4e2c0655ccfa27898bb877052739194",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0041": {
+      "sha256": "bd8aa98cc66dfdef8851bbe3173cb2686767b21fffb9f944e8fa1b8ea21e8970",
+      "status": "aktif",
+      "topics": [
+        "t-milli"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0042": {
+      "sha256": "1f9ea9f73994ac7b5779a75c09374377877f159f2d3cb0ea71d27d236ec76a8f",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0043": {
+      "sha256": "f5c4266ba811ac7cd0336c092848a154d0d0e1253a51bbe46beb40418123ae81",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0044": {
+      "sha256": "1070f7bfdde9fb084a873fe69e449a45218d8e4646c7b8a890cf8c869b1448bc",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0045": {
+      "sha256": "4a8dca4597ebfee1a328f5471f64299026e5191e63ecc792c2d17028062a29a5",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0046": {
+      "sha256": "595bef83cbb162a2d72401164d9a64ffaab13d2db8bc7a8422f9f7b638d17a9e",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0047": {
+      "sha256": "66016972bad71a7b1d264596a972c67b5d7c5e6d6da4162a783eb59337f29f36",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0048": {
+      "sha256": "f313a18b086a3bf67aae7dcfc805cde48b2a3d5e66e459c66aaf0ce9d3079f5e",
+      "status": "aktif",
+      "topics": [
+        "t-inkilap"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0049": {
+      "sha256": "347aef84a67b89e4e3732fc6a27757c432de51834e2f85fed95b98b10ec7042c",
+      "status": "aktif",
+      "topics": [
+        "t-cagdas"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TAR-YS-0050": {
+      "sha256": "95d982facfa63567afecc7e87a6a05894eac896e7e902b9395ca997344748716",
+      "status": "aktif",
+      "topics": [
+        "t-cagdas"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0001": {
+      "sha256": "a6d08a51d1deca6163c6f8f7be070df412bdcd6c7a6a473ec705254862c9e3de",
+      "status": "aktif",
+      "topics": [
+        "c-konum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0002": {
+      "sha256": "7b9bd4a692296611ed7c9af19ce0412f8fc2d0b1a92440af4056ad667e9f0be5",
+      "status": "aktif",
+      "topics": [
+        "c-konum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0003": {
+      "sha256": "9e2ed78a4b6f0cdb14fecdee945850bb3e211092fb50294036d0bdb631fd7afb",
+      "status": "aktif",
+      "topics": [
+        "c-konum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0004": {
+      "sha256": "c9bbb83b96e46b5537025f6aabdd59df7a3fa764560cf3c89b8bbd1038ce0734",
+      "status": "aktif",
+      "topics": [
+        "c-konum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0005": {
+      "sha256": "f676b17455bb649983b2b1c0a20322e1d33cef5e5b1837a0d2767bd39ae516f9",
+      "status": "aktif",
+      "topics": [
+        "c-konum"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0006": {
+      "sha256": "def53c2d792c824f728d7626edda1e581903177049a4f0f529800e2a93fbef88",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0007": {
+      "sha256": "ff0764dd84bedf8a7544e8c984243472b6f2dfc1457e3ad931536e32825c4c61",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0008": {
+      "sha256": "1c0ac7ac480a2ece0d122d9d2d7010f6a61a50d2bc8a9029f879a73907ea7890",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0009": {
+      "sha256": "232e00dcab244a41c8f8648ff63fe9bac2603f15aeca47fb07e84f6f94474bde",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0010": {
+      "sha256": "6356d8eb05834d86bc35f3e19274282a7936d7fca98379e7bd08f742e9f1c062",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0011": {
+      "sha256": "3afb6daf06c794866f28952a569e5c7b40cae9914ec84ac22dffb4896d4a5e70",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0012": {
+      "sha256": "cb8ebbb2c86516142c78acf023a0d93b28fdf27093b3ff16077adeacee114d66",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0013": {
+      "sha256": "001ee72fd095826794acf37432443a83619302255d92b171618388b194590b4f",
+      "status": "aktif",
+      "topics": [
+        "c-iklim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0014": {
+      "sha256": "309dc12eadc13b0224ebfd7c89d666526d80537577c1f1bccd3fa56c7e3980c1",
+      "status": "aktif",
+      "topics": [
+        "c-iklim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0015": {
+      "sha256": "7262847a10a5352aebb5219063647729990b714e80bade1c331039ad1d29a491",
+      "status": "aktif",
+      "topics": [
+        "c-iklim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0016": {
+      "sha256": "872cf4d4a0b3f0684f6f9582cc932772f3ea4728facb6c0c34adc705cad77b0b",
+      "status": "aktif",
+      "topics": [
+        "c-iklim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0017": {
+      "sha256": "b81226bc181f2cc158f22a57f2e948bd79c9ff40dbe530e36e7777392dbbffc8",
+      "status": "aktif",
+      "topics": [
+        "c-iklim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0018": {
+      "sha256": "829d51e6a914d356cb20787984289bf7c1c0d59f5ec8f427e9037af8ed87b067",
+      "status": "aktif",
+      "topics": [
+        "c-su"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0019": {
+      "sha256": "c84d7820c3cb81324c400f6a46f856c3cf813ad890043f3f41c0bc1f9fb4ce43",
+      "status": "aktif",
+      "topics": [
+        "c-su"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0020": {
+      "sha256": "f212eecd016bfe6f962c04a42cb0b81f8a94d5ba20af3b10970a6537387e05fc",
+      "status": "aktif",
+      "topics": [
+        "c-su"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0021": {
+      "sha256": "4c9f17076b54e02d573ec63bece533b18256fbaf2ccc07cc0cce0db2cbf781bc",
+      "status": "aktif",
+      "topics": [
+        "c-nufus"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0022": {
+      "sha256": "21b0f4005e2a9514bdf60ee0156d63da7243db35b731e3346964f4c5d6483bbc",
+      "status": "aktif",
+      "topics": [
+        "c-nufus"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0023": {
+      "sha256": "8c0e4c34596f80b43ad7c6c3e062c903a6f242ec5a02f95cb7f751a0225274af",
+      "status": "aktif",
+      "topics": [
+        "c-nufus"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0024": {
+      "sha256": "8df5ec7b82e41f875b4b3e9b9bcbc52e3f1f325fc03c246d2e6c26a425e8c25a",
+      "status": "aktif",
+      "topics": [
+        "c-nufus"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0025": {
+      "sha256": "c39817e36c04eb07d3fce48d86e8f40fb77e3a8f64994f2ec5854a50bc02e71f",
+      "status": "aktif",
+      "topics": [
+        "c-nufus"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0026": {
+      "sha256": "3c34bd80603e510f8fdd8d67d2daaaf1c4ab00a75a4fd86504df893425d246b1",
+      "status": "aktif",
+      "topics": [
+        "c-tarim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0027": {
+      "sha256": "23a9d8afbf1f7e3f2f90751b4663f9e16374cf63c41ba97acc51b3919419a4c7",
+      "status": "aktif",
+      "topics": [
+        "c-tarim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0028": {
+      "sha256": "8ebd6a0fbe0ac0ab5ea0727cec076e329259aba4ad9786bf36e3109f98fb0357",
+      "status": "aktif",
+      "topics": [
+        "c-tarim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0029": {
+      "sha256": "e124e8d60dd5514fb6a1eb5e5b7ce34962d8bc154cd4feda966cdb218053257e",
+      "status": "aktif",
+      "topics": [
+        "c-tarim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0030": {
+      "sha256": "eb2cc5b68b0918d2af2e62fd7c356973aa710a8ad2b3420344c3af7b4989cf57",
+      "status": "aktif",
+      "topics": [
+        "c-sanayi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0031": {
+      "sha256": "b844e554f1c6ad22b4419d2e7d51eb60f881a90117c6b8347518da3edba7f9f2",
+      "status": "aktif",
+      "topics": [
+        "c-sanayi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0032": {
+      "sha256": "9d40a88b1da6cace6e020d29296a211872268c4beaf3137d71b8f3f9a4b99a7d",
+      "status": "aktif",
+      "topics": [
+        "c-sanayi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0033": {
+      "sha256": "1f7f8cd37f24f08b4431a65254f30304da282dbb0484c7e6fe73328b57f7fe83",
+      "status": "aktif",
+      "topics": [
+        "c-sanayi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0034": {
+      "sha256": "d6f5b08a68417c737c8b5932312e229120bea3885a86df4d0755d927d54248c6",
+      "status": "aktif",
+      "topics": [
+        "c-sanayi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0035": {
+      "sha256": "ba48d3a9c66c902a0f9e03a64f50be5384fc31b2d032a21916c43005a13332d3",
+      "status": "aktif",
+      "topics": [
+        "c-sanayi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0036": {
+      "sha256": "6220dd3e93ca8b9f15cfa89dbf4e3602234bcca59e487fc065539c38f238e472",
+      "status": "aktif",
+      "topics": [
+        "c-cevre"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0037": {
+      "sha256": "14a95d33ae61f95eae0914ded7db0b15e072317dc16c9c0972b60146ed3340ab",
+      "status": "aktif",
+      "topics": [
+        "c-cevre"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0038": {
+      "sha256": "adccfb0bbb90f7c943d2fb7d09d3f9fb4b0fa029f2c8ba14d1c520b2802d4e22",
+      "status": "aktif",
+      "topics": [
+        "c-cevre"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0039": {
+      "sha256": "2c48cc97111d6b489f20fcc474c298827535f57ac8d5bdee543c7fff6c0216d6",
+      "status": "aktif",
+      "topics": [
+        "c-cevre"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0040": {
+      "sha256": "a5aa58c092e594261786e74d397467862a4fdbef3b66e5b3b9eb1a633b90e0b0",
+      "status": "aktif",
+      "topics": [
+        "c-bolge"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0041": {
+      "sha256": "7ac7f84c0ed88b527caf049754753b827bcc13a2c41131038bb7ba02995a8ed9",
+      "status": "aktif",
+      "topics": [
+        "c-bolge"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0042": {
+      "sha256": "60213654bcd219b1375d16fa12062beb5877f2309abeb83c809cbd80b2757c30",
+      "status": "aktif",
+      "topics": [
+        "c-bolge"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0043": {
+      "sha256": "dc0df9a8c7c6e884fbba684178ae95f02ea67dd342a58294cae8c468338bc909",
+      "status": "aktif",
+      "topics": [
+        "c-tarim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0044": {
+      "sha256": "d16ff1d940aa567c8cc82679eb0cdcdf0c6be1c8987c54b798bfd166b5334f66",
+      "status": "aktif",
+      "topics": [
+        "c-ulasim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0045": {
+      "sha256": "f9dded8809b07c83dc89fdf5bb4f90f9a3af480f696ded94fbe586b592d84e2d",
+      "status": "aktif",
+      "topics": [
+        "c-ticaret"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0046": {
+      "sha256": "17043a330cfed17c47080b7ef61323a533c5608fbbe276d406d33d6f73782f3a",
+      "status": "aktif",
+      "topics": [
+        "c-turizm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0047": {
+      "sha256": "558b1bdcfb00530fd5331e473a0014e9d5ee5049e871f6a9c7c7ee3569a6c56d",
+      "status": "aktif",
+      "topics": [
+        "c-turizm"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0048": {
+      "sha256": "309aabefcfb45bbb41893f9a38694e5367cbc62a8d65c73cedfb1bf62fb2e796",
+      "status": "aktif",
+      "topics": [
+        "c-nufus"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0049": {
+      "sha256": "9077aa083ef4f28703b9ccf5d43ee4ab604f4474209fe762239e8eb363326da9",
+      "status": "aktif",
+      "topics": [
+        "c-sekil"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "COG-YS-0050": {
+      "sha256": "cfc2355f3523e4865b80ea52e31aba403abaefaa546578814c00e54922625a40",
+      "status": "aktif",
+      "topics": [
+        "c-iklim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0001": {
+      "sha256": "f12545c3cc27987d64774f4162313bb0cbd7aea3749c1bfa54fb4b16c7186292",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0002": {
+      "sha256": "0fca43093fc21f0a2c03d02585a4efdb1b5030e6ce6be24eec1263afb6c8de2e",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0003": {
+      "sha256": "ffdacd93824a73dafeffd4561200cff4c267b614a0a304d94774e31a1954690e",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0004": {
+      "sha256": "cf3ff998bad1a50c608e2f923392695d5e80c0466efb1e9445cf51bff4e72213",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0005": {
+      "sha256": "0a9081b8dc1e3aaffaf8db017542e14c7710f8be2a2b6106a676ecc743b9b53e",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0006": {
+      "sha256": "b41da6e0dded621d02a432d1c9f475c7514e5541ce546c3980dc7c0c0d7ce1c3",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0007": {
+      "sha256": "7555348fc95115456e26ab4d91ca128f22c902d1cc7089637aff8b6c451cb5a6",
+      "status": "aktif",
+      "topics": [
+        "u-sozcuk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0008": {
+      "sha256": "df3aaeed55cfc22f5e8292c18f799851d7b41ca0934dd07f1d4d0c14bdd4f8f7",
+      "status": "aktif",
+      "topics": [
+        "u-cumle"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0009": {
+      "sha256": "0cba43b51522075bd5f1d2b2f68dd625565c6d0f788b3a9740284d8edb559962",
+      "status": "aktif",
+      "topics": [
+        "u-cumle"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0010": {
+      "sha256": "2ce4c43d2a23674fb01c42dea320e284faa27972e3e01eb32dd5f279eb04e3b7",
+      "status": "aktif",
+      "topics": [
+        "u-cumle"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0011": {
+      "sha256": "f8e6b8a2d267aadafaf27d1ae6e0afd7ca1f8f8d2ebdd5883b26c9f17e1a1ca5",
+      "status": "aktif",
+      "topics": [
+        "u-cumle"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0012": {
+      "sha256": "20f479425f9e6b1a69fb44c12cd6831bd9fc2bc995439a1571b37cee152cd87b",
+      "status": "aktif",
+      "topics": [
+        "u-cumle"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0013": {
+      "sha256": "e8575850df26741ffe2f815e063ec29985dd4d0462f0b0f3f94a4b1d7055a2b3",
+      "status": "aktif",
+      "topics": [
+        "u-paragraf"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0014": {
+      "sha256": "409d097251e9cd59b3d356d25454ffdf6b243d5c54ceb5d902ad1324b4124aad",
+      "status": "aktif",
+      "topics": [
+        "u-paragraf"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0015": {
+      "sha256": "f693ddcdc1efd2fbbfed9f42cace9d0ec27b3dfec7891e9ad044249e4d7d08f5",
+      "status": "aktif",
+      "topics": [
+        "u-paragraf"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0016": {
+      "sha256": "9c1af1d6e219172ec8b447a68aad65a6a9ce3036fc2846e783c88ecfa74527ea",
+      "status": "aktif",
+      "topics": [
+        "u-paragraf"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0017": {
+      "sha256": "f47bc0c2ead76c124e0a97954384281889b2d02b70a909b05c478d080a15a00a",
+      "status": "aktif",
+      "topics": [
+        "u-paragraf"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0018": {
+      "sha256": "75990d68108a5e3444d430e321a12cefea5b444013dde6b1fe56e3a110c2b3f8",
+      "status": "aktif",
+      "topics": [
+        "u-paragraf"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0019": {
+      "sha256": "0882448b696c1dd5c6daab9364d25219dce4ac920f1bff981e7c85612ef3dcd0",
+      "status": "aktif",
+      "topics": [
+        "u-ses"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0020": {
+      "sha256": "1a971f9374d60e12172c1ae0ec7b0b2cc8cd4bad77ba8c3806e1a4705fdb2fa7",
+      "status": "aktif",
+      "topics": [
+        "u-ses"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0021": {
+      "sha256": "ea0d30cfcce1c35fbf52a0641ab0f7fdda427882e1ef62bea6366251b38d3582",
+      "status": "aktif",
+      "topics": [
+        "u-ses"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0022": {
+      "sha256": "04edd529c9037a497d793320267f9d1e2bbb96432371400c228fe56ee5e6188f",
+      "status": "aktif",
+      "topics": [
+        "u-ses"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0023": {
+      "sha256": "bd64fd815f2d721d96e39e3e24f12bd0449650b237b01c6f51ff29ed3c1085a9",
+      "status": "aktif",
+      "topics": [
+        "u-ses"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0024": {
+      "sha256": "e553daf49eb91d8a5691dcfd6343a072a798e4d2d9f56da815e905af8465e97b",
+      "status": "aktif",
+      "topics": [
+        "u-yapi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0025": {
+      "sha256": "6155c5402ff2113076785b51651be7a345090b58820d19f6a1dd0950e0021c51",
+      "status": "aktif",
+      "topics": [
+        "u-yapi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0026": {
+      "sha256": "3e701451e0b70aa65cc45958b4e34576670f29ad7e3bcf1ff98d7a7d69b3be55",
+      "status": "aktif",
+      "topics": [
+        "u-yapi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0027": {
+      "sha256": "c27a8c27bd1590b61a1dd8676caa88fded8cb43562ab7f709eeadb805e8cd041",
+      "status": "aktif",
+      "topics": [
+        "u-yapi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0028": {
+      "sha256": "cd5512821e0a9378d4f946cb5fa0dd1d03e125dd31aad999caaa009bb29cbac8",
+      "status": "aktif",
+      "topics": [
+        "u-yapi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0029": {
+      "sha256": "e52dab71a324edcf6077157db7f0353be08adc93ac674eb0c92feffbc1b7143b",
+      "status": "aktif",
+      "topics": [
+        "u-yapi"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0030": {
+      "sha256": "1c4ef201eca1b286fdda6c487c84ecb611a923b38b42c571fbdd562a0b1251f2",
+      "status": "aktif",
+      "topics": [
+        "u-ogeler"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0031": {
+      "sha256": "514a388132f9e70f22e2ca255052e29e14485dea6f682aa89e09b53affaaca2b",
+      "status": "aktif",
+      "topics": [
+        "u-ogeler"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0032": {
+      "sha256": "2aac18413495c220e9f9a571e6ee2fa4c6c4a98e221050ae8c971e9f4a520138",
+      "status": "aktif",
+      "topics": [
+        "u-ogeler"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0033": {
+      "sha256": "211083bb9faf43116371d4ff9f163ccf0387428817ab00bde7581619750b4af6",
+      "status": "aktif",
+      "topics": [
+        "u-ogeler"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0034": {
+      "sha256": "b9abca79417ab8844e4d8046dbd7a681a3cb68e98fe828ab3f387f01cdd22a6b",
+      "status": "aktif",
+      "topics": [
+        "u-ogeler"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0035": {
+      "sha256": "930f65710afca965f2fef615beea510fa47168639c00a67cfe3fa260c73a0691",
+      "status": "aktif",
+      "topics": [
+        "u-ogeler"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0036": {
+      "sha256": "698eb52405fe649505a08fcb85c41889a3605abda65bc5b2cb2003d0fc3898ab",
+      "status": "aktif",
+      "topics": [
+        "u-yazim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0037": {
+      "sha256": "6b7bc69d0b07f6261823cc43382597480a0ee3a6eb723599b2a02c2b60796e44",
+      "status": "aktif",
+      "topics": [
+        "u-yazim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0038": {
+      "sha256": "4b4c7cedff4d639818bc0a554350b55a4c98480d5e415443a2f17d2158a96f63",
+      "status": "aktif",
+      "topics": [
+        "u-yazim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0039": {
+      "sha256": "04697f0fbfd30acdfb98da365e67424be005ba5f8cd2f2de6a0552f68c977a4b",
+      "status": "aktif",
+      "topics": [
+        "u-yazim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0040": {
+      "sha256": "d128d1aabb4aa85a18ab04c4fe8f3f81c762e25e42c4f4510ed71f9e8c86cc91",
+      "status": "aktif",
+      "topics": [
+        "u-yazim"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0041": {
+      "sha256": "2e471856b088975dc6f7ccd3e443d035b8259ce8e61fc9c4acc544abfe0234f6",
+      "status": "aktif",
+      "topics": [
+        "u-noktalama"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0042": {
+      "sha256": "75e7a079eaebb3f3bcf062dfe9e824538505f15c6aff79aebc0d89ec293051d0",
+      "status": "aktif",
+      "topics": [
+        "u-noktalama"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0043": {
+      "sha256": "84f51a82c3938d4be6cd422f24e61accf2dce45e97c4550927e85947bff3fa76",
+      "status": "aktif",
+      "topics": [
+        "u-noktalama"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0044": {
+      "sha256": "e52ed4b97df750d0bba8f0ee9f5b918eadf5bd4290cfa9e56abd405e20af3d7b",
+      "status": "aktif",
+      "topics": [
+        "u-bozukluk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0045": {
+      "sha256": "0c9dbf6e3d854ce9c085017621e6c30a3e2fdff50119dcf977e03f50ba5ea17a",
+      "status": "aktif",
+      "topics": [
+        "u-bozukluk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0046": {
+      "sha256": "9b2cc2b2032c684894aef60c62696acdb1ce4b3c193f767324c47ff57c4c39ee",
+      "status": "aktif",
+      "topics": [
+        "u-bozukluk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0047": {
+      "sha256": "fbdb4b39c5b1cd3cbef7688ecb2ee1f032db4546eb4f8156ccb0573689282726",
+      "status": "aktif",
+      "topics": [
+        "u-bozukluk"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0048": {
+      "sha256": "5ed921ce628c2e462a2eb59ed8a2c5ca420b8f65deebf598d70289ac41e1d3c8",
+      "status": "aktif",
+      "topics": [
+        "u-mantik"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0049": {
+      "sha256": "eae94c27165680fdfd04a1bcbb6a27a5d1ccbba108d17ed8f28fc2b06f451f10",
+      "status": "aktif",
+      "topics": [
+        "u-mantik"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
+    },
+    "TUR-YS-0050": {
+      "sha256": "0fad7da965f02a481671131c600c0ea4c868e886b3b5935385d214e802fe5c44",
+      "status": "aktif",
+      "topics": [
+        "u-mantik"
+      ],
+      "reason": "Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. Birebir çıkmış soru değildir."
     }
   }
 }

@@ -32,6 +32,8 @@ def yukseltilen_banka(kok):
 
     from ek_gunluk500 import add_to_bank
     add_to_bank(kok, by_ders, kayitlar)
+    from ek_yeni_sorular import add_to_bank as yeni_parti_ekle
+    yeni_parti_ekle(kok, by_ders, kayitlar)
 
     # 1500'lük partinin yeni kayıtları ve konu düzeltmeleri açık, sabit bir
     # geçiş planındadır. Kaynak koruması, önce/sonra özeti ve tüm TSV'ler
