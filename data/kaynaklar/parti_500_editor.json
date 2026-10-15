@@ -1,0 +1,4451 @@
+[
+  {
+    "key": "t_ilk",
+    "ders": "tarih",
+    "topics": [
+      "İlk Türk Devletleri"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Türk ordusunda onlu teşkilatla ilişkilendirilen Hun hükümdarı",
+        "Mete Han"
+      ],
+      [
+        "Türk adını devlet adı olarak ilk kullanan devlet",
+        "Göktürkler"
+      ],
+      [
+        "Orhun Yazıtları'nın ilgili olduğu Türk devleti",
+        "II. Göktürk Devleti"
+      ],
+      [
+        "Maniheizmi benimseyerek şehir kültürünü geliştiren Türk devleti",
+        "Uygurlar"
+      ],
+      [
+        "Avrupa Hunlarının Bizans'a karşı baskısını artıran hükümdar",
+        "Attila"
+      ],
+      [
+        "Asya Hun Devleti'nin bilinen ilk hükümdarı",
+        "Teoman"
+      ],
+      [
+        "Göktürk Devleti'nin kurucusu",
+        "Bumin Kağan"
+      ],
+      [
+        "Göktürklerin batı kanadını yöneten kurucu dönem devlet adamı",
+        "İstemi Yabgu"
+      ],
+      [
+        "İlk Türk devletlerinde yazısız hukuk kuralları bütünü",
+        "Töre"
+      ],
+      [
+        "İlk Türk devletlerinde hükümdara yönetme yetkisinin Tanrı tarafından verildiği inancı",
+        "Kut"
+      ]
+    ],
+    "note": "Kut siyasi meşruiyetle, töre hukukla ilgilidir; devlet adları ile hükümdar adları birbirine karıştırılmamalıdır.",
+    "ids": [
+      "TAR-0156",
+      "TAR-0154",
+      "TAR-0143",
+      "TAR-0153",
+      "TAR-0017",
+      "TAR-0002",
+      "TAR-0151",
+      "TAR-0003",
+      "TAR-0010",
+      "TAR-0155"
+    ],
+    "types": [
+      "kisi",
+      "devlet",
+      "devlet",
+      "devlet",
+      "kisi",
+      "kisi",
+      "kisi",
+      "kisi",
+      "kavram",
+      "kavram"
+    ],
+    "distractors": {
+      "kisi": [
+        "Mete Han",
+        "Bumin Kağan",
+        "Attila",
+        "Teoman",
+        "İstemi Yabgu",
+        "Bilge Kağan",
+        "Kül Tigin"
+      ],
+      "devlet": [
+        "Göktürkler",
+        "II. Göktürk Devleti",
+        "Uygurlar",
+        "Karahanlılar",
+        "Asya Hun Devleti"
+      ],
+      "kavram": [
+        "Kut",
+        "Töre",
+        "Kurultay",
+        "Ülüş",
+        "İkili teşkilat"
+      ]
+    },
+    "wrong_answers": {
+      "Orhun Yazıtları'nın ilgili olduğu Türk devleti": [
+        "Uygurlar",
+        "Karahanlılar",
+        "Asya Hun Devleti",
+        "Avrupa Hun Devleti"
+      ]
+    }
+  },
+  {
+    "key": "t_kurulus",
+    "ders": "tarih",
+    "topics": [
+      "Osmanlı Kuruluş"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Osmanlı Beyliği'nin kuruluş dönemi lideri",
+        "Osman Bey"
+      ],
+      [
+        "Bursa'nın fethedildiği padişah dönemi",
+        "Orhan Bey"
+      ],
+      [
+        "Edirne'nin Osmanlı merkezi hâline geldiği padişah dönemi",
+        "I. Murad"
+      ],
+      [
+        "Niğbolu Savaşı'nda Haçlıları yenilgiye uğratan padişah",
+        "Yıldırım Bayezid"
+      ],
+      [
+        "Ankara Savaşı'nda Osmanlı'nın karşılaştığı hükümdar",
+        "Timur"
+      ],
+      [
+        "Fetret Devri'ne son veren Osmanlı padişahı",
+        "I. Mehmed"
+      ],
+      [
+        "Varna ve II. Kosova savaşlarının padişahı",
+        "II. Murad"
+      ],
+      [
+        "Osmanlı'nın Rumeli'ye geçişinde ilk önemli üs",
+        "Çimpe Kalesi"
+      ],
+      [
+        "Kuruluş döneminde sınır bölgelerine verilen ad",
+        "Uç"
+      ],
+      [
+        "Osmanlı'da fethedilen topraklara nüfus yerleştirme siyaseti",
+        "İskân"
+      ]
+    ],
+    "note": "Kuruluş devrindeki hükümdarların olayları ile fetih ve yerleştirme politikaları ayrı değerlendirilir.",
+    "ids": [
+      "TAR-0030",
+      "TAR-0168",
+      "TAR-0039",
+      "TAR-0037",
+      "TAR-0038",
+      "TAR-0169",
+      "TAR-0033",
+      "TAR-0170",
+      "TAR-0171",
+      "TAR-0032"
+    ],
+    "types": [
+      "padisah",
+      "padisah",
+      "padisah",
+      "padisah",
+      "kisi",
+      "padisah",
+      "padisah",
+      "kale",
+      "kavram",
+      "kavram"
+    ],
+    "distractors": {
+      "kale": [
+        "Belgrad",
+        "Budin",
+        "Estergon",
+        "Zigetvar",
+        "Uyvar"
+      ],
+      "kisi": [
+        "Uzun Hasan",
+        "Şah İsmail",
+        "Karamanoğlu Mehmed Bey",
+        "Alaeddin Keykubad"
+      ],
+      "padisah": [
+        "Osman Bey",
+        "Orhan Bey",
+        "I. Murad",
+        "Yıldırım Bayezid",
+        "I. Mehmed",
+        "II. Murad",
+        "II. Mehmed",
+        "I. Selim",
+        "II. Bayezid"
+      ],
+      "kavram": [
+        "Kut",
+        "Töre",
+        "Kurultay",
+        "Ülüş",
+        "İkili teşkilat"
+      ]
+    }
+  },
+  {
+    "key": "t_fatih",
+    "ders": "tarih",
+    "topics": [
+      "Fatih Dönemi"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "İstanbul'u 1453'te fetheden padişah",
+        "II. Mehmed"
+      ],
+      [
+        "Fatih'in İstanbul kuşatması öncesinde Boğaz'da yaptırdığı hisar",
+        "Rumeli Hisarı"
+      ],
+      [
+        "İstanbul'un fethiyle siyasi varlığı sona eren devlet",
+        "Bizans İmparatorluğu"
+      ],
+      [
+        "Fatih döneminde 1461'de alınan Karadeniz devleti",
+        "Trabzon Rum İmparatorluğu"
+      ],
+      [
+        "Otlukbeli Savaşı'nda Osmanlı'nın karşılaştığı devlet",
+        "Akkoyunlular"
+      ],
+      [
+        "Fatih döneminde 1475'te Osmanlı himayesine giren hanlık",
+        "Kırım Hanlığı"
+      ],
+      [
+        "Fatih'in kanun düzenlemelerinin bilinen adı",
+        "Kanunname-i Âl-i Osman"
+      ],
+      [
+        "İstanbul'da Fatih döneminde kurulan yüksek dereceli medreseler",
+        "Sahn-ı Seman"
+      ],
+      [
+        "Fatih döneminde Ege'de alınan adalardan biri",
+        "Gökçeada"
+      ],
+      [
+        "Fatih'in şehzadeliğinde Manisa'da yürüttüğü görev",
+        "Sancak beyliği"
+      ]
+    ],
+    "note": "Fatih, Yavuz ve Kanuni dönemlerinin fetihleri farklıdır. Bizans'ın siyasi varlığının sona ermesi bütün Hristiyan devletlerin ortadan kalkması değildir.",
+    "ids": [
+      "TAR-0174",
+      "TAR-0045",
+      "TAR-0179",
+      "TAR-0177",
+      "TAR-0044",
+      "TAR-0176",
+      "TAR-0043",
+      "TAR-0180",
+      "TAR-0055",
+      "TAR-0175"
+    ],
+    "types": [
+      "padisah",
+      "hisar",
+      "devlet_gec",
+      "devlet_gec",
+      "devlet_gec",
+      "devlet_gec",
+      "belge",
+      "medrese",
+      "ada",
+      "gorev"
+    ],
+    "distractors": {
+      "ada": [
+        "Rodos",
+        "Kıbrıs",
+        "Girit",
+        "Gökçeada",
+        "Sakız"
+      ],
+      "devlet_gec": [
+        "Bizans İmparatorluğu",
+        "Trabzon Rum İmparatorluğu",
+        "Akkoyunlular",
+        "Kırım Hanlığı",
+        "Memlûkler",
+        "Safeviler"
+      ],
+      "padisah": [
+        "Osman Bey",
+        "Orhan Bey",
+        "I. Murad",
+        "Yıldırım Bayezid",
+        "I. Mehmed",
+        "II. Murad",
+        "II. Mehmed",
+        "I. Selim",
+        "II. Bayezid"
+      ],
+      "belge": [
+        "Kanun-i Esasi",
+        "Mecelle",
+        "Kanunname-i Âl-i Osman",
+        "Sened-i İttifak",
+        "Tanzimat Fermanı",
+        "Islahat Fermanı"
+      ],
+      "hisar": [
+        "Anadolu Hisarı",
+        "Yedikule",
+        "Kilitbahir Kalesi"
+      ],
+      "medrese": [
+        "Süleymaniye Medreseleri",
+        "İznik Medresesi",
+        "Karatay Medresesi"
+      ],
+      "gorev": [
+        "Sadrazamlık",
+        "Kaptanıderyalık",
+        "Kazaskerlik",
+        "Defterdarlık"
+      ]
+    }
+  },
+  {
+    "key": "t_kanuni",
+    "ders": "tarih",
+    "topics": [
+      "Kanuni Dönemi"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "1521'de Kanuni döneminde alınan Balkan kalesi",
+        "Belgrad"
+      ],
+      [
+        "1522'de Kanuni döneminde alınan ada",
+        "Rodos"
+      ],
+      [
+        "1526'da Macar ordusuna karşı kazanılan meydan savaşı",
+        "Mohaç"
+      ],
+      [
+        "1529'da Kanuni'nin sonuç alamadığı kuşatma",
+        "I. Viyana Kuşatması"
+      ],
+      [
+        "1538'de Osmanlı donanmasının kazandığı deniz zaferi",
+        "Preveze"
+      ],
+      [
+        "Preveze zaferinin Osmanlı kaptanıderyası",
+        "Barbaros Hayreddin Paşa"
+      ],
+      [
+        "Kanuni döneminde İran'la 1555'te yapılan antlaşma",
+        "Amasya Antlaşması"
+      ],
+      [
+        "Kanuni'nin son seferinde kuşattığı kale",
+        "Zigetvar"
+      ],
+      [
+        "Kanuni döneminde Kızıldeniz ve Hint Okyanusu'nda mücadele edilen Avrupa devleti",
+        "Portekiz"
+      ],
+      [
+        "Kanuni döneminin İstanbul'daki büyük külliyelerinden biri",
+        "Süleymaniye Külliyesi"
+      ]
+    ],
+    "note": "Kara seferleri, deniz seferleri ve antlaşmalar aynı dönemde bulunsalar da birbirlerinin sonucu gibi sunulmamalıdır.",
+    "ids": [
+      "TAR-0054",
+      "TAR-0053",
+      "TAR-0048",
+      "TAR-0051",
+      "TAR-0186",
+      "TAR-0046",
+      "TAR-0182",
+      "TAR-0047",
+      "TAR-0049",
+      "TAR-0187"
+    ],
+    "types": [
+      "kale",
+      "ada",
+      "savas",
+      "kusatma",
+      "denizsavas",
+      "general",
+      "antlasma",
+      "kale",
+      "ulke",
+      "kulliye"
+    ],
+    "distractors": {
+      "ada": [
+        "Rodos",
+        "Kıbrıs",
+        "Girit",
+        "Gökçeada",
+        "Sakız"
+      ],
+      "kale": [
+        "Belgrad",
+        "Budin",
+        "Estergon",
+        "Zigetvar",
+        "Uyvar"
+      ],
+      "antlasma": [
+        "Amasya Antlaşması",
+        "Karlofça Antlaşması",
+        "Pasarofça Antlaşması",
+        "Belgrad Antlaşması",
+        "Küçük Kaynarca Antlaşması",
+        "Berlin Antlaşması",
+        "Paris Antlaşması",
+        "Baltalimanı Antlaşması",
+        "Gümrü Antlaşması",
+        "Kars Antlaşması",
+        "Brest-Litovsk Antlaşması"
+      ],
+      "ulke": [
+        "Portekiz",
+        "İspanya",
+        "Fransa",
+        "İngiltere",
+        "Avusturya"
+      ],
+      "general": [
+        "Barbaros Hayreddin Paşa",
+        "Piri Reis",
+        "Seydi Ali Reis",
+        "Turgut Reis",
+        "Kemal Reis"
+      ],
+      "denizsavas": [
+        "Preveze",
+        "İnebahtı",
+        "Çeşme",
+        "Sinop",
+        "Navarin"
+      ],
+      "savas": [
+        "Mohaç",
+        "Çaldıran",
+        "Mercidabık",
+        "Ridaniye",
+        "Otlukbeli"
+      ],
+      "kusatma": [
+        "II. Viyana Kuşatması",
+        "İstanbul Kuşatması",
+        "Zigetvar Kuşatması"
+      ],
+      "kulliye": [
+        "Selimiye Külliyesi",
+        "Fatih Külliyesi",
+        "Sultanahmet Külliyesi"
+      ]
+    }
+  },
+  {
+    "key": "t_tanzimat_kurum",
+    "ders": "tarih",
+    "topics": [
+      "tanzimat",
+      "Tanzimat"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "1839'da Tanzimat Fermanı'nın ilan edildiği padişah",
+        "Abdülmecid"
+      ],
+      [
+        "Tanzimat Fermanı'nı Gülhane'de okuyan devlet adamı",
+        "Mustafa Reşit Paşa"
+      ],
+      [
+        "Tanzimat Fermanı'nın diğer adı",
+        "Gülhane Hatt-ı Hümayunu"
+      ],
+      [
+        "Gayrimüslimlerin haklarını genişletmeye yönelik 1856 belgesi",
+        "Islahat Fermanı"
+      ],
+      [
+        "Osmanlı'nın 1876 tarihli ilk anayasası",
+        "Kanun-i Esasi"
+      ],
+      [
+        "Osmanlı'da meşrutiyetle açılan seçilmiş temsilciler meclisi",
+        "Mebusan Meclisi"
+      ],
+      [
+        "Osmanlı'da üyelerini padişahın atadığı meclis",
+        "Ayan Meclisi"
+      ],
+      [
+        "Osmanlı hukukunda medeni hukuk alanındaki kuralları derleyen eser",
+        "Mecelle"
+      ],
+      [
+        "Osmanlı'da dış borçların tahsili için kurulan yönetim",
+        "Düyun-u Umumiye"
+      ],
+      [
+        "Osmanlı'da modern eğitim işleri için kurulan bakanlık",
+        "Maarif-i Umumiye Nezareti"
+      ]
+    ],
+    "note": "Ferman, anayasa ve borç idaresi aynı tür belge ya da kurum değildir; görevleri ve dönemleri birlikte bilinmelidir.",
+    "ids": [
+      "TAR-0392",
+      "TAR-0386",
+      "TAR-0394",
+      "TAR-0417",
+      "TAR-0203",
+      "TAR-0387",
+      "TAR-0395",
+      "TAR-0072",
+      "TAR-0204",
+      "TAR-0428"
+    ],
+    "types": [
+      "padisah",
+      "devletadami",
+      "belge",
+      "belge",
+      "belge",
+      "kurum",
+      "kurum",
+      "belge",
+      "kurum",
+      "kurum"
+    ],
+    "distractors": {
+      "belge": [
+        "Kanun-i Esasi",
+        "Mecelle",
+        "Kanunname-i Âl-i Osman",
+        "Sened-i İttifak",
+        "Tanzimat Fermanı",
+        "Islahat Fermanı"
+      ],
+      "padisah": [
+        "Osman Bey",
+        "Orhan Bey",
+        "I. Murad",
+        "Yıldırım Bayezid",
+        "I. Mehmed",
+        "II. Murad",
+        "II. Mehmed",
+        "I. Selim",
+        "II. Bayezid"
+      ],
+      "kurum": [
+        "Mebusan Meclisi",
+        "Ayan Meclisi",
+        "Divanıhümayun",
+        "Düyun-u Umumiye",
+        "Maarif-i Umumiye Nezareti",
+        "Şûra-yı Devlet"
+      ],
+      "devletadami": [
+        "Mithat Paşa",
+        "Alemdar Mustafa Paşa",
+        "Keçecizade Fuat Paşa",
+        "Âli Paşa"
+      ]
+    }
+  },
+  {
+    "key": "t_tanzimat_siyaset",
+    "ders": "tarih",
+    "topics": [
+      "tanzimat",
+      "Tanzimat"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "1808'de merkezî yönetim ile ayanlar arasında yapılan belge",
+        "Sened-i İttifak"
+      ],
+      [
+        "1826'da Yeniçeri Ocağı'nın kaldırılması olayı",
+        "Vaka-i Hayriye"
+      ],
+      [
+        "Yeniçeri Ocağı'nın yerine kurulan ordu",
+        "Asakir-i Mansure-i Muhammediye"
+      ],
+      [
+        "Osmanlı'nın 1838'de İngiltere ile yaptığı ticaret antlaşması",
+        "Baltalimanı Antlaşması"
+      ],
+      [
+        "1877-1878 Osmanlı-Rus Savaşı'nın diğer adı",
+        "93 Harbi"
+      ],
+      [
+        "1878'de Ayastefanos'un yerini alan antlaşma",
+        "Berlin Antlaşması"
+      ],
+      [
+        "Osmanlı'nın Kırım Savaşı'ndan sonra imzaladığı 1856 antlaşması",
+        "Paris Antlaşması"
+      ],
+      [
+        "II. Abdülhamid'i tahttan indiren 1909 olayının adı",
+        "31 Mart Olayı"
+      ],
+      [
+        "31 Mart Olayı'nı bastıran askerî birlik",
+        "Hareket Ordusu"
+      ],
+      [
+        "1908'de Kanun-i Esasi'nin yeniden uygulanmasıyla başlayan dönem",
+        "II. Meşrutiyet"
+      ]
+    ],
+    "note": "Sened-i İttifak bir anayasa değildir. 31 Mart Olayı II. Meşrutiyet'in ilanından sonra yaşanmıştır.",
+    "ids": [
+      "TAR-0461",
+      "TAR-0421",
+      "TAR-0442",
+      "TAR-0403",
+      "TAR-0419",
+      "TAR-0206",
+      "TAR-0444",
+      "TAR-0440",
+      "TAR-0409",
+      "TAR-0434"
+    ],
+    "types": [
+      "belge",
+      "olay",
+      "ordu",
+      "antlasma",
+      "savasad",
+      "antlasma",
+      "antlasma",
+      "olay",
+      "ordu",
+      "donemadi"
+    ],
+    "distractors": {
+      "ordu": [
+        "Nizam-ı Cedit",
+        "Asakir-i Mansure-i Muhammediye",
+        "Hareket Ordusu",
+        "Sekban-ı Cedit",
+        "Eşkinci Ocağı"
+      ],
+      "antlasma": [
+        "Amasya Antlaşması",
+        "Karlofça Antlaşması",
+        "Pasarofça Antlaşması",
+        "Belgrad Antlaşması",
+        "Küçük Kaynarca Antlaşması",
+        "Berlin Antlaşması",
+        "Paris Antlaşması",
+        "Baltalimanı Antlaşması",
+        "Gümrü Antlaşması",
+        "Kars Antlaşması",
+        "Brest-Litovsk Antlaşması"
+      ],
+      "belge": [
+        "Kanun-i Esasi",
+        "Mecelle",
+        "Kanunname-i Âl-i Osman",
+        "Sened-i İttifak",
+        "Tanzimat Fermanı",
+        "Islahat Fermanı"
+      ],
+      "olay": [
+        "Patrona Halil İsyanı",
+        "Kabakçı Mustafa İsyanı",
+        "Vaka-i Vakvakiye",
+        "Şeyh Sait İsyanı"
+      ],
+      "savasad": [
+        "Trablusgarp Savaşı",
+        "I. Balkan Savaşı",
+        "Kırım Savaşı"
+      ],
+      "donemadi": [
+        "I. Meşrutiyet",
+        "Tanzimat Dönemi",
+        "Lale Devri",
+        "Fetret Devri"
+      ]
+    }
+  },
+  {
+    "key": "t_tanzimat_yenilesme",
+    "ders": "tarih",
+    "topics": [
+      "tanzimat",
+      "Tanzimat"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Lale Devri'ni sona erdiren ayaklanma",
+        "Patrona Halil İsyanı"
+      ],
+      [
+        "III. Selim döneminin yeni ordusu ve reform programı",
+        "Nizam-ı Cedit"
+      ],
+      [
+        "III. Selim'in tahttan indirilmesine yol açan isyan",
+        "Kabakçı Mustafa İsyanı"
+      ],
+      [
+        "Osmanlı'nın ilk resmî gazetesi",
+        "Takvim-i Vekayi"
+      ],
+      [
+        "Osmanlı'da 1864 düzenlemesiyle örgütlenen taşra birimi",
+        "Vilayet"
+      ],
+      [
+        "İlk sürekli Osmanlı elçiliğinin açıldığı şehir",
+        "Londra"
+      ],
+      [
+        "İlk sürekli elçiliklerin açıldığı padişah dönemi",
+        "III. Selim"
+      ],
+      [
+        "Yeniçeri Ocağı'nın kaldırıldığı padişah dönemi",
+        "II. Mahmud"
+      ],
+      [
+        "Osmanlı'da anayasalı ve meclisli monarşiye verilen ad",
+        "Meşrutiyet"
+      ],
+      [
+        "Osmanlı'da farklı dinî toplulukların din ve cemaat işleriyle ilgili düzen",
+        "Millet sistemi"
+      ]
+    ],
+    "note": "Yenileşme hareketleri tek bir padişahın döneminde gerçekleşmemiştir. Nizam-ı Cedit ile Yeniçeri Ocağı'nın kaldırılması ayrı gelişmelerdir.",
+    "ids": [
+      "TAR-0452",
+      "TAR-0412",
+      "TAR-0424",
+      "TAR-0446",
+      "TAR-0071",
+      "TAR-0393",
+      "TAR-0450",
+      "TAR-0080",
+      "TAR-0408",
+      "TAR-0413"
+    ],
+    "types": [
+      "olay",
+      "ordu",
+      "olay",
+      "gazete",
+      "idari",
+      "sehir",
+      "padisah",
+      "padisah",
+      "rejim",
+      "duzen"
+    ],
+    "distractors": {
+      "ordu": [
+        "Nizam-ı Cedit",
+        "Asakir-i Mansure-i Muhammediye",
+        "Hareket Ordusu",
+        "Sekban-ı Cedit",
+        "Eşkinci Ocağı"
+      ],
+      "sehir": [
+        "Londra",
+        "Paris",
+        "Viyana",
+        "Berlin",
+        "Roma"
+      ],
+      "padisah": [
+        "Osman Bey",
+        "Orhan Bey",
+        "I. Murad",
+        "Yıldırım Bayezid",
+        "I. Mehmed",
+        "II. Murad",
+        "II. Mehmed",
+        "I. Selim",
+        "II. Bayezid"
+      ],
+      "olay": [
+        "Vaka-i Hayriye",
+        "31 Mart Olayı",
+        "Celali İsyanları"
+      ],
+      "gazete": [
+        "Ceride-i Havadis",
+        "Tercüman-ı Ahval",
+        "Tasvir-i Efkâr"
+      ],
+      "idari": [
+        "Sancak",
+        "Kaza",
+        "Nahiye"
+      ],
+      "rejim": [
+        "Mutlak monarşi",
+        "Cumhuriyet",
+        "Oligarşi"
+      ],
+      "duzen": [
+        "Tımar sistemi",
+        "İltizam sistemi",
+        "Devşirme sistemi"
+      ]
+    }
+  },
+  {
+    "key": "t_milli",
+    "ders": "tarih",
+    "topics": [
+      "Milli Mücadele",
+      "Kurtuluş Savaşı"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Millî Mücadele'nin amaç ve yöntemini açıklayan 1919 genelgesi",
+        "Amasya Genelgesi"
+      ],
+      [
+        "Bölgesel toplanmasına rağmen millî kararlar alan 1919 kongresi",
+        "Erzurum Kongresi"
+      ],
+      [
+        "Millî cemiyetleri tek çatı altında birleştiren kongre",
+        "Sivas Kongresi"
+      ],
+      [
+        "Millî Mücadele'nin ilk dönemindeki yerel silahlı direniş birlikleri",
+        "Kuvayımilliye"
+      ],
+      [
+        "23 Nisan 1920'de açılan millî egemenlik kurumu",
+        "Büyük Millet Meclisi"
+      ],
+      [
+        "TBMM'nin Sovyet Rusya ile 1921'de yaptığı antlaşma",
+        "Moskova Antlaşması"
+      ],
+      [
+        "Fransa ile Güney Cephesi'ndeki çatışmaları bitiren 1921 antlaşması",
+        "Ankara Antlaşması"
+      ],
+      [
+        "Sakarya Savaşı öncesinde yayımlanan millî yükümlülük emirleri",
+        "Tekâlif-i Milliye"
+      ],
+      [
+        "Kurtuluş Savaşı'nın silahlı dönemini sona erdiren ateşkes",
+        "Mudanya Ateşkes Antlaşması"
+      ],
+      [
+        "Türkiye'nin bağımsızlığını uluslararası düzeyde tanıyan 1923 barışı",
+        "Lozan Barış Antlaşması"
+      ]
+    ],
+    "note": "Ateşkes silahlı mücadeleyi durdurur; kalıcı barışın bütün hükümlerini tek başına düzenlemez. Ankara Antlaşması burada 1921 tarihli Fransa antlaşmasıdır.",
+    "ids": [
+      "TAR-0092",
+      "TAR-0091",
+      "TAR-0226",
+      "TAR-0221",
+      "TAR-0222",
+      "TAR-0086",
+      "TAR-0219",
+      "TAR-0095",
+      "TAR-0218",
+      "TAR-0225"
+    ],
+    "types": [
+      "belge",
+      "kongre",
+      "kongre",
+      "ordu",
+      "meclis",
+      "antlasma",
+      "antlasma",
+      "emir",
+      "antlasma",
+      "antlasma"
+    ],
+    "distractors": {
+      "ordu": [
+        "Kuvayıinzibatiye",
+        "Hareket Ordusu",
+        "Asakir-i Mansure-i Muhammediye"
+      ],
+      "antlasma": [
+        "Amasya Antlaşması",
+        "Karlofça Antlaşması",
+        "Pasarofça Antlaşması",
+        "Belgrad Antlaşması",
+        "Küçük Kaynarca Antlaşması",
+        "Berlin Antlaşması",
+        "Paris Antlaşması",
+        "Baltalimanı Antlaşması",
+        "Gümrü Antlaşması",
+        "Kars Antlaşması",
+        "Brest-Litovsk Antlaşması"
+      ],
+      "belge": [
+        "Kanun-i Esasi",
+        "Mecelle",
+        "Kanunname-i Âl-i Osman",
+        "Sened-i İttifak",
+        "Tanzimat Fermanı",
+        "Islahat Fermanı"
+      ],
+      "kongre": [
+        "Balıkesir Kongresi",
+        "Alaşehir Kongresi",
+        "Pozantı Kongresi",
+        "Afyon Kongresi"
+      ],
+      "meclis": [
+        "Mebusan Meclisi",
+        "Ayan Meclisi",
+        "Divanıhümayun"
+      ],
+      "emir": [
+        "Hıyanet-i Vataniye Kanunu",
+        "Başkomutanlık Kanunu",
+        "Takrir-i Sükûn Kanunu"
+      ]
+    }
+  },
+  {
+    "key": "t_inkilap",
+    "ders": "tarih",
+    "topics": [
+      "Devrimler",
+      "Atatürk İlkeleri"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "1 Kasım 1922'de sona erdirilen hanedan yönetimi",
+        "Saltanat"
+      ],
+      [
+        "29 Ekim 1923'te adı konulan yönetim biçimi",
+        "Cumhuriyet"
+      ],
+      [
+        "3 Mart 1924'te kaldırılan dinî-siyasi makam",
+        "Halifelik"
+      ],
+      [
+        "Eğitim ve öğretimde birliği sağlayan 1924 kanunu",
+        "Tevhid-i Tedrisat"
+      ],
+      [
+        "1926'da özel hukuk alanında kabul edilen temel kanun",
+        "Türk Medeni Kanunu"
+      ],
+      [
+        "1928'de Latin temelli yazı sisteminin kabulü",
+        "Harf İnkılabı"
+      ],
+      [
+        "Yeni harfleri halka öğretmek için 1929'da açılan kurumlar",
+        "Millet Mektepleri"
+      ],
+      [
+        "1934'te resmî kimlik işlemlerini düzenleyen kanun",
+        "Soyadı Kanunu"
+      ],
+      [
+        "1933'te yükseköğretimin yeniden düzenlenmesi",
+        "Üniversite Reformu"
+      ],
+      [
+        "1934'te kadınlara tanınan ülke çapındaki siyasi hak",
+        "Milletvekili seçme ve seçilme hakkı"
+      ]
+    ],
+    "note": "Saltanat ve halifelik farklı tarihlerde kaldırılmıştır. Alfabenin değişmesi dilin ilk kez ortaya çıkması anlamına gelmez.",
+    "ids": [
+      "TAR-0237",
+      "TAR-0244",
+      "TAR-0101",
+      "TAR-0245",
+      "TAR-0235",
+      "TAR-0246",
+      "TAR-0233",
+      "TAR-0234",
+      "TAR-0242",
+      "TAR-0236"
+    ],
+    "types": [
+      "yonetim",
+      "rejim",
+      "yonetim",
+      "kanun",
+      "kanun",
+      "inkilap",
+      "okul",
+      "kanun",
+      "reform",
+      "hak"
+    ],
+    "distractors": {
+      "yonetim": [
+        "Sadrazamlık",
+        "Şeyhülislamlık"
+      ],
+      "rejim": [
+        "Meşrutiyet",
+        "Mutlak monarşi",
+        "Oligarşi"
+      ],
+      "kanun": [
+        "Kabotaj Kanunu",
+        "Şapka Kanunu",
+        "Takrir-i Sükûn Kanunu"
+      ],
+      "inkilap": [
+        "Şapka İnkılabı",
+        "Takvim ve saat düzenlemesi",
+        "Üniversite Reformu"
+      ],
+      "okul": [
+        "Köy Enstitüleri",
+        "Halkevleri",
+        "Halkodaları"
+      ],
+      "reform": [
+        "Tevhid-i Tedrisat",
+        "Harf İnkılabı",
+        "Medeni Kanun"
+      ],
+      "hak": [
+        "Belediye seçimlerine katılma hakkı",
+        "Muhtar seçme ve seçilme hakkı",
+        "Sendika kurma hakkı"
+      ]
+    }
+  },
+  {
+    "key": "t_cagdas",
+    "ders": "tarih",
+    "topics": [
+      "Çağdaş Tarih"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "II. Dünya Savaşı sonunda kurulan küresel barış örgütü",
+        "Birleşmiş Milletler"
+      ],
+      [
+        "1947'de Türkiye ve Yunanistan'a yardımı öngören ABD politikası",
+        "Truman Doktrini"
+      ],
+      [
+        "Savaş sonrası Avrupa'nın ekonomik toparlanması için ABD yardım planı",
+        "Marshall Planı"
+      ],
+      [
+        "1949'da kurulan Batı savunma ittifakı",
+        "NATO"
+      ],
+      [
+        "1955'te kurulan Doğu Bloku savunma ittifakı",
+        "Varşova Paktı"
+      ],
+      [
+        "Sovyetlerin uluslararası ekonomik iş birliği örgütü",
+        "COMECON"
+      ],
+      [
+        "1961'de inşa edilip 1989'da açılan bölünme simgesi",
+        "Berlin Duvarı"
+      ],
+      [
+        "Türkiye'nin NATO'ya katıldığı yıl",
+        "1952"
+      ],
+      [
+        "Kıbrıs Barış Harekâtı'nın yılı",
+        "1974"
+      ],
+      [
+        "Kuzey Kıbrıs Türk Cumhuriyeti'nin ilan yılı",
+        "1983"
+      ]
+    ],
+    "note": "Ekonomik yardım, küresel örgüt ve askerî ittifak farklı kurumlardır. NATO üyeliği Avrupa Birliği üyeliğiyle aynı değildir.",
+    "ids": [
+      "TAR-0253",
+      "TAR-0254",
+      "TAR-0111",
+      "TAR-0251",
+      "TAR-0120",
+      "TAR-0250",
+      "TAR-0252",
+      "TAR-0255",
+      "TAR-0115",
+      "TAR-0256"
+    ],
+    "types": [
+      "org",
+      "politika",
+      "politika",
+      "org",
+      "org",
+      "org",
+      "simge",
+      "yil",
+      "yil",
+      "yil"
+    ],
+    "distractors": {
+      "yil": [
+        "1945",
+        "1947",
+        "1949",
+        "1952",
+        "1955",
+        "1974",
+        "1983"
+      ],
+      "org": [
+        "Avrupa Konseyi",
+        "OECD",
+        "AGİT"
+      ],
+      "politika": [
+        "Monroe Doktrini",
+        "Eisenhower Doktrini",
+        "Wilson İlkeleri"
+      ],
+      "simge": [
+        "Demir Perde",
+        "Maginot Hattı",
+        "Siegfried Hattı"
+      ]
+    }
+  },
+  {
+    "key": "c_harita",
+    "ders": "cografya",
+    "topics": [
+      "Harita",
+      "Koordinat"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Haritada küçültme oranını gösteren unsur",
+        "Ölçek"
+      ],
+      [
+        "Eş yükselti noktalarını birleştiren eğri",
+        "İzohips"
+      ],
+      [
+        "Haritadaki özel işaretleri açıklayan bölüm",
+        "Lejant"
+      ],
+      [
+        "İzohipslerin sıklaşmasının gösterdiği yamaç özelliği",
+        "Eğimin artması"
+      ],
+      [
+        "İzohipslerin seyrekleşmesinin gösterdiği yamaç özelliği",
+        "Eğimin azalması"
+      ],
+      [
+        "Kuzey-güney konumunu Ekvator'a göre belirten değer",
+        "Enlem"
+      ],
+      [
+        "Doğu-batı konumunu başlangıç meridyenine göre belirten değer",
+        "Boylam"
+      ],
+      [
+        "Güneş'in meridyenden geçişine göre belirlenen merkez zaman ölçütü",
+        "Yerel saat"
+      ],
+      [
+        "Bir dağın güneşe dönük yamacının sıcaklıkla ilişkili özelliği",
+        "Bakı"
+      ],
+      [
+        "Gerçek alanın yatay düzleme indirgenmiş karşılığı",
+        "İz düşüm alanı"
+      ]
+    ],
+    "note": "Yükselti ile eğim aynı ölçüt değildir; izohips aralığı yükseltinin mutlak değerinden çok yamaç eğimini gösterir.",
+    "ids": [
+      "COG-0005",
+      "COG-0089",
+      "COG-0009",
+      "COG-0090",
+      "COG-0003",
+      "COG-0092",
+      "COG-0010",
+      "COG-0002",
+      "COG-0004",
+      "COG-0086"
+    ],
+    "types": [
+      "harita",
+      "egri",
+      "harita",
+      "egim",
+      "egim",
+      "konum",
+      "konum",
+      "saat",
+      "konum",
+      "alan"
+    ],
+    "distractors": {
+      "harita": [
+        "Ölçek",
+        "Lejant",
+        "Koordinat ağı",
+        "Yön oku",
+        "Projeksiyon"
+      ],
+      "egri": [
+        "İzobar",
+        "İzoterm",
+        "İzohyet"
+      ],
+      "egim": [
+        "Eğimin artması",
+        "Eğimin azalması",
+        "Eğimin değişmemesi"
+      ],
+      "konum": [
+        "Enlem",
+        "Boylam",
+        "Bakı"
+      ],
+      "saat": [
+        "Ulusal saat",
+        "Ortak saat",
+        "Saat dilimi"
+      ],
+      "alan": [
+        "Gerçek alan",
+        "Harita alanı",
+        "Birim alan"
+      ]
+    }
+  },
+  {
+    "key": "c_iklim",
+    "ders": "cografya",
+    "topics": [
+      "Türkiye İklimleri",
+      "iklim_bitki_orfu"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Nemli havanın dağ yamacında yükselerek yağış bırakması",
+        "Orografik yağış"
+      ],
+      [
+        "Farklı sıcaklıktaki hava kütlelerinin karşılaşmasıyla oluşan yağış",
+        "Cephe yağışı"
+      ],
+      [
+        "Isınan havanın yükselmesiyle oluşan yağış",
+        "Konveksiyonel yağış"
+      ],
+      [
+        "Akdeniz ikliminin kuraklığa dayanıklı çalı topluluğu",
+        "Maki"
+      ],
+      [
+        "İç Anadolu'nun doğal otsu bitki örtüsü",
+        "Bozkır"
+      ],
+      [
+        "Erzurum-Kars çevresinde yaz yağışlarının desteklediği ot örtüsü",
+        "Çayır"
+      ],
+      [
+        "Deniz etkisinin azalmasıyla yıllık sıcaklık farkının artması",
+        "Karasallık"
+      ],
+      [
+        "Dağı aşarak alçalan havanın ısınıp kuruması",
+        "Fön etkisi"
+      ],
+      [
+        "Yere yakın soğuk havanın üzerinde daha sıcak tabaka bulunması",
+        "Sıcaklık terselmesi"
+      ],
+      [
+        "Havadaki mevcut nemin aynı sıcaklıktaki doyma miktarına oranı",
+        "Bağıl nem"
+      ]
+    ],
+    "note": "Yağışın oluşma nedeni ile bitki örtüsü ayrı kavramlardır. Karasallık yalnızca yerel saat farkıyla açıklanamaz.",
+    "ids": [
+      "COG-0342",
+      "COG-0096",
+      "COG-0366",
+      "COG-0369",
+      "COG-0249",
+      "COG-0343",
+      "COG-0368",
+      "COG-0099",
+      "COG-0348",
+      "COG-0367"
+    ],
+    "types": [
+      "havadurumu",
+      "havadurumu",
+      "havadurumu",
+      "bitki",
+      "bitki",
+      "bitki",
+      "hava",
+      "hava",
+      "hava",
+      "hava"
+    ],
+    "distractors": {
+      "bitki": [
+        "Maki",
+        "Bozkır",
+        "Çayır",
+        "Garig",
+        "Orman"
+      ],
+      "havadurumu": [
+        "Orografik yağış",
+        "Cephe yağışı",
+        "Konveksiyonel yağış",
+        "Fön etkisi",
+        "Sıcaklık terselmesi"
+      ],
+      "hava": [
+        "Denizellik",
+        "Mutlak nem",
+        "Yağış rejimi",
+        "Buharlaşma"
+      ]
+    }
+  },
+  {
+    "key": "c_sekil",
+    "ders": "cografya",
+    "topics": [
+      "yeryuzu_sekilleri",
+      "Yer Şekilleri"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Kırılma sonucunda çevresine göre yükselen blok",
+        "Horst"
+      ],
+      [
+        "Kırılma sonucunda çevresine göre alçalan blok",
+        "Graben"
+      ],
+      [
+        "Akarsuyun taşıdığı malzemeyi deniz kıyısında biriktirmesiyle oluşan ova",
+        "Delta"
+      ],
+      [
+        "Kıyıya yakın adanın birikimle ana karaya bağlanması",
+        "Tombolo"
+      ],
+      [
+        "Denizden bir kıyı kordonuyla ayrılmış sığ su alanı",
+        "Lagün"
+      ],
+      [
+        "Çözünebilen kayaçlarda gelişen kapalı çanak",
+        "Dolin"
+      ],
+      [
+        "Kalsiyum karbonatın çökelmesiyle oluşan birikim şekli",
+        "Traverten"
+      ],
+      [
+        "Buzulların taşıyıp biriktirdiği malzeme",
+        "Moren"
+      ],
+      [
+        "Rüzgârın biriktirdiği kum tepesi",
+        "Kumul"
+      ],
+      [
+        "Akarsu yatağının kıvrımlar yaparak ilerlemesi",
+        "Menderes"
+      ]
+    ],
+    "note": "Aşındırma ve biriktirme şekilleri, onları oluşturan dış kuvvetle birlikte ayırt edilmelidir.",
+    "ids": [
+      "COG-0334",
+      "COG-0229",
+      "COG-0237",
+      "COG-0361",
+      "COG-0450",
+      "COG-0103",
+      "COG-0106",
+      "COG-0338",
+      "COG-0026",
+      "COG-0365"
+    ]
+  },
+  {
+    "key": "c_tarim",
+    "ders": "cografya",
+    "topics": [
+      "tarim_hayvancilik",
+      "Tarım"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Tarlanın belirli süre ekilmeyerek dinlendirilmesi",
+        "Nadas"
+      ],
+      [
+        "Aynı tarlada farklı yıllarda farklı ürün yetiştirme",
+        "Ekim nöbeti"
+      ],
+      [
+        "Birim alandan alınan ürün miktarı",
+        "Verim"
+      ],
+      [
+        "Birim alan verimini yükseltmeye dayalı tarım",
+        "İntansif tarım"
+      ],
+      [
+        "Üretimi daha çok geniş alanlara dayanarak artıran tarım",
+        "Ekstansif tarım"
+      ],
+      [
+        "Suyun kök bölgesine az miktarda doğrudan verilmesi",
+        "Damla sulama"
+      ],
+      [
+        "Dış ortamdan kısmen ayrılmış örtülü üretim",
+        "Seracılık"
+      ],
+      [
+        "Sulama suyunun aşırı kullanımıyla tuzların yüzeyde birikmesi",
+        "Tuzlanma"
+      ],
+      [
+        "Kontrol ve sertifikasyona tabi kurallı ekolojik üretim",
+        "Organik tarım"
+      ],
+      [
+        "Hayvanların kapalı işletmede yemle beslenmesinin esas olduğu üretim",
+        "Besi hayvancılığı"
+      ]
+    ],
+    "note": "Üretim artışı alan genişlemesinden veya verim artışından kaynaklanabilir; ikisi aynı değildir. Doğal gübre kullanımı tek başına organik sertifika yerine geçmez.",
+    "ids": [
+      "COG-0128",
+      "COG-0126",
+      "COG-0291",
+      "COG-0295",
+      "COG-0501",
+      "COG-0506",
+      "COG-0050",
+      "COG-0505",
+      "COG-0425",
+      "COG-0504"
+    ]
+  },
+  {
+    "key": "c_sanayi",
+    "ders": "cografya",
+    "topics": [
+      "sanayi",
+      "Sanayi",
+      "Madenler"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Alüminyum üretiminin başlıca cevheri",
+        "Boksit"
+      ],
+      [
+        "Demir-çelik üretiminde kullanılan temel metal cevheri",
+        "Demir cevheri"
+      ],
+      [
+        "Zonguldak havzasıyla ilişkilendirilen kömür türü",
+        "Taş kömürü"
+      ],
+      [
+        "Soma ve Tunçbilek'le ilişkilendirilen kömür türü",
+        "Linyit"
+      ],
+      [
+        "Ham petrolün işlenerek ürünlere ayrıldığı tesis",
+        "Rafineri"
+      ],
+      [
+        "Kayaç bloklarının kesilip parlatıldığı sanayi kolu",
+        "Mermer işleme"
+      ],
+      [
+        "Üniversite-sanayi iş birliğiyle teknoloji geliştirmeyi destekleyen alan",
+        "Teknopark"
+      ],
+      [
+        "Sanayi tesislerinin ortak altyapıyla planlı yerleştiği alan",
+        "Organize sanayi bölgesi"
+      ],
+      [
+        "Üretimde yeni teknik bilgi ve yöntem geliştirme faaliyeti",
+        "Araştırma-geliştirme"
+      ],
+      [
+        "Üretilen malın alıcılara ulaştırılmasıyla ilişkili kuruluş yeri etkeni",
+        "Pazara yakınlık"
+      ]
+    ],
+    "note": "Hammadde, enerji, pazar ve teknoloji farklı kuruluş etkenleridir. Hammadde bulunması tek başına sanayi gelişimini garanti etmez.",
+    "ids": [
+      "COG-0057",
+      "COG-0136",
+      "COG-0137",
+      "COG-0132",
+      "COG-0131",
+      "COG-0130",
+      "COG-0492",
+      "COG-0129",
+      "COG-0418",
+      "COG-0274"
+    ],
+    "types": [
+      "cevher",
+      "cevher",
+      "yakit",
+      "yakit",
+      "tesis",
+      "sektor",
+      "bolge",
+      "bolge",
+      "faaliyet",
+      "etken"
+    ],
+    "distractors": {
+      "cevher": [
+        "Boksit",
+        "Demir cevheri",
+        "Kromit",
+        "Bakır cevheri"
+      ],
+      "yakit": [
+        "Taş kömürü",
+        "Linyit",
+        "Turba",
+        "Doğal gaz"
+      ],
+      "sektor": [
+        "Cam sanayisi",
+        "Seramik üretimi",
+        "Çimento üretimi"
+      ],
+      "bolge": [
+        "Serbest bölge",
+        "Organize sanayi bölgesi",
+        "Teknopark"
+      ],
+      "faaliyet": [
+        "Pazarlama",
+        "Rutin bakım",
+        "Depolama"
+      ],
+      "etken": [
+        "Enerji kaynağına yakınlık",
+        "Hammaddeye yakınlık",
+        "Su kaynağına yakınlık"
+      ],
+      "tesis": [
+        "Termik santral",
+        "Demir-çelik tesisi",
+        "Petrokimya tesisi"
+      ]
+    }
+  },
+  {
+    "key": "c_ulasim",
+    "ders": "cografya",
+    "topics": [
+      "ulasim"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Ağır ve hacimli yüklerde birim maliyeti düşük kıtalararası ulaşım",
+        "Deniz yolu"
+      ],
+      [
+        "Yolcunun uzun mesafeyi kısa sürede aşmasını sağlayan ulaşım",
+        "Hava yolu"
+      ],
+      [
+        "Kapıdan kapıya esneklik sağlayan kara ulaşımı",
+        "Kara yolu"
+      ],
+      [
+        "Raylar üzerinde toplu yük ve yolcu taşıyan sistem",
+        "Demir yolu"
+      ],
+      [
+        "Petrol ve doğal gazın borularla taşınması",
+        "Boru hattı"
+      ],
+      [
+        "Farklı taşıma türlerinin bir araya geldiği dağıtım merkezi",
+        "Lojistik merkez"
+      ],
+      [
+        "İstanbul Boğazı altından raylı sistem geçişi",
+        "Marmaray"
+      ],
+      [
+        "Marmara ile Ege'yi bağlayan doğal geçit",
+        "Çanakkale Boğazı"
+      ],
+      [
+        "Karadeniz ile Marmara'yı bağlayan doğal geçit",
+        "İstanbul Boğazı"
+      ],
+      [
+        "Dağlık kesimlerde güzergâhı kısaltan yer altı geçiş yapısı",
+        "Tünel"
+      ]
+    ],
+    "note": "Hız, maliyet ve esneklik farklı ölçütlerdir; en hızlı ulaşımın her yük için en ekonomik olması gerekmez.",
+    "ids": [
+      "COG-0496",
+      "COG-0493",
+      "COG-0280",
+      "COG-0281",
+      "COG-0423",
+      "COG-0286",
+      "COG-0424",
+      "COG-0385",
+      "COG-0279",
+      "COG-0288"
+    ],
+    "types": [
+      "hidro",
+      "hidro",
+      "hidro",
+      "hidro",
+      "hidro",
+      "tesis",
+      "gecit",
+      "gecit",
+      "gecit",
+      "tesis"
+    ],
+    "distractors": {
+      "hidro": [
+        "Deniz yolu",
+        "Hava yolu",
+        "Kara yolu",
+        "Demir yolu",
+        "Boru hattı"
+      ],
+      "gecit": [
+        "Hürmüz Boğazı",
+        "Cebelitarık Boğazı",
+        "Bering Boğazı"
+      ],
+      "tesis": [
+        "Liman",
+        "Viyadük",
+        "Köprü",
+        "Havalimanı"
+      ]
+    }
+  },
+  {
+    "key": "c_nufus",
+    "ders": "cografya",
+    "topics": [
+      "nufus_yerlesme",
+      "Nüfus"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Doğum sayısından ölüm sayısının çıkarılması",
+        "Doğal nüfus artışı"
+      ],
+      [
+        "Alınan göçten verilen göçün çıkarılması",
+        "Net göç"
+      ],
+      [
+        "Toplam nüfusun yüzölçümüne oranı",
+        "Aritmetik nüfus yoğunluğu"
+      ],
+      [
+        "Tarımla uğraşan nüfusun tarım alanına oranı",
+        "Tarımsal nüfus yoğunluğu"
+      ],
+      [
+        "Nüfusun yaş ve cinsiyet yapısını gösteren grafik",
+        "Nüfus piramidi"
+      ],
+      [
+        "Kırsal nüfusun kentlere yönelmesiyle kent nüfus payının artması",
+        "Kentleşme"
+      ],
+      [
+        "Çalışma çağındakiler dışındaki yaş gruplarının çalışma çağındakilere oranı",
+        "Yaş bağımlılık oranı"
+      ],
+      [
+        "Kendi ülkesi içinde yer değiştirme durumunun ülke sınırı ölçütüne göre adı",
+        "İç göç"
+      ],
+      [
+        "Bir ülkeden başka bir ülkeye yer değiştirme durumunun ülke sınırı ölçütüne göre adı",
+        "Dış göç"
+      ],
+      [
+        "Yılın belirli döneminde çalışmak için yapılan yer değiştirme",
+        "Mevsimlik göç"
+      ]
+    ],
+    "note": "Net göçün negatif olması doğal artış yüksekse toplam nüfusun mutlaka azaldığı anlamına gelmez.",
+    "ids": [
+      "COG-0266",
+      "COG-0414",
+      "COG-0040",
+      "COG-0120",
+      "COG-0412",
+      "COG-0047",
+      "COG-0119",
+      "COG-0370",
+      "COG-0416",
+      "COG-0376"
+    ],
+    "types": [
+      "nufusorani",
+      "nufusorani",
+      "nufusorani",
+      "nufusorani",
+      "nufusgosterge",
+      "nufusgosterge",
+      "nufusorani",
+      "goc",
+      "goc",
+      "goc"
+    ],
+    "distractors": {
+      "goc": [
+        "İç göç",
+        "Dış göç",
+        "Mevsimlik göç",
+        "Sürekli göç",
+        "Zorunlu göç"
+      ],
+      "nufusorani": [
+        "Doğal nüfus artışı",
+        "Net göç",
+        "Aritmetik nüfus yoğunluğu",
+        "Tarımsal nüfus yoğunluğu",
+        "Yaş bağımlılık oranı"
+      ],
+      "nufusgosterge": [
+        "Nüfus piramidi",
+        "Nüfus sayımı",
+        "Yaş bağımlılık oranı",
+        "Kentleşme"
+      ]
+    }
+  },
+  {
+    "key": "c_ticaret",
+    "ders": "cografya",
+    "topics": [
+      "dis_ticaret"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Malların başka ülkelere satılması",
+        "İhracat"
+      ],
+      [
+        "Malların başka ülkelerden satın alınması",
+        "İthalat"
+      ],
+      [
+        "Mal ihracatı geliri ile mal ithalatı gideri arasındaki fark",
+        "Dış ticaret dengesi"
+      ],
+      [
+        "Mal ve hizmetler ile birincil ve ikincil gelir işlemlerinin izlendiği hesap",
+        "Cari işlemler hesabı"
+      ],
+      [
+        "Doğrudan yabancı yatırımların kaydedildiği ödemeler dengesi hesabı",
+        "Finans hesabı"
+      ],
+      [
+        "Bir malın üretim aşamalarında oluşturulan ek ekonomik değer",
+        "Katma değer"
+      ],
+      [
+        "Yabancı paranın ulusal para cinsinden fiyatı",
+        "Döviz kuru"
+      ],
+      [
+        "Dış ticarette uygulanan ithalat vergisi",
+        "Gümrük vergisi"
+      ],
+      [
+        "İthal edilebilecek ürün miktarına getirilen sınır",
+        "Kota"
+      ],
+      [
+        "Ekonominin dış alım ve satımını etkileyen ulaşım gideri",
+        "Taşıma maliyeti"
+      ]
+    ],
+    "note": "Cari denge yalnızca mal ticaretinden oluşmaz. Doğrudan yatırım sermayesi ile turizm hizmet geliri farklı hesaplarda izlenir.",
+    "ids": [
+      "COG-0303",
+      "COG-0430",
+      "COG-0431",
+      "COG-0310",
+      "COG-0432",
+      "COG-0309",
+      "COG-0433",
+      "COG-0307",
+      "COG-0302",
+      "COG-0304"
+    ],
+    "types": [
+      "finans",
+      "finans",
+      "denge",
+      "hesap",
+      "hesap",
+      "finans",
+      "finans",
+      "finans",
+      "finans",
+      "finans"
+    ],
+    "distractors": {
+      "finans": [
+        "İhracat",
+        "İthalat",
+        "Gümrük vergisi",
+        "Kota",
+        "Taşıma maliyeti",
+        "Katma değer"
+      ],
+      "denge": [
+        "Cari işlemler dengesi",
+        "Bütçe dengesi",
+        "Ödemeler dengesi"
+      ],
+      "hesap": [
+        "Sermaye hesabı",
+        "Finans hesabı",
+        "Cari işlemler hesabı"
+      ]
+    }
+  },
+  {
+    "key": "c_cevre",
+    "ders": "cografya",
+    "topics": [
+      "cevre",
+      "Çevre"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Göl suyunda aşırı besin yüküne bağlı alg artışı ve oksijen azalması",
+        "Ötrofikasyon"
+      ],
+      [
+        "Üst toprağın su veya rüzgârla taşınması",
+        "Erozyon"
+      ],
+      [
+        "Toprak ve kaya kütlesinin yamaç boyunca kayması",
+        "Heyelan"
+      ],
+      [
+        "Kurak ve yarı kurak alanlarda arazi verimliliğinin bozulması",
+        "Çölleşme"
+      ],
+      [
+        "Atıkların üretimde yeniden hammadde olarak değerlendirilmesi",
+        "Geri dönüşüm"
+      ],
+      [
+        "Doğal kaynakları gelecek kuşakların ihtiyacını gözeterek kullanma",
+        "Sürdürülebilirlik"
+      ],
+      [
+        "Atmosferde ısı tutucu gazların artışıyla güçlenen etki",
+        "Sera etkisi"
+      ],
+      [
+        "Bir alandaki canlı türleri ve genetik çeşitlilik bütünü",
+        "Biyolojik çeşitlilik"
+      ],
+      [
+        "Bir ekosistemin zarar görmeden kaldırabileceği kullanım düzeyi",
+        "Taşıma kapasitesi"
+      ],
+      [
+        "İklim değişikliğinin etkilerine karşı dayanıklılık geliştirme",
+        "Uyum"
+      ]
+    ],
+    "note": "Toprağın taşınması erozyon, kütle hâlinde kayması heyelandır. İklime uyum ile sera gazı azaltımı ayrı yaklaşımlardır.",
+    "ids": [
+      "COG-0067",
+      "COG-0069",
+      "COG-0150",
+      "COG-0319",
+      "COG-0435",
+      "COG-0315",
+      "COG-0436",
+      "COG-0316",
+      "COG-0318",
+      "COG-0437"
+    ]
+  },
+  {
+    "key": "c_turizm",
+    "ders": "cografya",
+    "topics": [
+      "turizm"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Kaplıca ve sıcak su kaynaklarına dayalı turizm",
+        "Termal turizm"
+      ],
+      [
+        "Dağlarda kar koşullarına bağlı spor amaçlı turizm",
+        "Kış turizmi"
+      ],
+      [
+        "Bilimsel ve mesleki toplantılara dayalı turizm",
+        "Kongre turizmi"
+      ],
+      [
+        "Tarihî yapı ve müzeleri ziyaret etmeye dayalı turizm",
+        "Kültür turizmi"
+      ],
+      [
+        "Doğayı koruma ve yerel halkın yararını birlikte gözeten turizm",
+        "Ekoturizm"
+      ],
+      [
+        "Dinî öneme sahip yerleri ziyaret etmeye dayalı turizm",
+        "İnanç turizmi"
+      ],
+      [
+        "Yiyecek ve içecek kültürünü tanımaya dayalı turizm",
+        "Gastronomi turizmi"
+      ],
+      [
+        "Denizde teknelerle gezi ve konaklama amaçlı turizm",
+        "Yat turizmi"
+      ],
+      [
+        "Hastanede cerrahi tedavi için başka ülkeye seyahat etme",
+        "Medikal turizm"
+      ],
+      [
+        "Günübirlik bir faaliyetten farklı olarak gecelemeyi içeren hizmet",
+        "Konaklama"
+      ]
+    ],
+    "note": "Turizm türleri yararlanılan kaynağa göre ayrılır. Her turizm faaliyetinin yalnızca yaz aylarında yapılması gerekmez.",
+    "ids": [
+      "COG-0390",
+      "COG-0441",
+      "COG-0438",
+      "COG-0439",
+      "COG-0440",
+      "COG-0391",
+      "COG-0524",
+      "COG-0324",
+      "COG-0322",
+      "COG-0323"
+    ]
+  },
+  {
+    "key": "v_hukuk",
+    "ders": "vatandaslik",
+    "topics": [
+      "Hukuk"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Kişinin mal varlığına devlet gücüyle başvurularak borcun yerine getirilmesi",
+        "Cebri icra"
+      ],
+      [
+        "Hukuka aykırı işlem nedeniyle doğan zararın giderilmesi",
+        "Tazminat"
+      ],
+      [
+        "Suç karşılığı uygulanan yaptırımın genel adı",
+        "Ceza"
+      ],
+      [
+        "İdari işlemin yargı kararıyla ortadan kaldırılması",
+        "İptal"
+      ],
+      [
+        "Yargılamanın yürütülmesine ilişkin kuralları inceleyen hukuk alanı",
+        "Usul hukuku"
+      ],
+      [
+        "Aile ve miras ilişkilerini de düzenleyen özel hukuk dalı",
+        "Medeni hukuk"
+      ],
+      [
+        "Suç ve cezaları düzenleyen hukuk dalı",
+        "Ceza hukuku"
+      ],
+      [
+        "Devletler arasındaki hukuki ilişkileri düzenleyen alan",
+        "Devletler genel hukuku"
+      ],
+      [
+        "Kişilerin kan hısımlığı ilişkileri ve derecelerini anlatan kavram",
+        "Hısımlık"
+      ],
+      [
+        "Bir hakkı kullanırken dürüst davranma yükümlülüğü",
+        "Dürüstlük kuralı"
+      ]
+    ],
+    "note": "Hakların içeriğini düzenleyen maddi hukuk ile mahkemede ileri sürülme yolunu düzenleyen usul hukuku farklıdır.",
+    "ids": [
+      "VAT-0066",
+      "VAT-0327",
+      "VAT-0417",
+      "VAT-0325",
+      "VAT-0065",
+      "VAT-0258",
+      "VAT-0070",
+      "VAT-0416",
+      "VAT-0489",
+      "VAT-0064"
+    ],
+    "types": [
+      "yaptirim",
+      "yaptirim",
+      "yaptirim",
+      "yaptirim",
+      "dal",
+      "dal",
+      "dal",
+      "dal",
+      "kisi",
+      "ilke"
+    ],
+    "distractors": {
+      "yaptirim": [
+        "Cebri icra",
+        "Tazminat",
+        "Ceza",
+        "İptal",
+        "Hükümsüzlük"
+      ],
+      "dal": [
+        "Usul hukuku",
+        "Medeni hukuk",
+        "Ceza hukuku",
+        "Devletler genel hukuku",
+        "Ticaret hukuku"
+      ],
+      "kisi": [
+        "Fiil ehliyeti",
+        "Hak ehliyeti",
+        "Yerleşim yeri"
+      ],
+      "ilke": [
+        "Kanunilik ilkesi",
+        "İrade özerkliği",
+        "Kusursuz sorumluluk"
+      ]
+    }
+  },
+  {
+    "key": "v_anayasa",
+    "ders": "vatandaslik",
+    "topics": [
+      "Anayasa"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "1982 Anayasası'nın ilk maddesindeki devlet şekli",
+        "Cumhuriyet"
+      ],
+      [
+        "1982 Anayasası'nın üçüncü maddesindeki başkent",
+        "Ankara"
+      ],
+      [
+        "1982 Anayasası'nın üçüncü maddesindeki devlet dili",
+        "Türkçe"
+      ],
+      [
+        "1982 Anayasası'nın ilk üç maddesini değişiklikten koruyan madde",
+        "4. madde"
+      ],
+      [
+        "Egemenliğin millete ait olduğunu düzenleyen madde",
+        "6. madde"
+      ],
+      [
+        "Yargı yetkisinin bağımsız ve tarafsız mahkemelerce kullanılmasını düzenleyen madde",
+        "9. madde"
+      ],
+      [
+        "1982 Anayasası'nın kanun önünde eşitliği düzenleyen maddesi",
+        "10. madde"
+      ],
+      [
+        "Anayasa'nın bağlayıcılığı ve üstünlüğünü düzenleyen madde",
+        "11. madde"
+      ],
+      [
+        "Temel hakların sınırlandırılmasının genel güvencelerini düzenleyen madde",
+        "13. madde"
+      ],
+      [
+        "Vergi ödevini düzenleyen anayasa maddesi",
+        "73. madde"
+      ]
+    ],
+    "note": "Anayasa'nın ilk üç maddesi özel korumalıdır; egemenliğe ilişkin 6. maddeyi bu üç maddeden biri gibi göstermemek gerekir.",
+    "ids": [
+      "VAT-0423",
+      "VAT-0425",
+      "VAT-0330",
+      "VAT-0349",
+      "VAT-0457",
+      "VAT-0424",
+      "VAT-0269",
+      "VAT-0010",
+      "VAT-0075",
+      "VAT-0492"
+    ],
+    "types": [
+      "rejim",
+      "baskent",
+      "dil",
+      "madde",
+      "madde",
+      "madde",
+      "madde",
+      "madde",
+      "madde",
+      "madde"
+    ],
+    "distractors": {
+      "rejim": [
+        "Meşruti monarşi",
+        "Mutlak monarşi"
+      ],
+      "baskent": [
+        "İstanbul",
+        "İzmir",
+        "Bursa"
+      ],
+      "dil": [
+        "Osmanlıca",
+        "Arapça",
+        "Fransızca"
+      ],
+      "madde": [
+        "2. madde",
+        "3. madde",
+        "12. madde",
+        "14. madde",
+        "74. madde"
+      ]
+    }
+  },
+  {
+    "key": "v_tbmm",
+    "ders": "vatandaslik",
+    "topics": [
+      "TBMM"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "TBMM'nin anayasal üye tam sayısı",
+        "600"
+      ],
+      [
+        "Milletvekili seçilebilmek için asgari yaş",
+        "18"
+      ],
+      [
+        "TBMM ve Cumhurbaşkanlığı seçimlerinin olağan döneminin yıl olarak süresi",
+        "5"
+      ],
+      [
+        "Milletvekilinin yasama çalışmasındaki oy ve sözlerinden dolayı sorumsuzluğu",
+        "Yasama sorumsuzluğu"
+      ],
+      [
+        "Milletvekilinin soruşturma ve yargılamaya karşı usuli koruması",
+        "Yasama dokunulmazlığı"
+      ],
+      [
+        "Belli konuda bilgi edinmek için yapılan Meclis incelemesi",
+        "Meclis araştırması"
+      ],
+      [
+        "Toplumu ve devlet faaliyetlerini ilgilendiren konunun Genel Kurulda görüşülmesi",
+        "Genel görüşme"
+      ],
+      [
+        "Cumhurbaşkanı yardımcıları ve bakanlardan yazılı bilgi istenmesi",
+        "Yazılı soru"
+      ],
+      [
+        "Bakanların görev suçlarından sorumluluğunu konu alan Meclis yolu",
+        "Meclis soruşturması"
+      ],
+      [
+        "Bütçe uygulamasının gerçekleşen sonuçlarını gösteren kanun",
+        "Kesin hesap kanunu"
+      ]
+    ],
+    "note": "Sorumsuzluk ile dokunulmazlık, araştırma ile soruşturma farklıdır. Aynı denetim başlığı altında olmak aynı usule tabi olmayı gerektirmez.",
+    "ids": [
+      "VAT-0290",
+      "VAT-0025",
+      "VAT-0084",
+      "VAT-0023",
+      "VAT-0367",
+      "VAT-0462",
+      "VAT-0366",
+      "VAT-0083",
+      "VAT-0086",
+      "VAT-0433"
+    ],
+    "types": [
+      "sayi",
+      "yas",
+      "donem",
+      "kavram",
+      "kavram",
+      "denetim",
+      "denetim",
+      "denetim",
+      "denetim",
+      "kanun"
+    ],
+    "distractors": {
+      "sayi": [
+        "400",
+        "450",
+        "500",
+        "550",
+        "600"
+      ],
+      "kavram": [
+        "Yasama sorumsuzluğu",
+        "Yasama dokunulmazlığı",
+        "Hâkimlik teminatı",
+        "İdari vesayet"
+      ],
+      "yas": [
+        "16",
+        "18",
+        "21",
+        "25",
+        "30",
+        "40"
+      ],
+      "donem": [
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "denetim": [
+        "Meclis araştırması",
+        "Meclis soruşturması",
+        "Yazılı soru",
+        "Genel görüşme"
+      ],
+      "kanun": [
+        "Bütçe kanunu",
+        "Yetki kanunu",
+        "İçtüzük"
+      ]
+    }
+  },
+  {
+    "key": "v_yurutme",
+    "ders": "vatandaslik",
+    "topics": [
+      "Yürütme"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "1982 Anayasası'na göre yürütme yetkisini kullanan makam",
+        "Cumhurbaşkanı"
+      ],
+      [
+        "Cumhurbaşkanı seçilmek için asgari yaş",
+        "40"
+      ],
+      [
+        "Cumhurbaşkanı seçilmede aranan öğrenim düzeyi",
+        "Yükseköğrenim"
+      ],
+      [
+        "Cumhurbaşkanı yardımcılarını atayan makam",
+        "Cumhurbaşkanı"
+      ],
+      [
+        "Bakanların görevleri bakımından sorumlu olduğu makam",
+        "Cumhurbaşkanı"
+      ],
+      [
+        "Yürütme yetkisine ilişkin anayasal düzenleyici işlem türü",
+        "Cumhurbaşkanlığı kararnamesi"
+      ],
+      [
+        "Cumhurbaşkanının makamı boşalınca vekâlet edecek kişi",
+        "Cumhurbaşkanı yardımcısı"
+      ],
+      [
+        "Cumhurbaşkanının devletin başı sıfatıyla temsil ettiği varlık",
+        "Türkiye Cumhuriyeti ve Türk milletinin birliği"
+      ],
+      [
+        "Bakan olarak atanan milletvekilinin milletvekilliği bakımından sonucu",
+        "Üyeliğinin sona ermesi"
+      ],
+      [
+        "Cumhurbaşkanlığı kararnamesi ile kanun çatışırsa uygulanacak norm",
+        "Kanun"
+      ]
+    ],
+    "note": "Kanun ile kararname aynı güçte değildir. Yasama yetkisi TBMM'de, yürütme yetkisi Cumhurbaşkanındadır.",
+    "ids": [
+      "VAT-0211",
+      "VAT-0217",
+      "VAT-0213",
+      "VAT-0479",
+      "VAT-0404",
+      "VAT-0028",
+      "VAT-0089",
+      "VAT-0090",
+      "VAT-0436",
+      "VAT-0464"
+    ],
+    "types": [
+      "makam",
+      "yas",
+      "egitim",
+      "makam",
+      "makam",
+      "islem",
+      "vekil",
+      "temsil",
+      "sonuc",
+      "norm"
+    ],
+    "distractors": {
+      "yas": [
+        "16",
+        "18",
+        "21",
+        "25",
+        "30",
+        "40"
+      ],
+      "makam": [
+        "TBMM",
+        "Anayasa Mahkemesi",
+        "Yüksek Seçim Kurulu"
+      ],
+      "egitim": [
+        "İlköğretim",
+        "Ortaöğretim",
+        "Lisansüstü eğitim"
+      ],
+      "islem": [
+        "Yönetmelik",
+        "Kanun",
+        "TBMM İçtüzüğü"
+      ],
+      "vekil": [
+        "TBMM Başkanı",
+        "Adalet Bakanı",
+        "İçişleri Bakanı"
+      ],
+      "sonuc": [
+        "Üyeliğinin aynen sürmesi",
+        "Üyeliğinin geçici askıya alınması"
+      ],
+      "norm": [
+        "Cumhurbaşkanlığı kararnamesi",
+        "Yönetmelik",
+        "Genelge"
+      ],
+      "temsil": [
+        "Yalnızca yürütme teşkilatı",
+        "Yalnızca hükûmet üyeleri"
+      ]
+    }
+  },
+  {
+    "key": "v_yargi",
+    "ders": "vatandaslik",
+    "topics": [
+      "Yargı"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Kanunların Anayasa'ya uygunluğunu denetleyen mahkeme",
+        "Anayasa Mahkemesi"
+      ],
+      [
+        "Adli yargıdaki temyiz incelemesinin yüksek mahkemesi",
+        "Yargıtay"
+      ],
+      [
+        "İdari yargının yüksek mahkemesi",
+        "Danıştay"
+      ],
+      [
+        "Kamu hesaplarını TBMM adına denetleyen kurum",
+        "Sayıştay"
+      ],
+      [
+        "Adli ve idari yargı arasındaki görev uyuşmazlıklarını çözen mahkeme",
+        "Uyuşmazlık Mahkemesi"
+      ],
+      [
+        "Seçimlerin genel yönetim ve denetiminden sorumlu kurul",
+        "Yüksek Seçim Kurulu"
+      ],
+      [
+        "Hâkim ve savcıların mesleğe kabul ve özlük işlerini yürüten anayasal kurul",
+        "Hâkimler ve Savcılar Kurulu"
+      ],
+      [
+        "Ceza yargılamasında kamu adına iddia makamı",
+        "Cumhuriyet savcısı"
+      ],
+      [
+        "Mahkemelerin hiçbir makamdan emir almadan karar vermesi",
+        "Yargı bağımsızlığı"
+      ],
+      [
+        "Hâkimin taraflara eşit mesafede olması",
+        "Tarafsızlık"
+      ]
+    ],
+    "note": "Yargı bağımsızlığı dış müdahaleyle, tarafsızlık uyuşmazlığın taraflarına yaklaşımla ilgilidir. Mali denetim norm denetimi değildir.",
+    "ids": [
+      "VAT-0441",
+      "VAT-0097",
+      "VAT-0408",
+      "VAT-0304",
+      "VAT-0376",
+      "VAT-0303",
+      "VAT-0038",
+      "VAT-0375",
+      "VAT-0467",
+      "VAT-0468"
+    ],
+    "types": [
+      "mahkeme",
+      "mahkeme",
+      "mahkeme",
+      "mahkeme",
+      "mahkeme",
+      "mahkeme",
+      "kurul",
+      "gorev",
+      "ilke",
+      "ilke"
+    ],
+    "distractors": {
+      "mahkeme": [
+        "Anayasa Mahkemesi",
+        "Yargıtay",
+        "Danıştay",
+        "Sayıştay",
+        "Uyuşmazlık Mahkemesi",
+        "Yüksek Seçim Kurulu"
+      ],
+      "kurul": [
+        "Yüksek Seçim Kurulu",
+        "Kamu Görevlileri Etik Kurulu"
+      ],
+      "gorev": [
+        "Hâkim",
+        "Müdafi",
+        "Bilirkişi"
+      ],
+      "ilke": [
+        "Kanuni hâkim güvencesi",
+        "Doğal yargıç ilkesi",
+        "Aleniyet"
+      ]
+    }
+  },
+  {
+    "key": "v_hak",
+    "ders": "vatandaslik",
+    "topics": [
+      "Haklar",
+      "Hak-Ödev"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Konut dokunulmazlığının anayasal hak sınıfı",
+        "Kişinin hakları ve ödevleri"
+      ],
+      [
+        "Çalışma hakkının anayasal hak sınıfı",
+        "Sosyal ve ekonomik haklar ve ödevler"
+      ],
+      [
+        "Sosyal güvenlik hakkının anayasal hak sınıfı",
+        "Sosyal ve ekonomik haklar ve ödevler"
+      ],
+      [
+        "Seçme ve seçilme hakkının anayasal hak sınıfı",
+        "Siyasi haklar ve ödevler"
+      ],
+      [
+        "Dilekçe hakkının anayasal hak sınıfı",
+        "Siyasi haklar ve ödevler"
+      ],
+      [
+        "Düşünce ve kanaat hürriyetinin anayasal hak sınıfı",
+        "Kişinin hakları ve ödevleri"
+      ],
+      [
+        "Temel hak sınırlamasında aracın amaçla dengeli olması",
+        "Ölçülülük"
+      ],
+      [
+        "Sınırlama ile hakkın kullanılmasının anlamsız hâle getirilememesi",
+        "Hakkın özüne dokunmama"
+      ],
+      [
+        "Hak ihlali iddiasını mahkemeye taşıyabilmeyi ifade eden anayasal hürriyetin adı",
+        "Hak arama hürriyeti"
+      ],
+      [
+        "Kişinin suçluluğu hükmen sabit olana kadar suçlu sayılmaması",
+        "Masumiyet karinesi"
+      ]
+    ],
+    "note": "Hak sınıfları benzer adlardan değil Anayasa'daki yerlerinden belirlenir. Sosyal haklarla siyasi katılma hakları aynı değildir.",
+    "ids": [
+      "VAT-0077",
+      "VAT-0068",
+      "VAT-0078",
+      "VAT-0016",
+      "VAT-0014",
+      "VAT-0017",
+      "VAT-0361",
+      "VAT-0455",
+      "VAT-0264",
+      "VAT-0476"
+    ],
+    "types": [
+      "sinif",
+      "sinif",
+      "sinif",
+      "sinif",
+      "sinif",
+      "sinif",
+      "ozgurluk",
+      "ozgurluk",
+      "ozgurluk",
+      "ozgurluk"
+    ],
+    "distractors": {
+      "ozgurluk": [
+        "Ölçülülük",
+        "Hakkın özüne dokunmama",
+        "Hak arama hürriyeti",
+        "Masumiyet karinesi",
+        "Suç ve cezaların kanuniliği"
+      ],
+      "sinif": [
+        "Kişinin hakları ve ödevleri",
+        "Sosyal ve ekonomik haklar ve ödevler",
+        "Siyasi haklar ve ödevler"
+      ]
+    }
+  },
+  {
+    "key": "v_secim",
+    "ders": "vatandaslik",
+    "topics": [
+      "Seçimler"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Seçmenin tercihini başkaları bilmeden açıklaması",
+        "Gizli oy"
+      ],
+      [
+        "Oyların sayımının gözleme açık yapılması",
+        "Açık sayım ve döküm"
+      ],
+      [
+        "Her seçmenin oyunun eşit ağırlık taşıması",
+        "Eşit oy"
+      ],
+      [
+        "Seçmenin aracı seçmenler olmadan temsilcisini seçmesi",
+        "Tek dereceli seçim"
+      ],
+      [
+        "Seçimlerin yönetim ve denetiminden sorumlu anayasal organ",
+        "Yüksek Seçim Kurulu"
+      ],
+      [
+        "Oy kullanma için anayasal asgari yaş",
+        "18"
+      ],
+      [
+        "Seçmenlerin kayıtlarının tutulduğu liste",
+        "Seçmen kütüğü"
+      ],
+      [
+        "Belirli temsilcilerin seçilmesi için oluşturulan coğrafi birim",
+        "Seçim çevresi"
+      ],
+      [
+        "Silah altında bulunduğu sürece oy kullanamayan asker grubu",
+        "Er ve erbaşlar"
+      ],
+      [
+        "Siyasi partilerin tüzel kişiliklerini koruyarak seçimlerde iş birliği yapması",
+        "Seçim ittifakı"
+      ]
+    ],
+    "note": "Oy vermenin gizliliği sayımın gizli yapılmasını gerektirmez. Seçim ittifakı partilerin birleşmesiyle aynı işlem değildir.",
+    "ids": [
+      "VAT-0245",
+      "VAT-0318",
+      "VAT-0472",
+      "VAT-0389",
+      "VAT-0247",
+      "VAT-0449",
+      "VAT-0116",
+      "VAT-0412",
+      "VAT-0249",
+      "VAT-0112"
+    ],
+    "types": [
+      "sayim",
+      "sayim",
+      "sayim",
+      "sayim",
+      "mahkeme",
+      "yas",
+      "kayit",
+      "bolge",
+      "kisi",
+      "isbirligi"
+    ],
+    "distractors": {
+      "mahkeme": [
+        "Anayasa Mahkemesi",
+        "Yargıtay",
+        "Danıştay",
+        "Sayıştay",
+        "Uyuşmazlık Mahkemesi",
+        "Yüksek Seçim Kurulu"
+      ],
+      "sayim": [
+        "Gizli oy",
+        "Açık sayım ve döküm",
+        "Eşit oy",
+        "Tek dereceli seçim",
+        "Genel oy"
+      ],
+      "kisi": [
+        "Emekli subaylar",
+        "Muhtarlar",
+        "Üniversite öğretim üyeleri"
+      ],
+      "yas": [
+        "16",
+        "18",
+        "21",
+        "25",
+        "30",
+        "40"
+      ],
+      "kayit": [
+        "Sandık sonuç tutanağı",
+        "Seçim takvimi",
+        "Parti üye listesi"
+      ],
+      "bolge": [
+        "Sandık kurulu",
+        "İl seçim kurulu",
+        "Seçmen kütüğü"
+      ],
+      "isbirligi": [
+        "Parti birleşmesi",
+        "Parti kapatma",
+        "Parti mali denetimi"
+      ]
+    }
+  },
+  {
+    "key": "v_idare",
+    "ders": "vatandaslik",
+    "topics": [
+      "İdare"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "İl genel yönetiminin başındaki merkezî idare görevlisi",
+        "Vali"
+      ],
+      [
+        "İlçe genel yönetiminin başındaki merkezî idare görevlisi",
+        "Kaymakam"
+      ],
+      [
+        "Yerel ortak ihtiyaçlar için kurulan mahallî idarelerden biri",
+        "Belediye"
+      ],
+      [
+        "Merkezî idarenin mahallî idareler üzerindeki kanuna dayalı denetimi",
+        "İdari vesayet"
+      ],
+      [
+        "Aynı tüzel kişilik içinde üst makamın ast üzerindeki denetimi",
+        "Hiyerarşi"
+      ],
+      [
+        "Devletin tek tüzel kişiliği içinde örgütlenen idare biçimi",
+        "Merkezden yönetim"
+      ],
+      [
+        "Ayrı kamu tüzel kişileriyle mahallî ihtiyaçların karşılanması",
+        "Yer yönünden yerinden yönetim"
+      ],
+      [
+        "Valinin merkeze danışmadan merkez adına karar alabilmesi ilkesi",
+        "Yetki genişliği"
+      ],
+      [
+        "İdarenin bütün işlem ve eylemlerinin hukuka bağlı olması",
+        "Hukuk devleti"
+      ],
+      [
+        "Kamu tüzel kişiliğinin kurulabileceği anayasal işlem türleri",
+        "Kanun veya Cumhurbaşkanlığı kararnamesi"
+      ]
+    ],
+    "note": "Vesayet farklı tüzel kişiler arasındadır; hiyerarşi aynı tüzel kişilik içindedir. Yetki genişliği yerinden yönetim değildir.",
+    "ids": [
+      "VAT-0406",
+      "VAT-0093",
+      "VAT-0438",
+      "VAT-0466",
+      "VAT-0218",
+      "VAT-0092",
+      "VAT-0299",
+      "VAT-0480",
+      "VAT-0373",
+      "VAT-0437"
+    ],
+    "types": [
+      "gorev",
+      "gorev",
+      "kurum",
+      "denetim",
+      "denetim",
+      "sistem",
+      "sistem",
+      "sistem",
+      "ilke",
+      "islem"
+    ],
+    "distractors": {
+      "kurum": [
+        "İl idare kurulu",
+        "Kaymakamlık",
+        "Valilik"
+      ],
+      "gorev": [
+        "Belediye başkanı",
+        "Muhtar",
+        "İl genel meclisi başkanı"
+      ],
+      "denetim": [
+        "İdari vesayet",
+        "Hiyerarşi",
+        "Yargısal denetim"
+      ],
+      "sistem": [
+        "Merkezden yönetim",
+        "Yer yönünden yerinden yönetim",
+        "Yetki genişliği"
+      ],
+      "ilke": [
+        "Sosyal devlet",
+        "Eşitlik",
+        "Millî egemenlik"
+      ],
+      "islem": [
+        "Yalnızca yönetmelik",
+        "Yalnızca genelge",
+        "Özel hukuk sözleşmesi"
+      ]
+    }
+  },
+  {
+    "key": "v_hizmet",
+    "ders": "vatandaslik",
+    "topics": [
+      "Kamu Hizmetleri"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Kamu hizmetinin düzenli ve kesintisiz sürdürülmesi ilkesi",
+        "Süreklilik"
+      ],
+      [
+        "Aynı hukuki durumdaki kişilere aynı hizmet koşullarının sunulması",
+        "Eşitlik"
+      ],
+      [
+        "Kamu hizmetinin değişen toplumsal ve teknik ihtiyaçlara uyarlanması",
+        "Değişkenlik"
+      ],
+      [
+        "Hizmetin toplumun ortak ihtiyacını karşılamaya yönelmesi",
+        "Kamu yararı"
+      ],
+      [
+        "İdarenin hukuka aykırı eyleminden doğan zararı gidermesi",
+        "İdarenin sorumluluğu"
+      ],
+      [
+        "Kamu personelinin görevin gerektirdiği niteliklere göre seçilmesi",
+        "Liyakat"
+      ],
+      [
+        "İdare işlemlerinin mahkemelerce incelenmesi güvencesi",
+        "Yargısal denetim"
+      ],
+      [
+        "Hizmetin yürütülmesinde yetkilerin keyfî kullanılmamasını gerektiren temel ilke",
+        "Hukuka bağlılık"
+      ],
+      [
+        "Devletin kamu hizmetinde kullandığı özel kişileri aşan yetkilerinin genel adı",
+        "Kamu gücü"
+      ],
+      [
+        "Bir kamu hizmetinin yerine getirilmesinde kullanılan para ve varlıklar",
+        "Kamu kaynakları"
+      ]
+    ],
+    "note": "Kamu hizmetinin sürekliliği her hizmetin günün bütün saatlerinde aynı biçimde sunulması demek değildir. Çalışma düzeni hizmetin niteliğine göre belirlenir.",
+    "ids": [
+      "VAT-0308",
+      "VAT-0100",
+      "VAT-0443",
+      "VAT-0043",
+      "VAT-0044",
+      "VAT-0233",
+      "VAT-0379",
+      "VAT-0469",
+      "VAT-0232",
+      "VAT-0039"
+    ]
+  },
+  {
+    "key": "v_parti",
+    "ders": "vatandaslik",
+    "topics": [
+      "Siyasi Partiler"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Siyasi partilerin kurulmasında anayasal usul",
+        "Önceden izin almadan kurulma"
+      ],
+      [
+        "Siyasi partilerin mali denetimini yapan anayasal yargı organı",
+        "Anayasa Mahkemesi"
+      ],
+      [
+        "Parti kapatma davasını açan makam",
+        "Yargıtay Cumhuriyet Başsavcısı"
+      ],
+      [
+        "Siyasi parti kapatma davasını karara bağlayan mahkeme",
+        "Anayasa Mahkemesi"
+      ],
+      [
+        "Siyasi partilerin demokratik siyasi hayattaki anayasal niteliği",
+        "Vazgeçilmez unsur"
+      ],
+      [
+        "Yabancı devletten maddi yardım alan partiler için öngörülen yaptırım",
+        "Temelli kapatma"
+      ],
+      [
+        "Siyasi partiye üye olmak için anayasal asgari yaş",
+        "18"
+      ],
+      [
+        "Siyasi partilerin gelir ve giderlerinde aranan temel özellik",
+        "Amaçlarına uygunluk"
+      ],
+      [
+        "Partinin siyasi hedeflerini açıklayan metin",
+        "Parti programı"
+      ],
+      [
+        "Partinin örgüt ve işleyiş kurallarını düzenleyen metin",
+        "Parti tüzüğü"
+      ]
+    ],
+    "note": "Dava açmak ile karar vermek farklı yetkilerdir. Parti programı veya tüzüğü Anayasa ve kanunların üstünde değildir.",
+    "ids": [
+      "VAT-0114",
+      "VAT-0473",
+      "VAT-0486",
+      "VAT-0501",
+      "VAT-0413",
+      "VAT-0451",
+      "VAT-0053",
+      "VAT-0391",
+      "VAT-0251",
+      "VAT-0323"
+    ],
+    "types": [
+      "usul",
+      "mahkeme",
+      "makam",
+      "mahkeme",
+      "nitelik",
+      "yaptirim",
+      "yas",
+      "ilke",
+      "metin",
+      "metin"
+    ],
+    "distractors": {
+      "mahkeme": [
+        "Anayasa Mahkemesi",
+        "Yargıtay",
+        "Danıştay",
+        "Sayıştay",
+        "Uyuşmazlık Mahkemesi",
+        "Yüksek Seçim Kurulu"
+      ],
+      "yas": [
+        "16",
+        "18",
+        "21",
+        "25",
+        "30",
+        "40"
+      ],
+      "usul": [
+        "Cumhurbaşkanından ön izin",
+        "TBMM Başkanından ön izin"
+      ],
+      "makam": [
+        "Adalet Bakanı",
+        "Yüksek Seçim Kurulu Başkanı",
+        "Danıştay Başsavcısı"
+      ],
+      "nitelik": [
+        "Yasama organının komisyonu",
+        "Yürütmenin taşra örgütü"
+      ],
+      "yaptirim": [
+        "Yalnızca para cezası",
+        "Seçim hakkının otomatik düşmesi"
+      ],
+      "ilke": [
+        "Yargı denetiminden muafiyet",
+        "Gelir kaynaklarının sınırsızlığı"
+      ],
+      "metin": [
+        "Seçim kanunu",
+        "TBMM İçtüzüğü",
+        "Parti programı",
+        "Parti tüzüğü"
+      ]
+    }
+  },
+  {
+    "key": "g_merkez",
+    "ders": "guncel",
+    "topics": [
+      "dunya_gundemi",
+      "Dünya"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Birleşmiş Milletlerin ana merkezi",
+        "New York"
+      ],
+      [
+        "UNESCO'nun merkezi",
+        "Paris"
+      ],
+      [
+        "NATO'nun siyasi merkezi",
+        "Brüksel"
+      ],
+      [
+        "Dünya Sağlık Örgütünün merkezi",
+        "Cenevre"
+      ],
+      [
+        "Uluslararası Adalet Divanının bulunduğu şehir",
+        "Lahey"
+      ],
+      [
+        "Avrupa İnsan Hakları Mahkemesinin bulunduğu şehir",
+        "Strasbourg"
+      ],
+      [
+        "Avrupa Birliği Adalet Divanının bulunduğu şehir",
+        "Lüksemburg"
+      ],
+      [
+        "Avrupa Merkez Bankasının merkezi",
+        "Frankfurt"
+      ],
+      [
+        "Uluslararası Atom Enerjisi Ajansının merkezi",
+        "Viyana"
+      ],
+      [
+        "Afrika Birliğinin merkezi",
+        "Addis Ababa"
+      ]
+    ],
+    "note": "BM, AB, Avrupa Konseyi ve NATO ayrı örgütlerdir; merkezlerinin veya şehirlerinin benzerliği görevlerini aynılaştırmaz.",
+    "ids": [
+      "GUN-0345",
+      "GUN-0442",
+      "GUN-0435",
+      "GUN-0327",
+      "GUN-0434",
+      "GUN-0486",
+      "GUN-0313",
+      "GUN-0441",
+      "GUN-0495",
+      "GUN-0436"
+    ]
+  },
+  {
+    "key": "g_baskent",
+    "ders": "guncel",
+    "topics": [
+      "dunya_gundemi",
+      "Dünya"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Azerbaycan'ın başkenti",
+        "Bakü"
+      ],
+      [
+        "Kazakistan'ın başkenti",
+        "Astana"
+      ],
+      [
+        "Kırgızistan'ın başkenti",
+        "Bişkek"
+      ],
+      [
+        "Özbekistan'ın başkenti",
+        "Taşkent"
+      ],
+      [
+        "Türkmenistan'ın başkenti",
+        "Aşkabat"
+      ],
+      [
+        "Gürcistan'ın başkenti",
+        "Tiflis"
+      ],
+      [
+        "Bulgaristan'ın başkenti",
+        "Sofya"
+      ],
+      [
+        "Yunanistan'ın başkenti",
+        "Atina"
+      ],
+      [
+        "Romanya'nın başkenti",
+        "Bükreş"
+      ],
+      [
+        "Macaristan'ın başkenti",
+        "Budapeşte"
+      ]
+    ],
+    "note": "Başkent, ülkenin en büyük veya tarihî önemi en yüksek şehriyle her zaman aynı değildir.",
+    "ids": [
+      "GUN-0437",
+      "GUN-0448",
+      "GUN-0314",
+      "GUN-0324",
+      "GUN-0325",
+      "GUN-0326",
+      "GUN-0322",
+      "GUN-0330",
+      "GUN-0083",
+      "GUN-0331"
+    ]
+  },
+  {
+    "key": "g_miras",
+    "ders": "guncel",
+    "topics": [
+      "kultur_sanat",
+      "Kültür"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Göbeklitepe'nin bulunduğu il",
+        "Şanlıurfa"
+      ],
+      [
+        "Çatalhöyük'ün bulunduğu il",
+        "Konya"
+      ],
+      [
+        "Hattuşaş'ın bulunduğu il",
+        "Çorum"
+      ],
+      [
+        "Nemrut Dağı'ndaki Kommagene eserlerinin bulunduğu il",
+        "Adıyaman"
+      ],
+      [
+        "Divriği Ulu Camii ve Darüşşifası'nın bulunduğu il",
+        "Sivas"
+      ],
+      [
+        "Selimiye Camii ve Külliyesi'nin bulunduğu il",
+        "Edirne"
+      ],
+      [
+        "Safranbolu'nun bağlı olduğu il",
+        "Karabük"
+      ],
+      [
+        "Troya Antik Kenti'nin bulunduğu il",
+        "Çanakkale"
+      ],
+      [
+        "Ani Arkeolojik Alanı'nın bulunduğu il",
+        "Kars"
+      ],
+      [
+        "Afrodisias Antik Kenti'nin bulunduğu il",
+        "Aydın"
+      ]
+    ],
+    "note": "Alanları il, uygarlık ve dönem bakımından ayrı değerlendirmek gerekir; aynı listede bulunmaları aynı uygarlığa ait olduklarını göstermez.",
+    "ids": [
+      "GUN-0470",
+      "GUN-0244",
+      "GUN-0215",
+      "GUN-0216",
+      "GUN-0218",
+      "GUN-0245",
+      "GUN-0400",
+      "GUN-0204",
+      "GUN-0213",
+      "GUN-0217"
+    ]
+  },
+  {
+    "key": "g_eser",
+    "ders": "guncel",
+    "topics": [
+      "kultur_sanat",
+      "Kültür"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "İnce Memed'in yazarı",
+        "Yaşar Kemal"
+      ],
+      [
+        "Kürk Mantolu Madonna'nın yazarı",
+        "Sabahattin Ali"
+      ],
+      [
+        "Çalıkuşu'nun yazarı",
+        "Reşat Nuri Güntekin"
+      ],
+      [
+        "Saatleri Ayarlama Enstitüsü'nün yazarı",
+        "Ahmet Hamdi Tanpınar"
+      ],
+      [
+        "İstiklal Marşı'nın şairi",
+        "Mehmet Âkif Ersoy"
+      ],
+      [
+        "Nutuk'un yazarı",
+        "Mustafa Kemal Atatürk"
+      ],
+      [
+        "Kaplumbağa Terbiyecisi tablosunun ressamı",
+        "Osman Hamdi Bey"
+      ],
+      [
+        "Benim Sadık Yârim Kara Topraktır dizeleriyle tanınan halk ozanı",
+        "Âşık Veysel"
+      ],
+      [
+        "İstanbul'u Dinliyorum şiirinin şairi",
+        "Orhan Veli Kanık"
+      ],
+      [
+        "Memleketimden İnsan Manzaraları'nın yazarı",
+        "Nâzım Hikmet"
+      ]
+    ],
+    "note": "Aynı dönemde veya aynı sanat dalında bulunmak eser sahipliğini değiştirmez; şair, romancı ve ressamın eserleri ayrı bilinmelidir.",
+    "ids": [
+      "GUN-0206",
+      "GUN-0209",
+      "GUN-0230",
+      "GUN-0242",
+      "GUN-0399",
+      "GUN-0212",
+      "GUN-0229",
+      "GUN-0211",
+      "GUN-0221",
+      "GUN-0247"
+    ]
+  },
+  {
+    "key": "g_spor_kurum",
+    "ders": "guncel",
+    "topics": [
+      "spor",
+      "Spor"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Futbolun dünya düzeyindeki federasyonu",
+        "FIFA"
+      ],
+      [
+        "Avrupa futbolunu yöneten konfederasyon",
+        "UEFA"
+      ],
+      [
+        "Basketbolun uluslararası federasyonu",
+        "FIBA"
+      ],
+      [
+        "Voleybolun uluslararası federasyonu",
+        "FIVB"
+      ],
+      [
+        "Atletizmin dünya düzeyindeki yönetim kuruluşu",
+        "World Athletics"
+      ],
+      [
+        "Uluslararası Olimpiyat Komitesinin yaygın kısaltması",
+        "IOC"
+      ],
+      [
+        "Uluslararası Paralimpik Komitesinin kısaltması",
+        "IPC"
+      ],
+      [
+        "Uluslararası Otomobil Federasyonunun kısaltması",
+        "FIA"
+      ],
+      [
+        "Uluslararası Tenis Federasyonunun kısaltması",
+        "ITF"
+      ],
+      [
+        "Uluslararası Spor Tahkim Mahkemesinin kısaltması",
+        "CAS"
+      ]
+    ],
+    "note": "Bir spor dalının uluslararası federasyonu ile bölgesel konfederasyonu veya uyuşmazlık mercii farklıdır.",
+    "ids": [
+      "GUN-0389",
+      "GUN-0385",
+      "GUN-0388",
+      "GUN-0090",
+      "GUN-0178",
+      "GUN-0088",
+      "GUN-0382",
+      "GUN-0390",
+      "GUN-0186",
+      "GUN-0386"
+    ]
+  },
+  {
+    "key": "g_spor_bilgi",
+    "ders": "guncel",
+    "topics": [
+      "spor",
+      "Spor"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Klasik olimpik maratonun kilometre cinsinden mesafesi",
+        "42,195"
+      ],
+      [
+        "Triatlonda birlikte yapılan sporlar",
+        "Yüzme, bisiklet ve koşu"
+      ],
+      [
+        "Voleybolda bir takımın sahadaki oyuncu sayısı",
+        "6"
+      ],
+      [
+        "Basketbolda bir takımın sahadaki oyuncu sayısı",
+        "5"
+      ],
+      [
+        "Futbolda tam kadro bir takımın sahadaki oyuncu sayısı",
+        "11"
+      ],
+      [
+        "Hentbolda kaleci dâhil bir takımın sahadaki oyuncu sayısı",
+        "7"
+      ],
+      [
+        "Modern Olimpiyatların 1896'da yapıldığı şehir",
+        "Atina"
+      ],
+      [
+        "2024 Yaz Olimpiyatlarına ev sahipliği yapan şehir",
+        "Paris"
+      ],
+      [
+        "2020 adıyla anılıp 2021'de yapılan Yaz Olimpiyatlarının şehri",
+        "Tokyo"
+      ],
+      [
+        "Wimbledon tenis turnuvasının kort zemini",
+        "Çim"
+      ]
+    ],
+    "note": "Takımın sahadaki oyuncu sayısı bütün kadro mevcudu değildir. Tokyo organizasyonunun adıyla gerçekleştiği takvim yılı farklıdır.",
+    "ids": [
+      "GUN-0381",
+      "GUN-0176",
+      "GUN-0380",
+      "GUN-0177",
+      "GUN-0184",
+      "GUN-0396",
+      "GUN-0189",
+      "GUN-0197",
+      "GUN-0198",
+      "GUN-0199"
+    ],
+    "types": [
+      "mesafe",
+      "brans",
+      "sporoyuncu",
+      "sporoyuncu",
+      "sporoyuncu",
+      "sporoyuncu",
+      "sporyil",
+      "sporyil",
+      "sporyil",
+      "kort"
+    ],
+    "distractors": {
+      "kort": [
+        "Çim",
+        "Toprak",
+        "Sert zemin",
+        "Parke",
+        "Kum"
+      ],
+      "sporoyuncu": [
+        "5",
+        "6",
+        "7",
+        "9",
+        "11"
+      ],
+      "sporyil": [
+        "Atina",
+        "Paris",
+        "Tokyo",
+        "Londra",
+        "Roma"
+      ],
+      "mesafe": [
+        "21,0975",
+        "40",
+        "50",
+        "10"
+      ],
+      "brans": [
+        "Koşu, atlama ve atma",
+        "Yüzme, eskrim ve atıcılık",
+        "Koşu, bisiklet ve kürek"
+      ]
+    }
+  },
+  {
+    "key": "g_kurum_tr",
+    "ders": "guncel",
+    "topics": [
+      "turkiye_gundemi",
+      "Kurumlar",
+      "Türkiye Yönetimi"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Para politikasını yürüten Türkiye kurumu",
+        "Türkiye Cumhuriyet Merkez Bankası"
+      ],
+      [
+        "Resmî istatistik üretimiyle görevli Türkiye kurumu",
+        "Türkiye İstatistik Kurumu"
+      ],
+      [
+        "Bankacılık sektörünü düzenleyen ve denetleyen kurum",
+        "Bankacılık Düzenleme ve Denetleme Kurumu"
+      ],
+      [
+        "Sermaye piyasalarını düzenleyen ve denetleyen kurum",
+        "Sermaye Piyasası Kurulu"
+      ],
+      [
+        "Rekabet ihlallerini inceleyen kurum",
+        "Rekabet Kurumu"
+      ],
+      [
+        "Televizyon ve radyo yayınlarını düzenleyen üst kurul",
+        "Radyo ve Televizyon Üst Kurulu"
+      ],
+      [
+        "Türkiye'nin kamu yayıncısı",
+        "Türkiye Radyo Televizyon Kurumu"
+      ],
+      [
+        "Bilimsel araştırma ve teknoloji projelerini destekleyen ulusal kurum",
+        "TÜBİTAK"
+      ],
+      [
+        "Türkiye'nin uzay politikaları alanındaki ulusal ajansı",
+        "Türkiye Uzay Ajansı"
+      ],
+      [
+        "Afet ve acil durum yönetimini koordine eden ulusal kurum",
+        "AFAD"
+      ]
+    ],
+    "note": "Düzenleyici kurum, yayıncı, istatistik üreticisi ve politika uygulayıcısı farklı görevler üstlenir.",
+    "ids": [
+      "GUN-0249",
+      "GUN-0252",
+      "GUN-0293",
+      "GUN-0260",
+      "GUN-0254",
+      "GUN-0256",
+      "GUN-0270",
+      "GUN-0282",
+      "GUN-0285",
+      "GUN-0306"
+    ]
+  },
+  {
+    "key": "g_sehir_tr",
+    "ders": "guncel",
+    "topics": [
+      "turkiye_gundemi",
+      "Kültür"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Anadolu Medeniyetleri Müzesinin bulunduğu il",
+        "Ankara"
+      ],
+      [
+        "Zeugma Mozaik Müzesinin bulunduğu il",
+        "Gaziantep"
+      ],
+      [
+        "Mevlâna Müzesinin bulunduğu il",
+        "Konya"
+      ],
+      [
+        "Sümela Manastırı'nın bulunduğu il",
+        "Trabzon"
+      ],
+      [
+        "İshak Paşa Sarayı'nın bulunduğu il",
+        "Ağrı"
+      ],
+      [
+        "Topkapı Sarayı'nın bulunduğu il",
+        "İstanbul"
+      ],
+      [
+        "Aspendos Antik Tiyatrosu'nun bulunduğu il",
+        "Antalya"
+      ],
+      [
+        "Pamukkale travertenlerinin bulunduğu il",
+        "Denizli"
+      ],
+      [
+        "Hasankeyf'in bulunduğu il",
+        "Batman"
+      ],
+      [
+        "Sardes Antik Kenti'nin bulunduğu il",
+        "Manisa"
+      ]
+    ],
+    "note": "Tarihî yapının bulunduğu il ile yapıyı inşa eden uygarlık farklı bilgi alanlarıdır.",
+    "ids": [
+      "GUN-0307",
+      "GUN-0426",
+      "GUN-0427",
+      "GUN-0255",
+      "GUN-0271",
+      "GUN-0297",
+      "GUN-0425",
+      "GUN-0428",
+      "GUN-0429",
+      "GUN-0281"
+    ]
+  },
+  {
+    "key": "g_teknoloji",
+    "ders": "guncel",
+    "topics": [
+      "bilim_teknoloji",
+      "Bilim"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Teknik buluş için koşulları sağlandığında verilen sınai hak",
+        "Patent"
+      ],
+      [
+        "Mal veya hizmetleri ayırt eden işaretin koruması",
+        "Marka hakkı"
+      ],
+      [
+        "Edebî ve sanatsal eserin korunması",
+        "Telif hakkı"
+      ],
+      [
+        "Belirli yöreyle niteliği bağlantılı ürün işaretinin korunması",
+        "Coğrafi işaret"
+      ],
+      [
+        "Araştırma ve geliştirme faaliyetlerinin kısaltması",
+        "Ar-Ge"
+      ],
+      [
+        "Veri ve uygulamaların uzak sunuculardan ağla sunulması",
+        "Bulut bilişim"
+      ],
+      [
+        "Algılama ve karar süreçlerini belirli ölçüde kendisi yürüten sistem",
+        "Otonom sistem"
+      ],
+      [
+        "Nesnelerin ağ üzerinden veri alışverişi yapması",
+        "Nesnelerin interneti"
+      ],
+      [
+        "Bilgisayar sistemlerini yetkisiz erişime karşı koruma alanı",
+        "Siber güvenlik"
+      ],
+      [
+        "Bir nesnenin dijital modelden katman katman üretilmesi",
+        "Üç boyutlu baskı"
+      ]
+    ],
+    "note": "Marka teknik buluşu, patent ise eser sahipliğini otomatik korumaz. Dijitalleşen her süreç de otonom değildir.",
+    "ids": [
+      "GUN-0368",
+      "GUN-0169",
+      "GUN-0378",
+      "GUN-0376",
+      "GUN-0158",
+      "GUN-0374",
+      "GUN-0139",
+      "GUN-0361",
+      "GUN-0372",
+      "GUN-0379"
+    ]
+  },
+  {
+    "key": "g_bilim_tarih",
+    "ders": "guncel",
+    "topics": [
+      "bilim_teknoloji",
+      "Bilim"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Genel görelilik kuramıyla tanınan bilim insanı",
+        "Albert Einstein"
+      ],
+      [
+        "Evrensel kütleçekim yasasıyla tanınan bilim insanı",
+        "Isaac Newton"
+      ],
+      [
+        "Radyoaktivite araştırmalarıyla iki farklı bilim dalında Nobel alan kişi",
+        "Marie Curie"
+      ],
+      [
+        "DNA onarımı çalışmalarıyla 2015 Nobel Kimya Ödülü alan Türk bilim insanı",
+        "Aziz Sancar"
+      ],
+      [
+        "Elektronun keşfiyle ilişkilendirilen fizikçi",
+        "J. J. Thomson"
+      ],
+      [
+        "Gezegen hareket yasalarıyla tanınan astronom",
+        "Johannes Kepler"
+      ],
+      [
+        "Güneş merkezli modeliyle tanınan astronom",
+        "Nicolaus Copernicus"
+      ],
+      [
+        "Pastörizasyon yöntemiyle tanınan bilim insanı",
+        "Louis Pasteur"
+      ],
+      [
+        "Periyodik tablonun geliştirilmesiyle tanınan bilim insanı",
+        "Dmitri Mendeleyev"
+      ],
+      [
+        "Penisilinin keşfiyle ilişkilendirilen bilim insanı",
+        "Alexander Fleming"
+      ]
+    ],
+    "note": "Keşif, kuram ve uygulama birbirinden ayrılmalıdır. Aziz Sancar'ın ödülü fizik değil kimya alanındadır.",
+    "ids": [
+      "GUN-0370",
+      "GUN-0170",
+      "GUN-0173",
+      "GUN-0143",
+      "GUN-0366",
+      "GUN-0373",
+      "GUN-0142",
+      "GUN-0369",
+      "GUN-0149",
+      "GUN-0167"
+    ]
+  },
+  {
+    "key": "u_yazim1",
+    "ders": "turkce",
+    "topics": [
+      "yazim_kurallari",
+      "Yazım"
+    ],
+    "count": 10,
+    "mode": "judgement",
+    "prompt": "Yukarıdaki cümlelerin hangilerinde yazım yanlışı vardır?",
+    "facts": [
+      [
+        "Bende yarın toplantıya katılacağım.",
+        true,
+        "Bağlaç olan de ayrıdır: Ben de."
+      ],
+      [
+        "Kitabı evde unutmuşum.",
+        false,
+        "Bulunma hâli eki -de bitişik yazılır."
+      ],
+      [
+        "Bu soruyu sende çözebilirsin.",
+        true,
+        "Sen de ifadesindeki de bağlaçtır, ayrı yazılmalıdır."
+      ],
+      [
+        "Biliyorum ki bu iş bitecek.",
+        false,
+        "Bağlaç olan ki ayrı yazılmıştır."
+      ],
+      [
+        "Masada ki dosyayı uzatır mısın?",
+        true,
+        "Sıfat yapan -ki bitişir: masadaki."
+      ],
+      [
+        "Yarınki toplantı ertelendi.",
+        false,
+        "Yarınki sözcüğünde -ki bitişik yazılır."
+      ],
+      [
+        "Bir çok kişi öneriye katıldı.",
+        true,
+        "Birçok bitişik yazılır."
+      ],
+      [
+        "Her şey zamanında tamamlandı.",
+        false,
+        "Her şey ayrı yazılır."
+      ],
+      [
+        "Hiç bir belge kaybolmadı.",
+        true,
+        "Hiçbir bitişik yazılır."
+      ],
+      [
+        "Birkaç öğrenci dışarı çıktı.",
+        false,
+        "Birkaç bitişik yazılır."
+      ],
+      [
+        "Bu gün sonuçları açıklayacağız.",
+        true,
+        "Bugün zaman zarfı olarak bitişik yazılmalıdır."
+      ],
+      [
+        "Herhangi bir sorun görünmüyor.",
+        false,
+        "Herhangi bitişik, bir ayrı yazılır."
+      ]
+    ],
+    "ids": [
+      "TUR-0457",
+      "TUR-0093",
+      "TUR-0456",
+      "TUR-0448",
+      "TUR-0351",
+      "TUR-0369",
+      "TUR-0347",
+      "TUR-0349",
+      "TUR-0356",
+      "TUR-0370"
+    ]
+  },
+  {
+    "key": "u_yazim2",
+    "ders": "turkce",
+    "topics": [
+      "yazim_kurallari",
+      "Yazım"
+    ],
+    "count": 10,
+    "mode": "judgement",
+    "prompt": "Yukarıdaki cümlelerin hangilerinde yazım yanlışı vardır?",
+    "facts": [
+      [
+        "Ankara da yeni bir sergi açıldı.",
+        true,
+        "Şehir adına gelen hâl eki kesmeyle ayrılır: Ankara’da."
+      ],
+      [
+        "İzmir’den sabah döndük.",
+        false,
+        "Özel ada gelen ayrılma eki kesmeyle ayrılmıştır."
+      ],
+      [
+        "Türkçe’yi severek öğreniyor.",
+        true,
+        "Dil adına gelen çekim eki kesmeyle ayrılmaz: Türkçeyi."
+      ],
+      [
+        "İstanbullular vapuru seviyor.",
+        false,
+        "Özel addan türeyen sözcüğün ekleri kesmeyle ayrılmaz."
+      ],
+      [
+        "Sağlık Bakanlığı’na dilekçe verdi.",
+        true,
+        "Kurumun açık adına gelen ek kesmeyle ayrılmaz."
+      ],
+      [
+        "TBMM’nin gündemi açıklandı.",
+        false,
+        "Kısaltmaya gelen ek kesmeyle ayrılmış ve okunuşa uymuştur."
+      ],
+      [
+        "Her Pazartesi kursa gidiyorum.",
+        true,
+        "Belirli tarih bildirmeyen gün adı küçüktür: her pazartesi."
+      ],
+      [
+        "29 Ekim Cumhuriyet Bayramı’nı kutladık.",
+        false,
+        "Bayram adı büyük harfle yazılır."
+      ],
+      [
+        "Ege denizi kıyısında yürüdük.",
+        true,
+        "Coğrafi adın ikinci sözcüğü de büyüktür: Ege Denizi."
+      ],
+      [
+        "Doğu Anadolu’da kış uzundur.",
+        false,
+        "Bölge adındaki yön adı büyük yazılır."
+      ],
+      [
+        "Anadolu’nun Kuzeyinde yağış arttı.",
+        true,
+        "Sadece yön belirten kuzey küçük yazılır."
+      ],
+      [
+        "Marmara Denizi’nden gemiler geçti.",
+        false,
+        "Coğrafi ad ve ekin ayrılması doğru yazılmıştır."
+      ]
+    ],
+    "ids": [
+      "TUR-0345",
+      "TUR-0357",
+      "TUR-0343",
+      "TUR-0350",
+      "TUR-0352",
+      "TUR-0368",
+      "TUR-0253",
+      "TUR-0363",
+      "TUR-0365",
+      "TUR-0367"
+    ]
+  },
+  {
+    "key": "u_ses",
+    "ders": "turkce",
+    "topics": [
+      "ses_bilgisi",
+      "Ses Bilgisi"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Kitap sözcüğünün kitabı biçiminde ek almasındaki olay",
+        "Ünsüz yumuşaması"
+      ],
+      [
+        "Sınıf sözcüğünün sınıfta biçiminde ek almasındaki olay",
+        "Ünsüz benzeşmesi"
+      ],
+      [
+        "Ağız sözcüğünün ağzı biçiminde ek almasındaki olay",
+        "Ünlü düşmesi"
+      ],
+      [
+        "Bekle- fiilinin bekliyor biçimindeki değişimi",
+        "Ünlü daralması"
+      ],
+      [
+        "Az sözcüğünden azıcık türetilmesindeki olay",
+        "Ünlü türemesi"
+      ],
+      [
+        "His ile etmek birleşirken hissetmek biçiminin oluşması",
+        "Ünsüz türemesi"
+      ],
+      [
+        "Ufak sözcüğünden ufacık türetilmesindeki olay",
+        "Ünsüz düşmesi"
+      ],
+      [
+        "Ret ile etmek birleşirken reddetmek biçiminde ünsüzün ikizleşmesi",
+        "Ünsüz türemesi"
+      ]
+    ],
+    "note": "Ses olayını belirlerken sözcüğün ek öncesi ve sonrası biçimleri karşılaştırılır. Kökün son sesiyle ekin ilk sesindeki değişim aynı olay değildir.",
+    "ids": [
+      "TUR-0032",
+      "TUR-0033",
+      "TUR-0089",
+      "TUR-0247",
+      "TUR-0437",
+      "TUR-0444",
+      "TUR-0447",
+      "TUR-0252",
+      "TUR-0441",
+      "TUR-0442"
+    ]
+  },
+  {
+    "key": "u_yapi",
+    "ders": "turkce",
+    "topics": [
+      "sozcuk_yapisi",
+      "Yapı Bilgisi"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Göz-lük sözcüğündeki -lük ekinin türetme yönü",
+        "İsimden isim"
+      ],
+      [
+        "Yaz-ıcı sözcüğündeki -ıcı ekinin türetme yönü",
+        "Fiilden isim"
+      ],
+      [
+        "Baş-la- fiilindeki -la ekinin türetme yönü",
+        "İsimden fiil"
+      ],
+      [
+        "Yaz-dır- fiilindeki -dır ekinin türetme yönü",
+        "Fiilden fiil"
+      ],
+      [
+        "Ev-ler sözcüğündeki -ler ekinin görevi",
+        "Çoğul çekimi"
+      ],
+      [
+        "Ev-den sözcüğündeki -den ekinin görevi",
+        "Ayrılma hâli çekimi"
+      ],
+      [
+        "Ev-im sözcüğündeki -im ekinin görevi",
+        "Birinci tekil kişi iyelik çekimi"
+      ],
+      [
+        "Ev-e sözcüğündeki -e ekinin görevi",
+        "Yönelme hâli çekimi"
+      ]
+    ],
+    "note": "Yapım eki yeni sözcük türetir; çekim eki sözcüğün dil bilgisel ilişkisini kurar. Eklerin yalnızca görünüşü değil verilen örnekteki görevi esas alınır.",
+    "ids": [
+      "TUR-0045",
+      "TUR-0476",
+      "TUR-0268",
+      "TUR-0101",
+      "TUR-0267",
+      "TUR-0323",
+      "TUR-0390",
+      "TUR-0103",
+      "TUR-0324",
+      "TUR-0391"
+    ]
+  },
+  {
+    "key": "u_tur",
+    "ders": "turkce",
+    "topics": [
+      "sozcuk_turu"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Bu kitap güzel. cümlesindeki bu sözcüğünün görevi",
+        "İşaret sıfatı"
+      ],
+      [
+        "Bunu dün okudum. cümlesindeki bunu sözcüğünün görevi",
+        "İşaret zamiri"
+      ],
+      [
+        "Hızlı koştu. cümlesindeki hızlı sözcüğünün görevi",
+        "Durum zarfı"
+      ],
+      [
+        "Güzel bir ev aldık. cümlesindeki güzel sözcüğünün görevi",
+        "Niteleme sıfatı"
+      ],
+      [
+        "Eve dün geldi. cümlesindeki dün sözcüğünün görevi",
+        "Zaman zarfı"
+      ],
+      [
+        "Kitap ve defter aldı. cümlesindeki ve sözcüğünün görevi",
+        "Bağlaç"
+      ],
+      [
+        "Senin için geldim. cümlesindeki için sözcüğünün görevi",
+        "Edat"
+      ],
+      [
+        "Ben bu işi bitirdim. cümlesindeki ben sözcüğünün görevi",
+        "Kişi zamiri"
+      ]
+    ],
+    "note": "Sözcük türü bağlamdaki göreve göre belirlenir. Adı nitelemek sıfat, fiili nitelemek zarf görevidir.",
+    "ids": [
+      "TUR-0332",
+      "TUR-0333",
+      "TUR-0337",
+      "TUR-0339",
+      "TUR-0340",
+      "TUR-0399",
+      "TUR-0400",
+      "TUR-0404",
+      "TUR-0406",
+      "TUR-0407"
+    ]
+  },
+  {
+    "key": "u_oge",
+    "ders": "turkce",
+    "topics": [
+      "cumle_olgulari",
+      "Cümle Ögeleri"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Ayşe kitabı okudu. cümlesindeki Ayşe ögesinin görevi",
+        "Özne"
+      ],
+      [
+        "Ayşe kitabı okudu. cümlesindeki kitabı ögesinin görevi",
+        "Belirtili nesne"
+      ],
+      [
+        "Ayşe eve geldi. cümlesindeki eve ögesinin görevi",
+        "Dolaylı tümleç"
+      ],
+      [
+        "Ayşe dün geldi. cümlesindeki dün ögesinin görevi",
+        "Zarf tümleci"
+      ],
+      [
+        "Ayşe kitabı okudu. cümlesindeki okudu ögesinin görevi",
+        "Yüklem"
+      ],
+      [
+        "Ayşe kitap okudu. cümlesindeki kitap ögesinin görevi",
+        "Belirtisiz nesne"
+      ],
+      [
+        "Çocuk parkta oynadı. cümlesindeki parkta ögesinin görevi",
+        "Dolaylı tümleç"
+      ],
+      [
+        "Ahmet kapıyı açtı. cümlesindeki Ahmet ögesinin görevi",
+        "Özne"
+      ]
+    ],
+    "note": "Ögeler yüklemden hareketle bulunur. Edilgen cümlede işi yapan belirtilmeden etkilenen varlık sözde özne olabilir.",
+    "ids": [
+      "TUR-0279",
+      "TUR-0282",
+      "TUR-0284",
+      "TUR-0288",
+      "TUR-0280",
+      "TUR-0283",
+      "TUR-0285",
+      "TUR-0286",
+      "TUR-0287",
+      "TUR-0289"
+    ]
+  },
+  {
+    "key": "u_anlam",
+    "ders": "turkce",
+    "topics": [
+      "cumlede_anlam",
+      "Cümlede Anlam"
+    ],
+    "count": 10,
+    "facts": [
+      [
+        "Yağmur yağdığı için dışarı çıkmadık. cümlesindeki anlam ilişkisi",
+        "Neden-sonuç"
+      ],
+      [
+        "Seni görmek için geldim. cümlesindeki anlam ilişkisi",
+        "Amaç-sonuç"
+      ],
+      [
+        "Çalışırsan başarırsın. cümlesindeki anlam ilişkisi",
+        "Koşul-sonuç"
+      ],
+      [
+        "Tut ki yarın yola çıktık. cümlesindeki yaklaşım",
+        "Varsayım"
+      ],
+      [
+        "Keşke bu sözü söylemeseydim. cümlesindeki duygu",
+        "Pişmanlık"
+      ],
+      [
+        "Bu kitabı mutlaka okumalısın. cümlesindeki ileti",
+        "Öneri"
+      ],
+      [
+        "Bu şehir eskisinden daha kalabalık. cümlesindeki anlatım ilişkisi",
+        "Karşılaştırma"
+      ],
+      [
+        "Sizi gördüğüme çok sevindim. cümlesinde açıkça belirtilen duygu",
+        "Sevinç"
+      ]
+    ],
+    "note": "İçin sözcüğü tek başına ilişkinin türünü belirlemez: gerçekleşmiş neden ile ulaşılmak istenen amaç farklıdır.",
+    "ids": [
+      "TUR-0011",
+      "TUR-0074",
+      "TUR-0290",
+      "TUR-0014",
+      "TUR-0427",
+      "TUR-0010",
+      "TUR-0075",
+      "TUR-0428",
+      "TUR-0430",
+      "TUR-0072"
+    ]
+  },
+  {
+    "key": "u_bozukluk",
+    "ders": "turkce",
+    "topics": [
+      "anlatim_bozuklugu",
+      "Anlatım Bozuklukları",
+      "Anlatım"
+    ],
+    "count": 10,
+    "mode": "judgement",
+    "prompt": "Yukarıdaki cümlelerin hangilerinde anlatım bozukluğu vardır?",
+    "facts": [
+      [
+        "Bu konuda karşılıklı fikir alışverişinde bulunduk.",
+        true,
+        "Fikir alışverişi zaten karşılıklıdır; karşılıklı gereksizdir."
+      ],
+      [
+        "Bu konuda fikir alışverişinde bulunduk.",
+        false,
+        "Gereksiz sözcük yoktur; ilişki açık kurulmuştur."
+      ],
+      [
+        "Toplantı aşağı yukarı tam iki saat sürdü.",
+        true,
+        "Yaklaşık anlamı ile tam sözcüğü çelişmektedir."
+      ],
+      [
+        "Toplantı yaklaşık iki saat sürdü.",
+        false,
+        "Yaklaşıklık tek bir anlatımla verilmiştir."
+      ],
+      [
+        "Herkes projeyi beğendi, kimse eleştirmedi.",
+        false,
+        "Olumlu ve olumsuz yüklemler uygun öznelerle kullanılmıştır."
+      ],
+      [
+        "Herkes projeyi beğendi, eleştirmedi.",
+        true,
+        "Olumsuz ikinci yüklem için kimse öznesi gerekir."
+      ],
+      [
+        "Kitabı okudum ve özetini çıkardım.",
+        false,
+        "Her iki yüklemin gerektirdiği nesne doğru kurulmuştur."
+      ],
+      [
+        "Onunla tanıştım ve çok sevdim.",
+        true,
+        "İkinci yüklem için onu nesnesi gerekir; onunla bunu karşılamaz."
+      ],
+      [
+        "Onunla tanıştım ve onu çok sevdim.",
+        false,
+        "İkinci yüklemin nesnesi açıkça verilmiştir."
+      ],
+      [
+        "Bu iki seçenek arasında hiçbir fark yok.",
+        false,
+        "İki seçenek için arasında kullanımı uygundur."
+      ],
+      [
+        "Bu kararın olumlu yararları görüldü.",
+        true,
+        "Yarar zaten olumlu sonuçtur; olumlu gereksizdir."
+      ],
+      [
+        "Sonuçları dikkatle inceledik.",
+        false,
+        "Nesne ve yüklem uyumludur, gereksiz sözcük yoktur."
+      ]
+    ],
+    "ids": [
+      "TUR-0088",
+      "TUR-0084",
+      "TUR-0087",
+      "TUR-0116",
+      "TUR-0117",
+      "TUR-0086",
+      "TUR-0054",
+      "TUR-0114",
+      "TUR-0052",
+      "TUR-0053"
+    ]
+  },
+  {
+    "key": "u_sozcuk",
+    "ders": "turkce",
+    "topics": [
+      "sozcukte_anlam",
+      "Sözcükte Anlam"
+    ],
+    "count": 10,
+    "mode": "context",
+    "facts": [
+      [
+        "Yazar her ayrıntıyı elemek yerine yalnızca gerekli olanı bırakmış; metni gösterişten arındırmıştı. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Yalınlık",
+        "Gösterişten arındırma ve gerekli olanla yetinme yalınlığı anlatır; yalnızca kısalık değil sadelik vurgulanır."
+      ],
+      [
+        "Metinde kapalı ifadeler yoktu; okur anlatılanı tek bir okumada kavrayabiliyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Açıklık",
+        "Tek okumada anlaşılma ve anlam kapalılığının bulunmaması açıklıktır."
+      ],
+      [
+        "Cümleler birbirine takılmadan ilerliyor, okur metni kesintiye uğramadan izliyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Akıcılık",
+        "Okumanın kesintisiz ve rahat sürmesi akıcılıkla ilişkilidir."
+      ],
+      [
+        "Yazar başkalarının izlediği yolu tekrarlamıyor, konusuna kendine ait bir bakış getiriyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Özgünlük",
+        "Kendine ait bakış ve taklitten uzaklaşma özgünlüğün ayırt edici yönüdür."
+      ],
+      [
+        "Yazarın ileri sürdüğü görüşlerle ulaştığı sonuçlar arasında hiçbir çelişki yoktu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Tutarlılık",
+        "Görüş ve sonuçların çelişmemesi tutarlılıktır; sadece konudan uzaklaşmamakla aynı ölçüt değildir."
+      ],
+      [
+        "Yazar, yaşananları kişisel beğenisini katmadan, ölçülebilir verilerle aktarıyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Nesnellik",
+        "Kişisel beğeniden uzak, doğrulanabilir verilere dayalı anlatım nesneldir."
+      ],
+      [
+        "Şair, okuyucudan saklanmaya çalışmadan iç dünyasını olduğu gibi paylaşıyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "İçtenlik",
+        "Duyguları samimi biçimde paylaşma içtenliktir; nesnellikle aynı ölçüt değildir."
+      ],
+      [
+        "Aradan uzun yıllar geçmesine rağmen eser yeni kuşaklarca okunmaya devam ediyordu. Bu eserin öne çıkan niteliği hangisidir?",
+        "Kalıcılık",
+        "Zamanı aşarak okunmayı sürdürmek kalıcılıktır."
+      ],
+      [
+        "Yapıt farklı kültürlerden okurların ortak insanlık deneyimine sesleniyordu. Bu eserin öne çıkan niteliği hangisidir?",
+        "Evrensellik",
+        "Farklı kültürlerin ortak insan deneyimine ulaşma evrenselliği gösterir."
+      ],
+      [
+        "Yazar, cümleden çıkarıldığında anlamı değiştirmeyecek hiçbir sözcüğe yer vermiyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "Duruluk",
+        "Anlama katkısı olmayan sözcükleri kullanmamak duruluktur; süssüzlük ve kolay anlaşılma farklı niteliklerdir."
+      ]
+    ],
+    "ids": [
+      "TUR-0066",
+      "TUR-0008",
+      "TUR-0470",
+      "TUR-0002",
+      "TUR-0471",
+      "TUR-0005",
+      "TUR-0472",
+      "TUR-0313",
+      "TUR-0380",
+      "TUR-0314"
+    ]
+  },
+  {
+    "key": "u_paragraf",
+    "ders": "turkce",
+    "topics": [
+      "Paragraf",
+      "paragraf"
+    ],
+    "count": 10,
+    "mode": "context",
+    "facts": [
+      [
+        "Bir eseri eleştirmek kusur saymak değildir. Eleştiri güçlü yanları da görünür kılar ve geliştirmeye alan açar. Bu parçanın ana düşüncesi hangisidir?",
+        "Eleştiri yalnızca olumsuz yönleri göstermekle sınırlı değildir.",
+        "Güçlü yanları görünür kılma ifadesi eleştirinin çok yönlü işlevini destekler."
+      ],
+      [
+        "Bilgiye hızla ulaşmak, onu doğru değerlendirdiğimiz anlamına gelmez. Kaynağı ve yöntemi sorgulamadan edinilen bilgiler kolayca yanıltabilir. Ana düşünce hangisidir?",
+        "Bilgiye erişim kadar onu sorgulamak da önemlidir.",
+        "Hız ile doğruluk aynı değildir; kaynak ve yöntem sorgulaması temel vurgudur."
+      ],
+      [
+        "Bir şehrin kimliği yalnızca eski yapılarında yaşamaz. Gündelik alışkanlıklar ve ortak hatıralar da o şehri benzersiz yapar. Ana düşünce hangisidir?",
+        "Kent kimliği fiziksel yapılarla birlikte toplumsal hafızadan beslenir.",
+        "Yalnızca yapılarda yaşamaz ifadesi fiziksel unsurun yanına toplumsal unsurları ekler."
+      ],
+      [
+        "Çocukların merakını her soruya hemen cevap vererek değil, kendi yollarını aramalarına fırsat tanıyarak geliştirebiliriz. Ana düşünce hangisidir?",
+        "Öğrenmede çocuğun araştırmasına alan açılmalıdır.",
+        "Metin hazır yanıt yerine keşif sürecine katılmayı önerir."
+      ],
+      [
+        "Gelenek, değişmeden korunmuş bir eşya değildir. Her kuşak onu yorumlar; böylece gelenek yaşamayı sürdürür. Ana düşünce hangisidir?",
+        "Gelenek yeniden yorumlanarak süreklilik kazanır.",
+        "Değişim ile devamlılık birbirine karşıt değil tamamlayıcı olarak kurulmuştur."
+      ],
+      [
+        "Bir araştırmanın sonucu kadar, o sonuca nasıl ulaşıldığı da önemlidir. Yöntemi görünür olmayan bulguların güvenilirliği değerlendirilemez. Ana düşünce hangisidir?",
+        "Bilimsel güvenilirlik için yöntemin açıklanması gerekir.",
+        "Sonuca ulaşma yolu güvenilirliği değerlendirme koşuludur."
+      ],
+      [
+        "Okuma listelerindeki bütün kitapları bitirmek zorunda hissetmek, bazen merakı bir yarışa dönüştürür. Oysa bir metinle kurulan derin bağ, sayılardan daha değerlidir. Ana düşünce hangisidir?",
+        "Okumada nicelikten çok metinle kurulan ilişkinin niteliği önemlidir.",
+        "Kitap sayısı ile derin okuma karşılaştırılmış, ikinciye öncelik verilmiştir."
+      ],
+      [
+        "Doğayı korumak onu insanlardan tamamen ayırmak değildir. Kullanımı sınırları içinde planlamak, hem yaşamı hem ihtiyaçları gözetir. Ana düşünce hangisidir?",
+        "Koruma ile ihtiyaçların karşılanması dengeli planlamayla birlikte yürütülebilir.",
+        "Tamamen ayırmayı reddeden parça dengeyi ve sınırları gözetmeyi önerir."
+      ],
+      [
+        "Yabancı bir dil öğrenirken yapılan yanlışlar yolun kapandığını göstermez. Yanlışları fark edip düzeltmek öğrenmenin bir parçasıdır. Ana düşünce hangisidir?",
+        "Hatalar değerlendirildiğinde öğrenmeye katkı sağlar.",
+        "Yanlışın kendisi değil fark edilip düzeltilmesi geliştirici unsur olarak sunulur."
+      ],
+      [
+        "Bir çözümün geçmişte işe yaraması bugün de aynı etkiyi göstereceğini garanti etmez. Koşullar değiştikçe yöntemleri yeniden değerlendirmek gerekir. Ana düşünce hangisidir?",
+        "Çözümler değişen koşullara göre gözden geçirilmelidir.",
+        "Geçmiş başarı tek başına her koşulda geçerlilik sağlamaz; bağlamın değişmesi belirleyicidir."
+      ]
+    ],
+    "ids": [
+      "TUR-0079",
+      "TUR-0019",
+      "TUR-0422",
+      "TUR-0419",
+      "TUR-0082",
+      "TUR-0020",
+      "TUR-0078",
+      "TUR-0424",
+      "TUR-0077",
+      "TUR-0420"
+    ]
+  }
+]

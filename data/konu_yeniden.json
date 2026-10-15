@@ -1,0 +1,596 @@
+{
+ "tarih|İlk Türk Devletleri": {
+  "ozet": "İlk Türk devletleri: Asya Hun (Teoman kurdu, Mete onluk sistem), Göktürkler (ilk 'Türk' adı, Orhun Yazıtları), Uygurlar (yerleşik hayat, Mani), Karahanlılar (ilk Müslüman Türk, Kutadgu Bilig-Divanü Lügat), Gazneliler (Sultan unvanı, 17 sefer). Ortak özellikler: göçebe, Şamanizm, ordu-millet, kut; tek istisna Uygurlar yerleşiktir.",
+  "hikaye": "Bir aile düşün: dede Asya Hun (çadırda yaşıyor, Mete orduyu kuruyor), oğul Göktürkler (yazı yazmayı öğreniyorlar), torun Uygurlar (eve yerleşip tarım yapıyor), kız Karahanlılar (Müslüman olup kitap yazıyor), en küçük Gazneliler (Hindistan'a sefere gidiyor). Ailenin hikayesi Türk tarihinin sırasıdır.",
+  "tuzak": "Tuzak 1: 'İlk Türk devletini kuran' (Teoman) ile 'onluk sistemi getiren' (Mete) aynı sanılır. Tuzak 2: 'İlk Müslüman Türk' (Karahanlılar) ile 'yerleşik ilk' (Uygurlar) karışır. Tuzak 3: Orhun Yazıtları'nı 'yazdıran' Tonyukuk, 'adına dikilen' Bilge Kaan ve Kül Tigin'dir.",
+  "nasil_sorulur": "KPSS bu konuda 'kim kurdu, kim yaptı, hangisi ortak değil, eser-yazar eşleştirmesi' sorar. Çoğu soru EZBER bilgiyle çözülür; kronoloji ve kişi-eşleştirme tablosu yap."
+ },
+ "tarih|Göktürkler": {
+  "ozet": "Göktürkler (552-744): Bumin Kaan kurdu, İstemi Yabgu Batı'yı yönetti, başkent Ötüken. Orhun Yazıtları (Bilge Kaan, Kül Tigin adına; Tonyukuk yazdırdı) Türk tarihinin ilk yazılı belgeleridir. Alfabesi 38 harf, sağdan sola yazılır. Türk adını ilk kullanan devlettir.",
+  "hikaye": "Göktürkler'i bir okul gibi düşün: müdürü Bumin, yardımcısı İstemi, en çalışkan öğrencisi Bilge, sporcusu Kül Tigin, yazmanı Tonyukuk. Okulun duvarına (Orhun'a) 'Ey Türk milleti! Birlik ol!' yazmışlar.",
+  "tuzak": "Tuzak: 'Türk adını ilk kullanan' Göktürkler ama 'ilk Türk devleti' Asya Hun'dur! 'Kurucu Bumin, en güçlü dönem devletin ikiye ayrılması' (582 Doğu-Batı). Yazıtları 'Tonyukuk yazdırdı' demek ile 'Bilge Kaan adına dikildi' demek aynı şey değil.",
+  "nasil_sorulur": "Sınavda: kurucu, başkent, yazıtlar (kim yazdı-kim adına), alfabe özellikleri, 'Türk adı ilk' sorulur. Kişi-eser üçlüsünü ezberle."
+ },
+ "tarih|Uygurlar": {
+  "ozet": "Uygurlar (744-840): yerleşik hayata geçen ilk Türk devleti. Mani dinini benimsediler, tarım ve ticaret gelişti, Uygur alfabesi (18 harf) Moğollara geçti. Kırgız baskınıyla yıkıldılar.",
+  "hikaye": "Uygurlar 'göçebe aileden apartmana taşınanlar': çadırı bıraktılar, ev yaptılar, tarım yaptılar, Maniheizm'i seçip sakin bir hayat sürdüler. Ama komşuları (Kırgızlar) baskın yapıp apartmanı yıktı.",
+  "tuzak": "Tuzak: 'yerleşik hayat' dendiğinde akla Uygurlar gelmeli ama soru 'göçebe hayat sürdüler' derse UYGURLAR DEĞİL! 'İlk para basan' Avarlar (şık olarak geçebilir), 'ilk Müslüman Türk' Karahanlılar'dır; Uygurlarla karıştırma.",
+  "nasil_sorulur": "Sınavda: yerleşik hayat, din (Mani), alfabe (18 harf), yıkılış (Kırgızlar) sorulur. 'Uygurlar = yerleşik' kartı en garantisidir."
+ },
+ "tarih|Karahanlılar": {
+  "ozet": "Karahanlılar: ilk Müslüman Türk devleti (Satuk Buğra Han). Türkçeye önem verdiler: Kutadgu Bilig (Yusuf Has Hacip), Divanü Lügat-î Türk (Kaşgarlı Mahmud), Atabetü'l-Hakayık (Edip Ahmet Yükneki).",
+  "hikaye": "Karahanlılar 'kitap yazan Müslüman Türk ailesi': baba devlet yönetimi kitabı (Kutadgu Bilig), amca sözlük (Divanü Lügat), dede öğüt kitabı (Atabetü'l-Hakayık). Evi (medreseleri) Türk-İslam kültürünün merkezi oldu.",
+  "tuzak": "Tuzak: 'İlk Müslüman Türk devleti' Karahanlılar ama 'Sultan unvanını ilk kullanan' Gazneli Mahmud'dur! Divanü Lügat'ı Kaşgarlı, Kutadgu Bilig'i Yusuf Has Hacip yazdı — ikisini karıştırma.",
+  "nasil_sorulur": "Sınavda: 'ilk Müslüman Türk', eser-yazar eşleştirmesi, 'Türkçeye önem' sorulur. Üç eser-iş üçlüsünü tek zincirle öğren."
+ },
+ "tarih|Gazneliler": {
+  "ozet": "Gazneliler: Sebük Tegin kurdu, Gazneli Mahmud 'Sultan' unvanını ilk kullandı, Hindistan'a 17 sefer yaptı. Hintler İslamiyet'le bu seferlerle tanıştı.",
+  "hikaye": "Gazneli Mahmud'u 'Hindistan kapısına 17 kez giden komutan' gibi düşün; her seferinde yanında 'Sultan' yazılı bir tabela götürdü — unvanı ilk kullanan oydu.",
+  "tuzak": "Tuzak: 'Sultan unvanı' Gazneli Mahmud'da, 'Hakan' Türk geleneğinde. 'İlk Müslüman Türk devleti' Karahanlılar'dır; Gazneliler onlarla karıştırılır.",
+  "nasil_sorulur": "Sınavda: Sultan unvanı, 17 sefer, Sebük Tegin sorulur. 'Gazneli = Sultan' kartı."
+ },
+ "tarih|Anadolu Selçuklu": {
+  "ozet": "1071 Malazgirt (Alparslan - Romen Diyojen) Anadolu'nun kapısını açtı. 1176 Miryokefalon (II. Kılıç Arslan) Anadolu'nun Türk yurdu olduğunu tescil etti. Başkent Konya. Nizamülmülk: Siyasetname, Nizamiye medreseleri. 1243 Kösedağ ile Moğol himayesi.",
+  "hikaye": "Anadolu bir ev: kapıyı Alparslan açtı (1071), anahtarı II. Kılıç Arslan garantiledi (1176), ama eve Moğollar misafir olarak girip el koydu (Kösedağ 1243). Ev sahibi (Selçuklu) zayıflayınca ev küçük beyliklere bölündü.",
+  "tuzak": "Tuzak: 'Anadolu'nun Türkleşmesi' Malazgirt ile başlar ama 'tescil' Miryokefalon'dur. Nizamülmülk Büyük Selçuklu veziridir; Anadolu Selçuklu ile karıştırma. Kösedağ = Moğol; Ankara = Timur (Osmanlı).",
+  "nasil_sorulur": "Sınavda: savaş-yıl-hükümdar üçlüsü (Malazgirt 1071, Miryokefalon 1176, Kösedağ 1243) ve eser-kurum (Nizamülmülk) sorulur."
+ },
+ "tarih|Beylikler": {
+  "ozet": "Anadolu Beylikleri: Karamanoğulları (Türkçeyi resmi dil yaptı), Ahi Evran (Ahilik-esnaf), Danişmentliler (Sivas). Osmanlı bunlar arasından çıktı.",
+  "hikaye": "Beylikler 'ayrılan kardeşler': her biri bir şehre yerleşip kendi düzenini kurdu. Karamanoğulları 'evde Türkçe konuşulacak' dedi, Ahi Evran esnaf dayanışmasını kurdu, Osmanlı hepsini toplayıp büyüdü.",
+  "tuzak": "Tuzak: 'Türkçeyi resmi dil yapan' Karamanoğulları ama 'resmi dil kanunu' Osmanlı'da da vardır. Ahi Evran = esnaf; Hacı Bektaş Veli = Bektaşilik; karıştırma.",
+  "nasil_sorulur": "Sınavda: beylik-meslek/şehir eşleştirmesi ve 'Türkçe' ile ilgili ilkler sorulur."
+ },
+ "tarih|Osmanlı Kuruluş": {
+  "ozet": "Osmanlı: Osman Gazi kurdu (1299/1302), ilk başkent İznik. Orhan (Bursa), I. Murat (I. Kosova 1389, ilk şehit padişah), Yıldırım (Niğbolu), Ankara 1402 (Timur) sonrası Fetret Devri, Çelebi Mehmet toparladı. Rumeli'ye geçiş 1354 (Süleyman Paşa, Çimpe). Tımar sistemi, devşirme, yeniçeri.",
+  "hikaye": "Kuruluş bir aile şirketi: Osman kurdu, Orhan Bursa'yı aldı, I. Murat Avrupa'ya geçti, Yıldırım Timur'a takıldı (Fetret), Çelezi Mehmet şirketi yeniden kurdu. Şirketin finans modeli: tımar (toprak-asker), insan kaynağı: devşirme.",
+  "tuzak": "Tuzak: 'İlk başkent' Bursa değil İZNİK'tir! 'Rumeli'ye geçiş' 1354'tür. 'İlk şehit padişah' I. Murat'tır; 'Ankara 1402' Osmanlı için Fetret'tir, Miryokefalon (Selçuklu) değil.",
+  "nasil_sorulur": "Sınavda: kuruluş-yıl-başkent, savaşlar (Kosova, Niğbolu, Ankara), Fetret, tımar-devşirme-yeniçeri sorulur. Kronoloji ve kurum-eşleştirme çalış."
+ },
+ "tarih|Fatih Dönemi": {
+  "ozet": "Fatih (1451-1481): İstanbul'un fethi (1453) Ortaçağ'ı kapattı. Urban Usta'nın topu, şahi. Kanunname-i Ali Osman. Anadolu Türk birliği (Karaman 1468). Otlukbeli 1473 (Uzun Hasan). Fatih Camii.",
+  "hikaye": "Fatih'i 'dünyanın yönünü değiştiren patron' gibi düşün: 1453'te kapıyı (İstanbul) açtı, Ortaçağ kapandı, Yeniçağ başladı. Şirket tüzüğünü (Kanunname) yazdı, rakiplerini (Karaman, Ak Koyunlu) temizledi.",
+  "tuzak": "Tuzak: 'İstanbul'un fethi' 1453 ama 'en geniş sınırlar' Yavuz-Kanuni dönemindedir. 'Otlukbeli' Ak Koyunlu (Uzun Hasan) ile, 'Çaldıran' Safeviler ile; karıştırma. Urban Usta top döktü, mimar değil.",
+  "nasil_sorulur": "Sınavda: fetih-yıl-sonuç (Ortaçağ-Yeniçağ), kanunname, savaşlar, eserler (Fatih Camii) sorulur."
+ },
+ "tarih|Kanuni Dönemi": {
+  "ozet": "Kanuni (1520-1566): 'Kanuni' ve 'Muhteşem Süleyman'. Mohaç 1526 (Macaristan), Belgrad, Rodos. Barbaros Hayreddin (Preveze 1538). Mimar Sinan (Süleymaniye-kalfalık, Selimiye-ustalık ama Selimiye II. Selim). En uzun süre hüküm süren padişah.",
+  "hikaye": "Kanuni'nin dönemi 'İmparatorluk çağı': Avrupa'da Macaristan alındı, denizler Barbaros'a emanet, İstanbul'a Süleymaniye dikildi. Kanunları 'Kanuni' unvanını kazandırdı; adalet timsali oldu.",
+  "tuzak": "Tuzak: Selimiye Camii Kanuni'nin değil II. Selim'in (Mimar Sinan'ın ustalık eseri). 'Kanuni = kanun' unvanı ile 'Muhteşem' unvanı aynı kişiye ait ama soru hangisini sorduğuna dikkat et.",
+  "nasil_sorulur": "Sınavda: unvan sebebi, savaş-yıl (Mohaç 1526), denizciler (Barbaros-Preveze 1538), eser-mimar (Sinan) sorulur."
+ },
+ "tarih|Duraklama": {
+  "ozet": "Duraklama: Zitvatorok 1606 (Avusturya ile eşitlik - başlangıç). Karlofça 1699 (ilk büyük toprak kaybı). Köprülüler toparladı. IV. Murat Bağdat. Yeniçeri isyanları, Celali isyanları.",
+  "hikaye": "Osmanlı 'yorgun şirket': 1606'da rakip (Avusturya) ile eşit sözleşme imzaladı, 1699'da ilk büyük toprak kaybı yaşandı. Köprülüler 'yönetim danışmanı' olarak gelip toparladı ama sorunlar devam etti.",
+  "tuzak": "Tuzak: 'Duraklamanın başlangıcı' Zitvatorok (1606) ama 'ilk toprak kaybı' Karlofça (1699)'dır! 'İlk Osmanlı-Rus gerilimi' 1700 İstanbul Antlaşması (Azak) ile; Karlofça'da Rusya toprak almamıştır.",
+  "nasil_sorulur": "Sınavda: antlaşma-yıl-değerlendirme (Zitvatorok-Karlofça), isyanlar, ıslahatçılar sorulur. Antlaşma kronolojisi ezberle."
+ },
+ "tarih|Lale Devri": {
+  "ozet": "Lale Devri (1718-1730): Nevşehirli Damat İbrahim Paşa. İlk Türk matbaası (İbrahim Müteferrika 1727). Yeniçeri Ocağı ıslahı, kütüphaneler, lüks yaşam. Patrona Halil İsyanı ile bitti.",
+  "hikaye": "Lale Devri 'Osmanlı'nın baharı': laleler açtı, kitaplar basıldı (Müteferrika), saraylar süslendi. Ama bahar kısa sürdü: Patrona Halil isyanı ile kış geldi.",
+  "tuzak": "Tuzak: Matbaayı 'Nevşehirli Damat İbrahim' değil İBRAHİM MÜTEFERRİKA kurmuştur! 'İlk gazete' Takvim-i Vekayi (1831) Lale Devri'nde değil Tanzimat'tadır.",
+  "nasil_sorulur": "Sınavda: tarih aralığı (1718-1730), matbaa (1727), sadrazam, Patrona Halil sorulur. 'Lale Devri = kültür-sanat' kartı."
+ },
+ "tarih|Islahatlar": {
+  "ozet": "Islahatlar: II. Mahmud (Yeniçeri Ocağı kaldırıldı 1826, Vak'a-i Vakvakiye), III. Selim (Nizam-ı Cedid), 18. yüzyıl mühendishaneleri (1773 deniz, 1795 kara). Enderun = devlet adamı yetiştiren okul.",
+  "hikaye": "Osmanlı 'yenilenme paketi' açtı: ordu modernleşti (Yeniçeri gitti, Nizam-ı Cedid geldi), okullar açıldı (Mühendishane), eğitim birleşti (Tevhid-i Tedrisat). Ama paket sürekli 'geç' geldi.",
+  "tuzak": "Tuzak: 'Yeniçeriyi kaldıran' II. Mahmud'dur; 'ilk ıslahatçı' III. Selim'dir (Nizam-ı Cedid). Enderun = devlet adamı; Mühendishane = teknik; karıştırma.",
+  "nasil_sorulur": "Sınavda: ıslahatçı-sıra (II. Mahmud → III. Selim), ocak kaldırma (1826), okul türleri sorulur."
+ },
+ "tarih|Tanzimat": {
+  "ozet": "Tanzimat Fermanı (3 Kasım 1839, Mustafa Reşid Paşa): can-mal-namus güvenliği, adil vergi. Islahat Fermanı (1856): gayrimüslimlere eşitlik. Meşrutiyetler: I. 1876 (Kanun-i Esasi), II. 1908 (İttihat ve Terakki).",
+  "hikaye": "Tanzimat 'Osmanlı'nın insan hakları ilanı': 1839'da 'canınız malınız güvende' dendi, 1856'da 'ayrımcılık bitti' dendi, 1876'da 'meclis var' dendi, 1908'de 'meclis geri geldi' dendi.",
+  "tuzak": "Tuzak: 'İlk anayasa' Kanun-i Esasi (1876) ama 'ilk sınır belgesi' Sened-i İttifak (1808)'tir! 'I. Meşrutiyet' II. Abdülhamit döneminde ama 'II. Meşrutiyet' ona karşı (İttihat ve Terakki) ilan edildi.",
+  "nasil_sorulur": "Sınavda: ferman-yıl-içerik, anayasa-senet farkı, meşrutiyet-padişah eşleştirmesi sorulur. Tarih-olay zinciri kur."
+ },
+ "tarih|Milli Mücadele": {
+  "ozet": "19 Mayıs 1919 Samsun → Amasya Genelgesi (milletin azim ve kararı) → Erzurum-Sivas Kongreleri → Misak-ı Milli (Ocak 1920) → TBMM (23 Nisan 1920) → I.-II. İnönü → Sakarya (Gazi-Mareşal) → 30 Ağustos 1922 → Mudanya → Lozan 1923.",
+  "hikaye": "Milli Mücadele bir kurtuluş hikayesi: Mustafa Kemal Samsun'da düğmeye bastı, Amasya'da 'biz yapacağız' dedi, Erzurum-Sivas'ta plan yaptı, TBMM'de hükümet kurdu, İnönü-Sakarya'da direndi, 30 Ağustos'ta zaferi kazandı, Lozan'da imzalattı.",
+  "tuzak": "Tuzak: 'Misak-ı Milli' TBMM'de değil son Osmanlı Meclisi'nde kabul edildi! 'Sakarya = Gazi-Mareşal', '30 Ağustos = Başkomutanlık Meydan Muharebesi', '24 Temmuz = Lozan' — üçünü karıştırma.",
+  "nasil_sorulur": "Sınavda: olay-yıl-sıra (19 Mayıs, Amasya, kongreler, TBMM, İnönü, Sakarya, 30 Ağustos, Lozan) sorulur. Kronoloji tablosu şart!"
+ },
+ "tarih|Lozan": {
+  "ozet": "Lozan (24 Temmuz 1923): Türkiye'nin tanınırlığı, kapitülasyonlar kalktı, Ege adaları, Musul-Boğazlar ertelendi (Montrö 1936, Hatay 1939). Saltanat 1 Kasım 1922, Halifelik 3 Mart 1924, Cumhuriyet 29 Ekim 1923, ilk anayasa 1921.",
+  "hikaye": "Lozan 'devletin doğum belgesi': 24 Temmuz 1923'te Türkiye 'ben varım' dedi. Ama iki dosya açık kaldı (Boğazlar, Musul) — sonradan Montrö ve Hatay ile kapatıldı.",
+  "tuzak": "Tuzak: 'Saltanat 1 Kasım 1922' ama 'Halifelik 3 Mart 1924'! 'Cumhuriyet 29 Ekim 1923' ama 'ilk anayasa 1921'! Tarihleri tek tek ezberle, harmanlama.",
+  "nasil_sorulur": "Sınavda: antlaşma-yıl, kaldırmalar (saltanat-halifelik), anayasa yılları, açık kalan meseleler (Boğazlar-Musul) sorulur."
+ },
+ "tarih|Devrimler": {
+  "ozet": "Atatürk İlkeleri: Cumhuriyetçilik, Halkçılık, Milliyetçilik, Laiklik (1937), Devletçilik, İnkılapçılık. Devrimler: 1923 Cumhuriyet, 1924 Halifelik-Tevhid-i Tedrisat, 1925 Şapka, 1928 Harf, 1931 Tarih Kurumu, 1932 Dil Kurumu, 1934 Soyadı-kadın hakları, 1926 Medeni Kanun (İsviçre).",
+  "hikaye": "Atatürk 'yeniden kuran patron': 1923'te şirketi (Cumhuriyet) ilan etti, tüzüğü (anayasa) yazdı, markayı (harfler) değiştirdi, çalışanlara (kadınlara) hak verdi, altı ilke ile vizyon belirledi: 'muasır medeniyet'.",
+  "tuzak": "Tuzak: 'Laiklik = dinsizlik' DEĞİL, 'din-devlet ayrımı'! 'Milliyetçilik = ırkçılık' DEĞİL, 'birlik'! 'Devletçilik = her şeyi devlet yapar' DEĞİL, 'tamamlayıcı'! Tarihleri karıştırma: Şapka 1925, Harf 1928, Soyadı 1934.",
+  "nasil_sorulur": "Sınavda: ilke-anlam eşleştirmesi, devrim-yıl, kanun-kaynak (Medeni Kanun İsviçre) sorulur. Altı ilke-iş üçlüsünü ezberle."
+ },
+ "tarih|Çağdaş Tarih": {
+  "ozet": "II. Dünya Savaşı'nda tarafsızlık. 1945 BM, 1947 Truman-Marshall, 1949 Avrupa Konseyi, 1952 NATO, 1960 darbe-1961 Anayasası, 1963 Ankara Antlaşması, 1974 Kıbrıs, 1980, 1996 Gümrük Birliği.",
+  "hikaye": "Türkiye 'savaş sonrası yeni dünyaya uyum sağlayan devlet': savaşta tarafsız kaldı, sonra Batı kulüplerine katıldı (BM, NATO, Avrupa Konseyi), içeride darbeler yaşadı, Kıbrıs'ta haklarını korudu.",
+  "tuzak": "Tuzak: 'NATO 1952' ama 'BM 1945'! 'Ankara Antlaşması 1963 (AET)' ama 'Gümrük Birliği 1996'! Yılları karıştırma. 'II. Dünya Savaşı'nda Türkiye tarafsız' ama 'Kore'ye asker gönderdi' (NATO'ya giriş sebebi).",
+  "nasil_sorulur": "Sınavda: olay-yıl (NATO, BM, Kıbrıs), darbe-anayasa, dış politika kartları (Truman, Marshall) sorulur."
+ },
+ "cografya|Harita": {
+  "ozet": "Harita: ölçek (çizelde/kesir; 1/100000'de 1 cm = 1 km), büyük ölçek = küçük alan-çok ayrıntı. Paralel (enlem, 0° ekvator) ve meridyen (boylam, 0° Greenwich); 1° = 4 dakika. Ekinoks (21 Mart-23 Eylül) = eşit gece-gündüz.",
+  "hikaye": "Harita bir 'dünya fotoğrafı': fotoğrafın büyütme oranı (ölçek) ne kadar büyükse o kadar yakın görürsün. Paraleller 'yatay çizgiler' (enlem), meridyenler 'dikey çizgiler' (boylam); kesişim noktası matematik konumdur.",
+  "tuzak": "Tuzak: Ölçek büyürse (1/5000) alan KÜÇÜLÜR ama ayrıntı ARTAR; tersi değil! '1 derece = 4 dakika', '15 derece = 1 saat'. Ekinoksta her yerde eşit; 21 Haziran'da Kuzey yaz, Güney kış.",
+  "nasil_sorulur": "Sınavda: ölçek hesabı (cm-km dönüşüm), enlem-boylam, zaman farkı, ekinoks-gündönümü sorulur. Birim dönüşümü yap!"
+ },
+ "cografya|Türkiye İklimleri": {
+  "ozet": "Türkiye iklimleri: Akdeniz (yaz kurak-kış yağışlı, maki), Karadeniz (her mevsim yağışlı, orman), Karasal (yaz kurak-sıcak, kış soğuk; İç-Doğu Anadolu), Geçiş (Marmara), Step (Güneydoğu). En çok yağış Karadeniz, en yüksek sıcaklık farkı Doğu Anadolu.",
+  "hikaye": "Türkiye'yi dört mevsim yaşayan bir aile gibi düşün: Karadeniz 'yağmurlu kardeş', Akdeniz 'güneşli kardeş', İç Anadolu 'soğuk kardeş', Marmara 'ikisinin arası'. Her kardeşin kıyafeti (bitki örtüsü) farklı: orman, maki, bozkır.",
+  "tuzak": "Tuzak: 'Maki = Akdeniz' ama 'bozkır = İç Anadolu/step'! 'En çok yağış = Karadeniz' ama 'en yüksek sıcaklık farkı = Doğu Anadolu'. 'Geçiş iklimi = Marmara' — 'karasal' değil!",
+  "nasil_sorulur": "Sınavda: iklim-özellik-bitki örtüsü-bölge eşleştirmesi sorulur. 'Yaz-kış yağış dengesi' ilk kontrol."
+ },
+ "cografya|Yer Şekilleri": {
+  "ozet": "Türkiye yer şekilleri: en uzun nehir Kızılırmak (1355 km), en büyük göl Van, en büyük baraj gölü Atatürk. Karstik arazi Toroslar (kalker). Büyük ovalar (Çukurova, Konya, Harran) = tarım. Platolar İç Anadolu. Ege = kişi kıyıları.",
+  "hikaye": "Türkiye'nin yüzeyi 'doğal mozaik': kuzeyde dağlar (Karadeniz), ortada platolar (İç Anadolu), güneyde Toroslar (karstik), ovalar tarımın kalbi, nehirler can damarı (Kızılırmak, Fırat, Dicle).",
+  "tuzak": "Tuzak: 'En uzun nehir' Kızılırmak ama 'en büyük baraj gölü' Atatürk (Fırat)! 'Van = en büyük doğal göl', 'Tuz Gölü = en sığ'. 'Ege = kişi kıyı' ama 'Karadeniz = düz kıyı'.",
+  "nasil_sorulur": "Sınavda: 'en' soruları (nehir, göl, baraj), kıyı türü, arazi türü-bölge eşleştirmesi sorulur. 'En' bilgilerini ezberle."
+ },
+ "cografya|İç Kuvvetler": {
+  "ozet": "İç kuvvetler: tektonik hareketler (kıvrım-kırık, deprem; Kuzey Anadolu Fay Hattı), volkanizma (Nemrut, Ağrı, Erciyes; Doğu Anadolu), yükselme-alçalma. Deprem en sık afet.",
+  "hikaye": "Dünya'nın kabuğu 'dev bir puzzle': parçalar (levhalar) hareket edince kıvrımlar, kırıklar, depremler olur. Türkiye tam bu puzzle'ın ortasında (fay hatları); volkanlar ise 'kaynayan tencereler'.",
+  "tuzak": "Tuzak: 'En son patlayan volkan' Nemrut (Bitlis) ama 'en yüksek' Ağrı! 'Kuzey Anadolu Fay Hattı' deprem merkezi ama 'Doğu Anadolu Fay Hattı' da aktiftir. Kıvrım-kırık = tektonik; delta = dış kuvvet (biriktirme).",
+  "nasil_sorulur": "Sınavda: kuvvet-sonuç (volkan, deprem, kıvrım), bölge-dağ eşleştirmesi, 'en son/en yüksek' sorulur."
+ },
+ "cografya|Dış Kuvvetler": {
+  "ozet": "Dış kuvvetler: aşınma (akarsu, rüzgar, buzul, dalga, karstik) ve biriktirme (delta, kumul, lös, moren). Delta = akarsu biriktirmesi (Çukurova, Bafra). Lös = rüzgar (İç Anadolu). Türkiye'de en yaygın aşındırma akarsularla.",
+  "hikaye": "Dış kuvvetler 'dünyayı şekillendiren sanatçılar': su (akarsu) vadileri oydu, rüzgar kumulları dikti, buzul dağları yonttu, dalgalar kıyıları şekillendirdi. Her sanatçının eseri farklı bir yer şekli.",
+  "tuzak": "Tuzak: 'Delta = biriktirme' ama 'vadi = aşındırma'! 'Lös = rüzgar' ama 'moren = buzul'. 'Karstik = kalker (kireçtaşı)' — 'magmatik' değil!",
+  "nasil_sorulur": "Sınavda: kuvvet-yer şekli eşleştirmesi (delta-kumul-lös), aşındırma-biriktirme ayrımı sorulur. 'Kim yaptı?' sorusuna 'kuvvet' bul."
+ },
+ "cografya|Nüfus": {
+  "ozet": "Türkiye nüfusu ~85-86 milyon. En yoğun Marmara, en yüksek artış Güneydoğu Anadolu. Nüfus piramidi: geniş taban = yüksek doğum. Göçlerin sebebi ekonomik (işsizlik); iç göç doğudan batıya. Kentsel göç = gecekondu, trafik.",
+  "hikaye": "Nüfus bir 'şehir hikayesi': insanlar iş bulmak için doğudan batıya (İstanbul, İzmir, Ankara) göç etti. Şehirler büyüdü, gecekondular kuruldu, trafik sıkıştı. 'Genç nüfus' Güneydoğu'da, 'yaşlı nüfus' batıda.",
+  "tuzak": "Tuzak: 'En yoğun nüfus' Marmara ama 'en yüksek artış' Güneydoğu! 'Geniş taban = doğum fazla' ama 'dar taban = yaşlı nüfus'. Göç = ekonomik sebep (savaş değil!).",
+  "nasil_sorulur": "Sınavda: bölge-nüfus, göç-sebep, piramit-yorum sorulur. 'En' bilgileri ve göç sebebi garanti."
+ },
+ "cografya|Tarım": {
+  "ozet": "Türkiye tarımı: buğday İç Anadolu, tütün Ege, fındık Karadeniz, pamuk Çukurova, çay Rize, zeytin Ege-Marmara, turunçgil Akdeniz. Tarıma dayalı sanayi batı bölgelerde.",
+  "hikaye": "Türkiye'nin tarım haritası bir 'mutfak listesi': İç Anadolu ekmek (buğday), Ege sigara (tütün) ve zeytinyağı, Karadeniz çay-fındık, Akdeniz portakal-pamuk. Her bölgenin 'imza ürünü' var.",
+  "tuzak": "Tuzak: 'Tütün = Ege' ama 'pamuk = Çukurova (Akdeniz)'! 'Fındık = Karadeniz' ama 'çay = Rize' (sadece Karadeniz'in doğusu). Ürün-bölge eşleştirmesini tek tek öğren.",
+  "nasil_sorulur": "Sınavda: ürün-bölge eşleştirmesi (garanti), 'en çok nerede' sorulur. Bölge-ürün tablosu yap."
+ },
+ "cografya|Madenler": {
+  "ozet": "Türkiye madenleri: bor (Eskişehir-Kütahya-Balıkesir; dünya lideri), demir (Divriği), bakır (Murgul, Elazığ, Siirt), linyit (Ege, İç Anadolu), taş kömürü (Zonguldak), mermer (Afyon; dünya lideri).",
+  "hikaye": "Türkiye'nin maden haritası 'hazine haritası': bor en değerli hazine (dünya lideri), demir Divriği'de, bakır Artvin'de, kömür Zonguldak'ta, mermer her yerde (Afyon).",
+  "tuzak": "Tuzak: 'Bor = Eskişehir' ama 'demir = Divriği'! 'Linyit = Ege' ama 'taş kömürü = Zonguldak'. 'Mermer = Afyon' ama 'bakır = Murgul'. Maden-şehir eşleştirmesi kritik.",
+  "nasil_sorulur": "Sınavda: maden-şehir eşleştirmesi (bor, demir, bakır, mermer) sorulur. 'Bor = Eskişehir' garanti."
+ },
+ "cografya|Enerji": {
+  "ozet": "Türkiye enerjisi: hidroelektrik (Fırat-Dicle; Atatürk Barajı, Keban), termik (linyit), doğalgaz (ithal). En büyük baraj gölü Atatürk. Türkiye enerjide dışa bağımlı ama hidroelektrik potansiyeli yüksek.",
+  "hikaye": "Türkiye'nin enerjisi 'suyun gücünden' geliyor: Fırat ve Dicle nehirleri barajlarla elektriğe dönüşüyor (Atatürk Barajı). Ama petrol-doğalgaz ithal; 'enerji = dışa bağımlılık' sorunu.",
+  "tuzak": "Tuzak: 'En büyük baraj gölü' Atatürk ama 'ilk büyük baraj' Keban! 'Hidroelektrik = Fırat-Dicle' ama 'termik = linyit (Ege-İç Anadolu)'.",
+  "nasil_sorulur": "Sınavda: enerji türü-kaynak, baraj-nehir eşleştirmesi sorulur. 'Atatürk = en büyük baraj' garanti."
+ },
+ "cografya|Bölgeler": {
+  "ozet": "7 coğrafi bölge (1941 1. Coğrafya Kongresi): Marmara (boğazlar-sanayi), Ege (kişi kıyı-tütün), Akdeniz (pamuk-turunçgil), İç Anadolu (plato-buğday), Karadeniz (fındık-çay), Doğu Anadolu (en yüksek-volkanik), Güneydoğu Anadolu (GAP-çiftlik). En büyük yüzölçümü Doğu, en küçük Marmara.",
+  "hikaye": "Türkiye'nin 7 bölgesi '7 kardeş': Marmara 'iş adamı' (sanayi), Ege 'denizci' (kişi kıyı), Akdeniz 'çiftçi' (pamuk), İç Anadolu 'çiftçi' (buğday), Karadeniz 'yağmurlu' (fındık), Doğu Anadolu 'dağcı' (yüksek), Güneydoğu 'sıcak' (GAP).",
+  "tuzak": "Tuzak: 'En büyük = Doğu Anadolu' ama 'en küçük = Marmara'! 'Marmara = sanayi' ama 'İç Anadolu = tarım'. Bölge-özellik eşleştirmesini tek tek öğren.",
+  "nasil_sorulur": "Sınavda: bölge-özellik-ürün eşleştirmesi, 'en' bilgileri, GAP (Fırat-Dicle) sorulur."
+ },
+ "cografya|Afetler": {
+  "ozet": "Türkiye afetleri: deprem (Kuzey Anadolu Fay Hattı; en sık), sel (Karadeniz), heyelan (Karadeniz), çığ (ağaçlandırma), kasırga (Ege). Deprem = en yıkıcı. Korunma: ağaçlandırma, yapı denetimi.",
+  "hikaye": "Türkiye 'afet kuşağı'nda yaşıyor: deprem en sık misafir (fay hatları), sel Karadeniz'in misafiri, heyelan dik yamaçların. Çözüm: ağaçlandırma, sağlam bina, hazırlık.",
+  "tuzak": "Tuzak: 'En sık afet' deprem ama 'en çok Karadeniz'de' sel-heyelan! 'Çığ = ağaçlandırma' ama 'deprem = yapı denetimi'. Afet-korunma eşleştirmesi.",
+  "nasil_sorulur": "Sınavda: afet-bölge, afet-korunma eşleştirmesi sorulur. 'Deprem = en sık' garanti."
+ },
+ "cografya|Çevre": {
+  "ozet": "Çevre sorunları: kirlilik (sanayi, fosil yakıt), küresel ısınma (buzul erimesi, deniz seviyesi), çölleşme, orman yangınları. Sürdürülebilir çevre = 'bugün al, yarına bırak'. Türkiye su fakiri.",
+  "hikaye": "Dünya 'ateş pahası' bir evde yaşıyor: küresel ısınma buzulları eritiyor, denizler yükseliyor, ormanlar yanıyor. Çözüm: sürdürülebilirlik = 'gelecek nesli düşün'.",
+  "tuzak": "Tuzak: 'Küresel ısınma = buzul erimesi' ama 'çölleşme = aşırı kullanım'! 'Su fakiri = Türkiye' ama 'en çok su tüketen = tarım'. 'Sürdürülebilir = gelecek' kartı.",
+  "nasil_sorulur": "Sınavda: çevre sorunu-sebep-sonuç, sürdürülebilirlik tanımı sorulur. 'Isınma = buzul' garanti."
+ },
+ "cografya|Su Kaynakları": {
+  "ozet": "Türkiye su kaynakları: akarsular (Kızılırmak, Fırat, Dicle), barajlar (enerji-sulama), yeraltı suları (İç Anadolu, Güneydoğu). Türkiye su fakiri; su kirliliği = atıklar. Rejimler düzensiz (yağış rejimi).",
+  "hikaye": "Su = hayat: nehirler can damarı, barajlar enerji deposu, yeraltı suları 'gizli banka hesabı'. Ama hesap bozulursa (kirlilik, aşırı kullanım) hayat durur.",
+  "tuzak": "Tuzak: 'Su fakiri = Türkiye' ama 'su zengini = Brezilya'! 'Baraj = enerji-sulama' ama 'kirlilik = atıklar'. 'Rejim = düzensiz' (yağış rejimi).",
+  "nasil_sorulur": "Sınavda: su türü-kullanım, baraj-fayda, kirlilik-sebep sorulur. 'Su fakiri = Türkiye' garanti."
+ },
+ "vatandaslik|Hukuk": {
+  "ozet": "Hukuk = yaptırım gücü olan kurallar (mahkeme uygular). Emredici (zorunlu) vs tamamlayıcı (isteğe bağlı). İç hukuk (devletin kendi) vs uluslararası (devletler arası; BM, AİHM). Hukukun üstünlüğü = herkes hukuka uyar.",
+  "hikaye": "Hukuk 'trafik kuralları': uymazsan ceza (yaptırım) var, polis (mahkeme) uygular. Trafik kuralları herkese eşit (kanun önünde eşitlik); 'hukukun üstünlüğü' = trafik lambası herkese aynı yanar.",
+  "tuzak": "Tuzak: 'Hukuk = öğüt' DEĞİL, 'yaptırım'! 'Görgü kuralları' hukuk dışı (yaptırım yok). 'Emredici = zorunlu' ama 'tamamlayıcı = isteğe bağlı'.",
+  "nasil_sorulur": "Sınavda: yaptırım türü, hukuk-görgü ayrımı, emredici-tamamlayıcı, iç-uluslararası ayrımı sorulur."
+ },
+ "vatandaslik|Anayasa": {
+  "ozet": "Anayasa: en üst norm. İlk Türk anayasası 1921 (Teşkilat-ı Esasiye); bugünkü 1982. Değiştirilemez maddeler 1-2-3 (Cumhuriyet, nitelikler, Türkçe-bayrak-marş-başkent); 4. madde değiştirileme teklif edilemez. Anayasa'nın üstünlüğü = kanunlar ona uygun.",
+  "hikaye": "Anayasa 'devletin tüzüğü': en üstteki kurallar. Tüzük değişebilir (anayasa değişikliği) ama bazı maddeler 'dokunulmaz' (1-2-3). 4. madde 'bu maddeleri tartışmayın bile' der.",
+  "tuzak": "Tuzak: 'Değiştirilemez' (1-2-3) ile 'değiştirileme teklif edilemez' (4) farklı! 'İlk Türk anayasası 1921' ama 'ilk Osmanlı Kanun-i Esasi 1876'. 'Anayasa = üstte ama değişmez değil'!",
+  "nasil_sorulur": "Sınavda: madde numaraları (1-3, 4), anayasa yılları (1921, 1924, 1961, 1982), üstünlük ilkesi sorulur."
+ },
+ "vatandaslik|Haklar": {
+  "ozet": "Kişi hakları (12-22): dokunulmazlık, düşünce, seyahat, özel hayat, eğitim. Sınır = başkalarının hakları. Ödevler: vergi, askerlik, eğitim, kanunlara uymak. 'Oy kullanmak' hak, ödev değil!",
+  "hikaye": "Haklar 'özgürlük paketin': can-mal güvenliği, istediğin gibi düşün, istediğin yere git, istediğin gibi öğren. Ama paketin 'küçük yazısı' var: başkalarının haklarını ihlal etme!",
+  "tuzak": "Tuzak: 'Oy kullanmak' HAKTIR, ödev değil! 'Eğitim = zorunlu ilköğretim' ama 'üniversite' hak. 'Seyahat = yurt içi serbest, yurt dışı kısıtlı' (hâkim kararı).",
+  "nasil_sorulur": "Sınavda: hak-ödev ayrımı (oy!), sınır (başkasının hakkı), hak türleri (düşünce, seyahat, eğitim) sorulur."
+ },
+ "vatandaslik|TBMM": {
+  "ozet": "TBMM: yasama organı. Seçim 4 yıl (2018 sonrası), 600 milletvekili, 18 yaş. Yetkiler: yasama, bütçe, savaş ilanı, milletlerarası andlaşma. GENSORU YOK (2017 sonrası)! Olağanüstü toplantı = TBMM Başkanı çağırır.",
+  "hikaye": "TBMM 'ülkenin meclisi': 600 kişi 4 yıl için seçilir, kanun yapar, bütçe onaylar, savaşa karar verir. Ama 'gensoru' (güvensizlik oyu) artık yok — yeni sistemde başbakanlık yok.",
+  "tuzak": "Tuzak: 'Gensoru' eski sistemde vardı, şimdi YOK! 'TBMM = 4 yıl' ama 'Cumhurbaşkanı = 5 yıl'. 'Olağanüstü toplantı = başkan' ama 'en az 1/5 üye talebi'.",
+  "nasil_sorulur": "Sınavda: süre (4 yıl), yetki türleri, gensoru (yok!), yaş sınırı (18) sorulur."
+ },
+ "vatandaslik|Yürütme": {
+  "ozet": "Yürütme: Cumhurbaşkanı (2018 sonrası CB Hükümet Sistemi). CB = 5 yıl, en fazla 2 dönem. Kararname çıkarır (kanunla çelişemez). Bakanlar = CB atar. 'Başbakanlık' yok!",
+  "hikaye": "Yeni sistemde 'yürütme kaptanı' Cumhurbaşkanı: 5 yıl için seçilir, en fazla 2 kez. Yardımcıları (bakanlar) var ama 'başbakan' koltuğu kaldırıldı. Kararname = 'yönetmelik' gibi.",
+  "tuzak": "Tuzak: 'Yürütme = başbakan' ESKİ SİSTEM! Artık 'yürütme = Cumhurbaşkanı'. 'CB = 5 yıl, 2 dönem' ama 'TBMM = 4 yıl'. 'Kararname ≠ kanun' (çelişemez).",
+  "nasil_sorulur": "Sınavda: sistem değişikliği (2018), CB süresi, kararname yetkisi, 'başbakan yok' bilgisi sorulur."
+ },
+ "vatandaslik|Yargı": {
+  "ozet": "Yargı: Türk Milleti adına kullanılır. Yargıtay = adli, Danıştay = idari, Sayıştay = kamu harcamaları, AYM = anayasa denetimi + bireysel başvuru (2010), HSK = hâkim-savcı atama-disiplin.",
+  "hikaye": "Yargı 'hakem heyeti': Yargıtay 'ceza-hukuk' maçlarını yönetir, Danıştay 'devlet işlemleri'ni, Sayıştay 'para'yı, AYM 'anayasa' uygunluğunu, HSK 'hakem atamasını' yapar.",
+  "tuzak": "Tuzak: 'Yargıtay = adli' ama 'Danıştay = idari'! 'Sayıştay = para denetimi' ama 'AYM = anayasa'. 'Bireysel başvuru = AYM' (2010) ama 'AİHM = uluslararası' (önce iç hukuk!).",
+  "nasil_sorulur": "Sınavda: mahkeme-görev eşleştirmesi (en sık!), bireysel başvuru (AYM), HSK görevi sorulur."
+ },
+ "vatandaslik|Kamu Hizmetleri": {
+  "ozet": "Kamu hizmetleri: sürekli, düzenli, herkese açık. Kamu tüzel kişileri: devlet, il, belediye, üniversite. Memuriyet: Türk vatandaşlığı, KPSS, askerlik. 657'ye göre disiplin cezaları: uyarma-kınama-aylıktan kesme-kademe durdurma-çıkarma (en ağır). Memurların grev hakkı YOK.",
+  "hikaye": "Kamu hizmeti 'herkese açık restoran': sürekli hizmet, herkes girebilir. Çalışanlar (memurlar) 'sözleşmeli' ama 'grev yapamaz'. En büyük ceza 'kovulma' (memurluktan çıkarma).",
+  "tuzak": "Tuzak: 'Grev hakkı' memurlarda YOK (işçilerde var)! 'En ağır disiplin cezası = çıkarma' ama 'en hafif = uyarma'. 'Kamu tüzel = üniversite' ama 'dernek = özel'.",
+  "nasil_sorulur": "Sınavda: hizmet özellikleri (sürekli-herkese açık), disiplin cezası sıralaması, grev hakkı (yok!), memuriyet şartları sorulur."
+ },
+ "vatandaslik|İnsan Hakları": {
+  "ozet": "İnsan hakları: evrensel (dil-din-ırk ayrımı yok), doğuştan. Tarihsel: Magna Carta (1215) → İHD (1948) → AİHS (1950) → AİHM. Bireysel başvuru = AYM (2010). Ombudsman (Kamu Denetçiliği) 2012. Sınır = başkalarının hakları.",
+  "hikaye": "İnsan hakları 'doğuştan gelen pasaport': Magna Carta 'ilk sayfa' (1215), 1948 'beyanname' (BM), AİHM 'Avrupa mahkemesi', AYM 'Türkiye'deki adres'. Herkes için geçerli — renk, dil, din farkı yok.",
+  "tuzak": "Tuzak: 'Evrensel = herkes' ama 'ulusal = bir devlet'! 'Bireysel başvuru = AYM' (önce) → 'AİHM' (sonra); tersi değil! 'Ombudsman = idare denetimi' ama 'AYM = anayasa'.",
+  "nasil_sorulur": "Sınavda: evrensellik, tarihsel sıralama (Magna Carta-İHD-AİHS), başvuru kurumları (AYM, AİHM) sorulur."
+ },
+ "vatandaslik|Seçimler": {
+  "ozet": "Seçimler: YSK düzenler. Oy yaşı 18. Genel seçim 5 yılda bir (CB ile aynı). Siyasi partiler = başsavcılığa başvuru; amaç iktidar.",
+  "hikaye": "Seçimler 'oyun kuralları': YSK 'hakem', 18 yaş 'oyuncu olma şartı', 5 yıl 'maç süresi', partiler 'takımlar'. Takımların amacı 'şampiyonluk' (iktidar).",
+  "tuzak": "Tuzak: 'YSK = seçim' ama 'TBMM = yasama'! '18 = oy + milletvekili' ama 'CB = 40 yaş' (2018 sonrası). 'Parti = başsavcılık' (dernek gibi) ama 'amaç = iktidar'.",
+  "nasil_sorulur": "Sınavda: seçim kurumu (YSK), süre (5 yıl), yaş (18), parti kuruluşu (başsavcılık) sorulur."
+ },
+ "turkce|Sözcükte Anlam": {
+  "ozet": "Sözcükte anlam: gerçek vs mecaz, eş anlam (şair=ozan), zıt anlam (sevinç=üzülme), soyut-somut (başarmak-soyut, kitap-somut). Anlam türleri: gerçek, mecaz, yan, terim.",
+  "hikaye": "Kelimeler 'anahtarlar': her kelimenin bir anlamı var. 'Gül' çiçek (gerçek), 'gül' gülmek (gerçek), 'gül gibi yüz' (mecaz). Anahtarı (anlamı) doğru çevir, kapıyı aç!",
+  "tuzak": "Tuzak: 'Eş anlam' ile 'zıt anlam' karışır! (şair=ozan eş; sevinç=üzülme zıt). 'Soyut' = duyularla algılanamaz (başarmak); 'somut' = algılanır (kitap). 'Gerçek vs mecaz' = cümlede ilk akla gelen mi?",
+  "nasil_sorulur": "Sınavda: eş-zıt anlam, gerçek-mecaz ayrımı, soyut-somut sorulur. 'Kelime = anahtar' kartı."
+ },
+ "turkce|Cümlede Anlam": {
+  "ozet": "Cümlede anlam: neden-sonuç (için), zıtlık (rağmen, ama), koşul (eğer, -sa), amaç (için). Kipler: istek (keşke...-sa), emir (...!), dilek. Düşünce vs bilgi (kişisel vs genel gerçek).",
+  "hikaye": "Cümleler 'bağlantı oyunu': 'için' neden-sonuç köprüsü, 'ama' zıtlık köprüsü, 'eğer' koşul köprüsü. Köprüyü doğru kur, anlamı bul!",
+  "tuzak": "Tuzak: 'rağmen = zıtlık' ama 'için = neden-sonuç'! 'Keşke = dilek' ama 'eğer = şart'. 'Düşünce = kişisel' ama 'bilgi = genel gerçek'.",
+  "nasil_sorulur": "Sınavda: bağlaç-anlam (için, ama, eğer), kip türü (istek, emir), düşünce-bilgi ayrımı sorulur."
+ },
+ "turkce|Paragraf": {
+  "ozet": "Paragraf: konu (ne hakkında) vs ana düşünce (yazarın mesajı). Yapı: giriş (genel) - gelişme (detay) - sonuç (mesaj). Yardımcı düşünce = destek. Geçiş ifadeleri = bağlantı. Akış bozukluğu = sıralama hatası. Sözel mantık: sıralama, çıkarım (her-bazı), koşul (yağmur).",
+  "hikaye": "Paragraf 'mini hikaye': giriş = 'bir zamanlar', gelişme = 'olaylar', sonuç = 'ibret/mesaj'. Yazar sana bir şey anlatmak istiyor — mesajı bul (ana düşünce)! Sözel mantık ise 'bulmaca': sırala, çıkar, test et.",
+  "tuzak": "Tuzak: 'Konu ≠ ana düşünce'! (konu = kısa, mesaj = kapsayıcı). 'Sonuç cümlesi genelde sonda' ama 'giriş = en başta'. Sözel mantıkta 'her' + 'bazı' = 'bazı' çıkarımı; 'yağmur yağarsa çıkmam' + 'çıktım' = 'yağmur yağmadı'.",
+  "nasil_sorulur": "Sınavda: ana düşünce (15 soru = en çok!), konu, giriş-sonuç, akış, sözel mantık çıkarımları sorulur. Paragraf = sınavın kalbi."
+ },
+ "turkce|Anlatım": {
+  "ozet": "Anlatım biçimleri: açıklayıcı (bilgi), öyküleyici (olay), betimleyici (canlandırma), tartışmacı (savunma-çürütme), emredici (yönlendirme). Anlatım yolları: söyleşme, destan, gezi, anı, makale, sohbet.",
+  "hikaye": "Anlatım 'konuşma tarzı': açıklayıcı 'öğretmen', öyküleyici 'hikaye anlatan', betimleyici 'ressam', tartışmacı 'avukat', emredici 'komutan'. Kime sorduğunu bil, tarzı bul!",
+  "tuzak": "Tuzak: 'Betimleyici = canlandırma' ama 'öyküleyici = olay-zaman'! 'Tartışmacı = savunma + çürütme' ama 'emredici = yap!' (duyuru). 'Açıklayıcı = bilgi' (haber, makale).",
+  "nasil_sorulur": "Sınavda: anlatım biçimi tespiti (metin verilir), amaç (bilgi, heyecan, canlandırma) sorulur. 'Kim konuşuyor?' sorusunu sor."
+ },
+ "turkce|Yazım": {
+  "ozet": "Yazım: özel adlar büyük harf (Türkiye, Pazartesi), gün adları büyük, yabancı sözcükler Türkçeleşmişse (İnternet), sayılar (1.500,50). Tuzaklar: Yanlış (ı), herkes kendi (tekrar).",
+  "hikaye": "Yazım 'imla kuralları': özel adlar 'şapka' takar (büyük harf), sayılar 'nokta-virgül' ile yazılır, yabancı sözcükler 'Türkçeleşince' uyum sağlar. Hata yaparsan 'anlatım bozukluğu' olur!",
+  "tuzak": "Tuzak: 'Pazartesi' tek sözcük! 'İnternet' (Türkçeleşmiş) ama 'internet' (yabancı). 'Herkes kendi' = tekrar (bozukluk). 'Yanlış' = ı ile; 'yanlış' değil!",
+  "nasil_sorulur": "Sınavda: hangisi doğru yazılmıştır, hangisi bozuk, özel ad-gün adı sorulur. Yazım = garanti net."
+ },
+ "turkce|Noktalama": {
+  "ozet": "Noktalama: virgül (bağlaç öncesi), tırnak (alıntı), soru işareti (soru), ünlem (heyecan-emir), iki nokta (açıklama), tire (araya giren söz). Sayılar: 1.500,50 (nokta-binlik, virgül-ondalık).",
+  "hikaye": "Noktalama 'cümlenin trafik lambası': virgül 'duraklama', nokta 'bitiş', soru işareti 'soru', ünlem 'heyecan', tırnak 'alıntı'. Lambalara uy, kaza yapma!",
+  "tuzak": "Tuzak: 'Bağlaç öncesi = virgül' ama 'alıntı = tırnak'! 'Soru = ?' ama 'emir = !'. 'Sayı = 1.500,50' (nokta-virgül tersi sanılır!).",
+  "nasil_sorulur": "Sınavda: hangi noktalama işareti, alıntı-soru-emir tespiti, sayı gösterimi sorulur. 'Lamba' kartı."
+ },
+ "turkce|Yapı Bilgisi": {
+  "ozet": "Yapı bilgisi: kök (asıl), gövde (kök+ek), ekler: yapım (yeni kelime: göz+lük) vs çekim (görev: ev-e). Ek-fiil (idi, imiş, ise). Cümle ögeleri: özne, yüklem, nesne, tümleç, zarf.",
+  "hikaye": "Kelimeler 'lego': kök = ana parça, ek = ek parça. Yapım eki 'yeni oyuncak' yapar (göz → gözlük), çekim eki 'oyuncakla oynar' (ev → eve). Ögeler ise 'cümlenin rolleri': özne 'kim?', yüklem 'ne yaptı?', nesne 'neyi?'.",
+  "tuzak": "Tuzak: 'Yapım = yeni kelime' ama 'çekim = görev değişimi'! 'Gözlük' yapım ama 'evim' çekim (iyelik). 'Yürüyerek = zarf' ama 'okula = tümleç'.",
+  "nasil_sorulur": "Sınavda: ek türü (yapım-çekim), cümle ögeleri (özne, nesne, tümleç, zarf) sorulur. 'Yeni kelime mi?' testini yap."
+ },
+ "turkce|Cümle Türleri": {
+  "ozet": "Cümle türleri: olumlu (gittim) vs olumsuz (gitmedim), soru (?), emir (gel!), istek-dilek (keşke yağsa), şart (eğer yağarsa). Fiilimsi: isim-fiil (-mek), sıfat-fiil (-en), zarf-fiil (-erek).",
+  "hikaye": "Cümleler 'konuşma tarzları': olumlu 'evet', olumsuz 'hayır', soru 'soru işareti', emir 'bağırma', istek 'dilek'. Fiilimsiler 'melez kelimeler': fiil gibi ama isim/sıfat/zarf gibi davranır.",
+  "tuzak": "Tuzak: 'Keşke = dilek' ama 'eğer = şart'! '-mek = isim-fiil' ama '-en = sıfat-fiil'. 'Emir (!)' ama 'istek (-sa)'. Fiilimsi = 'melez' kartı.",
+  "nasil_sorulur": "Sınavda: cümle türü tespiti (emir, istek, şart), fiilimsi türü (-mek, -en, -erek) sorulur. Ek-sınıf eşleştirmesi."
+ },
+ "turkce|Anlatım Bozuklukları": {
+  "ozet": "Anlatım bozuklukları: anlam bozukluğu (çelişki: 'ama güzeldi'), tekrar ('herkes kendi'), eksiklik, fazlalık, sıralama. Tespit: önce anlam bütünlüğü, sonra yapı. 'Herkes kendi' = tekrar; 'dün akşam gittik' = doğru.",
+  "hikaye": "Anlatım bozukluğu 'cümlenin hastalığı': çelişki 'kendiyle kavga', tekrar 'aynı şeyi iki kez söyleme', eksiklik 'yarım cümle'. Teşhis: anlamı oku, bozukluğu bul!",
+  "tuzak": "Tuzak: 'Anlam bozukluğu' ile 'yapı bozukluğu' karışır! ('Herkes kendi' = tekrar = anlam). 'Ama güzeldi' = çelişki (anlam). Önce ANLAMI kontrol et, sonra yapıyı.",
+  "nasil_sorulur": "Sınavda: 'hangisi bozuk?', 'bozukluk türü nedir?', 'düzeltme' sorulur. Anlam bütünlüğü ilk adım."
+ },
+ "guncel|Türkiye Yönetimi": {
+  "ozet": "Türkiye yönetimi (2026): Cumhurbaşkanı Recep Tayyip Erdoğan, TBMM Başkanı Numan Kurtulmuş. CB Hükümet Sistemi (2018). Başkent Ankara, en kalabalık İstanbul.",
+  "hikaye": "Türkiye'nin yönetim kadrosu 'şirket yönetimi': patron (Cumhurbaşkanı), meclis (TBMM = yönetim kurulu), bakanlar (departmanlar). 2018'de 'yönetim sistemi' değişti: başbakanlık koltuğu kaldırıldı.",
+  "tuzak": "Tuzak: 'Başbakan' yok artık! 'CB = 5 yıl, 2 dönem' ama 'TBMM = 4 yıl'. 'Ankara = başkent' ama 'İstanbul = en kalabalık'.",
+  "nasil_sorulur": "Sınavda: isim-sıfat (Cumhurbaşkanı, TBMM Başkanı), sistem (2018), başkent-en kalabalık sorulur. Güncel bilgi = her dönem değişebilir!"
+ },
+ "guncel|Ekonomi": {
+  "ozet": "Ekonomi terimleri: enflasyon (fiyat artışı), deflasyon (fiyat düşüşü), GSYH (üretim değeri), cari açık (ithalat > ihracat), bütçe açığı (harcama > gelir), döviz kuru (para değeri), fon (havuz). TCMB = fiyat istikrarı (faiz artır = enflasyon düş).",
+  "hikaye": "Ekonomi 'mutfak bütçesi': enflasyon 'pahalılık', cari açık 'fazla harcama', bütçe açığı 'borçlanma', GSYH 'kazanç'. Merkez Bankası 'bütçe uzmanı': faiz 'musluğu' ile enflasyonu kontrol eder.",
+  "tuzak": "Tuzak: 'Enflasyon = fiyat artışı' ama 'deflasyon = düşüş'! 'Cari açık = ithalat fazla' ama 'bütçe açığı = harcama fazla'. 'GSYH = üretim' ama 'enflasyon = fiyat'. Terimleri karıştırma!",
+  "nasil_sorulur": "Sınavda: terim-tanım eşleştirmesi (enflasyon, cari açık, GSYH), TCMB görevi (faiz) sorulur. Temel terimler garanti."
+ },
+ "guncel|Kurumlar": {
+  "ozet": "Kurumlar: TÜİK (istatistik), TCMB (fiyat istikrarı), SPK (sermaye piyasası), BDDK (bankalar), Sayıştay (harcama denetimi), AFAD (afet), YSK (seçim), AYM (anayasa).",
+  "hikaye": "Kurumlar 'ülkenin departmanları': TÜİK 'veri toplama', TCMB 'para', SPK 'yatırım', BDDK 'banka', AFAD 'afet', YSK 'seçim'. Her departmanın bir görevi var!",
+  "tuzak": "Tuzak: 'SPK = sermaye' ama 'BDDK = banka'! 'Sayıştay = harcama' ama 'AYM = anayasa'. 'TÜİK = istatistik' ama 'TCMB = para'. Kurum-görev eşleştirmesi kritik.",
+  "nasil_sorulur": "Sınavda: kurum-görev eşleştirmesi (SPK, BDDK, TÜİK, TCMB) sorulur. 'Kurum = görev' kartı."
+ },
+ "guncel|Dünya": {
+  "ozet": "Dünya olayları (2026): NATO Ankara Zirvesi (Temmuz), Mekke Anlaşması (7 Ağustos). Kuruluşlar: BM (1945), NATO (1949), AB (Brüksel). Türkiye NATO'ya 1952'de girdi. 2026 Dünya Kupası: İspanya (1-0 Arjantin). 2026 Kış Olimpiyatları: Milano-Cortina.",
+  "hikaye": "Dünya 'büyük mahalle': BM 'mahalle muhtarlığı', NATO 'güvenlik ekibi', AB 'komşuluk birliği'. 2026'da Ankara 'zirveye' ev sahipliği yaptı, İspanya 'kupayı' kaldırdı, Milano 'kayak pisti' oldu.",
+  "tuzak": "Tuzak: 'BM = 1945' ama 'NATO = 1949'! 'Türkiye NATO = 1952' ama 'BM = 1945 (kurucu)'. 'Dünya Kupası = İspanya' ama 'Olimpiyat = Norveç' (madalya).",
+  "nasil_sorulur": "Sınavda: kuruluş-yıl, zirve-yer, şampiyon-ülke, olimpiyat-şehir sorulur. Güncel = son 1 yıl."
+ },
+ "guncel|Spor": {
+  "ozet": "Spor (2026): FIFA Dünya Kupası (ABD-Kanada-Meksika, 48 takım) şampiyonu İspanya (1-0 Arjantin). Kış Olimpiyatları Milano-Cortina: Norveç en çok madalya. Olimpiyat = 4 yılda bir.",
+  "hikaye": "2026 spor yılı 'iki büyük festival': yazın Dünya Kupası (48 takımlık dev turnuva, finalde İspanya-Argentina), kışın Olimpiyatlar (Milano-Cortina pistleri, Norveç madalyaları).",
+  "tuzak": "Tuzak: 'Dünya Kupası = İspanya' ama 'Olimpiyat madalya lideri = Norveç'! 'FIFA = futbol' ama 'IOC = olimpiyat'. '48 takım' yeni format!",
+  "nasil_sorulur": "Sınavda: şampiyon-ülke, yer-şehir, madalya-ülke, tarih sorulur. Spor = güncel bilgi."
+ },
+ "guncel|Bilim": {
+  "ozet": "Bilim (2026): Nobel Fizik = nötrino (Halzen, Pillay), Nobel Kimya = katalizör (Kagan, Soai), Nobel Edebiyat = Carson. Optogenetik = ışıkla beyin kontrolü. Türkiye uzay programı: ilk astronot Alper Gezeravcı.",
+  "hikaye": "2026 Nobel yılı 'bilim şöleni': fizikçiler 'nötrino'yu yakaladı, kimyacılar 'katalizör'ü mükemmelleştirdi, yazar 'Carson' ödüllendirildi. Türkiye uzayda 'ilk adımı' attı (Alper Gezeravcı).",
+  "tuzak": "Tuzak: 'Nobel Fizik = nötrino' ama 'Kimya = katalizör'! 'Optogenetik = beyin' ama 'nötrino = fizik'. 'İlk astronot = Alper Gezeravcı' ama 'uzay programı = uydu-gözlem'.",
+  "nasil_sorulur": "Sınavda: Nobel-ödül alanı, bilimsel teknik (optogenetik), uzay-astronot sorulur. Nobel = her yıl değişir!"
+ },
+ "cografya|Koordinat": {
+  "ozet": "Enlem (paralel) ve boylam (meridyen) dünyanın kafesidir; koordinatlar yeri sayılarla tarif eder.",
+  "hikaye": "Enlemler yatay çıtalar, boylamlar dikey çıtalardır; yeryüzünü bir file gibi sararlar. Bir noktayı bulmak için önce hangi çıtanın üstünde olduğunu söylemen gerekir.",
+  "tuzak": "Enlem sayısı arttıkça kutba yaklaşılır (ekvatordan uzaklaşırsın); 0. enlem ekvatordur, 0. boylam Greenwich'tir. Yerel saat farkı boylamdan gelir (15° = 1 saat).",
+  "nasil_sorulur": "Koordinatı verilen noktanın yeri, iki nokta arasındaki enlem/boylam farkı ve saat sorulur."
+ },
+ "cografya|Dünya": {
+  "ozet": "Dünya'nın şekli (geoit), hareketleri (dönme ve dolanma) gece-gündüz, mevsim ve tayfaya neden olur.",
+  "hikaye": "Dünya eğik eksenle kendi etrafında bir gün, Güneş etrafında bir yılda döner; bu iki hareket takvimin ve saatin sebebidir.",
+  "tuzak": "Gece-gündüzlük Dünya'nın DÖNME hareketinden, mevsimler DOLANMA + eksen eğikliğinden doğar. 21 Haziran Kuzey Yarım'da en uzun gündüz.",
+  "nasil_sorulur": "Mevsimlerin oluşumu, aydınlanma çemberleri, yerel saat hesapları, güneşin geliş açıları sorulur."
+ },
+ "cografya|Kayaçlar": {
+  "ozet": "Kayaçlar üç ana gruptur: magmatik (püskürük), tortul (sedimanter), başkalaşım (metamorfik).",
+  "hikaye": "Erimiş magma soğuyup taş olur (granit); parçalanıp çökelirse tortul (kireçtaşı); sıcaklık-basınçla değişirse başkalaşım (mermer) olur. Taşların ömrü döngüdür.",
+  "tuzak": "Mermer KİREÇTAŞININ başkalaşmasıyla oluşur (çünkü mermer sorulur). Granit magmatik, kumtaşı tortul, bazalt magmatiktir.",
+  "nasil_sorulur": "Kayaç türü–oluşumu eşleştirmesi, yeraltı zenginlikleri ve arazi şekilleriyle bağlantısı sorulur."
+ },
+ "cografya|Göç": {
+  "ozet": "İç göç kırsaldan kente (gecekondu, nüfus yoğunluğu), dış göç ise ülkeler arası nüfus hareketidir.",
+  "hikaye": "İnsanlar iş, eğitim, güvenlik için yer değiştirir; göç hem alanı (kasabada büyüme) hem bölgeyi (kırsal yaşlanma) değiştirir.",
+  "tuzak": "Türkiye'de göçün ana yönü kırsaldan kentedir; 'göçmen' ile 'mülteci' karıştırılır. Göç alanının sorunu gecekondulaşma, vereninin sorunu iş gücü kaybıdır.",
+  "nasil_sorulur": "Göçün nedenleri, sonuçları ve Türkiye'deki göç haritası sorulur."
+ },
+ "cografya|Şehirleşme": {
+  "ozet": "Kentleşme, nüfusun kentlerde toplanması; plansız kentleşme gecekondu, trafik, çevre sorunları doğurur.",
+  "hikaye": "Köyden gelen insan şehre sığışınca şehir önce gecekondu mahalleleriyle büyür, sonra altyapı yetişemez.",
+  "tuzak": "Şehirleşme oranı = kentte yaşayan / toplam nüfus. Sanayileşme şehirleşmeyi hızlandırır; 'mega kent' (İstanbul) ile 'başkent' (Ankara) karıştırılır.",
+  "nasil_sorulur": "Şehirleşmenin nedenleri-sorunları ve Türkiye'de kent nüfusunun dağılımı sorulur."
+ },
+ "cografya|Hayvancılık": {
+  "ozet": "Hayvancılık iklim ve bitki örtüsüne bağlıdır: mera (step) → büyükbaş, dağlık → küçükbaş, kümes hayvancılığı yaygın.",
+  "hikaye": "Otlak genişse sığır, dağlık-yamaçlıysa koyun yetiştirilir; hayvanlar bölgenin ikliminin aynasıdır.",
+  "tuzak": "Türkiye'de en yaygın küçükbaş hayvancılık yapılır; tiftik (keçi), süt (inek) ve kümes ürünleri üretimi bölgelere göre değişir.",
+  "nasil_sorulur": "Hayvancılık türünün bölgeyle eşleştirilmesi ve tarım ürünleriyle kıyaslanması sorulur."
+ },
+ "cografya|Sanayi": {
+  "ozet": "Sanayi; ham madde, enerji, pazar ve iş gücüne göre yerleşir. Türkiye'de Marmara sanayinin merkezidir.",
+  "hikaye": "Fabrika kurmak için dört malzeme gerekir: malzeme, enerji, alıcı, işçi. Marmara'da hepsi bir arada olduğu için fabrikalar oraya toplanır.",
+  "tuzak": "Sanayi bölgemizde yoğunlaşmanın sebebi ulaşım pazarlık ve ihracat imkânıdır; 'serbest bölge' ile 'organize sanayi bölgesi' karıştırılır.",
+  "nasil_sorulur": "Sanayinin yer seçim nedenleri, Türkiye'de sanayi türleri ve dağılımı sorulur."
+ },
+ "cografya|Final": {
+  "ozet": "Coğrafya final turu: harita bilgisi, iklim, yer şekilleri, nüfus, ekonomi ve bölgelerin özet tekrarı.",
+  "hikaye": "Bütün yılın haritasını bir kez daha masaya sereriz; her kıtın üstüne bir iki anahtar kelime yazarız.",
+  "tuzak": "Finalde en sık kaybedilen puanlar iklim–bitki örtüsü eşleşmesi ve bölge–ürün karışıklığından gelir.",
+  "nasil_sorulur": "Karma sorularla konular arası bağlantı sorulur; bir bilgi birden fazla konuya bağlanabilir."
+ },
+ "guncel|Uzay": {
+  "ozet": "Uzay çalışmaları: Milli Teknoloji Hamlesi, Türksat uyduları, Göktürk uyduları, Ay programı ve astronot (Alper Gezeravcı) görevleri.",
+  "hikaye": "Türkiye uzaya kendi uydularını ve kendi astronotunu gönderdi; bu haberler sınavda 'kim, ne zaman, hangi proje' diye sorulur.",
+  "tuzak": "Alper Gezeravcı Türkiye'nin ilk uzay yolcusu (2024, Axiom-3); Tuva Cihangir Atasever ise 2024'te suborbital uçuş yaptı. Göktürk (gözlükle karıştırma) keşif uydusudur.",
+  "nasil_sorulur": "Uzay projelerinin adı, içeriği ve kişileri sorulur."
+ },
+ "guncel|Kültür": {
+  "ozet": "Kültür-sanat başlıkları: UNESCO Dünya Mirası listesindeki Türkiye varlıkları, Nobel ödülleri, festivaller ve miras eserler.",
+  "hikaye": "Kültür, bir milletin imzasıdır; UNESCO listesine giren her eser o imzanın tescillenmesidir.",
+  "tuzak": "Nobel Edebiyat Ödülü alan ilk Türk: Orhan Pamuk (2006). UNESCO listesindeki sayımız 20+ esere ulaştı (Göbeklitepe, Troya, İstanbul'un tarihi alanları...).",
+  "nasil_sorulur": "Ödül sahipleri, listeye giren eserler ve yıl dönümleri sorulur."
+ },
+ "guncel|Son Olaylar": {
+  "ozet": "Sınav tarihine en yakın 1 yılın olayları: atamalar, antlaşmalar, büyük organizasyonlar, bilim ve spor gelişmeleri.",
+  "hikaye": "Güncel bilgi taze meyvedir; sınav tarihine yakın olanlar daha tazedir ve daha çok sorulur.",
+  "tuzak": "Haberlerin kimliği (kişi, kurum, rakam) sorulur; 'çok konuşulan' ile 'resmî olarak gerçekleşen' karıştırılır. Resmî kaynak (Cumhurbaşkanlığı, bakanlıklar) takip edilmeli.",
+  "nasil_sorulur": "Son bir yılın olayları, tarihleri ve kişileri doğrudan sorulur."
+ },
+ "guncel|Tekrar": {
+  "ozet": "Güncel bilgiler genel tekrarı: kurumlar, ekonomi, olaylar ve kültür başlıklarının özet geçişi.",
+  "hikaye": "Gazeteyi yıl boyu tek sayfaya sıkıştırırız: kurumlar, rakamlar, isimler.",
+  "tuzak": "Tekrarda yapılan en büyük hata rakamları ezberlemektir; önemli olan hangi rakamın hangi kuruma ait olduğu.",
+  "nasil_sorulur": "Farklı güncel başlıkların karışık soruları gelir."
+ },
+ "guncel|Final": {
+  "ozet": "Güncel bilgiler final turu: yılın olayları, kurumlar, ekonomi ve kültür başlıklarının son kontrolü.",
+  "hikaye": "Sınavdan önce son bir kez gazeteyi karıştırırız.",
+  "tuzak": "Finalde eski haberler değil, sınav tarihine en yakın gelişmeler daha ağırlıklıdır.",
+  "nasil_sorulur": "Karma güncel sorular sorulur."
+ },
+ "tarih|Malazgirt": {
+  "ozet": "1071 Malazgirt Savaşı: Alparslan, Bizans'ı yenip Anadolu'nun kapılarını Türklere açtı (Anadolu'nun fethi).",
+  "hikaye": "Alparslan savaş öncesi kefen giyip 'ya gazi ya şehid' dedi; savaş Anadolu'nun anahtar teslimi oldu.",
+  "tuzak": "Malazgirt (1071) Anadolu'nun kapılarını açar; İstanbul'un Fethi (1453) Ortaçağı kapatır — ikisi karıştırılır. Malazgirt Selçuklu-Bizans savaşıdır.",
+  "nasil_sorulur": "Savaşın tarihi, komutanı ve sonucu; Anadolu'nun Türkleşmesiyle bağlantısı sorulur."
+ },
+ "tarih|Selçuklu": {
+  "ozet": "Anadolu Selçukluları: Malazgirt sonrası kurulan devlet; Miryokefalon (1176) ile Bizans'ın Anadolu hayali bitti; Kösedağ (1243) ile Moğollara yenildi.",
+  "hikaye": "Malazgirt kapıyı açtı, Selçuklular içeri yerleşti; Miryokefalon'da Bizans pes etti; Kösedağ'da Moğol fırtınası devleti sarstı.",
+  "tuzak": "I. Gıyaseddin Keyhüsrev döneminde Kösedağ kaybedilir; I. Alâeddin Keykubat döneminde devlet zirveye çıkar. Miryokefalon ile Malazgirt'in tarihleri karıştırılır.",
+  "nasil_sorulur": "Savaşlar (Miryokefalon, Kösedağ), sultanlar ve Anadolu'nun Türkleşmesi sorulur."
+ },
+ "tarih|İstanbul'un Fethi": {
+  "ozet": "1453 Fatih, İstanbul'u fethetti; şahi topları, haliç'e gemi indirme taktiği; Ortaçağ kapandı, imparatorluk başladı.",
+  "hikaye": "Karadan gemiler yürüdü, surlar şahi topuyla dövüldü; 53 gün süren kuşatma sonrası 'Fatih' unvanı verildi.",
+  "tuzak": "Fetih 1453'tür (1451 Fatih'in cülusu, 1461 Trabzon'un fethi karıştırılır). Rumeli Hisarı (1452) kuşatma hazırlığıdır.",
+  "nasil_sorulur": "Fetih tarihi, hazırlıklar (top, gemi), sonuçları (Ortaçağın kapanışı) sorulur."
+ },
+ "tarih|Karlofça": {
+  "ozet": "1699 Karlofça Antlaşması: Osmanlı'nın toprak kaybettiği ilk antlaşma — gerileme dönemi başlar.",
+  "hikaye": "Uzun süren savaşların sonunda masa kuruldu; kalem ilk kez Osmanlı'nın aleyhine yazdı.",
+  "tuzak": "Karlofça (1699) toprak kaybı, İstanbul (1700) ise Rusya'ya kapitülasyon ve Azak verir; Pasarofça (1718) 'Lale Devri'ni başlatır — üçü karıştırılır.",
+  "nasil_sorulur": "Antlaşmanın tarihi, dönemi (gerileme) ve maddeleri sorulur."
+ },
+ "tarih|Islahat": {
+  "ozet": "Islahat Fermanı (1856): gayrimüslimlere yeni haklar, tüm Osmanlı vatandaşlarına eşitlik sözü — Avrupa'nın iç işlerimize karışması arttı.",
+  "hikaye": "Tanzimat aileyi kurtarmak istedi, Islahat evin içindeki herkese eşit söz verdi; ama komşular (Avrupa) sürekli kapıdan izlemeye başladı.",
+  "tuzak": "Tanzimat (1839) gayrimüslim-herkes ayrımı, Islahat (1856) tam eşitlik der; her ikisi de padişahın kendi iradesiyle (Meşrutiyet değil) ilan edilir.",
+  "nasil_sorulur": "Fermanların tarihi, maddeleri ve birbirinden farkları sorulur."
+ },
+ "tarih|Meşrutiyet": {
+  "ozet": "I. Meşrutiyet (1876, II. Abdülhamit) — Kanun-i Esasi ve Meclis; II. Meşrutiyet (1908, İttihat ve Terakki) — II. Abdülhamit'in 2. Kez Meşrutiyet ilanı.",
+  "hikaye": "Meşrutiyet = halka söz hakkı. 1876'da kapı aralandı, 1878'de Meclis kapatıldı; 1908'de yeniden açıldı.",
+  "tuzak": "I. Meşrutiyet II. Abdülhamit, II. Meşrutiyet Jön Türkler/İttihatçılar ister. II. Meşrutiyet'te seçim yeniden yapılır; Meclis-i Mebusan açılır.",
+  "nasil_sorulur": "Meşrutiyetlerin tarihleri, isteyenler ve sonuçları sorulur."
+ },
+ "tarih|II. Abdülhamit": {
+  "ozet": "II. Abdülhamit (1876–1909): I. Meşrutiyet'i ilan etti, sonra Meclis'i kapattı (1878); istibdat dönemi; II. Meşrutiyet sonrası tahttan indirildi.",
+  "hikaye": "Önce anayasa dedi, sonra idareyi tek başına ele aldı; otuz yıl ülkeyi demir yumrukla yönetti, sonunda meşrutiyet rüzgârına direnemedi.",
+  "tuzak": "II. Abdülhamit meşrutiyeti İLAN eden padişahtır ama kapatmasıyla istibdat kurulur; 'istibdat' ile 'meşrutiyet' zıt kavramlardır.",
+  "nasil_sorulur": "Dönemin özellikleri, politikaları ve II. Meşrutiyet sonrası akıbeti sorulur."
+ },
+ "tarih|Balkan Savaşları": {
+  "ozet": "Balkan Savaşları (1912–1913): I. Balkan Savaşı'nda ağır kayıp (Edirne dahil), II. Balkan Savaşı'nda Edirne geri alındı; I. Dünya Savaşı öncesi büyük toprak kaybı.",
+  "hikaye": "Balkanlarda kapı kapı kaybedildi; sonra Bulgarlar komşularıyla savaşınca bir kapı geri açıldı (Edirne).",
+  "tuzak": "Edirne I. Balkan Savaşı'nda kaybedilir, II.'de geri alınır; İstanbul'un işgali (1918) Balkan Savaşı değil I. Dünya Savaşı sonucudur.",
+  "nasil_sorulur": "Savaşların tarihleri, sonuçları ve Edirne'nin durumu sorulur."
+ },
+ "tarih|Trablusgarp": {
+  "ozet": "Trablusgarp Savaşı (1911): İtalya'ya karşı; Mustafa Kemal (Enver, Fuat, Nuri) ilk görev; Uşi Antlaşması ile Trablusgarp kaybedildi.",
+  "hikaye": "Mustafa Kemal'in ilk sahnesi Libya çölüdür; teşkilat-ı mahsusa ile direniş organize edildi.",
+  "tuzak": "Trablusgarp (1911) İtalya, Balkan Savaşları (1912) Balkan devletleriyle; Uşi Antlaşması Trablusgarp'ı verir.",
+  "nasil_sorulur": "Savaşın tarihi, karşı taraf, Mustafa Kemal'in rolü ve Uşi Antlaşması sorulur."
+ },
+ "tarih|Kurtuluş Savaşı": {
+  "ozet": "Kurtuluş Savaşı (1919–1922): Amasya Genelgesi, Erzurum-Sivas Kongreleri, TBMM'nin açılışı, Sakarya ve Büyük Taarruz, Mudanya ile fiili zafer, Lozan ile hukuki zafer.",
+  "hikaye": "Bir millet önce karar verdi (Amasya), sonra örgütlandı (kongreler), meclis kurdu (23 Nisan), savaştı (Büyük Taarruz) ve barışla taçlandırdı (Lozan).",
+  "tuzak": "Amasya Genelgesi ilk belgedir (milletin istiklalini yine milletin kararı kurtarır); Erzurum kongresi başkanı Mustafa Kemal, Sivas kongresi de başkanı Mustafa Kemal'dir; Mudanya ateşkes, Lozan barıştır.",
+  "nasil_sorulur": "Kongrelerin tarih-kararları, savaşlar ve antlaşmaların sırası sorulur."
+ },
+ "tarih|Atatürk İlkeleri": {
+  "ozet": "Atatürk İlkeleri: Cumhuriyetçilik, Halkçılık, Devletçilik, Laiklik, İnkılapçılık, Milliyetçilik — CHP'nin programında yer aldı (1935).",
+  "hikaye": "Altı ilke, devrimlerin ruhudur; biri olmazsa bina sallanır.",
+  "tuzak": "İlkeler 1935'te anayasaya girdi; 'laiklik' 1937'de anayasaya yazıldı. Cumhuriyet'in ilanı 1923, saltanatın kaldırılışı 1922'dir — tarihler karıştırılır.",
+  "nasil_sorulur": "İlkelerin anlamları, hangi devrimle ilgili olduğu ve tarihleri sorulur."
+ },
+ "tarih|Kronoloji": {
+  "ozet": "Tarih kronolojisi: Osmanlı kuruluş-fetih-duraklama-gerileme, Kurtuluş Savaşı ve devrimlerin sıralı tekrarı.",
+  "hikaye": "Tarih bir zincirdir; halkaları sıraya dizince olayların neden-sonucu otomatik anlaşılır.",
+  "tuzak": "Sınavda en çok karıştırılan tarihler: 1920 TBMM, 1923 Cumhuriyet, 1924 Tevhid-i Tedrisat, 1928 harf, 1934 kadınlara seçme-seçilme, 1937 laiklik.",
+  "nasil_sorulur": "Olayların sıralanması, hangi döneme ait olduğu ve neden-sonuç ilişkisi sorulur."
+ },
+ "tarih|Karıştırılanlar": {
+  "ozet": "Karıştırılan tarihler ve kavramlar: antlaşmalar, kongreler, kanunlar ve dönemlerin ayırt edici özellikleri.",
+  "hikaye": "Birbirine benzeyen isimleri yan yana koyar, farklarını renkli kalemle işaretleriz.",
+  "tuzak": "Misak-ı Milli (1920) ile Mondros; Erzurum ile Sivas kongreleri; Tanzimat ile Islahat; I. ve II. Meşrutiyet en sık karışan ikililerdir.",
+  "nasil_sorulur": "Doğrudan karşılaştırma ve 'aşağıdakilerden hangisi' kalıplarıyla sorulur."
+ },
+ "tarih|Sınav Taktiği": {
+  "ozet": "Tarih sorusu çözme taktiği: önce tarih-sıralama sorusunu çöz, sonra neden-sonuç, sonra bilgi sorusu; her şıkkı tek tek ele.",
+  "hikaye": "Tarih sorusu bir dedektif işidir; ipuçları (tarih, isim, yer) kılık değiştirir ama doğru cevap hep aynı yerdedir.",
+  "tuzak": "Sıralama sorularında küçük bir hata tüm soruyu götürür; 'hepsi' seçeneği şüpheliyse önce tek tek kontrol et.",
+  "nasil_sorulur": "Her konudan gelebilecek soru kalıplarının alıştırması yapılır."
+ },
+ "turkce|Ses Bilgisi": {
+  "ozet": "Ses olayları: benzeşme, sertleşme, yumuşama, türemme, düşme, ünlü daralması, ünsüz benzeşmesi; hece bölme.",
+  "hikaye": "Kelimeler konuşurken şekil değiştirir; ses olayları bu gizli dönüşümlerdir.",
+  "tuzak": "kitaplık → kitablık (sertleşme değil yumuşama), günler → günler (benzeşme); ünlüyle biten ekler ünlüyle başlayan sözcükte ayrı yazılır (bir araba değil, biraraba değil!).",
+  "nasil_sorulur": "Ses olayının sorulduğu kelime, hangi ses olayının olduğu ve hece bölmeleri sorulur."
+ },
+ "turkce|Cümle Ögeleri": {
+  "ozet": "Cümlenin ögeleri: özne, yükleme, nesne, tümleç (zarf-fiil tümleci), dolaylı tümleç, edat tümleci, belirtili/ belirtisiz nesne.",
+  "hikaye": "Cümle bir cümledir; her kelimenin bir görevi vardır, isim tamlaması gibi.",
+  "tuzak": "Yüklem sonda (Türkçede); 'yi/yi' alan nesne belirtilidir. Edatla gelen öge (için, içinin, göre) edat tümlecidir, tümleç değil!",
+  "nasil_sorulur": "Altı çizili ögenin türü, özne-yüklem ilişkisi ve tümleç türleri sorulur."
+ },
+ "turkce|Fiilimsi": {
+  "ozet": "Fiilimsi: fiilden türeyen isim-fiil (-mak, -ış, -ma), sıfat-fiil (-an, -ecek, -mış), zarf-fiil (-ince, -erek, -meden).",
+  "hikaye": "Fiil, işi yapar; fiilimsi, işi anlatırken isim gibi giyinir. Üç kılık vardır.",
+  "tuzak": "Cümlede yüklem olan -mak/-mış/-an türetiler fiilimsi DEĞİLDİR (yüklem). 'Evi gören adam' → gören = sıfat-fiil; 'eve gidince' → gidince = zarf-fiil.",
+  "nasil_sorulur": "Altı çizili fiilimsinin türü, cümledeki görevi ve cümlede türü (basit/birleşik) sorulur."
+ },
+ "turkce|Final": {
+  "ozet": "Türkçe final turu: paragraf, anlam, dil bilgisi, ses, yazım ve noktalamanın özet tekrarı.",
+  "hikaye": "Bütün yılın Türkçe defterini tek seferde gözden geçiririz.",
+  "tuzak": "Finalde puan kaybettirenler genelde noktalama ve yazım kurallarıdır; paragraf süre alır, bilgi soruları kazandırır.",
+  "nasil_sorulur": "Karma Türkçe soruları; her başlıktan birer-ikişer soru gelir."
+ },
+ "turkce|Sözel Mantık": {
+  "ozet": "Sözel mantık (4 soru): öncül-sonuç, koşullu cümle, önerme, doğruluk tablosu, argüman ve şık ilişkileri.",
+  "hikaye": "Sözel mantık bir bulmacadır; cümlelerin kancalarını takip edip zinciri tamamlarsın.",
+  "tuzak": "Koşullu cümlede 'yeter şart' ile 'gerek şart' karıştırılır; 'hepsi' iddialarında tek bir karşı örnek yeterlidir. Öncüllerin doğruluğu değil, SONUÇ önemlidir.",
+  "nasil_sorulur": "Koşul cümleleri, 'aşağıdakilerden hangisi kesin çıkar', argüman destek/çürütme kalıpları."
+ },
+ "vatandaslik|Hukukun Üstünlüğü": {
+  "ozet": "Hukukun üstünlüğü: herkesin (yönetenler dahil) hukuka uyması; kanun önünde eşitlik ve keyfiliğin önlenmesi.",
+  "hikaye": "Ülkenin en tepedeki yöneticisi bile hukukun üstünde değildir; hukuk herkes için aynı gömlektir.",
+  "tuzak": "Hukukun üstünlüğü ≠ kanunların çokluğu; adalet, kişi hakları ve eşitlikle birlikte düşünülür.",
+  "nasil_sorulur": "Kavramın anlamı, örnek durumlar ve diğer kavramlarla (eşitlik, adalet) karşılaştırması sorulur."
+ },
+ "vatandaslik|Eşitlik": {
+  "ozet": "Eşitlik: herkesin kanun önünde eşit olması; dil, ırk, renk, cinsiyet, siyasi düşünce, felsefi inanç, din, mezhep ayrımı yapılmaması.",
+  "hikaye": "Eşitlik, herkesin aynı koltukta oturması değil, aynı kurallara tabi olmasıdır.",
+  "tuzak": "Eşitlik 'aynı muamele' değil, 'ayrımcılık yapılmamasıdır'; pozitif ayrımcılık (kadın, çocuk, engelli hakları) eşitliğe aykırı DEĞİLDİR.",
+  "nasil_sorulur": "Anayasa'daki eşitlik maddesi, ayrımcılık yasakları ve örnek durumlar sorulur."
+ },
+ "vatandaslik|Hak-Ödev": {
+  "ozet": "Temel haklar (yaşama, mülkiyet, seyahat...) ve ödevler (vergi, askerlik, eğitim) birbirini tamamlar; hak kullanırken başkalarının hakları gözetilir.",
+  "hikaye": "Haklar bir elin parmakları, ödevler diğer elin parmaklarıdır; ikisi birlikte çalışır.",
+  "tuzak": "Eğitim hem hak hem ödevdir (ilköğretim zorunlu). Vergi ödevi Anayasa'da yazılıdır; ödevler keyfi değil, anayasal yükümlülüktür.",
+  "nasil_sorulur": "Hak-ödev eşleştirmeleri, Anayasa'daki maddeler ve örnek durumlar sorulur."
+ },
+ "vatandaslik|Ödevler": {
+  "ozet": "Anayasal ödevler: vergi ödemek, askerlik yapmak, eğitim görmek; hak ve özgürlüklerin sınırı başkalarının haklarıdır.",
+  "hikaye": "Devlet haklar verir, vatandaş ödevler üstlenir; bu iki yönlü bir sözleşmedir.",
+  "tuzak": "Asgari ücretin vergi dışı bırakılması vergi ödevini ortadan kaldırmaz; ödevler haklardan bağımsızdır.",
+  "nasil_sorulur": "Ödevlerin türü, hangi durumda kimin sorumlu olduğu sorulur."
+ },
+ "vatandaslik|İdare": {
+  "ozet": "İdare hukuku: idarenin işleri (bakım, asayiş, refah), idarenin sorumluluğu, idari yargı (Danıştay, İdare Mahkemeleri, Sayıştay).",
+  "hikaye": "İdare, devletin günlük işlerini yapan koldur; yanlış yaparsa yargı (idare mahkemesi) devreye girer.",
+  "tuzak": "İdari dava Danıştay/İdare Mahkemesinde, adli dava adliyelerde görülür. İdarenin işlemlerine karşı açılacak dava önce idari mercilere (idare) yapılır.",
+  "nasil_sorulur": "İdarenin görevleri, sorumluluk halleri ve yargı yolları sorulur."
+ },
+ "vatandaslik|Memuriyet": {
+  "ozet": "Kamu hizmeti ve memuriyet: memur olma şartları (T.C. vatandaşı, 18 yaş, kamu haklarından yoksun olmama), haklar ve ödevler, disiplin cezaları.",
+  "hikaye": "Memuriyet, devletle yapılan bir hizmet sözleşmesidir; kuralları Anayasa ve kanunlarla yazılıdır.",
+  "tuzak": "Memuriyette liyakat ve kariyer esastır; memurun siyasi partiye girmesi yasaktır. Disiplin cezaları (uyarma, kınama, aylıktan kesme, kademe ilerlemesinin durdurulması, memurluktan çıkarma) kademelidir.",
+  "nasil_sorulur": "Memuriyet şartları, hakları, ödevleri ve disiplin cezaları sorulur."
+ },
+ "vatandaslik|Disiplin": {
+  "ozet": "Disiplin cezaları: uygulanan ceza türleri, memurun itiraz yolları ve ceza sonucu doğan hak kayıpları.",
+  "hikaye": "Disiplin, kamu düzeninin sigortasıdır; ceza kademelidir ve itiraz hakkı vardır.",
+  "tuzak": "Disiplin cezası ile adli ceza farklıdır; memur disiplin cezasına karşı idari yargıya başvurur.",
+  "nasil_sorulur": "Cezaların sıralaması, hangi eylemin hangi cezayı gerektirdiği sorulur."
+ },
+ "vatandaslik|Siyasi Partiler": {
+  "ozet": "Siyasi partiler demokrasinin vazgeçilmez unsurlarıdır; Anayasa Mahkemesi denetimi, hazine yardımı, kapatma sebepleri (laiklik karşıtı eylem).",
+  "hikaye": "Partiler, halkın farklı seslerinin mecliste yankılanmasıdır; Anayasa Mahkemesi ise hakemdir.",
+  "tuzak": "Parti kapatma kararı Anayasa Mahkemesi'ne aittir; kapatılan partinin milletvekilliği düşer mi sorulur (anayasaya göre karar verilir).",
+  "nasil_sorulur": "Parti kurma hakkı, denetim, kapatma ve hazine yardımı sorulur."
+ },
+ "vatandaslik|Final": {
+  "ozet": "Vatandaşlık final turu: hukuk, anayasa, haklar, kuvvetler ayrılığı, yargı, insan hakları ve seçimlerin özet tekrarı.",
+  "hikaye": "Vatandaşlık dersinin defterini tek seferde kapatırız: kavramlar, kurumlar, ilkeler.",
+  "tuzak": "Finalde en sık karıştırılanlar: yasama-yürütme-yargı görevleri, temel hakların sınırlanma sebepleri, idari-adli ayrımı.",
+  "nasil_sorulur": "Karma vatandaşlık soruları; kurum-kavram eşleştirmeleri ve örnek durumlar."
+ },
+ "tarih|I. Dünya Savaşı": {
+  "ozet": "I. Dünya Savaşı (1914-1918): Osmanlı, İttifak Devletleri (Almanya, Avusturya-Macaristan) yanında savaşa girdi. Cepheler: Çanakkale, Kafkas, Kanal, Irak, Sina-Filistin, Makedonya. Amaç: savaştan toprak bütünlüğüyle çıkmak. Sonuç: Mondros Ateşkesi (30 Ekim 1918) ile kayıtsız şartsız teslim.",
+  "hikaye": "Hasta yatağındaki adam (Osmanlı) kumar masasına oturdu: Almanya'nın takımını seçti. En parlak maçı Çanakkale'de kazandı, ama diğer maçları kaybedince 1918'de Mondros'ta teslim kâğıdını imzaladı.",
+  "tuzak": "Tuzak: savaşın BİTTİĞİ antlaşma Mondros'tur (ateşkes), barış antlaşması Sevr'dir (1920, uygulanmadı). Çanakkale'de donanma geçti ama kara savaşını biz kazandık' — İtilaf devletleri Çanakkale'yi GEÇEMEDİ. En uzun cephe Kafkas, en çok kayıp orada (Soğanlı, Sarıkamış).",
+  "nasil_sorulur": "Sınavda: cepheler ve amaçları, Mondros maddeleri (sınır kapıları terk, asker terhis), komutanlar (Enver Paşa, Mustafa Kemal - Çanakkale), savaşa giriş gerekçeleri sorulur. 'Osmanlı savaşa neden girdi' = Almanya'nın savaşı kısa sürede kazanacağı beklentisi + kapitülasyonları kaldırmak."
+ },
+ "tarih|Türk-İslam Kültürü": {
+  "ozet": "Türk-İslam kültüründe kurumlar: Divan (danışma), Medrese (eğitim, Nizamülmülk), Tekke (dini-tasavvufi), Ahilik (esnaf teşkilatı, Ahi Evran). Bilim: Farabi, İbn Sina (El-Kanun fi't-Tıp), Biruni, Uluğ Bey (rasathane). Edebiyat: Kutadgu Bilig (Yusuf Has Hacip), Divanü Lügati't-Türk (Kaşgarlı Mahmud), Atabetü'l-Hakayık (Edip Ahmet Yükneki), Divan-ı Hikmet (Ahmed Yesevi). Mimari: kümbet, şadırvan, kervansaray.",
+  "hikaye": "Bir Selçuklu şehri düşün: meydanda divan toplanıyor, köşede medrese eğitim veriyor, tekke insanları topluyor, çarşıda Ahilik düzeni kuruyor. Bilim insanları rasathanede yıldızları, hastanede şifayı araştırıyor; şairler Türkçeyi kitaba döküyor.",
+  "tuzak": "Tuzak: Divanü Lügati't-Türk bir SÖZLÜKTÜR (Türkçe sözlük), Kutadgu Bilig bir SİYASETNAME'dir (kutlu kılavuz). İbn Sina = tıp (El-Kanun), Farabi = felsefe (İkinci Muallim), Biruni = astronomi/coğrafya, Uluğ Bey = rasathane. 'İlk Türkçe sözlük' Divanü Lügati't-Türk, 'ilk Türkçe siyasetname' Kutadgu Bilig.",
+  "nasil_sorulur": "Sınavda: eser-yazar eşleştirmesi, kurumların görevleri (medrese/ticaret/ahilik), bilim insanı-branş eşleştirmesi sık sorulur. 'Türkçeyi yaşatmak için yazılan eser' = Divanü Lügati't-Türk."
+ },
+ "cografya|Madencilik": {
+  "ozet": "Türkiye maden zenginliği: BOR (dünya 1.), krom (dünya ilk sıralarda), taşkömürü (Zonguldak — tek!), linyit (Soma, Turgutalp, Çayırhan, Afşin-Elbistan), bakır (Murgul-Artvin, Kastamonu-Küre, Sivas-Divriği demir), boksit (Seydişehir-Konya, Akseki-Antalya), demir (Divriği, Hekimhan, Çermik), tuz (Tuz Gölü, Çankırı, Kars), mermer (Afyon, Burdur), altın (Mastra-Gümüşhane, Çöpler-Erzincan).",
+  "hikaye": "Türkiye maden marketi: rafların en üstünde DÜNYA BİRİNCİSİ bor, yanında krom; kasap reyonunda Zonguldak taşkömürü; torba torba Soma linyiti; bakır tencereler Murgul'dan; tuz Tuz Gölü'nden; altın Mastra'dan.",
+  "tuzak": "Tuzak: Taşkömürü SADECE Zonguldak'tadır (Türkiye'nin tek taşkömürü havzası) — linyit birçok yerdedir. Bor = Eskişehir-Kırka, Balıkesir-Bigadiç, Kütahya-Emet/Seyitömer. 'Türkiye'de çıkarılan ama işlenmeyen maden' = krom/bor (hammadde satılır). Boksit = alüminyum hammaddesi.",
+  "nasil_sorulur": "Sınavda: maden-yer eşleştirmesi (Zonguldak-Soma-Murgul-Divriği klasik), Türkiye'nin dünya sırası (bor 1., krom üst sıralar), 'hangi maden nerede' harita yorumuyla sorulur. Madenlerin işlendiği tesisler de (İskenderun demir-çelik, Karabük, Ereğli) eşleştirilir."
+ }
+}

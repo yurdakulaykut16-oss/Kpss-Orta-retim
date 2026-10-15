@@ -1,0 +1,1136 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "editor": "ek_188_gunluk500.tsv",
+  "notice": "188 ayrı elle yazılmış çalışma sorusu. Konu alanı dayanakları yerel geçmiş sınav örnekleridir; her alt bilginin aynı sınavda çıktığı veya güçlüğün istatistiksel olarak kalibre edildiği iddia edilmez.",
+  "questions": {
+    "VAT-EK-0001": {
+      "sha256": "090309cda0212c19dc214deb51e3c65f631c125f9fa257c33de3060ed72d5e0b",
+      "topics": [
+        "v-hukuk"
+      ]
+    },
+    "VAT-EK-0002": {
+      "sha256": "beddd7905c1063c3b89c2cd589ccc825eda0fcf87b3c16ade4b45ac722be0555",
+      "topics": [
+        "v-hukuk"
+      ]
+    },
+    "VAT-EK-0003": {
+      "sha256": "c18c4a8f32beceed246eb34cb08796ef4d0d8281c221f2b2ea84c3c9112f6859",
+      "topics": [
+        "v-hukuk"
+      ]
+    },
+    "VAT-EK-0004": {
+      "sha256": "f5cadb630a7d467dc97a983f199e43135bb907ee83cdc69df0ac560b5ecff3a8",
+      "topics": [
+        "v-hukuk"
+      ]
+    },
+    "VAT-EK-0005": {
+      "sha256": "24f1703e071b699e50ba8d189849c77cbb047b1bab27c5ff0792445a748d9a39",
+      "topics": [
+        "v-anayasa"
+      ]
+    },
+    "VAT-EK-0006": {
+      "sha256": "f233c856fc5de02cf0d61a2bc1a37c167bda1c747149b365318727374f36fffb",
+      "topics": [
+        "v-anayasa"
+      ]
+    },
+    "VAT-EK-0007": {
+      "sha256": "03058f47d47d6c172003a6b9c588417ba3d97edd9cfdb5ce0ab74e19149c3fd1",
+      "topics": [
+        "v-anayasa"
+      ]
+    },
+    "VAT-EK-0008": {
+      "sha256": "94898b9ef65a521abad25c96c821756eaed22244097aff293ca98fcfbc0187db",
+      "topics": [
+        "v-anayasa"
+      ]
+    },
+    "VAT-EK-0009": {
+      "sha256": "5bcc07fd0cee0ecaaedc1908a48e1c2edf87ecda532858d2fe81e5721d6e6f55",
+      "topics": [
+        "v-tbmm"
+      ]
+    },
+    "VAT-EK-0010": {
+      "sha256": "74cad53e483ed27a82a2706ff4c5898ba031d3336a6d2e5f66656093d48cf0af",
+      "topics": [
+        "v-tbmm"
+      ]
+    },
+    "VAT-EK-0011": {
+      "sha256": "6b78b95315eeb9103a7d38064fd799900f1ef47d6609e50440f6b73cde7a5df5",
+      "topics": [
+        "v-tbmm"
+      ]
+    },
+    "VAT-EK-0012": {
+      "sha256": "e1a53717dd49a4e9d341ee6a112d0c93fb4d7a1c31f3036d74e46dd690aca92d",
+      "topics": [
+        "v-tbmm"
+      ]
+    },
+    "VAT-EK-0013": {
+      "sha256": "6f61906dd2fa913ca85ac09e654ea0327a9405892d21eaabcab4eaf01f60bd4e",
+      "topics": [
+        "v-yurutme"
+      ]
+    },
+    "VAT-EK-0014": {
+      "sha256": "2196015fb6ced3e2c847733de1868c42b2054e557f5092756e2055984c04093c",
+      "topics": [
+        "v-yurutme"
+      ]
+    },
+    "VAT-EK-0015": {
+      "sha256": "f6ae2043cee1991e28cd9356ec721f642bcbc6d5e7af4daf0f8eebbc0cb59b63",
+      "topics": [
+        "v-yargi"
+      ]
+    },
+    "VAT-EK-0016": {
+      "sha256": "cd418c695a88e8593a74486641125ecbbf0a1f7f6f6ad47ff8d18bb25c8590ed",
+      "topics": [
+        "v-yargi"
+      ]
+    },
+    "VAT-EK-0017": {
+      "sha256": "73ce3c4c1bcf2771726bbb83f32836fd3ef1851e600c220b0679b084deb659b6",
+      "topics": [
+        "v-yargi"
+      ]
+    },
+    "VAT-EK-0018": {
+      "sha256": "05f5955064e7b618acb40215c8b9cfc593420199d789392e0f69d23f924803c2",
+      "topics": [
+        "v-idare"
+      ]
+    },
+    "VAT-EK-0019": {
+      "sha256": "009fd501394a03ba6e2cbdc066f6e23f8979c809d40253a22d878079d79a1ad2",
+      "topics": [
+        "v-idare"
+      ]
+    },
+    "VAT-EK-0020": {
+      "sha256": "9dda4e5673f998966ffdcbd590af35caa727731cc8795900b3b3a0638eb62584",
+      "topics": [
+        "v-idare"
+      ]
+    },
+    "VAT-EK-0021": {
+      "sha256": "839a5aec6aa2df0cf25d7b721a58090d71e9368ddca62fb8c3d2c0097f370d64",
+      "topics": [
+        "v-idare"
+      ]
+    },
+    "VAT-EK-0022": {
+      "sha256": "ea640aa3ab1e065c5ace22a83eb3c0995988ee58c64eaf5432972774916c2691",
+      "topics": [
+        "v-secim"
+      ]
+    },
+    "VAT-EK-0023": {
+      "sha256": "bf1d63bb1e3a9c6cb9da8c408314a52664bcc36efd8205b399544cdac0a0e0a0",
+      "topics": [
+        "v-secim"
+      ]
+    },
+    "VAT-EK-0024": {
+      "sha256": "ca01d5a2652f41a1662b5e91898637e0150144b3fef906ae9ecef3976122258a",
+      "topics": [
+        "v-secim"
+      ]
+    },
+    "VAT-EK-0025": {
+      "sha256": "933e6c85f56925d9934f1d2bf368157ac520bb2091c55005fdd5ebd7b9dd29ac",
+      "topics": [
+        "v-memur"
+      ]
+    },
+    "VAT-EK-0026": {
+      "sha256": "4f5a5dd032f13418cd35f50d55d1be439f7ff100fafc2ef2b703f9f186e8b27a",
+      "topics": [
+        "v-memur"
+      ]
+    },
+    "GUN-EK-0001": {
+      "sha256": "a7039cddbe7f752066e2c312a93211d54570d1c72e26013769d1cdd27ddbcd52",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0002": {
+      "sha256": "7ccac1995ec85042da004cd1244d744493e1ebb148292b8253d9a040abeaa0b7",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0003": {
+      "sha256": "b591f5f8aff35057689ebdf408dceb6bc2047312f6b4527e5d7c82418327a14d",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0004": {
+      "sha256": "056212c6b1e83c816a85824dc9857579c811e2e8de8d006e7a7ea8abaeba6932",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0005": {
+      "sha256": "98344d398a8a8e8db53ec7c97780d16d96a7431e2575c9c7ba30a3b36949e746",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0006": {
+      "sha256": "8d24bf21048071d5d53fbaae5be880f54e34a30da3648325673df634ecf4fa73",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0007": {
+      "sha256": "d0fc203dc3bf00842156451d225716d21aca9d7ab7a4d7ca37d2ccf776141d6e",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0008": {
+      "sha256": "c432bdc7efae682626f82d6de38ed15e25e1b4f022b5dfdf00fa2022abf6fabe",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0009": {
+      "sha256": "c524fc19ac53a2f7eabff0da5816203d2fd14fa9492be5d9d127c078816c7602",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0010": {
+      "sha256": "ef32fb33e2d808f4bd7a4cc8e5ee61cb29058cc2ad45ed42e78d25e0157a38d7",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0011": {
+      "sha256": "a82584dd67a12fcefd62f73b7a7752001b2bcd6814a1ce7b089726bf2be8df63",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0012": {
+      "sha256": "f3913dd0494d1c489943a6ac89327ea97654b6998f337a0f3dd4b3f177eeb914",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0013": {
+      "sha256": "6f5d21811fd69ed741bb3058328c2ecb7a84e6077a74409c8ebd7cb20d26ac38",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0014": {
+      "sha256": "bca7fc5064b0fdf5172c50cc74ec3139f5c3aa856706c5917f8ec9c16195b2b0",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0015": {
+      "sha256": "db4862ef99a565672a0813dd2698123267c4cf8c9c921139877f7a4f2e00ed96",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0016": {
+      "sha256": "4d9736ba8f336e924a4023c33e86f193b2c35b52cb2e62028b1814cb08cad7cf",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0017": {
+      "sha256": "7d5394f413f5bf9fcf675557f2bb8b8b269f1b3b0203af45aa57a6ca76791a39",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0018": {
+      "sha256": "45b97b2e6cf3d38688be80ab7690b54902206aa654187c97e738ee5e22cd1240",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0019": {
+      "sha256": "b074babb3ab7efe82fc088b6cae2b99a33da10938519b026c03d3f669fa8093f",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0020": {
+      "sha256": "17698978933082207544da4805f860d79a129b17fff247819159677cdde4fa90",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0021": {
+      "sha256": "89622ede96c274f5017533d7d90125e198e33f9eeb3e1704e7222f513d196aa4",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0022": {
+      "sha256": "dc80a37972f4b97f2e8edccbb377a8a7bcaa43e3c2fa345da65407ade7abd834",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0023": {
+      "sha256": "05ed3ff3539f354ff6803fd7fac59d8230790b156225ff8e7fd0c57a91108604",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0024": {
+      "sha256": "4911682aacb891559bc843ac7d0d958e4fcf394787076ba8aa79757fab9de915",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0025": {
+      "sha256": "6e3a65f30c35e4479e157fdd12d9a3e8e6e485ef0cca596eecaba9e9a83b419c",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0026": {
+      "sha256": "bd67d99038f9532b5aa331531214db8b61b91a64dee8bbdaedbc62037d80ca4c",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0027": {
+      "sha256": "cc30e27fa7a93a8822e8e51f85579337aa41e4c9850db2c9faf03161c800c1df",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0028": {
+      "sha256": "cfa3f0501ab6ce86047ad90c2d31db74593d07b903d23b01d25b0e0ce10f1d2a",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0029": {
+      "sha256": "3bdd8eb885b20a4ce186fd10fe908d9f25f7f81ee5d435b7c48498f1eeb5c8f3",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0030": {
+      "sha256": "979ca43125fb529e708ee1dab23cd4adc2853d3204b819342e6c0315cb8f7ce7",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0031": {
+      "sha256": "4161bee4e1ed5b5d0cf5beb99a48f66e0288908161d5d867da17592e85796027",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0032": {
+      "sha256": "3be9f30433e724b5e250ae99af7717f46bfff8594bdeee1be9eb15864a48903b",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-EK-0033": {
+      "sha256": "80fc113375a406ecc05ab394c7ce8c52a5fc5821840d40f5c30258f281c3bd1a",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0034": {
+      "sha256": "346631ee93ff720904d57a5eff62cc85612777b18cb38480c8450d5c06454329",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0035": {
+      "sha256": "9007fcd212cd47f529c19ac27d93a6bbefeb02f9a6be86b1af7fa15e6632ff15",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0036": {
+      "sha256": "80c8ff11ea3c89155f271719700274f5bbbeb7eb3e198eecd63e9ebbbd77ef29",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0037": {
+      "sha256": "d2e97951f88d7174376bb667bde7ff7ea4f0fabe30af33b58f5ad1178db6fa0b",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0038": {
+      "sha256": "15c0465d65889e24d35758c98ddfcb8210c63f3b3090e3dd274e70db07bfd91d",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0039": {
+      "sha256": "5976c33f152eb2669ffa75c97ebca8490db791ac521eb6ef512a35099118fc7a",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0040": {
+      "sha256": "6a2a5c42d8b3758e46a0df909ed4c7582f9fbf960e08de2ae7d5541b00c8469d",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0041": {
+      "sha256": "7a8887e03f1edbeb7e171fa1a887f62baa4212ee5e0270874be24c3b80c9cade",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0042": {
+      "sha256": "11790674f223034593e6e8410855c0730710637cfff9c3d73ab2e3f805b6f755",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0043": {
+      "sha256": "17b6c6c259111d738ddd185d44dad46929b31535ff61499038a2c8f66c59aa1d",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0044": {
+      "sha256": "e11b8fbcce90ea38fe0e9b41753edb4e189cda7869978c79ca0142d926c369b7",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0045": {
+      "sha256": "eca3a256fdc9bc65a4fa5d84b77f7da7b812fd5ec7e35018173fe29c6b554c7f",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0046": {
+      "sha256": "b8a571f1fe4664c234d0fd6f97f2fcb3e33df5243b32959f534e526a55525d3f",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0047": {
+      "sha256": "64d32d9be2cec797faab92274e10c82b5762bdbb9239ce95da4ef8e1d04791a8",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0048": {
+      "sha256": "d1d0a30c1644c653a9893111b760d1809a4073cc17ff178f876f3b786702446f",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0049": {
+      "sha256": "36fc5d0498ec802a05a656c818cd6d7df829999fc0a3b7837a98c1f8030d35ac",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0050": {
+      "sha256": "64be7b2f172d1a240b7ae7049fea333f5c18139fcae2c663df8d21cca1c63868",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0051": {
+      "sha256": "ecee2eb4fe40642a380f3de6546b77954b28b1590c0d109a6b970d5fd1a9ee68",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0052": {
+      "sha256": "4d2e1bb4044bd8116333bd8cb6a506a33dc94b0e0a0880c3bc3be5dd3a88ef26",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0053": {
+      "sha256": "fbdb8ac120d6d05470e1ea0c97b00a33c65eef0178a93f220f5858e82b463687",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0054": {
+      "sha256": "f15316ad40db28062f0aaf0390ea6b831435c891af25b28087b5fcd28ad998ba",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0055": {
+      "sha256": "fb94e06737be9ba026dfe926cf305d6a431bcc64a8b6aa561b6ea70b27ec169b",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0056": {
+      "sha256": "d1f8e61b02e27c5ab64001ed87457500a1703d3d2d947e9bb9700b4f80c1a5ac",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0057": {
+      "sha256": "1e538bf29cc07d518953b292451434587425ec2c08954f440ef50eaf69915eb9",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0058": {
+      "sha256": "8cd8ea05a1e2ce708b1723b641823420b291f58e0bc19ea08f4051444d12b8b0",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0059": {
+      "sha256": "6e2b8d86a02ca98273a47a3384626eeace2b886089ae4e082d11bbe16f69b120",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0060": {
+      "sha256": "a3c283f0a000ee34037804e340d458335d07991ad211a0601551dda56ab3baed",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0061": {
+      "sha256": "90af46f8a79fbc7e95ca0334ac025bcfe104dcfa39cbdf2c9d7dae7ff3b509d9",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0062": {
+      "sha256": "5bdc6101b6ed4d8cbf4789322bf0ca80d871372f0f36e8fb74387608170f9989",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0063": {
+      "sha256": "1ec2c073155aca4ae98ac70b4d4b77a39d188a826886c8ee7370b83f8a3d0e4c",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0064": {
+      "sha256": "43af3b15055995887e1ae0f6019b17f8a1812cafe87b2e1a17c6c657fd8a02ca",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0065": {
+      "sha256": "3622ce204dc192c00b275ecc309818613c06cbdaed593f68d496c393f0a814cb",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0066": {
+      "sha256": "c3393a7f2813f1d1c2d6864aba46363cd033e652ecda0ac2bef0c1427b53419b",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0067": {
+      "sha256": "211370746db623e059d2976d0ae56e5c7ba70a966fa5689a02da86fbed492519",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0068": {
+      "sha256": "ab96c2c1490c4cd57a20ade2293adac6c998b00d1d1d2612d9ff04dc8e8a7ff2",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0069": {
+      "sha256": "f797127936bfdcc70f72b7690fa1e44f1d0b1d68e2ed212ccd41221304004508",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0070": {
+      "sha256": "67ff3467690003bf85002000148446360010c028bf3e0b8588196f15f87a0c39",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0071": {
+      "sha256": "2384d6e5e52dd7ebe6f654d7364af6e9fbadb7cfa9ba82d22438b9d31b3df74d",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0072": {
+      "sha256": "7496737c8f627b6ebf073560b6816b9edf4b930002bc6f02b85827e7aa68ebb6",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0073": {
+      "sha256": "ad3e4294e9d2b0dc1b41d7575e5209de68fbe70b6f5b18e9106f6f2d40900981",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0074": {
+      "sha256": "490ad070b8019799447f293b1b7f23ae1e02d2ccedef2a7dc52dad7469cfd723",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0075": {
+      "sha256": "1c323fb5ddf11a915c7efb8c34e7b305e87e508e91f96054bd73203bff53654d",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0076": {
+      "sha256": "07197f8b4b23885910b790da7b69e996742e48283512797a0f9741423dfaefbb",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0077": {
+      "sha256": "4babb144f712f825e98ab1ec642cc0bcbf9b48bb362eba709e60588a494a6366",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-EK-0078": {
+      "sha256": "251482a8a108607a4247be94de9b17b0ed06dfd03477546d2483720ebeab1273",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0079": {
+      "sha256": "2fd597ff79c79284f606a440fa78ab02c98450c8885657b9b36a454e7aec3426",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0080": {
+      "sha256": "322f5affc4d61927c368ac78a6f80df2746c913915054bf83ef5c93d244d46aa",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0081": {
+      "sha256": "980136d72f7380d12fed0b6d7741275833938158dae3ac279b77ba970c3a0990",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0082": {
+      "sha256": "403e4014d6cb8bb0a998f15a50335bfc538b257801ed4587fcc21fcff36e6eb1",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0083": {
+      "sha256": "c0084fbd0851234aacbbeaf3e427c2af06cf8db01cee3321d62bbe84b3ba467a",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0084": {
+      "sha256": "ded93be0c0421c3d0e35f73b94684ff596da5d368924c4846690d4bdd1dd5b89",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0085": {
+      "sha256": "c6ef6598db1e4a9594165b656fa2e15be9ba85d772023b65e0d39bdd8bf45968",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0086": {
+      "sha256": "dc9f3dd0615b26ab7b3887467529b1d7bbecf0dcc187f6562f633cf7f761d6af",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0087": {
+      "sha256": "01f83567aa0a6c93033e2dd3cc324412bfc648ebdc71566a061669cceb4deace",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0088": {
+      "sha256": "b1afac6f9978f0b8ec43906042915c1cb68d18ed2dae1cf2f2c6780a50dc3e80",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0089": {
+      "sha256": "b36d7ed446e0a50ff31ed25313070f222f535a3fa86d06695ed9f566e71ac481",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0090": {
+      "sha256": "e8128e5b534740e741b179314318192badfc163723ec7252d67bf256313622ef",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0091": {
+      "sha256": "891efe4f916959a4b25897357c078dbbf99db8b7a94b3ea29687b21949e114e8",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0092": {
+      "sha256": "574a96f49ffaad3ad4f662d8e5822e2b128ee899124694ece8b1ea958e946a21",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0093": {
+      "sha256": "ec76ed5789e8b5df59ca3c6cee50e5c195d70802c56e17a6a6976f403b6ce7d7",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0094": {
+      "sha256": "33ba6f9314b114214faf60ff66ff6996b21043bf722cdc4626494f9001672813",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0095": {
+      "sha256": "15975b0705ef559e7d162d0fd45b1db1493967d66e4beb3e054b6dc576d205c6",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0096": {
+      "sha256": "547edb88887a3f68497e6d5e517f615c3979d66b9006731709a5fefeec8e6196",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0097": {
+      "sha256": "ceee048de61a36c5ff2a7bc87b034601e2d956d02b9f5c41d7ba46bc90313487",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0098": {
+      "sha256": "cbde68c8f569e03a68fc2f1c0e8a7c4702317be5ca3601b45fb75892e25ae55e",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0099": {
+      "sha256": "bc76ea0410fee687bf510ef786cac771c9995ed53b754e141ad112ee56ab456b",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0100": {
+      "sha256": "6351deec7f62d0aa1414d599ac41abf69b0403e0c4686f0cf7f198d9f0ea6918",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0101": {
+      "sha256": "271c1c59cad304eb090be852bdf81cce1043d1fc13e7a558e1ac5c7ca3b5e228",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0102": {
+      "sha256": "f5117f5b3dccbeda9283ceeae51db0b3717c877b7f0126e9365c9200c830318a",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0103": {
+      "sha256": "34fd6311a91c6f81d1f0d0eaa52e797644c1eec04afbb7f638e6a881de0adc8b",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0104": {
+      "sha256": "f9b7137b198a318428ab55073cdb76c8f24345156462a5bcd4bd42e7eac21707",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0105": {
+      "sha256": "db7dbb2b1e4e12f53b0e45c238366d58ffa5a4c3a94b6db2ba828c0a528d660e",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0106": {
+      "sha256": "909b4546dc12653325c81d5f405c6f42afd70913e309ab22805bd5912b4869df",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0107": {
+      "sha256": "9c6fb164f6498bcd0edd6716caed6cf5a6a196ab92c7cfbe13ca52e7f11afd2a",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0108": {
+      "sha256": "ce8e3f47ccd58a3176232ec80fb30e156c5c44ef7bd4bff07c511e26ead281b3",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0109": {
+      "sha256": "30075baa3557c1559c3ef771012f448b92e922e545c25ccd47fcb8132cbef538",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0110": {
+      "sha256": "b163d618a758ed577926da9fa5b24753ef58070a47415951c51d0966dad77bb4",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0111": {
+      "sha256": "853c04143d92cb3bb02e26dd13647bd7b8dfb3d40418c74799d06e7f39caa912",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0112": {
+      "sha256": "c1d1aeab83cf4d170def95aabcd6c7345a2e766a787b02653bbeba5ab893f44e",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-EK-0113": {
+      "sha256": "0272f190a1077ca813049b7f31cce26bbbcd767b0047f5bff33c36e120e78588",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0114": {
+      "sha256": "a6a4cb1c209b700dffdafdcb737b5b1556111299316e1fcd7de2a57b1482c7ac",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0115": {
+      "sha256": "ce228cd604b1e4230a71e8d71becee7673ce05f69e7bd22c2a78b0dd86962b15",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0116": {
+      "sha256": "8540b402e31cced430618c851b6c360c037b12f1cf863e698865280166e3a2f6",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0117": {
+      "sha256": "bbf582916a3ce5e00863baabf60bb738c507eee0e65aa653225d1364292384f2",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0118": {
+      "sha256": "01e4adb71ff8e5f301d8e4e59bbb4dbccf1406f1b697abd83f24d6f52178acdc",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0119": {
+      "sha256": "b2eb75f5e08262ee17da8e72c18fe1b98d83275ac9c7e178acf4321c131371c7",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0120": {
+      "sha256": "3bea9e8678a06e2da1585ab501a42d229d32a3b2cb09ace19b491dbc7a007205",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0121": {
+      "sha256": "11eab2a4c0ca88397859b7ae84ca6d0f6f7371a69fce767b8dfc7701ba0553f8",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0122": {
+      "sha256": "ac66d7bb467ea938f7e06f680e6558ea3f41dc8cf481dd1f2e1140d9714bcb59",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0123": {
+      "sha256": "83325eeeccd56d12ba979d6cad08c1c80f54e4047941cc9104583251f92fe67d",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0124": {
+      "sha256": "818ba969d9efe2fa56993796a33670ef6c11d25afece327677e954fb05fb7b4c",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0125": {
+      "sha256": "6b23b0f7bb12ddd5e7e1bb2cc5835dfb2526818d59712ef20a172dcd2256b9a9",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0126": {
+      "sha256": "065f1db796bc84a8fd15d3def9d649c4af7cbdf42dd1eb4d7e49e7a04dc2e9f8",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0127": {
+      "sha256": "b111c35a27825067cc71044ef9c4efee3fbc1cc85ca4cc68372b64056504116d",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0128": {
+      "sha256": "78563f63bb8c6aae411114cfd4284b9ed2da6d217088ad331d4994b3e4ef79b2",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0129": {
+      "sha256": "5b7754c7fe128723f30f35c12ffafd18380c9774cd839db14c09477939773aa9",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0130": {
+      "sha256": "40d1218b00668a0bd5cc3c12bd3dc3ebfce923d13463b382cdf8d31b614437c0",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0131": {
+      "sha256": "52dbfb4f51915920364165e118a5beb143377ea0a1e5d0b3737a6401919ccf01",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0132": {
+      "sha256": "4392486f25bca683bf3922ac9479ee652afd45f7315bfef55cba3d3d0d07f7cf",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0133": {
+      "sha256": "11bba5d34e9960c9e1b22b072cfd26ca94c6b0f894bba3a9379c9cbc9141c189",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0134": {
+      "sha256": "a4f8288647dcb6cd0dafdd16865af7c2c19719984561bff7818fa8819c51cb18",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0135": {
+      "sha256": "ee7b447f66a68170b6f8281d735d81b4af09eb322c566705383432d25d440040",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0136": {
+      "sha256": "ffa4554446b0a5a95414b84d14c085f5f65f7f02cf8b93b3defc3d1bd5cc3d62",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0137": {
+      "sha256": "b11de7c81fec4cd1084f711c96f352966de55b02096c0f9a4236c6e4953c566f",
+      "topics": [
+        "g-odul"
+      ]
+    },
+    "GUN-EK-0138": {
+      "sha256": "ae2aab12ff179a9e86f9840b45f4fbd1fcb708ba96c7bf30b2cdcccecd04fec3",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0139": {
+      "sha256": "f1706c1b7e33dbcfebd886d7a135e95ecb235d2cac0ca5c957f23f8c8e57fb7f",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0140": {
+      "sha256": "b4bdf0fa45a8c0339ea38f8b92cf2239e699297545ac335b618e049bfdb29819",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0141": {
+      "sha256": "37dc5a4d320f095eac6d3ef47a3e096fd78b3b608a478e7e6002453e12560f55",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0142": {
+      "sha256": "7f09b615293bc5979f4c3ea1032f68f249c42d7790b2c85a7b599a52e85ce194",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0143": {
+      "sha256": "67f05ab4fb8761e6769ce0a4bb6ec0f9190cf654639f2d0b1f81d04e3d334991",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0144": {
+      "sha256": "c048607e4abb4fe2dcee074011300cf7262c585b0c02e4c19799e2328517a191",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0145": {
+      "sha256": "e621a91a08e323fafd00cfa6ca20f130e12c3c22d4510d210ce0886aaf93b2ec",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0146": {
+      "sha256": "579c970fa457e09ad827c604b5d6d5d41c57b82cca4c23ae6c539e14496ba2ba",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0147": {
+      "sha256": "2d513e1fea570bac2202ae0920d7d99c2d28f5178b4e2ce6d125c65c66b3229c",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0148": {
+      "sha256": "64366f147698ef02b60513b97f1091719ae4d04b92a9b2c491fb635d46aa4f07",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0149": {
+      "sha256": "b20c13621038d210bc85d214c224e45de32b50a50e4fc42a437311ca1b1990cb",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0150": {
+      "sha256": "110024dfe75ddd3ca602146185d28a9468d24590386618f1b1ca07c5d4476468",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0151": {
+      "sha256": "2a122c401105f4934025bbe13eb61fed3deadfef4ac68717912e431bb8e95715",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0152": {
+      "sha256": "c067b9543d1f006b15d9adf330cdf03c723ee31046bcc650d8284ce0e3b24152",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0153": {
+      "sha256": "da30b6ff6654835484a89f407f8a0966f83edfdbbecae77c35af8f4310c4ad68",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0154": {
+      "sha256": "9d7bab993f1e33d1178479b466ef05062203d8c228fdadec9113ec1e2ce21099",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0155": {
+      "sha256": "3daf683286aa3cf135d9515cfe32d1dc01d271b2c4609bc593ef94e460f71346",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0156": {
+      "sha256": "01c8e8946aba463b111bd2fcb95d48ac4183e8932b1a62b4fe02d36d1e030cd7",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0157": {
+      "sha256": "d488c21339d32903fad2fe9a0ad419ea6275d975d3a03df46e58369aa62c789d",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0158": {
+      "sha256": "a4a15d98f3c140ec5c6c49c817856419ec59a9694b4dd9bb28eac5f70d0e6ab1",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0159": {
+      "sha256": "22533f14874766982658fec61dd902a44c50239ce3a87437aa12aa928955cae1",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0160": {
+      "sha256": "fd8aafe5188971e32642b6b13e29132c9f1571f857cd21b61d09cd953fd90db0",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0161": {
+      "sha256": "d8d8db110274ba0b06dc7d51052fc6ad5633ba29b967918724896f3bc86636ad",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-EK-0162": {
+      "sha256": "6dae08556d93d919addcf3039448a22c15dfc576d8c02956142d9a0b8519c501",
+      "topics": [
+        "g-spor"
+      ]
+    }
+  }
+}

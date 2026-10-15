@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPSS Ortaöğretim — 10 Günlük Hızlandırılmış Kamp</title>
+<link rel="stylesheet" href="/static/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+</head>
+<body>
+<div id="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">📚</div>
+      <div>
+        <div class="brand-title">KPSS Kamp</div>
+        <div class="brand-sub">Ortaöğretim · 10 Gün</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#/panel" data-r="panel">🏠 <span>Bugünün Rehberi</span></a>
+      <a href="#/konular" data-r="konular">📖 <span>Konu Anlatımları</span></a>
+      <a href="#/coz" data-r="coz">✏️ <span>Test Çöz</span></a>
+      <a href="#/denemeler" data-r="denemeler">📝 <span>Denemeler</span></a>
+      <a href="#/hata" data-r="hata">🎯 <span>Hata Defteri</span></a>
+      <a href="#/istatistik" data-r="istatistik">📊 <span>İstatistik</span></a>
+      <a href="#/ayarlar" data-r="ayarlar">⚙️ <span>Ayarlar</span></a>
+    </nav>
+    <div class="sidebar-footer">
+      <div id="kalan-gun" class="kalan-gun"></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="menu-btn" class="menu-btn">☰</button>
+      <div id="topbar-baslik" class="topbar-baslik">KPSS Ortaöğretim Hızlandırılmış Kamp</div>
+      <div id="topbar-ilerleme" class="topbar-ilerleme"></div>
+    </header>
+    <div id="view" class="view">
+      <div class="loading">Yükleniyor…</div>
+    </div>
+  </main>
+</div>
+<script src="/static/js/soru_secimi.js"></script>
+<script src="/static/js/app.js"></script>
+</body>
+</html>
