@@ -32,7 +32,7 @@ class BankaTutarlilikTest(unittest.TestCase):
 
     def test_tekil_ve_mevcut_idler(self):
         ids = [p[0] for p in self.satirlar]
-        self.assertGreaterEqual(len(ids), 200)
+        self.assertGreaterEqual(len(ids), 300)
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(set(ids) <= self.rows.keys())
 
@@ -54,6 +54,16 @@ class BankaTutarlilikTest(unittest.TestCase):
                 self.assertEqual(s['kaynak'], OZGUN_KAYNAK)
                 self.assertNotIn('cikmis', s['etiketler'])
                 self.assertEqual(s['cozumler'][0]['yontem'], 'KPSS mantığı ile çözüm')
+
+    def test_yuzluk_partide_her_dersten_yirmi_soru(self):
+        sayilar = dict.fromkeys(DERSLER, 0)
+        for dosya in (ROOT / 'data/kaynaklar').glob('yukselt_1[0-4]_*.tsv'):
+            for line in dosya.read_text(encoding='utf-8').splitlines():
+                if not line.strip() or line.lstrip().startswith('#'):
+                    continue
+                sid = line.split('|')[0]
+                sayilar[self.rows[sid]['ders']] += 1
+        self.assertEqual(sayilar, dict.fromkeys(DERSLER, 20))
 
     def test_tekrar_uygulama_bankayi_degistirmez(self):
         banka, sayilar = yukseltilen_banka(ROOT)

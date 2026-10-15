@@ -99,10 +99,12 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > yazılıyor: senaryolu/anlamlı kökler, olumsuz sorular, I-II-III kombinasyonları,
 > eşleştirme; ayırt edici tuzak şıklar; her soruda "KPSS mantığı ile çözüm"
 > (doğru + tuzak açıklaması). `araclar/soru_yukselt.py` ile yerinde güncellenir;
-> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **Yeniden yazım ilerlemesi: 200/2116 özgün soru.** Bu sayı kalan soruların
+> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **Yeniden yazım ilerlemesi: 300/2116 özgün soru.** Bu sayı kalan soruların
 > gözden geçirildiği veya zorluğun aday verileriyle kalibre edildiği anlamına gelmez.
 > İkinci parti: 50 yeni yeniden yazım; önceki partide ayrıca 25 içerik düzeltmesi.
-> Üçüncü parti: her dersten 10 olmak üzere 50 özgün soru daha yenilendi; kalan 1916.
+> Üçüncü parti: her dersten 10 olmak üzere 50 özgün soru daha yenilendi; toplam 200.
+> Dördüncü parti: her dersten 20 olmak üzere **100 özgün soru** yenilendi; kalan **1816**.
+> Sonraki partiler de 100 soru hedefiyle, ders başına 20 soru olarak ilerler.
 > Tüm yeniden yazımların şık, cevap ve çözüm aktarımı `test_yukselt_banka.py` ile denetlenir.
 > Gerçek çıkmışlar ve yayınevi soruları araç tarafından değişikliğe karşı korunur.
 > Girişler topluca doğrulanır; eksik id, tekrarlı şık veya korumalı kaynak varsa yazma yapılmaz.
