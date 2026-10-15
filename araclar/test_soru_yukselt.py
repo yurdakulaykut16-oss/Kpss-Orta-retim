@@ -59,6 +59,11 @@ class SoruYukseltTest(unittest.TestCase):
         banka, _ = yukseltilen_banka(self.root)
         self.assertEqual(banka['tarih'][1][0]['kaynak'], OZGUN_KAYNAK)
 
+    def test_kokte_satir_sonu_tsvden_acilir(self):
+        self.tsv.write_text(self.satir.replace('Yeni soru?', r'I. Birinci\nII. İkinci\nSoru?'), encoding='utf-8')
+        banka, _ = yukseltilen_banka(self.root)
+        self.assertEqual(banka['tarih'][1][0]['kok'], 'I. Birinci\nII. İkinci\nSoru?')
+
     def test_tekrar_calisma_ayni_sonuc(self):
         main(self.root)
         before = self.snapshot()

@@ -60,7 +60,7 @@ def yukseltilen_banka(kok):
                 raise ValueError(f"{yer}: beş farklı seçenek gerekir")
             random.Random(f"{sid}-yukselt").shuffle(siklar)
             soru.update(
-                kok=soru_koku, zorluk=int(zorluk), siklar=siklar,
+                kok=soru_koku.replace(r'\n', '\n'), zorluk=int(zorluk), siklar=siklar,
                 dogru=siklar.index(dogru), kaynak=OZGUN_KAYNAK,
                 cozumler=[{"yontem": "KPSS mantığı ile çözüm", "metin": cozum}],
                 etiketler=[t for t in soru.get("etiketler", []) if t != "cikmis"],

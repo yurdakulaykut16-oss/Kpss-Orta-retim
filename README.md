@@ -99,12 +99,21 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > yazılıyor: senaryolu/anlamlı kökler, olumsuz sorular, I-II-III kombinasyonları,
 > eşleştirme; ayırt edici tuzak şıklar; her soruda "KPSS mantığı ile çözüm"
 > (doğru + tuzak açıklaması). `araclar/soru_yukselt.py` ile yerinde güncellenir;
-> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **Yeniden yazım ilerlemesi: 300/2116 özgün soru.** Bu sayı kalan soruların
+> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **Yeniden yazım ilerlemesi: 800/2116 özgün soru.** Bu sayı kalan soruların
 > gözden geçirildiği veya zorluğun aday verileriyle kalibre edildiği anlamına gelmez.
 > İkinci parti: 50 yeni yeniden yazım; önceki partide ayrıca 25 içerik düzeltmesi.
 > Üçüncü parti: her dersten 10 olmak üzere 50 özgün soru daha yenilendi; toplam 200.
-> Dördüncü parti: her dersten 20 olmak üzere **100 özgün soru** yenilendi; kalan **1816**.
-> Sonraki partiler de 100 soru hedefiyle, ders başına 20 soru olarak ilerler.
+> Dördüncü parti: her dersten 20 olmak üzere **100 özgün soru** yenilendi; toplam 300.
+> Beşinci parti: **her dersten 100, toplam 500 özgün soru** yenilendi; kalan **1316**.
+> Yeni parti büyüklüğü ders başına 100'dür. Bu, günlük hedefi değiştirmez.
+> `parti_500_editor.json` elle hazırlanmış bilgi/cümle tablolarını ve sabit hedef id'lerini içerir;
+> `python3 araclar/parti_500_uret.py` bunlardan yeniden üretilebilir TSV'ler hazırlar.
+> Öncüllü eşleştirmeler, cümle değerlendirmeleri ve bağlam soruları kullanılır.
+> Aynı öncül kümesini yalnızca sıralayarak yeni soru saymak engellenir. Çözümler
+> doğru eşleşmeleri tek tek gösterir. Bunlar **özgün çalışma sorularıdır**, kitap alıntısı değildir.
+> TSV'de `\n` ile saklanan kök satır sonları, uygulamada öncülleri ayrı satırlarda gösterir.
+> `python3 -m unittest discover -s araclar -p 'test_*.py' -v` aktarım ve üretim testlerini çalıştırır.
+> Bu teknik testler editoryal bilgi doğruluğunu veya sınavla eş güçlüğü tek başına kanıtlamaz.
 > Tüm yeniden yazımların şık, cevap ve çözüm aktarımı `test_yukselt_banka.py` ile denetlenir.
 > Gerçek çıkmışlar ve yayınevi soruları araç tarafından değişikliğe karşı korunur.
 > Girişler topluca doğrulanır; eksik id, tekrarlı şık veya korumalı kaynak varsa yazma yapılmaz.

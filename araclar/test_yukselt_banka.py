@@ -32,7 +32,7 @@ class BankaTutarlilikTest(unittest.TestCase):
 
     def test_tekil_ve_mevcut_idler(self):
         ids = [p[0] for p in self.satirlar]
-        self.assertGreaterEqual(len(ids), 300)
+        self.assertGreaterEqual(len(ids), 800)
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(set(ids) <= self.rows.keys())
 
@@ -40,7 +40,7 @@ class BankaTutarlilikTest(unittest.TestCase):
         for p in self.satirlar:
             with self.subTest(id=p[0]):
                 s = self.rows[p[0]]
-                self.assertEqual(s['kok'], p[2])
+                self.assertEqual(s['kok'], p[2].replace(r'\n', '\n'))
                 self.assertEqual(s['zorluk'], int(p[1]))
                 self.assertEqual(set(s['siklar']), set(p[3:8]))
                 self.assertEqual(len(set(s['siklar'])), 5)
