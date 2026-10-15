@@ -1,0 +1,102 @@
+# Yeni parti 15b — Türkçe (yapı bilgisi, sözcük türleri, fiilimsi, cümle ögeleri): elle yazılmış özgün çalışma soruları (TUR-YS-0351..0450).
+# id|konu|zorluk|kök|doğru|yanlış1|yanlış2|yanlış3|yanlış4|gerekçe
+TUR-YS-0351|Yapı Bilgisi|2|"Gözlemci" sözcüğünün kökü hangisidir?|göz|gözle-|gözlem|gözlemci|gö|Kök, sözcüğün anlamlı en küçük parçası olan "göz"dür.
+TUR-YS-0352|Yapı Bilgisi|2|"Bilgisayar" sözcüğü yapı bakımından nasıldır?|Birleşik|Basit|Türemiş|Yalnızca çekim eki almış|Kökü fiil olan basit sözcük|"bilgi" ve "sayar" sözcüklerinin birleşmesiyle oluşmuştur.
+TUR-YS-0353|Yapı Bilgisi|2|"Kuşburnu" sözcüğü yapı bakımından nasıldır?|Birleşik|Basit|Türemiş|Yalnızca çekim eki almış|İkileme|Anlam kaymasıyla oluşmuş birleşik bir sözcüktür.
+TUR-YS-0354|Yapı Bilgisi|2|"Sulamak" fiilinin kökü hangisidir?|su|sula-|sulama|sul-|sulak|"su" ismine -la yapım eki getirilmiştir.
+TUR-YS-0355|Yapı Bilgisi|2|"Başarı" sözcüğündeki "-ı" eki hangi türdendir?|Fiilden isim yapım eki|İsimden isim yapım eki|İsimden fiil yapım eki|Fiilden fiil yapım eki|Belirtme hâli eki|başar- fiiline -ı eklenerek isim türetilmiştir.
+TUR-YS-0356|Yapı Bilgisi|2|"Evcil" sözcüğündeki "-cil" eki hangi türdendir?|İsimden isim yapım eki|Fiilden isim yapım eki|İsimden fiil yapım eki|Fiilden fiil yapım eki|Çekim eki|ev ismine -cil eklenerek yeni bir sözcük türetilmiştir.
+TUR-YS-0357|Yapı Bilgisi|2|"Yeşillik" sözcüğünün kökü hangisidir?|yeşil|yeşille-|yeşillik|yeş|yeşer-|-lik eki "yeşil" köküne eklenmiştir.
+TUR-YS-0358|Yapı Bilgisi|2|"Yaşlan-" fiilindeki "-lan" eki hangi türdendir?|İsimden fiil yapım eki|Fiilden fiil yapım eki|Fiilden isim yapım eki|İsimden isim yapım eki|Çekim eki|"yaş" ismine -lan eklenerek fiil türetilmiştir.
+TUR-YS-0359|Yapı Bilgisi|2|"Okutmak" fiilindeki "-t" eki hangi türdendir?|Fiilden fiil yapım eki|İsimden fiil yapım eki|Fiilden isim yapım eki|İsimden isim yapım eki|Çekim eki|oku- fiiline ettirgenlik bildiren -t eklenmiştir.
+TUR-YS-0360|Yapı Bilgisi|2|"Sevinç" sözcüğündeki "-inç" eki hangi türdendir?|Fiilden isim yapım eki|İsimden isim yapım eki|İsimden fiil yapım eki|Fiilden fiil yapım eki|Çekim eki|sevin- fiiline -ç eklenerek isim türetilmiştir.
+TUR-YS-0361|Yapı Bilgisi|2|"Kardeşlik" sözcüğü yapı bakımından nasıldır?|Türemiş|Basit|Birleşik|Yalnızca çekim eki almış|İkileme|kardeş ismine -lik yapım eki getirilmiştir.
+TUR-YS-0362|Yapı Bilgisi|3|"Evlerimizden" sözcüğünde kaç çekim eki vardır?|3|1|2|4|0|ev-ler-imiz-den: çoğul, iyelik ve ayrılma hâli ekleri vardır.
+TUR-YS-0363|Yapı Bilgisi|3|"Kitaplığımızda" sözcüğünde kaç yapım eki vardır?|1|0|2|3|4|Yalnızca -lık yapım ekidir; -ımız ve -da çekim ekleridir.
+TUR-YS-0364|Yapı Bilgisi|2|"Gidiyorlar" sözcüğünün kökü hangisidir?|git-|gid-|gidi-|gidiyor|gi-|Kök "git-" fiilidir; ünsüz yumuşaması nedeniyle "gid-" biçimine girmiştir.
+TUR-YS-0365|Yapı Bilgisi|3|"Öğretmendi" sözcüğündeki "-di" eki hangisidir?|Ek fiilin geçmiş zaman (hikâye) eki|Fiilden isim yapım eki|İyelik eki|İsimden fiil yapım eki|Belirtme hâli eki|İsim soylu sözcüğe gelen -di ek fiilin hikâye kipidir.
+TUR-YS-0366|Yapı Bilgisi|2|"Okulun bahçesi" söz grubu hangi tür tamlamadır?|Belirtili isim tamlaması|Belirtisiz isim tamlaması|Takısız isim tamlaması|Sıfat tamlaması|Zincirleme isim tamlaması|Tamlayan (-un) ve tamlanan (-si) ekleri vardır.
+TUR-YS-0367|Yapı Bilgisi|3|"Taş köprü" söz grubu hangi tür tamlamadır?|Takısız isim tamlaması|Belirtili isim tamlaması|Belirtisiz isim tamlaması|Zincirleme isim tamlaması|İsim-fiil grubu|Malzeme bildiren ve ek almayan tamlamalar takısız isim tamlamasıdır.
+TUR-YS-0368|Yapı Bilgisi|2|"Türk kahvesi" söz grubu hangi tür tamlamadır?|Belirtisiz isim tamlaması|Belirtili isim tamlaması|Takısız isim tamlaması|Sıfat tamlaması|Zincirleme isim tamlaması|Yalnızca tamlanan ek (-si) almıştır.
+TUR-YS-0369|Yapı Bilgisi|2|"Arkadaşıma bir mektup yazdım." cümlesinde "arkadaşıma" sözcüğündeki "-a" eki hangisidir?|Yönelme hâli eki|Bulunma hâli eki|Ayrılma hâli eki|Belirtme hâli eki|İyelik eki|-a eki yönelme bildirir.
+TUR-YS-0370|Yapı Bilgisi|2|"Mektubu kalemle yazdı." cümlesinde "kalemle" sözcüğündeki "-le" eki hangi anlamı katmıştır?|Araç (vasıta)|Yön|Zaman|Birliktelik|Neden|Yazma işinin hangi araçla yapıldığını bildirir.
+TUR-YS-0371|Yapı Bilgisi|2|"Kuşkulan-" fiilinin kökü hangisidir?|kuşku|kuşkula-|kuş|kuşkulan-|kuşk|-lan eki "kuşku" ismine eklenmiştir.
+TUR-YS-0372|Yapı Bilgisi|2|"Uyku" sözcüğündeki "-ku" eki hangi türdendir?|Fiilden isim yapım eki|İsimden isim yapım eki|İsimden fiil yapım eki|Fiilden fiil yapım eki|Çekim eki|uyu- fiiline -ku eklenerek isim türetilmiştir.
+TUR-YS-0373|Yapı Bilgisi|2|"Evimiz" sözcüğündeki "-imiz" eki hangisidir?|1. çoğul kişi iyelik eki|2. çoğul kişi iyelik eki|Çoğul eki|Belirtme hâli eki|Yapım eki|-imiz "bizim" anlamı veren iyelik ekidir.
+TUR-YS-0374|Yapı Bilgisi|2|"Çalışkanlık" sözcüğünün kökü hangisidir?|çalış-|çalışkan|çal-|çalışkanlık|çalı|Kök "çalış-" fiilidir; -kan ve -lık yapım ekleridir.
+TUR-YS-0375|sozcuk_turu|2|"O, dün buraya geldi." cümlesinde "o" sözcüğü hangi türdendir?|Kişi zamiri|İşaret sıfatı|Belgisiz zamir|Soru zamiri|Zarf|"O" burada üçüncü tekil kişiyi karşılar.
+TUR-YS-0376|sozcuk_turu|2|"Hangi kitabı aldın?" cümlesinde "hangi" sözcüğü hangi türdendir?|Soru sıfatı|Soru zamiri|Soru zarfı|Belgisiz sıfat|İşaret sıfatı|"Hangi" ismi soru yoluyla belirtir.
+TUR-YS-0377|sozcuk_turu|2|"Kim geldi?" cümlesinde "kim" sözcüğü hangi türdendir?|Soru zamiri|Soru sıfatı|Soru zarfı|Kişi zamiri|Belgisiz zamir|"Kim" bir ismin yerini soru yoluyla tutar.
+TUR-YS-0378|sozcuk_turu|2|"Pazardan üç kilo elma aldım." cümlesinde "üç" sözcüğü hangi türdendir?|Asıl sayı sıfatı|Sıra sayı sıfatı|Üleştirme sayı sıfatı|Kesir sayı sıfatı|Belgisiz sıfat|"Üç" miktar bildiren asıl sayı sıfatıdır.
+TUR-YS-0379|sozcuk_turu|2|"İkinci sırada oturuyor." cümlesinde "ikinci" sözcüğü hangi türdendir?|Sıra sayı sıfatı|Asıl sayı sıfatı|Üleştirme sayı sıfatı|Kesir sayı sıfatı|Belgisiz sıfat|-inci eki sıra bildirir.
+TUR-YS-0380|sozcuk_turu|2|"Herkes toplantıya erken geldi." cümlesinde "herkes" sözcüğü hangi türdendir?|Belgisiz zamir|Belgisiz sıfat|Kişi zamiri|İşaret zamiri|Zarf|"Herkes" belirsiz bir topluluğun yerini tutar.
+TUR-YS-0381|sozcuk_turu|2|"Bazı öğrenciler geziye katılmadı." cümlesinde "bazı" sözcüğü hangi türdendir?|Belgisiz sıfat|Belgisiz zamir|Asıl sayı sıfatı|İşaret sıfatı|Zarf|"Bazı" ismi belirsiz olarak niteler.
+TUR-YS-0382|sozcuk_turu|2|"Sınava çok çalıştı." cümlesinde "çok" sözcüğü hangi türdendir?|Zarf|Sıfat|Zamir|Edat|Bağlaç|"Çok" fiilin miktarını bildiren bir zarftır.
+TUR-YS-0383|sozcuk_turu|3|"Eve doğru yürüdü." cümlesinde "doğru" sözcüğü hangi türdendir?|Edat|Sıfat|Zarf|Bağlaç|İsim|"Doğru" burada yön bildiren edattır.
+TUR-YS-0384|sozcuk_turu|2|"Doğru cevabı ilk o buldu." cümlesinde "doğru" sözcüğü hangi türdendir?|Sıfat|Edat|Zarf|Bağlaç|Zamir|"Doğru" ismi nitelediği için sıfattır.
+TUR-YS-0385|sozcuk_turu|2|"Ama ben gelmek istemiştim." cümlesinde "ama" sözcüğü hangi türdendir?|Bağlaç|Edat|Zarf|Ünlem|Zamir|"Ama" karşıtlık bildiren bağlaçtır.
+TUR-YS-0386|sozcuk_turu|3|"Okula kadar birlikte yürüdük." cümlesinde "kadar" sözcüğü hangi türdendir?|Edat|Bağlaç|Zarf|Sıfat|İsim|"Kadar" sınır bildiren edattır.
+TUR-YS-0387|sozcuk_turu|2|"Yarın erkenden yola çıkacağım." cümlesinde "yarın" sözcüğü hangi türdendir?|Zaman zarfı|Yer-yön zarfı|Durum zarfı|Sıfat|Edat|"Yarın" eylemin zamanını bildirir.
+TUR-YS-0388|sozcuk_turu|2|"Neden gelmedin?" cümlesinde "neden" sözcüğü hangi türdendir?|Soru zarfı|Soru zamiri|Soru sıfatı|Bağlaç|Edat|"Neden" eylemin nedenini soran zarftır.
+TUR-YS-0389|sozcuk_turu|2|"Merdivenlerden yukarı çıktı." cümlesinde "yukarı" sözcüğü hangi türdendir?|Yer-yön zarfı|Zaman zarfı|Sıfat|Edat|Zamir|"Yukarı" eylemin yönünü bildirir.
+TUR-YS-0390|sozcuk_turu|2|"Hey, buraya bak!" cümlesinde "hey" sözcüğü hangi türdendir?|Ünlem|Bağlaç|Edat|Zarf|Zamir|"Hey" seslenme bildiren ünlemdir.
+TUR-YS-0391|sozcuk_turu|2|"Bütün gün kitap okudu." cümlesinde "bütün" sözcüğü hangi türdendir?|Belgisiz sıfat|Belgisiz zamir|Zarf|Edat|Asıl sayı sıfatı|"Bütün" ismi belirsiz olarak niteler.
+TUR-YS-0392|sozcuk_turu|2|"Bu işi kendisi yaptı." cümlesinde "kendisi" sözcüğü hangi türdendir?|Dönüşlülük zamiri|Kişi zamiri|İşaret zamiri|Belgisiz zamir|Soru zamiri|"Kendi" dönüşlülük zamiridir.
+TUR-YS-0393|sozcuk_turu|3|"Benim kalemim kırıldı, seninki daha sağlam." cümlesinde "seninki" sözcüğü hangi türdendir?|İlgi zamiri almış zamir|İşaret sıfatı|Belgisiz sıfat|Soru zamiri|Zarf|-ki eki ilgi zamiri olarak "senin kalemin" yerini tutar.
+TUR-YS-0394|sozcuk_turu|3|"Keşke dün bize gelseydin." cümlesinin yüklemi hangi kiptedir?|Dilek-şart kipi|Gereklilik kipi|Emir kipi|Görülen geçmiş zaman|Gelecek zaman|-se eki dilek-şart kipidir.
+TUR-YS-0395|sozcuk_turu|2|"Akşam erkenden eve gelsin." cümlesinin yüklemi hangi kiptedir?|Emir kipi|İstek kipi|Dilek-şart kipi|Şimdiki zaman|Gereklilik kipi|"Gelsin" üçüncü tekil kişi emir kipidir.
+TUR-YS-0396|sozcuk_turu|2|"Kardeşim bu kitabı çoktan okumuş." cümlesinin yüklemi hangi kiptedir?|Öğrenilen geçmiş zaman|Görülen geçmiş zaman|Geniş zaman|Şimdiki zaman|Gelecek zaman|-miş eki öğrenilen geçmiş zaman bildirir.
+TUR-YS-0397|sozcuk_turu|2|"Misafirler dün akşam geldi." cümlesinin yüklemi hangi kiptedir?|Görülen geçmiş zaman|Öğrenilen geçmiş zaman|Geniş zaman|Gelecek zaman|Emir kipi|-di eki görülen geçmiş zaman bildirir.
+TUR-YS-0398|sozcuk_turu|2|"Ben de sizinle geleyim." cümlesinin yüklemi hangi kiptedir?|İstek kipi|Emir kipi|Dilek-şart kipi|Gereklilik kipi|Gelecek zaman|-e eki istek kipidir.
+TUR-YS-0399|sozcuk_turu|3|"Kız, aynanın karşısında uzun uzun süslendi." cümlesinin yüklemi özne-yüklem ilişkisi bakımından hangi çatıdadır?|Dönüşlü|Edilgen|İşteş|Ettirgen|Geçişli|"Süslenmek" kişinin kendini süslemesidir; eylem özneye döner.
+TUR-YS-0400|sozcuk_turu|2|"Mektuplar özenle yazıldı." cümlesinin yüklemi özne-yüklem ilişkisi bakımından hangi çatıdadır?|Edilgen|Dönüşlü|İşteş|Etken|Ettirgen|Eylemi yapan belli değildir.
+TUR-YS-0401|sozcuk_turu|2|"İki kardeş yıllar sonra kucaklaştı." cümlesinin yüklemi hangi çatıdadır?|İşteş|Edilgen|Dönüşlü|Ettirgen|Geçişli|Eylem karşılıklı yapılmıştır.
+TUR-YS-0402|sozcuk_turu|2|"Ali kitabı okudu." cümlesinin yüklemi nesne-yüklem ilişkisi bakımından nasıldır?|Geçişli|Geçişsiz|Edilgen|Dönüşlü|İşteş|Yüklem nesne alabildiği için geçişlidir.
+TUR-YS-0403|sozcuk_turu|2|"Bebek mışıl mışıl uyudu." cümlesinin yüklemi nesne-yüklem ilişkisi bakımından nasıldır?|Geçişsiz|Geçişli|Ettirgen|Edilgen|İşteş|"Uyumak" nesne almaz.
+TUR-YS-0404|sozcuk_turu|2|"Ben de sinemaya geleceğim." cümlesinde "de" sözcüğü hangi türdendir?|Bağlaç|Bulunma hâli eki|Edat|Zarf|Ünlem|Ayrı yazılan "de" bağlaçtır.
+TUR-YS-0405|sozcuk_turu|2|"Kırmızı elma" söz grubu hangi tür tamlamadır?|Sıfat tamlaması|Belirtili isim tamlaması|Belirtisiz isim tamlaması|Takısız isim tamlaması|Zincirleme isim tamlaması|"Kırmızı" sıfatı "elma" ismini niteler.
+TUR-YS-0406|Fiilimsi|2|"Kitap okumayı çok seviyor." cümlesinde "okumayı" sözcüğü hangi türdendir?|İsim-fiil|Sıfat-fiil|Zarf-fiil|Çekimli fiil|Yapım eki almış isim|-ma eki isim-fiil ekidir.
+TUR-YS-0407|Fiilimsi|2|"Yazılacak mektuplar masada bekliyor." cümlesinde "yazılacak" sözcüğü hangi türdendir?|Sıfat-fiil|İsim-fiil|Zarf-fiil|Çekimli fiil|Edat|"Mektuplar" ismini niteleyen sıfat-fiildir.
+TUR-YS-0408|Fiilimsi|2|"Koşa koşa eve geldi." cümlesinde "koşa koşa" sözcükleri hangi türdendir?|Zarf-fiil|Sıfat-fiil|İsim-fiil|Çekimli fiil|Edat|-a ekiyle oluşturulmuş ikileme zarf-fiildir.
+TUR-YS-0409|Fiilimsi|2|"Dün gördüğüm film çok güzeldi." cümlesinde "gördüğüm" sözcüğü hangi türdendir?|Sıfat-fiil|İsim-fiil|Zarf-fiil|Çekimli fiil|Zamir|-dik ekiyle oluşmuş sıfat-fiildir.
+TUR-YS-0410|Fiilimsi|2|"Eve gelir gelmez annesini aradı." cümlesinde "gelir gelmez" sözcükleri hangi türdendir?|Zarf-fiil|Sıfat-fiil|İsim-fiil|Çekimli fiil|Bağlaç|-ır ... -mez yapısı zarf-fiildir.
+TUR-YS-0411|Fiilimsi|2|"Bize bakmadan geçti." cümlesinde "bakmadan" sözcüğü hangi türdendir?|Zarf-fiil|Sıfat-fiil|İsim-fiil|Çekimli fiil|Edat|-madan eki zarf-fiil ekidir.
+TUR-YS-0412|Fiilimsi|3|"Buraya taşınalı beri çok mutluyuz." cümlesinde "taşınalı" sözcüğü hangi türdendir?|Zarf-fiil|Sıfat-fiil|İsim-fiil|Çekimli fiil|Edat|-alı eki zarf-fiil ekidir.
+TUR-YS-0413|Fiilimsi|2|"Onun gülüşü herkesi etkiledi." cümlesinde "gülüşü" sözcüğü hangi türdendir?|İsim-fiil|Sıfat-fiil|Zarf-fiil|Çekimli fiil|Edat|-ış eki isim-fiil ekidir.
+TUR-YS-0414|Fiilimsi|2|"Herkesçe bilinen bir gerçeği tekrar etti." cümlesinde "bilinen" sözcüğü hangi türdendir?|Sıfat-fiil|İsim-fiil|Zarf-fiil|Çekimli fiil|Zamir|-en ekiyle "gerçek" ismini niteler.
+TUR-YS-0415|Fiilimsi|3|"Okudukça yeni şeyler öğreniyor." cümlesinde "okudukça" sözcüğü hangi türdendir?|Zarf-fiil|Sıfat-fiil|İsim-fiil|Çekimli fiil|Bağlaç|-dıkça eki zarf-fiil ekidir.
+TUR-YS-0416|Fiilimsi|2|"Gideceği yeri kimseye söylemedi." cümlesinde "gideceği" sözcüğü hangi türdendir?|Sıfat-fiil|İsim-fiil|Zarf-fiil|Çekimli fiil|Zamir|-ecek ekiyle "yer" ismini niteler.
+TUR-YS-0417|Fiilimsi|3|Aşağıdaki cümlelerin hangisinde fiilimsi kullanılmamıştır?|Dün akşam erkenden uyudum.|Koşan çocuk birden düştü.|Gülerek içeri girdi.|Yüzmeyi çok sever.|Okunacak kitaplar rafta.|İlk cümlede yalnızca çekimli fiil vardır.
+TUR-YS-0418|Fiilimsi|2|Aşağıdakilerden hangisi sıfat-fiil ekidir?|-an|-ınca|-ken|-arak|-mak|-an eki sıfat-fiil yapar (gelen, okuyan).
+TUR-YS-0419|Fiilimsi|2|Aşağıdakilerden hangisi isim-fiil ekidir?|-ış|-an|-ınca|-ecek|-dıkça|-ış eki isim-fiil yapar (bakış, gülüş).
+TUR-YS-0420|Fiilimsi|2|Aşağıdakilerden hangisi zarf-fiil ekidir?|-arak|-mak|-an|-ış|-dik|-arak eki zarf-fiil yapar (gülerek, koşarak).
+TUR-YS-0421|Fiilimsi|2|"Gülmekten karnı ağrıdı." cümlesinde "gülmekten" sözcüğü hangi türdendir?|İsim-fiil|Sıfat-fiil|Zarf-fiil|Çekimli fiil|Edat|-mak eki isim-fiil ekidir.
+TUR-YS-0422|Fiilimsi|3|"Çalışkan öğrenci ödül aldı." cümlesindeki "çalışkan" sözcüğü için hangisi doğrudur?|Fiilden isim yapım eki almış bir sıfattır, fiilimsi değildir.|Sıfat-fiildir.|İsim-fiildir.|Zarf-fiildir.|Çekimli fiildir.|-kan eki yapım ekidir; fiilimsi eki değildir.
+TUR-YS-0423|Fiilimsi|2|"Gökyüzünde uçan kuşları izledik." cümlesinde "uçan" sözcüğü hangi türdendir?|Sıfat-fiil|İsim-fiil|Zarf-fiil|Çekimli fiil|Edat|-an ekiyle "kuşlar" ismini niteler.
+TUR-YS-0424|Fiilimsi|2|"Denizde yüzerken ayağına kramp girdi." cümlesinde "yüzerken" sözcüğü hangi türdendir?|Zarf-fiil|Sıfat-fiil|İsim-fiil|Çekimli fiil|Bağlaç|-ken eki zarf-fiil yapar.
+TUR-YS-0425|Fiilimsi|3|"Görülesi bir manzarayla karşılaştık." cümlesinde "görülesi" sözcüğü hangi türdendir?|Sıfat-fiil|İsim-fiil|Zarf-fiil|Çekimli fiil|Zamir|-ası eki sıfat-fiil yapar.
+TUR-YS-0426|Cümle Ögeleri|2|"Kuşlar sabah erkenden ötmeye başladı." cümlesinin öznesi hangisidir?|Kuşlar|sabah erkenden|ötmeye|başladı|Gizli özne (onlar)|Eylemi yapan "kuşlar"dır.
+TUR-YS-0427|Cümle Ögeleri|2|"Bu kitabı bana annem aldı." cümlesinin öznesi hangisidir?|annem|Bu kitabı|bana|aldı|Gizli özne (o)|"Kim aldı?" sorusunun cevabı "annem"dir.
+TUR-YS-0428|Cümle Ögeleri|2|"Kapıyı yavaşça kapattı." cümlesinin nesnesi hangisidir?|Kapıyı|yavaşça|kapattı|Gizli özne|Nesne yoktur|"Neyi kapattı?" sorusunun cevabı "kapıyı"dır.
+TUR-YS-0429|Cümle Ögeleri|2|"Okula her gün yürüyerek gidiyor." cümlesinde dolaylı tümleç hangisidir?|Okula|her gün|yürüyerek|gidiyor|Dolaylı tümleç yoktur|"Nereye gidiyor?" sorusunun cevabı "okula"dır.
+TUR-YS-0430|Cümle Ögeleri|2|"Masanın üzerindeki kitapları topladı." cümlesinin nesnesi hangisidir?|Masanın üzerindeki kitapları|Masanın|kitapları|üzerindeki|topladı|Nesne söz öbeğinin tamamıdır.
+TUR-YS-0431|Cümle Ögeleri|2|"Annem bana yeni bir kazak ördü." cümlesinde nesne hangisidir?|yeni bir kazak|Annem|bana|ördü|bir kazak ördü|"Ne ördü?" sorusunun cevabı belirtisiz nesnedir.
+TUR-YS-0432|Cümle Ögeleri|2|"Çocuklar parkta saatlerce oynadı." cümlesinde "saatlerce" hangi ögedir?|Zarf tümleci|Dolaylı tümleç|Nesne|Özne|Yüklem|"Ne kadar süre?" sorusuna cevap verir.
+TUR-YS-0433|Cümle Ögeleri|3|"Sınavdan sonra hepimiz rahatladık." cümlesinde "Sınavdan sonra" hangi ögedir?|Zarf tümleci|Dolaylı tümleç|Nesne|Özne|Yüklem|Edat öbeği zaman bildirerek zarf tümleci olmuştur.
+TUR-YS-0434|Cümle Ögeleri|3|"Bu çiçekler annem için." cümlesinin yüklemi hangisidir?|annem için|Bu çiçekler|çiçekler|için|Yüklem yoktur|İsim cümlesinde yüklem "annem için" öbeğidir.
+TUR-YS-0435|Cümle Ögeleri|2|"En sevdiğim mevsim sonbahardır." cümlesinin yüklemi hangisidir?|sonbahardır|En sevdiğim mevsim|sevdiğim|mevsim|En sevdiğim|Yargıyı bildiren ek fiil almış "sonbahardır"dır.
+TUR-YS-0436|Cümle Ögeleri|2|"Ödevlerini yapan öğrenciler teneffüse çıktı." cümlesinin öznesi hangisidir?|Ödevlerini yapan öğrenciler|öğrenciler|Ödevlerini|teneffüse|yapan öğrenciler|Özne söz öbeğinin tamamıdır.
+TUR-YS-0437|Cümle Ögeleri|3|"Gelecek hafta sınavlar başlıyor." cümlesinin öge dizilişi hangisidir?|Zarf tümleci - özne - yüklem|Özne - zarf tümleci - yüklem|Dolaylı tümleç - özne - yüklem|Nesne - özne - yüklem|Zarf tümleci - nesne - yüklem|"Gelecek hafta" zaman bildirir; "sınavlar" öznedir.
+TUR-YS-0438|Cümle Ögeleri|2|"Ahmet'e telefonda haberi verdim." cümlesinin nesnesi hangisidir?|haberi|Ahmet'e|telefonda|verdim|Gizli özne (ben)|"Neyi verdim?" sorusunun cevabı "haberi"dir.
+TUR-YS-0439|Cümle Ögeleri|2|"Yazın köye gideriz." cümlesinde "yazın" hangi ögedir?|Zarf tümleci|Dolaylı tümleç|Özne|Nesne|Yüklem|"Yazın" zaman bildiren zarf tümlecidir.
+TUR-YS-0440|Cümle Ögeleri|2|"Ey gençler, geleceği siz kuracaksınız." cümlesinde "Ey gençler" nasıl bir ögedir?|Cümle dışı unsur (hitap)|Özne|Nesne|Dolaylı tümleç|Zarf tümleci|Hitaplar cümlenin ögesi sayılmaz.
+TUR-YS-0441|Cümle Ögeleri|2|"Kediler süt sever." cümlesinde "süt" hangi ögedir?|Belirtisiz nesne|Özne|Dolaylı tümleç|Zarf tümleci|Belirtili nesne|"Ne sever?" sorusunun cevabıdır ve ek almamıştır.
+TUR-YS-0442|Cümle Ögeleri|2|"Kitaplar raflara dizildi." cümlesinin öznesi hangisidir?|Kitaplar (sözde özne)|raflara|dizildi|Gizli özne (onlar)|Özne yoktur|Edilgen yüklemli cümlede özne sözde öznedir.
+TUR-YS-0443|Cümle Ögeleri|2|"Bu yıl üniversiteyi kazandı." cümlesinin öznesi hangisidir?|Gizli özne (o)|Bu yıl|üniversiteyi|kazandı|Gizli özne (ben)|Yüklemdeki kişi eki üçüncü tekil kişiyi gösterir.
+TUR-YS-0444|Cümle Ögeleri|2|"Sınıfta gürültü yapmayın." cümlesinin öznesi hangisidir?|Gizli özne (siz)|Sınıfta|gürültü|yapmayın|Gizli özne (biz)|Emir kipindeki -ın eki "siz" öznesini gösterir.
+TUR-YS-0445|Cümle Ögeleri|3|"Yolda eski bir arkadaşımla karşılaştım." cümlesinde "eski bir arkadaşımla" hangi ögedir?|Zarf tümleci|Nesne|Özne|Dolaylı tümleç|Yüklem|-la (birliktelik) eki alan öbek zarf tümleci olarak değerlendirilir.
+TUR-YS-0446|Cümle Ögeleri|2|"Ankara'dan dün akşam döndük." cümlesinde "Ankara'dan" hangi ögedir?|Dolaylı tümleç|Zarf tümleci|Nesne|Özne|Yüklem|"Nereden?" sorusunun cevabıdır.
+TUR-YS-0447|Cümle Ögeleri|2|"Hava bugün çok soğuktu." cümlesinin yüklemi hangisidir?|çok soğuktu|Hava|bugün|soğuk|bugün çok soğuktu|Yüklem "çok soğuktu" öbeğidir.
+TUR-YS-0448|Cümle Ögeleri|3|"Babam akşam eve yorgun geldi." cümlesinde "yorgun" hangi ögedir?|Zarf tümleci|Özne|Nesne|Dolaylı tümleç|Yüklem|"Nasıl geldi?" sorusuna cevap veren durum zarfıdır.
+TUR-YS-0449|Cümle Ögeleri|2|"Bize kim yardım edecek?" cümlesinin öznesi hangisidir?|kim|Bize|yardım|edecek|Gizli özne (o)|Soru zamiri "kim" öznedir.
+TUR-YS-0450|Cümle Ögeleri|2|"Hızla akan nehir köprüyü yıktı." cümlesinin nesnesi hangisidir?|köprüyü|Hızla akan nehir|nehir|yıktı|Hızla|"Neyi yıktı?" sorusunun cevabı "köprüyü"dür.
