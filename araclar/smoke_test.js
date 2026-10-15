@@ -80,7 +80,7 @@ function mockFetch(url, opts) {
   };
   window.__smokeUneven = () => {
     const saved=JSON.parse(JSON.stringify(V.kayit));
-    const ids=Object.fromEntries(Array.from({length:2500},(_,i) => ["fake-"+i,1]));
+    const ids=Object.fromEntries(Array.from({length:2000},(_,i) => ["fake-"+i,1]));
     V.kayit.gunluk={tarih:gunTarihi(),ids};
     V.kayit.ders_gunluk=Object.fromEntries(Object.keys(DERSLER).map((d) => [d,{tarih:gunTarihi(),ids:d==="tarih" ? ids : {}}]));
     const result=gunlukRozet();V.kayit=saved;return result;
@@ -88,6 +88,11 @@ function mockFetch(url, opts) {
   window.__smokeExamIds = () => V.denemeOturum?.d.sorular || [];
   window.__smokeExhaust = () => {
     Object.values(V.tumSorular).forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test"}; }); kaydet();
+  };
+  window.__smokeDailyCap = (d) => {
+    const fresh=yeniSorular(V.sorular[d] || []).slice(0,DERS_HEDEF);
+    fresh.forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test",gun:gunTarihi(),ders:d}; }); kaydet();
+    return {ayrilan:bugunAyrilan(d),kalan:gunlukKalan(d)};
   };
   window.__smokeReload = async () => { await kayitYukle(); };
   window.__smokeCurrent = () => { const x=V.oturum?.kuyruk[V.oturum.sira];
@@ -132,7 +137,7 @@ function mockFetch(url, opts) {
   ok("konu maratonu bölümü (1-2. gün)", has("Konu Maratonı") || has("Konu Tekrarı"));
   ok("10'ar soruluk testler bölümü", has("10'ar Soruluk Testler"));
   ok("deneme kartı", /DENEME/i.test(txt()) && has("dakika"));
-  ok("günlük hedef rozeti 0/2500", has("0/2500"));
+  ok("günlük hedef rozeti 0/2000", has("0/2000"));
 
   /* ---------- 6-8: konu anlatımı ---------- */
   await go("#/konular");
@@ -147,15 +152,15 @@ function mockFetch(url, opts) {
   ok("test çöz hubı", has("TEST ÇÖZ"));
   ok("geçmiş KPSS konu filtresi görünür", has("Geçmiş KPSS konu filtresi açık"));
   ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 776 aktif") && has("2224 soru kaldı"));
-  ok("Güncel test havuzu denemelerden ayrı en az 500", has("776 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("750 kullanılmamış test sorusu"));
-  ok("deneme hariç beş ayrı 500 hedefi ve 50 set gösterilir",has("Deneme hariç günlük test hedefi") && has("50 × 10") && doc.querySelector(".gunluk-test-hedefi")?.textContent.includes("Vatandaşlık"));
-  ok("tek derste 2500 çözmek günlük hedefi tamamlamaz",!win.__smokeUneven().includes("yesil"));
+  ok("Güncel test havuzu denemelerden ayrı en az 400", has("776 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("750 kullanılmamış test sorusu"));
+  ok("deneme hariç beş ayrı 400 hedefi ve 40 set gösterilir",has("Deneme hariç günlük test hedefi") && has("40 × 10") && has("fazla sorular sonraki günlere kalır") && doc.querySelector(".gunluk-test-hedefi")?.textContent.includes("Vatandaşlık"));
+  ok("tek derste 2000 çözmek günlük hedefi tamamlamaz",!win.__smokeUneven().includes("yesil"));
   ok("Türkiye gece yarısından önce günlük tarih",win.__smokeDateAt("2026-10-15T20:59:00Z")==="2026-10-15");
   ok("Türkiye gece yarısında günlük tarih yenilenir",win.__smokeDateAt("2026-10-15T21:00:00Z")==="2026-10-16");
   ok("gerçek çıkmış bölümü", has("Gerçek Çıkmış KPSS Soruları"));
   ok("çıkmış yıl butonları 2014/2024", has("2014-KPSS") && has("2024-KPSS"));
   ok("2022-KPSS butonu", has("2022-KPSS"));
-  ok("günlük akış butonu (500)", has("Günlük Akış (500)"));
+  ok("günlük akış butonu (400)", has("Günlük Akış (400)"));
   ok("maraton / telafi / hata butonları", has("Maraton (10'lu)") && has("Yanlış Telafisi") && has("Hata Atölyesi"));
 
   /* ---------- 15-22: konu testi akışı ---------- */
@@ -182,7 +187,7 @@ function mockFetch(url, opts) {
   ok("kontrol: net kutusu", has("Net") && has("Doğru"));
   ok("kontrol: yanlışlar veya hatasız", has("Yanlışların") || has("HATASIZ"));
   ok("kontrol: devam seçenekleri", has("Devam") || has("Günün rehberi"));
-  ok("günlük sayaç arttı", /Bugün: [1-9]/.test(txt()) || /[1-9]\d*\/2500/.test(txt()));
+  ok("günlük sayaç arttı", /Bugün: [1-9]/.test(txt()) || /[1-9]\d*\/2000/.test(txt()));
   ok("anti-repeat notu ekranda", has("Aynı soru yeni test veya denemede tekrar verilmez") || has("otomatik kontrol"));
 
   /* ---------- 23-26: karışık / odak / çıkmış ---------- */
@@ -231,7 +236,7 @@ function mockFetch(url, opts) {
   win.eval("denemeBitir()");
   await tick(80);
   ok("deneme bitti + net", has("DENEME BİTTİ") && has("Net:"));
-  ok("deneme cevapları ders başına 500 sayacını artırmaz",win.__smokeCounters()===testCountBeforeExam);
+  ok("deneme cevapları ders başına 400 sayacını artırmaz",win.__smokeCounters()===testCountBeforeExam);
   ok("yarının odağı üretildi", has("Yarının Odağı") || has("Odak"));
 
   /* ---------- 32-37: defter / istatistik / akış / ayarlar ---------- */
@@ -325,8 +330,15 @@ function mockFetch(url, opts) {
 
   win.__smokeSeedOldTopics();
   await go("#/akis/guncel");
-  ok("Güncel günlük akışında deneme hariç hedef görünür", has("776 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("50 × 10"));
+  ok("Güncel günlük akışında deneme hariç hedef görünür", has("776 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("40 × 10"));
   ok("kapsam dışı eski konular karışık test kilidini açmaz", has("Önce konu testlerini bitir") && !!doc.querySelector("button[disabled]"));
+
+  const cap=win.__smokeDailyCap("tarih");
+  ok("günlük üst sınır: 400 ayrılınca kalan 0",cap.ayrilan>=400 && cap.kalan===0);
+  await go("#/coz/karisik/tarih");
+  ok("günlük üst sınır dolunca yeni test açılmaz, fazlası sonraki günlere kalır",has("Bugünkü 400 soru tamamlandı") && has("sonraki günlere") && doc.querySelectorAll(".sik").length===0);
+  await go("#/coz/karisik/cografya");
+  ok("bir dersin sınırı başka dersi kilitlemez",doc.querySelectorAll(".sik").length>0);
 
   win.__smokeExhaust();
   await win.__smokeReload();

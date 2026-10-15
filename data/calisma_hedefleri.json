@@ -1,6 +1,7 @@
 {
   "version": 1,
-  "ders_basina_gunluk_test": 500,
+  "ders_basina_gunluk_test": 400,
+  "gunluk_ust_sinir": true,
   "set_boyutu": 10,
   "denemeler_hedefe_dahil": false,
   "saat_dilimi": "Europe/Istanbul",

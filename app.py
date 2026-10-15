@@ -16,6 +16,8 @@ import json
 from collections import Counter
 import re
 import threading
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
@@ -236,8 +238,10 @@ def _ilerleme_yaz_kilitsiz(kullanici: str, veri: dict) -> dict:
     # Gecikmiş sekme/yedek, sunucuda ayrılmış soruları serbest bırakamaz.
     for alan in ("ayrilan_sorular", "ayrilan_kokler"):
         eski, yeni = onceki.get(alan, {}), veri.get(alan, {})
-        veri[alan] = {**(eski if isinstance(eski, dict) else {}),
-                      **(yeni if isinstance(yeni, dict) else {})}
+        eski = eski if isinstance(eski, dict) else {}
+        veri[alan] = {**eski, **(yeni if isinstance(yeni, dict) else {})}
+        # Sunucunun yazdığı gün/ders bilgisi (günlük üst sınır sayacı) istemci kaydıyla silinemez.
+        veri[alan].update({k: v for k, v in eski.items() if isinstance(v, dict) and v.get('gun')})
     old_sessions = onceki.get('devam_testleri', {})
     incoming_sessions = veri.get('devam_testleri', {})
     sessions = dict(old_sessions) if isinstance(old_sessions, dict) else {}
@@ -371,6 +375,19 @@ def api_deneme(did: str):
     return jsonify({"hata": "deneme yok"}), 404
 
 
+def bugun_tarihi(target) -> str:
+    return datetime.now(ZoneInfo(target['saat_dilimi'])).date().isoformat()
+
+
+def bugun_ayrilan_testler(veri, gun) -> Counter:
+    """Bugün test için ayrılan yeni soruların ders bazında sayısı (günlük üst sınır)."""
+    sayac = Counter()
+    for meta in veri.get('ayrilan_sorular', {}).values():
+        if isinstance(meta, dict) and meta.get('tur') == 'test' and meta.get('gun') == gun and meta.get('ders'):
+            sayac[meta['ders']] += 1
+    return sayac
+
+
 @app.post("/api/soru-ayir/<kullanici>")
 def api_soru_ayir(kullanici):
     """Aynı profil için kontrol + ayırma atomik; gösterimden önce çağrılır."""
@@ -404,8 +421,20 @@ def api_soru_ayir(kullanici):
             return jsonify(hata='Bu sorulardan biri daha önce ayrıldı veya çözüldü. Yeni oturum açın.',
                            ayrilan_sorular={sid:True for sid in used},
                            ayrilan_kokler={k:True for k in used_roots}), 409
-        metadata = dict(tur=tur, oturum=oturum)
-        added_ids, added_roots = {sid:metadata for sid in ids}, {k:True for k in roots}
+        target = cache.get('calisma_hedefi') or load_target(KOK)
+        gun = bugun_tarihi(target)
+        if tur == 'test':
+            sinir = target['ders_basina_gunluk_test']
+            bugun = bugun_ayrilan_testler(veri, gun)
+            istenen = Counter(index[sid]['ders'] for sid in ids)
+            dolu = sorted(d for d, n in istenen.items() if bugun[d] + n > sinir)
+            if dolu:
+                return jsonify(hata=f'Bugünkü günlük sınır ({sinir} yeni test sorusu/ders) doldu: '
+                                    + ', '.join(DERSLER[d]['ad'] if isinstance(DERSLER.get(d), dict) else d for d in dolu)
+                                    + '. Kalan sorular sonraki günlere ayrıldı.',
+                               gunluk_sinir=sinir, bugun_ayrilan=dict(bugun), gun=gun), 429
+        added_ids = {sid:dict(tur=tur, oturum=oturum, gun=gun, ders=index[sid]['ders']) for sid in ids}
+        added_roots = {k:True for k in roots}
         veri['ayrilan_sorular'] = {**{sid:True for sid in used},
                                   **veri.get('ayrilan_sorular', {}), **added_ids}
         veri.setdefault('ayrilan_kokler', {}).update({k:True for k in used_roots})

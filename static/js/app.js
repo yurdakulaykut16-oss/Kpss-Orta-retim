@@ -13,7 +13,7 @@ const DERSLER = {
 };
 const SIK_HARF = ["A", "B", "C", "D", "E"];
 const KULLANICI = "varsayilan";
-let DERS_HEDEF = 500;              // her ders için günlük minimum
+let DERS_HEDEF = 400;              // her ders için günlük yeni test sorusu (üst sınır)
 let GUNLUK_HEDEF = DERS_HEDEF * 5;  // toplam günlük hedef
 let BATCH = 10;
 /* Öğrenme modu: yanlış yapılan konu, art arda OGRENME_SERI doğru yapılana kadar
@@ -117,7 +117,7 @@ async function veriYukle() {
     fetch("/api/denemeler").then((r) => r.json()),
   ]);
   const hedef=meta.calisma_hedefi;
-  if (!hedef || hedef.denemeler_hedefe_dahil !== false || hedef.ders_basina_gunluk_test < 500 || hedef.set_boyutu !== 10)
+  if (!hedef || hedef.denemeler_hedefe_dahil !== false || hedef.ders_basina_gunluk_test < 400 || hedef.gunluk_ust_sinir !== true || hedef.set_boyutu !== 10)
     throw new Error("Deneme hariç günlük test hedefi doğrulanamadı.");
   DERS_HEDEF=hedef.ders_basina_gunluk_test; BATCH=hedef.set_boyutu;
   GUNLUK_HEDEF=DERS_HEDEF*Object.keys(DERSLER).length;
@@ -220,7 +220,7 @@ async function soruAyir(liste, tur, oturum, denemeId) {
     throw new Error(result.hata || "Soru ayırma doğrulanamadı; eski sorular gösterilmedi.");
   }
   liste.forEach((s) => {
-    V.kayit.ayrilan_sorular[s.id] = {tur,oturum,tarih:new Date().toISOString()};
+    V.kayit.ayrilan_sorular[s.id] = {tur,oturum,tarih:new Date().toISOString(),gun:gunTarihi(),ders:s.ders};
     V.kayit.ayrilan_kokler[SoruSecimi.kok(s)] = true;
   });
   // Gösterimden ÖNCE kaydet: cevaplanmadan bırakılan oturum da yeniden dağıtılmaz.
@@ -255,9 +255,29 @@ function gunTarihi() {
 function gunlukHedefHtml(ders) {
   const rows=ders ? [ders] : Object.keys(DERSLER);
   return `<section class="kart gunluk-test-hedefi"><h3>Deneme hariç günlük test hedefi</h3>
-    <p>Her ders: en az ${DERS_HEDEF} soru · ${DERS_HEDEF/BATCH} × ${BATCH} soruluk hedef. Beş ders: ${GUNLUK_HEDEF} test sorusu. Deneme bunlara eklenir.</p>
-    ${rows.map((d) => {const g=dersGunlukKaydi(d);return `<p><b>${esc(DERSLER[d].ad)}:</b> ${g.sayi}/${DERS_HEDEF} test sorusu · ${Math.min(DERS_HEDEF/BATCH,Math.floor(g.sayi/BATCH))}/${DERS_HEDEF/BATCH} on soruluk dilim · kalan ${Math.max(0,DERS_HEDEF-g.sayi)}</p>`;}).join("")}
-    <p class="meta">Bir dersteki fazlalık başka dersin 500 sorusunun yerine geçmez. Yanlış telafisi test sayılır; deneme doğru, yanlış ve boşları bu sayacı artırmaz.</p></section>`;
+    <p>Her ders: günde ${DERS_HEDEF} yeni soru · ${DERS_HEDEF/BATCH} × ${BATCH} soruluk hedef. Beş ders: ${GUNLUK_HEDEF} test sorusu. Deneme bunlara eklenir. ${DERS_HEDEF} günlük üst sınırdır; fazla sorular sonraki günlere kalır.</p>
+    ${rows.map((d) => {const g=dersGunlukKaydi(d);return `<p><b>${esc(DERSLER[d].ad)}:</b> ${g.sayi}/${DERS_HEDEF} test sorusu · ${Math.min(DERS_HEDEF/BATCH,Math.floor(g.sayi/BATCH))}/${DERS_HEDEF/BATCH} on soruluk dilim · kalan ${Math.max(0,DERS_HEDEF-g.sayi)} · ${gunDagilimiHtml(d)}</p>`;}).join("")}
+    <p class="meta">Bir dersteki fazlalık başka dersin ${DERS_HEDEF} sorusunun yerine geçmez. Yanlış telafisi test sayılır; deneme doğru, yanlış ve boşları bu sayacı artırmaz.</p></section>`;
+}
+// Günlük üst sınır: bugün bu ders için testlere ayrılan yeni soru sayısı.
+function bugunAyrilan(d) {
+  const gun = gunTarihi();
+  return Object.values(V.kayit.ayrilan_sorular || {}).filter((m) => m && m.tur === "test" && m.gun === gun && m.ders === d).length;
+}
+function gunlukKalan(d) { return Math.max(0, DERS_HEDEF - bugunAyrilan(d)); }
+function gunDagilimiHtml(d) {
+  const fresh = yeniSorular(V.sorular[d] || []).length;
+  const bugun = Math.min(fresh, gunlukKalan(d)), sonra = fresh - bugun;
+  const tam = Math.floor(sonra / DERS_HEDEF), artan = sonra % DERS_HEDEF;
+  return `bugün kalan ${bugun} · sonraki günlere ${sonra} soru (${tam} tam gün${artan ? ` + ${artan} soruluk kısmi gün` : ""})`;
+}
+function gunlukSinirDoldu(dersler) {
+  V.oturum = null; document.onkeydown = null;
+  $("#view").innerHTML = `<div class="kart"><h2>Bugünkü ${DERS_HEDEF} soru tamamlandı</h2>
+    <p>${dersler.map((d) => esc(DERSLER[d]?.ad || d)).join(", ")} için bugün ${DERS_HEDEF} yeni test sorusu ayrıldı. Kalan sorular sonraki günlere ayrıldı; yarın kaldığınız yerden yeni sorularla devam edersiniz.</p>
+    ${dersler.filter((d) => DERSLER[d]).map((d) => `<p><b>${esc(DERSLER[d].ad)}:</b> ${gunDagilimiHtml(d)}</p>`).join("")}
+    <p class="meta">Yarım kalan testler ve denemeler bu sınırdan etkilenmez.</p>
+    <a class="btn" href="#/coz">Test menüsü</a> <a class="btn seffaf" href="#/denemeler">Denemeler</a></div>`;
 }
 function dersGunlukKaydi(d) {
   const bugun = gunTarihi();
@@ -355,6 +375,7 @@ async function ogrenmeSorusuEkle(o, s, pek) {
   const next = o.kuyruk[o.sira+1];
   if (next && !o.gorulen[o.sira+1] && konuAnahtar(next.s.ders,next.s.konu) === pek.key) return;
   if ((o.ogrenmeEk[pek.key] || 0) >= OGRENME_EK_SINIR) { pek.sinir = true; return; }
+  if (gunlukKalan(s.ders) <= 0) { pek.sinir = true; return; }  // fazlası sonraki günlere kalır
   const yeni = ayniKonudanYeni(s, o.kuyruk.map((x) => x.s.id));
   if (!yeni) { pek.tukendi = true; return; }
   try { await soruAyir([yeni],"test",o.uid); }
@@ -673,7 +694,7 @@ function viewGun(no) {
 }
 
 /* =========================================================
-   GÜNLÜK DERS AKIŞI — konu testleri → karışık (10'ar soru, ders başına 500)
+   GÜNLÜK DERS AKIŞI — konu testleri → karışık (10'ar soru, ders başına günlük 400 üst sınır)
    ========================================================= */
 function viewDersAkis(d) {
   if (!DERSLER[d]) return (location.hash = "#/coz");
@@ -994,6 +1015,9 @@ async function viewCoz(mod, ders, arg, sub) {
     } else {
       return (location.hash = "#/coz");
     }
+    const sinirOncesi = [...new Set(liste.map((s) => s.ders))], kota = {};
+    liste = liste.filter((s) => { kota[s.ders] ??= gunlukKalan(s.ders); if (kota[s.ders] <= 0) return false; kota[s.ders]--; return true; });
+    if (!liste.length && sinirOncesi.length) return gunlukSinirDoldu(sinirOncesi);
     if (!liste.length) return havuzBitti("Bu seçimde kullanılmamış test sorusu kalmadı. Konu veya ders seçimini değiştirebilirsiniz.");
     const uid = `test-${Date.now()}-${Math.random().toString(36).slice(2)}`;
     try { await soruAyir(liste,"test",uid); }

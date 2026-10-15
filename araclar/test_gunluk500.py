@@ -1,4 +1,4 @@
-"""Deneme hariç 5×500 test hedefi, gerçek kapasite ve editoryal ek aktarımı."""
+"""Deneme hariç 5×400 (günlük üst sınır) test hedefi, gerçek kapasite ve editoryal ek aktarımı."""
 import collections
 import copy
 import json
@@ -66,23 +66,27 @@ class Gunluk500Test(unittest.TestCase):
 
     def test_50_set_her_ders_250_set_toplam_ve_denemeler_haric(self):
         t=self.cache['calisma_hedefi']
-        self.assertEqual(t['ders_basina_gunluk_test'],500)
-        self.assertEqual(t['ders_basina_test_seti'],50)
+        self.assertEqual(t['ders_basina_gunluk_test'],400)
+        self.assertIs(t['gunluk_ust_sinir'],True)
+        self.assertEqual(t['ders_basina_test_seti'],40)
         self.assertEqual(t['set_boyutu'],10)
-        self.assertEqual(t['gunluk_toplam_test'],2500)
-        self.assertEqual(t['gunluk_toplam_set'],250)
+        self.assertEqual(t['gunluk_toplam_test'],2000)
+        self.assertEqual(t['gunluk_toplam_set'],200)
         self.assertIs(t['denemeler_hedefe_dahil'],False)
 
     def test_on_gun_henuz_tamamlandi_denmez(self):
         t=self.cache['calisma_hedefi']
         self.assertEqual(t['kamp_gun_sayisi'],10)
-        self.assertTrue(all(s['kamp_test_ihtiyaci']==5000 for s in t['dersler'].values()))
-        self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),25220)
-        self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),21101)
+        self.assertTrue(all(s['kamp_test_ihtiyaci']==4000 for s in t['dersler'].values()))
+        self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),20220)
+        self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),16101)
+        self.assertEqual(t['dersler']['tarih']['gun_dagilimi'][:3],[400,400,0])
+        self.assertEqual(t['dersler']['turkce']['gun_dagilimi'][:3],[400,400,38])
+        self.assertEqual(t['dersler']['turkce']['tam_gun'],2)
 
     def test_hedef_azaltilamaz_ve_deneme_karistirilamaz(self):
         target=load_target(ROOT)
-        for change in ({'ders_basina_gunluk_test':499},{'set_boyutu':20},{'denemeler_hedefe_dahil':True}):
+        for change in ({'ders_basina_gunluk_test':399},{'gunluk_ust_sinir':False},{'set_boyutu':20},{'denemeler_hedefe_dahil':True}):
             with tempfile.TemporaryDirectory() as tmp:
                 root=Path(tmp);(root/'data').mkdir()
                 (root/'data/calisma_hedefleri.json').write_text(json.dumps({**target,**change}))
@@ -94,24 +98,32 @@ class Gunluk500Test(unittest.TestCase):
         self.assertEqual(meta['soru_sayilari']['guncel'],776)
         self.assertEqual(meta['soru_sayilari']['vatandaslik'],792)
 
-    def test_2500_test_ve_220_deneme_sunucuda_cakismadan_ayrilabilir(self):
+    def test_2000_test_ve_220_deneme_sunucuda_cakismadan_ayrilabilir(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(server,'ILERLEME',Path(tmp)), patch.object(server,'her_seyi_yukle',return_value=self.cache):
             client=server.app.test_client()
             all_ids=[]
             for ders,rows in self.cache['sorular'].items():
-                ids=[s['id'] for s in rows if s['id'] not in self.reserved and question_key(s) not in self.reserved_roots][:500]
-                self.assertEqual(len(ids),500)
+                ids=[s['id'] for s in rows if s['id'] not in self.reserved and question_key(s) not in self.reserved_roots][:401]
+                self.assertEqual(len(ids),401)
                 all_ids.extend(ids)
-                for start in range(0,500,50):
+                for start in range(0,400,50):
                     result=client.post('/api/soru-ayir/hedef-test',json={'tur':'test','oturum':f'{ders}-{start}','ids':ids[start:start+50]})
                     self.assertEqual(result.status_code,200,result.get_json())
+                # Günlük üst sınır: 401. yeni soru bugün verilmez, sonraki güne kalır.
+                result=client.post('/api/soru-ayir/hedef-test',json={'tur':'test','oturum':f'{ders}-fazla','ids':ids[400:]})
+                self.assertEqual(result.status_code,429,result.get_json())
+                self.assertIn('sonraki günlere',result.get_json()['hata'])
+                all_ids.pop()
+                # İstemcinin eski kaydı sunucunun gün/ders sayacını silemez.
+                server.ilerleme_yaz('hedef-test',{'ayrilan_sorular':{ids[0]:{'tur':'test'}}})
+                self.assertEqual(server.ilerleme_oku('hedef-test')['ayrilan_sorular'][ids[0]]['ders'],ders)
             for e in self.exams:
                 result=client.post('/api/soru-ayir/hedef-test',json={'tur':'deneme','deneme_id':e['id'],'oturum':e['id'],'ids':e['sorular']})
                 self.assertEqual(result.status_code,200,result.get_json())
                 all_ids.extend(e['sorular'])
-            self.assertEqual(len(set(all_ids)),2720)
+            self.assertEqual(len(set(all_ids)),2220)
             progress=server.ilerleme_oku('hedef-test')
-            self.assertEqual(len(progress['ayrilan_sorular']),2720)
+            self.assertEqual(len(progress['ayrilan_sorular']),2220)
             self.assertFalse(progress.get('gunluk',{}).get('sayi'))  # Ayırma, çözülmüş soru sayılmaz.
 
     def test_geciken_ilerleme_yeni_devam_kaydini_geri_alamaz(self):
