@@ -28,7 +28,7 @@ class Gunluk500Test(unittest.TestCase):
     def test_188_ayri_editoryal_kayit_26_162(self):
         self.assertEqual(len(self.records),188)
         self.assertEqual(collections.Counter(s['ders'] for s in self.records),{'vatandaslik':26,'guncel':162})
-        self.assertEqual(len({question_key(s) for s in self.index.values()}),3119)
+        self.assertEqual(len({question_key(s) for s in self.index.values()}),4119)
         self.assertEqual(len({question_key(s) for s in self.records}),188)
 
     def test_ek_icerik_banka_kapsam_ve_inceleme_ozetleri_eslesir(self):
@@ -60,7 +60,7 @@ class Gunluk500Test(unittest.TestCase):
     def test_her_derste_denemeler_haric_en_az_500(self):
         t=self.cache['calisma_hedefi']
         self.assertEqual({d:s['baslangic_test_kapasitesi'] for d,s in t['dersler'].items()},
-                         dict(tarih=600,cografya=561,vatandaslik=550,turkce=638,guncel=550))
+                         dict(tarih=800,cografya=761,vatandaslik=750,turkce=838,guncel=750))
         self.assertTrue(all(s['ilk_gun_eksik']==0 for s in t['dersler'].values()))
         self.assertEqual(sum(s['denemeye_ayrilan'] for s in t['dersler'].values()),220)
 
@@ -78,7 +78,7 @@ class Gunluk500Test(unittest.TestCase):
         self.assertEqual(t['kamp_gun_sayisi'],10)
         self.assertTrue(all(s['kamp_test_ihtiyaci']==5000 for s in t['dersler'].values()))
         self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),25220)
-        self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),22101)
+        self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),21101)
 
     def test_hedef_azaltilamaz_ve_deneme_karistirilamaz(self):
         target=load_target(ROOT)
@@ -91,8 +91,8 @@ class Gunluk500Test(unittest.TestCase):
     def test_api_ayni_hedef_ve_gercek_sayilari_verir(self):
         meta=server.app.test_client().get('/api/meta').get_json()
         self.assertEqual(meta['calisma_hedefi'],self.cache['calisma_hedefi'])
-        self.assertEqual(meta['soru_sayilari']['guncel'],576)
-        self.assertEqual(meta['soru_sayilari']['vatandaslik'],592)
+        self.assertEqual(meta['soru_sayilari']['guncel'],776)
+        self.assertEqual(meta['soru_sayilari']['vatandaslik'],792)
 
     def test_2500_test_ve_220_deneme_sunucuda_cakismadan_ayrilabilir(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(server,'ILERLEME',Path(tmp)), patch.object(server,'her_seyi_yukle',return_value=self.cache):

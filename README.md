@@ -114,25 +114,25 @@ Tek ayar kaynağı `data/calisma_hedefleri.json`: **500 soru/ders/gün**, **10 s
 
 İlk-gün eksiği için **26 Vatandaşlık + 162 Güncel = 188 yeni özgün soru** elle yazıldı. `ek_188_gunluk500.tsv` kök, beş seçenek ve gerekçeli çözümü içerir; `ek_188_inceleme.json` ayrı kapsam kararlarının içerik özetlerini saklar. Şık sıralaması dışında otomatik varyant üretimi yoktur. `soru_yukselt.py` ekleri de doğrulayarak uygular; mevcut farklı içerik veya korumalı kaynak sessizce ezilemez. Önceki 2.865 kayıt değiştirilmedi.
 
-Ardından **her dersten 50, toplam 250 yeni soru** elle yazıldı (`data/kaynaklar/yeni_parti_0*.tsv`, id'ler `TAR/COG/VAT/TUR/GUN-YS-0001…0050`). Her satır kendi kökü, beş seçeneği ve gerekçeli çözümüyle ayrı bir sorudur; kökler birbirinden ve bankadaki diğer sorulardan farklıdır (`araclar/ek_yeni_sorular.py` aynı kökü reddeder). Onay: `python3 araclar/soru_yukselt.py && python3 araclar/ek_yeni_sorular.py --onayla`. Yeni parti eklemek için aynı biçimde `yeni_parti_06_*.tsv` yazmak yeterlidir.
+Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, `*-YS-0001…0050`), sonra **her dersten 200, toplam 1.000 yeni soru** daha (`yeni_parti_06a…10b_*.tsv`, `*-YS-0051…0250`) elle yazıldı; yeni partilerin toplamı **1.250 (ders başına 250)**. Her satır kendi kökü, beş seçeneği ve gerekçeli çözümüyle ayrı bir sorudur; kökler birbirinden ve bankadaki diğer sorulardan farklıdır (`araclar/ek_yeni_sorular.py` aynı kökü reddeder). Onay: `python3 araclar/soru_yukselt.py && python3 araclar/ek_yeni_sorular.py --onayla`. Yeni parti eklemek için aynı biçimde `yeni_parti_11_*.tsv` yazmak yeterlidir.
 
 | Ders | Aktif toplam | Deneme rezervi | Başlangıç test kapasitesi |
 |---|---:|---:|---:|
-| Tarih | 660 | 60 | 600 |
-| Coğrafya | 607 | 46 | 561 |
-| Vatandaşlık | 592 | 42 | 550 |
-| Türkçe | 684 | 46 | 638 |
-| Güncel | 576 | 26 | 550 |
-| **Toplam** | **3.119** | **220** | **2.899** |
+| Tarih | 860 | 60 | 800 |
+| Coğrafya | 807 | 46 | 761 |
+| Vatandaşlık | 792 | 42 | 750 |
+| Türkçe | 884 | 46 | 838 |
+| Güncel | 776 | 26 | 750 |
+| **Toplam** | **4.119** | **220** | **3.899** |
 
 - Bu kapasite geçmişi boş profil içindir. Önceden kullanılan kayıtlar yeniden dağıtılmaz. Test menüsü kişisel kullanılmamış sayıyı da gösterir.
 - Yarım kalan testin ayrılmış soruları kaybolmaz: **aynı oturumdan devam** bağlantısı vardır. Yeni oturuma tekrar dağıtılmaz; ilk cevaplanmamış sorudan devam edilir. İçerik veya kapsam değişmişse eski cevaplarla farklı bir soru gösterilmez.
 - Günlük sayım tekil test id'lerine dayanır; gün **Europe/Istanbul** saat diliminde değişir. Gün değişimi kalıcı tekrar engelini kaldırmaz.
-- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **10 gün boyunca ders başına 500 tekrarsız test sorusu için 5.000/ders, toplam 25.000 test + 220 ayrı deneme sorusu gerekir.** Mevcut test havuzuyla bu hedefe **22.101 test sorusu eksiktir**; bütün kampın hazır olduğu iddia edilmez. Güncel'in 3.000 hedefi bu daha büyük ihtiyacın ara hedefidir.
+- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **10 gün boyunca ders başına 500 tekrarsız test sorusu için 5.000/ders, toplam 25.000 test + 220 ayrı deneme sorusu gerekir.** Mevcut test havuzuyla bu hedefe **21.101 test sorusu eksiktir**; bütün kampın hazır olduğu iddia edilmez. Güncel'in 3.000 hedefi bu daha büyük ihtiyacın ara hedefidir.
 
 ## Güncel için 3.000 soru hedefi ve mevcut soruların kalite turu
 
-- **3.000, yalnız Güncel dersinin hedefidir; mevcut sayı değildir.** Güncel'de **576 aktif soru**, ara hedefe **2.424 soru eksik** vardır. Bu hedef `/api/meta` ve test menüsünde ayrı gösterilir.
+- **3.000, yalnız Güncel dersinin hedefidir; mevcut sayı değildir.** Güncel'de **776 aktif soru**, ara hedefe **2.224 soru eksik** vardır. Bu hedef `/api/meta` ve test menüsünde ayrı gösterilir.
 - Önceki editoryal kalite turunda **her dersten 10, toplam 50 mevcut özgün soru** yeniden yazıldı. Havuz sayısı değişmedi.
 - `kalite_01.tsv` senaryo, çıkarım ve kavram ayrımı odaklı yeniden yazımları; `kalite_01_inceleme.json` önceki tam kayıtları, önce/sonra SHA-256 özetlerini ve konu kararlarını saklar. Değişiklikler mevcut `yukselt_*.tsv` kaynaklarına da işlendi.
 - Kısa eşleştirmelerin bir bölümü bağlama dönüştürüldü; çözümler yanlış seçeneklerin dayandığı yaygın karışıklıkları açıklar. Önceki 500'lük üretici de bu açık revizyonları korur.
@@ -143,15 +143,15 @@ Ardından **her dersten 50, toplam 250 yeni soru** elle yazıldı (`data/kaynakl
 
 | Ders | Aktif konu alanları | Arşiv | Aktif |
 |------|---------------------|-------|-------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 660 | 660 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 607 | 607 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 592 | 592 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 684 | 684 |
-| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 760 | 576 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 860 | 860 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 807 | 807 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 792 | 792 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 884 | 884 |
+| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 960 | 776 |
 
 ### Bütün çözüm yollarında geçmiş KPSS konu kapsamı
 
-- **3.119 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
+- **4.119 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
   konu/karışık test, telafi, doğrudan soru API'si veya denemede gösterilmez.
 - `data/kpss_kapsam.json` 44 konu alanını, bankadaki **aynı dersten yıl/oturum etiketli**
   konu örneklerini ve her kayıt için içerik özeti + aktif/bekleyen kararını saklar.
@@ -181,7 +181,7 @@ Ardından **her dersten 50, toplam 250 yeni soru** elle yazıldı (`data/kaynakl
   Yeni veya değiştirilmiş soru onayı eksikse denetim hata verir.
 
 
-> 📚 **Arşiv: 3.303; aktif çözüm havuzu: 3.119 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
+> 📚 **Arşiv: 4.303; aktif çözüm havuzu: 4.119 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 >
 > **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız

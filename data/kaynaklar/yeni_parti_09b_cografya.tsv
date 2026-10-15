@@ -1,0 +1,102 @@
+# Yeni parti 09b — Coğrafya: elle yazılmış özgün çalışma soruları (COG-YS-0151..0250).
+# id|konu|zorluk|kök|doğru|yanlış1|yanlış2|yanlış3|yanlış4|gerekçe
+COG-YS-0151|Nüfus|3|Fizyolojik nüfus yoğunluğu nasıl hesaplanır?|Toplam nüfus / tarım alanı|Toplam nüfus / yüzölçümü|Tarımla uğraşan nüfus / tarım alanı|Kent nüfusu / kır nüfusu|Tarım alanı / toplam nüfus|Fizyolojik yoğunluk, toplam nüfusun tarım alanına bölünmesiyle bulunur.
+COG-YS-0152|Nüfus|3|Tarımsal nüfus yoğunluğu nasıl hesaplanır?|Tarımla geçinen nüfus / tarım alanı|Toplam nüfus / yüzölçümü|Toplam nüfus / tarım alanı|Tarım alanı / yüzölçümü|Kır nüfusu / kent nüfusu|Tarımsal yoğunluk, tarımla geçinen nüfusun tarım alanına oranıdır.
+COG-YS-0153|Nüfus|2|Türkiye'nin nüfusu en kalabalık ili hangisidir?|İstanbul|Ankara|İzmir|Bursa|Antalya|İstanbul Türkiye'nin en kalabalık ilidir.
+COG-YS-0154|nufus_yerlesme|3|Doğu Karadeniz'de nüfusun kıyı şeridinde yoğunlaşmasının temel nedeni nedir?|Dağların kıyıya paralel uzanması ve iç kesimlerin engebeli olması|Kıyıların kurak olması|Sanayinin iç kesimde yoğunlaşması|Kıyıda ovaların çok geniş olması|İç kesimlerde iklimin ılıman olması|Dağlar kıyıya paralel uzandığından yerleşme dar kıyı şeridinde toplanmıştır.
+COG-YS-0155|nufus_yerlesme|3|Doğu ve Güneydoğu Anadolu'da köylere bağlı, birkaç evden oluşan tarım ve hayvancılık amaçlı küçük yerleşmelere ne denir?|Mezra|Oba|Yalı|Divan|Kışla|Mezralar köyden uzakta kurulan küçük yerleşmelerdir.
+COG-YS-0156|nufus_yerlesme|3|Göçebe Yörüklerin çadırlardan oluşan geçici yerleşmesine ne denir?|Oba|Mezra|Kom|Divan|Çiftlik|Oba, göçebelerin çadır yerleşmesidir.
+COG-YS-0157|nufus_yerlesme|2|Yaz aylarında hayvanları otlatmak için çıkılan yüksek yerlerdeki geçici yerleşmeye ne denir?|Yayla|Kışla|Mezra|Çiftlik|Divan|Yaylalar yaz aylarında kullanılan geçici yerleşmelerdir.
+COG-YS-0158|Şehirleşme|2|Zonguldak hangi fonksiyonuyla öne çıkan bir şehirdir?|Madencilik|Turizm|Dinî|Askerî|Üniversite|Zonguldak taş kömürü madenciliğiyle gelişmiştir.
+COG-YS-0159|Şehirleşme|2|Aşağıdaki şehirlerden hangisi öncelikle liman fonksiyonuyla gelişmiştir?|Mersin|Kırşehir|Nevşehir|Konya|Erzurum|Mersin Türkiye'nin önemli liman şehirlerindendir.
+COG-YS-0160|Şehirleşme|3|Türkiye'de şehir nüfusu ilk kez hangi nüfus sayımında köy nüfusunu geçmiştir?|1985|1950|1965|2000|1927|1985 sayımında şehir nüfusu ilk kez köy nüfusunu geçmiştir.
+COG-YS-0161|Tarım|2|Fındık üretiminde dünyada ilk sırada yer alan ülke hangisidir?|Türkiye|İtalya|İspanya|ABD|Gürcistan|Türkiye dünya fındık üretiminin yarıdan fazlasını karşılar.
+COG-YS-0162|Tarım|2|Türkiye'de pamuk üretiminin en fazla olduğu bölge hangisidir?|Güneydoğu Anadolu|Karadeniz|Doğu Anadolu|İç Anadolu|Marmara|GAP sulamalarıyla Şanlıurfa pamuk üretiminde ilk sıradadır.
+COG-YS-0163|Tarım|2|Türkiye'de zeytin üretiminin en fazla olduğu bölge hangisidir?|Ege|Doğu Anadolu|İç Anadolu|Karadeniz|Güneydoğu Anadolu|Zeytin üretiminde Ege Bölgesi ilk sıradadır.
+COG-YS-0164|Tarım|3|Türkiye'de tütün üretiminin en fazla yapıldığı bölge hangisidir?|Ege|Doğu Anadolu|İç Anadolu|Akdeniz|Marmara|Tütün üretiminde Ege Bölgesi öne çıkar.
+COG-YS-0165|Tarım|2|Türkiye'de şeker pancarı üretiminin en fazla olduğu bölge hangisidir?|İç Anadolu|Karadeniz|Akdeniz|Ege|Güneydoğu Anadolu|Şeker pancarı en çok İç Anadolu'da yetiştirilir.
+COG-YS-0166|Tarım|2|Türkiye'de muz yetiştiriciliği hangi kıyılarda yapılır?|Akdeniz (Anamur, Alanya)|Karadeniz|Marmara|Kuzey Ege|Trakya|Muz, Akdeniz kıyılarındaki Anamur ve Alanya'da yetiştirilir.
+COG-YS-0167|Tarım|3|Haşhaş üretimiyle bilinen il hangisidir?|Afyonkarahisar|Rize|Hatay|Edirne|Artvin|Haşhaş en çok Afyonkarahisar ve çevresinde yetiştirilir.
+COG-YS-0168|Tarım|3|Aşağıdaki illerden hangisi çeltik (pirinç) üretimiyle öne çıkar?|Edirne|Konya|Erzurum|Antalya|Van|Çeltik, Meriç ve Ergene havzasında Edirne'de yoğun olarak yetiştirilir.
+COG-YS-0169|Tarım|2|Türkiye'de ayçiçeği üretiminin en fazla olduğu bölge hangisidir?|Marmara (Trakya)|Doğu Anadolu|Karadeniz|Akdeniz|Güneydoğu Anadolu|Ayçiçeği en çok Trakya'da yetiştirilir.
+COG-YS-0170|Tarım|2|Kayısı üretimiyle bilinen il hangisidir?|Malatya|Rize|Artvin|Edirne|Kars|Malatya kayısı üretiminde dünyada önde gelir.
+COG-YS-0171|Tarım|2|Antep fıstığı üretiminin yoğun olduğu bölge hangisidir?|Güneydoğu Anadolu|Karadeniz|Marmara|Ege|Doğu Anadolu|Antep fıstığı Gaziantep, Şanlıurfa ve Siirt'te yetiştirilir.
+COG-YS-0172|Tarım|2|Türkiye'de turunçgil üretiminin en fazla olduğu bölge hangisidir?|Akdeniz|Karadeniz|İç Anadolu|Doğu Anadolu|Marmara|Portakal, limon, mandalina gibi turunçgiller en çok Akdeniz'de yetişir.
+COG-YS-0173|tarim_hayvancilik|2|Sulama yapılmadan yalnızca yağışa bağlı olarak yapılan tarıma ne denir?|Kuru tarım|Sulu tarım|Örtü altı tarımı|Organik tarım|Seracılık|Yağışa bağlı tarım kuru tarımdır.
+COG-YS-0174|tarim_hayvancilik|3|Nadas uygulamasının amacı nedir?|Toprağı bir süre boş bırakarak nem ve verimini artırmak|Toprağı gübrelemek|Ürünü erken yetiştirmek|Eğimli arazide toprak kaybını önlemek|Sera alanı açmak|Nadas, yağışın az olduğu yerlerde toprağın nem biriktirmesi için uygulanır.
+COG-YS-0175|tarim_hayvancilik|2|Türkiye'de seracılığın en yaygın olduğu bölge hangisidir?|Akdeniz|Doğu Anadolu|İç Anadolu|Karadeniz|Güneydoğu Anadolu|Kışların ılık geçtiği Akdeniz kıyılarında seracılık yaygındır.
+COG-YS-0176|Hayvancılık|3|Kıl keçisi yetiştiriciliğinin yaygın olduğu yer hangisidir?|Toros Dağları|Trakya|Doğu Karadeniz kıyıları|Çukurova|Ergene Havzası|Engebeli ve makilik Toros Dağları'nda kıl keçisi yetiştirilir.
+COG-YS-0177|Hayvancılık|2|Tiftik keçisi adını hangi ilden alır?|Ankara|Kars|Bursa|Van|Rize|Tiftik keçisine Ankara keçisi de denir.
+COG-YS-0178|Hayvancılık|2|Türkiye'de ipek böcekçiliğinin geleneksel merkezi olan il hangisidir?|Bursa|Erzurum|Konya|Trabzon|Diyarbakır|Bursa ipekçiliğiyle tarih boyunca ünlü olmuştur.
+COG-YS-0179|Hayvancılık|3|Türkiye'de bal üretiminde ilk sıralarda yer alan il hangisidir?|Ordu|Konya|Edirne|Şanlıurfa|Aksaray|Ordu, gezginci arıcılık ve bal üretimiyle öne çıkar.
+COG-YS-0180|Hayvancılık|3|Merinos koyunu yetiştiriciliğiyle bilinen yer hangisidir?|Karacabey (Bursa)|Hakkari|Rize|Kars|Şırnak|Karacabey merinos koyunu yetiştiriciliğiyle bilinir.
+COG-YS-0181|Madenler|2|Türkiye'de taş kömürü çıkarılan başlıca yer hangisidir?|Zonguldak|Afşin-Elbistan|Soma|Seyitömer|Tunçbilek|Taş kömürü Zonguldak havzasından çıkarılır; diğerleri linyit sahalarıdır.
+COG-YS-0182|Madenler|3|Türkiye'nin en büyük linyit rezervi nerededir?|Afşin-Elbistan (Kahramanmaraş)|Zonguldak|Batman|Divriği|Murgul|En büyük linyit yatağı Afşin-Elbistan'dadır.
+COG-YS-0183|Madenler|2|Türkiye'de petrol çıkarılan başlıca il hangisidir?|Batman|Zonguldak|Artvin|Sivas|Konya|Petrol en çok Batman ve Adıyaman'dan çıkarılır.
+COG-YS-0184|Madenler|3|Artvin'in Murgul ilçesi hangi madenle bilinir?|Bakır|Demir|Krom|Boksit|Bor|Murgul bakır yataklarıyla bilinir.
+COG-YS-0185|Madenler|3|Sivas'ın Divriği ilçesi hangi madenle bilinir?|Demir|Bakır|Krom|Boksit|Taş kömürü|Divriği demir yataklarıyla bilinir.
+COG-YS-0186|Madenler|3|Konya'nın Seydişehir ilçesi hangi madenle ve tesisle bilinir?|Boksit ve alüminyum tesisi|Bakır ve izabe tesisi|Demir ve çelik fabrikası|Taş kömürü ve termik santral|Bor ve rafineri|Seydişehir'de boksit çıkarılır ve alüminyum tesisi bulunur.
+COG-YS-0187|Madenler|3|Elazığ'ın Guleman yöresi hangi madenle bilinir?|Krom|Bakır|Boksit|Bor|Taş kömürü|Guleman krom yataklarıyla bilinir.
+COG-YS-0188|Madenler|3|Kırka bor yatakları hangi ildedir?|Eskişehir|Kütahya|Balıkesir|Bursa|Konya|Kırka, Eskişehir'in Seyitgazi ilçesindedir.
+COG-YS-0189|Madenler|3|Mermer yataklarıyla ünlü olan ve Marmara Denizi'ne adını veren ada hangisidir?|Marmara Adası|Gökçeada|Bozcaada|Büyükada|Avşa Adası|Marmara Adası mermeriyle ünlüdür.
+COG-YS-0190|Enerji|2|Türkiye'de rüzgâr enerjisi potansiyelinin en yüksek olduğu yerler hangileridir?|Ege ve Marmara kıyıları|İç Anadolu ovaları|Doğu Anadolu platoları|Güneydoğu Anadolu ovaları|Doğu Karadeniz vadileri|Çanakkale, İzmir ve Balıkesir çevresi rüzgâr enerjisinde öne çıkar.
+COG-YS-0191|Enerji|2|Türkiye'de güneş enerjisi potansiyelinin en yüksek olduğu bölgeler hangileridir?|Güneydoğu Anadolu ve Akdeniz|Karadeniz ve Marmara|Doğu Karadeniz ve Doğu Anadolu|Marmara ve Ege|Yalnızca Karadeniz|Güneşlenme süresinin en uzun olduğu Güneydoğu Anadolu ve Akdeniz öne çıkar.
+COG-YS-0192|Enerji|3|Türkiye'nin ilk jeotermal elektrik santrali hangi ildedir?|Denizli (Sarayköy-Kızıldere)|Afyonkarahisar|Kütahya|Ankara|Yalova|İlk jeotermal santral Denizli Sarayköy'de kurulmuştur.
+COG-YS-0193|Enerji|2|Türkiye'de termik santrallerde en çok kullanılan yerli enerji kaynağı hangisidir?|Linyit|Bor|Krom|Mermer|Bakır|Termik santrallerde yerli kaynak olarak linyit kullanılır.
+COG-YS-0194|Enerji|3|Türkiye'nin hidroelektrik potansiyeli en yüksek havzası hangisidir?|Fırat-Dicle|Sakarya|Kızılırmak|Gediz|Büyük Menderes|Fırat-Dicle havzası en büyük hidroelektrik potansiyele sahiptir.
+COG-YS-0195|Enerji|3|Ilısu Barajı hangi nehir üzerindedir?|Dicle|Fırat|Kızılırmak|Sakarya|Seyhan|Ilısu Barajı Mardin-Şırnak arasında Dicle Nehri üzerindedir.
+COG-YS-0196|Sanayi|2|Türkiye'nin ilk demir-çelik fabrikası hangi ilde kurulmuştur?|Karabük|İskenderun|Ereğli|Sivas|Kocaeli|İlk demir-çelik fabrikası 1939'da Karabük'te kurulmuştur.
+COG-YS-0197|sanayi|3|Şeker fabrikalarının şeker pancarı üretim alanlarına yakın kurulmasının temel nedeni nedir?|Ham maddenin çabuk bozulması ve taşıma maliyetinin yüksek olması|Enerji ihtiyacının az olması|İş gücünün kentlerde olmaması|Pazarın kırsalda olması|Limanlara yakın olma zorunluluğu|Pancar çabuk bozulduğu ve hacimli olduğu için fabrikalar üretim alanına yakındır.
+COG-YS-0198|sanayi|2|Aşağıdaki illerden hangisinde petrol rafinerisi bulunur?|Kocaeli (İzmit)|Rize|Artvin|Nevşehir|Kars|Kocaeli, İzmir-Aliağa, Kırıkkale ve Batman'da rafineri bulunur.
+COG-YS-0199|sanayi|2|Otomotiv sanayisinin yoğunlaştığı il hangisidir?|Bursa|Erzurum|Van|Ağrı|Hakkari|Bursa otomotiv sanayisinin merkezlerindendir.
+COG-YS-0200|sanayi|2|Çay fabrikalarının yoğunlaştığı il hangisidir?|Rize|Konya|Edirne|Antalya|Van|Çay fabrikaları çay tarımının yapıldığı Rize ve çevresindedir.
+COG-YS-0201|ulasim|2|Türkiye'nin dış ticaretinde yük miktarı bakımından en fazla kullanılan ulaşım türü hangisidir?|Deniz yolu|Kara yolu|Demir yolu|Hava yolu|Boru hattı|Dış ticarette taşınan yükün büyük kısmı deniz yoluyla taşınır.
+COG-YS-0202|ulasim|2|Türkiye'de yurt içi yolcu ve yük taşımacılığında en fazla kullanılan ulaşım türü hangisidir?|Kara yolu|Deniz yolu|Demir yolu|Hava yolu|Boru hattı|Yurt içi taşımacılıkta kara yolu açık farkla öndedir.
+COG-YS-0203|ulasim|3|Anadolu'da ilk demiryolu hattı hangi şehirler arasında yapılmıştır?|İzmir-Aydın|Ankara-İstanbul|Ankara-Sivas|İstanbul-Edirne|Samsun-Sivas|İlk demiryolu 1856'da İzmir-Aydın arasında yapımına başlanmıştır.
+COG-YS-0204|ulasim|3|Dağların kıyıya paralel uzanması nedeniyle kıyı ile iç kesimler arasında ulaşımın en zor olduğu bölge hangisidir?|Karadeniz|Ege|Marmara|İç Anadolu|Güneydoğu Anadolu|Karadeniz'de dağlar kıyıya paralel uzandığından iç kesimlerle bağlantı geçitlerle sağlanır.
+COG-YS-0205|dis_ticaret|2|Türkiye'nin dış ticaretinde en büyük payı hangi ülke grubu alır?|Avrupa Birliği ülkeleri|Afrika ülkeleri|Güney Amerika ülkeleri|Okyanusya ülkeleri|Orta Asya ülkeleri|AB, Türkiye'nin en büyük ticaret ortağıdır.
+COG-YS-0206|dis_ticaret|2|Türkiye'nin ihracatında en büyük payı hangi ürün grubu oluşturur?|Sanayi (imalat) ürünleri|Tarım ürünleri|Maden ürünleri|Canlı hayvan|Orman ürünleri|İhracatın büyük kısmını sanayi ürünleri oluşturur.
+COG-YS-0207|dis_ticaret|2|İhracatın ithalatı karşılama oranı nasıl hesaplanır?|(İhracat / İthalat) x 100|(İthalat / İhracat) x 100|İhracat - İthalat|İhracat + İthalat|(İhracat / Nüfus) x 100|Karşılama oranı ihracatın ithalata bölünüp 100 ile çarpılmasıyla bulunur.
+COG-YS-0208|dis_ticaret|2|Dış ticaret açığı hangi durumda oluşur?|İthalat ihracattan fazla olduğunda|İhracat ithalattan fazla olduğunda|İhracat ile ithalat eşit olduğunda|Turizm geliri arttığında|Döviz kuru düştüğünde|İthalatın ihracatı aşması dış ticaret açığı demektir.
+COG-YS-0209|dis_ticaret|3|Türkiye'nin ithalatında en büyük paylardan birini hangi ürün grubu oluşturur?|Enerji (petrol ve doğal gaz)|Fındık|Kuru üzüm|Mermer|Çay|Türkiye enerji kaynaklarının büyük kısmını ithal eder.
+COG-YS-0210|dis_ticaret|3|Serbest bölgelerin kurulmasındaki temel amaç nedir?|İhracata yönelik yatırım ve ticareti artırmak|Tarımsal üretimi azaltmak|İthalatı tamamen yasaklamak|Turizmi sınırlamak|Nüfusu azaltmak|Serbest bölgeler vergi ve gümrük kolaylıklarıyla ihracatı teşvik eder.
+COG-YS-0211|turizm|2|İnanç turizmi bakımından önemli olan Meryem Ana Evi hangi ildedir?|İzmir|Antalya|Mardin|Hatay|Konya|Meryem Ana Evi İzmir'in Selçuk ilçesindedir.
+COG-YS-0212|turizm|2|Termal turizmiyle öne çıkan il hangisidir?|Afyonkarahisar|Rize|Artvin|Hakkari|Sinop|Afyonkarahisar kaplıcalarıyla termal turizmin merkezlerindendir.
+COG-YS-0213|turizm|2|Yayla turizmiyle öne çıkan bölge hangisidir?|Doğu Karadeniz|Güneydoğu Anadolu|Trakya|İç Anadolu|Kıyı Ege|Ayder, Uzungöl gibi yaylalar Doğu Karadeniz'dedir.
+COG-YS-0214|turizm|2|Kış turizmi merkezi Uludağ hangi ildedir?|Bursa|Erzurum|Kayseri|Bolu|Kars|Uludağ Bursa'dadır.
+COG-YS-0215|turizm|3|Mavi Yolculuk turizmi hangi kıyılarda yapılır?|Muğla ve Antalya kıyıları|Karadeniz kıyıları|Marmara Denizi kıyıları|Trakya'nın Karadeniz kıyıları|Van Gölü kıyıları|Mavi Yolculuk, Bodrum, Marmaris, Fethiye gibi koylarda yapılan tekne turlarıdır.
+COG-YS-0216|turizm|3|Damlataş Mağarası hangi ildedir?|Antalya|Mersin|Muğla|Zonguldak|Trabzon|Damlataş Mağarası Antalya'nın Alanya ilçesindedir.
+COG-YS-0217|turizm|3|Rafting sporuyla öne çıkan akarsu hangisidir?|Çoruh|Ergene|Meriç|Porsuk|Gediz|Hızlı akışlı Çoruh Nehri rafting için uygundur.
+COG-YS-0218|turizm|2|Kapadokya bölgesi hangi turizm türüyle öne çıkar?|Kültür ve doğa turizmi|Kış turizmi|Deniz-kum-güneş turizmi|Yayla turizmi|Av turizmi|Kapadokya peri bacaları, yer altı şehirleri ve balon turlarıyla kültür ve doğa turizmi merkezidir.
+COG-YS-0219|Bölgeler|3|Girintili çıkıntılı yapısı nedeniyle kıyı uzunluğu en fazla olan coğrafi bölge hangisidir?|Ege|Karadeniz|Akdeniz|Marmara|Güneydoğu Anadolu|Dağların kıyıya dik uzandığı Ege'de kıyılar çok girintili çıkıntılıdır.
+COG-YS-0220|ulasim|2|İstanbul'un Anadolu yakasındaki havalimanı hangisidir?|Sabiha Gökçen Havalimanı|İstanbul Havalimanı|Esenboğa Havalimanı|Adnan Menderes Havalimanı|Dalaman Havalimanı|Sabiha Gökçen Havalimanı Pendik'tedir.
+COG-YS-0221|Afetler|2|Kuzey Anadolu Fay Hattı genel olarak hangi doğrultuda uzanır?|Doğu-batı|Kuzey-güney|Kuzeydoğu-güneybatı yönünde Ege'ye|Güneydoğu-kuzeybatı yönünde Karadeniz'e|Yalnızca İç Anadolu'da|Kuzey Anadolu Fayı doğu-batı doğrultusunda uzanır.
+COG-YS-0222|Afetler|2|17 Ağustos 1999 Gölcük depremi hangi fay hattı üzerinde meydana gelmiştir?|Kuzey Anadolu Fay Hattı|Doğu Anadolu Fay Hattı|Batı Anadolu Fay Sistemi|Ölü Deniz Fayı|Tuz Gölü Fayı|1999 depremi Kuzey Anadolu Fay Hattı üzerinde olmuştur.
+COG-YS-0223|Afetler|3|6 Şubat 2023 Kahramanmaraş depremleri hangi fay hattı üzerinde meydana gelmiştir?|Doğu Anadolu Fay Hattı|Kuzey Anadolu Fay Hattı|Batı Anadolu Fay Sistemi|Ege Grabenleri|Tuz Gölü Fayı|2023 depremleri Doğu Anadolu Fay Hattı üzerinde olmuştur.
+COG-YS-0224|Afetler|2|Türkiye'de çığ olaylarının en sık görüldüğü bölge hangisidir?|Doğu Anadolu|Akdeniz|Ege|Marmara|Güneydoğu Anadolu|Yüksek ve eğimli, kar örtüsünün kalın olduğu Doğu Anadolu'da çığ sık görülür.
+COG-YS-0225|Afetler|2|Sel ve taşkın zararlarını artıran insan kaynaklı etken hangisidir?|Dere yataklarına yapılaşma|Ağaçlandırma|Taşkın önleme setleri|Erken uyarı sistemleri|Havza ıslahı|Dere yataklarının yapılaşmaya açılması taşkın zararını artırır.
+COG-YS-0226|Afetler|2|Türkiye'de orman yangınlarının en sık görüldüğü bölgeler hangileridir?|Akdeniz ve Ege|Doğu Anadolu ve Karadeniz|İç Anadolu ve Doğu Anadolu|Güneydoğu ve Doğu Anadolu|Yalnızca Karadeniz|Yazları sıcak ve kurak olan Akdeniz ve Ege'de orman yangınları sıktır.
+COG-YS-0227|cevre|2|Asit yağmurlarının temel nedeni nedir?|Fosil yakıtlardan çıkan kükürt ve azot oksitleri|Ozon gazının artması|Okyanusların ısınması|Volkanik tüfler|Ormanların çoğalması|Kükürt ve azot oksitleri su buharıyla birleşerek asit yağmurlarına yol açar.
+COG-YS-0228|cevre|2|Ozon tabakasının incelmesine yol açan başlıca gazlar hangileridir?|Kloroflorokarbonlar (CFC)|Oksijen|Azot|Su buharı|Helyum|Spreylerde ve soğutucularda kullanılan CFC gazları ozonu inceltir.
+COG-YS-0229|cevre|2|Sera etkisini artıran başlıca gaz hangisidir?|Karbondioksit|Oksijen|Azot|Argon|Helyum|Karbondioksit küresel ısınmaya yol açan başlıca sera gazıdır.
+COG-YS-0230|cevre|3|Sulak alanların korunmasına yönelik uluslararası sözleşme hangisidir?|Ramsar Sözleşmesi|Kyoto Protokolü|Montrö Sözleşmesi|Basel Sözleşmesi|Barselona Sözleşmesi|Ramsar Sözleşmesi sulak alanları korur; Basel tehlikeli atıklarla ilgilidir.
+COG-YS-0231|cevre|3|Göllerde aşırı gübre ve atık nedeniyle alglerin çoğalıp suyun oksijeninin azalmasına ne denir?|Ötrofikasyon|Erozyon|Asit yağmuru|Sera etkisi|Çölleşme|Ötrofikasyon, besin maddesi fazlalığından kaynaklanan su kirliliğidir.
+COG-YS-0232|cevre|3|Türkiye'de rüzgâr erozyonunun en belirgin görüldüğü yer hangisidir?|Karapınar (Konya)|Rize|Artvin|Bolu|Kastamonu|Konya Karapınar'da rüzgâr erozyonu ve kumullar görülür.
+COG-YS-0233|Bölgeler|2|Türkiye kaç coğrafi bölgeye ayrılmıştır?|7|5|6|8|9|Türkiye yedi coğrafi bölgeye ayrılmıştır.
+COG-YS-0234|Bölgeler|3|Türkiye'nin coğrafi bölgeleri hangi toplantıda belirlenmiştir?|1941 Birinci Coğrafya Kongresi|1923 İzmir İktisat Kongresi|1932 Türk Dil Kurultayı|1931 Türk Tarih Kongresi|1950 Coğrafya Şurası|Bölgeler 1941'de Ankara'daki Birinci Coğrafya Kongresi'nde belirlenmiştir.
+COG-YS-0235|Bölgeler|2|Türkiye'nin yüzölçümü en küçük coğrafi bölgesi hangisidir?|Güneydoğu Anadolu|Marmara|Ege|Karadeniz|Akdeniz|Güneydoğu Anadolu en küçük bölgedir.
+COG-YS-0236|Bölgeler|2|Türkiye'nin nüfusu en kalabalık coğrafi bölgesi hangisidir?|Marmara|İç Anadolu|Ege|Karadeniz|Akdeniz|Marmara en kalabalık bölgedir.
+COG-YS-0237|Bölgeler|2|Çatalca-Kocaeli Bölümü hangi coğrafi bölgededir?|Marmara|Karadeniz|İç Anadolu|Ege|Akdeniz|Çatalca-Kocaeli Bölümü Marmara Bölgesi'ndedir.
+COG-YS-0238|Bölgeler|2|Göller Yöresi hangi coğrafi bölgededir?|Akdeniz|İç Anadolu|Ege|Doğu Anadolu|Karadeniz|Göller Yöresi Akdeniz Bölgesi'nin Antalya Bölümü'ndedir.
+COG-YS-0239|Bölgeler|3|Menteşe Yöresi hangi coğrafi bölgededir?|Ege|Akdeniz|Marmara|İç Anadolu|Karadeniz|Menteşe Yöresi Ege Bölgesi'nin Kıyı Ege Bölümü'ndedir.
+COG-YS-0240|Bölgeler|2|Konya Bölümü hangi coğrafi bölgededir?|İç Anadolu|Akdeniz|Ege|Doğu Anadolu|Güneydoğu Anadolu|Konya Bölümü İç Anadolu Bölgesi'ndedir.
+COG-YS-0241|Bölgeler|2|Dicle Bölümü hangi coğrafi bölgededir?|Güneydoğu Anadolu|Doğu Anadolu|İç Anadolu|Akdeniz|Karadeniz|Güneydoğu Anadolu, Dicle ve Orta Fırat bölümlerinden oluşur.
+COG-YS-0242|Bölgeler|3|Hakkari Bölümü hangi coğrafi bölgededir?|Doğu Anadolu|Güneydoğu Anadolu|Karadeniz|İç Anadolu|Akdeniz|Hakkari Bölümü Doğu Anadolu Bölgesi'ndedir.
+COG-YS-0243|Bölgeler|2|Ergene Bölümü hangi coğrafi bölgededir?|Marmara|Ege|Karadeniz|İç Anadolu|Akdeniz|Ergene Bölümü Trakya'da, Marmara Bölgesi'ndedir.
+COG-YS-0244|Bölgeler|2|Adana Bölümü hangi coğrafi bölgededir?|Akdeniz|Güneydoğu Anadolu|İç Anadolu|Ege|Doğu Anadolu|Adana Bölümü Akdeniz Bölgesi'ndedir.
+COG-YS-0245|Bölgeler|3|Yukarı Fırat Bölümü hangi coğrafi bölgededir?|Doğu Anadolu|Güneydoğu Anadolu|İç Anadolu|Karadeniz|Akdeniz|Yukarı Fırat Bölümü Doğu Anadolu'dadır.
+COG-YS-0246|Bölgeler|3|Orta Fırat Bölümü hangi coğrafi bölgededir?|Güneydoğu Anadolu|Doğu Anadolu|İç Anadolu|Akdeniz|Karadeniz|Orta Fırat Bölümü Güneydoğu Anadolu'dadır.
+COG-YS-0247|Bölgeler|3|Yukarı Sakarya Bölümü hangi coğrafi bölgededir?|İç Anadolu|Marmara|Karadeniz|Ege|Akdeniz|Yukarı Sakarya Bölümü İç Anadolu'dadır.
+COG-YS-0248|Bölgeler|3|İç Batı Anadolu Bölümü hangi coğrafi bölgededir?|Ege|İç Anadolu|Marmara|Akdeniz|Karadeniz|Ege Bölgesi, Kıyı Ege ve İç Batı Anadolu bölümlerinden oluşur.
+COG-YS-0249|Bölgeler|3|Güneydoğu Anadolu Projesi (GAP) kaç ili kapsar?|9|7|5|12|15|GAP; Adıyaman, Batman, Diyarbakır, Gaziantep, Kilis, Mardin, Siirt, Şanlıurfa ve Şırnak'ı kapsar.
+COG-YS-0250|Bölgeler|3|Doğu Karadeniz Bölgesel Gelişme Projesinin kısaltması hangisidir?|DOKAP|GAP|DAP|KOP|ZBK|DOKAP Doğu Karadeniz, DAP Doğu Anadolu, KOP Konya Ovası projesidir.
