@@ -41,7 +41,7 @@ class Parti1500Test(unittest.TestCase):
         self.assertEqual(sum(not t['new'] for t in targets),1306)
         self.assertEqual(collections.Counter(t['ders'] for t in targets if t['new']),
                          {'tarih':71,'turkce':76,'guncel':47})
-        self.assertEqual(len(self.bank),4303)
+        self.assertEqual(len(self.bank),6303)
 
     def test_tekrar_uretim_tsv_ile_ayni(self):
         for d,rows in self.output.items():

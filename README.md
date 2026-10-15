@@ -40,10 +40,10 @@ NODE_PATH=/tmp/kpss_test/node_modules node araclar/smoke_test.js
 
 Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
-> 📌 **Günlük soru hedefi:** Ders başına **500 soru** (toplam 2.500), **10'ar soruluk testler** hâlinde.
-> Denemeler bu hedefe dahil değildir. Başlangıç test kapasitesi her derste en az 500'e çıkarıldı; geçmişi boş profil için ilk gün karşılanır. Bu, 10 gün boyunca tekrarsız 500'ün bütün içeriğinin hazır olduğu anlamına gelmez.
+> 📌 **Günlük soru hedefi ve üst sınırı:** Ders başına **400 soru** (toplam 2.000), **10'ar soruluk testler** hâlinde.
+> 400 aynı zamanda **günlük üst sınırdır**: bir derste o gün 400 test sorusu ayrıldıktan sonra yeni test başlatılamaz; fazla sorular **sonraki günlere kalır**. Denemeler bu hedefe ve sınıra dahil değildir. Başlangıç test kapasitesi her derste en az 1.150'dir; geçmişi boş profil için ilk iki gün tam karşılanır. Bu, 10 gün boyunca tekrarsız 400'ün bütün içeriğinin hazır olduğu anlamına gelmez.
 > Güncel havuz hedefi ayrıca **3.000** olarak belirlenmiştir; bu henüz tamamlanmış değildir.
-> ⚠️ **Gerçek durum:** Aynı soru tekrar gelmediği için 1. gün her dersten 500 çözülürse 2. günden itibaren yeni test sorusu kalan: Tarih **50**, Coğrafya **11**, Vatandaşlık **0**, Türkçe **88**, Güncel **0**. Yani her gün her dersten 500 soru şu an **yalnız ilk gün** sağlanabiliyor.
+> ⚠️ **Gerçek durum:** Aynı soru tekrar gelmediği için her gün 400 çözülürse kullanılmamış test sorusu şu günlere yeter: Tarih **400 + 400 + 400**, Coğrafya **400 + 400 + 361**, Vatandaşlık **400 + 400 + 350**, Türkçe **400 + 400 + 400 + 38**, Güncel **400 + 400 + 350**. Yani her dersten tam 400 şu an **ilk 2 gün** (Tarih ve Türkçe'de 3 gün) sağlanabiliyor; sonrasında yeni soru eklenmesi gerekir.
 > Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
 > Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
 
@@ -87,7 +87,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 ### 3. Ustalık Sistemi
 - Her konunun ustalığı takip edilir: **son 10 soruda 8+ doğru = Usta** (rozet yeşile döner).
 - Usta olmadığın konular öncelikli gelir; ustalaştığın konular geri planda kalır.
-- Her derste günlük **500 soru** hedeflenir (toplam **2.500**). Yalnız onaylı konu havuzu kullanılır; deneme rezervleri sayılmaz. Kullanılmış sorular gün değişince yeniden açılmaz; eksik kamp kapasitesi gizlenmez.
+- Her derste günlük **400 soru** hedeflenir ve bu sayı günlük üst sınırdır (toplam **2.000**); fazlası sonraki günlere kalır. Yalnız onaylı konu havuzu kullanılır; deneme rezervleri sayılmaz. Kullanılmış sorular gün değişince yeniden açılmaz; eksik kamp kapasitesi gizlenmez.
 
 ### 4. Aynı Soru Tekrar Gelmez
 - Aynı profilin test, telafi ve denemeleri ortak **kalıcı kullanım kaydı** kullanır; gün değişmesi eski soruları yeniden açmaz.
@@ -108,31 +108,31 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 ---
 
-## Deneme hariç ders başına günlük minimum 500 test sorusu
+## Deneme hariç ders başına günlük 400 test sorusu (üst sınır)
 
-Tek ayar kaynağı `data/calisma_hedefleri.json`: **500 soru/ders/gün**, **10 soru/set**, **50 setlik hedef/ders**, **2.500 test sorusu/gün**. Deneme bu sayılara eklenir; deneme doğru/yanlış/boşları test sayacını artırmaz. Her dersin 500'ü ayrı değerlendirilir; tek derste fazladan soru çözmek diğer dersin eksiğini kapatmaz.
+Tek ayar kaynağı `data/calisma_hedefleri.json`: **400 soru/ders/gün**, **10 soru/set**, **40 setlik hedef/ders**, **2.000 test sorusu/gün**, `"gunluk_ust_sinir": true`. Deneme bu sayılara eklenir; deneme doğru/yanlış/boşları test sayacını artırmaz. Her dersin 400'ü ayrı değerlendirilir; tek derste fazladan soru çözmek diğer dersin eksiğini kapatmaz. Sunucu (`/api/soru-ayir`) o gün o derste 400'ü aşacak test ayırmasını **429** ile reddeder; arayüz son seti kalan sayıya göre kısaltır ve kalan soruları sonraki günlere bırakır. `/api/meta.calisma_hedefi.dersler.<ders>.gun_dagilimi` mevcut havuzun hangi güne kaç soru yettiğini gösterir.
 
 İlk-gün eksiği için **26 Vatandaşlık + 162 Güncel = 188 yeni özgün soru** elle yazıldı. `ek_188_gunluk500.tsv` kök, beş seçenek ve gerekçeli çözümü içerir; `ek_188_inceleme.json` ayrı kapsam kararlarının içerik özetlerini saklar. Şık sıralaması dışında otomatik varyant üretimi yoktur. `soru_yukselt.py` ekleri de doğrulayarak uygular; mevcut farklı içerik veya korumalı kaynak sessizce ezilemez. Önceki 2.865 kayıt değiştirilmedi.
 
-Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, `*-YS-0001…0050`), sonra **her dersten 200, toplam 1.000 yeni soru** daha (`yeni_parti_06a…10b_*.tsv`, `*-YS-0051…0250`) elle yazıldı; yeni partilerin toplamı **1.250 (ders başına 250)**. Her satır kendi kökü, beş seçeneği ve gerekçeli çözümüyle ayrı bir sorudur; kökler birbirinden ve bankadaki diğer sorulardan farklıdır (`araclar/ek_yeni_sorular.py` aynı kökü reddeder). Onay: `python3 araclar/soru_yukselt.py && python3 araclar/ek_yeni_sorular.py --onayla`. Yeni parti eklemek için aynı biçimde `yeni_parti_11_*.tsv` yazmak yeterlidir.
+Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, `*-YS-0001…0050`), sonra **her dersten 200, toplam 1.000 yeni soru** (`yeni_parti_06a…10b_*.tsv`, `*-YS-0051…0250`), ardından **her dersten 400, toplam 2.000 yeni soru** daha (`yeni_parti_11a…15d_*.tsv`, `*-YS-0251…0650`) elle yazıldı; yeni partilerin toplamı **3.250 (ders başına 650)**. Her satır kendi kökü, beş seçeneği ve gerekçeli çözümüyle ayrı bir sorudur; kökler birbirinden ve bankadaki diğer sorulardan farklıdır (`araclar/ek_yeni_sorular.py` aynı kökü reddeder). Onay: `python3 araclar/soru_yukselt.py && python3 araclar/ek_yeni_sorular.py --onayla`. Yeni parti eklemek için aynı biçimde `yeni_parti_16_*.tsv` yazmak yeterlidir.
 
 | Ders | Aktif toplam | Deneme rezervi | Başlangıç test kapasitesi |
 |---|---:|---:|---:|
-| Tarih | 860 | 60 | 800 |
-| Coğrafya | 807 | 46 | 761 |
-| Vatandaşlık | 792 | 42 | 750 |
-| Türkçe | 884 | 46 | 838 |
-| Güncel | 776 | 26 | 750 |
-| **Toplam** | **4.119** | **220** | **3.899** |
+| Tarih | 1.260 | 60 | 1.200 |
+| Coğrafya | 1.207 | 46 | 1.161 |
+| Vatandaşlık | 1.192 | 42 | 1.150 |
+| Türkçe | 1.284 | 46 | 1.238 |
+| Güncel | 1.176 | 26 | 1.150 |
+| **Toplam** | **6.119** | **220** | **5.899** |
 
 - Bu kapasite geçmişi boş profil içindir. Önceden kullanılan kayıtlar yeniden dağıtılmaz. Test menüsü kişisel kullanılmamış sayıyı da gösterir.
 - Yarım kalan testin ayrılmış soruları kaybolmaz: **aynı oturumdan devam** bağlantısı vardır. Yeni oturuma tekrar dağıtılmaz; ilk cevaplanmamış sorudan devam edilir. İçerik veya kapsam değişmişse eski cevaplarla farklı bir soru gösterilmez.
 - Günlük sayım tekil test id'lerine dayanır; gün **Europe/Istanbul** saat diliminde değişir. Gün değişimi kalıcı tekrar engelini kaldırmaz.
-- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **10 gün boyunca ders başına 500 tekrarsız test sorusu için 5.000/ders, toplam 25.000 test + 220 ayrı deneme sorusu gerekir.** Mevcut test havuzuyla bu hedefe **21.101 test sorusu eksiktir**; bütün kampın hazır olduğu iddia edilmez. Güncel'in 3.000 hedefi bu daha büyük ihtiyacın ara hedefidir.
+- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **10 gün boyunca ders başına 400 tekrarsız test sorusu için 4.000/ders, toplam 20.000 test + 220 ayrı deneme sorusu gerekir.** Mevcut test havuzuyla bu hedefe **14.101 test sorusu eksiktir**; bütün kampın hazır olduğu iddia edilmez. Güncel'in 3.000 hedefi bu daha büyük ihtiyacın ara hedefidir.
 
 ## Güncel için 3.000 soru hedefi ve mevcut soruların kalite turu
 
-- **3.000, yalnız Güncel dersinin hedefidir; mevcut sayı değildir.** Güncel'de **776 aktif soru**, ara hedefe **2.224 soru eksik** vardır. Bu hedef `/api/meta` ve test menüsünde ayrı gösterilir.
+- **3.000, yalnız Güncel dersinin hedefidir; mevcut sayı değildir.** Güncel'de **1.176 aktif soru**, ara hedefe **1.824 soru eksik** vardır. Bu hedef `/api/meta` ve test menüsünde ayrı gösterilir.
 - Önceki editoryal kalite turunda **her dersten 10, toplam 50 mevcut özgün soru** yeniden yazıldı. Havuz sayısı değişmedi.
 - `kalite_01.tsv` senaryo, çıkarım ve kavram ayrımı odaklı yeniden yazımları; `kalite_01_inceleme.json` önceki tam kayıtları, önce/sonra SHA-256 özetlerini ve konu kararlarını saklar. Değişiklikler mevcut `yukselt_*.tsv` kaynaklarına da işlendi.
 - Kısa eşleştirmelerin bir bölümü bağlama dönüştürüldü; çözümler yanlış seçeneklerin dayandığı yaygın karışıklıkları açıklar. Önceki 500'lük üretici de bu açık revizyonları korur.
@@ -143,15 +143,15 @@ Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, 
 
 | Ders | Aktif konu alanları | Arşiv | Aktif |
 |------|---------------------|-------|-------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 860 | 860 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 807 | 807 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 792 | 792 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 884 | 884 |
-| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 960 | 776 |
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 1.260 | 1.260 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 1.207 | 1.207 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 1.192 | 1.192 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 1.284 | 1.284 |
+| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 1.360 | 1.176 |
 
 ### Bütün çözüm yollarında geçmiş KPSS konu kapsamı
 
-- **4.119 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
+- **6.119 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
   konu/karışık test, telafi, doğrudan soru API'si veya denemede gösterilmez.
 - `data/kpss_kapsam.json` 44 konu alanını, bankadaki **aynı dersten yıl/oturum etiketli**
   konu örneklerini ve her kayıt için içerik özeti + aktif/bekleyen kararını saklar.
@@ -181,7 +181,7 @@ Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, 
   Yeni veya değiştirilmiş soru onayı eksikse denetim hata verir.
 
 
-> 📚 **Arşiv: 4.303; aktif çözüm havuzu: 4.119 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
+> 📚 **Arşiv: 6.303; aktif çözüm havuzu: 6.119 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 >
 > **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız
@@ -232,7 +232,7 @@ Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, 
 > Gerçek çıkmışlar ve yayınevi soruları araç tarafından değişikliğe karşı korunur.
 > Girişler topluca doğrulanır; eksik id, tekrarlı şık veya korumalı kaynak varsa yazma yapılmaz.
 
-> 📚 **Günlük 500 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
+> 📚 **Günlük 400 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
 > kitap soruları, yalnız kullanılmamış ve denemeye ayrılmamışlarsa önceliklidir; sonra diğer uygun sorular seçilir. Setin
 > başındaki `📚 Kitap` rozeti ve soru altındaki `📌 Kaynak` satırı hangi kitaptan olduğunu gösterir.
 > Sorular yalnız aktif kapsamdan **10'luk setler** hâlinde gelir. Denemeler ayrıldıktan sonraki
@@ -279,7 +279,7 @@ Gün sonu denemesi bitince **yanlış/boş bıraktığın konular** otomatik ola
 - **✏️ Test Çöz** — Günün Maratonu / Konu Testi (10) / Yanlış Telafisi / Hata Atölyesi — hepsi 10'luk
 - **📝 Denemeler** — 10 deneme + çözüm analizi
 - **🎯 Hata Defteri** — zayıf konular + yanlış sorular + saldırı butonları
-- **📊 İstatistik** — ustalık, ders başı 500 / toplam 2.500 günlük sayaç, net takibi
+- **📊 İstatistik** — ustalık, ders başı 400 / toplam 2.000 günlük sayaç, net takibi
 - **⚙️ Ayarlar** — yedekle / geri yükle / sıfırla
 
 ---

@@ -151,8 +151,8 @@ function mockFetch(url, opts) {
   await go("#/coz");
   ok("test çöz hubı", has("TEST ÇÖZ"));
   ok("geçmiş KPSS konu filtresi görünür", has("Geçmiş KPSS konu filtresi açık"));
-  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 776 aktif") && has("2224 soru kaldı"));
-  ok("Güncel test havuzu denemelerden ayrı en az 400", has("776 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("750 kullanılmamış test sorusu"));
+  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 1176 aktif") && has("1824 soru kaldı"));
+  ok("Güncel test havuzu denemelerden ayrı en az 400", has("1176 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("1150 kullanılmamış test sorusu"));
   ok("deneme hariç beş ayrı 400 hedefi ve 40 set gösterilir",has("Deneme hariç günlük test hedefi") && has("40 × 10") && has("fazla sorular sonraki günlere kalır") && doc.querySelector(".gunluk-test-hedefi")?.textContent.includes("Vatandaşlık"));
   ok("tek derste 2000 çözmek günlük hedefi tamamlamaz",!win.__smokeUneven().includes("yesil"));
   ok("Türkiye gece yarısından önce günlük tarih",win.__smokeDateAt("2026-10-15T20:59:00Z")==="2026-10-15");
@@ -330,7 +330,7 @@ function mockFetch(url, opts) {
 
   win.__smokeSeedOldTopics();
   await go("#/akis/guncel");
-  ok("Güncel günlük akışında deneme hariç hedef görünür", has("776 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("40 × 10"));
+  ok("Güncel günlük akışında deneme hariç hedef görünür", has("1176 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("40 × 10"));
   ok("kapsam dışı eski konular karışık test kilidini açmaz", has("Önce konu testlerini bitir") && !!doc.querySelector("button[disabled]"));
 
   const cap=win.__smokeDailyCap("tarih");
