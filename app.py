@@ -20,6 +20,7 @@ from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
 from kpss_kapsam import read_policy, filter_bank, project_exams, question_key
+from calisma_hedefi import load_target, summarize
 
 KOK = Path(__file__).resolve().parent
 VERI = KOK / "data"
@@ -191,8 +192,11 @@ def her_seyi_yukle(zorla: bool = False):
         # cache'i servis etme; bütün çözüm yolları aynı aktif indeksi kullanır.
         raw = {d: sorular_yukle(d) for d in DERSLER}
         active, report = filter_bank(raw, read_policy(KOK))
-        fresh = dict(program=program_yukle(), kapsam=report, sorular=active,
-                     denemeler=project_exams(denemeler_yukle(), raw, active),
+        program = program_yukle()
+        exams = project_exams(denemeler_yukle(), raw, active)
+        target = summarize(load_target(KOK), active, exams, len(program['gunler']))
+        fresh = dict(program=program, kapsam=report, sorular=active, calisma_hedefi=target,
+                     denemeler=exams,
                      konu_yeniden=_json_oku(VERI / "konu_yeniden.json") if (VERI / "konu_yeniden.json").exists() else {},
                      dersler={d: ders_md_bol(d) for d in DERSLER})
         for d in DERSLER:
@@ -234,6 +238,15 @@ def _ilerleme_yaz_kilitsiz(kullanici: str, veri: dict) -> dict:
         eski, yeni = onceki.get(alan, {}), veri.get(alan, {})
         veri[alan] = {**(eski if isinstance(eski, dict) else {}),
                       **(yeni if isinstance(yeni, dict) else {})}
+    old_sessions = onceki.get('devam_testleri', {})
+    incoming_sessions = veri.get('devam_testleri', {})
+    sessions = dict(old_sessions) if isinstance(old_sessions, dict) else {}
+    for uid, session in (incoming_sessions.items() if isinstance(incoming_sessions, dict) else []):
+        if not isinstance(session, dict):
+            continue
+        if uid not in sessions or session.get('guncelleme', 0) >= sessions[uid].get('guncelleme', 0):
+            sessions[uid] = session
+    veri['devam_testleri'] = sessions
     veri["kullanici"] = kullanici
     tmp = yol.with_suffix('.json.tmp')
     tmp.write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding='utf-8')
@@ -279,7 +292,8 @@ def api_meta():
             "sinav": program["sinav"],
             "dersler": DERSLER,
             "soru_sayilari": soru_sayilari,
-            "havuz_hedefleri": {"guncel": 3000},
+            "havuz_hedefleri": {"guncel": c["calisma_hedefi"]["guncel_ara_havuz_hedefi"]},
+            "calisma_hedefi": c["calisma_hedefi"],
             "kapsam": {k: v for k, v in c['kapsam'].items() if k != 'bekleyen_kayitlar'},
             "gun_ozetleri": [
                 {"no": g["no"], "tarih": g["tarih"], "tema": g["tema"]} for g in program["gunler"]

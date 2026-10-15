@@ -71,6 +71,20 @@ function mockFetch(url, opts) {
       gorulen:[], bas:Date.now()}; V.oturumTecih = {}; renderQuiz();
   };
   window.__smokeQueueIds = () => V.oturum?.kuyruk.map((x) => x.s.id) || [];
+  window.__smokeSessionId = () => V.oturum?.uid;
+  window.__smokeCounters = () => JSON.stringify({total:gunlukSayac().sayi,dersler:Object.fromEntries(Object.keys(DERSLER).map((d) => [d,dersGunlukKaydi(d).sayi]))});
+  window.__smokeDateAt = (iso) => {
+    const RealDate=window.Date;
+    window.Date=class extends RealDate {constructor(...args){super(...(args.length ? args : [iso]));}};
+    const result=gunTarihi();window.Date=RealDate;return result;
+  };
+  window.__smokeUneven = () => {
+    const saved=JSON.parse(JSON.stringify(V.kayit));
+    const ids=Object.fromEntries(Array.from({length:2500},(_,i) => ["fake-"+i,1]));
+    V.kayit.gunluk={tarih:gunTarihi(),ids};
+    V.kayit.ders_gunluk=Object.fromEntries(Object.keys(DERSLER).map((d) => [d,{tarih:gunTarihi(),ids:d==="tarih" ? ids : {}}]));
+    const result=gunlukRozet();V.kayit=saved;return result;
+  };
   window.__smokeExamIds = () => V.denemeOturum?.d.sorular || [];
   window.__smokeExhaust = () => {
     Object.values(V.tumSorular).forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test"}; }); kaydet();
@@ -124,8 +138,12 @@ function mockFetch(url, opts) {
   await go("#/coz");
   ok("test çöz hubı", has("TEST ÇÖZ"));
   ok("geçmiş KPSS konu filtresi görünür", has("Geçmiş KPSS konu filtresi açık"));
-  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 364 aktif") && has("2636 soru kaldı"));
-  ok("Güncel havuzunun 500 farklı soruya yetmediği açık", has("364 farklı aktif soru") && has("kapsam dışı soru eklenmez"));
+  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 526 aktif") && has("2474 soru kaldı"));
+  ok("Güncel test havuzu denemelerden ayrı en az 500", has("526 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("500 kullanılmamış test sorusu"));
+  ok("deneme hariç beş ayrı 500 hedefi ve 50 set gösterilir",has("Deneme hariç günlük test hedefi") && has("50 × 10") && doc.querySelector(".gunluk-test-hedefi")?.textContent.includes("Vatandaşlık"));
+  ok("tek derste 2500 çözmek günlük hedefi tamamlamaz",!win.__smokeUneven().includes("yesil"));
+  ok("Türkiye gece yarısından önce günlük tarih",win.__smokeDateAt("2026-10-15T20:59:00Z")==="2026-10-15");
+  ok("Türkiye gece yarısında günlük tarih yenilenir",win.__smokeDateAt("2026-10-15T21:00:00Z")==="2026-10-16");
   ok("gerçek çıkmış bölümü", has("Gerçek Çıkmış KPSS Soruları"));
   ok("çıkmış yıl butonları 2014/2024", has("2014-KPSS") && has("2024-KPSS"));
   ok("2022-KPSS butonu", has("2022-KPSS"));
@@ -171,12 +189,22 @@ function mockFetch(url, opts) {
 
   await go("#/coz/karisik/cografya");
   const firstSet=win.__smokeQueueIds();
+  const parked=win.__smokeSessionId();
   await go("#/coz");
   await go("#/coz/karisik/cografya");
   const secondSet=win.__smokeQueueIds();
   ok("cevaplanmadan bırakılan set yeni testte geri gelmez",firstSet.length===10 && secondSet.length===10 && secondSet.every((id) => !firstSet.includes(id)));
   const examReserve=new Set(loadFix("denemeler.json").denemeler.flatMap((d) => d.sorular));
   ok("test seti denemelere ayrılan sorulardan seçilmez",[...firstSet,...secondSet].every((id) => !examReserve.has(id)));
+
+  await go(`#/test-devam/${parked}`);
+  ok("yarım kalan set aynı oturum kimliğiyle tamamlanabilir",win.__smokeSessionId()===parked && JSON.stringify(win.__smokeQueueIds())===JSON.stringify(firstSet));
+  await go("#/coz/maraton/tarih/0");
+  const oldSameRoute=win.__smokeQueueIds();
+  const sameLink=doc.createElement("a");sameLink.href=win.location.hash;doc.body.appendChild(sameLink);sameLink.click();sameLink.remove();
+  await tick(80);
+  ok("aynı rotada yeni 10 bağlantısı takılmaz",win.__smokeQueueIds().length===10 && win.__smokeQueueIds().every((id) => !oldSameRoute.includes(id)));
+  const testCountBeforeExam=win.__smokeCounters();
 
   /* ---------- 27-31: deneme ---------- */
   const den = loadFix("denemeler.json", { denemeler: [] }).denemeler[0];
@@ -195,6 +223,7 @@ function mockFetch(url, opts) {
   win.eval("denemeBitir()");
   await tick(80);
   ok("deneme bitti + net", has("DENEME BİTTİ") && has("Net:"));
+  ok("deneme cevapları ders başına 500 sayacını artırmaz",win.__smokeCounters()===testCountBeforeExam);
   ok("yarının odağı üretildi", has("Yarının Odağı") || has("Odak"));
 
   /* ---------- 32-37: defter / istatistik / akış / ayarlar ---------- */
@@ -240,13 +269,23 @@ function mockFetch(url, opts) {
     ok(`${sid} kalite: özgün kaynak ve geçmiş konu ayrımı`,has("Kaynak: KPSS formatında") && !!doc.querySelector(".kapsam-notu") && has("o sınavda çıktığı anlamına gelmez"));
   }
 
+  const additions=JSON.parse(fs.readFileSync(path.join(ROOT,"data/kaynaklar/ek_188_inceleme.json"),"utf8")).questions;
+  for (const sid of Object.keys(additions)) {
+    const ders=sid.startsWith("VAT") ? "vatandaslik" : "guncel";
+    const s=loadFix(`sorular_${ders}.json`).find((q) => q.id===sid);
+    win.__smokeRenderQuestion(ders,sid);
+    ok(`${sid} ek: kök, beş şık ve özgün kaynak`,doc.querySelector(".soru-kok")?.textContent===s.kok && doc.querySelectorAll(".sik").length===5 && has("Kaynak: KPSS formatında"));
+    await sikSec(s.dogru);
+    ok(`${sid} ek: cevap, çözüm ve geçmiş konu`,doc.querySelector(".sik.dogru")?.getAttribute("data-sik")===String(s.dogru) && has(s.cozumler[0].metin) && !!doc.querySelector(".kapsam-notu"));
+  }
+
   const kapsam = loadFix("kapsam.json");
   const activeQuestions = ["tarih", "cografya", "vatandaslik", "turkce", "guncel"].flatMap((d) => loadFix(`sorular_${d}.json`, []));
   ok("bütün API fixture soruları konu kapsamı taşır", activeQuestions.length === kapsam.aktif && activeQuestions.every((s) => s.kpss_kapsam?.konular?.length));
   ok("bekleyen sorular hiçbir ders fixture'ında yok", activeQuestions.every((s) => !kapsam.bekleyen_kayitlar[s.id]));
   win.__smokeSeedOldTopics();
   await go("#/akis/guncel");
-  ok("Güncel günlük akışında aktif havuz sınırı görünür", has("364 farklı aktif soru") && has("500 farklı soruya yetmiyor"));
+  ok("Güncel günlük akışında deneme hariç hedef görünür", has("526 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("50 × 10"));
   ok("kapsam dışı eski konular karışık test kilidini açmaz", has("Önce konu testlerini bitir") && !!doc.querySelector("button[disabled]"));
 
   win.__smokeExhaust();

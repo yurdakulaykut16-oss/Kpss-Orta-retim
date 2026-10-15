@@ -41,7 +41,7 @@ NODE_PATH=/tmp/kpss_test/node_modules node araclar/smoke_test.js
 Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
 > 📌 **Günlük soru hedefi:** Ders başına **500 soru** (toplam 2.500), **10'ar soruluk testler** hâlinde.
-> Bu hedef 500 farklı aktif sorunun bulunduğu garantisi değildir: Güncel'de kapsam filtresi sonrası **364** farklı soru vardır; sayı için kapsam dışı soru eklenmez.
+> Denemeler bu hedefe dahil değildir. Başlangıç test kapasitesi her derste en az 500'e çıkarıldı; geçmişi boş profil için ilk gün karşılanır. Bu, 10 gün boyunca tekrarsız 500'ün bütün içeriğinin hazır olduğu anlamına gelmez.
 > Güncel havuz hedefi ayrıca **3.000** olarak belirlenmiştir; bu henüz tamamlanmış değildir.
 > Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
 > Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
@@ -68,7 +68,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 ### 3. Ustalık Sistemi
 - Her konunun ustalığı takip edilir: **son 10 soruda 8+ doğru = Usta** (rozet yeşile döner).
 - Usta olmadığın konular öncelikli gelir; ustalaştığın konular geri planda kalır.
-- Her derste günlük **500 soru** hedeflenir (toplam **2.500**). Yalnız onaylı konu havuzu kullanılır; Güncel'de **364** farklı aktif soru bulunduğundan 500 farklı soru taahhüdü yoktur.
+- Her derste günlük **500 soru** hedeflenir (toplam **2.500**). Yalnız onaylı konu havuzu kullanılır; deneme rezervleri sayılmaz. Kullanılmış sorular gün değişince yeniden açılmaz; eksik kamp kapasitesi gizlenmez.
 
 ### 4. Aynı Soru Tekrar Gelmez
 - Aynı profilin test, telafi ve denemeleri ortak **kalıcı kullanım kaydı** kullanır; gün değişmesi eski soruları yeniden açmaz.
@@ -89,10 +89,30 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 ---
 
+## Deneme hariç ders başına günlük minimum 500 test sorusu
+
+Tek ayar kaynağı `data/calisma_hedefleri.json`: **500 soru/ders/gün**, **10 soru/set**, **50 setlik hedef/ders**, **2.500 test sorusu/gün**. Deneme bu sayılara eklenir; deneme doğru/yanlış/boşları test sayacını artırmaz. Her dersin 500'ü ayrı değerlendirilir; tek derste fazladan soru çözmek diğer dersin eksiğini kapatmaz.
+
+İlk-gün eksiği için **26 Vatandaşlık + 162 Güncel = 188 yeni özgün soru** elle yazıldı. `ek_188_gunluk500.tsv` kök, beş seçenek ve gerekçeli çözümü içerir; `ek_188_inceleme.json` ayrı kapsam kararlarının içerik özetlerini saklar. Şık sıralaması dışında otomatik varyant üretimi yoktur. `soru_yukselt.py` ekleri de doğrulayarak uygular; mevcut farklı içerik veya korumalı kaynak sessizce ezilemez. Önceki 2.865 kayıt değiştirilmedi.
+
+| Ders | Aktif toplam | Deneme rezervi | Başlangıç test kapasitesi |
+|---|---:|---:|---:|
+| Tarih | 610 | 60 | 550 |
+| Coğrafya | 557 | 46 | 511 |
+| Vatandaşlık | 542 | 42 | 500 |
+| Türkçe | 634 | 46 | 588 |
+| Güncel | 526 | 26 | 500 |
+| **Toplam** | **2.869** | **220** | **2.649** |
+
+- Bu kapasite geçmişi boş profil içindir. Önceden kullanılan kayıtlar yeniden dağıtılmaz. Test menüsü kişisel kullanılmamış sayıyı da gösterir.
+- Yarım kalan testin ayrılmış soruları kaybolmaz: **aynı oturumdan devam** bağlantısı vardır. Yeni oturuma tekrar dağıtılmaz; ilk cevaplanmamış sorudan devam edilir. İçerik veya kapsam değişmişse eski cevaplarla farklı bir soru gösterilmez.
+- Günlük sayım tekil test id'lerine dayanır; gün **Europe/Istanbul** saat diliminde değişir. Gün değişimi kalıcı tekrar engelini kaldırmaz.
+- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **10 gün boyunca ders başına 500 tekrarsız test sorusu için 5.000/ders, toplam 25.000 test + 220 ayrı deneme sorusu gerekir.** Mevcut test havuzuyla bu hedefe **22.351 test sorusu eksiktir**; bütün kampın hazır olduğu iddia edilmez. Güncel'in 3.000 hedefi bu daha büyük ihtiyacın ara hedefidir.
+
 ## Güncel için 3.000 soru hedefi ve mevcut soruların kalite turu
 
-- **3.000, yalnız Güncel dersinin hedefidir; mevcut sayı değildir.** Güncel'de **364 aktif soru**, hedefe **2.636 soru eksik** vardır. Bu hedef `/api/meta` ve test menüsünde ayrı gösterilir.
-- Son talebe öncelik verilerek yeni soru sayısı artırılmadı: ilk editoryal kalite turunda **her dersten 10, toplam 50 mevcut özgün soru** yeniden yazıldı. Havuz sayısı değişmedi.
+- **3.000, yalnız Güncel dersinin hedefidir; mevcut sayı değildir.** Güncel'de **526 aktif soru**, ara hedefe **2.474 soru eksik** vardır. Bu hedef `/api/meta` ve test menüsünde ayrı gösterilir.
+- Önceki editoryal kalite turunda **her dersten 10, toplam 50 mevcut özgün soru** yeniden yazıldı. Havuz sayısı değişmedi.
 - `kalite_01.tsv` senaryo, çıkarım ve kavram ayrımı odaklı yeniden yazımları; `kalite_01_inceleme.json` önceki tam kayıtları, önce/sonra SHA-256 özetlerini ve konu kararlarını saklar. Değişiklikler mevcut `yukselt_*.tsv` kaynaklarına da işlendi.
 - Kısa eşleştirmelerin bir bölümü bağlama dönüştürüldü; çözümler yanlış seçeneklerin dayandığı yaygın karışıklıkları açıklar. Önceki 500'lük üretici de bu açık revizyonları korur.
 - **ÖSYM görevlisi tarafından hazırlanmış resmî sorular değildir.** Özgün çalışma soruları KPSS ölçme yaklaşımı hedeflenerek yazılır; teknik testler güçlük kalibrasyonu veya tam puan garantisi vermez.
@@ -104,13 +124,13 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 |------|---------------------|-------|-------|
 | **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 610 | 610 |
 | **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 557 | 557 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 516 | 516 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 542 | 542 |
 | **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 634 | 634 |
-| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 548 | 364 |
+| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 710 | 526 |
 
 ### Bütün çözüm yollarında geçmiş KPSS konu kapsamı
 
-- **2.681 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
+- **2.869 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
   konu/karışık test, telafi, doğrudan soru API'si veya denemede gösterilmez.
 - `data/kpss_kapsam.json` 44 konu alanını, bankadaki **aynı dersten yıl/oturum etiketli**
   konu örneklerini ve her kayıt için içerik özeti + aktif/bekleyen kararını saklar.
@@ -140,7 +160,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
   Yeni veya değiştirilmiş soru onayı eksikse denetim hata verir.
 
 
-> 📚 **Arşiv: 2.865; aktif çözüm havuzu: 2.681 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
+> 📚 **Arşiv: 3.053; aktif çözüm havuzu: 2.869 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 >
 > **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız
@@ -182,9 +202,9 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > doğru eşleşmeleri tek tek gösterir. Bunlar **özgün çalışma sorularıdır**, kitap alıntısı değildir.
 > TSV'de `\n` ile saklanan kök satır sonları, uygulamada öncülleri ayrı satırlarda gösterir.
 > `python3 -m unittest discover -s araclar -p 'test_*.py' -v` aktarım ve üretim testlerini çalıştırır.
-> Bu sürümde **69 Python testi** ve `node --test araclar/test_soru_secimi.js` ile
+> Bu sürümde **81 Python testi** ve `node --test araclar/test_soru_secimi.js` ile
 > **24 seçim testi** başarılıdır. Güncel sunucudan fixture çekilerek çalıştırılan
-> `araclar/smoke_test.js` **252 kontrolü** geçer; her derste hem üç öncüllü hem beş yargılı
+> `araclar/smoke_test.js` **635 kontrolü** geçer; her derste hem üç öncüllü hem beş yargılı
 > kaydın satır sonu, kaynak, doğru şık ve çözüm gösterimi ayrıca kontrol edilir.
 > Bu teknik testler editoryal bilgi doğruluğunu veya sınavla eş güçlüğü tek başına kanıtlamaz.
 > Tüm yeniden yazımların şık, cevap ve çözüm aktarımı `test_yukselt_banka.py` ile denetlenir.
@@ -194,8 +214,8 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > 📚 **Günlük 500 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
 > kitap soruları, yalnız kullanılmamış ve denemeye ayrılmamışlarsa önceliklidir; sonra diğer uygun sorular seçilir. Setin
 > başındaki `📚 Kitap` rozeti ve soru altındaki `📌 Kaynak` satırı hangi kitaptan olduğunu gösterir.
-> Sorular yalnız aktif kapsamdan **10'luk setler** hâlinde gelir. Güncel'deki 364 farklı
-> soru, 500 farklı soruya yetmediğinden bu sınır test menüsünde ve günlük akışta açıkça gösterilir.
+> Sorular yalnız aktif kapsamdan **10'luk setler** hâlinde gelir. Denemeler ayrıldıktan sonraki
+> gerçek test kapasitesi, kişisel geçmiş ve günlük eksik sayı menüde gösterilir.
 > Her 10 cevapta otomatik kontrol + telafi döngüsü. Havuzun sonundaki set 10 sorudan kısa olabilir; sayı için tekrar eklenmez.
 >
 > ✅ **Gerçek çıkmış sorular eklendi:** 2014–2026 arası resmî ÖSYM kitapçıklarından (Ortaöğretim +

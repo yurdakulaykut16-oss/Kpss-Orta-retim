@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "ders_basina_gunluk_test": 500,
+  "set_boyutu": 10,
+  "denemeler_hedefe_dahil": false,
+  "saat_dilimi": "Europe/Istanbul",
+  "guncel_ara_havuz_hedefi": 3000
+}

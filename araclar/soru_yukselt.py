@@ -30,6 +30,9 @@ def yukseltilen_banka(kok):
                 raise ValueError(f"Bankada yinelenen id: {soru['id']}")
             kayitlar[soru["id"]] = soru
 
+    from ek_gunluk500 import add_to_bank
+    add_to_bank(kok, by_ders, kayitlar)
+
     # 1500'lük partinin yeni kayıtları ve konu düzeltmeleri açık, sabit bir
     # geçiş planındadır. Kaynak koruması, önce/sonra özeti ve tüm TSV'ler
     # bellekte doğrulanır; herhangi bir hatada main hiçbir dosyaya yazmaz.

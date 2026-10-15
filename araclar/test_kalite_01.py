@@ -45,7 +45,7 @@ class KaliteTest(unittest.TestCase):
     def test_kapsam_konu_degisimi_yok_yeni_hash_ayri_onayli(self):
         active,report=filter_bank(self.bank,self.policy)
         ids={s['id'] for rows in active.values() for s in rows}
-        self.assertEqual(report['aktif'],2681)
+        self.assertEqual(report['aktif'],2869)
         self.assertTrue(self.review.keys()<=ids)
         for sid,r in self.review.items():
             self.assertEqual(self.policy['questions'][sid]['topics'],r['topics'])
@@ -75,4 +75,4 @@ class KaliteTest(unittest.TestCase):
     def test_hedef_3000_aktif_sayi_degil(self):
         meta=server.app.test_client().get('/api/meta').get_json()
         self.assertEqual(meta['havuz_hedefleri']['guncel'],3000)
-        self.assertEqual(meta['soru_sayilari']['guncel'],364)
+        self.assertEqual(meta['soru_sayilari']['guncel'],526)
