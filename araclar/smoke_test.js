@@ -90,6 +90,14 @@ function mockFetch(url, opts) {
     Object.values(V.tumSorular).forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test"}; }); kaydet();
   };
   window.__smokeReload = async () => { await kayitYukle(); };
+  window.__smokeCurrent = () => { const x=V.oturum?.kuyruk[V.oturum.sira];
+    return x ? {id:x.s.id,ders:x.s.ders,konu:x.s.konu,dogru:x.s.dogru,tip:x.tip} : null; };
+  window.__smokeNext = () => { const x=V.oturum?.kuyruk[V.oturum.sira+1];
+    return x ? {id:x.s.id,konu:x.s.konu,tip:x.tip} : null; };
+  window.__smokeOgrenme = () => JSON.stringify(V.kayit.konu_ogrenme || {});
+  window.__smokeSetKonular = (ders) => testSeti(V.sorular[ders],10,{}).map((s) => konuAnahtar(s.ders,s.konu));
+  window.__smokeGenisKonu = (ders) => V.konuListe[ders].map((x) => [x.konu,yeniSorular(x.liste).length]).sort((a,b) => b[1]-a[1])[0][0];
+  window.__smokeYanlisYap = (ders,konu) => { ogrenmeGuncelle(V.sorular[ders].find((s) => s.konu===konu),false); kaydet(); };
   window.__smokeSeedOldTopics = () => {
     const a = dersAkisKaydi("guncel");
     a.biten = Array.from({length:30}, (_,i) => "Kapsam dışı eski konu " + i);
@@ -283,6 +291,38 @@ function mockFetch(url, opts) {
   const activeQuestions = ["tarih", "cografya", "vatandaslik", "turkce", "guncel"].flatMap((d) => loadFix(`sorular_${d}.json`, []));
   ok("bütün API fixture soruları konu kapsamı taşır", activeQuestions.length === kapsam.aktif && activeQuestions.every((s) => s.kpss_kapsam?.konular?.length));
   ok("bekleyen sorular hiçbir ders fixture'ında yok", activeQuestions.every((s) => !kapsam.bekleyen_kayitlar[s.id]));
+  /* ---------- öğrenme modu: yanlış → konu tekrarı → aynı konudan soru → art arda 2 doğru ---------- */
+  await go("#/coz/karisik/cografya");
+  const q1=win.__smokeCurrent();
+  const key1=`${q1.ders}|${q1.konu}`;
+  await sikSec((q1.dogru+1)%5);
+  ok("öğrenme: yanlışta konu hemen yeniden anlatılır", has("Konu tekrarı") && has("1. anlatım") && has("Hızlı tur") && !has("kısa anlatım kartı yok"));
+  ok("öğrenme: konu öğrenme listesine girer", has("öğrenme listene eklendi") && JSON.parse(win.__smokeOgrenme())[key1]?.aktif===true);
+  const n1=win.__smokeNext();
+  ok("öğrenme: sıradaki soru aynı konudan ve yeni", n1 && n1.konu===q1.konu && n1.id!==q1.id);
+  await sonraki();
+  ok("öğrenme: soru üstünde öğrenme modu bandı", has("öğrenme modunda") && has("0/2"));
+  const q2=win.__smokeCurrent();
+  await sikSec(q2.dogru);
+  ok("öğrenme: ilk doğru 1/2 ve sıradaki yine aynı konu", has("1/2") && win.__smokeNext()?.konu===q1.konu);
+  await sonraki();
+  const q3=win.__smokeCurrent();
+  await sikSec(q3.dogru);
+  ok("öğrenme: art arda 2 doğruda konu öğrenildi", has("öğrenildi") && JSON.parse(win.__smokeOgrenme())[key1]?.aktif===false);
+  await sonraki();
+  const q4=win.__smokeCurrent();
+  await sikSec((q4.dogru+1)%5);
+  ok("öğrenme: ikinci yanlışta farklı anlatım katmanı", has("Konu tekrarı") && (has("1. anlatım") || has("2. anlatım")));
+  // Geniş bir konuda yanlış yapılmış gibi işaretle: yeni karışık sette 10 sorunun 5'i o konudan gelmeli.
+  const genisKonu=win.__smokeGenisKonu("turkce");
+  win.__smokeYanlisYap("turkce",genisKonu);
+  const setKonular=win.__smokeSetKonular("turkce");
+  ok("öğrenme: yeni karışık testte yanlış konu setin yarısını alır", setKonular.length===10 && setKonular.filter((k) => k===`turkce|${genisKonu}`).length===5, JSON.stringify(setKonular));
+  await go("#/coz");
+  ok("öğrenme: test menüsünde öğrenmekte olduğun konular paneli", has("Öğrenmekte olduğun konular") && has("Tekrar anlat"));
+  await go(`#/tekrar/${q4.ders}/${encodeURIComponent(q4.konu)}`);
+  ok("öğrenme: konu tekrar sayfası tam anlatım gösterir", has("KONU TEKRARI") && has("Hızlı tur") && has("hikâyeyle") && has("Bu konudan 10 soru çöz"));
+
   win.__smokeSeedOldTopics();
   await go("#/akis/guncel");
   ok("Güncel günlük akışında deneme hariç hedef görünür", has("526 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("50 × 10"));

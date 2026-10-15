@@ -18,7 +18,7 @@ python app.py
 
 Tarayıcıda aç: **http://localhost:5000**
 
-Otomatik kontrol (jsdom smoke — 40 test):
+Otomatik kontrol (jsdom smoke — 645 kontrol):
 
 ```bash
 python3 araclar/refresh_fixtures.py               # sunucu açıkken
@@ -43,6 +43,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > 📌 **Günlük soru hedefi:** Ders başına **500 soru** (toplam 2.500), **10'ar soruluk testler** hâlinde.
 > Denemeler bu hedefe dahil değildir. Başlangıç test kapasitesi her derste en az 500'e çıkarıldı; geçmişi boş profil için ilk gün karşılanır. Bu, 10 gün boyunca tekrarsız 500'ün bütün içeriğinin hazır olduğu anlamına gelmez.
 > Güncel havuz hedefi ayrıca **3.000** olarak belirlenmiştir; bu henüz tamamlanmış değildir.
+> ⚠️ **Gerçek durum:** Aynı soru tekrar gelmediği için 1. gün her dersten 500 çözülürse 2. günden itibaren yeni test sorusu kalan: Tarih **50**, Coğrafya **11**, Vatandaşlık **0**, Türkçe **88**, Güncel **0**. Yani her gün her dersten 500 soru şu an **yalnız ilk gün** sağlanabiliyor.
 > Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
 > Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
 
@@ -63,7 +64,25 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
   - ❌ **Yanlışların çözümleri** (2 farklı yöntemle)
   - 🎭 **Yanlış konuların FARKLI anlatımı** (hikâye + tuzak kartları)
   - 🔁 O konulara uygun **yeni 10 soru** (tekrar çöz)
-- Yanlış yaparsan benzer 2 soru pekiştirme olarak kuyruğa girer.
+- Yanlış yaparsan **Öğrenme Modu** devreye girer (aşağıda).
+
+### 2b. Öğrenme Modu — yanlış yaptığın konuyu öğrenene kadar
+- Bir soruda yanlış şıkkı seçtiğinde, çözümün hemen altında **o konu yeniden anlatılır**.
+  Aynı konuda tekrar yanlış yaparsan anlatım değişir: 1. seferde *özet + sınav tuzağı*,
+  2. seferde *hikâyeyle anlatım + nasıl sorulur*, 3. seferde *hepsi bir arada*.
+- **Sıradaki soru aynı konudan** gelir (kullanılmamış yeni bir soru). O konuda **art arda 2 doğru**
+  yapana kadar bu devam eder; sonra “🎉 öğrenildi” denir ve normal akışa dönülür.
+  Bir testte tek konu için en fazla 8 soru araya eklenir; sonra derin modülü okuman önerilir.
+- Öğrenilmemiş konular kalıcı olarak **🔁 Öğrenmekte olduğun konular** listesinde tutulur (Bugünün
+  Rehberi, Test Çöz, Günlük Akış ve kontrol ekranlarında görünür). Sonraki karışık/maraton/günlük
+  testlerde bu konular **setin yarısına kadar** (10 sorudan 5'i) öncelikli gelir; Yanlış Telafisi
+  önce bu konulardan soru seçer. `#/tekrar/<ders>/<konu>` sayfası konunun tam anlatımını gösterir.
+- Denemede yanlış yapılan konular da bu listeye eklenir.
+- Aynı soru yine tekrar edilmez: öğrenme soruları da kalıcı kullanım kaydından ve deneme rezervinden
+  ayrılarak seçilir. Bu nedenle zayıf konular havuzda daha hızlı tükenebilir.
+- Etiketi kısa ad olan 24 aktif konunun (ör. `cumlede_anlam`, `dunya_gundemi`) anlatım kartı yoktu;
+  `araclar/konu_kartlari_ekle.py` ile `data/konu_yeniden.json` dosyasına eklendi ve arayüzde okunur
+  adlarla (“Cümlede Anlam”, “Dünya Gündemi”) gösterilir.
 
 ### 3. Ustalık Sistemi
 - Her konunun ustalığı takip edilir: **son 10 soruda 8+ doğru = Usta** (rozet yeşile döner).
@@ -204,7 +223,7 @@ Tek ayar kaynağı `data/calisma_hedefleri.json`: **500 soru/ders/gün**, **10 s
 > `python3 -m unittest discover -s araclar -p 'test_*.py' -v` aktarım ve üretim testlerini çalıştırır.
 > Bu sürümde **81 Python testi** ve `node --test araclar/test_soru_secimi.js` ile
 > **24 seçim testi** başarılıdır. Güncel sunucudan fixture çekilerek çalıştırılan
-> `araclar/smoke_test.js` **635 kontrolü** geçer; her derste hem üç öncüllü hem beş yargılı
+> `araclar/smoke_test.js` **645 kontrolü** geçer (10'u öğrenme modu); her derste hem üç öncüllü hem beş yargılı
 > kaydın satır sonu, kaynak, doğru şık ve çözüm gösterimi ayrıca kontrol edilir.
 > Bu teknik testler editoryal bilgi doğruluğunu veya sınavla eş güçlüğü tek başına kanıtlamaz.
 > Tüm yeniden yazımların şık, cevap ve çözüm aktarımı `test_yukselt_banka.py` ile denetlenir.
@@ -300,7 +319,8 @@ kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak**
 - `araclar/deneme_uret.py` — denemeleri yeniden üret
 - `araclar/veri_kontrol.py` — banka bütünlük kontrolü (`python3 araclar/veri_kontrol.py`)
 - `araclar/refresh_fixtures.py` — sunucudan smoke fixture'ları çeker
-- `araclar/smoke_test.js` — jsdom ile uçtan uca arayüz testi (40 test)
+- `araclar/smoke_test.js` — jsdom ile uçtan uca arayüz testi (645 kontrol)
+- `araclar/konu_kartlari_ekle.py` — eksik konu anlatım kartlarını ekler (var olanı ezmez)
 
 Yeni soru eklemek için `data/kaynaklar/*.tsv` dosyasına `ders|konu|gun|zorluk|kok|dogru|sikA..sikD|cozum1|cozum2|kaynak` yazıp `python3 araclar/soru_genislet.py` çalıştır.
 

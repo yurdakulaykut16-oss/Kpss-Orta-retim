@@ -212,3 +212,13 @@ details summary:hover{color:var(--accent-2)}
 }
 
 .kapsam-notu{margin:0 0 14px;font-size:12px}.kapsam-notu summary{cursor:pointer}
+/* Öğrenme modu: yanlış → konu tekrarı → aynı konudan yeni soru */
+.ogrenme-durum{margin:12px 0;padding:12px 14px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;font-size:14px;line-height:1.5}
+.ogrenme-durum.uyari{background:#fff7ed;border-color:#fed7aa}
+.ogrenme-durum.basarili{background:#dcfce7;border-color:#86efac}
+.ogrenme-durum .seri{letter-spacing:2px;color:var(--orta);font-size:15px}
+.konu-tekrar{border-left:4px solid var(--accent);background:#fffbeb}
+.konu-tekrar details{margin-top:6px}
+.konu-tekrar summary{cursor:pointer;font-weight:600;color:var(--accent-2);font-size:13px}
+.ogrenme-paneli{border-left:4px solid var(--accent-2);margin:14px 0}
+.ogrenme-paneli .adim-satir{flex-wrap:wrap;gap:8px}
