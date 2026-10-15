@@ -86,30 +86,34 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 | Ders | Kapsam | Soru bankası |
 |------|--------|--------------|
 | **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 539 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 540 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 557 |
 | **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 516 |
 | **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 558 |
 | **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 501 |
 
-> 📚 **Toplam: 2.654 soru** — bunların **381'i gerçek çıkmış** (resmî kitapçıklardan, kaynak etiketli),
+> 📚 **Toplam: 2.671 soru** — bunların **404'ü KPSS yıl/oturum etiketi taşıyor**,
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 >
-> > **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız
-> "KPSS formatında" sorular, gerçek çıkmış KPSS sorularıyla **aynı zorlukta** yeniden
+> **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız
+> "KPSS formatında" sorular, **çıkmış KPSS düzeyi hedeflenerek** yeniden
 > yazılıyor: senaryolu/anlamlı kökler, olumsuz sorular, I-II-III kombinasyonları,
 > eşleştirme; ayırt edici tuzak şıklar; her soruda "KPSS mantığı ile çözüm"
 > (doğru + tuzak açıklaması). `araclar/soru_yukselt.py` ile yerinde güncellenir;
-> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **İlerleme: 100/2116 tamamlandı.**
+> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **Yeniden yazım ilerlemesi: 150/2116 özgün soru.** Bu sayı kalan soruların
+> gözden geçirildiği veya zorluğun aday verileriyle kalibre edildiği anlamına gelmez.
+> İkinci parti: 50 yeni yeniden yazım; önceki partide ayrıca 25 içerik düzeltmesi.
+> Gerçek çıkmışlar ve yayınevi soruları araç tarafından değişikliğe karşı korunur.
+> Girişler topluca doğrulanır; eksik id, tekrarlı şık veya korumalı kaynak varsa yazma yapılmaz.
 
-📚 **Günlük 500 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
+> 📚 **Günlük 500 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
 > kitap soruları gelir (ustalanana dek), bitince bankanın diğer sorularıyla devam edersin. Setin
 > başındaki `📚 Kitap` rozeti ve soru altındaki `📌 Kaynak` satırı hangi kitaptan olduğunu gösterir.
 > Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
 > Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
 > ✅ **Gerçek çıkmış sorular eklendi:** 2014–2026 arası resmî ÖSYM kitapçıklarından (Ortaöğretim +
-> Ön Lisans + Lisans oturumları) **381 gerçek çıkmış soru**; cevapların tamamı kitapçıkların resmî
-> cevap anahtarlarından alınmıştır. Her sorunun altında ve çözümünde `kaynak` etiketi yazar
+> Ön Lisans + Lisans oturumları) **404 yıl/oturum etiketli soru** bankada bulunur. Bu turda bu kayıtlar
+> değiştirilmemiştir. Her sorunun altında ve çözümünde `kaynak` etiketi yazar
 > ("2018-KPSS", "2026-KPSS Lisans" gibi).
 
 > ✅ **Yayınevi kitap soruları eklendi (12 Ekim):** 47 zorlu soru, yayınevi soru bankalarının **kendi
