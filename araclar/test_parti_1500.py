@@ -99,6 +99,13 @@ class Parti1500Test(unittest.TestCase):
         later={l.split('|')[0] for p in (ROOT/'data/kaynaklar').glob('yukselt_2[5-6]_*.tsv')
                for l in p.read_text().splitlines() if l and not l.startswith('#')}
         self.assertEqual(len(later),10)
+        review=json.loads((ROOT/'data/kaynaklar/kalite_01_inceleme.json').read_text())['questions']
+        self.assertEqual(len(review),50)
+        for sid,r in review.items():
+            self.assertEqual(digest(r['before']),self.plan['untouched'][sid])
+            self.assertEqual(digest(self.bank[sid]),r['after_sha256'])
+            self.assertEqual(r['before']['kaynak'],'KPSS formatında')
+        later.update(review)
         for sid,sha in self.plan['untouched'].items():
             if sid not in later:
                 self.assertEqual(digest(self.bank[sid]),sha,sid)

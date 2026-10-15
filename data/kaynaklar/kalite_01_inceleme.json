@@ -1,0 +1,1713 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "scope": "50 mevcut özgün soru; 10 soru/ders. Gerçek çıkmış/kitap metinleri değişmez.",
+  "criteria": [
+    "Tek doğru seçenek",
+    "Açık ve yeterli kök",
+    "Kavram yanılgısına dayalı çeldirici",
+    "Bilgi veya metne dayalı gerekçe",
+    "Mevcut geçmiş KPSS konu alanında kalma"
+  ],
+  "notice": "Editoryal incelemedir; bağımsız resmî kitapçık doğrulaması veya istatistiksel güçlük kalibrasyonu değildir.",
+  "questions": {
+    "TAR-0002": {
+      "before": {
+        "id": "TAR-0002",
+        "ders": "tarih",
+        "gun": 1,
+        "konu": "İlk Türk Devletleri",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Asya Hun Devleti'nin bilinen ilk hükümdarı → Teoman\nII. İlk Türk devletlerinde yazısız hukuk kuralları bütünü → Töre\nIII. İlk Türk devletlerinde hükümdara yönetme yetkisinin Tanrı tarafından verildiği inancı → Kut\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "II ve III",
+          "I ve III",
+          "Yalnız III",
+          "I, II ve III",
+          "I ve II"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Asya Hun Devleti'nin bilinen ilk hükümdarı → Teoman. II. Doğru: İlk Türk devletlerinde yazısız hukuk kuralları bütünü → Töre. III. Doğru: İlk Türk devletlerinde hükümdara yönetme yetkisinin Tanrı tarafından verildiği inancı → Kut. Kut siyasi meşruiyetle, töre hukukla ilgilidir; devlet adları ile hükümdar adları birbirine karıştırılmamalıdır."
+          }
+        ],
+        "etiketler": [
+          "asya-hun",
+          "ordu"
+        ]
+      },
+      "before_sha256": "6be3d969c9bf30fecaa46b2e66c826ceed3ccee544bc5abd2123f200f68dc685",
+      "after_sha256": "30380a1bdc761d810f9dcae7cd301af7fabc440179894d0cf6c05d7e6ac60d1f",
+      "topics": [
+        "t-ilk"
+      ]
+    },
+    "TAR-0011": {
+      "before": {
+        "id": "TAR-0011",
+        "ders": "tarih",
+        "gun": 1,
+        "konu": "Karahanlılar",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Türk-İslam devletleriyle ilgili aşağıdakilerden hangisi yanlıştır?",
+        "siklar": [
+          "Uygurlar, yerleşik hayata geçen ilk Türk devletidir",
+          "Karahanlılar, Türk tarihindeki ilk Müslüman Türk devletidir",
+          "Göktürkler, Orhun Yazıtları'nda \"Türk\" adını kullanan ilk devlettir",
+          "Selçuklularda Türkçe ve Farsça birlikte kullanılmıştır",
+          "Karahanlılar, Arapçayı resmî dil olarak benimseyerek Türkçeyi tamamen bırakmışlardır"
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Karahanlılar, Türkçeyi resmî dil olarak koruyan ilk Türk-İslam devletidir; Türkçeyi bırakmamışlardır. Diğer ifadeler doğrudur."
+          }
+        ],
+        "etiketler": [
+          "karahanlilar",
+          "ilkler"
+        ]
+      },
+      "before_sha256": "4e4ebe8340eb8169a1673a2412b00ceb2fc4f12d9c3b5f0f7f4198df2f468fa7",
+      "after_sha256": "dec1a60e4153202941ed79f86321bd2c51d2bc8acdb03ec9176066655175cbe6",
+      "topics": [
+        "t-islam"
+      ]
+    },
+    "TAR-0028": {
+      "before": {
+        "id": "TAR-0028",
+        "ders": "tarih",
+        "gun": 2,
+        "konu": "Osmanlı Kuruluş",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Osmanlı Devleti'nin kuruluşuyla ilgili aşağıdaki yargıların hangileri doğrudur? I. Osman Bey tarafından kurulmuştur. II. Anadolu Selçuklu Devleti'nin sona ermesinden önce ortaya çıkmıştır. III. İlk dönemlerde Bizans ile yapılan savaşlarla güçlenmiştir.",
+        "siklar": [
+          "I, II ve III",
+          "I ve II",
+          "II ve III",
+          "Yalnız II",
+          "Yalnız I"
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Osmanlı Beyliği'ni Osman Bey kurmuştur (yaklaşık 1299). Selçuklu Devleti 1308'de sona erdiğinden Osmanlı, Selçuklulardan önce ortaya çıkmıştır. Beylik, Bizans sınırındaki uç bölgesinde yapılan savaşlarla güçlenmiştir. Üç yargı da doğrudur."
+          }
+        ],
+        "etiketler": [
+          "osmanli",
+          "kurulus"
+        ]
+      },
+      "before_sha256": "1fa9d0b0b47bc6dbbfd419bed93216668d3fbe7abcd0f39e55e85f66de00f0ec",
+      "after_sha256": "b895c622857d1bf3c99627337f0d8e774e1d44dd2a139e989fdd0f302e48e6e7",
+      "topics": [
+        "t-osmanli"
+      ]
+    },
+    "TAR-0064": {
+      "before": {
+        "id": "TAR-0064",
+        "ders": "tarih",
+        "gun": 4,
+        "konu": "Islahatlar",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "1808 Sened-i İttifak'ta ayanların devlete bağlılık göstermesi beklenirken bazı haklarının da tanınması aşağıdaki gelişmelerden hangisinin göstergesidir?",
+        "siklar": [
+          "Padişahlığın anayasa gereği kaldırıldığının",
+          "Seçimle oluşan ilk Osmanlı meclisinin kurulduğunun",
+          "Osmanlı'da bütün bölgelerin bağımsız devletlere dönüştüğünün",
+          "Merkezî otoritenin yerel güçlerle uzlaşma ihtiyacı duyduğunun",
+          "Tımar sisteminin ilk kez oluşturulduğunun"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Ayanların siyasi ağırlık kazanması merkezi uzlaşmaya yöneltmiştir. Belge bir ayan-padişah uzlaşmasıdır; halkın seçtiği bir meclis veya cumhuriyet kurmamıştır."
+          }
+        ],
+        "etiketler": [
+          "islahatlar",
+          "anayasa"
+        ]
+      },
+      "before_sha256": "26a859374470efc975ea681457bb503fabb00ea2e1aa303f006154c9abb602c6",
+      "after_sha256": "10f515067f60ebe7e0b651475fc9679710b4692f49b9b44e1131b6b8ca7eafe3",
+      "topics": [
+        "t-yenilesme"
+      ]
+    },
+    "TAR-0065": {
+      "before": {
+        "id": "TAR-0065",
+        "ders": "tarih",
+        "gun": 4,
+        "konu": "Islahatlar",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Yeniçeri Ocağı'nın kaldırılmasıyla ilgili aşağıdaki olay-padişah eşleştirmelerinden hangisi doğrudur?",
+        "siklar": [
+          "Kabakçı Mustafa İsyanı - Abdülmecid",
+          "Vaka-i Hayriye - II. Mahmud",
+          "Vaka-i Vakvakiye - III. Selim",
+          "Patrona Halil İsyanı - II. Abdülhamid",
+          "31 Mart Olayı - I. Mahmud"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Yeniçeri Ocağı 1826’da II. Mahmud döneminde Vaka-i Hayriye ile kaldırılmıştır. Vaka-i Vakvakiye farklı bir olaydır. Ocağın yerine Asakir-i Mansure-i Muhammediye kurulmuştur."
+          }
+        ],
+        "etiketler": [
+          "islahatlar",
+          "ordu"
+        ]
+      },
+      "before_sha256": "a93e80cc6277a85709c1a0a7caae2058e6d43d6667a8fb83451ccb9bb4d476c8",
+      "after_sha256": "0ce6c70aa55d7d6dcf93ae56612dba6c306c8faaa9128365390c4387aac4686a",
+      "topics": [
+        "t-yenilesme"
+      ]
+    },
+    "TAR-0086": {
+      "before": {
+        "id": "TAR-0086",
+        "ders": "tarih",
+        "gun": 6,
+        "konu": "Milli Mücadele",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Millî Mücadele'nin ilk dönemindeki yerel silahlı direniş birlikleri → Kuvayımilliye\nII. Kurtuluş Savaşı'nın silahlı dönemini sona erdiren ateşkes → Brest-Litovsk Antlaşması\nIII. Millî cemiyetleri tek çatı altında birleştiren kongre → Afyon Kongresi\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "I ve III",
+          "Yalnız III",
+          "II ve III",
+          "Yalnız II",
+          "Yalnız I"
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Millî Mücadele'nin ilk dönemindeki yerel silahlı direniş birlikleri → Kuvayımilliye. II. Yanlış: Kurtuluş Savaşı'nın silahlı dönemini sona erdiren ateşkes → Mudanya Ateşkes Antlaşması. III. Yanlış: Millî cemiyetleri tek çatı altında birleştiren kongre → Sivas Kongresi. Ateşkes silahlı mücadeleyi durdurur; kalıcı barışın bütün hükümlerini tek başına düzenlemez. Ankara Antlaşması burada 1921 tarihli Fransa antlaşmasıdır."
+          }
+        ],
+        "etiketler": [
+          "milli-mucadele",
+          "belgeler"
+        ]
+      },
+      "before_sha256": "d935c81fbcaf70f3b38b20ad8d990f364b6dad5c9f20c63ffc35656ad9359fc5",
+      "after_sha256": "08234ba2ed294e0029bbb07a4ff2461732258eb817380da75b0d545f31903881",
+      "topics": [
+        "t-milli"
+      ]
+    },
+    "TAR-0087": {
+      "before": {
+        "id": "TAR-0087",
+        "ders": "tarih",
+        "gun": 6,
+        "konu": "Milli Mücadele",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "İlk TBMM'de farklı siyasi görüşlerden milletvekillerinin, öncelikle vatanın işgalden kurtarılması amacı etrafında birleşmesi aşağıdakilerden hangisini gösterir?",
+        "siklar": [
+          "İnkılapların tamamında görüş birliği bulunduğunu",
+          "Bütün üyelerin aynı siyasi partiye mensup olduğunu",
+          "Millî bağımsızlığın ortak hedef olduğunu",
+          "Meclisin yalnızca askerlerden oluştuğunu",
+          "Meclisin egemenliğini İstanbul hükûmetinden aldığını"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Ortak mücadele amacı farklı görüşleri bir araya getirmiştir. Bu birlik bütün konularda ideolojik özdeşlik veya aynı partiye üyelik anlamına gelmez. İlk Meclisin önceliği bağımsızlık mücadelesidir."
+          }
+        ],
+        "etiketler": [
+          "tbmm",
+          "kurulus"
+        ]
+      },
+      "before_sha256": "67e394075ffc18a3b6e3f92e89db9c7c722e51ca483f1c3dbfdb2f90cb94f539",
+      "after_sha256": "ea38a651dbc0782513a3bb471a03b3da6080cef5d7c5a18466b6d99b2a3fa68b",
+      "topics": [
+        "t-milli"
+      ]
+    },
+    "TAR-0099": {
+      "before": {
+        "id": "TAR-0099",
+        "ders": "tarih",
+        "gun": 7,
+        "konu": "Devrimler",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Lozan görüşmeleri öncesinde İtilaf Devletlerinin hem İstanbul hem Ankara hükûmetini davet etmesi, aşağıdaki inkılaplardan hangisinin yapılmasını hızlandırmıştır?",
+        "siklar": [
+          "Halifeliğin kaldırılması",
+          "Saltanatın kaldırılması",
+          "Medeni Kanun'un kabulü",
+          "Harf İnkılabı",
+          "Soyadı Kanunu'nun kabulü"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "İki hükûmetin daveti temsil ikiliğini kullanma girişimiydi. 1 Kasım 1922'de saltanatın kaldırılmasıyla bu ikiliğe son verilmiştir. Halifelik ise 1924'te kaldırılmıştır; iki kurumun kaldırılma tarihleri farklıdır."
+          }
+        ],
+        "etiketler": [
+          "devrimler",
+          "tarihler"
+        ]
+      },
+      "before_sha256": "0f6d4b9c054a77df723459119abdfd181cb2a5243b3cc836edd7a58c37aeda0f",
+      "after_sha256": "33918100fc1bad855c2a02dccfbbd18c581c3d6566340909083165762463635f",
+      "topics": [
+        "t-inkilap"
+      ]
+    },
+    "TAR-0111": {
+      "before": {
+        "id": "TAR-0111",
+        "ders": "tarih",
+        "gun": 8,
+        "konu": "Çağdaş Tarih",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. 1947'de Türkiye ve Yunanistan'a yardımı öngören ABD politikası → Monroe Doktrini\nII. 1961'de inşa edilip 1989'da açılan bölünme simgesi → Demir Perde\nIII. Kuzey Kıbrıs Türk Cumhuriyeti'nin ilan yılı → 1983\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "II ve III",
+          "I, II ve III",
+          "Yalnız II",
+          "Yalnız III",
+          "I ve III"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Yanlış: 1947'de Türkiye ve Yunanistan'a yardımı öngören ABD politikası → Truman Doktrini. II. Yanlış: 1961'de inşa edilip 1989'da açılan bölünme simgesi → Berlin Duvarı. III. Doğru: Kuzey Kıbrıs Türk Cumhuriyeti'nin ilan yılı → 1983. Ekonomik yardım, küresel örgüt ve askerî ittifak farklı kurumlardır. NATO üyeliği Avrupa Birliği üyeliğiyle aynı değildir."
+          }
+        ],
+        "etiketler": [
+          "kibris",
+          "tarihler"
+        ]
+      },
+      "before_sha256": "a2b24a56d8d4aaece6c2584aae181ea3b4de55e4707a192d9cb8af4371337fb9",
+      "after_sha256": "31a679564a04bc80a036ce5a54c7b6a2d59a53c113052c5eb61a6c8d2be44b24",
+      "topics": [
+        "t-cagdas"
+      ]
+    },
+    "TAR-0162": {
+      "before": {
+        "id": "TAR-0162",
+        "ders": "tarih",
+        "gun": 2,
+        "konu": "Anadolu Selçuklu",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "1243 Kösedağ Savaşı'ndan sonra Anadolu Selçuklularının Moğol baskısı altına girmesi ve Anadolu'da beyliklerin güçlenmesi birlikte değerlendirildiğinde aşağıdakilerden hangisine ulaşılır?",
+        "siklar": [
+          "Selçuklu merkezî otoritesinin güçlendiğine",
+          "Bizans'ın Anadolu'daki bütün yerleşmeleri ele geçirdiğine",
+          "Osmanlı'nın aynı yıl Anadolu siyasi birliğini tamamladığına",
+          "Anadolu'daki bütün beyliklerin Moğol yönetimini aynı anda sona erdirdiğine",
+          "Anadolu'da siyasi birliğin zayıfladığına"
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Moğol baskısı merkezî otoriteyi zayıflatmış, beyliklerin hareket alanını genişletmiştir. Yerel güçlerin çoğalması siyasi birliğin güçlendiği değil çözülmeye başladığı yönünde kanıttır."
+          }
+        ],
+        "etiketler": [
+          "anadolu-selcuklu",
+          "kosedag"
+        ]
+      },
+      "before_sha256": "d27564fc6641dee2e0253be1b220691eb8701d083e5dadc0e65d1e8995a0d61b",
+      "after_sha256": "1a7c8978a2d2b80853d0004d6646050362196355c497ca8407b78f800889a906",
+      "topics": [
+        "t-islam"
+      ]
+    },
+    "COG-0002": {
+      "before": {
+        "id": "COG-0002",
+        "ders": "cografya",
+        "gun": 1,
+        "konu": "Harita",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Güneş'in meridyenden geçişine göre belirlenen merkez zaman ölçütü → Yerel saat\nII. Haritada küçültme oranını gösteren unsur → Lejant\nIII. Haritadaki özel işaretleri açıklayan bölüm → Yön oku\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "II ve III",
+          "Yalnız I",
+          "Yalnız III",
+          "Yalnız II",
+          "I ve III"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Güneş'in meridyenden geçişine göre belirlenen merkez zaman ölçütü → Yerel saat. II. Yanlış: Haritada küçültme oranını gösteren unsur → Ölçek. III. Yanlış: Haritadaki özel işaretleri açıklayan bölüm → Lejant. Yükselti ile eğim aynı ölçüt değildir; izohips aralığı yükseltinin mutlak değerinden çok yamaç eğimini gösterir."
+          }
+        ],
+        "etiketler": [
+          "olcek",
+          "harita"
+        ]
+      },
+      "before_sha256": "f70a2ceb3466ac8eb8aebd883ac2f6c8e1525b52952119021baea3dd417e2b12",
+      "after_sha256": "6363db97fd31bd05f5e2dd13944f7813fa6337d931fc402b7c2098d628a3c963",
+      "topics": [
+        "c-konum"
+      ]
+    },
+    "COG-0013": {
+      "before": {
+        "id": "COG-0013",
+        "ders": "cografya",
+        "gun": 2,
+        "konu": "Türkiye İklimleri",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Rize kıyılarında denizden gelen nemli hava dağ yamaçlarında yükselirken soğuyarak yağış bırakır. Bu yağış türünün oluşumunda aşağıdakilerden hangisi doğrudan etkilidir?",
+        "siklar": [
+          "Deniz suyunun tuzluluğunun azalması",
+          "İki farklı hava kütlesinin her zaman bir cephede karşılaşması",
+          "Boylam farkının yerel saati değiştirmesi",
+          "Yalnızca gündüz aşırı ısınan havanın dikey yükselmesi",
+          "Dağların nemli hava akışını yükselmeye zorlaması"
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Bu, yamaç (orografik) yağışıdır. Cephe yağışı farklı hava kütlelerinin karşılaşmasıyla, konveksiyonel yağış ise zeminin ısınmasına bağlı yükselimle ilişkilidir. Her yükselen hava olayı aynı nedenle oluşmaz."
+          }
+        ],
+        "etiketler": [
+          "iklim",
+          "yagis"
+        ]
+      },
+      "before_sha256": "82effe364aa33c86f0e672e871c00e906298451c82b6f006d51ddce5f9990855",
+      "after_sha256": "2201d61eb0a6fa84fc0b64a03772a19d8a551b56131d6c3547d7719f3c914159",
+      "topics": [
+        "c-iklim"
+      ]
+    },
+    "COG-0014": {
+      "before": {
+        "id": "COG-0014",
+        "ders": "cografya",
+        "gun": 2,
+        "konu": "Türkiye İklimleri",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Akdeniz kıyılarımızda yaz kuraklığına dayanıklı, küçük yapraklı, kışın yaprak dökmeyen çalı toplulukları yaygındır. Buna göre bu bitki örtüsü aşağıdakilerden hangisidir?",
+        "siklar": [
+          "Bozkır",
+          "Step",
+          "Tayga",
+          "Maki",
+          "Ova bitki örtüsü (çayır)"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Akdeniz ikliminin doğal bitki örtüsü makidir; yaz kuraklığına uyum sağlamış, ufak yapraklı ve herdem yeşil çalılardan oluşur. Bozkır/step karasal iklimin, tayga ise kutup kuşağı ormanlarının bitki örtüsüdür."
+          }
+        ],
+        "etiketler": [
+          "iklim",
+          "bitki"
+        ]
+      },
+      "before_sha256": "874e555a29f3d37b22faaf873c565b195be0c1f4d0f167ae0bd85e2a25325b76",
+      "after_sha256": "a50101c76badd3603d042f9286eb6e2f27803f7238d048d873c3e5f03c21178c",
+      "topics": [
+        "c-iklim"
+      ]
+    },
+    "COG-0021": {
+      "before": {
+        "id": "COG-0021",
+        "ders": "cografya",
+        "gun": 3,
+        "konu": "Yer Şekilleri",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Bir dağcı Kaçkar Dağları’nda tırmanış yaptıktan sonra Erciyes Dağı’nı ziyaret etmiştir. Bu iki dağla ilgili aşağıdakilerden hangisi doğrudur?",
+        "siklar": [
+          "Kaçkar volkanik, Erciyes kıvrım oluşumludur.",
+          "Her ikisi de Ege Bölgesi’nde bulunur.",
+          "Her ikisi de deniz seviyesindeki birikim şeklidir.",
+          "Kaçkar kıvrım, Erciyes volkanik oluşumludur.",
+          "Her ikisi de kırık dağdır."
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Kaçkar Kuzey Anadolu kıvrım dağlarının parçasıdır; Erciyes volkanik dağdır. Dağın yüksekliği ile oluşum kökeni farklı ölçütlerdir; bütün yüksek dağlar aynı yolla oluşmaz."
+          }
+        ],
+        "etiketler": [
+          "dagarlar",
+          "turkiye"
+        ]
+      },
+      "before_sha256": "8a303dadc283dac235ca7f8aaa5cd57c552ef72d3b8bb86e7a00185480487ed9",
+      "after_sha256": "80f713dd8fbc23a199070d2d438da0e6c07c92a17f099b8e3d382e7239e46ddc",
+      "topics": [
+        "c-sekil"
+      ]
+    },
+    "COG-0040": {
+      "before": {
+        "id": "COG-0040",
+        "ders": "cografya",
+        "gun": 5,
+        "konu": "Nüfus",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Tarımla uğraşan nüfusun tarım alanına oranı → Net göç\nII. Toplam nüfusun yüzölçümüne oranı → Aritmetik nüfus yoğunluğu\nIII. Kendi ülkesi içinde yer değiştirme durumunun ülke sınırı ölçütüne göre adı → İç göç\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "II ve III",
+          "Yalnız I",
+          "I, II ve III",
+          "I ve III",
+          "Yalnız II"
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Yanlış: Tarımla uğraşan nüfusun tarım alanına oranı → Tarımsal nüfus yoğunluğu. II. Doğru: Toplam nüfusun yüzölçümüne oranı → Aritmetik nüfus yoğunluğu. III. Doğru: Kendi ülkesi içinde yer değiştirme durumunun ülke sınırı ölçütüne göre adı → İç göç. Net göçün negatif olması doğal artış yüksekse toplam nüfusun mutlaka azaldığı anlamına gelmez."
+          }
+        ],
+        "etiketler": [
+          "nufus",
+          "piramit"
+        ]
+      },
+      "before_sha256": "bb5e4a3b9b2cd9ae4a12fc4de5b529059e410a6637762d2cf35c836b0048a681",
+      "after_sha256": "8e6dd9c6f22970935551400eb790ec2f60411d06dc0c16e29e556a2bf03c519c",
+      "topics": [
+        "c-nufus"
+      ]
+    },
+    "COG-0050": {
+      "before": {
+        "id": "COG-0050",
+        "ders": "cografya",
+        "gun": 6,
+        "konu": "Tarım",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Tarlanın belirli süre ekilmeyerek dinlendirilmesi → Nadas\nII. Kontrol ve sertifikasyona tabi kurallı ekolojik üretim → Organik tarım\nIII. Birim alan verimini yükseltmeye dayalı tarım → Nadas\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "Yalnız II",
+          "II ve III",
+          "I ve II",
+          "I, II ve III",
+          "I ve III"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Tarlanın belirli süre ekilmeyerek dinlendirilmesi → Nadas. II. Doğru: Kontrol ve sertifikasyona tabi kurallı ekolojik üretim → Organik tarım. III. Yanlış: Birim alan verimini yükseltmeye dayalı tarım → İntansif tarım. Üretim artışı alan genişlemesinden veya verim artışından kaynaklanabilir; ikisi aynı değildir. Doğal gübre kullanımı tek başına organik sertifika yerine geçmez."
+          }
+        ],
+        "etiketler": [
+          "tarim",
+          "urunler"
+        ]
+      },
+      "before_sha256": "915ccc6b10c41212dd392d2288f4a8826984d343ff548040c5675312e11f5290",
+      "after_sha256": "80f51b67766f37e4ef91d88f2db789b4b1159d5af51c55ad67f3b21aad5abd15",
+      "topics": [
+        "c-tarim"
+      ]
+    },
+    "COG-0053": {
+      "before": {
+        "id": "COG-0053",
+        "ders": "cografya",
+        "gun": 6,
+        "konu": "Madenler",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Divriği çevresindeki cevherlerin Karabük ve İskenderun gibi merkezlerde işlenmesi, Türkiye'de aşağıdaki sanayi kollarından hangisinin hammadde teminiyle doğrudan ilişkilidir?",
+        "siklar": [
+          "Alüminyum sanayisi",
+          "Bakır izabe sanayisi",
+          "Demir-çelik sanayisi",
+          "Petrol rafinerisi",
+          "Bor kimyasalları sanayisi"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Divriği önemli bir demir cevheri sahasıdır. Bu cevher demir-çelik üretiminin hammaddelerindendir. Boksit-alüminyum, bakır cevheri-bakır izabe ve ham petrol-rafineri ilişkileriyle karıştırılmamalıdır."
+          }
+        ],
+        "etiketler": [
+          "madenler",
+          "eslesme"
+        ]
+      },
+      "before_sha256": "0724ae75f3d35ee03ed315feed8c6bef072a237a268176ac1c1115126f38c8b7",
+      "after_sha256": "997f40d4f8d4fb8ccab3a7e9f63964eda537218a55bfbef322648d80fd074014",
+      "topics": [
+        "c-sanayi"
+      ]
+    },
+    "COG-0062": {
+      "before": {
+        "id": "COG-0062",
+        "ders": "cografya",
+        "gun": 7,
+        "konu": "Bölgeler",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Kapadokya'da volkanik tüflerin akarsu ve sel sularıyla aşınması, dayanıklı blokların altındaki kesimleri koruması peribacalarını oluşturmuştur. Buna göre oluşumda hangileri birlikte etkili olmuştur?",
+        "siklar": [
+          "Kayaçların farklı direnç göstermesi ve dış kuvvetlerin aşındırması",
+          "Bütün kayaçların aynı hızda aşınması",
+          "Yalnızca deniz dalgalarının biriktirmesi",
+          "Yalnızca buzulların taşıdığı morenler",
+          "Yer altı suyunun bütün kayacı eriterek ortadan kaldırması"
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Peribacaları tüflerin farklı dirençteki örtü bloklarıyla birlikte aşınması sonucu gelişir. Malzemenin volkanik olması, şeklin yalnızca iç kuvvetlerle oluştuğu anlamına gelmez; son biçimi dış kuvvetler verir."
+          }
+        ],
+        "etiketler": [
+          "bolgeler",
+          "turizm"
+        ]
+      },
+      "before_sha256": "2a88a281ffb0a5fa81671c15ddca3a1a290a8ab96f30d5e753ffd78fe9aa6944",
+      "after_sha256": "c2c82d953a8dcfd1e036ca82f5afb58f63b16f89b665fd5ec6e298c483d41c33",
+      "topics": [
+        "c-bolge"
+      ]
+    },
+    "COG-0069": {
+      "before": {
+        "id": "COG-0069",
+        "ders": "cografya",
+        "gun": 8,
+        "konu": "Çevre",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Doğal kaynakları gelecek kuşakların ihtiyacını gözeterek kullanma → Sürdürülebilirlik\nII. Kurak ve yarı kurak alanlarda arazi verimliliğinin bozulması → Çölleşme\nIII. Toprak ve kaya kütlesinin yamaç boyunca kayması → Heyelan\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "I ve III",
+          "I, II ve III",
+          "Yalnız II",
+          "Yalnız III",
+          "I ve II"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Doğal kaynakları gelecek kuşakların ihtiyacını gözeterek kullanma → Sürdürülebilirlik. II. Doğru: Kurak ve yarı kurak alanlarda arazi verimliliğinin bozulması → Çölleşme. III. Doğru: Toprak ve kaya kütlesinin yamaç boyunca kayması → Heyelan. Toprağın taşınması erozyon, kütle hâlinde kayması heyelandır. İklime uyum ile sera gazı azaltımı ayrı yaklaşımlardır."
+          }
+        ],
+        "etiketler": [
+          "afetler",
+          "aykiri"
+        ]
+      },
+      "before_sha256": "601a6afba11cc255605797ef61c0e6d7e9be67c982ff91ea2f00886511432c85",
+      "after_sha256": "a3eab6c3675c1050bbe4f31de36a7ec7db93bc38bfad594dd3615218a9bc3e3a",
+      "topics": [
+        "c-cevre"
+      ]
+    },
+    "COG-0073": {
+      "before": {
+        "id": "COG-0073",
+        "ders": "cografya",
+        "gun": 9,
+        "konu": "Su Kaynakları",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Tuz Gölü çevresinde yazın su yüzeyinin küçülmesi ve kıyılarda tuz birikiminin artması birlikte gözlenmektedir. Bu iki durum aşağıdakilerden hangisiyle doğrudan açıklanabilir?",
+        "siklar": [
+          "Gölün bütün sularını açık bir akarsu yoluyla denize boşaltması",
+          "Buharlaşmanın artmasıyla su kaybının ve çözünmüş tuz yoğunluğunun artması",
+          "Çözünmüş tuzların gölden dışarıya düzenli olarak taşınması",
+          "Yazın akarsuların taşıdığı tatlı suyun buharlaşmadan daha fazla artması",
+          "Yazın buharlaşmanın tamamen durması"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Yaz sıcaklıkları ve buharlaşma suyu azaltır; suda çözünmüş tuzlar gölde kaldığından yoğunlaşma ve çökelme artabilir. Tuz Gölü kapalı havzadadır. Tuzların bütünüyle buharlaştığını söylemek gözlenen birikimin tersini açıklar."
+          }
+        ],
+        "etiketler": [
+          "goller",
+          "turkiye"
+        ]
+      },
+      "before_sha256": "29282ca837fc5971c16a8d678f10f12fac2590524062848a92b7ebb04f578a25",
+      "after_sha256": "aac3b5990338c6208e4997aadfb07b146e2183b4a5bd6bc6675980df384c6f12",
+      "topics": [
+        "c-su"
+      ]
+    },
+    "VAT-0007": {
+      "before": {
+        "id": "VAT-0007",
+        "ders": "vatandaslik",
+        "gun": 2,
+        "konu": "Anayasa",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Anayasa'nın ilk maddesinde \"Devletin şekli Cumhuriyettir\" hükmü yer alır. Bu hükümle ilgili aşağıdakilerden hangisi doğrudur?",
+        "siklar": [
+          "Değiştirilmesi teklif dahi edilemeyen maddeler arasında yer alır",
+          "Halk oylamasına sunulmaksızın yürürlükten kaldırılabilir",
+          "Yalnızca Cumhurbaşkanının teklifiyle değiştirilebilir",
+          "Değiştirilmesi üye tamsayısının salt çoğunluğuyla mümkündür",
+          "1924 Anayasası ile ilk kez düzenlenmiştir"
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Anayasa m.4'e göre Devletin şeklinin Cumhuriyet olduğu hakkındaki hüküm değiştirilemez ve değiştirilmesi teklif dahi edilemez. 1921 Anayasası'nda da millet egemenliği vurgulanmış, Cumhuriyet 1923'te ilan edilmiştir."
+          }
+        ],
+        "etiketler": [
+          "anayasa",
+          "madde"
+        ]
+      },
+      "before_sha256": "7abf51a283cdc4d45b65a1178ca2e5c8781fd5361a89e2636934d62fd1890571",
+      "after_sha256": "7ae33e4b53ef34a45d0ea77c94732a791768ec3b3fdec2301619760e54a7f6dc",
+      "topics": [
+        "v-anayasa"
+      ]
+    },
+    "VAT-0009": {
+      "before": {
+        "id": "VAT-0009",
+        "ders": "vatandaslik",
+        "gun": 2,
+        "konu": "Anayasa",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Bir kamu makamının kaynağını Anayasa'dan almayan yetki kullanması, 1982 Anayasası'ndaki hangi hükümle doğrudan çatışır?",
+        "siklar": [
+          "Vergi yükü adaletli ve dengeli dağıtılır.",
+          "Hiçbir kimse veya organ kaynağını Anayasa'dan almayan bir devlet yetkisi kullanamaz.",
+          "Duruşmalar kural olarak herkese açıktır.",
+          "Milletvekili seçimleri beş yılda bir yapılır.",
+          "Başkent Ankara'dır."
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Anayasa m.6, egemenliğin kullanımında yetkinin anayasal kaynağını şart koşar. Bir işlemin yararlı görülmesi veya çoğunlukça istenmesi, yetkisiz makamın onu hukuken yapabileceğini tek başına göstermez."
+          }
+        ],
+        "etiketler": [
+          "anayasa",
+          "egemenlik"
+        ]
+      },
+      "before_sha256": "6377ab5d418cfcd0f671e0ce7f78fd1daaae61a7b6f496a2b6d82467d8679a7f",
+      "after_sha256": "30bff657ceecbb12b84c61954767184c5c6584f0033884d25e190fe6cf1aee3e",
+      "topics": [
+        "v-anayasa"
+      ]
+    },
+    "VAT-0021": {
+      "before": {
+        "id": "VAT-0021",
+        "ders": "vatandaslik",
+        "gun": 4,
+        "konu": "TBMM",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "1982 Anayasası’na göre egemenliğin kullanılmasıyla ilgili aşağıdakilerden hangisi yanlıştır?",
+        "siklar": [
+          "Egemenlik yalnızca TBMM tarafından kullanılır.",
+          "Türk milleti egemenliğini yetkili organları eliyle kullanır.",
+          "Hiçbir organ kaynağını Anayasa’dan almayan bir devlet yetkisi kullanamaz.",
+          "Egemenlik Anayasa’nın koyduğu esaslara göre kullanılır.",
+          "Egemenlik kayıtsız şartsız milletindir."
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Anayasa m.6 egemenliğin yetkili organlar eliyle kullanılmasını düzenler. Yasama yetkisinin TBMM’de olması, bütün egemenlik yetkilerinin yalnızca TBMM’de toplandığı anlamına gelmez."
+          }
+        ],
+        "etiketler": [
+          "tbmm",
+          "egemenlik"
+        ]
+      },
+      "before_sha256": "67d188a83a10b0537700d8369e51536256874f6adfb0b41607d7418b87a46dd6",
+      "after_sha256": "2e72ea944cfcbdb34061d5b21c088d69abdcf8cc3860d2a19b3ecce7ab40ebc9",
+      "topics": [
+        "v-tbmm"
+      ]
+    },
+    "VAT-0029": {
+      "before": {
+        "id": "VAT-0029",
+        "ders": "vatandaslik",
+        "gun": 5,
+        "konu": "Yürütme",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "1982 Anayasası'nın yürürlükteki hükümlerine göre Cumhurbaşkanı yardımcıları ve bakanlarla ilgili aşağıdakilerden hangisi doğrudur?",
+        "siklar": [
+          "Yüksek Seçim Kurulu tarafından atanırlar.",
+          "Cumhurbaşkanı tarafından atanır ve Cumhurbaşkanına karşı sorumludurlar.",
+          "Her bakan görevini sürdürürken milletvekilliğini de korumak zorundadır.",
+          "Yalnızca kendi illerindeki seçmenlere karşı sorumludurlar.",
+          "TBMM tarafından seçilir ve göreve başlamak için güvenoyu alırlar."
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Cumhurbaşkanı yardımcıları ve bakanlar Cumhurbaşkanınca atanır ve ona karşı sorumludur. Milletvekili atanırsa üyeliği sona erer. Parlamenter sistemin güvenoyu kuralı mevcut sistemle karıştırılmamalıdır."
+          }
+        ],
+        "etiketler": [
+          "yurutme",
+          "bakanlar"
+        ]
+      },
+      "before_sha256": "4443dece62b537ef1d59e31775e052b14ad6bed082fa23ddc90ffa241f43d1c2",
+      "after_sha256": "ec82085afab8dec64816703b926cebca6f2ae2dd3562a15f0bb1fd019846daf5",
+      "topics": [
+        "v-yurutme"
+      ]
+    },
+    "VAT-0035": {
+      "before": {
+        "id": "VAT-0035",
+        "ders": "vatandaslik",
+        "gun": 6,
+        "konu": "Yargı",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "1982 Anayasası'na göre aşağıdakilerden hangisi Sayıştayın görev alanına girer?",
+        "siklar": [
+          "Kapsamındaki kamu idarelerinin gelir, gider ve mallarını TBMM adına denetlemek",
+          "Kanunları esas bakımından Anayasa'ya uygunluk denetimine tabi tutmak",
+          "Adli yargı kararlarını son inceleme mercii olarak değerlendirmek",
+          "Bakanların siyasi parti üyeliklerini onaylamak",
+          "Milletvekili seçimlerinin sonuçlarını kesinleştirmek"
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Sayıştay kamu mali denetimi yapar. Kanunların anayasal denetimi Anayasa Mahkemesinin, seçimlerin yönetim ve denetimi YSK'nin görevidir. Kurumların hepsinin denetim yapması aynı yetkilere sahip oldukları anlamına gelmez."
+          }
+        ],
+        "etiketler": [
+          "yargi",
+          "sayistay"
+        ]
+      },
+      "before_sha256": "d9c01e8c8902001fd59820f61802135d19f4362457e9b15b5ec5afe363752a8b",
+      "after_sha256": "273e50105d2fa702a401cce702d2ba8e1db7e29bc7af983cb92c4e7f0d627785",
+      "topics": [
+        "v-yargi"
+      ]
+    },
+    "VAT-0039": {
+      "before": {
+        "id": "VAT-0039",
+        "ders": "vatandaslik",
+        "gun": 7,
+        "konu": "Kamu Hizmetleri",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Kamu hizmetinin değişen toplumsal ve teknik ihtiyaçlara uyarlanması\nBu açıklama için doğru eşleştirme aşağıdakilerden hangisidir?",
+        "siklar": [
+          "Kamu yararı",
+          "Değişkenlik",
+          "Liyakat",
+          "Süreklilik",
+          "Yargısal denetim"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Doğru eşleştirme: Kamu hizmetinin değişen toplumsal ve teknik ihtiyaçlara uyarlanması → Değişkenlik. Kamu hizmetinin sürekliliği her hizmetin günün bütün saatlerinde aynı biçimde sunulması demek değildir. Çalışma düzeni hizmetin niteliğine göre belirlenir."
+          }
+        ],
+        "etiketler": [
+          "kamu",
+          "tuzel-kisilik"
+        ]
+      },
+      "before_sha256": "949a36b2f33c67cd297b95bfb65ba8058abb001e44738486df1469c0f66a1691",
+      "after_sha256": "2669e6fcec64face3b6097be14b7b4dc9723b477f20f415090e398ee6b2f1b51",
+      "topics": [
+        "v-idare"
+      ]
+    },
+    "VAT-0051": {
+      "before": {
+        "id": "VAT-0051",
+        "ders": "vatandaslik",
+        "gun": 9,
+        "konu": "Seçimler",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Türkiye'de seçimlerin düzen ve dürüstlük içinde yürütülmesinden ve sonuçlarının belirlenmesinden sorumlu anayasal kurum aşağıdakilerden hangisidir?",
+        "siklar": [
+          "Yüksek Seçim Kurulu",
+          "Sayıştay",
+          "Danıştay",
+          "Türkiye İnsan Hakları ve Eşitlik Kurumu",
+          "Anayasa Mahkemesi"
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Anayasa m.79'a göre seçimlerin düzen ve dürüstlük içinde yönetimi Yüksek Seçim Kurulu'nun görevidir. Sayıştay kamu kaynaklarını, Danıştay idari yargılamayı üstlenir."
+          }
+        ],
+        "etiketler": [
+          "secimler",
+          "kurumlar"
+        ]
+      },
+      "before_sha256": "4e952fbe4fc448a4a3777f9a93e8eb35534dd2f43f50f80c2e61cdf43fc4054d",
+      "after_sha256": "ea7a8cf8916116fe05ee9a4aa572ad40ab53ab2ae71b8c7a0a19ef32a2737584",
+      "topics": [
+        "v-secim"
+      ]
+    },
+    "VAT-0063": {
+      "before": {
+        "id": "VAT-0063",
+        "ders": "vatandaslik",
+        "gun": 1,
+        "konu": "Hukuk",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Bir kuralın hukuk kuralı sayılabilmesi için devletin cebri ile desteklenmesi gerekir. Buna göre aşağıdakilerden hangisi hukuk kurallarının ayırt edici özelliğidir?",
+        "siklar": [
+          "Her toplumda aynı olması",
+          "Ahlak kurallarından tamamen bağımsız olması",
+          "Yaptırım (ceza) uygulanabilmesi",
+          "Yalnızca yazılı olanlarının hukuk kuralı sayılması",
+          "Kişisel tercihlere bırakılması"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Hukuk kurallarının ayırt edici özelliği, devlet cebriyle desteklenen yaptırımının olmasıdır. Örf ve âdet hukuku da yazılı olmasa da hukuk kuralıdır."
+          }
+        ],
+        "etiketler": [
+          "hukuk"
+        ]
+      },
+      "before_sha256": "f190c7936d8124791fec49fc2e229eed460422a378fcfa9de86a4804872db726",
+      "after_sha256": "0120d9c263f815383068aa25d6dab64a0c05657f7b96661da2b644b24e7fbf06",
+      "topics": [
+        "v-hukuk"
+      ]
+    },
+    "VAT-0105": {
+      "before": {
+        "id": "VAT-0105",
+        "ders": "vatandaslik",
+        "gun": 7,
+        "konu": "Memuriyet",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Devlet memurlarının toplu olarak işe gelmeyerek kamu hizmetini aksatmalarıyla ilgili aşağıdaki yargılardan hangisi doğrudur?",
+        "siklar": [
+          "657 sayılı Kanun memurların greve karar vermesini ve greve katılmasını yasaklar.",
+          "Bütün kamu çalışanları ile işçiler aynı grev hükümlerine tabidir.",
+          "Grev yalnızca sözlü duyurulmuşsa yasak kapsamına girmez.",
+          "Memurların sendikaya üye olabilmesi her türlü grevi de serbest kılar.",
+          "İdarenin her işlemi grev yasağını kendiliğinden kaldırır."
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "657 sayılı Kanunda grev yasağı vardır. Sendika ve toplu sözleşme hakları ile grev hakkı aynı değildir. İşçi statüsüyle memur statüsünün hukuki rejimi birbirine genellenmemelidir."
+          }
+        ],
+        "etiketler": [
+          "memuriyet",
+          "memurlarin"
+        ]
+      },
+      "before_sha256": "fd38d1817a68c431a341559c9108c5b9c0b6a46332468fffa227189ed5ddec04",
+      "after_sha256": "16f0a251497d997126b6241fa4d7b5da1dd52890619bacb74c3b8c9aad49c0b8",
+      "topics": [
+        "v-memur"
+      ]
+    },
+    "VAT-0236": {
+      "before": {
+        "id": "VAT-0236",
+        "ders": "vatandaslik",
+        "gun": 7,
+        "konu": "Memuriyet",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Bir memura disiplin cezası verilirken savunmasının alınması aşağıdaki ilkelerden hangisine doğrudan hizmet eder?",
+        "siklar": [
+          "Kişisel referansla yükselme",
+          "Bütün disiplin cezalarının mahkemece verilmesi",
+          "Savunma hakkı ve hukuki güvence",
+          "Disiplin amirinin sınırsız takdiri",
+          "İdarenin yargı denetiminden muafiyeti"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Memurun savunması alınmadan disiplin cezası verilemez. Bu güvence, disiplin yetkisinin keyfî kullanılmasını sınırlar. İdarenin disiplin cezası verebilmesi bütün cezaların yargı denetimi dışında olduğu anlamına gelmez."
+          }
+        ],
+        "etiketler": [
+          "memuriyet"
+        ]
+      },
+      "before_sha256": "23ddf99ab66f671685a23a0080497d0ac2f511d74f44e2f7c718c003b9e1cb03",
+      "after_sha256": "d21d2bade4b2c6d7287d411b086fca4d8f6e7614cf22a0a6718ebfdc3126dcda",
+      "topics": [
+        "v-memur"
+      ]
+    },
+    "TUR-0002": {
+      "before": {
+        "id": "TUR-0002",
+        "ders": "turkce",
+        "gun": 1,
+        "konu": "Sözcükte Anlam",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Yazar başkalarının izlediği yolu tekrarlamıyor, konusuna kendine ait bir bakış getiriyordu. Bu anlatımın öne çıkan niteliği hangisidir?",
+        "siklar": [
+          "Evrensellik",
+          "Yalınlık",
+          "Akıcılık",
+          "Açıklık",
+          "Özgünlük"
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Kendine ait bakış ve taklitten uzaklaşma özgünlüğün ayırt edici yönüdür."
+          }
+        ],
+        "etiketler": [
+          "sozcukte-anlam",
+          "es-anlam"
+        ]
+      },
+      "before_sha256": "37e4cba10994bd2ea660448970fe8e83a802c97e748f574a803eeb2b8a1c4d5c",
+      "after_sha256": "804deb4acb3c8e6973d5dc9e6e6faf877360ff7c7a838dd8e55aeb58eb6f55d6",
+      "topics": [
+        "u-sozcuk"
+      ]
+    },
+    "TUR-0010": {
+      "before": {
+        "id": "TUR-0010",
+        "ders": "turkce",
+        "gun": 2,
+        "konu": "Cümlede Anlam",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Sizi gördüğüme çok sevindim. cümlesinde açıkça belirtilen duygu → Varsayım\nII. Tut ki yarın yola çıktık. cümlesindeki yaklaşım → Pişmanlık\nIII. Bu şehir eskisinden daha kalabalık. cümlesindeki anlatım ilişkisi → Karşılaştırma\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "I ve II",
+          "II ve III",
+          "Yalnız III",
+          "Yalnız I",
+          "I ve III"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Yanlış: Sizi gördüğüme çok sevindim. cümlesinde açıkça belirtilen duygu → Sevinç. II. Yanlış: Tut ki yarın yola çıktık. cümlesindeki yaklaşım → Varsayım. III. Doğru: Bu şehir eskisinden daha kalabalık. cümlesindeki anlatım ilişkisi → Karşılaştırma. İçin sözcüğü tek başına ilişkinin türünü belirlemez: gerçekleşmiş neden ile ulaşılmak istenen amaç farklıdır."
+          }
+        ],
+        "etiketler": [
+          "cumlede-anlam",
+          "aktarma"
+        ]
+      },
+      "before_sha256": "2e98e8877475018ac25a798e72d66cbce4839052b5491d37778ee8d234550df0",
+      "after_sha256": "0447cd3a6aeaf1a4e9de887012eb1f23de3c0d45cc7f234c24f0f2c784d13014",
+      "topics": [
+        "u-cumle"
+      ]
+    },
+    "TUR-0019": {
+      "before": {
+        "id": "TUR-0019",
+        "ders": "turkce",
+        "gun": 3,
+        "konu": "Paragraf",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Bilgiye hızla ulaşmak, onu doğru değerlendirdiğimiz anlamına gelmez. Kaynağı ve yöntemi sorgulamadan edinilen bilgiler kolayca yanıltabilir. Ana düşünce hangisidir?",
+        "siklar": [
+          "Bilgiye erişim kadar onu sorgulamak da önemlidir.",
+          "Gelenek yeniden yorumlanarak süreklilik kazanır.",
+          "Kent kimliği fiziksel yapılarla birlikte toplumsal hafızadan beslenir.",
+          "Öğrenmede çocuğun araştırmasına alan açılmalıdır.",
+          "Koruma ile ihtiyaçların karşılanması dengeli planlamayla birlikte yürütülebilir."
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Hız ile doğruluk aynı değildir; kaynak ve yöntem sorgulaması temel vurgudur."
+          }
+        ],
+        "etiketler": [
+          "paragraf",
+          "yapi"
+        ]
+      },
+      "before_sha256": "1db0e463908d0330537849c7dbdbe5c2cde2dda40c4250520b2fb0c30eaea7a2",
+      "after_sha256": "07c914cae2675b65eead5886beac9c4ab222b4a690c8857606213ea99a351eed",
+      "topics": [
+        "u-paragraf"
+      ]
+    },
+    "TUR-0020": {
+      "before": {
+        "id": "TUR-0020",
+        "ders": "turkce",
+        "gun": 3,
+        "konu": "Paragraf",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Bir araştırmanın sonucu kadar, o sonuca nasıl ulaşıldığı da önemlidir. Yöntemi görünür olmayan bulguların güvenilirliği değerlendirilemez. Ana düşünce hangisidir?",
+        "siklar": [
+          "Bilgiye erişim kadar onu sorgulamak da önemlidir.",
+          "Gelenek yeniden yorumlanarak süreklilik kazanır.",
+          "Kent kimliği fiziksel yapılarla birlikte toplumsal hafızadan beslenir.",
+          "Hatalar değerlendirildiğinde öğrenmeye katkı sağlar.",
+          "Bilimsel güvenilirlik için yöntemin açıklanması gerekir."
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Sonuca ulaşma yolu güvenilirliği değerlendirme koşuludur."
+          }
+        ],
+        "etiketler": [
+          "paragraf",
+          "sonuc"
+        ]
+      },
+      "before_sha256": "fa20f053f6cfb13e9e45364d40bbf4cb0eabcc32c7105b85738d5aef43a57c2f",
+      "after_sha256": "b2ac8c2d46f612ba21393550325d6497462a56e06ab1efcb664b0b13e9007086",
+      "topics": [
+        "u-paragraf"
+      ]
+    },
+    "TUR-0028": {
+      "before": {
+        "id": "TUR-0028",
+        "ders": "turkce",
+        "gun": 5,
+        "konu": "Ses Bilgisi",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "\"Kitabı okudum.\" cümlesindeki \"kitabı\" sözcüğünde aşağıdaki ses olaylarından hangisi görülür?",
+        "siklar": [
+          "Benzeşme",
+          "Ünsüz düşmesi",
+          "Sert ünsüz yumuşaması",
+          "Yumuşayan ünsüzün sertleşmesi",
+          "Ünlü daralması"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "\"Kitap\" sözcüğüne -ı eki eklendiğinde sondaki sert \"p\" ünsüzü \"b\" yumuşar (kitabı). Bu olaya sert ünsüz yumuşaması denir."
+          }
+        ],
+        "etiketler": [
+          "ses-bilgisi",
+          "ses-olaylari"
+        ]
+      },
+      "before_sha256": "445356db6fe7f14dad3c94167a71473d8e96987fc3f013eefb23c5558a84c020",
+      "after_sha256": "75c9e9ffda0755f8d55f9cb2029bb44626b11c79bad964138d7fe9227eb57ab6",
+      "topics": [
+        "u-ses"
+      ]
+    },
+    "TUR-0041": {
+      "before": {
+        "id": "TUR-0041",
+        "ders": "turkce",
+        "gun": 7,
+        "konu": "Yapı Bilgisi",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Aşağıdaki sözcüklerden hangisi kökünün türü bakımından diğerlerinden farklıdır?",
+        "siklar": [
+          "Yazdırmak",
+          "Kitaplık",
+          "Güldürmek",
+          "Okutmak",
+          "Konuşturmak"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Kitaplık sözcüğünün kökü kitap ismidir. Yaz-, konuş-, gül- ve oku- fiil kökleridir. Sözcüğün sonundaki eklerden önce kökü ayırmak gerekir."
+          }
+        ],
+        "etiketler": [
+          "yapi",
+          "yapim-ekleri"
+        ]
+      },
+      "before_sha256": "c66f0dc1050c9fa43cc6287ddad48d65ba5268e9bd931fb27fe5f56967bec7b3",
+      "after_sha256": "8e8bb44a6821275c08205dba26110396813241e50cc4a357d8ae9bb79249f672",
+      "topics": [
+        "u-yapi"
+      ]
+    },
+    "TUR-0052": {
+      "before": {
+        "id": "TUR-0052",
+        "ders": "turkce",
+        "gun": 9,
+        "konu": "Anlatım Bozuklukları",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Bu konuda fikir alışverişinde bulunduk.\nII. Toplantı aşağı yukarı tam iki saat sürdü.\nIII. Herkes projeyi beğendi, eleştirmedi.\nYukarıdaki cümlelerin hangilerinde anlatım bozukluğu vardır?",
+        "siklar": [
+          "Yalnız II",
+          "II ve III",
+          "I, II ve III",
+          "I ve III",
+          "Yalnız III"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Gereksiz sözcük yoktur; ilişki açık kurulmuştur. II. Yaklaşık anlamı ile tam sözcüğü çelişmektedir. III. Olumsuz ikinci yüklem için kimse öznesi gerekir."
+          }
+        ],
+        "etiketler": [
+          "anlatim-bozuklugu",
+          "fazlalik"
+        ]
+      },
+      "before_sha256": "faf8124f3ac335eb17ebc94bee5cf8917049e7cfe71c371348a1f64dd36050b2",
+      "after_sha256": "de4497fd8352d7774ec25ea4aae5de7512ccfc89724af3c9ddbd198c593b70ed",
+      "topics": [
+        "u-bozukluk"
+      ]
+    },
+    "TUR-0093": {
+      "before": {
+        "id": "TUR-0093",
+        "ders": "turkce",
+        "gun": 5,
+        "konu": "Yazım",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Birkaç öğrenci dışarı çıktı.\nII. Bu soruyu sende çözebilirsin.\nIII. Masada ki dosyayı uzatır mısın?\nYukarıdaki cümlelerin hangilerinde yazım yanlışı vardır?",
+        "siklar": [
+          "Yalnız I",
+          "II ve III",
+          "I, II ve III",
+          "I ve III",
+          "Yalnız III"
+        ],
+        "dogru": 1,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Birkaç bitişik yazılır. II. Sen de ifadesindeki de bağlaçtır, ayrı yazılmalıdır. III. Sıfat yapan -ki bitişir: masadaki."
+          }
+        ],
+        "etiketler": [
+          "turkiye",
+          "yazim"
+        ]
+      },
+      "before_sha256": "6803868716baaea7d66bbd31e475be3e33763ede43c6946ac3c2147999eb7f90",
+      "after_sha256": "0be5df83ba9430921c617c0c5e7b67e2cf87901a1bc7a25effd5b3145da715f1",
+      "topics": [
+        "u-yazim"
+      ]
+    },
+    "TUR-0108": {
+      "before": {
+        "id": "TUR-0108",
+        "ders": "turkce",
+        "gun": 8,
+        "konu": "Cümle Türleri",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Biraz daha dikkatli dinle! cümlesiyle ilgili aşağıdaki yargılardan hangisi doğrudur?",
+        "siklar": [
+          "Olumlu fiil cümlesidir ve yüklemi emir kipindedir.",
+          "Olumsuz isim cümlesidir.",
+          "Soru anlamı taşıyan bir isim cümlesidir.",
+          "Yüklemi duyulan geçmiş zamanla çekimlenmiştir.",
+          "Yükleminde gereklilik eki vardır."
+        ],
+        "dogru": 0,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Dinle emir kipinde çekimli fiildir; olumsuzluk eki yoktur. Ünlem işareti cümleyi isim cümlesi yapmaz. Kip, anlam ve yüklem türü farklı ölçütler olarak incelenmelidir."
+          }
+        ],
+        "etiketler": [
+          "buraya",
+          "cumle-turleri"
+        ]
+      },
+      "before_sha256": "04631876000aeba46e8acf8644e249103456464d54c88e19f66a11c49a241f2f",
+      "after_sha256": "24d3000acd134d2d5f70f94f8c77d8af36288c33560fb8eb4d2f2a24ce14b49a",
+      "topics": [
+        "u-ogeler"
+      ]
+    },
+    "TUR-0126": {
+      "before": {
+        "id": "TUR-0126",
+        "ders": "turkce",
+        "gun": 10,
+        "konu": "Final",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "\"Toplantıya katılanlar arasında, alanında uzman bilim insanları da yer alıyordu.\" cümlesiyle ilgili aşağıdakilerden hangisi doğrudur?",
+        "siklar": [
+          "Özne ile yüklemin çatıştığı bir yapı vardır",
+          "\"Arasında\" ve \"de\" sözcükleri bir arada kullanılamaz",
+          "\"Uzman bilim insanları\" ifadesi anlamca anlamsızdır",
+          "Cümlede anlam ve yapı bakımından bir bozukluk yoktur",
+          "Cümlede bir öge eksik bırakılmıştır"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Cümlede ögeler tam ve anlamca açıktır. \"Arasında ... da\" kullanımı Türkçede uygundur; öyle ki \"de\" burada \"yer alma\" eylemine vurgu yapar."
+          }
+        ],
+        "etiketler": [
+          "anlatim",
+          "final"
+        ]
+      },
+      "before_sha256": "501f9527e91f7e7a347e436e157f94b31410ec8d6a291c55200bfa8d15dc7e31",
+      "after_sha256": "ef5ba981109dc81ddcccb9859631d6300d38e150cbfecb5d097116314b090a46",
+      "topics": [
+        "u-ogeler"
+      ]
+    },
+    "GUN-0068": {
+      "before": {
+        "id": "GUN-0068",
+        "ders": "guncel",
+        "gun": 7,
+        "konu": "Kurumlar",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Türkiye'de nüfus, iş gücü ve fiyatlara ilişkin resmî istatistiklerin üretilmesi ile para politikasının yürütülmesi görevleri sırasıyla aşağıdaki kurumların hangilerine aittir?",
+        "siklar": [
+          "Türkiye Cumhuriyet Merkez Bankası - Sayıştay",
+          "Sayıştay - Türkiye İstatistik Kurumu",
+          "Türkiye İstatistik Kurumu - Türkiye Cumhuriyet Merkez Bankası",
+          "Bankacılık Düzenleme ve Denetleme Kurumu - Rekabet Kurumu",
+          "Rekabet Kurumu - Sermaye Piyasası Kurulu"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Resmî istatistik üretimi TÜİK'in, para politikası TCMB'nin temel görev alanıdır. Ekonomiye ilişkin veri yayımlayan her kurum para politikası belirlemez. Sayıştay'ın görevi kamu mali denetimiyle ilgilidir."
+          }
+        ],
+        "etiketler": [
+          "kurumlar",
+          "tuik"
+        ]
+      },
+      "before_sha256": "bcb63aa119bbf72cdc6edd3ffa94aeb9b64fed3947d01df930a805b75fd94c50",
+      "after_sha256": "2307b0b83a53bd6a80eb5df1b4824de27f3399e941d6ca10f24ed2c5b35c9044",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-0072": {
+      "before": {
+        "id": "GUN-0072",
+        "ders": "guncel",
+        "gun": 7,
+        "konu": "Kurumlar",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "Kamu kaynaklarının TBMM adına denetlenmesi, bankacılık sektörünün düzenlenmesi ve rekabetin korunması görevleri aşağıdakilerin hangisinde sırasıyla doğru eşleştirilmiştir?",
+        "siklar": [
+          "Danıştay - TCMB - TÜİK",
+          "Yargıtay - Rekabet Kurumu - BDDK",
+          "Sayıştay - TÜİK - TCMB",
+          "Sayıştay - BDDK - Rekabet Kurumu",
+          "Anayasa Mahkemesi - SPK - TÜİK"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Sayıştay kamu mali denetimi, BDDK bankacılık düzenleme-denetimi, Rekabet Kurumu rekabetin korunmasıyla ilgilidir. SPK sermaye piyasasına, TÜİK istatistiklere odaklanır. Benzer ekonomik alanlarda çalışan kurumların yetkileri aynı değildir."
+          }
+        ],
+        "etiketler": [
+          "kurumlar",
+          "sayistay"
+        ]
+      },
+      "before_sha256": "b91411ace3034a2935887036cbaa959d44b97133fd213007e5a828c360de3ea6",
+      "after_sha256": "aad204569b63a4a8c17eebb1a5a91471f0023274fc86805d8f76af4830e1b744",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-0082": {
+      "before": {
+        "id": "GUN-0082",
+        "ders": "guncel",
+        "gun": 2,
+        "konu": "Dünya",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. NATO'nun kurulması, II. Türkiye'nin NATO'ya katılması, III. Varşova Paktı'nın kurulması gelişmelerinin kronolojik sırası hangisidir?",
+        "siklar": [
+          "III - I - II",
+          "II - III - I",
+          "I - III - II",
+          "I - II - III",
+          "II - I - III"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "NATO 1949'da kurulmuş, Türkiye 1952'de katılmış, Varşova Paktı 1955'te kurulmuştur. Karşı bloktaki örgütün NATO'yla aynı yıl kurulduğu varsayılmamalıdır."
+          }
+        ],
+        "etiketler": [
+          "dunya",
+          "nato"
+        ]
+      },
+      "before_sha256": "d5a46c93a1a17149f86a760fbea1f319e1cdcc3dffdf0e683784d192c365bc8d",
+      "after_sha256": "3b098f9fe61945e678cf794a7cd96e9395025115cf61213c24c5390ac699baea",
+      "topics": [
+        "g-kurum"
+      ]
+    },
+    "GUN-0083": {
+      "before": {
+        "id": "GUN-0083",
+        "ders": "guncel",
+        "gun": 2,
+        "konu": "Dünya",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Romanya'nın başkenti → Bükreş\nII. Kazakistan'ın başkenti → Sofya\nIII. Kırgızistan'ın başkenti → Bişkek\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "Yalnız I",
+          "I ve II",
+          "Yalnız II",
+          "I ve III",
+          "II ve III"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Romanya'nın başkenti → Bükreş. II. Yanlış: Kazakistan'ın başkenti → Astana. III. Doğru: Kırgızistan'ın başkenti → Bişkek. Başkent, ülkenin en büyük veya tarihî önemi en yüksek şehriyle her zaman aynı değildir."
+          }
+        ],
+        "etiketler": [
+          "avrupa",
+          "dunya"
+        ]
+      },
+      "before_sha256": "1c518637b467d09b81759082d3bc1e474951a47be7a0b549cd7f8bc555f23d85",
+      "after_sha256": "819063bbaf0d7a29c549bbbca6d09d8c4423e59ec8bfe25222a563cbc80ade19",
+      "topics": [
+        "g-dunya"
+      ]
+    },
+    "GUN-0088": {
+      "before": {
+        "id": "GUN-0088",
+        "ders": "guncel",
+        "gun": 3,
+        "konu": "Spor",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Atletizmin dünya düzeyindeki yönetim kuruluşu → World Athletics\nII. Uluslararası Otomobil Federasyonunun kısaltması → IPC\nIII. Uluslararası Tenis Federasyonunun kısaltması → ITF\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "Yalnız I",
+          "Yalnız II",
+          "I ve II",
+          "I ve III",
+          "II ve III"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Atletizmin dünya düzeyindeki yönetim kuruluşu → World Athletics. II. Yanlış: Uluslararası Otomobil Federasyonunun kısaltması → FIA. III. Doğru: Uluslararası Tenis Federasyonunun kısaltması → ITF. Bir spor dalının uluslararası federasyonu ile bölgesel konfederasyonu veya uyuşmazlık mercii farklıdır."
+          }
+        ],
+        "etiketler": [
+          "dunya",
+          "spor"
+        ]
+      },
+      "before_sha256": "9f7d541f7b345ab47a008b5d9a858aedaeed7b3b1d679bea76904bdf00bc57b0",
+      "after_sha256": "b05f2f71434c0e9addcea7390c85c6d31bb4ffecfa793597e8d6df88f92c8ef9",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-0090": {
+      "before": {
+        "id": "GUN-0090",
+        "ders": "guncel",
+        "gun": 3,
+        "konu": "Spor",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Futbolun dünya düzeyindeki federasyonu → FIBA\nII. Avrupa futbolunu yöneten konfederasyon → UEFA\nIII. Uluslararası Otomobil Federasyonunun kısaltması → UEFA\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "I ve II",
+          "Yalnız I",
+          "Yalnız II",
+          "I ve III",
+          "I, II ve III"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Yanlış: Futbolun dünya düzeyindeki federasyonu → FIFA. II. Doğru: Avrupa futbolunu yöneten konfederasyon → UEFA. III. Yanlış: Uluslararası Otomobil Federasyonunun kısaltması → FIA. Bir spor dalının uluslararası federasyonu ile bölgesel konfederasyonu veya uyuşmazlık mercii farklıdır."
+          }
+        ],
+        "etiketler": [
+          "olimpiyat",
+          "spor"
+        ]
+      },
+      "before_sha256": "42b3eb1063ea921e27fa7b6a6dcc9912420ffb8539325089d5156ba8100b404c",
+      "after_sha256": "94bab840e818618f6e7524c82fdcfca32764bb0f92586639b5649f051362e36e",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-0100": {
+      "before": {
+        "id": "GUN-0100",
+        "ders": "guncel",
+        "gun": 6,
+        "konu": "Kültür",
+        "zorluk": 2,
+        "kaynak": "KPSS formatında",
+        "kok": "Nevruz'un UNESCO tarafından tanınan somut olmayan kültürel miras niteliği düşünüldüğünde aşağıdakilerden hangisi bu miras türüne örnek olarak gösterilebilir?",
+        "siklar": [
+          "Bir maden yatağındaki cevher miktarı",
+          "Bir gölün ölçülmüş yüzölçümü",
+          "Bir fabrikanın yıllık üretim kapasitesi",
+          "Kuşaktan kuşağa aktarılan kutlama gelenekleri ve bunlara ilişkin uygulamalar",
+          "Yalnızca bir tarihî yapının taş duvarları"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "Somut olmayan kültürel miras gelenek, uygulama, bilgi ve becerilerin kuşaklar arası aktarımıyla ilgilidir. Nevruz kutlama gelenekleri bu kapsamdadır. Bir yapının fiziksel unsurları veya doğal rezerv miktarı aynı kategori değildir."
+          }
+        ],
+        "etiketler": [
+          "kultur",
+          "nevruz"
+        ]
+      },
+      "before_sha256": "7eff877b0e9902e53be3170197a0a5f7df245eb8af50a7343b7268b07c7ce22e",
+      "after_sha256": "b3ef31537778b01840c6302e7bffafcc95b8eac7fb2de5a09feee5c574a24828",
+      "topics": [
+        "g-kultur"
+      ]
+    },
+    "GUN-0176": {
+      "before": {
+        "id": "GUN-0176",
+        "ders": "guncel",
+        "gun": 3,
+        "konu": "spor",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Wimbledon tenis turnuvasının kort zemini → Toprak\nII. Voleybolda bir takımın sahadaki oyuncu sayısı → 6\nIII. 2024 Yaz Olimpiyatlarına ev sahipliği yapan şehir → Atina\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "I ve III",
+          "Yalnız I",
+          "II ve III",
+          "I ve II",
+          "Yalnız II"
+        ],
+        "dogru": 4,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Yanlış: Wimbledon tenis turnuvasının kort zemini → Çim. II. Doğru: Voleybolda bir takımın sahadaki oyuncu sayısı → 6. III. Yanlış: 2024 Yaz Olimpiyatlarına ev sahipliği yapan şehir → Paris. Takımın sahadaki oyuncu sayısı bütün kadro mevcudu değildir. Tokyo organizasyonunun adıyla gerçekleştiği takvim yılı farklıdır."
+          }
+        ],
+        "etiketler": [
+          "arda",
+          "spor"
+        ]
+      },
+      "before_sha256": "04c23f01885fa02ce28e382b72b0d85e7ec818f9a0f94425605952de975346e2",
+      "after_sha256": "1825b0b0a74664a0076ff723899307f0b610995dfcf82a38bad4e06ee9128a36",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-0177": {
+      "before": {
+        "id": "GUN-0177",
+        "ders": "guncel",
+        "gun": 3,
+        "konu": "spor",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Klasik olimpik maratonun kilometre cinsinden mesafesi → 42,195\nII. Hentbolda kaleci dâhil bir takımın sahadaki oyuncu sayısı → 7\nIII. Triatlonda birlikte yapılan sporlar → Yüzme, eskrim ve atıcılık\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "Yalnız II",
+          "Yalnız III",
+          "I ve II",
+          "Yalnız I",
+          "I ve III"
+        ],
+        "dogru": 2,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Doğru: Klasik olimpik maratonun kilometre cinsinden mesafesi → 42,195. II. Doğru: Hentbolda kaleci dâhil bir takımın sahadaki oyuncu sayısı → 7. III. Yanlış: Triatlonda birlikte yapılan sporlar → Yüzme, bisiklet ve koşu. Takımın sahadaki oyuncu sayısı bütün kadro mevcudu değildir. Tokyo organizasyonunun adıyla gerçekleştiği takvim yılı farklıdır."
+          }
+        ],
+        "etiketler": [
+          "kenan",
+          "spor"
+        ]
+      },
+      "before_sha256": "675ab3127813cdcc4ba9ff6f323598e9125385ddf66e054367e8e0396686d2cd",
+      "after_sha256": "429ed55d0b4093b9e5d6e420869c521d042c49d5209f786546a5aa3925bb7df5",
+      "topics": [
+        "g-spor"
+      ]
+    },
+    "GUN-0204": {
+      "before": {
+        "id": "GUN-0204",
+        "ders": "guncel",
+        "gun": 3,
+        "konu": "kultur_sanat",
+        "zorluk": 3,
+        "kaynak": "KPSS formatında",
+        "kok": "I. Selimiye Camii ve Külliyesi'nin bulunduğu il → Aydın\nII. Safranbolu'nun bağlı olduğu il → Karabük\nIII. Göbeklitepe'nin bulunduğu il → Çorum\nYukarıdaki eşleştirmelerden hangileri doğrudur?",
+        "siklar": [
+          "I ve II",
+          "I ve III",
+          "Yalnız III",
+          "Yalnız II",
+          "II ve III"
+        ],
+        "dogru": 3,
+        "cozumler": [
+          {
+            "yontem": "KPSS mantığı ile çözüm",
+            "metin": "I. Yanlış: Selimiye Camii ve Külliyesi'nin bulunduğu il → Edirne. II. Doğru: Safranbolu'nun bağlı olduğu il → Karabük. III. Yanlış: Göbeklitepe'nin bulunduğu il → Şanlıurfa. Alanları il, uygarlık ve dönem bakımından ayrı değerlendirmek gerekir; aynı listede bulunmaları aynı uygarlığa ait olduklarını göstermez."
+          }
+        ],
+        "etiketler": [
+          "kultur-sanat",
+          "sumela"
+        ]
+      },
+      "before_sha256": "f623c417f61ab88eec9ad1748af44156057fae83dc92c338abfe87d3d0f53355",
+      "after_sha256": "c078e6782e21d94c7993da5bbaf30b26497c121ca062fa511cdd81b494970cbe",
+      "topics": [
+        "g-kultur"
+      ]
+    }
+  }
+}

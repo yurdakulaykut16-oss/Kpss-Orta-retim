@@ -28,11 +28,15 @@ function loadFix(name, fb = {}) {
 
 function mockFetch(url, opts) {
   const u = String(url);
-  const send = (data) => Promise.resolve({
-    ok: true, status: 200,
+  const send = (data, status=200) => Promise.resolve({
+    ok: status===200, status,
     json: () => Promise.resolve(data),
     text: () => Promise.resolve(JSON.stringify(data)),
   });
+  if (u.includes("/api/soru-ayir/")) {
+    const payload=JSON.parse(opts.body);
+    return send({ok:true,ayrilan_sorular:Object.fromEntries(payload.ids.map((id) => [id,{tur:payload.tur}]))});
+  }
   if (u.includes("/api/meta")) return send(loadFix("meta.json"));
   if (u.includes("/api/program")) return send(loadFix("program.json"));
   if (u.includes("/api/denemeler")) return send(loadFix("denemeler.json", { denemeler: [] }));
@@ -60,11 +64,18 @@ function mockFetch(url, opts) {
   win.scrollTo = () => {};
   // Strict eval içindeki V dışarı sızmaz. Yalnız test ortamında, aynı
   // leksik kapsamda bir render yardımcısı kur; üretim JS'sini değiştirme.
+  win.eval(fs.readFileSync(path.join(ROOT,"static/js/soru_secimi.js"),"utf8"));
   win.eval(appjs + `\nwindow.__smokeRenderQuestion = (ders, sid) => {
-    V.oturum = {mod:"test", ders, baslik:"İçerik kontrolü", sira:0,
+    V.oturum = {uid:"smoke-"+sid,mod:"test", ders, baslik:"İçerik kontrolü", sira:0,
       dogru:0, yanlis:0, kuyruk:[{s:V.tumSorular[sid],tip:"ana"}],
       gorulen:[], bas:Date.now()}; V.oturumTecih = {}; renderQuiz();
   };
+  window.__smokeQueueIds = () => V.oturum?.kuyruk.map((x) => x.s.id) || [];
+  window.__smokeExamIds = () => V.denemeOturum?.d.sorular || [];
+  window.__smokeExhaust = () => {
+    Object.values(V.tumSorular).forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test"}; }); kaydet();
+  };
+  window.__smokeReload = async () => { await kayitYukle(); };
   window.__smokeSeedOldTopics = () => {
     const a = dersAkisKaydi("guncel");
     a.biten = Array.from({length:30}, (_,i) => "Kapsam dışı eski konu " + i);
@@ -75,8 +86,10 @@ function mockFetch(url, opts) {
   const txt = () => (doc.querySelector("#view") || { textContent: "" }).textContent;
   const has = (q) => txt().includes(q);
   const go = async (hash) => {
-    win.location.hash = hash;
-    win.dispatchEvent(new win.HashChangeEvent("hashchange"));
+    // jsdom gerçek hash değişiminde olayı zaten gönderir; ikinci yapay olay
+    // yeni bir oturum açıp kullanılmamış seti haksız yere tüketmemelidir.
+    if (win.location.hash === hash) win.dispatchEvent(new win.HashChangeEvent("hashchange"));
+    else win.location.hash = hash;
     await tick(60);
   };
   const sikSec = async (i = 0) => {
@@ -111,6 +124,7 @@ function mockFetch(url, opts) {
   await go("#/coz");
   ok("test çöz hubı", has("TEST ÇÖZ"));
   ok("geçmiş KPSS konu filtresi görünür", has("Geçmiş KPSS konu filtresi açık"));
+  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 364 aktif") && has("2636 soru kaldı"));
   ok("Güncel havuzunun 500 farklı soruya yetmediği açık", has("364 farklı aktif soru") && has("kapsam dışı soru eklenmez"));
   ok("gerçek çıkmış bölümü", has("Gerçek Çıkmış KPSS Soruları"));
   ok("çıkmış yıl butonları 2014/2024", has("2014-KPSS") && has("2024-KPSS"));
@@ -143,7 +157,7 @@ function mockFetch(url, opts) {
   ok("kontrol: yanlışlar veya hatasız", has("Yanlışların") || has("HATASIZ"));
   ok("kontrol: devam seçenekleri", has("Devam") || has("Günün rehberi"));
   ok("günlük sayaç arttı", /Bugün: [1-9]/.test(txt()) || /[1-9]\d*\/2500/.test(txt()));
-  ok("anti-repeat notu ekranda", has("Aynı soru bugün tekrar gelmez") || has("otomatik kontrol"));
+  ok("anti-repeat notu ekranda", has("Aynı soru yeni test veya denemede tekrar verilmez") || has("otomatik kontrol"));
 
   /* ---------- 23-26: karışık / odak / çıkmış ---------- */
   await go("#/coz/karisik/tarih");
@@ -155,6 +169,15 @@ function mockFetch(url, opts) {
   await go("#/coz/cikmis/karisik");
   ok("karışık çıkmış testi", has("Çıkmış KPSS Soruları"));
 
+  await go("#/coz/karisik/cografya");
+  const firstSet=win.__smokeQueueIds();
+  await go("#/coz");
+  await go("#/coz/karisik/cografya");
+  const secondSet=win.__smokeQueueIds();
+  ok("cevaplanmadan bırakılan set yeni testte geri gelmez",firstSet.length===10 && secondSet.length===10 && secondSet.every((id) => !firstSet.includes(id)));
+  const examReserve=new Set(loadFix("denemeler.json").denemeler.flatMap((d) => d.sorular));
+  ok("test seti denemelere ayrılan sorulardan seçilmez",[...firstSet,...secondSet].every((id) => !examReserve.has(id)));
+
   /* ---------- 27-31: deneme ---------- */
   const den = loadFix("denemeler.json", { denemeler: [] }).denemeler[0];
   const did = den ? den.id : "DEN-01";
@@ -162,6 +185,7 @@ function mockFetch(url, opts) {
   ok("deneme bilgi sayfası", has("Kurallar") && has("Süreyi Başlat"));
   await go(`#/deneme-run/${did}`);
   ok("deneme başladı", has("Bitir") && doc.querySelectorAll(".deneme-hucre").length > 0);
+  ok("deneme seti önceki test setleriyle çakışmaz",win.__smokeExamIds().every((id) => ![...firstSet,...secondSet].includes(id)));
   const hedef = doc.querySelectorAll(".deneme-hucre").length;
   ok("deneme soru ızgarası tam", hedef === (den && den.sorular ? den.sorular.length : hedef));
   win.eval("denemeIsaretle()");
@@ -205,6 +229,17 @@ function mockFetch(url, opts) {
     }
   }
 
+  const quality=JSON.parse(fs.readFileSync(path.join(ROOT,"data/kaynaklar/kalite_01_inceleme.json"),"utf8")).questions;
+  for (const sid of Object.keys(quality)) {
+    const ders=quality[sid].before.ders;
+    const s=loadFix(`sorular_${ders}.json`).find((s) => s.id===sid);
+    win.__smokeRenderQuestion(ders,sid);
+    ok(`${sid} kalite: yeni kök ve beş seçenek`,doc.querySelector(".soru-kok")?.textContent===s.kok && doc.querySelectorAll(".sik").length===5);
+    await sikSec(s.dogru);
+    ok(`${sid} kalite: cevap ve açıklama`,doc.querySelector(".sik.dogru")?.getAttribute("data-sik")===String(s.dogru) && has(s.cozumler[0].metin));
+    ok(`${sid} kalite: özgün kaynak ve geçmiş konu ayrımı`,has("Kaynak: KPSS formatında") && !!doc.querySelector(".kapsam-notu") && has("o sınavda çıktığı anlamına gelmez"));
+  }
+
   const kapsam = loadFix("kapsam.json");
   const activeQuestions = ["tarih", "cografya", "vatandaslik", "turkce", "guncel"].flatMap((d) => loadFix(`sorular_${d}.json`, []));
   ok("bütün API fixture soruları konu kapsamı taşır", activeQuestions.length === kapsam.aktif && activeQuestions.every((s) => s.kpss_kapsam?.konular?.length));
@@ -213,6 +248,12 @@ function mockFetch(url, opts) {
   await go("#/akis/guncel");
   ok("Güncel günlük akışında aktif havuz sınırı görünür", has("364 farklı aktif soru") && has("500 farklı soruya yetmiyor"));
   ok("kapsam dışı eski konular karışık test kilidini açmaz", has("Önce konu testlerini bitir") && !!doc.querySelector("button[disabled]"));
+
+  win.__smokeExhaust();
+  await win.__smokeReload();
+  await go("#/coz/karisik/guncel");
+  ok("yeniden yükleme kalıcı kullanım kaydını silmez",has("Yeni soru havuzu yetersiz"));
+  ok("tükenen havuz eski soruyla doldurulmaz",doc.querySelectorAll(".sik").length===0 && has("Eski soru yeniden verilmez"));
 
   console.log(`\nSONUÇ: ${pass} başarılı, ${fail} başarısız`);
   process.exit(fail ? 1 : 0);

@@ -9,6 +9,7 @@ import copy
 import hashlib
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -18,6 +19,12 @@ SUBJECTS = ('tarih', 'cografya', 'vatandaslik', 'turkce', 'guncel')
 
 def record_hash(record):
     return hashlib.sha256(json.dumps(record, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
+def question_key(s):
+    text=unicodedata.normalize('NFKC',s['kok']).translate(str.maketrans({'I':'ı','İ':'i'})).lower()
+    text=re.sub(r"[.,;:!?…“”\"'’]",'',text)
+    return re.sub(r'\s+',' ',text).strip()
 
 
 def read_policy(root=ROOT):
@@ -101,6 +108,8 @@ def project_exams(exams, raw_bank, active_bank):
     raw = {s['id']: s for rows in raw_bank.values() for s in rows}
     approved = {s['id']: s for rows in active_bank.values() for s in rows}
     result = copy.deepcopy(exams)
+    globally_seen = set()
+    globally_seen_roots = set()
     for exam in result['denemeler']:
         old_ids = exam['sorular']
         if any(sid not in raw for sid in old_ids):
@@ -108,15 +117,18 @@ def project_exams(exams, raw_bank, active_bank):
         # Kullanılabilir özgün seçimleri önce rezerve et; bir değiştirme
         # daha sonraki geçerli soruyu yanlışlıkla tüketmesin.
         reserved = set(old_ids) & approved.keys()
+        reserved_roots = {question_key(approved[sid]) for sid in reserved}
         seen = set()
         new_ids = []
         for slot, sid in enumerate(old_ids):
-            if sid in approved and sid not in seen:
+            if (sid in approved and sid not in seen and sid not in globally_seen
+                    and question_key(approved[sid]) not in globally_seen_roots):
                 chosen = sid
             else:
                 original = raw[sid]
                 candidates = [s for s in active_bank[original['ders']]
-                              if s['id'] not in seen and s['id'] not in reserved]
+                              if s['id'] not in seen and s['id'] not in reserved and s['id'] not in globally_seen
+                              and question_key(s) not in globally_seen_roots and question_key(s) not in reserved_roots]
                 if not candidates:
                     raise ValueError(f"{exam['id']}: onaylı aynı ders sorusu yetersiz")
                 def rank(s):
@@ -125,7 +137,10 @@ def project_exams(exams, raw_bank, active_bank):
                             hashlib.sha256(f"{exam['id']}:{slot}:{s['id']}".encode()).hexdigest())
                 chosen = min(candidates, key=rank)['id']
             seen.add(chosen)
+            globally_seen.add(chosen)
+            globally_seen_roots.add(question_key(approved[chosen]))
             new_ids.append(chosen)
         exam['sorular'] = new_ids
+        exam['soru_sayisi'] = len(new_ids)
         exam['kapsam_degisen_soru'] = sum(a != b for a, b in zip(old_ids, new_ids))
     return result

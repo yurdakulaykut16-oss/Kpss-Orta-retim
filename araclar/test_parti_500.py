@@ -28,6 +28,8 @@ class Parti500Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.output = build(ROOT)
+        cls.review=json.loads((ROOT/'data/kaynaklar/kalite_01_inceleme.json').read_text())['questions']
+        cls.quality={l.split('|')[0]:l.split('|') for l in (ROOT/'data/kaynaklar/kalite_01.tsv').read_text().splitlines() if l and not l.startswith('#')}
         cls.config = json.loads((ROOT / 'data/kaynaklar/parti_500_editor.json').read_text())
         cls.rows = {r[0]: r for rows in cls.output.values() for r in rows}
         cls.bank = {}
@@ -45,12 +47,12 @@ class Parti500Test(unittest.TestCase):
             path = ROOT / 'data/kaynaklar' / FILES[d]
             actual = [line.split('|') for line in path.read_text().splitlines()
                       if line.strip() and not line.lstrip().startswith('#')]
-            self.assertEqual(rows, actual)
+            self.assertEqual([self.quality.get(r[0],r) for r in rows], actual)
 
     def test_banka_cevap_ve_satir_sonlari(self):
         for sid, r in self.rows.items():
             with self.subTest(sid=sid):
-                s = self.bank[sid]
+                s = self.review[sid]['before'] if sid in self.review else self.bank[sid]
                 self.assertEqual(s['kaynak'], 'KPSS formatında')
                 self.assertEqual(s['kok'], r[2].replace(r'\n', '\n'))
                 self.assertEqual(s['siklar'][s['dogru']], r[3])

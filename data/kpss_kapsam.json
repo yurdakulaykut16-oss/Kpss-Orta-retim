@@ -1052,7 +1052,7 @@
       ]
     },
     "TAR-0002": {
-      "sha256": "6be3d969c9bf30fecaa46b2e66c826ceed3ccee544bc5abd2123f200f68dc685",
+      "sha256": "30380a1bdc761d810f9dcae7cd301af7fabc440179894d0cf6c05d7e6ac60d1f",
       "status": "aktif",
       "topics": [
         "t-ilk"
@@ -1115,7 +1115,7 @@
       ]
     },
     "TAR-0011": {
-      "sha256": "4e4ebe8340eb8169a1673a2412b00ceb2fc4f12d9c3b5f0f7f4198df2f468fa7",
+      "sha256": "dec1a60e4153202941ed79f86321bd2c51d2bc8acdb03ec9176066655175cbe6",
       "status": "aktif",
       "topics": [
         "t-islam"
@@ -1234,7 +1234,7 @@
       ]
     },
     "TAR-0028": {
-      "sha256": "1fa9d0b0b47bc6dbbfd419bed93216668d3fbe7abcd0f39e55e85f66de00f0ec",
+      "sha256": "b895c622857d1bf3c99627337f0d8e774e1d44dd2a139e989fdd0f302e48e6e7",
       "status": "aktif",
       "topics": [
         "t-osmanli"
@@ -1486,14 +1486,14 @@
       ]
     },
     "TAR-0064": {
-      "sha256": "26a859374470efc975ea681457bb503fabb00ea2e1aa303f006154c9abb602c6",
+      "sha256": "10f515067f60ebe7e0b651475fc9679710b4692f49b9b44e1131b6b8ca7eafe3",
       "status": "aktif",
       "topics": [
         "t-yenilesme"
       ]
     },
     "TAR-0065": {
-      "sha256": "a93e80cc6277a85709c1a0a7caae2058e6d43d6667a8fb83451ccb9bb4d476c8",
+      "sha256": "0ce6c70aa55d7d6dcf93ae56612dba6c306c8faaa9128365390c4387aac4686a",
       "status": "aktif",
       "topics": [
         "t-yenilesme"
@@ -1640,14 +1640,14 @@
       ]
     },
     "TAR-0086": {
-      "sha256": "d935c81fbcaf70f3b38b20ad8d990f364b6dad5c9f20c63ffc35656ad9359fc5",
+      "sha256": "08234ba2ed294e0029bbb07a4ff2461732258eb817380da75b0d545f31903881",
       "status": "aktif",
       "topics": [
         "t-milli"
       ]
     },
     "TAR-0087": {
-      "sha256": "67e394075ffc18a3b6e3f92e89db9c7c722e51ca483f1c3dbfdb2f90cb94f539",
+      "sha256": "ea38a651dbc0782513a3bb471a03b3da6080cef5d7c5a18466b6d99b2a3fa68b",
       "status": "aktif",
       "topics": [
         "t-milli"
@@ -1731,7 +1731,7 @@
       ]
     },
     "TAR-0099": {
-      "sha256": "0f6d4b9c054a77df723459119abdfd181cb2a5243b3cc836edd7a58c37aeda0f",
+      "sha256": "33918100fc1bad855c2a02dccfbbd18c581c3d6566340909083165762463635f",
       "status": "aktif",
       "topics": [
         "t-inkilap"
@@ -1815,7 +1815,7 @@
       ]
     },
     "TAR-0111": {
-      "sha256": "a2b24a56d8d4aaece6c2584aae181ea3b4de55e4707a192d9cb8af4371337fb9",
+      "sha256": "31a679564a04bc80a036ce5a54c7b6a2d59a53c113052c5eb61a6c8d2be44b24",
       "status": "aktif",
       "topics": [
         "t-cagdas"
@@ -2172,7 +2172,7 @@
       ]
     },
     "TAR-0162": {
-      "sha256": "d27564fc6641dee2e0253be1b220691eb8701d083e5dadc0e65d1e8995a0d61b",
+      "sha256": "1a7c8978a2d2b80853d0004d6646050362196355c497ca8407b78f800889a906",
       "status": "aktif",
       "topics": [
         "t-islam"
@@ -5322,7 +5322,7 @@
       ]
     },
     "COG-0002": {
-      "sha256": "f70a2ceb3466ac8eb8aebd883ac2f6c8e1525b52952119021baea3dd417e2b12",
+      "sha256": "6363db97fd31bd05f5e2dd13944f7813fa6337d931fc402b7c2098d628a3c963",
       "status": "aktif",
       "topics": [
         "c-konum"
@@ -5399,14 +5399,14 @@
       ]
     },
     "COG-0013": {
-      "sha256": "82effe364aa33c86f0e672e871c00e906298451c82b6f006d51ddce5f9990855",
+      "sha256": "2201d61eb0a6fa84fc0b64a03772a19d8a551b56131d6c3547d7719f3c914159",
       "status": "aktif",
       "topics": [
         "c-iklim"
       ]
     },
     "COG-0014": {
-      "sha256": "874e555a29f3d37b22faaf873c565b195be0c1f4d0f167ae0bd85e2a25325b76",
+      "sha256": "a50101c76badd3603d042f9286eb6e2f27803f7238d048d873c3e5f03c21178c",
       "status": "aktif",
       "topics": [
         "c-iklim"
@@ -5455,7 +5455,7 @@
       ]
     },
     "COG-0021": {
-      "sha256": "8a303dadc283dac235ca7f8aaa5cd57c552ef72d3b8bb86e7a00185480487ed9",
+      "sha256": "80f713dd8fbc23a199070d2d438da0e6c07c92a17f099b8e3d382e7239e46ddc",
       "status": "aktif",
       "topics": [
         "c-sekil"
@@ -5588,7 +5588,7 @@
       ]
     },
     "COG-0040": {
-      "sha256": "bb5e4a3b9b2cd9ae4a12fc4de5b529059e410a6637762d2cf35c836b0048a681",
+      "sha256": "8e6dd9c6f22970935551400eb790ec2f60411d06dc0c16e29e556a2bf03c519c",
       "status": "aktif",
       "topics": [
         "c-nufus"
@@ -5658,7 +5658,7 @@
       ]
     },
     "COG-0050": {
-      "sha256": "915ccc6b10c41212dd392d2288f4a8826984d343ff548040c5675312e11f5290",
+      "sha256": "80f51b67766f37e4ef91d88f2db789b4b1159d5af51c55ad67f3b21aad5abd15",
       "status": "aktif",
       "topics": [
         "c-tarim"
@@ -5679,7 +5679,7 @@
       ]
     },
     "COG-0053": {
-      "sha256": "0724ae75f3d35ee03ed315feed8c6bef072a237a268176ac1c1115126f38c8b7",
+      "sha256": "997f40d4f8d4fb8ccab3a7e9f63964eda537218a55bfbef322648d80fd074014",
       "status": "aktif",
       "topics": [
         "c-sanayi"
@@ -5742,7 +5742,7 @@
       ]
     },
     "COG-0062": {
-      "sha256": "2a88a281ffb0a5fa81671c15ddca3a1a290a8ab96f30d5e753ffd78fe9aa6944",
+      "sha256": "c2c82d953a8dcfd1e036ca82f5afb58f63b16f89b665fd5ec6e298c483d41c33",
       "status": "aktif",
       "topics": [
         "c-bolge"
@@ -5791,7 +5791,7 @@
       ]
     },
     "COG-0069": {
-      "sha256": "601a6afba11cc255605797ef61c0e6d7e9be67c982ff91ea2f00886511432c85",
+      "sha256": "a3eab6c3675c1050bbe4f31de36a7ec7db93bc38bfad594dd3615218a9bc3e3a",
       "status": "aktif",
       "topics": [
         "c-cevre"
@@ -5819,7 +5819,7 @@
       ]
     },
     "COG-0073": {
-      "sha256": "29282ca837fc5971c16a8d678f10f12fac2590524062848a92b7ebb04f578a25",
+      "sha256": "aac3b5990338c6208e4997aadfb07b146e2183b4a5bd6bc6675980df384c6f12",
       "status": "aktif",
       "topics": [
         "c-su"
@@ -9256,7 +9256,7 @@
       ]
     },
     "VAT-0007": {
-      "sha256": "7abf51a283cdc4d45b65a1178ca2e5c8781fd5361a89e2636934d62fd1890571",
+      "sha256": "7ae33e4b53ef34a45d0ea77c94732a791768ec3b3fdec2301619760e54a7f6dc",
       "status": "aktif",
       "topics": [
         "v-anayasa"
@@ -9270,7 +9270,7 @@
       ]
     },
     "VAT-0009": {
-      "sha256": "6377ab5d418cfcd0f671e0ce7f78fd1daaae61a7b6f496a2b6d82467d8679a7f",
+      "sha256": "30bff657ceecbb12b84c61954767184c5c6584f0033884d25e190fe6cf1aee3e",
       "status": "aktif",
       "topics": [
         "v-anayasa"
@@ -9354,7 +9354,7 @@
       ]
     },
     "VAT-0021": {
-      "sha256": "67d188a83a10b0537700d8369e51536256874f6adfb0b41607d7418b87a46dd6",
+      "sha256": "2e72ea944cfcbdb34061d5b21c088d69abdcf8cc3860d2a19b3ecce7ab40ebc9",
       "status": "aktif",
       "topics": [
         "v-tbmm"
@@ -9410,7 +9410,7 @@
       ]
     },
     "VAT-0029": {
-      "sha256": "4443dece62b537ef1d59e31775e052b14ad6bed082fa23ddc90ffa241f43d1c2",
+      "sha256": "ec82085afab8dec64816703b926cebca6f2ae2dd3562a15f0bb1fd019846daf5",
       "status": "aktif",
       "topics": [
         "v-yurutme"
@@ -9452,7 +9452,7 @@
       ]
     },
     "VAT-0035": {
-      "sha256": "d9c01e8c8902001fd59820f61802135d19f4362457e9b15b5ec5afe363752a8b",
+      "sha256": "273e50105d2fa702a401cce702d2ba8e1db7e29bc7af983cb92c4e7f0d627785",
       "status": "aktif",
       "topics": [
         "v-yargi"
@@ -9480,7 +9480,7 @@
       ]
     },
     "VAT-0039": {
-      "sha256": "949a36b2f33c67cd297b95bfb65ba8058abb001e44738486df1469c0f66a1691",
+      "sha256": "2669e6fcec64face3b6097be14b7b4dc9723b477f20f415090e398ee6b2f1b51",
       "status": "aktif",
       "topics": [
         "v-idare"
@@ -9564,7 +9564,7 @@
       ]
     },
     "VAT-0051": {
-      "sha256": "4e952fbe4fc448a4a3777f9a93e8eb35534dd2f43f50f80c2e61cdf43fc4054d",
+      "sha256": "ea7a8cf8916116fe05ee9a4aa572ad40ab53ab2ae71b8c7a0a19ef32a2737584",
       "status": "aktif",
       "topics": [
         "v-secim"
@@ -9648,7 +9648,7 @@
       ]
     },
     "VAT-0063": {
-      "sha256": "f190c7936d8124791fec49fc2e229eed460422a378fcfa9de86a4804872db726",
+      "sha256": "0120d9c263f815383068aa25d6dab64a0c05657f7b96661da2b644b24e7fbf06",
       "status": "aktif",
       "topics": [
         "v-hukuk"
@@ -9942,7 +9942,7 @@
       ]
     },
     "VAT-0105": {
-      "sha256": "fd38d1817a68c431a341559c9108c5b9c0b6a46332468fffa227189ed5ddec04",
+      "sha256": "16f0a251497d997126b6241fa4d7b5da1dd52890619bacb74c3b8c9aad49c0b8",
       "status": "aktif",
       "topics": [
         "v-memur"
@@ -10859,7 +10859,7 @@
       ]
     },
     "VAT-0236": {
-      "sha256": "23ddf99ab66f671685a23a0080497d0ac2f511d74f44e2f7c718c003b9e1cb03",
+      "sha256": "d21d2bade4b2c6d7287d411b086fca4d8f6e7614cf22a0a6718ebfdc3126dcda",
       "status": "aktif",
       "topics": [
         "v-memur"
@@ -12833,7 +12833,7 @@
       ]
     },
     "TUR-0002": {
-      "sha256": "37e4cba10994bd2ea660448970fe8e83a802c97e748f574a803eeb2b8a1c4d5c",
+      "sha256": "804deb4acb3c8e6973d5dc9e6e6faf877360ff7c7a838dd8e55aeb58eb6f55d6",
       "status": "aktif",
       "topics": [
         "u-sozcuk"
@@ -12889,7 +12889,7 @@
       ]
     },
     "TUR-0010": {
-      "sha256": "2e98e8877475018ac25a798e72d66cbce4839052b5491d37778ee8d234550df0",
+      "sha256": "0447cd3a6aeaf1a4e9de887012eb1f23de3c0d45cc7f234c24f0f2c784d13014",
       "status": "aktif",
       "topics": [
         "u-cumle"
@@ -12952,14 +12952,14 @@
       ]
     },
     "TUR-0019": {
-      "sha256": "1db0e463908d0330537849c7dbdbe5c2cde2dda40c4250520b2fb0c30eaea7a2",
+      "sha256": "07c914cae2675b65eead5886beac9c4ab222b4a690c8857606213ea99a351eed",
       "status": "aktif",
       "topics": [
         "u-paragraf"
       ]
     },
     "TUR-0020": {
-      "sha256": "fa20f053f6cfb13e9e45364d40bbf4cb0eabcc32c7105b85738d5aef43a57c2f",
+      "sha256": "b2ac8c2d46f612ba21393550325d6497462a56e06ab1efcb664b0b13e9007086",
       "status": "aktif",
       "topics": [
         "u-paragraf"
@@ -13015,7 +13015,7 @@
       ]
     },
     "TUR-0028": {
-      "sha256": "445356db6fe7f14dad3c94167a71473d8e96987fc3f013eefb23c5558a84c020",
+      "sha256": "75c9e9ffda0755f8d55f9cb2029bb44626b11c79bad964138d7fe9227eb57ab6",
       "status": "aktif",
       "topics": [
         "u-ses"
@@ -13106,7 +13106,7 @@
       ]
     },
     "TUR-0041": {
-      "sha256": "c66f0dc1050c9fa43cc6287ddad48d65ba5268e9bd931fb27fe5f56967bec7b3",
+      "sha256": "8e8bb44a6821275c08205dba26110396813241e50cc4a357d8ae9bb79249f672",
       "status": "aktif",
       "topics": [
         "u-yapi"
@@ -13183,7 +13183,7 @@
       ]
     },
     "TUR-0052": {
-      "sha256": "faf8124f3ac335eb17ebc94bee5cf8917049e7cfe71c371348a1f64dd36050b2",
+      "sha256": "de4497fd8352d7774ec25ea4aae5de7512ccfc89724af3c9ddbd198c593b70ed",
       "status": "aktif",
       "topics": [
         "u-bozukluk"
@@ -13470,7 +13470,7 @@
       ]
     },
     "TUR-0093": {
-      "sha256": "6803868716baaea7d66bbd31e475be3e33763ede43c6946ac3c2147999eb7f90",
+      "sha256": "0be5df83ba9430921c617c0c5e7b67e2cf87901a1bc7a25effd5b3145da715f1",
       "status": "aktif",
       "topics": [
         "u-yazim"
@@ -13575,7 +13575,7 @@
       ]
     },
     "TUR-0108": {
-      "sha256": "04631876000aeba46e8acf8644e249103456464d54c88e19f66a11c49a241f2f",
+      "sha256": "24d3000acd134d2d5f70f94f8c77d8af36288c33560fb8eb4d2f2a24ce14b49a",
       "status": "aktif",
       "topics": [
         "u-ogeler"
@@ -13701,7 +13701,7 @@
       ]
     },
     "TUR-0126": {
-      "sha256": "501f9527e91f7e7a347e436e157f94b31410ec8d6a291c55200bfa8d15dc7e31",
+      "sha256": "ef5ba981109dc81ddcccb9859631d6300d38e150cbfecb5d097116314b090a46",
       "status": "aktif",
       "topics": [
         "u-ogeler"
@@ -17670,7 +17670,7 @@
       ]
     },
     "GUN-0068": {
-      "sha256": "bcb63aa119bbf72cdc6edd3ffa94aeb9b64fed3947d01df930a805b75fd94c50",
+      "sha256": "2307b0b83a53bd6a80eb5df1b4824de27f3399e941d6ca10f24ed2c5b35c9044",
       "status": "aktif",
       "topics": [
         "g-kurum"
@@ -17698,7 +17698,7 @@
       ]
     },
     "GUN-0072": {
-      "sha256": "b91411ace3034a2935887036cbaa959d44b97133fd213007e5a828c360de3ea6",
+      "sha256": "aad204569b63a4a8c17eebb1a5a91471f0023274fc86805d8f76af4830e1b744",
       "status": "aktif",
       "topics": [
         "g-kurum"
@@ -17763,14 +17763,14 @@
       ]
     },
     "GUN-0082": {
-      "sha256": "d5a46c93a1a17149f86a760fbea1f319e1cdcc3dffdf0e683784d192c365bc8d",
+      "sha256": "3b098f9fe61945e678cf794a7cd96e9395025115cf61213c24c5390ac699baea",
       "status": "aktif",
       "topics": [
         "g-kurum"
       ]
     },
     "GUN-0083": {
-      "sha256": "1c518637b467d09b81759082d3bc1e474951a47be7a0b549cd7f8bc555f23d85",
+      "sha256": "819063bbaf0d7a29c549bbbca6d09d8c4423e59ec8bfe25222a563cbc80ade19",
       "status": "aktif",
       "topics": [
         "g-dunya"
@@ -17805,7 +17805,7 @@
       ]
     },
     "GUN-0088": {
-      "sha256": "9f7d541f7b345ab47a008b5d9a858aedaeed7b3b1d679bea76904bdf00bc57b0",
+      "sha256": "b05f2f71434c0e9addcea7390c85c6d31bb4ffecfa793597e8d6df88f92c8ef9",
       "status": "aktif",
       "topics": [
         "g-spor"
@@ -17819,7 +17819,7 @@
       ]
     },
     "GUN-0090": {
-      "sha256": "42b3eb1063ea921e27fa7b6a6dcc9912420ffb8539325089d5156ba8100b404c",
+      "sha256": "94bab840e818618f6e7524c82fdcfca32764bb0f92586639b5649f051362e36e",
       "status": "aktif",
       "topics": [
         "g-spor"
@@ -17889,7 +17889,7 @@
       ]
     },
     "GUN-0100": {
-      "sha256": "7eff877b0e9902e53be3170197a0a5f7df245eb8af50a7343b7268b07c7ce22e",
+      "sha256": "b3ef31537778b01840c6302e7bffafcc95b8eac7fb2de5a09feee5c574a24828",
       "status": "aktif",
       "topics": [
         "g-kultur"
@@ -18412,14 +18412,14 @@
       ]
     },
     "GUN-0176": {
-      "sha256": "04c23f01885fa02ce28e382b72b0d85e7ec818f9a0f94425605952de975346e2",
+      "sha256": "1825b0b0a74664a0076ff723899307f0b610995dfcf82a38bad4e06ee9128a36",
       "status": "aktif",
       "topics": [
         "g-spor"
       ]
     },
     "GUN-0177": {
-      "sha256": "675ab3127813cdcc4ba9ff6f323598e9125385ddf66e054367e8e0396686d2cd",
+      "sha256": "429ed55d0b4093b9e5d6e420869c521d042c49d5209f786546a5aa3925bb7df5",
       "status": "aktif",
       "topics": [
         "g-spor"
@@ -18608,7 +18608,7 @@
       ]
     },
     "GUN-0204": {
-      "sha256": "f623c417f61ab88eec9ad1748af44156057fae83dc92c338abfe87d3d0f53355",
+      "sha256": "c078e6782e21d94c7993da5bbaf30b26497c121ca062fa511cdd81b494970cbe",
       "status": "aktif",
       "topics": [
         "g-kultur"

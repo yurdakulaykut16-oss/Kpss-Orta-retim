@@ -13,12 +13,13 @@ data/ klasörünün içindedir; ilerleme verisi data/ilerleme/ altında saklanı
 from __future__ import annotations
 
 import json
+from collections import Counter
 import re
 import threading
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
-from kpss_kapsam import read_policy, filter_bank, project_exams
+from kpss_kapsam import read_policy, filter_bank, project_exams, question_key
 
 KOK = Path(__file__).resolve().parent
 VERI = KOK / "data"
@@ -220,13 +221,44 @@ def ilerleme_oku(kullanici: str) -> dict:
     return {"kullanici": kullanici, "gorevler": {}, "soru_kayit": {}, "etiketler": {}, "denemeler": [], "oturumlar": []}
 
 
+def _ilerleme_yaz_kilitsiz(kullanici: str, veri: dict) -> dict:
+    yol = ilerleme_dosya(kullanici)
+    onceki = ilerleme_oku(kullanici)
+    cache = her_seyi_yukle()
+    index = {sid:s for rows in cache['soru_index'].values() for sid,s in rows.items()}
+    old_ids, old_roots = kullanim_gecmisi(onceki, index)
+    onceki['ayrilan_sorular'] = {**{sid:True for sid in old_ids}, **onceki.get('ayrilan_sorular', {})}
+    onceki['ayrilan_kokler'] = {**onceki.get('ayrilan_kokler', {}), **{k:True for k in old_roots}}
+    # Gecikmiş sekme/yedek, sunucuda ayrılmış soruları serbest bırakamaz.
+    for alan in ("ayrilan_sorular", "ayrilan_kokler"):
+        eski, yeni = onceki.get(alan, {}), veri.get(alan, {})
+        veri[alan] = {**(eski if isinstance(eski, dict) else {}),
+                      **(yeni if isinstance(yeni, dict) else {})}
+    veri["kullanici"] = kullanici
+    tmp = yol.with_suffix('.json.tmp')
+    tmp.write_text(json.dumps(veri, ensure_ascii=False, indent=1), encoding='utf-8')
+    tmp.replace(yol)  # Okuyucu yarım yazılmış kayıt görmez.
+    return veri
+
+
 def ilerleme_yaz(kullanici: str, veri: dict) -> dict:
     with _KILIT:
-        yol = ilerleme_dosya(kullanici)
-        veri["kullanici"] = kullanici
-        with open(yol, "w", encoding="utf-8") as f:
-            json.dump(veri, f, ensure_ascii=False, indent=1)
-    return veri
+        return _ilerleme_yaz_kilitsiz(kullanici, veri)
+
+
+def kullanim_gecmisi(veri, index):
+    ids = set(veri.get('ayrilan_sorular', {}))
+    roots = set(veri.get('ayrilan_kokler', {}))
+    for sid, k in veri.get('soru_kayit', {}).items():
+        if isinstance(k, dict) and (k.get('son') or k.get('d', 0) > 0 or k.get('y', 0) > 0):
+            ids.add(sid)
+    ids.update(veri.get('gunluk', {}).get('ids', {}))
+    for g in veri.get('ders_gunluk', {}).values():
+        ids.update(g.get('ids', {}))
+    for d in veri.get('denemeler', []):
+        ids.update(d.get('sorular', []))
+    roots.update(question_key(index[sid]) for sid in ids if sid in index)
+    return ids, roots
 
 
 # ---------------------------------------------------------------- rotalar
@@ -247,6 +279,7 @@ def api_meta():
             "sinav": program["sinav"],
             "dersler": DERSLER,
             "soru_sayilari": soru_sayilari,
+            "havuz_hedefleri": {"guncel": 3000},
             "kapsam": {k: v for k, v in c['kapsam'].items() if k != 'bekleyen_kayitlar'},
             "gun_ozetleri": [
                 {"no": g["no"], "tarih": g["tarih"], "tema": g["tema"]} for g in program["gunler"]
@@ -322,6 +355,49 @@ def api_deneme(did: str):
                         break
             return jsonify({**d, "soru_nesneleri": sorular})
     return jsonify({"hata": "deneme yok"}), 404
+
+
+@app.post("/api/soru-ayir/<kullanici>")
+def api_soru_ayir(kullanici):
+    """Aynı profil için kontrol + ayırma atomik; gösterimden önce çağrılır."""
+    payload = request.get_json(silent=True)
+    if not isinstance(payload, dict):
+        return jsonify(hata='Geçersiz istek'), 400
+    ids, tur, oturum = payload.get('ids'), payload.get('tur'), payload.get('oturum')
+    if (tur not in ('test', 'deneme') or not isinstance(oturum, str) or not 1 <= len(oturum) <= 160
+            or not isinstance(ids, list) or not 1 <= len(ids) <= 50
+            or not all(isinstance(i, str) for i in ids) or len(ids) != len(set(ids))):
+        return jsonify(hata='Geçersiz soru ayırma bilgisi'), 400
+    cache = her_seyi_yukle()
+    index = {sid:s for rows in cache['soru_index'].values() for sid,s in rows.items()}
+    if any(sid not in index for sid in ids):
+        return jsonify(hata='Kapsam dışı veya bilinmeyen soru ayrılamaz'), 400
+    exams = cache['denemeler']['denemeler']
+    did = payload.get('deneme_id') if tur == 'deneme' else None
+    if tur == 'deneme':
+        exam = next((d for d in exams if d['id'] == did), None)
+        if not exam or Counter(index[i]['ders'] for i in ids) != Counter(index[i]['ders'] for i in exam['sorular']):
+            return jsonify(hata='Deneme sayısı veya ders dağılımı değiştirilemez'), 400
+    reserved = {sid for d in exams if d['id'] != did for sid in d['sorular']}
+    reserved_roots = {question_key(index[sid]) for sid in reserved}
+    roots = [question_key(index[sid]) for sid in ids]
+    if len(set(roots)) != len(roots) or any(sid in reserved for sid in ids) or set(roots) & reserved_roots:
+        return jsonify(hata='Tekrarlı veya başka denemeye ayrılmış soru'), 409
+    with _KILIT:
+        veri = ilerleme_oku(kullanici)
+        used, used_roots = kullanim_gecmisi(veri, index)
+        if used.intersection(ids) or used_roots.intersection(roots):
+            return jsonify(hata='Bu sorulardan biri daha önce ayrıldı veya çözüldü. Yeni oturum açın.',
+                           ayrilan_sorular={sid:True for sid in used},
+                           ayrilan_kokler={k:True for k in used_roots}), 409
+        metadata = dict(tur=tur, oturum=oturum)
+        added_ids, added_roots = {sid:metadata for sid in ids}, {k:True for k in roots}
+        veri['ayrilan_sorular'] = {**{sid:True for sid in used},
+                                  **veri.get('ayrilan_sorular', {}), **added_ids}
+        veri.setdefault('ayrilan_kokler', {}).update({k:True for k in used_roots})
+        veri['ayrilan_kokler'].update(added_roots)
+        _ilerleme_yaz_kilitsiz(kullanici, veri)
+    return jsonify(ok=True, ayrilan_sorular=added_ids, ayrilan_kokler=added_roots)
 
 
 @app.get("/api/ilerleme/<kullanici>")

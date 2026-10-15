@@ -179,6 +179,13 @@ def build(root=ROOT):
 
 def main():
     result = build()
+    # Tarihî bilgi tablosu korunur; daha sonraki açık editoryal revizyonlar
+    # tekrar üretimde eski kombinasyon sorularına geri döndürülemez.
+    quality_path = ROOT / 'data/kaynaklar/kalite_01.tsv'
+    if quality_path.exists():
+        revisions = {l.split('|')[0]: l.split('|') for l in quality_path.read_text().splitlines()
+                     if l and not l.startswith('#')}
+        result = {d:[revisions.get(r[0],r) for r in rows] for d,rows in result.items()}
     for ders, rows in result.items():
         path = ROOT / 'data/kaynaklar' / FILES[ders]
         path.write_text('# Elle hazırlanmış bilgi tablolarından özgün soru yeniden yazımı.\n' +

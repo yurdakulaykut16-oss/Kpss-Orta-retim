@@ -29,7 +29,7 @@ function bosKayit() {
     kullanici: KULLANICI, gorevler: {}, soru_kayit: {}, etiketler: {},
     denemeler: [], oturumlar: [], okunan: {},
     ustalik: {}, gunluk: { tarih: null, sayi: 0, ids: {} }, konu_okuma: {},
-    odak: {}, ders_gunluk: {}, ders_akis: {},
+    odak: {}, ders_gunluk: {}, ders_akis: {}, ayrilan_sorular: {}, ayrilan_kokler: {},
   };
 }
 async function kayitYukle() {
@@ -44,9 +44,11 @@ async function kayitYukle() {
     const b = bosKayit();
     for (const k of Object.keys(b)) if (V.kayit[k] === undefined) V.kayit[k] = b[k];
   }
+  try { gecmisiKoru(JSON.parse(localStorage.getItem("kpss-kayit") || "null")); } catch {}
 }
 let kayitTimer = null;
 function kaydet() {
+  try { gecmisiKoru(JSON.parse(localStorage.getItem("kpss-kayit") || "null")); } catch {}
   localStorage.setItem("kpss-kayit", JSON.stringify(V.kayit));
   clearTimeout(kayitTimer);
   kayitTimer = setTimeout(() => {
@@ -76,11 +78,14 @@ function kapsamHavuzUyarisi(d) {
   const k = V.meta?.kapsam;
   if (!k) return "";
   const dersler = d ? [d] : Object.keys(DERSLER);
-  const dar = dersler.filter((x) => (k.dersler[x]?.aktif || 0) < DERS_HEDEF);
+  const kalan = Object.fromEntries(dersler.map((x) => [x,yeniSorular(V.sorular[x] || []).length]));
+  const dar = dersler.filter((x) => kalan[x] < DERS_HEDEF);
   return `<div class="card kapsam-havuzu">
     <b>Geçmiş KPSS konu filtresi açık</b>
     <p>Yalnızca konu örneğine bağlanmış kayıtlar çözüm havuzundadır. Özgün sorular birebir çıkmış soru değildir. ${k.aktif} aktif soru; ${k.bekleyen} kayıt inceleme bekliyor.</p>
-    ${dar.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru var; ${DERS_HEDEF} farklı soruya yetmiyor. Hedefi doldurmak için kapsam dışı soru eklenmez.</p>`).join("")}
+    <p><b>Güncel havuz hedefi:</b> ${V.meta.havuz_hedefleri?.guncel || 3000} farklı soru. Şu an ${k.dersler.guncel.aktif} aktif; hedefe ${Math.max(0,(V.meta.havuz_hedefleri?.guncel || 3000)-k.dersler.guncel.aktif)} soru kaldı.</p>
+    <p>Test ve deneme soruları ayrı tutulur. Havuz tükenirse eski soru ile doldurulmaz. Oturuma ayrılan sorular, cevaplanmadan çıkılsa da yeni oturumda verilmez.</p>
+    ${dar.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru var; geçmiş kullanım ve deneme rezervleri çıkarılınca ${kalan[x]} yeni test sorusu kaldı. ${DERS_HEDEF} farklı soruya yetmiyor. Hedefi doldurmak için kapsam dışı soru eklenmez.</p>`).join("")}
   </div>`;
 }
 
@@ -117,6 +122,50 @@ async function veriYukle() {
       .map(([konu, liste]) => ({ konu, liste, adet: liste.length, gunler: [...new Set(liste.map((s) => s.gun))].sort((a, b) => a - b) }))
       .sort((a, b) => (a.gunler[0] ?? 0) - (b.gunler[0] ?? 0) || a.konu.localeCompare(b.konu, "tr"));
   }
+}
+
+/* Kalıcı kullanım kaydı: günlük sayaç sıfırlansa da ayrılan sorular geri gelmez. */
+function gecmisiKoru(other) {
+  V.kayit.ayrilan_sorular ||= {}; V.kayit.ayrilan_kokler ||= {};
+  for (const record of [other, V.kayit]) {
+    if (!record || typeof record !== "object") continue;
+    const h = SoruSecimi.gecmis(record,V.tumSorular);
+    h.ids.forEach((id) => { V.kayit.ayrilan_sorular[id] ||= {tur:"geçmiş"}; });
+    h.roots.forEach((k) => { V.kayit.ayrilan_kokler[k] = true; });
+  }
+}
+function yeniSorular(havuz) {
+  return SoruSecimi.yeni(havuz,SoruSecimi.gecmis(V.kayit,V.tumSorular),
+    SoruSecimi.ayrilan(V.denemeler.denemeler,V.tumSorular));
+}
+async function soruAyir(liste, tur, oturum, denemeId) {
+  try { gecmisiKoru(JSON.parse(localStorage.getItem("kpss-kayit") || "null")); } catch {}
+  const reserved = SoruSecimi.ayrilan(V.denemeler.denemeler,V.tumSorular,tur === "deneme" ? denemeId : undefined);
+  const fresh = SoruSecimi.yeni(liste,SoruSecimi.gecmis(V.kayit,V.tumSorular),reserved);
+  if (fresh.length !== liste.length) throw new Error("Soru kullanım kaydı değişti; aynı sorular gösterilmedi. Yeni bir oturum açın.");
+  const response = await fetch(`/api/soru-ayir/${KULLANICI}`, {
+    method:"POST", headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({ids:liste.map((s) => s.id),tur,oturum,deneme_id:denemeId})
+  });
+  const result = await response.json();
+  if (result.ayrilan_sorular || result.ayrilan_kokler) gecmisiKoru(result);
+  if (!response.ok) {
+    kaydet();
+    throw new Error(result.hata || "Soru ayırma doğrulanamadı; eski sorular gösterilmedi.");
+  }
+  liste.forEach((s) => {
+    V.kayit.ayrilan_sorular[s.id] = {tur,oturum,tarih:new Date().toISOString()};
+    V.kayit.ayrilan_kokler[SoruSecimi.kok(s)] = true;
+  });
+  // Gösterimden ÖNCE kaydet: cevaplanmadan bırakılan oturum da yeniden dağıtılmaz.
+  kaydet();
+}
+function havuzBitti(message) {
+  V.oturum = null; V.denemeOturum = null; document.onkeydown = null;
+  clearInterval(V._sayac);
+  $("#view").innerHTML = `<div class="kart"><h2>Yeni soru havuzu yetersiz</h2><p>${esc(message)}</p>
+    <p>Eski soru yeniden verilmez; deneme için ayrılan sorular testlerde kullanılmaz.</p>
+    <a class="btn" href="#/coz">Test menüsü</a> <a class="btn seffaf" href="#/denemeler">Denemeler</a></div>`;
 }
 
 /* ---------------- ustalık & anti-tekrar ---------------- */
@@ -167,28 +216,20 @@ function kitapSorusu(s) {
   return /Soru Bankası/.test(k) && !/^\d{4}-KPSS/.test(k);
 }
 function secimPuani(s, opts = {}) {
-  const k = V.kayit.soru_kayit[s.id];
-  const g = V.kayit.gunluk || { ids: {} };
-  const u = V.kayit.ustalik[konuAnahtar(s.ders, s.konu)];
-  let p = Math.random() * 12;
-  if (!k || !k.son) p += 120;                 // hiç görülmemiş → öncelik
-  if (g.ids[s.id]) p -= 260;                  // bugün çıktı → gelmesin
-  if (k) {
-    if (k.y > k.d) p += 55;                   // yanlışlı → ustalana kadar tekrar
-    if (k.d >= 2 && k.y === 0) p -= 110;      // ustalaştı → uzak
-    p += Math.min(35, (Date.now() - k.son) / 3.6e9); // eski gören öncelik
-  }
-  if (u && u.usta) p -= 70;
-  if (kitapSorusu(s) && !(k && k.d >= 2 && k.y === 0)) p += 150; // 📚 kitap soruları önce (ustalanana dek)
-  if (opts.zayifOdak && k && k.y > 0) p += 45;
-  const odak = (V.kayit.odak || {})[konuAnahtar(s.ders, s.konu)];
-  if (odak > 0) p += 50 + Math.min(40, odak * 10);  // deneme zayıflığı → öncelikli
+  // Geçmiş kullanım burada puanla yumuşatılmaz; yeniSorular kesin olarak eler.
+  const key = konuAnahtar(s.ders,s.konu);
+  let p = Math.random()*12;
+  if (kitapSorusu(s)) p += 150;
+  if (opts.zayifOdak) p += (100-ustalikOrani(key))/2;
+  if (V.kayit.ustalik[key]?.usta) p -= 70;
+  const odak = (V.kayit.odak || {})[key] || 0;
+  if (odak > 0) p += 50+Math.min(40,odak*10);
   return p;
 }
+
 function testSeti(havuz, adet, opts = {}) {
-  return [...havuz]
-    .sort((a, b) => secimPuani(b, opts) - secimPuani(a, opts))
-    .slice(0, adet);
+  return yeniSorular(havuz).map((s) => ({s,puan:secimPuani(s,opts)}))
+    .sort((a,b) => b.puan-a.puan).slice(0,adet).map((x) => x.s);
 }
 function etiketZayiflik(t) {
   const k = V.kayit.etiketler[t] || { d: 0, y: 0 };
@@ -209,8 +250,10 @@ function zayifKonular(ders, limit = 8) {
 }
 function benzerler(soru, n = 2, haric = []) {
   const et = soru.etiketler || [];
-  const aday = (V.sorular[soru.ders] || []).filter(
+  const konular = new Set((soru.kpss_kapsam?.konular || []).map((t) => t.id));
+  const aday = yeniSorular(V.sorular[soru.ders] || []).filter(
     (s) => s.id !== soru.id && !haric.includes(s.id) && !V.oturumTecih?.[s.id]
+      && (s.konu === soru.konu || (s.kpss_kapsam?.konular || []).some((t) => konular.has(t.id)))
   );
   aday.sort((a, b) => {
     const oa = (a.etiketler || []).filter((t) => et.includes(t)).length;
@@ -676,7 +719,11 @@ function viewCozHub() {
   topbar("Test Çöz");
 }
 
-function viewCoz(mod, ders, arg, sub) {
+async function viewCoz(mod, ders, arg, sub) {
+  const hash=location.hash;
+  if (V.startingRoute === hash) return;
+  V.startingRoute=hash;
+  try {
   {
     let liste = [], baslik = "";
     const dAd = ders && DERSLER[ders] ? DERSLER[ders].ad : null;
@@ -727,8 +774,12 @@ function viewCoz(mod, ders, arg, sub) {
     } else {
       return (location.hash = "#/coz");
     }
-    if (!liste.length) return (location.hash = "#/coz");
-    V.oturum = {
+    if (!liste.length) return havuzBitti("Bu seçimde kullanılmamış test sorusu kalmadı. Konu veya ders seçimini değiştirebilirsiniz.");
+    const uid = `test-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    try { await soruAyir(liste,"test",uid); }
+    catch (e) { if (location.hash === hash) return havuzBitti(e.message); else return; }
+    if (location.hash !== hash) return;
+    V.oturum = {uid,
       mod, ders, arg, sub, baslik, sira: 0, dogru: 0, yanlis: 0,
       kuyruk: liste.map((s) => ({ s, tip: "ana" })),
       gorulen: [], bas: Date.now(),
@@ -737,6 +788,7 @@ function viewCoz(mod, ders, arg, sub) {
     liste.forEach((s) => (V.oturumTecih[s.id] = 1));
   }
   renderQuiz();
+  } finally { if (V.startingRoute === hash) V.startingRoute=null; }
 }
 
 function renderQuiz() {
@@ -781,7 +833,7 @@ function renderQuiz() {
             : `<span class="meta">Bir şıkka dokun veya klavyeden A–E ile cevapla. (Bugün ${g.sayi}/${GUNLUK_HEDEF})</span>`}
       </div>
     </div>
-    <div class="benzer-not">💡 10 soru bitince <b>otomatik kontrol</b> yapılır: yanlışların çözümleri + <b>farklı anlatım</b> kartları gösterilir, o konudan yeni sorular gelir. Aynı soru bugün tekrar gelmez.</div>
+    <div class="benzer-not">💡 10 soru bitince <b>otomatik kontrol</b> yapılır: yanlışların çözümleri + <b>farklı anlatım</b> kartları gösterilir, o konudan yeni sorular gelir. Aynı soru yeni test veya denemede tekrar verilmez.</div>
   </div>`;
   $$(".sik").forEach((el) => el.onclick = () => cevapla(+el.dataset.sik));
   const sb = $("#sonraki-btn"); if (sb) sb.onclick = () => { o.sira++; renderQuiz(); };
@@ -799,7 +851,7 @@ function cozumHtml(s, k) {
     <div class="meta" style="font-size:12px">Kaynak: ${esc(s.kaynak)} · Etiketler: ${(s.etiketler || []).join(", ")}</div>
   </div>`;
 }
-function cevapla(i) {
+async function cevapla(i) {
   const o = V.oturum; if (!o) return;
   const { s } = o.kuyruk[o.sira];
   if (o.gorulen[o.sira]) return;
@@ -824,9 +876,15 @@ function cevapla(i) {
   const dg = dersGunlukKaydi(s.ders); dg.sayi++; dg.ids[s.id] = 1;
   if (!dogru) {
     const ben = benzerler(s, 2, o.kuyruk.map((x) => x.s.id));
-    ben.forEach((b) => { o.kuyruk.push({ s: b, tip: "pekiştirme" }); V.oturumTecih[b.id] = 1; });
+    if (ben.length) {
+      try {
+        await soruAyir(ben,"test",o.uid);
+        ben.forEach((b) => { o.kuyruk.push({ s:b,tip:"pekiştirme" }); V.oturumTecih[b.id] = 1; });
+      } catch { /* Başka oturumun ayırdığı benzer soru kuyrukta tekrar kullanılamaz. */ }
+    }
   }
   kaydet();
+  if (V.oturum !== o) return;
   const cevapAdet = o.gorulen.filter(Boolean).length;
   if (cevapAdet > 0 && cevapAdet % BATCH === 0) return testKontrol();
   renderQuiz();
@@ -886,7 +944,7 @@ function testKontrol() {
     <div class="hero">
       <span class="etiket">📋 OTOMATİK KONTROL — ${yanlis ? yanlis + " yanlış" : "HATASIZ! 🎉"}</span>
       <h1>${batch.length} soru · ${dogru} doğru, ${yanlis} yanlış</h1>
-      <p>${yanlis ? "Aşağıda yanlışların çözümleri ve o konuların FARKLI ANLATIMI var. Yeni sorularla tekrar çözmeye devam et — ustalana kadar!" : "Harika! Devam edersen yeni sorular gelir; aynı soru bugün tekrar etmez."}</p>
+      <p>${yanlis ? "Aşağıda yanlışların çözümleri ve o konuların FARKLI ANLATIMI var. Yeni sorularla tekrar çözmeye devam et — ustalana kadar!" : "Harika! Devam edersen yeni sorular gelir; aynı soru yeni oturumlarda tekrar verilmez."}</p>
     </div>
     <div class="net-kutu">
       <div><b style="color:var(--iyi)">${dogru}</b>Doğru</div>
@@ -904,7 +962,7 @@ function testKontrol() {
       <a class="btn" href="#/gun/${bugunKampGunu()}">Günün rehberi</a>
       <a class="btn seffaf" href="#/coz">Test menüsü</a>
     </div>
-    <div class="benzer-not">📊 Ustalık: ${Object.values(V.kayit.ustalik).filter((u) => u.usta).length} konuda usta · Bugün ${gunlukSayac().sayi}/${GUNLUK_HEDEF} soru${o.ders && DERSLER[o.ders] ? ` · ${DERSLER[o.ders].ad}: ${dersGunlukKaydi(o.ders).sayi}/${DERS_HEDEF}` : ""} · Aynı soru bugün tekrar gelmez.</div>
+    <div class="benzer-not">📊 Ustalık: ${Object.values(V.kayit.ustalik).filter((u) => u.usta).length} konuda usta · Bugün ${gunlukSayac().sayi}/${GUNLUK_HEDEF} soru${o.ders && DERSLER[o.ders] ? ` · ${DERSLER[o.ders].ad}: ${dersGunlukKaydi(o.ders).sayi}/${DERS_HEDEF}` : ""} · Aynı soru yeni test veya denemede tekrar verilmez.</div>
   </div>`;
   topbar("Otomatik Kontrol");
 }
@@ -953,7 +1011,7 @@ function viewDenemeBilgi(id) {
         <li>Her soru 5 şıklı (A–E). Klavyeden 1–5 veya A–E ile cevap verebilirsin.</li>
         <li>Takıldığında işaretle ve geç — daha sonra geri dönersin.</li>
         <li>Bitir'de: net, konu analizi ve tüm çözümler gösterilir.</li>
-        <li>Yanlışların Hata Defteri'ne işlenir; ertesi günün setinde %40 ağırlıkla gelir.</li>
+        <li>Yanlış konuların Hata Defteri'ne işlenir; sonraki testlerde aynı konudan farklı sorular seçilir.</li>
       </ul>
       <div class="sonuc-satir"><a class="btn yesil" href="#/deneme-run/${id}">⏱ Süreyi Başlat</a>
       <a class="btn seffaf" href="#/gun/${d.gun}">Günün rehberine dön</a></div>
@@ -962,7 +1020,22 @@ function viewDenemeBilgi(id) {
   topbar(d.ad);
 }
 async function viewDenemeRun(id) {
-  const c = await fetch(`/api/deneme/${id}`).then((r) => r.json());
+  const hash=location.hash;
+  if (V.startingRoute === hash) return;
+  V.startingRoute=hash;
+  try {
+  clearInterval(V._sayac);
+  let c;
+  try {
+    const response = await fetch(`/api/deneme/${id}`);
+    if (!response.ok) throw new Error("Deneme yüklenemedi.");
+    const template = await response.json();
+    try { gecmisiKoru(JSON.parse(localStorage.getItem("kpss-kayit") || "null")); } catch {}
+    c = SoruSecimi.deneme(template,Object.values(V.tumSorular),V.denemeler.denemeler,
+      SoruSecimi.gecmis(V.kayit,V.tumSorular));
+    await soruAyir(c.soru_nesneleri,"deneme",`deneme-${id}-${Date.now()}`,id);
+  } catch (e) { if (location.hash === hash) return havuzBitti(e.message); else return; }
+  if (location.hash !== hash) return;
   V.denemeOturum = {
     d: c, sira: 0, cevaplar: {}, isaretli: new Set(), bas: Date.now(), sure: c.sure_dk * 60,
   };
@@ -978,6 +1051,7 @@ async function viewDenemeRun(id) {
       if (k <= 0) { clearInterval(V._sayac); denemeBitir(); }
     }
   }, 500);
+  } finally { if (V.startingRoute === hash) V.startingRoute=null; }
 }
 function renderDeneme() {
   const o = V.denemeOturum;
@@ -1046,7 +1120,7 @@ window.denemeBitir = function () {
     else { y++; ek.y++; sk.y++; ustalikGuncelle(s, false); (s.etiketler || []).forEach((t) => { etiketKaydi(t).y++; etiketKaydi(t).tekrar++; }); }
   });
   const net = +(d - y / 4).toFixed(2);
-  V.kayit.denemeler.push({ id: o.d.id, ad: o.d.ad, tarih: new Date().toISOString(), dogru: d, yanlis: y, bos: b, net, sure: Math.floor((Date.now() - o.bas) / 1000) });
+  V.kayit.denemeler.push({ id: o.d.id, ad: o.d.ad, tarih: new Date().toISOString(), sorular:o.d.sorular, dogru: d, yanlis: y, bos: b, net, sure: Math.floor((Date.now() - o.bas) / 1000) });
   // deneme sonuçları ertesi günü yönetsin: yanlış/boşların konuları odak listesine
   V.kayit.odak = V.kayit.odak || {};
   o.d.soru_nesneleri.forEach((s) => {
@@ -1218,7 +1292,8 @@ window.disaAktar = () => {
   a.href = URL.createObjectURL(blob); a.download = "kpss-kamp-yedek.json"; a.click();
 };
 window.sifirla = async () => {
-  if (!confirm("TÜM ilerleme silinecek. Emin misin?")) return;
+  if (!confirm("TÜM ilerleme ve tekrar engelleme kaydı silinecek; eski sorular yeniden gelebilecek. Emin misin?")) return;
   await fetch(`/api/sifirla/${KULLANICI}`);
+  localStorage.removeItem("kpss-kayit");
   V.kayit = bosKayit(); kaydet(); location.hash = "#/panel"; route();
 };
