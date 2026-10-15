@@ -18,6 +18,7 @@ import threading
 from pathlib import Path
 
 from flask import Flask, jsonify, request, send_from_directory
+from kpss_kapsam import read_policy, filter_bank, project_exams
 
 KOK = Path(__file__).resolve().parent
 VERI = KOK / "data"
@@ -184,17 +185,20 @@ def her_seyi_yukle(zorla: bool = False):
     with _cache_kilit:
         if _cache and not zorla:
             return _cache
-        _cache.clear()
-        _cache["program"] = program_yukle()
-        _cache["denemeler"] = denemeler_yukle()
-        _cache["konu_yeniden"] = _json_oku(VERI / "konu_yeniden.json") if (VERI / "konu_yeniden.json").exists() else {}
-        _cache["dersler"] = {d: ders_md_bol(d) for d in DERSLER}
+        _cache.clear()  # Zorunlu yenileme başarısızsa eski izinleri de servis etme.
+        # Önce kapsamı doğrula. Eksik/bozuk kapsamda ham bankayı veya yarım
+        # cache'i servis etme; bütün çözüm yolları aynı aktif indeksi kullanır.
+        raw = {d: sorular_yukle(d) for d in DERSLER}
+        active, report = filter_bank(raw, read_policy(KOK))
+        fresh = dict(program=program_yukle(), kapsam=report, sorular=active,
+                     denemeler=project_exams(denemeler_yukle(), raw, active),
+                     konu_yeniden=_json_oku(VERI / "konu_yeniden.json") if (VERI / "konu_yeniden.json").exists() else {},
+                     dersler={d: ders_md_bol(d) for d in DERSLER})
         for d in DERSLER:
-            _cache["dersler"][d]["bilgi"] = DERSLER[d]
-        _cache["sorular"] = {d: sorular_yukle(d) for d in DERSLER}
-        _cache["soru_index"] = {
-            d: {s["id"]: s for s in _cache["sorular"][d]} for d in DERSLER
-        }
+            fresh["dersler"][d]["bilgi"] = DERSLER[d]
+        fresh["soru_index"] = {d: {s["id"]: s for s in active[d]} for d in DERSLER}
+        _cache.clear()
+        _cache.update(fresh)
         return _cache
 
 
@@ -243,6 +247,7 @@ def api_meta():
             "sinav": program["sinav"],
             "dersler": DERSLER,
             "soru_sayilari": soru_sayilari,
+            "kapsam": {k: v for k, v in c['kapsam'].items() if k != 'bekleyen_kayitlar'},
             "gun_ozetleri": [
                 {"no": g["no"], "tarih": g["tarih"], "tema": g["tema"]} for g in program["gunler"]
             ],
@@ -257,6 +262,11 @@ def api_meta():
 @app.get("/api/program")
 def api_program():
     return jsonify(her_seyi_yukle()["program"])
+
+
+@app.get("/api/kapsam")
+def api_kapsam():
+    return jsonify(her_seyi_yukle()['kapsam'])
 
 
 @app.get("/api/konu-yeniden")
@@ -279,7 +289,7 @@ def api_sorular(ders: str):
         return jsonify({"hata": "ders yok"}), 404
     veri = c["sorular"][ders]
     if request.args.get("cikmis"):
-        return jsonify([s for s in veri if re.match(r"^\d{4}-KPSS$", s.get("kaynak", ""))])
+        return jsonify([s for s in veri if re.match(r"^\d{4}-KPSS(?:\s|$)", s.get("kaynak", ""))])
     return jsonify(veri)
 
 

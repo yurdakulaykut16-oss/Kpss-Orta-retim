@@ -40,7 +40,8 @@ NODE_PATH=/tmp/kpss_test/node_modules node araclar/smoke_test.js
 
 Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
-> 📌 **Günlük soru hedefi (yeni):** Her derse günlük **minimum 500 soru** (toplam 2.500) — hepsi **10'ar soruluk testler** hâlinde.
+> 📌 **Günlük soru hedefi:** Ders başına **500 soru** (toplam 2.500), **10'ar soruluk testler** hâlinde.
+> Bu hedef 500 farklı aktif sorunun bulunduğu garantisi değildir: Güncel'de kapsam filtresi sonrası **364** farklı soru vardır; sayı için kapsam dışı soru eklenmez.
 > Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
 > Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
 
@@ -66,7 +67,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 ### 3. Ustalık Sistemi
 - Her konunun ustalığı takip edilir: **son 10 soruda 8+ doğru = Usta** (rozet yeşile döner).
 - Usta olmadığın konular öncelikli gelir; ustalaştığın konular geri planda kalır.
-- Her derste günlük **500 soru** hedeflenir (toplam **2.500**); havuz her ders için 500+ soru içerir, **durumuna göre** karşına çıkar, aynı soru tekrar etmez.
+- Her derste günlük **500 soru** hedeflenir (toplam **2.500**). Yalnız onaylı konu havuzu kullanılır; Güncel'de **364** farklı aktif soru bulunduğundan 500 farklı soru taahhüdü yoktur.
 
 ### 4. Aynı Soru Tekrar Gelmez
 - Bir soruyu **bugün** çözdüysen o gün tekrar gelmez (anti-tekrar).
@@ -83,15 +84,46 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 ## Kapsam (Sınav Mufredatı — geçmiş KPSS konuları)
 
-| Ders | Kapsam | Soru bankası |
-|------|--------|--------------|
-| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 610 |
-| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 557 |
-| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → insan hakları → seçimler | 516 |
-| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 634 |
-| **Güncel** | Türkiye yönetimi → ekonomi → kurumlar → son olaylar | 548 |
+| Ders | Aktif konu alanları | Arşiv | Aktif |
+|------|---------------------|-------|-------|
+| **Tarih** | İlk Türk Devletleri → Osmanlı → Milli Mücadele → Devrimler → Çağdaş Tarih | 610 | 610 |
+| **Coğrafya** | Harita–iklim → yer şekilleri → nüfus–ekonomi → bölgeler–afetler–çevre | 557 | 557 |
+| **Vatandaşlık** | Hukuk → Anayasa → haklar → TBMM–yürütme–yargı → seçimler | 516 | 516 |
+| **Türkçe** | Sözcükte/cümlede anlam → paragraf → **sözel mantık** → dil bilgisi | 634 | 634 |
+| **Güncel** | Kurumlar → kültür–sanat → ülkeler → ödüller → spor | 548 | 364 |
 
-> 📚 **Toplam: 2.865 soru** — bunların **404'ü KPSS yıl/oturum etiketi taşıyor**,
+### Bütün çözüm yollarında geçmiş KPSS konu kapsamı
+
+- **2.681 aktif, 184 inceleme bekleyen kayıt** vardır. Arşiv silinmez; bekleyen kayıtlar
+  konu/karışık test, telafi, doğrudan soru API'si veya denemede gösterilmez.
+- `data/kpss_kapsam.json` 44 konu alanını, bankadaki **aynı dersten yıl/oturum etiketli**
+  konu örneklerini ve her kayıt için içerik özeti + aktif/bekleyen kararını saklar.
+  Konu dayanakları yalnız inceleme yılından önce tamamlanan yıllardan seçilir.
+- **Konu eşleştirmesi geniş konu alanı düzeyindedir.** Özgün sorunun geçmiş sınavda
+  sorulduğu veya her alt bilgisinin aynı geçmiş soruda bulunduğu ileri sürülmez.
+  Banka kayıtlarının eşleştirilmesi, bağımsız ÖSYM kitapçık doğrulaması yerine geçmez.
+- 184 bekleyen kaydın **63'ü haricen doğrulanmamış olay/atama/sonuç bilgileri**,
+  **121'i bu incelemede aynı dersten konu dayanağı gösterilmeyen özgün genel bilim,
+  teknoloji ve ekonomi içerikleridir**. Bunların hepsinin kesinlikle müfredat dışı olduğu
+  iddia edilmez; belirsizlikte çözüm havuzuna alma yerine bekletme uygulanır.
+- `kpss_kapsam.py` yalnız başlığa güvenmez: içerik değiştiğinde, yeni kayıt geldiğinde,
+  konu örneği değiştiğinde veya başka dersten dayanak verildiğinde aktif izin düşer.
+  Eksik/bozuk kapsam dosyasında ham banka yedek olarak servis edilmez.
+- Her soru kartında kaynak satırından ayrı **Geçmiş KPSS konusu** bölümü vardır.
+  Konu örneğinin yılı, özgün sorunun kaynak yılı gibi gösterilmez.
+- `/api/meta` aktif sayıları; `/api/kapsam` sayıları ve bekleme gerekçelerini verir.
+  `/api/soru/<id>` bekleyen kayıt için 404 döndürür; arşiv sorgusuyla aşılamaz.
+- Arşiv denemeleri bellekte aynı ders dağılımı, soru sayısı ve tekillikle aktif havuza
+  yansıtılır. `data/denemeler.json`, ilerleme ve saklanmış sonuçlar değiştirilmez.
+  `araclar/deneme_uret.py` ile yeni üretimde de aynı filtre uygulanır.
+- Yeni/değişmiş içerik için `python3 araclar/kapsam_taslagi.py --output /tmp/kapsam_taslak.json`
+  **onaysız taslak** oluşturur. Etiketten önerilen konu otomatik onay değildir;
+  taslak üretim kapsam dosyasının üzerine yazılamaz. İnceleme sonrası açık onay gerekir.
+- `python3 araclar/veri_kontrol.py` arşiv bütünlüğü yanında kapsam envanterini de kontrol eder.
+  Yeni veya değiştirilmiş soru onayı eksikse denetim hata verir.
+
+
+> 📚 **Arşiv: 2.865; aktif çözüm havuzu: 2.681 soru** — arşivdeki kayıtların **404'ü KPSS yıl/oturum etiketi taşıyor**,
 > **88'i yayınevi soru bankasından** (kitapların kendi cevap anahtarlarıyla, `📌 Kaynak` notlu).
 >
 > **Zorluk standardı (hedef: her dersi fullemek):** Yalnızca bizim yazdığımız
@@ -99,9 +131,11 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > yazılıyor: senaryolu/anlamlı kökler, olumsuz sorular, I-II-III kombinasyonları,
 > eşleştirme; ayırt edici tuzak şıklar; her soruda "KPSS mantığı ile çözüm"
 > (doğru + tuzak açıklaması). `araclar/soru_yukselt.py` ile yerinde güncellenir;
-> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **İlk havuzdaki yeniden yazım: 2106/2116; ayrıca 194 yeni özgün soru.**
-> Toplam 2310 özgün kaydın 2300'ü yeni editoryal kapsamda; kalan 10 kayıt Coğrafya (6)
-> ve Vatandaşlık (4) derslerinde. Bu sayılar güçlük kalibrasyonu veya tam puan garantisi değildir.
+> `data/kaynaklar/yukselt_*.tsv` kaynak dosyalarıdır. **İlk havuzdaki yeniden yazım: 2116/2116; ayrıca 194 yeni özgün soru.**
+> Yedinci turda kalan Coğrafya (6) ve Vatandaşlık (4) kayıtları da yenilendi (TSV 25–26).
+> Arşivdeki 2310 özgün soru için yeniden yazım tamamlandı; bunların 121'i yukarıdaki
+> kapsam incelemesinde bekletilir. Yeniden yazım ile aktif kapsam onayı farklıdır.
+> Bu sayılar güçlük kalibrasyonu veya tam puan garantisi değildir.
 > İkinci parti: 50 yeni yeniden yazım; önceki partide ayrıca 25 içerik düzeltmesi.
 > Üçüncü parti: her dersten 10 olmak üzere 50 özgün soru daha yenilendi; toplam 200.
 > Dördüncü parti: her dersten 20 olmak üzere **100 özgün soru** yenilendi; toplam 300.
@@ -115,7 +149,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > 899 üç öncüllü, 306 yanlış yargıyı seçme, 295 doğru yargıyı seçme maddesi vardır. Aynı
 > bilgi kümesi yalnız sırası veya doğruluk deseni değiştirilerek ikinci kez sayılmaz.
 > `parti_1500_plan.json` hedefleri, yeni/eski ayrımını ve önce/sonra SHA-256 özetlerini sabitler.
-> Önceden yenilenmiş 800 kayıt ve korumalı 555 kayıt bu tur değişmedi. Eski özgün kayıtların
+> Önceden yenilenmiş 800 kayıt ve korumalı 555 kayıt altıncı turda değişmedi. Eski özgün kayıtların
 > **734 konu etiketi yeni içeriğe uygun başlığa taşındı**; id, ders ve günleri değişmedi.
 > Her yargı çözümde açıklanır; yanlış yargının doğru biçimi gösterilir. Açıklamadaki numaralar
 > kökteki yargıya atıf yapar; A–E şıkları karıştırıldığında açıklama kaymaz.
@@ -131,8 +165,8 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > doğru eşleşmeleri tek tek gösterir. Bunlar **özgün çalışma sorularıdır**, kitap alıntısı değildir.
 > TSV'de `\n` ile saklanan kök satır sonları, uygulamada öncülleri ayrı satırlarda gösterir.
 > `python3 -m unittest discover -s araclar -p 'test_*.py' -v` aktarım ve üretim testlerini çalıştırır.
-> Bu sürümde 31 test başarılıdır. Güncel sunucudan fixture çekilerek çalıştırılan
-> `araclar/smoke_test.js` 80 kontrolü geçer; her derste hem üç öncüllü hem beş yargılı
+> Bu sürümde 48 test başarılıdır. Güncel sunucudan fixture çekilerek çalıştırılan
+> `araclar/smoke_test.js` 96 kontrolü geçer; her derste hem üç öncüllü hem beş yargılı
 > kaydın satır sonu, kaynak, doğru şık ve çözüm gösterimi ayrıca kontrol edilir.
 > Bu teknik testler editoryal bilgi doğruluğunu veya sınavla eş güçlüğü tek başına kanıtlamaz.
 > Tüm yeniden yazımların şık, cevap ve çözüm aktarımı `test_yukselt_banka.py` ile denetlenir.
@@ -142,7 +176,8 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 > 📚 **Günlük 500 soruluk akışta kitap soruları önceliklidir:** her 10'luk sette önce Pegem / Öğreti
 > kitap soruları gelir (ustalanana dek), bitince bankanın diğer sorularıyla devam edersin. Setin
 > başındaki `📚 Kitap` rozeti ve soru altındaki `📌 Kaynak` satırı hangi kitaptan olduğunu gösterir.
-> Havuz her derste günde 500 soruya kadar besler; karşıya **10'luk setler** hâlinde gelir.
+> Sorular yalnız aktif kapsamdan **10'luk setler** hâlinde gelir. Güncel'deki 364 farklı
+> soru, 500 farklı soruya yetmediğinden bu sınır test menüsünde ve günlük akışta açıkça gösterilir.
 > Her 10 soruda otomatik kontrol + telafi döngüsü.
 >
 > ✅ **Gerçek çıkmış sorular eklendi:** 2014–2026 arası resmî ÖSYM kitapçıklarından (Ortaöğretim +
@@ -233,4 +268,4 @@ Yeni soru eklemek için `data/kaynaklar/*.tsv` dosyasına `ders|konu|gun|zorluk|
 
 ---
 
-*Başarılar! İlk 2 günde konuları bitir, sonra yanlışlarından ustalığa — her ders günde 500 soru (10'arlık testler), konular bitince karışık testler, aynı soru tekrar etmeden.* 🚀
+*Başarılar! Önce konular, sonra yanlışlardan ustalığa — 10'luk testler, yalnız geçmiş KPSS konu havuzu; sayı için kapsam dışı soru yok.* 🚀

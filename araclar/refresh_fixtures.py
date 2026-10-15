@@ -15,6 +15,7 @@ OUT = "/tmp/kpss_test"
 
 SABIT = {
     "/api/meta": "meta.json",
+    "/api/kapsam": "kapsam.json",
     "/api/program": "program.json",
     "/api/denemeler": "denemeler.json",
     "/api/konu-yeniden": "konu_yeniden.json",

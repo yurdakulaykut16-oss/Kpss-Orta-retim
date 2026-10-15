@@ -64,6 +64,10 @@ function mockFetch(url, opts) {
     V.oturum = {mod:"test", ders, baslik:"İçerik kontrolü", sira:0,
       dogru:0, yanlis:0, kuyruk:[{s:V.tumSorular[sid],tip:"ana"}],
       gorulen:[], bas:Date.now()}; V.oturumTecih = {}; renderQuiz();
+  };
+  window.__smokeSeedOldTopics = () => {
+    const a = dersAkisKaydi("guncel");
+    a.biten = Array.from({length:30}, (_,i) => "Kapsam dışı eski konu " + i);
   };`);
   win.dispatchEvent(new win.Event("load"));
   await tick(250);
@@ -106,6 +110,8 @@ function mockFetch(url, opts) {
   /* ---------- 9-14: test çöz hubı ---------- */
   await go("#/coz");
   ok("test çöz hubı", has("TEST ÇÖZ"));
+  ok("geçmiş KPSS konu filtresi görünür", has("Geçmiş KPSS konu filtresi açık"));
+  ok("Güncel havuzunun 500 farklı soruya yetmediği açık", has("364 farklı aktif soru") && has("kapsam dışı soru eklenmez"));
   ok("gerçek çıkmış bölümü", has("Gerçek Çıkmış KPSS Soruları"));
   ok("çıkmış yıl butonları 2014/2024", has("2014-KPSS") && has("2024-KPSS"));
   ok("2022-KPSS butonu", has("2022-KPSS"));
@@ -195,8 +201,18 @@ function mockFetch(url, opts) {
       await sikSec(s.dogru);
       ok(`${ders} ${bicim}: doğru şık eşleşmesi`, doc.querySelector(".sik.dogru")?.getAttribute("data-sik") === String(s.dogru));
       ok(`${ders} ${bicim}: gerekçeli çözüm`, has(s.cozumler[0].metin.slice(0, 60)));
+      ok(`${ders} ${bicim}: konu dayanağı ve özgün/çıkmış ayrımı`, !!doc.querySelector(".kapsam-notu") && has("Konu örnekleri:") && has("o sınavda çıktığı anlamına gelmez"));
     }
   }
+
+  const kapsam = loadFix("kapsam.json");
+  const activeQuestions = ["tarih", "cografya", "vatandaslik", "turkce", "guncel"].flatMap((d) => loadFix(`sorular_${d}.json`, []));
+  ok("bütün API fixture soruları konu kapsamı taşır", activeQuestions.length === kapsam.aktif && activeQuestions.every((s) => s.kpss_kapsam?.konular?.length));
+  ok("bekleyen sorular hiçbir ders fixture'ında yok", activeQuestions.every((s) => !kapsam.bekleyen_kayitlar[s.id]));
+  win.__smokeSeedOldTopics();
+  await go("#/akis/guncel");
+  ok("Güncel günlük akışında aktif havuz sınırı görünür", has("364 farklı aktif soru") && has("500 farklı soruya yetmiyor"));
+  ok("kapsam dışı eski konular karışık test kilidini açmaz", has("Önce konu testlerini bitir") && !!doc.querySelector("button[disabled]"));
 
   console.log(`\nSONUÇ: ${pass} başarılı, ${fail} başarısız`);
   process.exit(fail ? 1 : 0);

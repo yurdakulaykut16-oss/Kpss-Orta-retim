@@ -32,7 +32,7 @@ class BankaTutarlilikTest(unittest.TestCase):
 
     def test_tekil_ve_mevcut_idler(self):
         ids = [p[0] for p in self.satirlar]
-        self.assertGreaterEqual(len(ids), 2300)
+        self.assertGreaterEqual(len(ids), 2310)
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(set(ids) <= self.rows.keys())
 

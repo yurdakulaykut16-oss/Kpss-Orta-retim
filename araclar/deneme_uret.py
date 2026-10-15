@@ -23,6 +23,13 @@ for d in DERSLER:
             continue
         banka[d].append(json.loads(satir))
 
+# Yeni deneme üretiminde de kapsam kapısını atlama. Sırf hedef sayıyı
+# doldurmak için onaysız soru kullanılamaz.
+import sys
+sys.path.insert(0, str(KOK))
+from kpss_kapsam import filter_bank, read_policy
+banka, _kapsam = filter_bank(banka, read_policy(KOK))
+
 dagilim_mini = {"tarih": 4, "cografya": 3, "vatandaslik": 3, "turkce": 3, "guncel": 2}
 dagilim_buyuk = {"tarih": 14, "cografya": 11, "vatandaslik": 9, "turkce": 11, "guncel": 5}
 
@@ -37,6 +44,7 @@ for gun in range(1, 11):
 
     secilen = []
     for ders, adet in dagilim.items():
+        baslangic = len(secilen)
         def oncelikle(pool):
             # çıkmış KPSS soruları öncelikli (deneme gerçek sınav sorularıyla olsun)
             cikmislar = [s for s in pool if re.match(r'^\d{4}-KPSS$', s.get('kaynak', ''))]
@@ -59,6 +67,15 @@ for gun in range(1, 11):
         if eksik > 0:
             ek = [s["id"] for s in gunluk[d_gun: d_gun + eksik]]
             secilen.extend(ek)
+        # Gün/önceki gün havuzu daraldığında yalnız onaylı aynı ders
+        # kayıtlarıyla tamamla; tekrar veya kapsam dışı yedek kullanma.
+        eksik = adet - (len(secilen) - baslangic)
+        if eksik > 0:
+            yedek = [s for s in banka[ders] if s['id'] not in secilen]
+            random.shuffle(yedek)
+            if len(yedek) < eksik:
+                raise ValueError(f'{gun}. gün {ders}: yeterli onaylı soru yok')
+            secilen.extend(s['id'] for s in oncelikle(yedek)[:eksik])
 
     random.shuffle(secilen)
     denemeler.append({

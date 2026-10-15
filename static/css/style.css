@@ -210,3 +210,5 @@ details summary:hover{color:var(--accent-2)}
 @media print{
   .sidebar,.topbar{display:none}
 }
+
+.kapsam-notu{margin:0 0 14px;font-size:12px}.kapsam-notu summary{cursor:pointer}

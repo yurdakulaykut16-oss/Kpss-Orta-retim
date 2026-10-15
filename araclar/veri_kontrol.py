@@ -78,6 +78,32 @@ for d in DERSLER:
         print(f"[!] {d}.md gün başlıkları 1-10 değil: {gunler}")
         hata += 1
 
+# Arşiv sayısı ile öğrenciye sunulan aktif kapsam ayrı denetlenir.
+sys.path.insert(0, str(KOK))
+from kpss_kapsam import read_policy, filter_bank, record_hash, project_exams
+try:
+    policy = read_policy(KOK)
+    raw = {d: [s for s in index.values() if s['ders'] == d] for d in DERSLER}
+    active, report = filter_bank(raw, policy)
+    active_ids = {s['id'] for rows in active.values() for s in rows}
+    for sid, s in index.items():
+        review = policy['questions'].get(sid)
+        if not review or review.get('sha256') != record_hash(s):
+            print(f'[!] Kapsam incelemesi eksik/değişmiş: {sid}')
+            hata += 1
+        elif review.get('status') == 'aktif' and sid not in active_ids:
+            print(f'[!] Aktif onayın konu/dayanak bağlantısı geçersiz: {sid}')
+            hata += 1
+    if set(policy['questions']) != set(index):
+        print('[!] Kapsam envanteri ile arşiv kimlikleri farklı')
+        hata += 1
+    projected = project_exams(denemeler, raw, active)
+    assert all(sid in active_ids for d in projected['denemeler'] for sid in d['sorular'])
+    print(f"Aktif KPSS konu havuzu: {report['aktif']}; inceleme bekleyen: {report['bekleyen']}")
+except (ValueError, KeyError, OSError, AssertionError) as exc:
+    print(f'[!] KPSS konu kapsamı: {exc}')
+    hata += 1
+
 print(f"\nToplam soru: {toplam}, benzersiz id: {len(index)}")
 print("HATA YOK ✔" if hata == 0 else f"{hata} hata bulundu ✘")
 sys.exit(1 if hata else 0)

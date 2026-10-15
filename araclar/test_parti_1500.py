@@ -92,10 +92,16 @@ class Parti1500Test(unittest.TestCase):
             self.assertEqual(set(positions),set(range(5)))
             self.assertTrue(all(35 <= n <= 90 for n in positions.values()))
 
-    def test_kaynaklar_onceki800_ve_kalan10_degismedi(self):
+    def test_kaynaklar_onceki800_ve_sonraki_partiler_haric_arsiv_korunur(self):
         self.assertEqual(len(self.plan['untouched']),1365)
+        # Sonraki partilerde açık TSV ile yenilenen 10 kayıt tarihî
+        # 'dokunulmadı' karşılaştırmasından çıkar; kaynaklı 555 kayıt çıkarılmaz.
+        later={l.split('|')[0] for p in (ROOT/'data/kaynaklar').glob('yukselt_2[5-6]_*.tsv')
+               for l in p.read_text().splitlines() if l and not l.startswith('#')}
+        self.assertEqual(len(later),10)
         for sid,sha in self.plan['untouched'].items():
-            self.assertEqual(digest(self.bank[sid]),sha,sid)
+            if sid not in later:
+                self.assertEqual(digest(self.bank[sid]),sha,sid)
         protected=[s for s in self.bank.values() if s['kaynak'] not in
                    ('KPSS formatında','Çıkmış KPSS sorusudur (yeniden düzenlendi)')]
         self.assertEqual(len(protected),555)
@@ -111,7 +117,7 @@ class Parti1500Test(unittest.TestCase):
             self.assertEqual(s['kaynak'],'KPSS formatında')
             self.assertEqual(len(set(s['siklar'])),5)
         bank,counts=yukseltilen_banka(ROOT)
-        self.assertEqual(sum(counts.values()),2300)
+        self.assertEqual(sum(counts.values()),2310)
         self.assertEqual({s['id']:s for d,(_,rs) in bank.items() for s in rs},self.bank)
 
     def fixture(self):

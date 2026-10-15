@@ -65,6 +65,26 @@ function etiketKaydi(t) {
 const okumaAnahtar = (d, gun) => `${d}|${gun}`;
 const konuAnahtar = (d, konu) => `${d}|${konu}`;
 
+function kapsamHtml(s) {
+  const k = s.kpss_kapsam;
+  if (!k) return "";
+  return `<details class="kapsam-notu meta"><summary>Geçmiş KPSS konusu: ${k.konular.map((t) => esc(t.ad)).join(" · ")}</summary>
+    <p>Konu örnekleri: ${k.ornekler.map((r) => `${esc(r.kaynak)} (${esc(r.id)})`).join(" · ")}. Bu yıllar konu örneğine aittir; özgün sorunun o sınavda çıktığı anlamına gelmez.</p></details>`;
+}
+
+function kapsamHavuzUyarisi(d) {
+  const k = V.meta?.kapsam;
+  if (!k) return "";
+  const dersler = d ? [d] : Object.keys(DERSLER);
+  const dar = dersler.filter((x) => (k.dersler[x]?.aktif || 0) < DERS_HEDEF);
+  return `<div class="card kapsam-havuzu">
+    <b>Geçmiş KPSS konu filtresi açık</b>
+    <p>Yalnızca konu örneğine bağlanmış kayıtlar çözüm havuzundadır. Özgün sorular birebir çıkmış soru değildir. ${k.aktif} aktif soru; ${k.bekleyen} kayıt inceleme bekliyor.</p>
+    ${dar.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru var; ${DERS_HEDEF} farklı soruya yetmiyor. Hedefi doldurmak için kapsam dışı soru eklenmez.</p>`).join("")}
+  </div>`;
+}
+
+
 /* ---------------- veri ---------------- */
 async function veriYukle() {
   const [meta, program, denemeler] = await Promise.all([
@@ -403,7 +423,9 @@ function viewDersAkis(d) {
   const a = dersAkisKaydi(d);
   const dg = dersGunlukKaydi(d);
   const konular = V.konuListe[d] || [];
-  const biten = a.biten.length;
+  // Arşivdeki kapsam dışı eski başlıklar karışık test kilidini açamaz.
+  // Kaydedilmiş ilerlemeyi silmeden yalnız aktif konuların bitişini say.
+  const biten = konular.filter((x) => a.biten.includes(x.konu)).length;
   const sonraki = dersAkisSonraki(d);
   const hepsiBitti = biten >= konular.length;
   const konuSatir = konular.map((x, i) => {
@@ -434,6 +456,7 @@ function viewDersAkis(d) {
         <div><b>${kitapKalan}/${kitaplar.length}</b>kitap sorusu kaldı</div>
       </div>
     </div>
+    ${kapsamHavuzUyarisi(d)}
     <div class="baslik-satir"><h2>1️⃣ Konu Testleri — ${hepsiBitti ? "hepsi bitti ✅" : biten + " bitti, " + (konular.length - biten) + " kaldı"}</h2></div>
     <div class="card">${konuSatir || "<p class='meta'>Konu yok.</p>"}</div>
     <div class="baslik-satir"><h2>2️⃣ Karışık Testler — tüm konulardan</h2></div>
@@ -630,6 +653,7 @@ function viewCozHub() {
         <div><b>${Object.keys(V.kayit.soru_kayit).length}</b>görülen soru</div>
       </div>
     </div>
+    ${kapsamHavuzUyarisi()}
     <div class="baslik-satir"><h2>🚀 Hızlı Başlangıç</h2></div>
     <div class="grid grid-3">
       <a class="btn blok yesil" href="#/coz/maraton/0/0">Günün Maratonu (10 soru)</a>
@@ -739,6 +763,7 @@ function renderQuiz() {
     <div class="soru-kart">
       <div class="soru-kok">${esc(s.kok)}</div>
       ${s.kaynak ? `<div class="meta" style="font-size:11px;margin:-4px 0 10px">📌 Kaynak: ${esc(s.kaynak)}</div>` : ""}
+      ${kapsamHtml(s)}
       ${s.siklar.map((sx, i) => {
         let cls = "sik";
         if (k) {
@@ -979,6 +1004,7 @@ function renderDeneme() {
     <div class="soru-kart">
       <div class="soru-kok">${esc(s.kok)}</div>
       ${s.kaynak ? `<div class="meta" style="font-size:11px;margin:-4px 0 10px">📌 Kaynak: ${esc(s.kaynak)}</div>` : ""}
+      ${kapsamHtml(s)}
       ${s.siklar.map((sx, i) => `<div class="sik ${cevap === i ? "dogru" : ""}" data-sik="${i}"><span class="harf">${SIK_HARF[i]}</span><span>${esc(sx)}</span></div>`).join("")}
       <div class="sonuc-satir">
         <button class="btn seffaf" onclick="denemeGit(${o.sira - 1})" ${o.sira === 0 ? "disabled" : ""}>← Önceki</button>
