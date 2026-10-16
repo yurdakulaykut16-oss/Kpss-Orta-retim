@@ -609,7 +609,7 @@ def akil_yurutme(rng, tum, kav, es, dev):
         tek_yil.setdefault(y, []).append(o)
     olay = [x for x in tum if len(tek_yil[x[0]]) == 1]
     # 1) Kronolojik sıralama: birbirine yakın yıllardaki 3-4 gelişme
-    for _ in range(320):
+    for _ in range(480):
         a = rng.choice(olay)
         pencere = [x for x in olay if 0 < abs(x[0] - a[0]) <= rng.choice([25, 40, 60, 90])]
         n = rng.choice([3, 3, 4])
@@ -644,7 +644,7 @@ def akil_yurutme(rng, tum, kav, es, dev):
                               f'Yukarıdaki gelişmelerden hangileri {kisi} döneminde ({"Osmanlı" if tip == "O" else "Selçuklu"} {unvan}) gerçekleşmiştir?',
                               3, k_))
     # 3) Öncüllü yüzyıl: sınır yıllarına yakın gelişmelerle
-    for _ in range(260):
+    for _ in range(340):
         a = rng.choice(olay)
         c = yuzyil(a[0])
         bas, son = (c - 1) * 100 + 1, c * 100
@@ -661,7 +661,7 @@ def akil_yurutme(rng, tum, kav, es, dev):
         out.append(onculu(rng, 'oncul_yuzyil', a[2], d, w,
                           f'Yukarıdaki gelişmelerden hangileri {yy_ad(c)}da yaşanmıştır?', 3))
     # 4) Öncüllü olay–yıl eşleştirmesi (yanlış yıllar doğrusuna 1-4 yıl yakın)
-    for _ in range(260):
+    for _ in range(340):
         uc = rng.sample(olay, 3)
         k_ = rng.choice([1, 2, 2, 3])
         d, w = [], []
@@ -680,7 +680,7 @@ def akil_yurutme(rng, tum, kav, es, dev):
     yazar = {}
     for e, y, k in es:
         yazar.setdefault(e, set()).add(y)
-    for _ in range(90):
+    for _ in range(200):
         uc = rng.sample(es, 3)
         k_ = rng.choice([1, 2, 2, 3])
         d = [(f'{e} – {y}', f'{e}, {y} tarafından yazılmıştır.') for e, y, k in uc[:k_]]
@@ -689,14 +689,14 @@ def akil_yurutme(rng, tum, kav, es, dev):
             yy = rng.choice([x[1] for x in es if x[1] not in yazar[e] and x[2] == k] or [x[1] for x in es if x[1] not in yazar[e]])
             w.append((f'{e} – {yy}', f'{e}, {yy} değil {y} tarafından yazılmıştır.'))
         out.append(onculu(rng, 'oncul_eser', uc[0][2], d, w, 'Yukarıdaki eser – yazar eşleştirmelerinden hangileri doğrudur?', 3, k_))
-    for _ in range(60):
+    for _ in range(150):
         out.append(eslestirme(rng, 'esle_eser', 'Türk-İslam Kültürü', [(e, y) for e, y, k in rng.sample(es, 5)],
                               lambda a, d: d in yazar[a], 'dogru',
                               lambda ks: ', '.join(f'“{k}”' for k in ks[:-1]) + f' ve “{ks[-1]}” eserleriyle ilgili aşağıdaki eser – yazar eşleştirmelerinden hangisi doğrudur?',
                               aciklama=lambda a, d: f'{a} – {d}'))
     # 6) Kavram öncüllüsü: aynı konudan tanımlar, biri yakın kavramla karıştırılmış
     tanim = {a: d for a, d, k in kav}
-    for _ in range(140):
+    for _ in range(300):
         uc = rng.sample(kav, 3)
         k_ = rng.choice([1, 2, 2, 3])
         d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
