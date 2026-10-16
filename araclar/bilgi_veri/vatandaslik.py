@@ -1,5 +1,5 @@
 """Vatandaşlık bilgi tabloları (1982 Anayasası güncel madde düzeni, 2017 değişiklikleri dahil)."""
-from .ortak import eslesme, q, sec, sec2
+from .ortak import eslesme, eslestirme, onculu, q, sec, sec2, siralama
 
 # madde no | konu | işaret (! = hak değil / ödev ya da düzenleme; statü sorusunda kullanılmaz)
 MADDELER = """
@@ -738,4 +738,95 @@ def uret(rng):
         rng.shuffle(h)
         out.append(q('tarihce_ters', k, f'{y} yılında Türk anayasa ve seçim tarihinde aşağıdakilerden hangisi gerçekleşmiştir?', o,
                      sec(o, h, rng), f'{y}: {o}.', 3))
+    out += akil_yurutme(rng, md, kav, yet, bel, tc)
+    return out
+
+
+AGIRLIK = {'oncul_yetki': 3, 'oncul_bolum': 2, 'oncul_hukuk': 2, 'sirala_tarihce': 2, 'oncul_madde': 2,
+           'oncul_belge': 2, 'oncul_kavram': 2, 'esle_madde': 2}
+
+
+def akil_yurutme(rng, md, kav, yet, bel, tc):
+    """Seçenekleri birbirine yakın, tek cevaplı akıl yürütme soruları."""
+    out = []
+    # 1) Görev ve yetkiler: TBMM / Cumhurbaşkanı / AYM / HSK karışık
+    sahipler = ['TBMM', 'Cumhurbaşkanı', 'Anayasa Mahkemesi', 'Hâkimler ve Savcılar Kurulu']
+    konu = {'TBMM': 'TBMM', 'Cumhurbaşkanı': 'Yürütme', 'Anayasa Mahkemesi': 'Yargı', 'Hâkimler ve Savcılar Kurulu': 'Yargı'}
+    for _ in range(260):
+        sh = rng.choice(sahipler)
+        d = [(y, f'“{y}” {sh} yetkisidir.') for y, s_ in yet if s_ == sh]
+        w = [(y, f'“{y}” {sh} yetkisi değildir; {s_} yetkisidir.') for y, s_ in yet if s_ != sh and s_ in sahipler]
+        out.append(onculu(rng, 'oncul_yetki', konu[sh], d, w,
+                          f'1982 Anayasası’na göre yukarıdaki görev ve yetkilerden hangileri {sh} tarafından kullanılır?', 3))
+    # 2) Hak ve ödevler: aynı bölüm mü? (Kişi / Sosyal-Ekonomik / Siyasi)
+    bolumler = ['Kişinin Hakları ve Ödevleri', 'Sosyal ve Ekonomik Haklar ve Ödevler', 'Siyasi Haklar ve Ödevler']
+    for _ in range(300):
+        hb = rng.choice(bolumler)
+        d = [(k, f'“{k}” (m.{n}) {hb} bölümündedir.') for n, k, f in md if hak_bolum(n) == hb]
+        w = [(k, f'“{k}” (m.{n}) {hak_bolum(n)} bölümündedir.') for n, k, f in md if hak_bolum(n) in bolumler and hak_bolum(n) != hb]
+        out.append(onculu(rng, 'oncul_bolum', 'Haklar', d, w,
+                          f'Yukarıdakilerden hangileri 1982 Anayasası’nda “{hb}” bölümünde düzenlenmiştir?', 3))
+    # 3) Kamu hukuku / özel hukuk
+    for _ in range(80):
+        ana, ayni, diger = rng.choice([('kamu hukuku', KAMU, OZEL), ('özel hukuk', OZEL, KAMU)])
+        ters = 'özel hukuk' if ana == 'kamu hukuku' else 'kamu hukuku'
+        out.append(onculu(rng, 'oncul_hukuk', 'Hukuk', [(x, f'{x} {ana} dalıdır.') for x in ayni],
+                          [(x, f'{x} {ters} dalıdır.') for x in diger],
+                          f'Yukarıdaki hukuk dallarından hangileri {ana} içinde yer alır?', 3))
+    # 4) Anayasa ve seçim tarihçesi: kronolojik sıralama
+    for _ in range(400):
+        n = rng.choice([3, 3, 4])
+        sec_ = rng.sample(tc, n)
+        if len({x[1] for x in sec_}) != n:
+            continue
+        out.append(siralama(rng, 'sirala_tarihce', sec_[0][2], [(int(y), o) for o, y, k in sec_],
+                            'Yukarıdaki gelişmelerin gerçekleşme sırası (eskiden yeniye) aşağıdakilerden hangisidir?',
+                            lambda o: 'Yıllar: ' + '; '.join(f'{m} {k}' for k, m in o) + '.', 3))
+    # 5) Madde – konu: yanlış eşleştirmeler komşu maddelerin konusuyla
+    konu_n = {n: k for n, k, f in md}
+    for _ in range(320):
+        uc = rng.sample(md, 3)
+        if len({kisim(n) for n, _, _ in uc}) == 1 and rng.random() < 0.5:
+            continue
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{n}. madde – {k}', f'Anayasa m.{n}: {k}.') for n, k, f in uc[:k_]]
+        w = []
+        for n, k, f in uc[k_:]:
+            yakin = [m for m in konu_n if m != n and abs(m - n) <= 4 and konu_n[m] != k]
+            if not yakin:
+                break
+            m = rng.choice(yakin)
+            w.append((f'{n}. madde – {konu_n[m]}', f'“{konu_n[m]}” {n}. maddede değil {m}. maddededir; m.{n}: {k}.'))
+        else:
+            out.append(onculu(rng, 'oncul_madde', 'Anayasa', d, w,
+                              '1982 Anayasası’na ilişkin yukarıdaki madde – konu eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    for _ in range(120):
+        a = rng.choice(md)
+        yakin = [x for x in md if abs(x[0] - a[0]) <= 12]
+        if len(yakin) < 5:
+            continue
+        bes = rng.sample(yakin, 5)
+        out.append(eslestirme(rng, 'esle_madde', 'Anayasa', [(f'{n}. madde', k) for n, k, f in sorted(bes)],
+                              lambda x, w: konu_n[int(x.split('.')[0])] == w, 'dogru',
+                              lambda ks: '1982 Anayasası’nın ' + ', '.join(k.split()[0] for k in ks[:-1]) + f' ve {ks[-1].split()[0]} maddeleriyle ilgili aşağıdaki madde – konu eşleştirmelerinden hangisi doğrudur?'))
+    # 6) Belge – yıl (yanlış yıllar doğrusuna yakın)
+    for _ in range(90):
+        uc = rng.sample(bel, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{b} – {y}', f'{b} {y} yılında kabul edilmiştir.') for b, y, u in uc[:k_]]
+        w = [(f'{b} – {int(y) + dd}', f'{b} {int(y) + dd} değil {y} yılında kabul edilmiştir.')
+             for (b, y, u), dd in zip(uc[k_:], rng.sample([-3, -2, -1, 1, 2, 3], 3))]
+        out.append(onculu(rng, 'oncul_belge', 'İnsan Hakları', d, w,
+                          'Yukarıdaki belge – kabul yılı eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    # 7) Kavram – açıklama
+    for _ in range(300):
+        uc = rng.sample(kav, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
+        w = []
+        for a, t, k in uc[k_:]:
+            b = rng.choice([x for x in kav if x[0] != a and x[2] == k and x[1] != t] or [x for x in kav if x[0] != a])
+            w.append((f'{a}: {b[1]}', f'Bu açıklama {a} kavramına değil {b[0]} kavramına aittir.'))
+        out.append(onculu(rng, 'oncul_kavram', uc[0][2], d, w,
+                          'Yukarıdaki kavram – açıklama eşleştirmelerinden hangileri doğrudur?', 3, k_))
     return out
