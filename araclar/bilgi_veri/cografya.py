@@ -3,7 +3,7 @@
 Yön soruları il merkezlerinin yaklaşık koordinatlarıyla kurulur; belirsizliği
 önlemek için doğru il en az 1°, çeldiriciler ters yönde en az 0,5° uzakta seçilir.
 """
-from .ortak import eslesme, q, sec, sec2
+from .ortak import eslesme, eslestirme, onculu, q, sec, sec2, siralama
 
 # il | bölge | enlem | boylam | kıyı (K=Karadeniz, M=Marmara, E=Ege, A=Akdeniz, - yok, 2 iki deniz, ? belirsiz)
 ILLER = """
@@ -645,4 +645,117 @@ def uret(rng):
             out.append(q('gunes_acisi', 'Koordinat',
                          f'{es}° kuzey enlemindeki bir yerde {tarih} günü öğle vakti Güneş ışınlarının geliş açısı kaç derecedir?',
                          dogru, sec(dogru, yan, rng), f'{tarih}: {ac}. Açı = 90° − {es}° {formul} = {dogru}.', 3))
+    out += akil_yurutme(rng, il, yer, bar, kav)
+    return out
+
+
+AGIRLIK = {'oncul_bolge': 3, 'oncul_kiyi': 2, 'sirala_yon': 3, 'oncul_yon': 3, 'oncul_gol': 2, 'oncul_yer': 3,
+           'oncul_baraj': 2, 'esle_yer': 2, 'oncul_kavram': 2}
+
+
+def akil_yurutme(rng, il, yer, bar, kav):
+    """Seçenekleri birbirine yakın, tek cevaplı akıl yürütme soruları."""
+    out = []
+    uzak = lambda x, y: ((x[2] - y[2]) ** 2 + (x[3] - y[3]) ** 2) ** 0.5
+    bolgeler = sorted({x[1] for x in il})
+    # 1) Hangileri X bölgesinde? Çeldiriciler komşu bölgelerin sınıra yakın illeri
+    for _ in range(260):
+        b = rng.choice(bolgeler)
+        ic = [x for x in il if x[1] == b]
+        dis = [x for x in il if x[1] != b and min(uzak(x, y) for y in ic) < 1.6]
+        out.append(onculu(rng, 'oncul_bolge', 'Bölgeler', [(x[0], f'{x[0]} {b} Bölgesi’ndedir.') for x in ic],
+                          [(x[0], f'{x[0]} {x[1]} Bölgesi’ndedir.') for x in dis],
+                          f'Yukarıdaki illerden hangileri {b} Bölgesi’nde yer alır?', 3))
+    # 2) Hangilerinin X denizine kıyısı var? Çeldiriciler kıyıya yakın ama denize kıyısı olmayan iller
+    deniz = {'K': 'Karadeniz’e', 'M': 'Marmara Denizi’ne', 'E': 'Ege Denizi’ne', 'A': 'Akdeniz’e'}
+    for _ in range(140):
+        kk = rng.choice(list(deniz))
+        ic = [x for x in il if x[4] == kk]
+        dis = [x for x in il if x[4] == '-' and min(uzak(x, y) for y in ic) < 1.3]
+        out.append(onculu(rng, 'oncul_kiyi', 'Bölgeler', [(x[0], f'{x[0]} ilinin {deniz[kk]} kıyısı vardır.') for x in ic],
+                          [(x[0], f'{x[0]} ilinin denize kıyısı yoktur.') for x in dis],
+                          f'Yukarıdaki illerden hangilerinin {deniz[kk]} kıyısı vardır?', 3))
+    # 3) İl merkezlerini batıdan doğuya / kuzeyden güneye sıralama (ardışık farklar belirgin)
+    for _ in range(4000):
+        eksen = rng.choice(['lo', 'la'])
+        n = rng.choice([3, 3, 4])
+        sec_ = rng.sample(il, n)
+        v = sorted(x[3] if eksen == 'lo' else x[2] for x in sec_)
+        esik = 0.8 if eksen == 'lo' else 0.5
+        if any(b - a < esik for a, b in zip(v, v[1:])) or v[-1] - v[0] > (6 if eksen == 'lo' else 3):
+            continue
+        if eksen == 'lo':
+            out.append(siralama(rng, 'sirala_yon', 'Koordinat', [(x[3], x[0]) for x in sec_],
+                                'Yukarıdaki il merkezlerinin batıdan doğuya doğru sıralanışı aşağıdakilerden hangisidir?',
+                                lambda o: 'Boylamlar (yaklaşık): ' + '; '.join(f'{m} {k:.1f}° D'.replace('.', ',') for k, m in o)
+                                + '. Boylam değeri büyüdükçe doğuya gidilir.', 3))
+        else:
+            out.append(siralama(rng, 'sirala_yon', 'Koordinat', [(-x[2], x[0]) for x in sec_],
+                                'Yukarıdaki il merkezlerinin kuzeyden güneye doğru sıralanışı aşağıdakilerden hangisidir?',
+                                lambda o: 'Enlemler (yaklaşık): ' + '; '.join(f'{m} {-k:.1f}° K'.replace('.', ',') for k, m in o)
+                                + '. Enlem değeri büyüdükçe kuzeye gidilir.', 3))
+    # 4) Hangileri A'nın doğusunda / güneyinde ...? (yakın iller, en az 0,6° fark)
+    yonler = [('doğusundadır', 3, 1), ('batısındadır', 3, -1), ('kuzeyindedir', 2, 1), ('güneyindedir', 2, -1)]
+    for _ in range(300):
+        a = rng.choice(il)
+        ad, j, yon = rng.choice(yonler)
+        yakin = [x for x in il if x[0] != a[0] and uzak(x, a) < 3.5]
+        d = [(x[0], f'{x[0]} il merkezi {a[0]} il merkezinin {ad}.')
+             for x in yakin if (x[j] - a[j]) * yon >= 0.6]
+        ters = {'doğusundadır': 'batısındadır', 'batısındadır': 'doğusundadır', 'kuzeyindedir': 'güneyindedir',
+                'güneyindedir': 'kuzeyindedir'}[ad]
+        w = [(x[0], f'{x[0]} il merkezi {a[0]} il merkezinin {ters}.')
+             for x in yakin if (x[j] - a[j]) * yon <= -0.6]
+        out.append(onculu(rng, 'oncul_yon', 'Koordinat', d, w,
+                          f'Yukarıdaki il merkezlerinden hangileri {a[0]} il merkezinin {ad}?', 3))
+    # 5) Göl oluşum türü
+    gol = _satir(GOLLER, 2)
+    turler = sorted({t for _, t in gol})
+    for _ in range(120):
+        t = rng.choice(turler)
+        out.append(onculu(rng, 'oncul_gol', 'Su Kaynakları', [(g, f'{g}: {t.lower()}.') for g, tt in gol if tt == t],
+                          [(g, f'{g}: {tt.lower()}.') for g, tt in gol if tt != t],
+                          f'Yukarıdaki göllerden hangileri {t.lower()} grubundadır?', 3))
+    # 6) Yer – il eşleştirmesi; yanlışlar doğru ile komşu (koordinatça en yakın) illerle
+    ilk = {x[0]: x for x in il}
+    for _ in range(320):
+        uc = rng.sample([y for y in yer if y[1] in ilk], 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{y} – {i}', f'{y} {i} ilindedir.') for y, i, t, kk in uc[:k_]]
+        w = []
+        for y, i, t, kk in uc[k_:]:
+            komsu = sorted((x for x in il if x[0] != i), key=lambda x: uzak(x, ilk[i]))[:3]
+            j = rng.choice(komsu)[0]
+            w.append((f'{y} – {j}', f'{y} {j} değil {i} ilindedir.'))
+        out.append(onculu(rng, 'oncul_yer', uc[0][3], d, w, 'Yukarıdaki yer – il eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    yer_il = {y: i for y, i, t, kk in yer}
+    for _ in range(90):
+        t = rng.choice(sorted({x[2] for x in yer}))
+        aday = [x for x in yer if x[2] == t]
+        if len(aday) < 5:
+            continue
+        bes = rng.sample(aday, 5)
+        out.append(eslestirme(rng, 'esle_yer', bes[0][3], [(y, i) for y, i, _, _ in bes], lambda a, w: yer_il[a] == w, 'dogru',
+                              lambda ks: ', '.join(ks[:-1]) + f' ve {ks[-1]} ile ilgili aşağıdaki yer – il eşleştirmelerinden hangisi doğrudur?'))
+    # 7) Baraj – akarsu
+    nehir = {b: n for b, n in bar}
+    for _ in range(110):
+        uc = rng.sample(bar, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{b} – {n}', f'{b} {n} üzerindedir.') for b, n in uc[:k_]]
+        w = []
+        for b, n in uc[k_:]:
+            m = rng.choice(sorted({x[1] for x in bar if x[1] != n}))
+            w.append((f'{b} – {m}', f'{b} {m} değil {n} üzerindedir.'))
+        out.append(onculu(rng, 'oncul_baraj', 'Su Kaynakları', d, w, 'Yukarıdaki baraj – akarsu eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    # 8) Kavram – açıklama
+    for _ in range(140):
+        uc = rng.sample(kav, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
+        w = []
+        for a, t, k in uc[k_:]:
+            b = rng.choice([x for x in kav if x[0] != a and x[2] == k and x[1] != t] or [x for x in kav if x[0] != a])
+            w.append((f'{a}: {b[1]}', f'Bu açıklama {a} kavramına değil {b[0]} kavramına aittir.'))
+        out.append(onculu(rng, 'oncul_kavram', uc[0][2], d, w, 'Yukarıdaki kavram – açıklama eşleştirmelerinden hangileri doğrudur?', 3, k_))
     return out
