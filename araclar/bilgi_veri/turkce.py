@@ -8,6 +8,13 @@ etiketten seçilmez, böylece birden fazla doğru cevap oluşmaz.
 from itertools import permutations
 
 from .ortak import q, sec
+from . import mantik, paragraf
+
+# Türkçe'de soruların çoğu paragraf ve sözel mantık olacak biçimde: bilgi türleri sınırlı.
+MANTIK_ADET = {'bulmaca': 160, 'siralama': 300, 'kismi': 100, 'tekil': 100}
+KOTA = {'deyim_anlam': 30, 'deyim_bul': 20, 'atasozu_anlam': 25, 'atasozu_bul': 15, 'es_anlam': 15,
+        'zit_anlam': 15, 'karsilik': 10, 'karsilik_ters': 5, 'kisaltma': 10, 'kisaltma_ters': 5,
+        'yazim': 28, 'ses': 15, 'fiilimsi_tur': 16, 'fiilimsi_bul': 0}
 
 # deyim | anlam | etiket
 DEYIMLER = """
@@ -1063,9 +1070,14 @@ def uret(rng):
                      sec(f, kelimeler, rng), f'“{f}” {tur_ad.lower()}dir; diğerleri fiilimsi değildir.', 2))
     adlar = _satir(ADLAR, 3)
     say = 0
-    while say < 600:
+    while say < MANTIK_ADET['bulmaca']:
         r = _bulmaca(rng, adlar)
         if r:
-            out += r
-            say += 1
+            out += r[:MANTIK_ADET['bulmaca'] - say]
+            say += len(r)
+    # Türkçe ağırlığı: paragraf + sözel mantık (çeldiricisi güçlü, akıl yürütme gerektiren sorular)
+    out += mantik.siralama_bulmacalari(rng, adlar, MANTIK_ADET['siralama'])[:MANTIK_ADET['siralama']]
+    out += mantik.eslestirme_bulmacalari(rng, adlar, MANTIK_ADET['kismi'], mod='kismi')[:MANTIK_ADET['kismi']]
+    out += mantik.eslestirme_bulmacalari(rng, adlar, MANTIK_ADET['tekil'], n=5, mod='tekil')[:MANTIK_ADET['tekil']]
+    out += paragraf.paragraf_sorulari(rng)
     return out
