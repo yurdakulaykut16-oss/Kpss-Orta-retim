@@ -28,7 +28,7 @@ class Gunluk500Test(unittest.TestCase):
     def test_188_ayri_editoryal_kayit_26_162(self):
         self.assertEqual(len(self.records),188)
         self.assertEqual(collections.Counter(s['ders'] for s in self.records),{'vatandaslik':26,'guncel':162})
-        self.assertEqual(len({question_key(s) for s in self.index.values()}),6119)
+        self.assertEqual(len({question_key(s) for s in self.index.values()}),14220)
         self.assertEqual(len({question_key(s) for s in self.records}),188)
 
     def test_ek_icerik_banka_kapsam_ve_inceleme_ozetleri_eslesir(self):
@@ -57,10 +57,10 @@ class Gunluk500Test(unittest.TestCase):
         bank={d:(None,[]) for d in self.cache['sorular']}
         with self.assertRaises(ValueError):add_to_bank(ROOT,bank,{s['id']:s})
 
-    def test_her_derste_denemeler_haric_en_az_500(self):
+    def test_her_derste_denemeler_haric_2800(self):
         t=self.cache['calisma_hedefi']
         self.assertEqual({d:s['baslangic_test_kapasitesi'] for d,s in t['dersler'].items()},
-                         dict(tarih=1200,cografya=1161,vatandaslik=1150,turkce=1238,guncel=1150))
+                         dict(tarih=2800,cografya=2800,vatandaslik=2800,turkce=2800,guncel=2800))
         self.assertTrue(all(s['ilk_gun_eksik']==0 for s in t['dersler'].values()))
         self.assertEqual(sum(s['denemeye_ayrilan'] for s in t['dersler'].values()),220)
 
@@ -74,15 +74,17 @@ class Gunluk500Test(unittest.TestCase):
         self.assertEqual(t['gunluk_toplam_set'],200)
         self.assertIs(t['denemeler_hedefe_dahil'],False)
 
-    def test_on_gun_henuz_tamamlandi_denmez(self):
+    def test_yedi_test_gunu_her_ders_400(self):
         t=self.cache['calisma_hedefi']
-        self.assertEqual(t['kamp_gun_sayisi'],10)
-        self.assertTrue(all(s['kamp_test_ihtiyaci']==4000 for s in t['dersler'].values()))
-        self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),20220)
-        self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),14101)
-        self.assertEqual(t['dersler']['tarih']['gun_dagilimi'][:4],[400,400,400,0])
-        self.assertEqual(t['dersler']['turkce']['gun_dagilimi'][:4],[400,400,400,38])
-        self.assertEqual(t['dersler']['turkce']['tam_gun'],3)
+        # 17-23 Ekim: 7 test günü (24 Ekim yalnızca deneme/tekrar), her gün her dersten 400.
+        self.assertEqual(t['kamp_gun_sayisi'],7)
+        self.assertTrue(all(s['kamp_test_ihtiyaci']==2800 for s in t['dersler'].values()))
+        self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),14220)
+        self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),0)
+        for s in t['dersler'].values():
+            self.assertEqual(s['gun_dagilimi'],[400]*7)
+            self.assertEqual(s['tam_gun'],7)
+        self.assertIn('tamamlandı anlamına gelmez',t['notu'])
 
     def test_hedef_azaltilamaz_ve_deneme_karistirilamaz(self):
         target=load_target(ROOT)
@@ -95,8 +97,8 @@ class Gunluk500Test(unittest.TestCase):
     def test_api_ayni_hedef_ve_gercek_sayilari_verir(self):
         meta=server.app.test_client().get('/api/meta').get_json()
         self.assertEqual(meta['calisma_hedefi'],self.cache['calisma_hedefi'])
-        self.assertEqual(meta['soru_sayilari']['guncel'],1176)
-        self.assertEqual(meta['soru_sayilari']['vatandaslik'],1192)
+        self.assertEqual(meta['soru_sayilari']['guncel'],2826)
+        self.assertEqual(meta['soru_sayilari']['vatandaslik'],2842)
 
     def test_2000_test_ve_220_deneme_sunucuda_cakismadan_ayrilabilir(self):
         with tempfile.TemporaryDirectory() as tmp, patch.object(server,'ILERLEME',Path(tmp)), patch.object(server,'her_seyi_yukle',return_value=self.cache):

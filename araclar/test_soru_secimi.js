@@ -63,7 +63,7 @@ test('eksik deneme nesneleriyle süre başlatılamaz',()=>assert.throws(()=>S.de
 test('kayıtlı gerçek deneme idleri de geçmişe taşınır',()=>assert(S.gecmis({denemeler:[{sorular:['a']}]},{}).ids.has('a')));
 test('gerçek bankada tüm test havuzu tüketilse de 10 deneme ayrı kalır',()=>{
  const root=path.join(__dirname,'..');
- const raw=execFileSync('python3',['-c',"import json,app; c=app.her_seyi_yukle(); print(json.dumps({'bank':[s for rows in c['sorular'].values() for s in rows], 'exams':[{**d,'soru_nesneleri':[next(s for rows in c['sorular'].values() for s in rows if s['id']==sid) for sid in d['sorular']]} for d in c['denemeler']['denemeler']]}))"],{cwd:root,maxBuffer:12*1024*1024});
+ const raw=execFileSync('python3',['-c',"import json,app; c=app.her_seyi_yukle(); print(json.dumps({'bank':[s for rows in c['sorular'].values() for s in rows], 'exams':[{**d,'soru_nesneleri':[next(s for rows in c['sorular'].values() for s in rows if s['id']==sid) for sid in d['sorular']]} for d in c['denemeler']['denemeler']]}))"],{cwd:root,maxBuffer:256*1024*1024});
  const {bank,exams}=JSON.parse(raw),index=Object.fromEntries(bank.map(s=>[s.id,s]));
  const tests=S.yeni(bank,empty(),S.ayrilan(exams,index));
  const h=hist(tests),all=[];

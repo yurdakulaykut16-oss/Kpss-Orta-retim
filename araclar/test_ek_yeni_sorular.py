@@ -21,14 +21,16 @@ class YeniPartiTest(unittest.TestCase):
         cls.cache = server.her_seyi_yukle()
         cls.index = {s['id']: s for rows in cls.cache['sorular'].values() for s in rows}
 
-    def test_her_derste_650_yeni_soru(self):
-        self.assertEqual(len(self.records), 3250)
+    def test_yeni_parti_sayilari(self):
+        # 650'şer elle yazılmış + bilgi tablosu üreticisinden (yeni_parti_16_*) 8.101 soru.
+        self.assertEqual(len(self.records), 11351)
         self.assertEqual(collections.Counter(s['ders'] for s in self.records),
-                         dict(tarih=650, cografya=650, vatandaslik=650, turkce=650, guncel=650))
+                         dict(tarih=2250, cografya=2289, vatandaslik=2300, turkce=2212, guncel=2300))
+        self.assertEqual(sum('bilgi-tablosu' in s.get('etiketler', []) for s in self.records), 8101)
 
     def test_kokler_birbirinden_ve_bankadan_farkli(self):
         roots = [question_key(s) for s in self.records]
-        self.assertEqual(len(set(roots)), 3250)
+        self.assertEqual(len(set(roots)), 11351)
         others = {question_key(s) for sid, s in self.index.items() if '-YS-' not in sid}
         self.assertFalse(set(roots) & others)
 

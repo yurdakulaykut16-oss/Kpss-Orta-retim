@@ -335,7 +335,10 @@ function testSeti(havuz, adet, opts = {}) {
   if (!aktif.size) return puanli.slice(0,adet).map((x) => x.s);
   const zayif = puanli.filter((x) => aktif.has(konuAnahtar(x.s.ders,x.s.konu))).slice(0,Math.ceil(adet/2));
   const secilen = new Set(zayif.map((x) => x.s.id));
-  const diger = puanli.filter((x) => !secilen.has(x.s.id)).slice(0,adet-zayif.length);
+  // Kalan yer önce diğer konulardan doldurulur; yetmezse zayıf konudan tamamlanır.
+  const baska = puanli.filter((x) => !secilen.has(x.s.id) && !aktif.has(konuAnahtar(x.s.ders,x.s.konu)));
+  const yedek = puanli.filter((x) => !secilen.has(x.s.id) && aktif.has(konuAnahtar(x.s.ders,x.s.konu)));
+  const diger = [...baska,...yedek].slice(0,adet-zayif.length);
   return [...zayif,...diger].sort((a,b) => b.puan-a.puan).map((x) => x.s);
 }
 

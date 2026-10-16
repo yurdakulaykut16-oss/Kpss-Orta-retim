@@ -42,8 +42,8 @@ class KpssKapsamTest(unittest.TestCase):
 
     def test_tam_envanter_aktif_ve_bekleyen_ayri(self):
         self.assertEqual(set(self.index), set(self.policy['questions']))
-        self.assertEqual(len(self.index),6303)
-        self.assertEqual(len(self.active_ids),6119)
+        self.assertEqual(len(self.index),14404)
+        self.assertEqual(len(self.active_ids),14220)
         self.assertEqual(len(self.report['bekleyen_kayitlar']),184)
         self.assertEqual(self.active_ids | self.report['bekleyen_kayitlar'].keys(), self.index.keys())
         self.assertFalse(self.active_ids & self.report['bekleyen_kayitlar'].keys())
@@ -224,7 +224,7 @@ class KpssKapsamTest(unittest.TestCase):
     def test_meta_ve_rapor_aktif_sayiyi_gosterir(self):
         meta=self.client.get('/api/meta').get_json()
         self.assertEqual(meta['soru_sayilari'],{d:len(self.active[d]) for d in SUBJECTS})
-        self.assertEqual(meta['kapsam']['aktif'],6119)
+        self.assertEqual(meta['kapsam']['aktif'],14220)
         self.assertEqual(meta['kapsam']['bekleyen'],184)
         report=self.client.get('/api/kapsam').get_json()
         self.assertEqual(report,self.report)

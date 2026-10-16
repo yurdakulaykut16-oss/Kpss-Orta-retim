@@ -1,6 +1,6 @@
 # KPSS Ortaöğretim — Hızlandırılmış Kamp
 
-**Sınav: 25 Ekim 2026 (Pazar) — Saat 10:15** · Senin için özel 10 günlük hızlandırılmış kamp (**15–24 Ekim 2026**).
+**Sınav: 25 Ekim 2026 (Pazar) — Saat 10:15** · Senin için özel 8 günlük hızlandırılmış kamp (**17–24 Ekim 2026**; 17–23 Ekim test günleri, 24 Ekim deneme/tekrar).
 Python/Flask + vanilla JS — kurulumu tek komut.
 
 > ✅ İlk 2 günde **tüm konular** bitirilir (Konu Maratonu). Sonrasında **yanlışlarına göre** konular sana **farklı
@@ -28,22 +28,23 @@ NODE_PATH=/tmp/kpss_test/node_modules node araclar/smoke_test.js
 
 ---
 
-## 10 Günlük Kamp (15–24 Ekim 2026)
+## 8 Günlük Kamp (17–24 Ekim 2026)
 
-| Gün | Tarih | Tema |
-|-----|-------|------|
-| 1. gün | 15 Ekim Perşembe | **Konu Maratonu I** — 5 derste TÜM konular (hızlı tur + 10'luk testler) |
-| 2. gün | 16 Ekim Cuma | **Konu Maratonu II** — tur tamamlama + konu testleri (ustalana kadar) |
-| 3–8. gün | 17–22 Ekim | **Ustalık Günleri** — hatalardan ustalığa; zayıf konu tekrarı + test |
-| 9. gün | 23 Ekim Perşembe | Genel Tekrar — zayıf konu atağı |
-| 10. gün | 24 Ekim Cuma | **Final Provası** — 50 soruluk büyük deneme |
+| Gün | Tarih | Tema | Deneme |
+|-----|-------|------|--------|
+| 1. gün | 17 Ekim Cumartesi | **Konu Maratonu** — 5 derste TÜM konular (hızlı tur + 10'luk testler) | DEN-01, DEN-02 |
+| 2–6. gün | 18–22 Ekim | **Ustalık Günleri 1–5** — hatalardan ustalığa; zayıf konu tekrarı + test | DEN-03 … DEN-07 (20 Ekim: DEN-05, 50 soruluk büyük prova) |
+| 7. gün | 23 Ekim Cuma | Genel Tekrar — zayıf konu atağı | DEN-08 |
+| 8. gün | 24 Ekim Cumartesi | **Final Provası** — yalnızca deneme ve tekrar (test hedefi yok) | DEN-09, DEN-10 |
+
+Önceki 15–16 Ekim günlerinin içeriği ve denemeleri bu günlere dağıtıldı.
 
 Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
 > 📌 **Günlük soru hedefi ve üst sınırı:** Ders başına **400 soru** (toplam 2.000), **10'ar soruluk testler** hâlinde.
-> 400 aynı zamanda **günlük üst sınırdır**: bir derste o gün 400 test sorusu ayrıldıktan sonra yeni test başlatılamaz; fazla sorular **sonraki günlere kalır**. Denemeler bu hedefe ve sınıra dahil değildir. Başlangıç test kapasitesi her derste en az 1.150'dir; geçmişi boş profil için ilk iki gün tam karşılanır. Bu, 10 gün boyunca tekrarsız 400'ün bütün içeriğinin hazır olduğu anlamına gelmez.
+> 400 aynı zamanda **günlük üst sınırdır**: bir derste o gün 400 test sorusu ayrıldıktan sonra yeni test başlatılamaz; fazla sorular **sonraki günlere kalır**. Denemeler bu hedefe ve sınıra dahil değildir. 7 test günü × 400 = **ders başına 2.800 test sorusu**; geçmişi boş bir profil için her dersin başlangıç test kapasitesi tam **2.800**'dür (denemelere ayrılan sorular hariç).
 > Güncel havuz hedefi ayrıca **3.000** olarak belirlenmiştir; bu henüz tamamlanmış değildir.
-> ⚠️ **Gerçek durum:** Aynı soru tekrar gelmediği için her gün 400 çözülürse kullanılmamış test sorusu şu günlere yeter: Tarih **400 + 400 + 400**, Coğrafya **400 + 400 + 361**, Vatandaşlık **400 + 400 + 350**, Türkçe **400 + 400 + 400 + 38**, Güncel **400 + 400 + 350**. Yani her dersten tam 400 şu an **ilk 2 gün** (Tarih ve Türkçe'de 3 gün) sağlanabiliyor; sonrasında yeni soru eklenmesi gerekir.
+> ✅ **Gerçek durum:** Aynı soru tekrar gelmediği hâlde her dersin günlük dağılımı **400 × 7** (17–23 Ekim) olarak tam karşılanır. Bu sayılar daha önce soru çözmemiş profil içindir; önceden kullanılan sorular kalan kapasiteyi azaltır.
 > Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
 > Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
 
@@ -101,8 +102,8 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 - Metinsel kök denetimi, farklı yazılmış iki sorunun anlamsal olarak aynı olup olmadığını kanıtlamaz; bu ayrıca editoryal inceleme gerektirir.
 
 ### 5. Denemeler
-- 10 deneme (**DEN-01…DEN-10**), her gün 1 tanesi o günün rehberine bağlı: 5. ve 10. gün
-  **50 soruluk büyük prova**, diğer günler 15 soruluk mini.
+- 10 deneme (**DEN-01…DEN-10**) 8 güne dağıtılmıştır: 1. gün DEN-01 ve DEN-02, 2–7. günler birer deneme,
+  8. gün DEN-09 ve DEN-10. DEN-05 (20 Ekim) ve DEN-10 (24 Ekim) **50 soruluk büyük prova**, diğerleri 15 soruluk mini.
 - Denemeler her dersi dengeli dağıtır, şıklar karışık gelir (sınav gibi).
 - Süre geri sayar; bitirince **net + ders analizi + tüm çözümler**.
 
@@ -114,7 +115,9 @@ Tek ayar kaynağı `data/calisma_hedefleri.json`: **400 soru/ders/gün**, **10 s
 
 İlk-gün eksiği için **26 Vatandaşlık + 162 Güncel = 188 yeni özgün soru** elle yazıldı. `ek_188_gunluk500.tsv` kök, beş seçenek ve gerekçeli çözümü içerir; `ek_188_inceleme.json` ayrı kapsam kararlarının içerik özetlerini saklar. Şık sıralaması dışında otomatik varyant üretimi yoktur. `soru_yukselt.py` ekleri de doğrulayarak uygular; mevcut farklı içerik veya korumalı kaynak sessizce ezilemez. Önceki 2.865 kayıt değiştirilmedi.
 
-Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, `*-YS-0001…0050`), sonra **her dersten 200, toplam 1.000 yeni soru** (`yeni_parti_06a…10b_*.tsv`, `*-YS-0051…0250`), ardından **her dersten 400, toplam 2.000 yeni soru** daha (`yeni_parti_11a…15d_*.tsv`, `*-YS-0251…0650`) elle yazıldı; yeni partilerin toplamı **3.250 (ders başına 650)**. Her satır kendi kökü, beş seçeneği ve gerekçeli çözümüyle ayrı bir sorudur; kökler birbirinden ve bankadaki diğer sorulardan farklıdır (`araclar/ek_yeni_sorular.py` aynı kökü reddeder). Onay: `python3 araclar/soru_yukselt.py && python3 araclar/ek_yeni_sorular.py --onayla`. Yeni parti eklemek için aynı biçimde `yeni_parti_16_*.tsv` yazmak yeterlidir.
+Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, `*-YS-0001…0050`), sonra **her dersten 200, toplam 1.000 yeni soru** (`yeni_parti_06a…10b_*.tsv`, `*-YS-0051…0250`), ardından **her dersten 400, toplam 2.000 yeni soru** daha (`yeni_parti_11a…15d_*.tsv`, `*-YS-0251…0650`) elle yazıldı; yeni partilerin toplamı **3.250 (ders başına 650)**. Her satır kendi kökü, beş seçeneği ve gerekçeli çözümüyle ayrı bir sorudur; kökler birbirinden ve bankadaki diğer sorulardan farklıdır (`araclar/ek_yeni_sorular.py` aynı kökü reddeder). Onay: `python3 araclar/soru_yukselt.py && python3 araclar/ek_yeni_sorular.py --onayla`. Yeni parti eklemek için aynı biçimde `yeni_parti_17_*.tsv` yazmak yeterlidir.
+
+**8 günlük programa geçişte eksik kalan 8.101 soru** bilgi tablosu üreticisiyle eklendi (`yeni_parti_16_<ders>.tsv`, `*-YS-0651…`): Tarih 1.600, Coğrafya 1.639, Vatandaşlık 1.650, Türkçe 1.562, Güncel 1.650. Bu sorular elle tek tek yazılmadı; `araclar/bilgi_veri/<ders>.py` içindeki doğrulanmış bilgi tablolarından (olay–yıl, il–bölge, Anayasa madde–konu, deyim–anlam, ülke–başkent vb.) `araclar/bilgi_soru_uret.py` ile üretildi ve `bilgi-tablosu` etiketi taşır. Çeldiriciler aynı tablodaki başka kayıtlardan seçilir; birden çok doğru cevaba yol açabilecek kayıtlar tablolardan çıkarıldı, sözel mantık soruları tüm olası dizilimler denenerek tek çözümlü olacak biçimde doğrulandı. Aynı kök iki kez üretilmez ve bankadaki köklerle çakışmaz; benzer kalıpta (ör. farklı ülkeler için başkent) sorular bulunur. Hata bulunursa TSV yerine tabloyu düzeltip `python3 araclar/bilgi_soru_uret.py <ders>` → `python3 araclar/ek_yeni_sorular.py --onayla` → `python3 araclar/soru_yukselt.py` sırası izlenmelidir.
 
 | Ders | Aktif toplam | Deneme rezervi | Başlangıç test kapasitesi |
 |---|---:|---:|---:|
@@ -128,7 +131,7 @@ Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, 
 - Bu kapasite geçmişi boş profil içindir. Önceden kullanılan kayıtlar yeniden dağıtılmaz. Test menüsü kişisel kullanılmamış sayıyı da gösterir.
 - Yarım kalan testin ayrılmış soruları kaybolmaz: **aynı oturumdan devam** bağlantısı vardır. Yeni oturuma tekrar dağıtılmaz; ilk cevaplanmamış sorudan devam edilir. İçerik veya kapsam değişmişse eski cevaplarla farklı bir soru gösterilmez.
 - Günlük sayım tekil test id'lerine dayanır; gün **Europe/Istanbul** saat diliminde değişir. Gün değişimi kalıcı tekrar engelini kaldırmaz.
-- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **10 gün boyunca ders başına 400 tekrarsız test sorusu için 4.000/ders, toplam 20.000 test + 220 ayrı deneme sorusu gerekir.** Mevcut test havuzuyla bu hedefe **14.101 test sorusu eksiktir**; bütün kampın hazır olduğu iddia edilmez. Güncel'in 3.000 hedefi bu daha büyük ihtiyacın ara hedefidir.
+- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **7 test günü boyunca ders başına 400 tekrarsız test sorusu için 2.800/ders, toplam 14.000 test + 220 ayrı deneme sorusu gerekir; mevcut havuz bunu tam karşılar (eksik 0).** Güncel'in 3.000'lik havuz hedefi ayrıca izlenir (şu an 2.826 aktif).
 
 ## Güncel için 3.000 soru hedefi ve mevcut soruların kalite turu
 
@@ -274,7 +277,7 @@ Gün sonu denemesi bitince **yanlış/boş bıraktığın konular** otomatik ola
 
 ## Sayfalar
 
-- **🏠 Bugünün Rehberi** — 1. gün…10. gün numaralı, her gün için 3 adım: konu turu → 10'luk testler → deneme
+- **🏠 Bugünün Rehberi** — 1. gün…8. gün numaralı, her gün için 3 adım: konu turu → 10'luk testler → deneme
 - **📖 Konu Anlatımları** — 55 konunun hızlı turu + farklı anlatımı + 50 derin modül
 - **✏️ Test Çöz** — Günün Maratonu / Konu Testi (10) / Yanlış Telafisi / Hata Atölyesi — hepsi 10'luk
 - **📝 Denemeler** — 10 deneme + çözüm analizi
@@ -314,7 +317,7 @@ kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak**
 - `data/sorular/*.jsonl` — soru bankası (id, konu, zorluk, **kaynak**, 2 çözüm, etiketler)
 - `data/konu_yeniden.json` — 55 konu için farklı anlatım kartları (özet + hikâye + tuzak + kalıp)
 - `data/dersler/*.md` — günlük konu modülleri
-- `data/program.json` — 10 günlük plan
+- `data/program.json` — 8 günlük plan (17–24 Ekim; `test_hedefi: false` olan 24 Ekim yalnızca deneme/tekrar)
 - `data/denemeler.json` — 10 deneme
 - `data/ilerleme/` — ilerleme kaydı (otomatik yedek)
 - `araclar/soru_genislet.py` — yeni soru ekleme (TSV → JSONL)
