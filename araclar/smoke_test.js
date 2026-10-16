@@ -142,6 +142,13 @@ function mockFetch(url, opts) {
   /* ---------- 6-8: konu anlatımı ---------- */
   await go("#/konular");
   ok("konu anlatımları sayfası", has("KONU ANLATIMLARI"));
+  {
+    const btn = [...doc.querySelectorAll("button[data-konu]")].find((b) => b.dataset.konu === "Paragraf") || doc.querySelector("button[data-konu]");
+    const d = btn?.closest(".ders-kart")?.className.split(" ").find((c) => c !== "ders-kart") || "turkce";
+    if (btn) { win.konuAc(d, btn); await tick(); }
+    const blok = doc.querySelectorAll(".anlatim-blok").length;
+    ok("konu kartında farklı yollardan anlatımlar (tablo, soru-cevap, örnek, hafıza kodu)", blok >= 4 && has("farklı yoldan anlatım"), `blok=${blok}`);
+  }
   await go("#/ders/tarih/1");
   ok("modül anlatım sayfası", has("Sıradaki adım") && has("10'luk Test") && has("Okudum"));
   await go("#/konular/tarih");

@@ -389,6 +389,12 @@ async function ogrenmeSorusuEkle(o, s, pek) {
   o.ogrenmeEk[pek.key] = (o.ogrenmeEk[pek.key] || 0)+1;
   pek.eklendi = true;
 }
+/* Farklı yollardan anlatım blokları (tablo, soru-cevap, çözümlü örnek, hafıza kodu). */
+function anlatimMetni(m) { return esc(m || "").replace(/\n/g, "<br>"); }
+function anlatimlarHtml(liste, acik = 0) {
+  return (liste || []).map((a, i) => `<details class="anlatim-blok"${i < acik ? " open" : ""}>
+    <summary><b>${esc(a.baslik)}</b></summary><p>${anlatimMetni(a.metin)}</p></details>`).join("");
+}
 function konuTekrarHtml(ders, konu, katman = 1, tam = false) {
   const key = konuAnahtar(ders,konu);
   const k = V.konuYeniden[key];
@@ -411,8 +417,18 @@ function konuTekrarHtml(ders, konu, katman = 1, tam = false) {
     ${sira.filter((i) => parca[i][1]).map((i) => `<p><b>${parca[i][0]}:</b> ${esc(parca[i][1])}</p>`).join("")}
     ${kalan.length ? `<details><summary>Anlatımın geri kalanını göster</summary>
       ${kalan.filter((i) => parca[i][1]).map((i) => `<p><b>${parca[i][0]}:</b> ${esc(parca[i][1])}</p>`).join("")}</details>` : ""}
+    ${anlatimKatman(k, katman, tam)}
     <div class="sonuc-satir">${modulLink}${tam ? testLink : ""}</div>
   </div>`;
+}
+function anlatimKatman(k, katman, tam) {
+  const an = k.anlatimlar || [];
+  if (!an.length) return "";
+  if (tam) return `<h4>🧭 Farklı yollardan anlatım</h4>${anlatimlarHtml(an, 1)}`;
+  const i = (Math.max(1, katman) - 1) % an.length;
+  const diger = an.filter((_, j) => j !== i);
+  return `<p class="meta">Bu tekrarda konuyu şu yoldan anlatıyorum:</p>${anlatimlarHtml([an[i]], 1)}
+    ${diger.length ? `<details><summary>Diğer ${diger.length} anlatım yolunu göster</summary>${anlatimlarHtml(diger)}</details>` : ""}`;
 }
 function ogrenmeDurumHtml(s, pek) {
   if (!pek) return "";
@@ -803,7 +819,7 @@ function viewKonular() {
     <div class="hero">
       <span class="etiket">📖 KONU ANLATIMLARI</span>
       <h1>Hızlı Tur + Farklı Anlatım — ${Object.values(V.konuListe).reduce((a, b) => a + b.length, 0)} konu</h1>
-      <p><b>İlk 2 günde tüm konuları buradan bitir:</b> her konunun özeti, sınav tuzağı ve <b>farklı anlatımı</b> (hikâye ile) var. Okuduktan sonra hemen 10 soruluk test çöz; yanlış yaptıkça sistem konuyu yeniden, başka türlü anlatır.</p>
+      <p><b>İlk 2 günde tüm konuları buradan bitir:</b> her konunun özeti, sınav tuzağı, hikâyesi ve <b>4 farklı yoldan anlatımı</b> (tablo/şema, soru–cevap, çözümlü KPSS örneği, hafıza kodu ve karıştırılanlar) var. Okuduktan sonra hemen 10 soruluk test çöz; yanlış yaptıkça sistem konuyu yeniden, başka türlü anlatır.</p>
       <div class="sayac"><div><b>${Object.keys(V.kayit.konu_okuma).length}</b>konu okundu</div>
       <div><b>${Object.values(V.kayit.ustalik).filter((u) => u.usta).length}</b>konuda usta</div>
       <div>${gunlukRozet()}</div></div>
@@ -891,6 +907,7 @@ window.konuAc = (d, btn) => {
     <p>${esc(k.ozet || "Bu konunun özeti yakında eklenecek.")}</p>
     <h4>🎭 Farklı Anlatım (hikâyeyle)</h4>
     <p>${esc(k.hikaye || "")}</p>
+    ${(k.anlatimlar || []).length ? `<h4>🧭 ${k.anlatimlar.length} farklı yoldan anlatım</h4>${anlatimlarHtml(k.anlatimlar, 1)}` : ""}
     <h4>⚠️ Sınav Tuzağı</h4>
     <p>${esc(k.tuzak || "")}</p>
     <h4>🎯 Nasıl Sorulur?</h4>
@@ -1178,6 +1195,7 @@ function testKontrol() {
       <p><b>Hızlı tur:</b> ${esc(k.ozet || "")}</p>
       <p><b>Hikâyeyle:</b> ${esc(k.hikaye || "")}</p>
       <p><b>Sınav tuzağı:</b> ${esc(k.tuzak || "")}</p>
+      ${(k.anlatimlar || []).length ? `<details><summary>🧭 Konuyu ${k.anlatimlar.length} farklı yoldan yeniden oku (tablo, soru-cevap, çözümlü örnek, hafıza kodu)</summary>${anlatimlarHtml(k.anlatimlar, 1)}</details>` : ""}
       <div class="sonuc-satir">
         <a class="btn kucuk" href="#/coz/test/konu/${d}/${encodeURIComponent(konu)}">✏️ Bu konudan yeni 10 soru</a>
       </div>

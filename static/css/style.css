@@ -220,5 +220,8 @@ details summary:hover{color:var(--accent-2)}
 .konu-tekrar{border-left:4px solid var(--accent);background:#fffbeb}
 .konu-tekrar details{margin-top:6px}
 .konu-tekrar summary{cursor:pointer;font-weight:600;color:var(--accent-2);font-size:13px}
+.anlatim-blok{margin:6px 0;padding:6px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff}
+.anlatim-blok summary{cursor:pointer}
+.anlatim-blok p{margin:6px 0 2px;line-height:1.55}
 .ogrenme-paneli{border-left:4px solid var(--accent-2);margin:14px 0}
 .ogrenme-paneli .adim-satir{flex-wrap:wrap;gap:8px}
