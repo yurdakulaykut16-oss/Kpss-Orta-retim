@@ -20,6 +20,7 @@ Kullanım:
 import argparse
 import json
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -32,6 +33,29 @@ PREFIX = {'TAR': 'tarih', 'COG': 'cografya', 'VAT': 'vatandaslik', 'TUR': 'turkc
 REASON = ('Elle yazılmış yeni soru partisi; belirtilen geçmiş KPSS konu alanında incelendi. '
           'Birebir çıkmış soru değildir.')
 
+
+ROMA_DEGER = {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}
+
+
+def _sira_anahtari(o):
+    """'III', 'Yalnız II', 'I ve III', 'I, II ve III', '3. kat', 'Soldan 2.' → sıralama anahtarı; değilse None."""
+    t = o.strip()
+    m = re.fullmatch(r'(?:Soldan )?(\d+)\.(?: kat)?', t)
+    if m:
+        return (1, (int(m.group(1)),))
+    t = t.removeprefix('Yalnız ').replace(' ve ', ', ')
+    parcalar = [x.strip() for x in t.split(',')]
+    if all(x in ROMA_DEGER for x in parcalar):
+        return (len(parcalar), tuple(ROMA_DEGER[x] for x in parcalar))
+    return None
+
+
+def kanonik_sira(options):
+    """Numara / öncül seçeneklerini KPSS'deki gibi sıralar (Yalnız I, Yalnız II, I ve II, …)."""
+    anahtar = [_sira_anahtari(o) for o in options]
+    if all(anahtar) and len(set(anahtar)) == len(anahtar):
+        return [o for _, o in sorted(zip(anahtar, options))]
+    return options
 
 def topic_map(root=ROOT):
     policy = json.loads((root / 'data/kpss_kapsam.json').read_text(encoding='utf-8'))
@@ -71,6 +95,8 @@ def build(root=ROOT):
             if len({x.casefold() for x in options}) != 5:
                 raise ValueError(f'{where}: beş farklı şık gerekir')
             random.Random(sid + '-yeni-parti').shuffle(options)
+            if tsv.name.startswith('yeni_parti_16_'):
+                options = kanonik_sira(options)
             n = int(parts[2])
             s = dict(id=sid, ders=ders, gun=1 + (n - 1) % 10, konu=konu, zorluk=int(z),
                      kok=stem.replace(r'\n', '\n'), siklar=options, dogru=options.index(correct),
