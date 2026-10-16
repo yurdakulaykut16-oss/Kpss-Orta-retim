@@ -38,17 +38,28 @@ BASLANGIC = 651
 CIKTI = 'yeni_parti_16_{}.tsv'
 
 
-def mevcut_kokler(ders_haric_dosya=None):
+def mevcut_kokler(ders=None):
     keys = set()
     import json
     for f in (ROOT / 'data/sorular').glob('*.jsonl'):
         for line in f.read_text(encoding='utf-8').splitlines():
             line = line.strip()
             if line and not line.startswith('#'):
-                keys.add(question_key(json.loads(line)))
+                r = json.loads(line)
+                p = r.get('id', '').split('-')
+                # Bu üreticinin kendi eski çıktısı (YS-0651+) yeniden üretilirken sayılmaz.
+                if len(p) == 3 and p[1] == 'YS' and p[2].isdigit() and int(p[2]) >= BASLANGIC:
+                    continue
+                keys.add(question_key(r))
     for tsv in (ROOT / 'data/kaynaklar').glob('yeni_parti_*.tsv'):
+        # yeni_parti_16 çıktılarından yalnız PREFIX sırasında bu dersten ÖNCE gelen derslerinkiler
+        # sayılır (ör. Tarih'te çıkan eser sorusu Güncel'de tekrar üretilmez). Sabit sıra sayesinde
+        # dersler sırayla yeniden üretildiğinde sonuç kararlıdır.
         if tsv.name.startswith('yeni_parti_16_'):
-            continue
+            sira = list(PREFIX)
+            diger = tsv.stem[len('yeni_parti_16_'):]
+            if ders not in sira or diger not in sira or sira.index(diger) >= sira.index(ders):
+                continue
         for line in tsv.read_text(encoding='utf-8').splitlines():
             if line.strip() and not line.startswith('#'):
                 p = line.split('|')
@@ -80,7 +91,7 @@ def sec(dogru, havuz, rng, n=4, haric=()):
 def uret(ders, hedef=None, yaz=True):
     mod = importlib.import_module(f'bilgi_veri.{ders}')
     rng = random.Random(f'bilgi-{ders}-2026')
-    kokler = mevcut_kokler()
+    kokler = mevcut_kokler(ders)
     turlu = OrderedDict()
     atlanan = Counter()
     for q in mod.uret(rng):
@@ -102,15 +113,21 @@ def uret(ders, hedef=None, yaz=True):
     # Türler arasında dengeli seçim: her türden sırayla bir soru al.
     toplam = sum(len(v) for v in turlu.values())
     hedef = hedef or HEDEF[ders]
-    for v in turlu.values():
+    # KOTA: türün en çok kaç soru vereceği; AGIRLIK: her turda türden kaç soru alınacağı.
+    kota = getattr(mod, 'KOTA', {})
+    agirlik = getattr(mod, 'AGIRLIK', {})
+    for t, v in turlu.items():
         rng.shuffle(v)
-    secilen, i = [], 0
-    kuyruklar = list(turlu.values())
+        if t in kota:
+            del v[kota[t]:]
+    toplam = sum(len(v) for v in turlu.values())
+    secilen, konum = [], {t: 0 for t in turlu}
     while len(secilen) < min(hedef, toplam):
-        for kq in kuyruklar:
-            if i < len(kq) and len(secilen) < hedef:
-                secilen.append(kq[i])
-        i += 1
+        for t, kq in turlu.items():
+            for _ in range(agirlik.get(t, 1)):
+                if konum[t] < len(kq) and len(secilen) < hedef:
+                    secilen.append(kq[konum[t]])
+                    konum[t] += 1
     rng.shuffle(secilen)
     satirlar = [f'# {ders}: bilgi tablosu tabanlı sorular (araclar/bilgi_soru_uret.py ile üretildi; '
                 f'kaynak tablo araclar/bilgi_veri/{ders}.py). Elle düzenlemeyin; tabloyu düzenleyip yeniden üretin.']
@@ -120,7 +137,9 @@ def uret(ders, hedef=None, yaz=True):
     if yaz:
         (ROOT / 'data/kaynaklar' / CIKTI.format(ders)).write_text('\n'.join(satirlar) + '\n', encoding='utf-8')
     return dict(ders=ders, uretilen=toplam, yazilan=len(secilen), hedef=hedef,
-                turler={k: len(v) for k, v in turlu.items()}, atlanan=dict(atlanan))
+                turler={k: len(v) for k, v in turlu.items()},
+                secilen=dict(Counter(t for t, kq in turlu.items() for _ in range(konum[t]))),
+                atlanan=dict(atlanan))
 
 
 if __name__ == '__main__':

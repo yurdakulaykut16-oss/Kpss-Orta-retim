@@ -92,7 +92,13 @@ def add_to_bank(root, by_ders, index):
     for s in records:
         if s['id'] in index:
             if index[s['id']] != s:
-                raise ValueError('Yeni parti kaydı beklenmeyen içerikle değişti: ' + s['id'])
+                # Bilgi tablosu üreticisinin çıktısı (yeni_parti_16_*) tablodan yeniden üretilebilir:
+                # aynı kimlikli kayıt yeni içerikle yerinde değiştirilir. Elle yazılmış partiler korunur.
+                if 'bilgi-tablosu' not in s['etiketler'] or 'bilgi-tablosu' not in index[s['id']].get('etiketler', []):
+                    raise ValueError('Yeni parti kaydı beklenmeyen içerikle değişti: ' + s['id'])
+                rows = by_ders[s['ders']][1]
+                rows[next(i for i, r in enumerate(rows) if r['id'] == s['id'])] = s
+                index[s['id']] = s
             continue
         if question_key(s) in existing_roots:
             raise ValueError('Yeni parti kökü bankadaki bir soruyla aynı: ' + s['id'])
