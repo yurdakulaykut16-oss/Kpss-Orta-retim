@@ -1,5 +1,5 @@
 """Tarih bilgi tabloları (elle derlenmiş; yalnız ders kitaplarında yaygın kabul gören bilgiler)."""
-from .ortak import eslesme, q, sec, yuzyil, yy_ad
+from .ortak import eslesme, eslestirme, onculu, q, sec, siralama, yuzyil, yy_ad
 
 # yıl | olay | konu | dönem hükümdarı (O: Osmanlı padişahı, S: Selçuklu sultanı)
 OLAYLAR = """
@@ -513,7 +513,8 @@ def uret(rng):
                      f'{o} {y} yılında gerçekleşmiştir. Diğer seçeneklerdeki yıllar başka olaylara aittir.', 3))
         c = yuzyil(y)
         yy = [yy_ad(x) for x in (c - 2, c - 1, c + 1, c + 2, c + 3) if x >= 1]
-        out.append(q('yuzyil', konu, f'{o} hangi yüzyılda yaşanmıştır?', yy_ad(c), sec(yy_ad(c), yy, rng),
+        if y % 100 != 0:
+          out.append(q('yuzyil', konu, f'{o} hangi yüzyılda yaşanmıştır?', yy_ad(c), sec(yy_ad(c), yy, rng),
                      f'{o} {y} yılındadır; {y} yılı {yy_ad(c)} içinde yer alır.', 2))
         # önce / sonra (yalnız yılı kesin farklı olaylarla, aynı dönem penceresinde)
         pencere = [x for x in tum if abs(x[0] - y) <= 150 and x[0] != y]
@@ -567,7 +568,7 @@ def uret(rng):
     # özellikler
     oz = _satirlar(OZELLIKLER, 4)
     for kok, dogru, grup, konu in oz:
-        havuz = list({x[1] for x in oz if x[2] == grup and x[1] != dogru})
+        havuz = sorted({x[1] for x in oz if x[2] == grup and x[1] != dogru})
         if grup in ('savas', 'antlasma'):
             havuz += [x[1] for x in tum if 'başlaması' not in x[1] and 'Bunalımı' not in x[1] and
                       (('Savaşı' in x[1] or 'Muharebe' in x[1]) if grup == 'savas'
@@ -591,4 +592,118 @@ def uret(rng):
           out.append(q('merkez', konu, f'{ad} ilk merkezi (başkenti) olarak hangi şehri kullanmıştır?', merkez,
                      sec(merkez, [x[2] for x in dev if x[2] != '-'] + ['Bursa', 'Konya', 'Balasagun', 'Kaşgar'], rng),
                      f'{ad} kuruluşunda {merkez} merkezliydi.', 3))
+    out += akil_yurutme(rng, tum, kav, es, dev)
+    return out
+
+
+# Her türden en fazla bu kadar soru; akıl yürütme türleri her turda 2 kez alınır.
+AGIRLIK = {'sirala': 2, 'oncul_donem': 2, 'oncul_yuzyil': 2, 'oncul_yil': 2, 'oncul_eser': 1, 'esle_eser': 1,
+           'oncul_kavram': 1}
+
+
+def akil_yurutme(rng, tum, kav, es, dev):
+    """Seçenekleri birbirine yakın, tek cevaplı akıl yürütme soruları."""
+    out = []
+    tek_yil = {}
+    for y, o, k, h in tum:
+        tek_yil.setdefault(y, []).append(o)
+    olay = [x for x in tum if len(tek_yil[x[0]]) == 1]
+    # 1) Kronolojik sıralama: birbirine yakın yıllardaki 3-4 gelişme
+    for _ in range(320):
+        a = rng.choice(olay)
+        pencere = [x for x in olay if 0 < abs(x[0] - a[0]) <= rng.choice([25, 40, 60, 90])]
+        n = rng.choice([3, 3, 4])
+        if len(pencere) < n - 1:
+            continue
+        sec_ = [a] + rng.sample(pencere, n - 1)
+        if len({x[0] for x in sec_}) != n:
+            continue
+        out.append(siralama(rng, 'sirala', a[2], [(x[0], x[1]) for x in sec_],
+                            'Yukarıdaki gelişmelerin gerçekleşme sırası (eskiden yeniye) aşağıdakilerin hangisinde doğru verilmiştir?',
+                            lambda o: 'Yıllar: ' + '; '.join(f'{m} {k}' for k, m in o) + '.', 3))
+    # 2) Öncüllü dönem: aynı padişah/sultan dönemi mi, yakın dönemdeki başka hükümdar mı?
+    donem = {}
+    for y, o, k, h in tum:
+        if h:
+            donem.setdefault(h, []).append((y, o, k))
+    for h, rows in donem.items():
+        tip, kisi = h.split(':', 1)
+        unvan = 'padişahı' if tip == 'O' else 'sultanı'
+        yy = [r[0] for r in rows]
+        yakin = [(y, o, k, hh) for y, o, k, hh in tum if hh and hh != h and hh[0] == tip and
+                 min(abs(y - v) for v in yy) <= 70]
+        if not yakin:
+            continue
+        for _ in range(min(10, 3 * len(rows))):
+            d = [(o, f'{o} ({y}) {kisi} döneminde gerçekleşmiştir.') for y, o, k in rows]
+            w = [(o, f'{o} ({y}) {hh.split(":", 1)[1]} dönemindedir.') for y, o, k, hh in yakin]
+            k_ = rng.choice([x for x in (1, 2, 3) if x <= len(d) and 3 - x <= len(w)] or [0])
+            if not k_:
+                continue
+            out.append(onculu(rng, 'oncul_donem', rows[0][2], d, w,
+                              f'Yukarıdaki gelişmelerden hangileri {kisi} döneminde ({"Osmanlı" if tip == "O" else "Selçuklu"} {unvan}) gerçekleşmiştir?',
+                              3, k_))
+    # 3) Öncüllü yüzyıl: sınır yıllarına yakın gelişmelerle
+    for _ in range(260):
+        a = rng.choice(olay)
+        c = yuzyil(a[0])
+        bas, son = (c - 1) * 100 + 1, c * 100
+        if a[0] % 100 == 0:
+            continue
+        # 1700, 1800 gibi yüzyılın son yılı kitaplarda farklı yorumlanabildiği için kullanılmaz.
+        olay_ = [x for x in olay if x[0] % 100 != 0]
+        ic = [x for x in olay_ if bas <= x[0] <= son]
+        dis = [x for x in olay_ if (bas - 35 <= x[0] < bas) or (son < x[0] <= son + 35)]
+        if len(ic) < 2 or len(dis) < 2:
+            continue
+        d = [(x[1], f'{x[1]} {x[0]} yılındadır ({yy_ad(c)}).') for x in ic]
+        w = [(x[1], f'{x[1]} {x[0]} yılındadır ({yy_ad(yuzyil(x[0]))}).') for x in dis]
+        out.append(onculu(rng, 'oncul_yuzyil', a[2], d, w,
+                          f'Yukarıdaki gelişmelerden hangileri {yy_ad(c)}da yaşanmıştır?', 3))
+    # 4) Öncüllü olay–yıl eşleştirmesi (yanlış yıllar doğrusuna 1-4 yıl yakın)
+    for _ in range(260):
+        uc = rng.sample(olay, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d, w = [], []
+        for i, (y, o, k, h) in enumerate(uc):
+            if i < k_:
+                d.append((f'{o} – {y}', f'{o} {y} yılındadır.'))
+            else:
+                yy = y + rng.choice([-4, -3, -2, -1, 1, 2, 3, 4])
+                if yy in tek_yil and o in tek_yil.get(yy, []):
+                    break
+                w.append((f'{o} – {yy}', f'{o} {yy} değil {y} yılındadır.'))
+        else:
+            out.append(onculu(rng, 'oncul_yil', uc[0][2], d, w,
+                              'Yukarıdaki olay – yıl eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    # 5) Eser – yazar (öncüllü ve tek doğru eşleştirme)
+    yazar = {}
+    for e, y, k in es:
+        yazar.setdefault(e, set()).add(y)
+    for _ in range(90):
+        uc = rng.sample(es, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{e} – {y}', f'{e}, {y} tarafından yazılmıştır.') for e, y, k in uc[:k_]]
+        w = []
+        for e, y, k in uc[k_:]:
+            yy = rng.choice([x[1] for x in es if x[1] not in yazar[e] and x[2] == k] or [x[1] for x in es if x[1] not in yazar[e]])
+            w.append((f'{e} – {yy}', f'{e}, {yy} değil {y} tarafından yazılmıştır.'))
+        out.append(onculu(rng, 'oncul_eser', uc[0][2], d, w, 'Yukarıdaki eser – yazar eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    for _ in range(60):
+        out.append(eslestirme(rng, 'esle_eser', 'Türk-İslam Kültürü', [(e, y) for e, y, k in rng.sample(es, 5)],
+                              lambda a, d: d in yazar[a], 'dogru',
+                              lambda ks: ', '.join(f'“{k}”' for k in ks[:-1]) + f' ve “{ks[-1]}” eserleriyle ilgili aşağıdaki eser – yazar eşleştirmelerinden hangisi doğrudur?',
+                              aciklama=lambda a, d: f'{a} – {d}'))
+    # 6) Kavram öncüllüsü: aynı konudan tanımlar, biri yakın kavramla karıştırılmış
+    tanim = {a: d for a, d, k in kav}
+    for _ in range(140):
+        uc = rng.sample(kav, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
+        w = []
+        for a, t, k in uc[k_:]:
+            aday = [x for x in kav if x[0] != a and x[2] == k and x[1] != t] or [x for x in kav if x[0] != a]
+            b = rng.choice(aday)
+            w.append((f'{a}: {b[1]}', f'Bu tanım {a} kavramına değil {b[0]} kavramına aittir.'))
+        out.append(onculu(rng, 'oncul_kavram', uc[0][2], d, w, 'Yukarıdaki kavram – açıklama eşleştirmelerinden hangileri doğrudur?', 3, k_))
     return out
