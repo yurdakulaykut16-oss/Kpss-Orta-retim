@@ -8,13 +8,30 @@ etiketten seçilmez, böylece birden fazla doğru cevap oluşmaz.
 from itertools import permutations
 
 from .ortak import q, sec
-from . import mantik, paragraf
+from . import dilbilgisi, mantik, paragraf
 
-# Türkçe'de soruların çoğu paragraf ve sözel mantık olacak biçimde: bilgi türleri sınırlı.
-MANTIK_ADET = {'bulmaca': 160, 'siralama': 300, 'kismi': 100, 'tekil': 100}
-KOTA = {'deyim_anlam': 30, 'deyim_bul': 20, 'atasozu_anlam': 25, 'atasozu_bul': 15, 'es_anlam': 15,
-        'zit_anlam': 15, 'karsilik': 10, 'karsilik_ters': 5, 'kisaltma': 10, 'kisaltma_ters': 5,
-        'yazim': 28, 'ses': 15, 'fiilimsi_tur': 16, 'fiilimsi_bul': 0}
+# Türkçe dağılımı (KPSS ortaöğretim Türkçe testine yakın): paragraf ağırlıklı, sözel mantık
+# sınavdaki payı kadar (~%15), kalan kısım dil bilgisi ve anlam konularının numaralı cümle /
+# öncüllü sorularıyla. Tek bilgi soran (deyimin anlamı, kısaltma, tek sözcüğün yazımı gibi)
+# kolay türler artık üretilmez.
+MANTIK_ADET = {'bulmaca': 0, 'siralama': 160, 'kismi': 40, 'tekil': 30}
+DILBILGISI_KOTA = {
+    'ab_var': 38, 'ab_yok': 20, 'ab_neden': 30, 'ab_oncul': 25,
+    'il_var': 40, 'il_yok': 15, 'il_oncul': 15,
+    'an_var': 40, 'an_etiket': 20,
+    'oz_nesnel': 18, 'oz_oznel': 12, 'oz_oncul': 15,
+    'yz_var': 40, 'yz_yok': 15, 'yz_oncul': 20,
+    'nk_gorev': 38, 'nk_islev': 15,
+    'og_dizilis': 40, 'og_yok': 20, 'og_var': 15,
+    'ct_farkli': 15, 'ct_iki': 25, 'ct_dizanl': 15,
+    'st_var': 30, 'st_farkli': 15,
+    'yp_farkli': 12, 'yp_hangisi': 13,
+    'ses_yok': 25,
+    'fm_farkli': 15, 'fm_var': 15,
+    'mz_mecaz': 15, 'mz_gercek': 10, 'deyim_oncul': 20, 'atasozu_oncul': 12, 'eszit_oncul': 10,
+}
+KOTA = {**DILBILGISI_KOTA, 'par_konu': 0}
+BASIT_TAVAN = None  # Türkçe'de tüm türler KOTA ile belirlenir.
 
 # deyim | anlam | etiket
 DEYIMLER = """
@@ -1015,59 +1032,10 @@ def _bulmaca(rng, adlar):
 
 def uret(rng):
     out = []
-    dey = _satir(DEYIMLER, 3)
-    out += _etiketli(rng, 'deyim', 'Sözcükte Anlam', dey,
-                     lambda a: f'“{a}” deyiminin anlamı aşağıdakilerden hangisidir?',
-                     lambda d: f'“{d}” anlamına gelen deyim aşağıdakilerden hangisidir?',
-                     lambda a, d: f'“{a}” deyimi “{d}” anlamındadır.')
-    ata = _satir(ATASOZLERI, 3)
-    out += _etiketli(rng, 'atasozu', 'Sözcükte Anlam', ata,
-                     lambda a: f'“{_bas(a)}.” atasözünün anlamı aşağıdakilerden hangisidir?',
-                     lambda d: f'“{_bas(d)}.” düşüncesini anlatan atasözü aşağıdakilerden hangisidir?',
-                     lambda a, d: f'“{_bas(a)}.” atasözü, {d} düşüncesini anlatır.', 3)
-    out += _cift(rng, 'es_anlam', _satir(ES_ANLAM, 3),
-                 lambda x: f'“{x}” sözcüğünün eş anlamlısı aşağıdakilerden hangisidir?',
-                 lambda x, y: f'“{x}” ile “{y}” eş anlamlıdır.')
-    out += _cift(rng, 'zit_anlam', _satir(ZIT_ANLAM, 3),
-                 lambda x: f'“{x}” sözcüğünün zıt (karşıt) anlamlısı aşağıdakilerden hangisidir?',
-                 lambda x, y: f'“{x}” ile “{y}” zıt anlamlıdır.')
-    kar = _satir(KARSILIK, 2)
-    for a, d in kar:
-        diger = [r for r in kar if r[0] != a]
-        rng.shuffle(diger)
-        out.append(q('karsilik', 'Sözcükte Anlam', f'Yabancı kökenli “{a}” sözcüğü yerine kullanılabilecek Türkçe karşılık aşağıdakilerden hangisidir?',
-                     d, sec(d, [r[1] for r in diger], rng), f'“{a}” yerine “{d}” kullanılabilir.'))
-        rng.shuffle(diger)
-        out.append(q('karsilik_ters', 'Sözcükte Anlam', f'“{d}” sözcüğü aşağıdaki yabancı sözcüklerden hangisinin Türkçe karşılığıdır?',
-                     a, sec(a, [r[0] for r in diger], rng), f'“{d}”, “{a}” sözcüğünün Türkçe karşılığıdır.'))
-    kis = _satir(KISALTMA, 6)
-    for acilim, dogru, *yanlis in kis:
-        out.append(q('kisaltma', 'Yazım', f'“{acilim}” sözünün Yazım Kılavuzu’na uygun kısaltması aşağıdakilerden hangisidir?',
-                     dogru, yanlis, f'{acilim}: {dogru}', 2))
-        diger = [r[0] for r in kis if r[0] != acilim]
-        rng.shuffle(diger)
-        out.append(q('kisaltma_ters', 'Yazım', f'“{dogru}” kısaltması aşağıdakilerden hangisinin kısaltmasıdır?',
-                     acilim, sec(acilim, diger, rng), f'{dogru} = {acilim}.', 2))
-    for yanlis, dogru in _satir(YAZIM, 2):
-        if yanlis == dogru:
-            continue
-        b = _bozuk(dogru, rng, 4, [yanlis])
-        out.append(q('yazim', 'Yazım', f'“{yanlis}” biçiminde yanlış yazılan sözcüğün doğru yazılışı aşağıdakilerden hangisidir?',
-                     dogru, b, f'Doğru yazım: {dogru}.', 2))
-    for soz, olay in _satir(SES, 2):
-        out.append(q('ses', 'Ses Bilgisi', f'“{soz}” sözcüğünde aşağıdaki ses olaylarından hangisi görülür?', olay,
-                     sec(olay, SES_OLAYLARI, rng), f'“{soz}” sözcüğünde {olay.lower()} vardır.', 2))
-    for tur, cumle in _satir(FIILIMSI, 2):
-        f = cumle[cumle.index('[') + 1:cumle.index(']')]
-        duz = cumle.replace('[', '').replace(']', '')
-        tur_ad = FIILIMSI_TUR[tur]
-        out.append(q('fiilimsi_tur', 'Fiilimsi', f'“{duz}” cümlesindeki fiilimsinin türü aşağıdakilerden hangisidir?', tur_ad,
-                     [v for k, v in FIILIMSI_TUR.items() if k != tur] + FIILIMSI_EK, f'“{f}” {tur_ad.lower()}dir.', 3))
-        kalan = cumle[:cumle.index('[')] + cumle[cumle.index(']') + 1:]
-        kelimeler = [w.strip('.,;:!?') for w in kalan.split()]
-        kelimeler = [w for w in kelimeler if w]
-        out.append(q('fiilimsi_bul', 'Fiilimsi', f'“{duz}” cümlesinde aşağıdakilerden hangisi fiilimsidir?', f,
-                     sec(f, kelimeler, rng), f'“{f}” {tur_ad.lower()}dir; diğerleri fiilimsi değildir.', 2))
+    deneme = {k: v * 2 for k, v in DILBILGISI_KOTA.items()}
+    out += dilbilgisi.dilbilgisi_sorulari(
+        rng, deneme, _satir(SES, 2), _satir(FIILIMSI, 2), FIILIMSI_TUR,
+        _satir(DEYIMLER, 3), _satir(ATASOZLERI, 3), _satir(ES_ANLAM, 3), _satir(ZIT_ANLAM, 3))
     adlar = _satir(ADLAR, 3)
     say = 0
     while say < MANTIK_ADET['bulmaca']:
@@ -1075,7 +1043,6 @@ def uret(rng):
         if r:
             out += r[:MANTIK_ADET['bulmaca'] - say]
             say += len(r)
-    # Türkçe ağırlığı: paragraf + sözel mantık (çeldiricisi güçlü, akıl yürütme gerektiren sorular)
     out += mantik.siralama_bulmacalari(rng, adlar, MANTIK_ADET['siralama'])[:MANTIK_ADET['siralama']]
     out += mantik.eslestirme_bulmacalari(rng, adlar, MANTIK_ADET['kismi'], mod='kismi')[:MANTIK_ADET['kismi']]
     out += mantik.eslestirme_bulmacalari(rng, adlar, MANTIK_ADET['tekil'], n=5, mod='tekil')[:MANTIK_ADET['tekil']]
