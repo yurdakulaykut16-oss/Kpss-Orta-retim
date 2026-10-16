@@ -148,9 +148,21 @@ function mockFetch(url, opts) {
     if (btn) { win.konuAc(d, btn); await tick(); }
     const blok = doc.querySelectorAll(".anlatim-blok").length;
     ok("konu kartında farklı yollardan anlatımlar (tablo, soru-cevap, örnek, hafıza kodu)", blok >= 4 && has("farklı yoldan anlatım"), `blok=${blok}`);
+    const grup = doc.querySelector(".hoca-grup");
+    const sekme = grup ? [...grup.querySelectorAll(".hoca-sekme")] : [];
+    const panel = grup ? [...grup.querySelectorAll(".hoca-panel")] : [];
+    ok("konu kartında 3 hocadan anlatım (Kemal, Ayşe, Murat)", sekme.length === 3 && panel.length === 3
+      && has("Kemal Hoca") && has("Ayşe Hoca") && has("Murat Hoca") && panel.filter((p) => !p.hidden).length === 1,
+      `sekme=${sekme.length} panel=${panel.length}`);
+    if (sekme[2]) win.hocaSec(sekme[2], 2);
+    ok("hoca sekmesi değişince yalnız seçilen hocanın anlatımı görünür",
+      panel.length === 3 && panel[2] && !panel[2].hidden && panel[0].hidden && sekme[2].classList.contains("aktif")
+      && panel[2].querySelectorAll("h5").length >= 3 && /Mini test/.test(panel[2].textContent));
   }
   await go("#/ders/tarih/1");
   ok("modül anlatım sayfası", has("Sıradaki adım") && has("10'luk Test") && has("Okudum"));
+  ok("modül sayfasında 3 hocadan anlatım bölümü", has("3 hocadan anlatım") && doc.querySelectorAll(".hoca-bolum .hoca-grup").length >= 1
+    && new Set([...doc.querySelectorAll(".hoca-bolum .hoca-grup")].map((g) => g.dataset.ana)).size === doc.querySelectorAll(".hoca-bolum .hoca-grup").length);
   await go("#/konular/tarih");
   ok("konu modülü başlığı", has("Tarih") && (has("DERİN MODÜLLER") || has("modülü")));
 
@@ -309,6 +321,7 @@ function mockFetch(url, opts) {
   const key1=`${q1.ders}|${q1.konu}`;
   await sikSec((q1.dogru+1)%5);
   ok("öğrenme: yanlışta konu hemen yeniden anlatılır", has("Konu tekrarı") && has("1. anlatım") && has("Hızlı tur") && !has("kısa anlatım kartı yok"));
+  ok("öğrenme: yanlışta konuyu bir hoca anlatır, diğer iki hoca sekmede", has("Bu kez konuyu") && has("Kemal Hoca") && doc.querySelectorAll(".konu-tekrar .hoca-grup .hoca-sekme").length >= 3);
   ok("öğrenme: konu öğrenme listesine girer", has("öğrenme listene eklendi") && JSON.parse(win.__smokeOgrenme())[key1]?.aktif===true);
   const n1=win.__smokeNext();
   ok("öğrenme: sıradaki soru aynı konudan ve yeni", n1 && n1.konu===q1.konu && n1.id!==q1.id);

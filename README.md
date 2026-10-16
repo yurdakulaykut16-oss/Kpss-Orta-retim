@@ -133,6 +133,16 @@ Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, 
 
 **Farklı yollardan konu anlatımı**: `data/konu_yeniden.json` içindeki 123 konu kartının her birine `anlatimlar` alanı eklendi (toplam 519 blok): 🗂️ tablo/şema, ❓ soru–cevap, 🧩 çözümlü KPSS örneği, 🧠 hafıza kodu ve karıştırılanlar. Kaynak `araclar/konu_anlatim_veri/<ders>.py`; güncellemek için `python3 araclar/konu_anlatim_ekle.py`. Konu anlatımları sayfasındaki kartta hepsi, yanlış cevap sonrası tekrarda her seferinde başka bir anlatım yolu, test sonunda yanlış konularda tüm anlatımlar gösterilir.
 
+**👩‍🏫 Üç hocadan konu anlatımı**: Beş dersin 50 ana konusunun her biri, öğretim tarzı birbirinden farklı üç hoca tarafından baştan sona anlatılır (50 × 3 = 150 tam anlatım, her biri ~1.400–3.000 karakter):
+
+| Hoca | Tarz | Kuram / mantık | Bölümler |
+|---|---|---|---|
+| 📜 Kemal Hoca | Hikâyeci | Bütünden parçaya, anlamlı öğrenme: “Neden böyle oldu?” | Büyük resim → Hikâye → Neden–sonuç zinciri → Tek cümlede |
+| 📐 Ayşe Hoca | Sistemci | Parçadan bütüne, şema kuramı: sınıflandırma, kural–istisna | Kavram haritası → numaralı bölümler → Kural ve istisna → Adım adım |
+| 🎯 Murat Hoca | Soru Avcısı | Sınavdan geriye, geri getirme pratiği | Soru kalıpları → Anahtar kelime → cevap → Tuzaklar → Hafıza kodu → Mini test (3 soru) |
+
+Kaynak `araclar/konu_anlatim_veri/hocalar.py` (hoca bilgileri) ve `hoca_<ders>.py` (`HOCA = {ana_konu: (kemal, ayşe, murat)}`; Türkçe ikinci yarısı `hoca_turkce_2.py`). `python3 araclar/konu_anlatim_ekle.py` her karta `hocalar` alanını yazar (`--kontrol` yalnızca kapsam ve kalite raporu verir; her metinde en az 3 ara başlık ve 700 karakter aranır). Arayüzde sekmelerle hoca değiştirilir: konu kartında (Hızlı Tur), her modül sayfasının sonunda (“3 hocadan anlatım”), yanlış cevap sonrası tekrarda (her yanlışta konuyu sıradaki hoca anlatır: Kemal → Ayşe → Murat) ve test sonu yanlış konu incelemesinde (Ayşe Hoca'dan başlar). Eski kısa kartlar “Ek çalışma kartları” olarak kapalı durur. Testler: `araclar/test_hocalar.py` (kapsam, hoca imza başlıkları, mini test, metinlerin birbirinden farklılığı, JSON'un kaynakla güncelliği) ve `smoke_test.js` (sekmeler).
+
 Aynı kök iki kez üretilmez, bankadaki köklerle ve diğer derslerin çıktılarıyla çakışmaz; üretim deterministiktir. Hata bulunursa TSV yerine tabloyu düzeltip `python3 araclar/bilgi_soru_uret.py <ders>` → `python3 araclar/ek_yeni_sorular.py --onayla` → `python3 araclar/soru_yukselt.py` sırası izlenmelidir (bilgi tablosu kayıtları aynı kimlikle yerinde güncellenir; birden çok ders yeniden üretilecekse Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel sırası kullanılmalıdır).
 
 | Ders | Aktif toplam | Deneme rezervi | Başlangıç test kapasitesi |

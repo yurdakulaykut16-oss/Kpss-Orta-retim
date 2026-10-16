@@ -395,6 +395,39 @@ function anlatimlarHtml(liste, acik = 0) {
   return (liste || []).map((a, i) => `<details class="anlatim-blok"${i < acik ? " open" : ""}>
     <summary><b>${esc(a.baslik)}</b></summary><p>${anlatimMetni(a.metin)}</p></details>`).join("");
 }
+/* Üç hocadan anlatım: aynı konu, üç farklı öğretim kuramı (hikâye / sistem / soru avcılığı). */
+function hocaMetni(m) {
+  return String(m || "").split("\n").map((s) => s.startsWith("§ ")
+    ? `<h5>${esc(s.slice(2))}</h5>` : (s.trim() ? `<p>${esc(s)}</p>` : "")).join("");
+}
+function hocaGrupHtml(g, secili = 0) {
+  const an = g.anlatimlar || [];
+  if (!an.length) return "";
+  const i0 = Math.min(Math.max(0, secili), an.length - 1);
+  return `<div class="hoca-grup" data-ana="${esc(g.ana)}">
+    <div class="hoca-ana">👩‍🏫 ${esc(g.ana)} <span>· ${an.length} hocadan anlatım</span></div>
+    <div class="hoca-sekmeler" role="tablist">${an.map((a, i) => `<button type="button" role="tab"
+      class="hoca-sekme${i === i0 ? " aktif" : ""}" aria-selected="${i === i0}" data-hoca="${esc(a.hoca)}"
+      onclick="hocaSec(this,${i})">${a.ikon} ${esc(a.ad)}<small>${esc(a.unvan)}</small></button>`).join("")}</div>
+    ${an.map((a, i) => `<div class="hoca-panel" role="tabpanel" data-hoca="${esc(a.hoca)}"${i === i0 ? "" : " hidden"}>
+      <p class="hoca-yontem">${a.ikon} <b>${esc(a.ad)} (${esc(a.unvan)})</b> — ${esc(a.yontem)}</p>
+      <div class="hoca-metin">${hocaMetni(a.metin)}</div></div>`).join("")}
+  </div>`;
+}
+function hocalarHtml(k, secili = 0, goruldu = null) {
+  return (k?.hocalar || []).filter((g) => !goruldu || (!goruldu.has(g.ana) && goruldu.add(g.ana)))
+    .map((g) => hocaGrupHtml(g, secili)).join("");
+}
+function ekKartlarHtml(k) {
+  const an = k?.anlatimlar || [];
+  return an.length ? `<details class="ek-kartlar"><summary>🧭 Ek çalışma kartları — ${an.length} farklı yoldan anlatım (tablo, soru–cevap, çözümlü örnek, hafıza kodu)</summary>${anlatimlarHtml(an, 1)}</details>` : "";
+}
+window.hocaSec = (btn, i) => {
+  const grup = btn.closest(".hoca-grup");
+  if (!grup) return;
+  grup.querySelectorAll(".hoca-sekme").forEach((b, j) => { b.classList.toggle("aktif", j === i); b.setAttribute("aria-selected", String(j === i)); });
+  grup.querySelectorAll(".hoca-panel").forEach((p, j) => { p.hidden = j !== i; });
+};
 function konuTekrarHtml(ders, konu, katman = 1, tam = false) {
   const key = konuAnahtar(ders,konu);
   const k = V.konuYeniden[key];
@@ -422,6 +455,15 @@ function konuTekrarHtml(ders, konu, katman = 1, tam = false) {
   </div>`;
 }
 function anlatimKatman(k, katman, tam) {
+  const hg = k.hocalar || [];
+  if (hg.length) {
+    const hocaSay = hg[0].anlatimlar.length;
+    const i = tam ? 0 : (Math.max(1, katman) - 1) % hocaSay;
+    const h = hg[0].anlatimlar[i];
+    const not = tam ? "Konuyu üç farklı hocadan dinle; sekmelerle hoca değiştir."
+      : `Bu kez konuyu <b>${h.ikon} ${esc(h.ad)}</b> (${esc(h.unvan)}) anlatıyor. Anlamazsan diğer hocaların sekmesine geç.`;
+    return `<h4>👩‍🏫 3 hocadan konu anlatımı</h4><p class="meta">${not}</p>${hocalarHtml(k, i)}${ekKartlarHtml(k)}`;
+  }
   const an = k.anlatimlar || [];
   if (!an.length) return "";
   if (tam) return `<h4>🧭 Farklı yollardan anlatım</h4>${anlatimlarHtml(an, 1)}`;
@@ -800,7 +842,7 @@ function viewKonular() {
           <span>${esc((V.konuYeniden[konuAnahtar(d, x.konu)]?.ozet || "").slice(0, 90))}${(V.konuYeniden[key]?.ozet || "").length > 90 ? "…" : ""}</span>
         </div>
         <div class="adim-butonlar">
-          <button class="btn kucuk seffaf" onclick="konuAc('${d}', this)" data-konu="${esc(x.konu)}">📖 Hızlı Tur + Farklı Anlatım</button>
+          <button class="btn kucuk seffaf" onclick="konuAc('${d}', this)" data-konu="${esc(x.konu)}">📖 Hızlı Tur + 3 Hocadan Anlatım</button>
           <a class="btn kucuk" href="#/coz/test/konu/${d}/${encodeURIComponent(x.konu)}">✏️ 10 Soru</a>
         </div>
       </div>`;
@@ -860,6 +902,8 @@ function viewDers(d, gun) {
   const gunlukSoru = V.sorular[d].filter((s) => s.gun === g.gun);
   const konular = [...new Set(gunlukSoru.map((s) => s.konu))];
   const okundu = V.kayit.okunan[okumaAnahtar(d, g.gun)];
+  const hocaGoruldu = new Set();
+  const hocaBolum = konular.map((k) => hocalarHtml(V.konuYeniden[konuAnahtar(d, k)], 0, hocaGoruldu)).join("");
   $("#view").innerHTML = `
     <div class="anlatim">
       <div class="ust-yol"><a href="#/konular">Konu Anlatımları</a> → <a href="#/konular/${d}">${DERSLER[d].ad}</a> → ${g.gun}. Modül</div>
@@ -872,6 +916,9 @@ function viewDers(d, gun) {
       ${g.sik_hatalar.length ? `<div class="hata"><h4>⚠️ Sık Yapılan Hatalar</h4><ul>${g.sik_hatalar.map((s) => `<li>${esc(s)}</li>`).join("")}</ul></div>` : ""}
       ${g.kart ? `<div class="kart-cep"><h4>🃏 Cebe Kart — bu cebinde dursun</h4>${paragrafla(g.kart)}</div>` : ""}
       ${g.agiz_tekrari.length ? `<h3>🗣 Ağız Tekrarı (sesli cevapla)</h3><ul>${g.agiz_tekrari.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
+      ${hocaBolum ? `<div class="hoca-bolum"><h3>👩‍🏫 3 hocadan anlatım</h3>
+        <p class="meta">Bu modülün konularını üç farklı hoca, üç farklı yöntemle anlatıyor: 📜 Kemal Hoca (hikâye, neden–sonuç), 📐 Ayşe Hoca (kavram haritası, kural–istisna, adım adım), 🎯 Murat Hoca (soru kalıpları, tuzaklar, mini test).</p>
+        ${hocaBolum}</div>` : ""}
 
       <div class="sonraki-adim">
         <h3>✅ Sıradaki adım: 10'luk Test</h3>
@@ -905,9 +952,12 @@ window.konuAc = (d, btn) => {
   kart.innerHTML = `
     <h4>📖 ${esc(konuAdi(konu))} — Hızlı Tur</h4>
     <p>${esc(k.ozet || "Bu konunun özeti yakında eklenecek.")}</p>
+    ${(k.hocalar || []).length ? `<h4>👩‍🏫 3 hocadan konu anlatımı</h4>
+    <p class="meta">📜 Kemal Hoca hikâye ve neden–sonuçla, 📐 Ayşe Hoca kavram haritası ve kurallarla, 🎯 Murat Hoca soru kalıpları ve tuzaklarla anlatır. Sekmelerle hoca değiştir.</p>
+    ${hocalarHtml(k)}` : ""}
     <h4>🎭 Farklı Anlatım (hikâyeyle)</h4>
     <p>${esc(k.hikaye || "")}</p>
-    ${(k.anlatimlar || []).length ? `<h4>🧭 ${k.anlatimlar.length} farklı yoldan anlatım</h4>${anlatimlarHtml(k.anlatimlar, 1)}` : ""}
+    ${ekKartlarHtml(k)}
     <h4>⚠️ Sınav Tuzağı</h4>
     <p>${esc(k.tuzak || "")}</p>
     <h4>🎯 Nasıl Sorulur?</h4>
@@ -1195,7 +1245,8 @@ function testKontrol() {
       <p><b>Hızlı tur:</b> ${esc(k.ozet || "")}</p>
       <p><b>Hikâyeyle:</b> ${esc(k.hikaye || "")}</p>
       <p><b>Sınav tuzağı:</b> ${esc(k.tuzak || "")}</p>
-      ${(k.anlatimlar || []).length ? `<details><summary>🧭 Konuyu ${k.anlatimlar.length} farklı yoldan yeniden oku (tablo, soru-cevap, çözümlü örnek, hafıza kodu)</summary>${anlatimlarHtml(k.anlatimlar, 1)}</details>` : ""}
+      ${(k.hocalar || []).length ? `<p class="meta">👩‍🏫 Bu konuyu şimdi başka bir hocadan dinle — sekmelerle hoca değiştirebilirsin.</p>${hocalarHtml(k, 1)}` : ""}
+      ${ekKartlarHtml(k)}
       <div class="sonuc-satir">
         <a class="btn kucuk" href="#/coz/test/konu/${d}/${encodeURIComponent(konu)}">✏️ Bu konudan yeni 10 soru</a>
       </div>
