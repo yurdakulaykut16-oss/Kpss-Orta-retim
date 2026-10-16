@@ -38,8 +38,8 @@ BASLANGIC = 651
 CIKTI = 'yeni_parti_16_{}.tsv'
 
 
-# Dersler için tek bilgi soran soru türlerinin toplam üst sınırı (Türkçe kendi KOTA'sını kullanır).
-BASIT_TAVAN = 360
+# Genel Kültür derslerinde öncüllü/sıralama/eşleştirme sorularının en çok payı (Türkçe kendi KOTA'sını kullanır).
+AKIL_ORANI = 0.30
 AKIL_ONEK = ('oncul', 'sirala', 'esle')
 
 def mevcut_kokler(ders=None):
@@ -124,15 +124,16 @@ def uret(ders, hedef=None, yaz=True):
         rng.shuffle(v)
         if t in kota:
             del v[kota[t]:]
-    # Tek bilgi soran (akıl yürütme gerektirmeyen) türler toplamda BASIT_TAVAN ile sınırlanır;
-    # kalan yer öncüllü / sıralama / eşleştirme sorularıyla dolar (sınav düzeyi).
-    tavan = getattr(mod, 'BASIT_TAVAN', BASIT_TAVAN)
-    if tavan is not None:
-        basit = [t for t in turlu if not t.startswith(AKIL_ONEK) and t not in kota]
-        n_basit = sum(len(turlu[t]) for t in basit)
-        if n_basit > tavan:
-            for t in basit:
-                del turlu[t][max(1, len(turlu[t]) * tavan // n_basit):]
+    # KPSS Genel Kültür testleri bilgi/ezber ağırlıklıdır: öncüllü / sıralama / eşleştirme
+    # türleri hedefin AKIL_ORANI kadarıyla sınırlanır, kalan yer düz bilgi sorularıyla dolar.
+    oran = getattr(mod, 'AKIL_ORANI', AKIL_ORANI)
+    if oran is not None:
+        akil = [t for t in turlu if t.startswith(AKIL_ONEK) and t not in kota]
+        n_akil = sum(len(turlu[t]) for t in akil)
+        tavan = int(hedef * oran)
+        if n_akil > tavan:
+            for t in akil:
+                del turlu[t][max(1, len(turlu[t]) * tavan // n_akil):]
     toplam = sum(len(v) for v in turlu.values())
     secilen, konum = [], {t: 0 for t in turlu}
     while len(secilen) < min(hedef, toplam):

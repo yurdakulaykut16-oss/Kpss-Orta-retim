@@ -10,28 +10,21 @@ from itertools import permutations
 from .ortak import q, sec
 from . import dilbilgisi, mantik, paragraf
 
-# Türkçe dağılımı (KPSS ortaöğretim Türkçe testine yakın): paragraf ağırlıklı, sözel mantık
-# sınavdaki payı kadar (~%15), kalan kısım dil bilgisi ve anlam konularının numaralı cümle /
-# öncüllü sorularıyla. Tek bilgi soran (deyimin anlamı, kısaltma, tek sözcüğün yazımı gibi)
+# Türkçe dağılımı (Genel Yetenek: okuma / paragraf / dil bilgisi): en çok paragraf, ardından
+# dil bilgisi ve anlam konularının numaralı cümle / öncüllü soruları; sözel mantık önemli bir
+# pay (~%15) olarak korunur. Tek bilgi soran (deyimin anlamı, kısaltma, tek sözcüğün yazımı gibi)
 # kolay türler artık üretilmez.
 MANTIK_ADET = {'bulmaca': 0, 'siralama': 160, 'kismi': 40, 'tekil': 30}
 DILBILGISI_KOTA = {
-    'ab_var': 38, 'ab_yok': 20, 'ab_neden': 30, 'ab_oncul': 25,
-    'il_var': 40, 'il_yok': 15, 'il_oncul': 15,
-    'an_var': 40, 'an_etiket': 20,
-    'oz_nesnel': 18, 'oz_oznel': 12, 'oz_oncul': 15,
-    'yz_var': 40, 'yz_yok': 15, 'yz_oncul': 20,
-    'nk_gorev': 38, 'nk_islev': 15,
-    'og_dizilis': 40, 'og_yok': 20, 'og_var': 15,
-    'ct_farkli': 15, 'ct_iki': 25, 'ct_dizanl': 15,
-    'st_var': 30, 'st_farkli': 15,
-    'yp_farkli': 12, 'yp_hangisi': 13,
-    'ses_yok': 25,
-    'fm_farkli': 15, 'fm_var': 15,
-    'mz_mecaz': 15, 'mz_gercek': 10, 'deyim_oncul': 20, 'atasozu_oncul': 12, 'eszit_oncul': 10,
+    'ab_var': 32, 'ab_yok': 20, 'ab_neden': 26, 'ab_oncul': 21, 'il_var': 34, 'il_yok': 12,
+    'il_oncul': 15, 'an_var': 32, 'an_etiket': 16, 'oz_nesnel': 18, 'oz_oznel': 12, 'oz_oncul': 12,
+    'yz_var': 34, 'yz_yok': 15, 'yz_oncul': 16, 'nk_gorev': 32, 'nk_islev': 15, 'og_dizilis': 34,
+    'og_yok': 16, 'og_var': 15, 'ct_farkli': 12, 'ct_iki': 22, 'ct_dizanl': 13, 'st_var': 26,
+    'st_farkli': 12, 'yp_farkli': 12, 'yp_hangisi': 13, 'ses_yok': 21, 'fm_farkli': 12, 'fm_var': 12,
+    'mz_mecaz': 12, 'mz_gercek': 10, 'deyim_oncul': 16, 'atasozu_oncul': 11, 'eszit_oncul': 8,
 }
-KOTA = {**DILBILGISI_KOTA, 'par_konu': 0}
-BASIT_TAVAN = None  # Türkçe'de tüm türler KOTA ile belirlenir.
+KOTA = dict(DILBILGISI_KOTA)
+AKIL_ORANI = None  # Türkçe'de tüm türler KOTA ile belirlenir.
 
 # deyim | anlam | etiket
 DEYIMLER = """
