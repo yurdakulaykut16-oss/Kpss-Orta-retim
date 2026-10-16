@@ -4,7 +4,7 @@ Zamanla değişebilecek bilgiler (görevdeki kişiler, anlık sıralamalar) bile
 kullanılmamıştır. Birden fazla doğru cevaba yol açabilecek kayıtlar (ör. birden
 çok resmî başkenti olan ülkeler, kıtalararası ülkeler) çıkarılmıştır.
 """
-from .ortak import eslesme, q, sec
+from .ortak import eslestirme, onculu, siralama, eslesme, q, sec, sec2
 
 # ülke | başkent | kıta ('-' = kıta sorusu sorulmaz)
 ULKELER = """
@@ -1131,8 +1131,25 @@ def uret(rng):
     out = []
     ulk = _satir(ULKELER, 3)
     kay = [(u, b, k) for u, b, k in ulk]
+    # Başkent sorusunda ülkenin büyük şehirleri (ör. Avustralya: Sidney) güçlü çeldiricidir.
+    sehir_ulke = {}
+    for sh, u in _satir(SEHIRLER, 2):
+        sehir_ulke.setdefault(u, []).append(sh)
+    baskentler = [b for _, b, _ in kay]
+    for u, b, k in kay:
+        tuzak = [x for x in sehir_ulke.get(u, []) if x != b]
+        rng.shuffle(tuzak)
+        ayni_kita = [x[1] for x in kay if x[2] == k and x[0] != u]
+        rng.shuffle(ayni_kita)
+        yan = tuzak[:2]
+        for x in ayni_kita + baskentler:
+            if len(yan) < 4 and x != b and x not in yan:
+                yan.append(x)
+        ek = f' {" ve ".join(tuzak[:2])} bu ülkenin önemli şehirlerindendir ama başkent değildir.' if tuzak else ''
+        out.append(q('baskent_ileri', 'Dünya', f'{u} ülkesinin başkenti aşağıdakilerden hangisidir?', b, yan,
+                     f'{u} ülkesinin başkenti: {b}.' + ek, 2))
     out += eslesme(rng, 'baskent', [(u, b, 'Dünya') for u, b, _ in kay],
-                   lambda a, d: f'{a} ülkesinin başkenti aşağıdakilerden hangisidir?',
+                   None,
                    lambda a, d: f'{d} hangi ülkenin başkentidir?',
                    lambda a, d: f'{a} ülkesinin başkenti {d}’dir.', lambda a, d: f'{d}, {a} ülkesinin başkentidir.', 2,
                    grup=None)
@@ -1233,4 +1250,124 @@ def uret(rng):
                      f'“{t}” {b} terimidir.', 2))
     for k, soru, d, a, b, c, e, g in _satir(OZEL, 8):
         out.append(q('ozel', k, soru, d, [a, b, c, e], g, 2))
+    out += akil_yurutme(rng, kay, sehir_ulke, es, org)
+    return out
+
+
+AGIRLIK = {'oncul_kita': 3, 'oncul_baskent': 3, 'oncul_eser': 3, 'oncul_merkez': 2, 'sirala_orgut': 2,
+           'oncul_para': 2, 'esle_baskent': 2, 'oncul_olimpiyat': 2, 'esle_eser': 2}
+
+KOMSU_KITA = {'Avrupa': ['Asya', 'Afrika'], 'Asya': ['Avrupa', 'Okyanusya', 'Afrika'], 'Afrika': ['Asya', 'Avrupa'],
+              'Kuzey Amerika': ['Güney Amerika', 'Avrupa'], 'Güney Amerika': ['Kuzey Amerika', 'Afrika'],
+              'Okyanusya': ['Asya', 'Güney Amerika']}
+
+
+def akil_yurutme(rng, kay, sehir_ulke, es, org):
+    """Seçenekleri birbirine yakın, tek cevaplı akıl yürütme soruları."""
+    out = []
+    kita_ad = lambda k: k if k in ('Avrupa', 'Asya', 'Afrika', 'Okyanusya') else k
+    # 1) Hangileri X kıtasında? Çeldiriciler komşu kıtadan
+    kitali = [x for x in kay if x[2] != '-']
+    for _ in range(300):
+        k = rng.choice(list(KOMSU_KITA))
+        d = [(u, f'{u} {k} kıtasındadır.') for u, b, kk in kitali if kk == k]
+        w = [(u, f'{u} {kk} kıtasındadır.') for u, b, kk in kitali if kk in KOMSU_KITA[k]]
+        out.append(onculu(rng, 'oncul_kita', 'Dünya', d, w, f'Yukarıdaki ülkelerden hangileri {kita_ad(k)} kıtasında yer alır?', 3))
+    # 2) Ülke – başkent: yanlışlar ülkenin başkent olmayan büyük şehirleri
+    tuzakli = [x for x in kay if [c for c in sehir_ulke.get(x[0], []) if c != x[1]]]
+    for _ in range(320):
+        uc = rng.sample(kay, 3)
+        k_ = rng.choice([1, 2, 2])
+        d = [(f'{u} – {b}', f'{u} ülkesinin başkenti {b}.') for u, b, kk in uc[:k_]]
+        w = []
+        for u, b, kk in uc[k_:]:
+            if u not in {x[0] for x in tuzakli}:
+                aday = [x for x in tuzakli if x[0] not in {y[0] for y in uc}]
+                u, b, kk = rng.choice(aday)
+            c = rng.choice([c for c in sehir_ulke[u] if c != b])
+            w.append((f'{u} – {c}', f'{c} {u} ülkesinin şehirlerindendir ama başkent değildir; başkent: {b}.'))
+        out.append(onculu(rng, 'oncul_baskent', 'Dünya', d, w, 'Yukarıdaki ülke – başkent eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    bask = {u: b for u, b, k in kay}
+    for _ in range(120):
+        k = rng.choice(list(KOMSU_KITA))
+        aday = [x for x in kay if x[2] == k]
+        if len(aday) < 5:
+            continue
+        bes = rng.sample(aday, 5)
+        out.append(eslestirme(rng, 'esle_baskent', 'Dünya', [(u, b) for u, b, _ in bes], lambda a, w: bask[a] == w, 'dogru',
+                              lambda ks: ', '.join(ks[:-1]) + f' ve {ks[-1]} ile ilgili aşağıdaki ülke – başkent eşleştirmelerinden hangisi doğrudur?'))
+    # 3) Eser – yazar (yanlış yazar aynı edebiyat grubundan)
+    yazar = {}
+    for e, y, g in es:
+        yazar.setdefault(e, set()).add(y)
+    for _ in range(320):
+        uc = rng.sample(es, 3)
+        if len({e for e, _, _ in uc}) < 3:
+            continue
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{e} – {y}', f'“{e}” {y} tarafından yazılmıştır.') for e, y, g in uc[:k_]]
+        w = []
+        for e, y, g in uc[k_:]:
+            yy = rng.choice(sorted({x[1] for x in es if x[2] == g and x[1] not in yazar[e]}))
+            w.append((f'{e} – {yy}', f'“{e}” {yy} değil {y} tarafından yazılmıştır.'))
+        out.append(onculu(rng, 'oncul_eser', 'Kültür', d, w, 'Yukarıdaki eser – yazar eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    for _ in range(120):
+        g = rng.choice(['T', 'D'])
+        aday = [x for x in es if x[2] == g]
+        bes = rng.sample(aday, 5)
+        if len({y for _, y, _ in bes}) < 5:
+            continue
+        out.append(eslestirme(rng, 'esle_eser', 'Kültür', [(e, y) for e, y, _ in bes], lambda a, w: w in yazar[a], 'dogru',
+                              lambda ks: ', '.join(f'“{k}”' for k in ks[:-1]) + f' ve “{ks[-1]}” eserleriyle ilgili aşağıdaki eser – yazar eşleştirmelerinden hangisi doğrudur?'))
+    # 4) Örgüt – merkez ve kuruluş sırası
+    merkez = {a: m for a, t, m, y in org}
+    for _ in range(160):
+        uc = rng.sample(org, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{a} – {m}', f'{a} kuruluşunun merkezi {m} şehrindedir.') for a, t, m, y in uc[:k_]]
+        w = []
+        for a, t, m, y in uc[k_:]:
+            mm = rng.choice(sorted({x[2] for x in org if x[2] != m}))
+            w.append((f'{a} – {mm}', f'{a} kuruluşunun merkezi {mm} değil {m} şehrindedir.'))
+        out.append(onculu(rng, 'oncul_merkez', 'Kurumlar', d, w, 'Yukarıdaki kuruluş – merkez eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    yilli = [x for x in org if x[3] != '-']
+    for _ in range(600):
+        n = rng.choice([3, 3, 4])
+        sec_ = rng.sample(yilli, n)
+        if len({x[3] for x in sec_}) != n:
+            continue
+        out.append(siralama(rng, 'sirala_orgut', 'Kurumlar', [(int(y), f'{t} ({a})') for a, t, m, y in sec_],
+                            'Yukarıdaki uluslararası kuruluşların kuruluş sırası (eskiden yeniye) aşağıdakilerden hangisidir?',
+                            lambda o: 'Kuruluş yılları: ' + '; '.join(f'{m} {k}' for k, m in o) + '.', 3))
+    # 5) Ülke – para birimi
+    para = _satir(PARA, 2)
+    pb = {u: p for u, p in para}
+    for _ in range(160):
+        uc = rng.sample(para, 3)
+        k_ = rng.choice([1, 2, 2, 3])
+        d = [(f'{u} – {p}', f'{u} ülkesinin para birimi: {p}.') for u, p in uc[:k_]]
+        w = []
+        for u, p in uc[k_:]:
+            pp = rng.choice(sorted({x[1] for x in para if x[1] != pb[u]}))
+            w.append((f'{u} – {pp}', f'{u} ülkesinin para birimi {pp} değil, {p}.'))
+        out.append(onculu(rng, 'oncul_para', 'Dünya', d, w, 'Yukarıdaki ülke – para birimi eşleştirmelerinden hangileri doğrudur?', 3, k_))
+    # 6) Olimpiyat yılı – ev sahibi şehir
+    for blok, ad in ((YAZ_OLIMPIYAT, 'Yaz'), (KIS_OLIMPIYAT, 'Kış')):
+        rows = [r for r in _satir(blok, 2) if int(r[0]) <= 2026]
+        ev = {}
+        for y, sh in rows:
+            ev.setdefault(y, set()).add(sh)
+        for _ in range(70):
+            uc = rng.sample(rows, 3)
+            if len({y for y, _ in uc}) < 3:
+                continue
+            k_ = rng.choice([1, 2, 2, 3])
+            d = [(f'{y} – {sh}', f'{y} {ad} Olimpiyatları {sh} şehrinde düzenlenmiştir.') for y, sh in uc[:k_]]
+            w = []
+            for y, sh in uc[k_:]:
+                yakin = sorted((r for r in rows if r[1] not in ev[y] and r[0] != y), key=lambda r: abs(int(r[0]) - int(y)))[:3]
+                c = rng.choice(yakin)[1]
+                w.append((f'{y} – {c}', f'{y} {ad} Olimpiyatları {c} değil {sh} şehrinde düzenlenmiştir.'))
+            out.append(onculu(rng, 'oncul_olimpiyat', 'Spor', d, w,
+                              f'Yukarıdaki {ad} Olimpiyat Oyunları yıl – ev sahibi şehir eşleştirmelerinden hangileri doğrudur?', 3, k_))
     return out
