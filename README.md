@@ -1,9 +1,9 @@
 # KPSS Ortaöğretim — Hızlandırılmış Kamp
 
-**Sınav: 25 Ekim 2026 (Pazar) — Saat 10:15** · Senin için özel 8 günlük hızlandırılmış kamp (**17–24 Ekim 2026**; 17–23 Ekim test günleri, 24 Ekim deneme/tekrar).
+**Sınav: 25 Ekim 2026 (Pazar) — Saat 10:15** · Senin için özel 7 günlük hızlandırılmış kamp (**18–24 Ekim 2026**; 18–23 Ekim test günleri, 24 Ekim deneme/tekrar).
 Python/Flask + vanilla JS — kurulumu tek komut.
 
-> ✅ İlk 2 günde **tüm konular** bitirilir (Konu Maratonu). Sonrasında **yanlışlarına göre** konular sana **farklı
+> ✅ İlk gün **tüm konular** bitirilir (Konu Maratonu). Sonrasında **yanlışlarına göre** konular sana **farklı
 > anlatımla** tekrar anlatılır ve o konudan **yeni sorular** gelir. Her konuda **ustalana kadar** çalışırsın.
 > Her gün yüzlerce soruluk havuzdan **durumuna uygun** sorular çıkar; **aynı soru iki kez gelmez**.
 
@@ -18,6 +18,16 @@ python app.py
 
 Tarayıcıda aç: **http://localhost:5000**
 
+### 🖥️ Exe olarak çalıştırma (Windows, Python gerekmez)
+
+- **`KPSS_Kamp.exe`** — çift tıkla: sunucu bu bilgisayarda başlar ve tarayıcı kendiliğinden açılır. Siyah pencere açık kaldığı sürece uygulama çalışır; kapatınca uygulama da kapanır. Uygulama zaten açıksa ikinci kez başlatılmaz, yalnızca tarayıcı açılır.
+- İlerleme, exe'nin yanındaki **`KPSS_Kamp_ilerleme/`** klasöründe saklanır (exe'yi taşırken bu klasörü de taşı). Tarayıcı kayıtları adrese bağlı olduğu için uygulama hep **http://127.0.0.1:5000** adresinde açılır (5000 doluysa 5001–5020 denenir).
+- Exe imzasız olduğu için Windows SmartScreen “Windows bilgisayarınızı korudu” diyebilir: **Ek bilgi → Yine de çalıştır**.
+- Exe, depoya her içerik/kod değişikliğinde **GitHub Actions** (`.github/workflows/exe.yml`, Windows) tarafından otomatik derlenir, açılıp çalıştığı test edilir ve depo köküne `KPSS_Kamp.exe` olarak eklenir. Elle tetiklemek için: GitHub → Actions → “KPSS_Kamp.exe (Windows)” → Run workflow.
+- Kendin derlemek için (Windows'ta Python 3.10+ kuruluysa): **`exe_olustur.bat`**'a çift tıkla → proje klasörüne `KPSS_Kamp.exe` gelir. macOS/Linux için `exe_olustur.sh` (o sisteme özgü dosya üretir; PyInstaller çapraz derleme yapmaz).
+- Exe olmadan Python ile hızlı başlatma: **`KPSS_Kamp_Baslat.bat`** (Windows) veya `python kpss_kamp.py`.
+- Dosyalar: `kpss_kamp.py` (başlatıcı), `KPSS_Kamp.spec` (PyInstaller tarifi: arayüz, soru bankası, konu anlatımları, program, denemeler ve saat dilimi verisi exe'ye gömülür; `data/kaynaklar` gömülmez). Test: `araclar/test_exe.py`.
+
 Otomatik kontrol (jsdom smoke — 645 kontrol):
 
 ```bash
@@ -28,23 +38,23 @@ NODE_PATH=/tmp/kpss_test/node_modules node araclar/smoke_test.js
 
 ---
 
-## 8 Günlük Kamp (17–24 Ekim 2026)
+## 7 Günlük Kamp (18–24 Ekim 2026)
 
 | Gün | Tarih | Tema | Deneme |
 |-----|-------|------|--------|
-| 1. gün | 17 Ekim Cumartesi | **Konu Maratonu** — 5 derste TÜM konular (hızlı tur + 10'luk testler) | DEN-01, DEN-02 |
-| 2–6. gün | 18–22 Ekim | **Ustalık Günleri 1–5** — hatalardan ustalığa; zayıf konu tekrarı + test | DEN-03 … DEN-07 (20 Ekim: DEN-05, 50 soruluk büyük prova) |
-| 7. gün | 23 Ekim Cuma | Genel Tekrar — zayıf konu atağı | DEN-08 |
-| 8. gün | 24 Ekim Cumartesi | **Final Provası** — yalnızca deneme ve tekrar (test hedefi yok) | DEN-09, DEN-10 |
+| 1. gün | 18 Ekim Pazar | **Konu Maratonu + Ustalık 1** — 5 derste TÜM konular (hızlı tur + 3 hocadan anlatım + 10'luk testler) | DEN-01, DEN-02, DEN-03 |
+| 2–5. gün | 19–22 Ekim | **Ustalık Günleri 2–5** — hatalardan ustalığa; zayıf konu tekrarı + test | DEN-04 … DEN-07 (20 Ekim: DEN-05, 50 soruluk büyük prova) |
+| 6. gün | 23 Ekim Cuma | Genel Tekrar — zayıf konu atağı | DEN-08 |
+| 7. gün | 24 Ekim Cumartesi | **Final Provası** — yalnızca deneme ve tekrar (test hedefi yok) | DEN-09, DEN-10 |
 
-Önceki 15–16 Ekim günlerinin içeriği ve denemeleri bu günlere dağıtıldı.
+Kamp 8 günden 7 güne indirildi: 17 Ekim'in Konu Maratonu (15–16 Ekim içeriği dahil) ve iki mini denemesi 18 Ekim'e eklendi.
 
 Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türkçe → Güncel**. Gün, denemeyle biter.
 
 > 📌 **Günlük soru hedefi ve üst sınırı:** Ders başına **400 soru** (toplam 2.000), **10'ar soruluk testler** hâlinde.
-> 400 aynı zamanda **günlük üst sınırdır**: bir derste o gün 400 test sorusu ayrıldıktan sonra yeni test başlatılamaz; fazla sorular **sonraki günlere kalır**. Denemeler bu hedefe ve sınıra dahil değildir. 7 test günü × 400 = **ders başına 2.800 test sorusu**; geçmişi boş bir profil için her dersin başlangıç test kapasitesi tam **2.800**'dür (denemelere ayrılan sorular hariç).
+> 400 aynı zamanda **günlük üst sınırdır**: bir derste o gün 400 test sorusu ayrıldıktan sonra yeni test başlatılamaz; fazla sorular **sonraki günlere kalır**. Denemeler bu hedefe ve sınıra dahil değildir. 6 test günü × 400 = **ders başına 2.400 test sorusu**; geçmişi boş bir profil için her dersin başlangıç test kapasitesi **2.800**'dür (denemelere ayrılan sorular hariç), yani her derste 400 soru yedekte kalır.
 > Güncel havuz hedefi ayrıca **3.000** olarak belirlenmiştir; bu henüz tamamlanmış değildir.
-> ✅ **Gerçek durum:** Aynı soru tekrar gelmediği hâlde her dersin günlük dağılımı **400 × 7** (17–23 Ekim) olarak tam karşılanır. Bu sayılar daha önce soru çözmemiş profil içindir; önceden kullanılan sorular kalan kapasiteyi azaltır.
+> ✅ **Gerçek durum:** Aynı soru tekrar gelmediği hâlde her dersin günlük dağılımı **400 × 6** (18–23 Ekim) olarak tam karşılanır. Bu sayılar daha önce soru çözmemiş profil içindir; önceden kullanılan sorular kalan kapasiteyi azaltır.
 > Akış: önce **konu testleri** (müfredat sırasıyla, tüm konular bitene kadar) → konular bitince **karışık testler** (tüm konulardan).
 > Her dersin kendi sayacı var: **#/akis/tarih** gibi bir sayfadan o günün akışını takip edebilirsin; sonucunda "Günlük Akışa Dön" düğmesi seni sıradaki teste götürür.
 
@@ -52,7 +62,7 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 
 ## Sistem Nasıl Çalışıyor?
 
-### 1. Konu Maratonu (ilk 2 gün) — tüm konular
+### 1. Konu Maratonu (ilk gün) — tüm konular
 - **55 konu** (sadece KPSS'de çıkmış konular) — her konuda:
   - **Hızlı tur** (özet) → **Farklı anlatım** (hikâyeyle) → **Sınav tuzağı** → **Nasıl sorulur**
   - Hemen altında **o konudan 10 soruluk test**
@@ -102,8 +112,8 @@ Her gün **sırayla** 5 ders: **Tarih → Coğrafya → Vatandaşlık → Türk�
 - Metinsel kök denetimi, farklı yazılmış iki sorunun anlamsal olarak aynı olup olmadığını kanıtlamaz; bu ayrıca editoryal inceleme gerektirir.
 
 ### 5. Denemeler
-- 10 deneme (**DEN-01…DEN-10**) 8 güne dağıtılmıştır: 1. gün DEN-01 ve DEN-02, 2–7. günler birer deneme,
-  8. gün DEN-09 ve DEN-10. DEN-05 (20 Ekim) ve DEN-10 (24 Ekim) **50 soruluk büyük prova**, diğerleri 15 soruluk mini.
+- 10 deneme (**DEN-01…DEN-10**) 7 güne dağıtılmıştır: 1. gün DEN-01, DEN-02 ve DEN-03, 2–6. günler birer deneme,
+  7. gün DEN-09 ve DEN-10. DEN-05 (20 Ekim) ve DEN-10 (24 Ekim) **50 soruluk büyük prova**, diğerleri 15 soruluk mini.
 - Denemeler her dersi dengeli dağıtır, şıklar karışık gelir (sınav gibi).
 - Süre geri sayar; bitirince **net + ders analizi + tüm çözümler**.
 
@@ -157,7 +167,7 @@ Aynı kök iki kez üretilmez, bankadaki köklerle ve diğer derslerin çıktıl
 - Bu kapasite geçmişi boş profil içindir. Önceden kullanılan kayıtlar yeniden dağıtılmaz. Test menüsü kişisel kullanılmamış sayıyı da gösterir.
 - Yarım kalan testin ayrılmış soruları kaybolmaz: **aynı oturumdan devam** bağlantısı vardır. Yeni oturuma tekrar dağıtılmaz; ilk cevaplanmamış sorudan devam edilir. İçerik veya kapsam değişmişse eski cevaplarla farklı bir soru gösterilmez.
 - Günlük sayım tekil test id'lerine dayanır; gün **Europe/Istanbul** saat diliminde değişir. Gün değişimi kalıcı tekrar engelini kaldırmaz.
-- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **7 test günü boyunca ders başına 400 tekrarsız test sorusu için 2.800/ders, toplam 14.000 test + 220 ayrı deneme sorusu gerekir; mevcut havuz bunu tam karşılar (eksik 0).** Güncel'in 3.000'lik havuz hedefi ayrıca izlenir (şu an 2.826 aktif).
+- `/api/meta.calisma_hedefi` günlük hedefi, deneme hariç kapasiteyi ve kamp açığını ayrı verir. **6 test günü boyunca ders başına 400 tekrarsız test sorusu için 2.400/ders, toplam 12.000 test + 220 ayrı deneme sorusu gerekir; mevcut havuz (2.800/ders) bunu tam karşılar (eksik 0).** Güncel'in 3.000'lik havuz hedefi ayrıca izlenir (şu an 2.826 aktif).
 
 ## Güncel için 3.000 soru hedefi ve mevcut soruların kalite turu
 
@@ -343,7 +353,7 @@ kaynak etiketleriyle durur — her sorunun kartında ve çözümünde **kaynak**
 - `data/sorular/*.jsonl` — soru bankası (id, konu, zorluk, **kaynak**, 2 çözüm, etiketler)
 - `data/konu_yeniden.json` — 55 konu için farklı anlatım kartları (özet + hikâye + tuzak + kalıp)
 - `data/dersler/*.md` — günlük konu modülleri
-- `data/program.json` — 8 günlük plan (17–24 Ekim; `test_hedefi: false` olan 24 Ekim yalnızca deneme/tekrar)
+- `data/program.json` — 7 günlük plan (18–24 Ekim; `test_hedefi: false` olan 24 Ekim yalnızca deneme/tekrar)
 - `data/denemeler.json` — 10 deneme
 - `data/ilerleme/` — ilerleme kaydı (otomatik yedek)
 - `araclar/soru_genislet.py` — yeni soru ekleme (TSV → JSONL)

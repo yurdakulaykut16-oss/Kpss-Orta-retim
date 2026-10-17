@@ -74,16 +74,16 @@ class Gunluk500Test(unittest.TestCase):
         self.assertEqual(t['gunluk_toplam_set'],200)
         self.assertIs(t['denemeler_hedefe_dahil'],False)
 
-    def test_yedi_test_gunu_her_ders_400(self):
+    def test_alti_test_gunu_her_ders_400(self):
         t=self.cache['calisma_hedefi']
-        # 17-23 Ekim: 7 test günü (24 Ekim yalnızca deneme/tekrar), her gün her dersten 400.
-        self.assertEqual(t['kamp_gun_sayisi'],7)
-        self.assertTrue(all(s['kamp_test_ihtiyaci']==2800 for s in t['dersler'].values()))
-        self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),14220)
+        # 18-23 Ekim: 6 test günü (24 Ekim yalnızca deneme/tekrar), her gün her dersten 400.
+        self.assertEqual(t['kamp_gun_sayisi'],6)
+        self.assertTrue(all(s['kamp_test_ihtiyaci']==2400 for s in t['dersler'].values()))
+        self.assertEqual(sum(s['kamp_asgari_havuz'] for s in t['dersler'].values()),12220)
         self.assertEqual(sum(s['kamp_test_eksigi'] for s in t['dersler'].values()),0)
         for s in t['dersler'].values():
-            self.assertEqual(s['gun_dagilimi'],[400]*7)
-            self.assertEqual(s['tam_gun'],7)
+            self.assertEqual(s['gun_dagilimi'],[400]*6)
+            self.assertEqual(s['tam_gun'],6)
         self.assertIn('tamamlandı anlamına gelmez',t['notu'])
 
     def test_hedef_azaltilamaz_ve_deneme_karistirilamaz(self):

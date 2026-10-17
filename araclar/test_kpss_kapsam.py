@@ -210,7 +210,7 @@ class KpssKapsamTest(unittest.TestCase):
             self.assertEqual(first,(root/'data/denemeler.json').read_bytes())
             for exam in json.loads(first)['denemeler']:
                 self.assertEqual(len(exam['sorular']),50 if exam['tur']=='buyuk' else 15)
-                self.assertIn(exam['gun'],range(1,9))
+                self.assertIn(exam['gun'],range(1,8))
                 self.assertEqual(len(exam['sorular']),len(set(exam['sorular'])))
                 self.assertTrue(set(exam['sorular']) <= self.active_ids)
 

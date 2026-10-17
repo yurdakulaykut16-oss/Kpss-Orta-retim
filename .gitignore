@@ -5,3 +5,7 @@ venv/
 data/ilerleme/
 ilerleme.json
 .DS_Store
+# PyInstaller ara çıktıları (exe_olustur.bat)
+build/
+dist/
+KPSS_Kamp_ilerleme/

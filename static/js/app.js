@@ -103,7 +103,7 @@ function kapsamHavuzUyarisi(d) {
     <p><b>Güncel ara havuz hedefi:</b> ${V.meta.havuz_hedefleri?.guncel || 3000} farklı soru. Şu an ${k.dersler.guncel.aktif} aktif; hedefe ${Math.max(0,(V.meta.havuz_hedefleri?.guncel || 3000)-k.dersler.guncel.aktif)} soru kaldı.</p>
     <p>Test ve deneme soruları ayrı tutulur. Havuz tükenirse eski soru ile doldurulmaz. Oturuma ayrılan sorular, cevaplanmadan çıkılsa da yeni oturumda verilmez.</p>
     ${dersler.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru; ${V.meta.calisma_hedefi.dersler[x].denemeye_ayrilan} soru denemeye ayrıldı; ${kalan[x]} kullanılmamış test sorusu.</p>`).join("")}
-    <p>Tekrarsız ${V.meta.calisma_hedefi.kamp_gun_sayisi} test günü (17–23 Ekim; 24 Ekim yalnız deneme/tekrar) için her derste ${DERS_HEDEF*V.meta.calisma_hedefi.kamp_gun_sayisi} test sorusu ve bunlardan ayrı deneme havuzu gerekir. İlk gün kapasitesi, bütün kampın tamamlandığı anlamına gelmez.</p>
+    <p>Tekrarsız ${V.meta.calisma_hedefi.kamp_gun_sayisi} test günü (18–23 Ekim; 24 Ekim yalnız deneme/tekrar) için her derste ${DERS_HEDEF*V.meta.calisma_hedefi.kamp_gun_sayisi} test sorusu ve bunlardan ayrı deneme havuzu gerekir. İlk gün kapasitesi, bütün kampın tamamlandığı anlamına gelmez.</p>
     ${dar.map((x) => `<p><b>${esc(DERSLER[x].ad)}:</b> ${k.dersler[x].aktif} farklı aktif soru var; geçmiş kullanım ve deneme rezervleri çıkarılınca ${kalan[x]} yeni test sorusu kaldı. ${DERS_HEDEF} farklı soruya yetmiyor. Hedefi doldurmak için kapsam dışı soru eklenmez.</p>`).join("")}
   </div>`;
 }

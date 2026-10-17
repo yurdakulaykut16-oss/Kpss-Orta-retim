@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-KPSS Ortaöğretim — 8 Günlük Hızlandırılmış Kamp (17–24 Ekim; 7 test günü + final provası)
+KPSS Ortaöğretim — 7 Günlük Hızlandırılmış Kamp (18–24 Ekim; 6 test günü + final provası)
 Flask sunucusu: tüm içerik (konu anlatımları, soru bankası, program, denemeler)
 data/ klasörünün içindedir; ilerleme verisi data/ilerleme/ altında saklanır.
 
@@ -9,10 +9,14 @@ data/ klasörünün içindedir; ilerleme verisi data/ilerleme/ altında saklanı
     pip install -r requirements.txt
     python app.py
     -> http://localhost:5000
+
+Masaüstü (exe) kullanımı için bkz. kpss_kamp.py ve KPSS_Kamp.spec.
 """
 from __future__ import annotations
 
 import json
+import os
+import sys
 from collections import Counter
 import re
 import threading
@@ -24,12 +28,19 @@ from flask import Flask, jsonify, request, send_from_directory
 from kpss_kapsam import read_policy, filter_bank, project_exams, question_key
 from calisma_hedefi import load_target, summarize
 
-KOK = Path(__file__).resolve().parent
+if getattr(sys, "frozen", False):
+    # PyInstaller ile paketlenmiş exe: içerik exe'nin içinden (geçici klasör) okunur,
+    # ilerleme ise exe'nin yanındaki kalıcı klasöre yazılır (her açılışta silinmesin diye).
+    KOK = Path(getattr(sys, "_MEIPASS", Path(sys.executable).resolve().parent))
+    _ILERLEME_VARSAYILAN = Path(sys.executable).resolve().parent / "KPSS_Kamp_ilerleme"
+else:
+    KOK = Path(__file__).resolve().parent
+    _ILERLEME_VARSAYILAN = KOK / "data" / "ilerleme"
 VERI = KOK / "data"
-ILERLEME = VERI / "ilerleme"
+ILERLEME = Path(os.environ.get("KPSS_ILERLEME_DIZINI") or _ILERLEME_VARSAYILAN)
 ILERLEME.mkdir(parents=True, exist_ok=True)
 
-app = Flask(__name__, static_folder="static", static_url_path="/static")
+app = Flask(__name__, static_folder=str(KOK / "static"), static_url_path="/static")
 _KILIT = threading.Lock()
 
 # ---------------------------------------------------------------- içerik yükleme
