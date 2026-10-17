@@ -133,6 +133,23 @@ Ardından **her dersten 50, toplam 250 yeni soru** (`yeni_parti_01…05_*.tsv`, 
 - **Düz bilgi soruları** (olay–yıl, il–bölge, madde–konu, ülke–başkent vb.): çeldiriciler rastgele değil, en yakın kayıtlardan (aynı dönem/yakın yıl, aynı bölge/komşu il, aynı kıta, aynı Anayasa bölümü) seçilir.
 - **Öncüllü (I–II–III) sorular**: yanlış öncüller gerçeğe çok yakın tuzaklardır (ör. bir sonraki yüzyıla düşen olay, başka kavramın tanımı, komşu ilin kıyısı); şıklar doğru kombinasyona en yakın kombinasyonlardır ("I ve II" ↔ "I, II ve III" gibi iki şık arasında bırakır). Her öncülün neden doğru/yanlış olduğu çözümde tek tek yazılır.
 - **Sıralama ve eşleştirme soruları**: kronolojik/coğrafi sıralamada şıklar doğru sıraya en yakın permütasyonlardır; eşleştirmede tek bir eşleşme farkıyla ayrışan şıklar bulunur.
+- **KPSS düzeyi kalite geçişi (18 Ekim)**: çeldiriciler "yakınlık" ile seçilir (`ortak.yakin_sec`):
+  - padişah sorularında kronolojik olarak komşu padişahlar;
+  - önce/sonra ve yıl→olay sorularında en yakın yıllar;
+  - yer→il sorularında komşu iller;
+  - ülke sorularında aynı bölge (Bakü → Ermenistan, Gürcistan…);
+  - olimpiyat ve Dünya Kupası sorularında yakın yılların ev sahipleri.
+
+  KPSS'nin sık kullandığı **"…değildir?"** kalıbı eklendi (`ortak.farkli`): bir padişahın döneminde olmayan olay, bölgede yer almayan sınır ili, Cumhurbaşkanı/TBMM/AYM yetkisi olmayan görev, bölümde düzenlenmeyen hak, yazara ait olmayan eser.
+
+  Kolay kalıplar kaldırıldı:
+  - tek tip iklim/bitki soruları;
+  - uzak bölgeden çeldiricili ürün soruları;
+  - Anıtkabir gibi herkesin bildiği yerler;
+  - adı ili ele veren yerler;
+  - bölgesi tartışmasız iller.
+
+  Cevabı kökte geçen sorular üreticide elenir. Elle yazılmış 162 Güncel ekindeki yapay kökler `araclar/ek_kok_duzelt.py` ile KPSS diline çevrildi ya da daha zor sorularla değiştirildi. Denetim: `araclar/test_kalite_02.py`.
 - **Genel Kültür bilgi/ezber ağırlıklıdır**: Tarih, Coğrafya, Vatandaşlık ve Güncel'de üretilen soruların ≈%70'i düz bilgi sorusudur (≈1.120–1.175); öncüllü, sıralama ve eşleştirme soruları hedefin en çok %30'u ile sınırlıdır (`bilgi_soru_uret.py` → `AKIL_ORANI`). Bu derslerde paragraf sorusu yoktur.
 
 **Türkçe (Genel Yetenek) paragraf ve dil bilgisi ağırlıklıdır** (1.562 soru):

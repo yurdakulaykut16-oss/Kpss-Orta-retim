@@ -265,7 +265,7 @@ D Belirsiz görünen bir iş başlamayı zorlaştırır. / Kişi kaygıdan kaçm
 N Erteleme alışkanlığı en çok sınav dönemlerinde artar.
 B Günün en verimli saatlerinin sabah saatleri olduğu sık sık dile getirilir.
 
-@ ekonomi | Yerel üreticiyi desteklemek | Büyük marketlerin yaygınlaşması
+@ ekonomi | Yöresel üretimden alışveriş yapmanın yararları | Büyük marketlerin yaygınlaşması
 1 Semt pazarından ya da köydeki üreticiden alışveriş yapmak, sanıldığından çok daha fazla anlam taşır.
 2 Bu alışverişte ödenen paranın büyük kısmı doğrudan emeğin sahibine ulaşır.
 3 Ürünler uzun yollar kat etmeden sofraya geldiği için daha taze olur.

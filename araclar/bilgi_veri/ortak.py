@@ -71,9 +71,20 @@ def eslesme(rng, tur, kayitlar, kok_ileri, kok_geri, ger_ileri, ger_geri, z=2, g
         anahtar_say.setdefault(a.casefold(), set()).add(d.casefold())
     for a, d, konu in kayitlar:
         g = grup(a, d, konu) if grup else None
-        ayni = [x for x in kayitlar if grup and grup(*x) == g]
+        if isinstance(g, tuple):
+            # Kademeli grup (ör. (bölge, kıta)): önce en dar grup, 4'ten azsa bir üst grup eklenir.
+            ayni = []
+            for i in range(len(g)):
+                ek = [x for x in kayitlar if grup(*x)[i] == g[i] and x not in ayni]
+                rng.shuffle(ek)
+                if len(ayni) >= 5:
+                    break
+                ayni += ek
+        else:
+            ayni = [x for x in kayitlar if grup and grup(*x) == g]
         tum = list(kayitlar)
-        rng.shuffle(ayni)
+        if not isinstance(g, tuple):
+            rng.shuffle(ayni)
         rng.shuffle(tum)
         if kok_ileri:
             yasak = anahtar_say[a.casefold()]
@@ -201,3 +212,41 @@ def eslestirme(rng, tur, konu, ciftler, gecerli, mod, soru, ayrac=' – ', z=3, 
     ger = f'Doğru eşleştirme: “{dogru}”. Diğerlerinin doğrusu: ' + \
           '; '.join(aciklama(*bes[i]) for i in diger) + '.'
     return q(tur, konu, soru(sorted(x for x, _ in bes)), dogru, yan, ger, z)
+
+
+# ------------------------------------------------------------------ yakınlık
+# KPSS'de çeldiriciler doğru cevaba "yakın" seçilir: komşu dönemin padişahı, komşu
+# il, aynı kıtanın ülkesi, birkaç yıl önceki/sonraki olay... Aşağıdaki yardımcılar
+# rastgele seçim yerine doğru cevaba en yakın adaylardan seçer.
+def yakin_sec(dogru, adaylar, uzaklik, rng, n=4, havuz=6, haric=()):
+    """adaylar içinden doğruya en yakın `havuz` tanesinden n çeldirici seçer.
+
+    uzaklik(aday) küçük olan daha yakındır. Aynı uzaklıktakiler karışık sıralanır.
+    """
+    gor = {str(dogru).casefold(), *(str(h).casefold() for h in haric)}
+    tekil = []
+    for a in adaylar:
+        if str(a).casefold() not in gor:
+            gor.add(str(a).casefold())
+            tekil.append(a)
+    if len(tekil) < n:
+        return None
+    tekil.sort(key=lambda a: (uzaklik(a), rng.random()))
+    return rng.sample(tekil[:max(n, havuz)], n)
+
+
+def farkli(rng, tur, konu, kok, ic, dis, gerekce, z=3, n_ic=4):
+    """"Aşağıdakilerden hangisi ... değildir?" kalıbı.
+
+    ic: ölçüte uyan (madde, açıklama) çiftleri (en az 4); dis: uymayan, doğruya yakın
+    adaylar. Doğru cevap dış kümeden tek maddedir; dört seçenek ölçüte uyar.
+    gerekce(dogru_madde, dogru_aciklama, ic_secilen) -> str
+    """
+    ic = list({m: (m, a) for m, a in ic}.values())
+    ic_ad = {m.casefold() for m, _ in ic}
+    dis = [x for x in {m: (m, a) for m, a in dis}.values() if x[0].casefold() not in ic_ad]
+    if len(ic) < n_ic or not dis:
+        return None
+    secilen = rng.sample(ic, n_ic)
+    d = rng.choice(dis)
+    return q(tur, konu, kok, d[0], [m for m, _ in secilen], gerekce(d[0], d[1], secilen), z)

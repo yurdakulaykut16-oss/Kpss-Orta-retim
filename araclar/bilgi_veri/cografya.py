@@ -3,7 +3,7 @@
 Yön soruları il merkezlerinin yaklaşık koordinatlarıyla kurulur; belirsizliği
 önlemek için doğru il en az 1°, çeldiriciler ters yönde en az 0,5° uzakta seçilir.
 """
-from .ortak import eslesme, eslestirme, onculu, q, sec, sec2, siralama
+from .ortak import eslesme, eslestirme, farkli, onculu, q, sec, sec2, siralama, yakin_sec
 
 # il | bölge | enlem | boylam | kıyı (K=Karadeniz, M=Marmara, E=Ege, A=Akdeniz, - yok, 2 iki deniz, ? belirsiz)
 ILLER = """
@@ -256,6 +256,27 @@ Rumeli Hisarı|İstanbul|turizm|turizm
 Topkapı Sarayı|İstanbul|turizm|turizm
 """
 
+# Herkesin bildiği (KPSS düzeyinin altında kalan) yerler soru kökü yapılmaz.
+KOLAY_YER = {'Anıtkabir', 'Topkapı Sarayı', 'Rumeli Hisarı', 'Mevlana Müzesi', 'Bursa Ulu Camii', 'Selimiye Camii',
+             'Pamukkale travertenleri', 'Sümela Manastırı', 'Efes Antik Kenti', 'Peribacaları (Ürgüp-Göreme)',
+             'Uludağ', 'Uludağ Millî Parkı', 'Erciyes Dağı', 'Palandöken Dağı', 'Göbeklitepe', 'Balıklıgöl'}
+# Birden çok ile yayılan / il sınırında bulunan yerlerde komşu il çeldirici yapılmaz.
+YER_HARIC = {'Kazdağı Millî Parkı': {'Çanakkale'}, 'Nemrut Dağı Millî Parkı': {'Malatya'},
+             'Beyşehir Gölü Millî Parkı': {'Isparta'}, 'Köprülü Kanyon Millî Parkı': {'Isparta'},
+             'Munzur Vadisi Millî Parkı': {'Erzincan'}, 'Sultan Sazlığı': {'Niğde'}, 'Cudi Dağı': {'Siirt'},
+             'Olimpos-Beydağları Millî Parkı': {'Burdur'}, 'Spil Dağı': {'İzmir'}, 'Spil Dağı Millî Parkı': {'İzmir'},
+             'Süphan Dağı': {'Van', 'Ağrı'}, 'Hazar Gölü': {'Malatya'}, 'Salda Gölü': {'Denizli'},
+             'Eğirdir Gölü': {'Afyonkarahisar'}, 'Kaçkar Dağları': {'Artvin'}, 'Harran Ovası': {'Mardin'},
+             'Amik Ovası': {'Gaziantep'}, 'Suruç Ovası': {'Gaziantep', 'Adıyaman'}, 'Yüksekova': {'Van', 'Şırnak'},
+             'Ihlara Vadisi': {'Nevşehir', 'Niğde'}, 'Soğanlı Vadisi': {'Nevşehir', 'Niğde'},
+             'Derinkuyu Yeraltı Şehri': {'Niğde', 'Aksaray'}, 'Kaymaklı Yeraltı Şehri': {'Niğde', 'Aksaray'},
+             'Truva Tarihî Millî Parkı': {'Balıkesir'}, 'Assos Antik Kenti': {'Balıkesir'},
+             'Ani Ören Yeri': {'Ardahan', 'Iğdır'}, 'Tortum Gölü': {'Artvin'}, 'Balık Gölü': {'Kars', 'Iğdır'}}
+# Akarsuların yaklaşık orta noktaları (baraj sorusunda komşu havzanın akarsuyu çeldirici olsun diye)
+AKARSU_KONUM = {'Fırat': (38.7, 39.0), 'Dicle': (37.8, 41.0), 'Kızılırmak': (39.8, 35.0), 'Yeşilırmak': (40.6, 36.3),
+                'Sakarya': (39.9, 31.0), 'Seyhan': (37.6, 35.6), 'Ceyhan': (37.6, 36.5), 'Manavgat': (37.0, 31.5),
+                'Gediz': (38.6, 28.3), 'Büyük Menderes': (37.9, 28.5), 'Çoruh': (40.6, 41.3)}
+
 # baraj | akarsu
 BARAJLAR = """
 Atatürk Barajı|Fırat
@@ -481,17 +502,29 @@ def uret(rng):
     bolge = {x[0]: x[1] for x in il}
     # 1) il -> bölge, aynı bölge
     bolgeler = sorted({x[1] for x in il})
+    uzak = lambda x, y: ((x[2] - y[2]) ** 2 + (x[3] - y[3]) ** 2) ** 0.5
     for a, b, la, lo, k in il:
-        out.append(q('il_bolge', 'Bölgeler', f'{a} ili hangi coğrafi bölgemizde yer alır?', f'{b} Bölgesi',
-                     sec(f'{b} Bölgesi', [f'{x} Bölgesi' for x in bolgeler], rng),
-                     f'{a}, {b} Bölgesi illerindendir.', 2))
-        ayni = [x[0] for x in il if x[1] == b and x[0] != a]
-        diger = [x[0] for x in il if x[1] != b]
+        x0 = (a, b, la, lo, k)
+        # Bölgesi tartışmasız olan (başka bölgenin iline uzak) iller KPSS düzeyinde değildir.
+        sinir = min(uzak(x0, y) for y in il if y[1] != b) < 1.5
+        if sinir:
+            bol_uz = {bb: min(uzak(x0, y) for y in il if y[1] == bb) for bb in bolgeler if bb != b}
+            yan = sorted(bol_uz, key=bol_uz.get)[:4]
+            out.append(q('il_bolge', 'Bölgeler', f'{a} ili hangi coğrafi bölgemizde yer alır?', f'{b} Bölgesi',
+                         [f'{x} Bölgesi' for x in yan],
+                         f'{a}, {b} Bölgesi illerindendir. Komşu bölgelere yakın olduğu için '
+                         f'{sorted(bol_uz, key=bol_uz.get)[0]} Bölgesi ile karıştırılabilir.', 3))
+        ayni = [x for x in il if x[1] == b and x[0] != a]
+        diger = [x for x in il if x[1] != b]
         if ayni:
-            d = rng.choice(ayni)
-            out.append(q('ayni_bolge', 'Bölgeler', f'Aşağıdaki illerden hangisi {a} ile aynı coğrafi bölgededir?', d,
-                         sec(d, diger, rng), f'{a} ve {d} {b} Bölgesi’ndedir; diğer iller başka bölgelerdedir.', 2))
-        if k in DENIZ:
+            d = rng.choice(sorted(ayni, key=lambda y: uzak(x0, y))[-4:] if sinir else ayni)
+            yan = yakin_sec(d[0], [y[0] for y in diger], lambda m: uzak(x0, next(y for y in il if y[0] == m)), rng, havuz=6)
+            out.append(q('ayni_bolge', 'Bölgeler', f'Aşağıdaki illerden hangisi {a} ile aynı coğrafi bölgededir?', d[0],
+                         yan, f'{a} ve {d[0]} {b} Bölgesi’ndedir; diğer iller {a} iline yakın olsa da başka bölgelerdedir.', 3))
+        # Yalnız karıştırılabilecek iller: başka denize kıyısı olan komşusu bulunan kıyı illeri ya da
+        # kıyı illerine çok yakın olduğu hâlde denize kıyısı olmayan iller (ör. Manisa, Düzce/Bolu çevresi).
+        komsu_kiyi = {y[4] for y in il if y[0] != a and uzak(x0, y) < (1.1 if k == '-' else 1.7)} - {'-', '?', k}
+        if k in DENIZ and komsu_kiyi:
             dogru = DENIZ[k]
             out.append(q('kiyi', 'Bölgeler', f'{a} ilinin hangi denize kıyısı vardır?', dogru,
                          [v for kk, v in DENIZ.items() if kk != k],
@@ -514,37 +547,15 @@ def uret(rng):
     for a, b, la, lo, k in il:
         for tur, kok, eksen, yon, acik in sablon:
             v = la if eksen == 'la' else lo
-            dogrular = [x for x in il if x[0] != a and ((x[2] if eksen == 'la' else x[3]) - v) * yon >= 1.0]
-            yanlis = [x for x in il if x[0] != a and ((x[2] if eksen == 'la' else x[3]) - v) * yon <= -0.5]
+            yakin_il = [x for x in il if x[0] != a and uzak((a, b, la, lo, k), x) < 3.2]
+            dogrular = [x for x in yakin_il if ((x[2] if eksen == 'la' else x[3]) - v) * yon >= 0.6]
+            yanlis = [x for x in yakin_il if ((x[2] if eksen == 'la' else x[3]) - v) * yon <= -0.4]
             if not dogrular or len(yanlis) < 4:
                 continue
             d = rng.choice(dogrular)
             yy = rng.sample(yanlis, 4)
             out.append(q(tur, 'Koordinat', kok.format(a=a), d[0], [x[0] for x in yy],
-                         f'{d[0]}, {a} iline göre {acik}. Diğer seçenekler {a} ilinin ters yönündedir.', 3))
-    # 3) iklim / bitki örtüsü
-    for a, b, la, lo, k in il:
-        if k == 'K' and b == 'Karadeniz':
-            out.append(q('iklim', 'Türkiye İklimleri', f'{a} ilinin kıyı kesiminde hangi iklim tipi görülür?', 'Karadeniz iklimi',
-                         ['Akdeniz iklimi', 'Karasal iklim', 'Muson iklimi', 'Çöl iklimi'],
-                         f'{a} Karadeniz kıyısındadır; her mevsim yağışlı Karadeniz iklimi görülür.', 2))
-            out.append(q('bitki', 'iklim_bitki_orfu', f'{a} ilinin kıyı kesimindeki doğal bitki örtüsü hangisidir?', 'Orman',
-                         ['Maki', 'Bozkır (step)', 'Tundra', 'Savan'],
-                         f'{a} Karadeniz ikliminin etkisindedir; doğal bitki örtüsü ormandır.', 2))
-        if a in AKDENIZ_KIYI:
-            out.append(q('iklim', 'Türkiye İklimleri', f'{a} ilinin kıyı kesiminde hangi iklim tipi görülür?', 'Akdeniz iklimi',
-                         ['Karadeniz iklimi', 'Karasal iklim', 'Muson iklimi', 'Okyanusal iklim'],
-                         f'{a} kıyılarında yazları sıcak ve kurak, kışları ılık ve yağışlı Akdeniz iklimi görülür.', 2))
-            out.append(q('bitki', 'iklim_bitki_orfu', f'{a} ilinin kıyı kesimindeki doğal bitki örtüsü hangisidir?', 'Maki',
-                         ['Bozkır (step)', 'Tundra', 'Savan', 'Tayga'],
-                         f'{a} kıyıları Akdeniz iklimindedir; doğal bitki örtüsü makidir.', 2))
-        if b == 'İç Anadolu':
-            out.append(q('iklim', 'Türkiye İklimleri', f'{a} ilinde hangi iklim tipi görülür?', 'Karasal iklim',
-                         ['Karadeniz iklimi', 'Akdeniz iklimi', 'Muson iklimi', 'Okyanusal iklim'],
-                         f'{a} İç Anadolu’dadır; yazları sıcak ve kurak, kışları soğuk karasal iklim görülür.', 2))
-            out.append(q('bitki', 'iklim_bitki_orfu', f'{a} ilinde yaygın doğal bitki örtüsü hangisidir?', 'Bozkır (step)',
-                         ['Maki', 'Tundra', 'Savan', 'Tropikal yağmur ormanı'],
-                         f'{a} İç Anadolu’da karasal iklimdedir; doğal bitki örtüsü bozkırdır.', 2))
+                         f'{d[0]}, {a} iline göre {acik}. Diğer seçenekler {a} iline yakın olsa da ters yöndedir.', 3))
     # 4) göl oluşumu
     for g, t in _satir(GOLLER, 2):
         out.append(q('gol_olusum', 'Su Kaynakları', f'{g} oluşumu bakımından hangi göl türüne girer?', t,
@@ -552,22 +563,28 @@ def uret(rng):
     # 5) yer -> il ve il -> yer
     yer = _satir(YERLER, 4)
     tur_ad = {'dağ': 'dağ', 'ova': 'ova', 'göl': 'göl', 'millî park': 'millî park', 'turizm': 'turistik yer'}
+    ilk = {x[0]: x for x in il}
     for y, i, t, konu in yer:
+        if y in KOLAY_YER or i.casefold() in y.casefold() or i not in ilk:
+            continue
         ayni_tur = [x for x in yer if x[2] == t]
-        il_havuz = [x[1] for x in ayni_tur if x[1] != i] + [x for x in ad if x != i]
-        out.append(q('yer_il_' + t, konu, f'{y} hangi ilimizde bulunur?', i,
-                     sec2(i, [x[1] for x in ayni_tur if x[1] != i], [x for x in ad if x != i], rng),
-                     f'{y} {i} ilindedir.', 2))
+        haric = YER_HARIC.get(y, set())
+        komsular = [x[0] for x in il if x[0] != i and x[0] not in haric]
+        yan = yakin_sec(i, komsular, lambda m: uzak(ilk[m], ilk[i]), rng, havuz=5)
+        out.append(q('yer_il_' + t, konu, f'{y} hangi ilimizde bulunur?', i, yan,
+                     f'{y} {i} ilindedir. Seçeneklerdeki diğer iller {i} iline komşu ya da yakın illerdir.', 3))
         ayni_il = {x[0] for x in ayni_tur if x[1] == i}
-        havuz = [x[0] for x in ayni_tur if x[0] not in ayni_il]
+        havuz = [x for x in ayni_tur if x[0] not in ayni_il and x[1] in ilk]
+        yan = yakin_sec(y, [x[0] for x in havuz], lambda m: uzak(ilk[next(x[1] for x in havuz if x[0] == m)], ilk[i]), rng, havuz=6)
         out.append(q('il_yer_' + t, konu, f'Aşağıdaki {tur_ad[t]} örneklerinden hangisi {i} ilinde bulunur?', y,
-                     sec(y, havuz, rng), f'{y} {i} ilindedir; diğerleri başka illerdedir.', 2))
+                     yan, f'{y} {i} ilindedir; diğer seçenekler çevre illerde bulunur.', 3))
     # 6) baraj -> akarsu
     bar = _satir(BARAJLAR, 2)
     nehirler = sorted({x[1] for x in bar})
     for b, n in bar:
-        out.append(q('baraj', 'Su Kaynakları', f'{b} hangi akarsu üzerinde kurulmuştur?', n, sec(n, nehirler, rng),
-                     f'{b} {n} üzerindedir.', 2))
+        uz = lambda m: ((AKARSU_KONUM[m][0] - AKARSU_KONUM[n][0]) ** 2 + (AKARSU_KONUM[m][1] - AKARSU_KONUM[n][1]) ** 2) ** 0.5
+        out.append(q('baraj', 'Su Kaynakları', f'{b} hangi akarsu üzerinde kurulmuştur?', n, yakin_sec(n, nehirler, uz, rng, havuz=5),
+                     f'{b} {n} üzerindedir; diğer seçenekler yakın havzaların akarsularıdır.', 3))
     # 7) akarsu -> döküldüğü yer
     ak = _satir(AKARSULAR, 2)
     yerler = sorted({x[1] for x in ak})
@@ -585,18 +602,12 @@ def uret(rng):
                    lambda a, d: f'{a} yöresi hangi maden ya da kaynak ile öne çıkar?',
                    lambda a, d: f'{d} çıkarılmasıyla öne çıkan yer aşağıdakilerden hangisidir?',
                    lambda a, d: f'{a}: {d}.', lambda a, d: f'{d}: {a}.', 2)
-    # 9) ürünler
-    for u, i, bol, konu in _satir(URUNLER, 4):
-        izin = bol.split(',')
-        havuz = [x[0] for x in il if x[1] in izin]
-        out.append(q('urun', konu, f'{u} üretimiyle öne çıkan il aşağıdakilerden hangisidir?', i, sec(i, havuz, rng),
-                     f'{u} üretiminde {i} öne çıkar; diğer seçeneklerdeki iller bu üründe öne çıkmaz.', 2))
     # 10) kavramlar
     kav = [tuple(x) for x in _satir(KAVRAMLAR, 3)]
     out += eslesme(rng, 'kavram', kav,
                    lambda a, d: f'Coğrafyada “{a}” kavramı aşağıdakilerden hangisini ifade eder?',
                    lambda a, d: f'“{d}” aşağıdaki kavramlardan hangisiyle açıklanır?',
-                   lambda a, d: f'{a}: {d}.', lambda a, d: f'{d} = {a}.', 2, grup=lambda a, d, k: k)
+                   lambda a, d: f'{a}: {d}.', lambda a, d: f'{d} = {a}.', 3, grup=lambda a, d, k: k)
     # 11) ölçek hesapları
     olcekler = [20000, 50000, 100000, 200000, 250000, 500000, 1000000, 2000000, 4000000]
     for o in olcekler:
@@ -645,6 +656,34 @@ def uret(rng):
             out.append(q('gunes_acisi', 'Koordinat',
                          f'{es}° kuzey enlemindeki bir yerde {tarih} günü öğle vakti Güneş ışınlarının geliş açısı kaç derecedir?',
                          dogru, sec(dogru, yan, rng), f'{tarih}: {ac}. Açı = 90° − {es}° {formul} = {dogru}.', 3))
+    # 14) "Hangisi ... değildir / farklıdır?" (KPSS'nin sık kullandığı kalıp; dışarıdaki seçenek komşu bölge/havza/tür)
+    for bb in bolgeler:
+        ic = [x for x in il if x[1] == bb]
+        sinir_ic = [x for x in ic if min(uzak(x, y) for y in il if y[1] != bb) < 1.8]
+        dis = [x for x in il if x[1] != bb and min(uzak(x, y) for y in ic) < 1.3]
+        for kok in (f'Aşağıdaki illerden hangisi {bb} Bölgesi’nde yer almaz?',
+                    f'Aşağıdaki illerden hangisi {bb} Bölgesi’nin illerinden biri değildir?',
+                    f'{bb} Bölgesi’nin sınırları dikkate alındığında aşağıdaki illerden hangisi bu bölgenin dışında kalır?'):
+            out.append(farkli(rng, 'bolge_degil', 'Bölgeler', kok, [(x[0], '') for x in sinir_ic],
+                              [(x[0], f'{x[0]} {x[1]} Bölgesi’ndedir.') for x in dis],
+                              lambda m, a, ic_, bb=bb: f'{a} Diğer iller ({", ".join(x[0] for x in ic_)}) {bb} Bölgesi’ndedir; '
+                                                       f'{m} bölge sınırına yakın olduğu için karıştırılır.'))
+    gol = _satir(GOLLER, 2)
+    for t in sorted({t for _, t in gol}):
+        ic = [(g, '') for g, tt in gol if tt == t]
+        dis = [(g, f'{g} ise {tt.lower()}dür.') for g, tt in gol if tt != t]
+        for kok in (f'Aşağıdaki göllerden hangisi oluşumu bakımından {t.lower()} değildir?',
+                    'Aşağıdaki göllerden hangisi oluşum bakımından diğerlerinden farklıdır?'):
+            out.append(farkli(rng, 'gol_farkli', 'Su Kaynakları', kok, ic, dis,
+                              lambda m, a, ic_, t=t: f'{", ".join(x[0] for x in ic_)} {t.lower()}dür. {a}'))
+    for n in nehirler:
+        ic = [(b, '') for b, nn in bar if nn == n]
+        uz = lambda m, n=n: ((AKARSU_KONUM[m][0] - AKARSU_KONUM[n][0]) ** 2 + (AKARSU_KONUM[m][1] - AKARSU_KONUM[n][1]) ** 2) ** 0.5
+        dis = [(b, f'{b} ise {nn} üzerindedir.') for b, nn in bar if nn != n and uz(nn) < 5]
+        for kok in (f'Aşağıdaki barajlardan hangisi {n} üzerinde kurulmamıştır?',
+                    f'Aşağıdaki barajlardan hangisi {n} havzasında yer almaz?'):
+            out.append(farkli(rng, 'baraj_degil', 'Su Kaynakları', kok, ic, dis,
+                              lambda m, a, ic_, n=n: f'{", ".join(x[0] for x in ic_)} {n} üzerindedir. {a}'))
     out += akil_yurutme(rng, il, yer, bar, kav)
     return out
 
@@ -657,6 +696,8 @@ def akil_yurutme(rng, il, yer, bar, kav):
     """Seçenekleri birbirine yakın, tek cevaplı akıl yürütme soruları."""
     out = []
     uzak = lambda x, y: ((x[2] - y[2]) ** 2 + (x[3] - y[3]) ** 2) ** 0.5
+    # Herkesin bildiği ya da adı ili ele veren yerler (Anıtkabir, Erzurum Ovası...) öncül yapılmaz.
+    yer = [y for y in yer if y[0] not in KOLAY_YER and y[1].casefold() not in y[0].casefold()]
     bolgeler = sorted({x[1] for x in il})
     # 1) Hangileri X bölgesinde? Çeldiriciler komşu bölgelerin sınıra yakın illeri
     for _ in range(260):
@@ -724,7 +765,8 @@ def akil_yurutme(rng, il, yer, bar, kav):
         d = [(f'{y} – {i}', f'{y} {i} ilindedir.') for y, i, t, kk in uc[:k_]]
         w = []
         for y, i, t, kk in uc[k_:]:
-            komsu = sorted((x for x in il if x[0] != i), key=lambda x: uzak(x, ilk[i]))[:3]
+            komsu = sorted((x for x in il if x[0] != i and x[0] not in YER_HARIC.get(y, set())),
+                           key=lambda x: uzak(x, ilk[i]))[:3]
             j = rng.choice(komsu)[0]
             w.append((f'{y} – {j}', f'{y} {j} değil {i} ilindedir.'))
         out.append(onculu(rng, 'oncul_yer', uc[0][3], d, w, 'Yukarıdaki yer – il eşleştirmelerinden hangileri doğrudur?', 3, k_))
@@ -749,13 +791,17 @@ def akil_yurutme(rng, il, yer, bar, kav):
             w.append((f'{b} – {m}', f'{b} {m} değil {n} üzerindedir.'))
         out.append(onculu(rng, 'oncul_baraj', 'Su Kaynakları', d, w, 'Yukarıdaki baraj – akarsu eşleştirmelerinden hangileri doğrudur?', 3, k_))
     # 8) Kavram – açıklama
+    kav_konu = {}
+    for x in kav:
+        kav_konu.setdefault(x[2], []).append(x)
     for _ in range(140):
-        uc = rng.sample(kav, 3)
+        uc = rng.sample(rng.choice([v for v in kav_konu.values() if len(v) >= 4]), 3)
         k_ = rng.choice([1, 2, 2, 3])
         d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
         w = []
+        gosterilen = {x[1] for x in uc}
         for a, t, k in uc[k_:]:
-            b = rng.choice([x for x in kav if x[0] != a and x[2] == k and x[1] != t] or [x for x in kav if x[0] != a])
+            b = rng.choice([x for x in kav if x[0] != a and x[2] == k and x[1] not in gosterilen] or [x for x in kav if x[0] != a and x[1] not in gosterilen])
             w.append((f'{a}: {b[1]}', f'Bu açıklama {a} kavramına değil {b[0]} kavramına aittir.'))
         out.append(onculu(rng, 'oncul_kavram', uc[0][2], d, w, 'Yukarıdaki kavram – açıklama eşleştirmelerinden hangileri doğrudur?', 3, k_))
     return out

@@ -223,7 +223,7 @@ B Fotoğraf makinesinin icadı on dokuzuncu yüzyıla dayanır.
 3 Etkili not almak, anlatılanı kendi cümleleriyle ve ana hatlarıyla kaydetmektir.
 4 Bu yöntem, bilginin zihinde işlenmesini sağlayarak öğrenmeyi kalıcı kılar.
 5 Notları ders sonunda kısa bir gözden geçirmeyle tamamlamak da unutmayı önemli ölçüde azaltır.
-A 3 | Etkili not almak, anlatılanı kendi cümleleriyle ve ana hatlarıyla kaydetmektir.
+A 3 | İyi not, dinleneni eksiksiz yazmakla değil, anlayıp özünü kendi ifadesiyle kaydetmekle tutulur.
 Y Derste anlatılan her şeyi eksiksiz yazmak başarılı olmanın anahtarıdır.
 D Her şeyi yazmaya çalışan öğrenci anlamaya odaklanamaz. / Kendi cümleleriyle not almak bilgiyi zihinde işler. / Notları ders sonunda gözden geçirmek unutmayı azaltır.
 N Renkli kalemlerle alınan notlar daha kolay hatırlanır.

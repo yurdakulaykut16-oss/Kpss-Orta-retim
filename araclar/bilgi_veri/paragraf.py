@@ -90,12 +90,15 @@ def paragraf_sorulari(rng):
         metin = _metin(cs)
         baska = [x for x in ps if x['alan'] != p['alan']]
 
-        # 1) Konu: yakın konu + farklı alanlardan konular
-        diger = rng.sample([x['konu'] for x in baska], 3)
+        # 1) Konu: yakın konu + aynı alandaki (yetmezse başka alanlardan) paragrafların konuları;
+        #    böylece seçenekler parçayla aynı tematik çevrede kalır.
+        ayni_alan = [x['konu'] for x in ps if x['alan'] == p['alan'] and x is not p]
+        ayni_alan = rng.sample(ayni_alan, min(3, len(ayni_alan)))
+        diger = ayni_alan + rng.sample([x['konu'] for x in baska], 3 - len(ayni_alan))
         out.append(q('par_konu', KONU, f'{metin}{NL}Bu parçanın konusu aşağıdakilerden hangisidir?',
                      p['konu'], [p['yakin'], *diger],
                      f'Parçada baştan sona “{p["konu"]}” işlenmiştir. “{p["yakin"]}” seçeneği konuya yakın görünse de '
-                     f'parçada bu konu ele alınmamıştır; diğer seçenekler parçayla ilgisizdir.', 2))
+                     f'parçada bu konu ele alınmamıştır; diğer seçenekler aynı alandan olsa da parçada işlenmemiştir.', 3))
 
         # 2) Ana düşünce: parçayla çelişen yakın yargı + parçada geçen yardımcı düşünceler
         out.append(q('par_ana', KONU, f'{metin}{NL}Bu parçada asıl anlatılmak istenen aşağıdakilerden hangisidir?',

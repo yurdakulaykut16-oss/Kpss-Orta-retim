@@ -1,5 +1,5 @@
 """Vatandaşlık bilgi tabloları (1982 Anayasası güncel madde düzeni, 2017 değişiklikleri dahil)."""
-from .ortak import eslesme, eslestirme, onculu, q, sec, sec2, siralama
+from .ortak import eslesme, eslestirme, farkli, onculu, q, sec, sec2, siralama, yakin_sec
 
 # madde no | konu | işaret (! = hak değil / ödev ya da düzenleme; statü sorusunda kullanılmaz)
 MADDELER = """
@@ -374,7 +374,7 @@ Köy derneği|Köyde yaşayan seçmenlerden oluşan köyün karar organı|İdare
 İhtiyar meclisi|Muhtarın başkanlığında köy ya da mahallede seçimle oluşan kurul|İdare|İdare hukuku
 Büyükşehir belediyesi|Sınırları il mülki sınırı olan ve ilçe belediyeleri arasında koordinasyonu sağlayan belediye|İdare|İdare hukuku
 Mal bildirimi|Kamu görevlilerinin göreve başlarken ve belirli dönemlerde mal varlıklarını bildirme yükümlülüğü|Memuriyet|İdare hukuku
-Vekâlet (memurlukta)|Görevden ayrılan memurun yerine başka bir memurun geçici olarak görevlendirilmesi|Memuriyet|İdare hukuku
+Memurlukta vekâlet|Görevden ayrılan memurun yerine başka bir memurun geçici olarak görevlendirilmesi|Memuriyet|İdare hukuku
 Disiplin amiri|Memura disiplin cezası verme yetkisine sahip amir|Disiplin|İdare hukuku
 Derece|Memurların kadro seviyesini gösteren ve birden on beşe kadar sıralanan basamak|Memuriyet|İdare hukuku
 Halk girişimi|Belirli sayıda seçmenin kanun ya da anayasa değişikliği önerebilmesi|Seçimler|Anayasa hukuku
@@ -651,6 +651,22 @@ def _satir(blok, n):
     return out
 
 
+# Yetki sorularında birbiriyle karıştırılan organ ve kurumlar (çeldirici önceliği)
+KARISAN = {
+    'TBMM': ['Cumhurbaşkanı', 'Anayasa Mahkemesi', 'Sayıştay', 'Yüksek Seçim Kurulu'],
+    'Cumhurbaşkanı': ['TBMM', 'Millî Güvenlik Kurulu', 'Hâkimler ve Savcılar Kurulu', 'Anayasa Mahkemesi'],
+    'Anayasa Mahkemesi': ['Yargıtay', 'Danıştay', 'Uyuşmazlık Mahkemesi', 'Hâkimler ve Savcılar Kurulu'],
+    'Hâkimler ve Savcılar Kurulu': ['Anayasa Mahkemesi', 'Yargıtay', 'Danıştay', 'Cumhurbaşkanı'],
+    'Yargıtay': ['Danıştay', 'Anayasa Mahkemesi', 'Uyuşmazlık Mahkemesi', 'Sayıştay'],
+    'Danıştay': ['Yargıtay', 'Sayıştay', 'Anayasa Mahkemesi', 'Uyuşmazlık Mahkemesi'],
+    'Sayıştay': ['Danıştay', 'TBMM', 'Yargıtay', 'Kamu Denetçiliği Kurumu'],
+    'Uyuşmazlık Mahkemesi': ['Anayasa Mahkemesi', 'Yargıtay', 'Danıştay', 'Hâkimler ve Savcılar Kurulu'],
+    'Yüksek Seçim Kurulu': ['Anayasa Mahkemesi', 'TBMM', 'Yargıtay', 'Danıştay'],
+    'Kamu Denetçiliği Kurumu': ['Sayıştay', 'Danıştay', 'TBMM', 'Anayasa Mahkemesi'],
+    'Millî Güvenlik Kurulu': ['Cumhurbaşkanı', 'TBMM', 'Danıştay', 'Yüksek Seçim Kurulu'],
+}
+
+
 def uret(rng):
     out = []
     md = [(int(a), b, c) for a, b, c in _satir(MADDELER, 3)]
@@ -697,7 +713,7 @@ def uret(rng):
     out += eslesme(rng, 'kavram', kav,
                    lambda a, d: f'“{a}” kavramı aşağıdakilerden hangisini ifade eder?',
                    lambda a, d: f'“{d}” aşağıdaki kavramlardan hangisiyle ifade edilir?',
-                   lambda a, d: f'{a}: {d}.', lambda a, d: f'{d} = {a}.', 2, grup=lambda a, d, k: k)
+                   lambda a, d: f'{a}: {d}.', lambda a, d: f'{d} = {a}.', 3, grup=lambda a, d, k: k)
     dallar = ['Medeni hukuk', 'Borçlar hukuku', 'Ticaret hukuku', 'Ceza hukuku', 'İdare hukuku', 'Anayasa hukuku', 'Ceza muhakemesi hukuku', 'İş hukuku', 'Vergi hukuku']
     for a, d, k, dal in _satir(KAVRAMLAR, 4):
         if dal != '-':
@@ -709,8 +725,10 @@ def uret(rng):
         konu = {'TBMM': 'TBMM', 'Cumhurbaşkanı': 'Yürütme', 'Belediye meclisi': 'İdare', 'Millî Güvenlik Kurulu': 'Yürütme',
                 'Diyanet İşleri Başkanlığı': 'İdare', 'Yükseköğretim Kurulu': 'İdare', 'Radyo ve Televizyon Üst Kurulu': 'İdare',
                 'Kamu Denetçiliği Kurumu': 'İdare', 'Yüksek Seçim Kurulu': 'Seçimler'}.get(s, 'Yargı')
-        out.append(q('yetki', konu, f'“{y}” görev veya yetkisi aşağıdakilerden hangisine aittir?', s, sec(s, sahip, rng),
-                     f'{y}: {s}.', 2))
+        yakin = KARISAN.get(s, [])
+        out.append(q('yetki', konu, f'1982 Anayasası’na göre “{y}” görev veya yetkisi aşağıdakilerden hangisine aittir?', s,
+                     sec2(s, yakin, sahip, rng),
+                     f'{y}: {s}. Seçeneklerdeki diğer organ ve kurumlar bu yetkiyle sık karıştırılır.', 3))
     for k, soru, d, a, b, c, e, g in _satir(SAYISAL, 8):
         out.append(q('sayisal', k, soru, d, [a, b, c, e], g, 3))
     for k, soru, d, a, b, c, e, g in _satir(OZELLIK, 8):
@@ -738,9 +756,37 @@ def uret(rng):
         rng.shuffle(h)
         out.append(q('tarihce_ters', k, f'{y} yılında Türk anayasa ve seçim tarihinde aşağıdakilerden hangisi gerçekleşmiştir?', o,
                      sec(o, h, rng), f'{y}: {o}.', 3))
+    sahip_yet = {}
+    for y, s_ in yet:
+        sahip_yet.setdefault(s_, []).append(y)
+    for sh, ys in sahip_yet.items():
+        if len(ys) < 4:
+            continue
+        dis = [(y, f'“{y}” ise {s_} yetkisidir.') for y, s_ in yet if s_ in KARISAN.get(sh, [])]
+        for kok in (f'1982 Anayasası’na göre aşağıdakilerden hangisi {sh} görev ve yetkilerinden biri değildir?',
+                    f'Aşağıdakilerden hangisi 1982 Anayasası’na göre {sh} tarafından kullanılan yetkilerden biri değildir?',
+                    f'1982 Anayasası’nda {sh} için sayılan görev ve yetkiler arasında aşağıdakilerden hangisi yer almaz?'):
+            out.append(farkli(rng, 'yetki_degil', konu_of(sh), kok, [(y, '') for y in ys], dis,
+                              lambda m, a, ic, sh=sh: f'{a} Diğer seçenekler {sh} yetkileridir.'))
+    for hb in ('Kişinin Hakları ve Ödevleri', 'Sosyal ve Ekonomik Haklar ve Ödevler', 'Siyasi Haklar ve Ödevler'):
+        ic = [(k, '') for n, k, f in md if hak_bolum(n) == hb]
+        dis = [(k, f'“{k}” (m.{n}) {hak_bolum(n)} bölümündedir.') for n, k, f in md
+               if hak_bolum(n) and hak_bolum(n) not in (hb, 'Genel Hükümler')]
+        for kok in (f'Aşağıdakilerden hangisi 1982 Anayasası’nda “{hb}” bölümünde düzenlenmemiştir?',
+                    f'1982 Anayasası’na göre aşağıdakilerden hangisi “{hb}” arasında yer almaz?',
+                    f'Aşağıdakilerden hangisi 1982 Anayasası’nın “{hb}” bölümünde yer alan hak ve ödevlerden biri değildir?'):
+            out.append(farkli(rng, 'bolum_degil', 'Haklar', kok, ic, dis,
+                              lambda m, a, ic_, hb=hb: f'{a} Diğer seçenekler {hb} bölümündedir.'))
     out += akil_yurutme(rng, md, kav, yet, bel, tc)
     return out
 
+
+def konu_of(sahip):
+    return {'TBMM': 'TBMM', 'Cumhurbaşkanı': 'Yürütme'}.get(sahip, 'Yargı')
+
+
+# Madde numarası ezberi KPSS'de seyrek sorulur; bu türler sınırlı tutulur.
+KOTA = {'madde_konu': 60, 'konu_madde': 45}
 
 AGIRLIK = {'oncul_yetki': 3, 'oncul_bolum': 2, 'oncul_hukuk': 2, 'sirala_tarihce': 2, 'oncul_madde': 2,
            'oncul_belge': 2, 'oncul_kavram': 2, 'esle_madde': 2}
@@ -819,13 +865,17 @@ def akil_yurutme(rng, md, kav, yet, bel, tc):
         out.append(onculu(rng, 'oncul_belge', 'İnsan Hakları', d, w,
                           'Yukarıdaki belge – kabul yılı eşleştirmelerinden hangileri doğrudur?', 3, k_))
     # 7) Kavram – açıklama
+    kav_konu = {}
+    for x in kav:
+        kav_konu.setdefault(x[2], []).append(x)
     for _ in range(300):
-        uc = rng.sample(kav, 3)
+        uc = rng.sample(rng.choice([v for v in kav_konu.values() if len(v) >= 4]), 3)
         k_ = rng.choice([1, 2, 2, 3])
         d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
         w = []
+        gosterilen = {x[1] for x in uc}
         for a, t, k in uc[k_:]:
-            b = rng.choice([x for x in kav if x[0] != a and x[2] == k and x[1] != t] or [x for x in kav if x[0] != a])
+            b = rng.choice([x for x in kav if x[0] != a and x[2] == k and x[1] not in gosterilen] or [x for x in kav if x[0] != a and x[1] not in gosterilen])
             w.append((f'{a}: {b[1]}', f'Bu açıklama {a} kavramına değil {b[0]} kavramına aittir.'))
         out.append(onculu(rng, 'oncul_kavram', uc[0][2], d, w,
                           'Yukarıdaki kavram – açıklama eşleştirmelerinden hangileri doğrudur?', 3, k_))

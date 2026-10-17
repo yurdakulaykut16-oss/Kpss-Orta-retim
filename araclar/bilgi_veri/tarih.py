@@ -1,5 +1,5 @@
 """Tarih bilgi tabloları (elle derlenmiş; yalnız ders kitaplarında yaygın kabul gören bilgiler)."""
-from .ortak import eslesme, eslestirme, onculu, q, sec, siralama, yuzyil, yy_ad
+from .ortak import eslesme, eslestirme, farkli, onculu, q, sec, siralama, yakin_sec, yuzyil, yy_ad
 
 # yıl | olay | konu | dönem hükümdarı (O: Osmanlı padişahı, S: Selçuklu sultanı)
 OLAYLAR = """
@@ -52,7 +52,7 @@ OLAYLAR = """
 1444|Varna Savaşı|Osmanlı Kuruluş|O:II. Murat
 1448|II. Kosova Savaşı|Osmanlı Kuruluş|O:II. Murat
 1453|İstanbul'un fethi|Fatih Dönemi|O:Fatih Sultan Mehmet
-1456|Belgrad Kuşatması (Fatih dönemi)|Fatih Dönemi|O:Fatih Sultan Mehmet
+1456|Hunyadi Yanoş'un savunduğu Belgrad Kuşatması|Fatih Dönemi|O:Fatih Sultan Mehmet
 1461|Trabzon Rum İmparatorluğu'na son verilmesi|Fatih Dönemi|O:Fatih Sultan Mehmet
 1463|Bosna'nın fethi|Fatih Dönemi|O:Fatih Sultan Mehmet
 1473|Otlukbeli Savaşı|Fatih Dönemi|O:Fatih Sultan Mehmet
@@ -504,11 +504,17 @@ def uret(rng):
     for y, *_ in tum:
         yil_say[y] = yil_say.get(y, 0) + 1
     out = []
+    # Hükümdarların tablodaki olaylara göre (yaklaşık) saltanat aralığı
+    aralik = {}
+    for y, o, konu, h in tum:
+        if h:
+            a, b = aralik.get(h, (y, y))
+            aralik[h] = (min(a, y), max(b, y))
     for y, o, konu, h in tum:
         yakin = sorted({yy for yy, *_ in tum if yy != y and abs(yy - y) <= 80}, key=lambda v: abs(v - y))
-        havuz = [str(v) for v in yakin[:10]]
+        havuz = [str(v) for v in yakin[:6]]
         if len(havuz) < 4:
-            havuz += [str(y + d) for d in (-7, -5, -3, -2, 2, 3, 5, 7) if str(y + d) not in havuz]
+            havuz += [str(y + d) for d in (-3, -2, -1, 1, 2, 3) if str(y + d) not in havuz]
         out.append(q('yil', konu, f'{o} hangi yılda gerçekleşmiştir?', y, sec(str(y), havuz, rng),
                      f'{o} {y} yılında gerçekleşmiştir. Diğer seçeneklerdeki yıllar başka olaylara aittir.', 3))
         c = yuzyil(y)
@@ -517,11 +523,12 @@ def uret(rng):
           out.append(q('yuzyil', konu, f'{o} hangi yüzyılda yaşanmıştır?', yy_ad(c), sec(yy_ad(c), yy, rng),
                      f'{o} {y} yılındadır; {y} yılı {yy_ad(c)} içinde yer alır.', 2))
         # önce / sonra (yalnız yılı kesin farklı olaylarla, aynı dönem penceresinde)
-        pencere = [x for x in tum if abs(x[0] - y) <= 150 and x[0] != y]
-        once = [x for x in pencere if x[0] < y]
-        sonra = [x for x in pencere if x[0] > y]
-        rng.shuffle(once)
-        rng.shuffle(sonra)
+        # Çeldiriciler olaya en yakın yıllardan seçilir; öğrenci kronolojiyi gerçekten bilmelidir.
+        pencere = [x for x in tum if abs(x[0] - y) <= 60 and x[0] != y]
+        once = sorted((x for x in pencere if x[0] < y), key=lambda x: (y - x[0], rng.random()))
+        sonra = sorted((x for x in pencere if x[0] > y), key=lambda x: (x[0] - y, rng.random()))
+        once = rng.sample(once[:3], len(once[:3])) + once[3:]
+        sonra = rng.sample(sonra[:3], len(sonra[:3])) + sonra[3:]
         if once and len(sonra) >= 4:
             dogru = once[0]
             yan = []
@@ -542,29 +549,33 @@ def uret(rng):
                              f'{o} {y} yılındadır. {dogru[1]} {dogru[0]} yılında, yani daha sonra gerçekleşmiştir; diğerleri {y} yılından öncedir.', 3))
         if h:
             tip, kisi = h.split(':', 1)
-            grup = [x[3].split(':', 1)[1] for x in tum if x[3].startswith(tip + ':')]
+            grup = [x for x in aralik if x.startswith(tip + ':') and x != h]
             unvan = 'Osmanlı padişahı' if tip == 'O' else 'Selçuklu sultanı'
-            out.append(q('kisi', konu, f'{o} hangi {unvan} döneminde gerçekleşmiştir?', kisi, sec(kisi, grup, rng),
-                         f'{o} ({y}) {kisi} döneminde gerçekleşmiştir.', 2))
+            uz = lambda x: max(aralik[x][0] - y, y - aralik[x][1], 0)
+            yan = yakin_sec(h, grup, uz, rng, havuz=5)
+            out.append(q('kisi', konu, f'{o} hangi {unvan} döneminde gerçekleşmiştir?', kisi,
+                         yan and [x.split(':', 1)[1] for x in yan],
+                         f'{o} ({y}) {kisi} döneminde gerçekleşmiştir. Seçeneklerdeki diğer hükümdarlar bu döneme '
+                         f'yakın tarihlerde tahtta bulunmuştur; olayın yılı onların saltanat dönemine denk gelmez.', 3))
     # o yıl hangi olay (yalnız tek olaylı yıllar)
     for y, o, konu, h in tek:
         if yil_say[y] != 1:
             continue
-        havuz = [x[1] for x in tum if x[0] != y and abs(x[0] - y) <= 120]
-        rng.shuffle(havuz)
-        out.append(q('yil_olay', konu, f'{y} yılında aşağıdaki gelişmelerden hangisi yaşanmıştır?', o, sec(o, havuz, rng),
+        havuz = [x for x in tum if x[0] != y and abs(x[0] - y) <= 60]
+        yan = yakin_sec(o, [x[1] for x in havuz], lambda m: min(abs(x[0] - y) for x in havuz if x[1] == m), rng, havuz=7)
+        out.append(q('yil_olay', konu, f'{y} yılında aşağıdaki gelişmelerden hangisi yaşanmıştır?', o, yan,
                      f'{y} yılında {o} gerçekleşmiştir. Diğer seçenekler başka yıllara aittir.', 3))
     # kavramlar
     kav = [(a, d, k) for a, d, k in _satirlar(KAVRAMLAR, 3)]
     out += eslesme(rng, 'kavram', kav,
                    lambda a, d: f'Tarih terimi olarak “{a}” aşağıdakilerden hangisini ifade eder?',
                    lambda a, d: f'“{d}” aşağıdaki kavramlardan hangisiyle ifade edilir?',
-                   lambda a, d: f'{a}: {d}.', lambda a, d: f'{d} = {a}.', 2, grup=lambda a, d, k: k)
+                   lambda a, d: f'{a}: {d}.', lambda a, d: f'{d} = {a}.', 3, grup=lambda a, d, k: k)
     es = [(a, d, k) for a, d, k in _satirlar(ESERLER, 3)]
     out += eslesme(rng, 'eser', es,
                    lambda a, d: f'“{a}” adlı eser kime aittir?',
                    lambda a, d: f'Aşağıdaki eserlerden hangisi {d} tarafından yazılmıştır?',
-                   lambda a, d: f'{a}, {d} tarafından yazılmıştır.', lambda a, d: f'{d}: {a}.', 2)
+                   lambda a, d: f'{a}, {d} tarafından yazılmıştır.', lambda a, d: f'{d}: {a}.', 3, grup=lambda a, d, k: k)
     # özellikler
     oz = _satirlar(OZELLIKLER, 4)
     for kok, dogru, grup, konu in oz:
@@ -641,8 +652,24 @@ def akil_yurutme(rng, tum, kav, es, dev):
             if not k_:
                 continue
             out.append(onculu(rng, 'oncul_donem', rows[0][2], d, w,
-                              f'Yukarıdaki gelişmelerden hangileri {kisi} döneminde ({"Osmanlı" if tip == "O" else "Selçuklu"} {unvan}) gerçekleşmiştir?',
+                              f'Yukarıdaki gelişmelerden hangileri {"Osmanlı" if tip == "O" else "Selçuklu"} {unvan} {kisi} döneminde gerçekleşmiştir?',
                               3, k_))
+    # 2b) "... döneminde gerçekleşen gelişmelerden biri değildir?" (dışarıdaki olay komşu hükümdarın döneminden)
+    for h, rows in donem.items():
+        if len(rows) < 4:
+            continue
+        tip, kisi = h.split(':', 1)
+        unvan = 'Osmanlı padişahı' if tip == 'O' else 'Selçuklu sultanı'
+        yy = [r[0] for r in rows]
+        yakin = [(o, f'{o} ({y}) {hh.split(":", 1)[1]} dönemindedir.') for y, o, k, hh in tum
+                 if hh and hh != h and hh[0] == tip and min(abs(y - v) for v in yy) <= 30]
+        for kok in (f'Aşağıdakilerden hangisi {unvan} {kisi} döneminde gerçekleşen gelişmelerden biri değildir?',
+                    f'Aşağıdaki gelişmelerden hangisi {kisi} saltanatı sırasında yaşanmamıştır?',
+                    f'{unvan[0].upper() + unvan[1:]} {kisi} tahttayken aşağıdakilerden hangisi gerçekleşmemiştir?'):
+            out.append(farkli(rng, 'donem_degil', rows[0][2], kok,
+                              [(o, f'{o} ({y})') for y, o, k in rows], yakin,
+                              lambda m, a, ic, kisi=kisi: f'{a} Diğer seçenekler ({"; ".join(x[1] for x in ic)}) '
+                                                          f'{kisi} döneminde gerçekleşmiştir.'))
     # 3) Öncüllü yüzyıl: sınır yıllarına yakın gelişmelerle
     for _ in range(340):
         a = rng.choice(olay)
@@ -680,8 +707,11 @@ def akil_yurutme(rng, tum, kav, es, dev):
     yazar = {}
     for e, y, k in es:
         yazar.setdefault(e, set()).add(y)
+    es_konu = {}
+    for x in es:
+        es_konu.setdefault(x[2], []).append(x)
     for _ in range(200):
-        uc = rng.sample(es, 3)
+        uc = rng.sample(rng.choice([v for v in es_konu.values() if len(v) >= 3]), 3)
         k_ = rng.choice([1, 2, 2, 3])
         d = [(f'{e} – {y}', f'{e}, {y} tarafından yazılmıştır.') for e, y, k in uc[:k_]]
         w = []
@@ -696,13 +726,17 @@ def akil_yurutme(rng, tum, kav, es, dev):
                               aciklama=lambda a, d: f'{a} – {d}'))
     # 6) Kavram öncüllüsü: aynı konudan tanımlar, biri yakın kavramla karıştırılmış
     tanim = {a: d for a, d, k in kav}
+    kav_konu = {}
+    for x in kav:
+        kav_konu.setdefault(x[2], []).append(x)
     for _ in range(300):
-        uc = rng.sample(kav, 3)
+        uc = rng.sample(rng.choice([v for v in kav_konu.values() if len(v) >= 4]), 3)
         k_ = rng.choice([1, 2, 2, 3])
         d = [(f'{a}: {t}', f'{a}: {t}.') for a, t, k in uc[:k_]]
         w = []
+        gosterilen = {x[1] for x in uc}
         for a, t, k in uc[k_:]:
-            aday = [x for x in kav if x[0] != a and x[2] == k and x[1] != t] or [x for x in kav if x[0] != a]
+            aday = [x for x in kav if x[0] != a and x[2] == k and x[1] not in gosterilen] or [x for x in kav if x[0] != a and x[1] not in gosterilen]
             b = rng.choice(aday)
             w.append((f'{a}: {b[1]}', f'Bu tanım {a} kavramına değil {b[0]} kavramına aittir.'))
         out.append(onculu(rng, 'oncul_kavram', uc[0][2], d, w, 'Yukarıdaki kavram – açıklama eşleştirmelerinden hangileri doğrudur?', 3, k_))

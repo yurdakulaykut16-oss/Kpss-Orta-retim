@@ -4,7 +4,7 @@ Zamanla değişebilecek bilgiler (görevdeki kişiler, anlık sıralamalar) bile
 kullanılmamıştır. Birden fazla doğru cevaba yol açabilecek kayıtlar (ör. birden
 çok resmî başkenti olan ülkeler, kıtalararası ülkeler) çıkarılmıştır.
 """
-from .ortak import eslestirme, onculu, siralama, eslesme, q, sec, sec2
+from .ortak import eslestirme, farkli, onculu, siralama, eslesme, q, sec, sec2, yakin_sec
 
 # ülke | başkent | kıta ('-' = kıta sorusu sorulmaz)
 ULKELER = """
@@ -1127,6 +1127,39 @@ def _yillar(y, rng, n=4, aralik=8):
     return rng.sample(aday, n)
 
 
+# Birbirine benzeyen branşlar (sporcu sorusunda çeldirici önceliği)
+BRANS_GRUP = [
+    ['Güreş', 'Judo', 'Tekvando', 'Boks', 'Karate', 'Halter'],
+    ['Halter', 'Güreş', 'Atletizm', 'Judo', 'Boks'],
+    ['Okçuluk', 'Atıcılık', 'Eskrim', 'Bilardo', 'Tekvando'],
+    ['Voleybol', 'Basketbol', 'Hentbol', 'Futbol', 'Tenis'],
+    ['Atletizm', 'Yüzme', 'Halter', 'Jimnastik', 'Okçuluk'],
+    ['Yüzme', 'Atletizm', 'Jimnastik', 'Kürek', 'Tenis'],
+]
+
+
+# Ülke sorularında çeldiriciler önce aynı bölgeden seçilir (Bakü → Ermenistan, Gürcistan, Kazakistan...).
+_BOLGELER = {
+    'Batı Avrupa': 'Almanya, Fransa, İtalya, İspanya, Portekiz, Birleşik Krallık, İrlanda, Hollanda, Belçika, İsviçre, Avusturya, Malta, Lihtenştayn',
+    'Doğu Avrupa': 'Polonya, Çekya, Slovakya, Macaristan, Romanya, Belarus, Ukrayna, Moldova, Rusya',
+    'Balkanlar': 'Yunanistan, Bulgaristan, Arnavutluk, Kuzey Makedonya, Sırbistan, Karadağ, Bosna-Hersek, Hırvatistan, Slovenya, Kosova',
+    'Kuzey Avrupa': 'Danimarka, Norveç, İsveç, Finlandiya, İzlanda, Estonya, Letonya, Litvanya',
+    'Doğu Asya': 'Japonya, Çin, Güney Kore, Kuzey Kore, Moğolistan',
+    'Güney Asya': 'Hindistan, Pakistan, Bangladeş, Nepal, Butan, Afganistan, Maldivler',
+    'Orta Doğu': 'İran, Irak, Suriye, Lübnan, Ürdün, Suudi Arabistan, Umman, Birleşik Arap Emirlikleri, Katar, Bahreyn',
+    'Kafkasya ve Orta Asya': 'Azerbaycan, Gürcistan, Ermenistan, Kazakistan, Özbekistan, Türkmenistan, Kırgızistan, Tacikistan',
+    'Güneydoğu Asya': 'Tayland, Vietnam, Laos, Kamboçya, Myanmar, Malezya, Filipinler, Doğu Timor',
+    'Kuzey Afrika': 'Mısır, Libya, Fas, Sudan, Moritanya, Çad, Nijer',
+    'Doğu Afrika': 'Etiyopya, Kenya, Tanzanya, Uganda, Ruanda, Somali, Eritre, Malavi',
+    'Batı ve Orta Afrika': 'Nijerya, Gana, Senegal, Mali, Kamerun, Gabon, Burkina Faso, Gine, Sierra Leone, Liberya, Togo, Demokratik Kongo Cumhuriyeti, Kongo Cumhuriyeti',
+    'Güney Afrika': 'Angola, Zambiya, Zimbabve, Mozambik, Madagaskar, Namibya, Botsvana',
+    'Kuzey ve Orta Amerika': 'Amerika Birleşik Devletleri, Kanada, Küba, Jamaika, Honduras, Nikaragua, Kosta Rika, El Salvador, Haiti, Dominik Cumhuriyeti, Meksika',
+    'Güney Amerika': 'Brezilya, Arjantin, Şili, Peru, Kolombiya, Venezuela, Ekvador, Paraguay, Uruguay, Guyana, Surinam, Bolivya',
+    'Okyanusya': 'Avustralya, Yeni Zelanda, Papua Yeni Gine, Fiji',
+}
+ULKE_BOLGE = {u.strip(): b for b, ul in _BOLGELER.items() for u in ul.split(',')}
+
+
 def uret(rng):
     out = []
     ulk = _satir(ULKELER, 3)
@@ -1148,27 +1181,26 @@ def uret(rng):
         ek = f' {" ve ".join(tuzak[:2])} bu ülkenin önemli şehirlerindendir ama başkent değildir.' if tuzak else ''
         out.append(q('baskent_ileri', 'Dünya', f'{u} ülkesinin başkenti aşağıdakilerden hangisidir?', b, yan,
                      f'{u} ülkesinin başkenti: {b}.' + ek, 2))
+    kita = {u: k for u, b, k in kay}
+    ulke_grup = lambda u: (ULKE_BOLGE.get(u, '?'), kita.get(u, '?'))
     out += eslesme(rng, 'baskent', [(u, b, 'Dünya') for u, b, _ in kay],
                    None,
                    lambda a, d: f'{d} hangi ülkenin başkentidir?',
-                   lambda a, d: f'{a} ülkesinin başkenti {d}’dir.', lambda a, d: f'{d}, {a} ülkesinin başkentidir.', 2,
-                   grup=None)
-    for u, b, k in kay:
-        if k == '-':
-            continue
-        out.append(q('kita', 'Dünya', f'{u} hangi kıtada yer alır?', k, sec(k, KITALAR, rng),
-                     f'{u} {k} kıtasındadır.', 2))
+                   lambda a, d: f'{a} ülkesinin başkenti {d}’dir.', lambda a, d: f'{d}, {a} ülkesinin başkentidir.', 3,
+                   grup=lambda a, d, k: ulke_grup(a))
     out += eslesme(rng, 'para', [(u, p, 'Dünya') for u, p in _satir(PARA, 2)],
                    lambda a, d: f'{a} ülkesinin para birimi aşağıdakilerden hangisidir?',
                    lambda a, d: f'Para birimi “{d}” olan ülke aşağıdakilerden hangisidir?',
-                   lambda a, d: f'{a} ülkesinin para birimi {d}’dir.', lambda a, d: f'{d}, {a} ülkesinin para birimidir.', 2)
+                   lambda a, d: f'{a} ülkesinin para birimi {d}’dir.', lambda a, d: f'{d}, {a} ülkesinin para birimidir.', 3,
+                   grup=lambda a, d, k: ulke_grup(a))
     out += eslesme(rng, 'sehir', [(s, u, 'Dünya') for s, u in _satir(SEHIRLER, 2)],
                    lambda a, d: f'{a} şehri hangi ülkededir?', None,
-                   lambda a, d: f'{a} şehri {d} sınırları içindedir.', None, 2)
+                   lambda a, d: f'{a} şehri {d} sınırları içindedir.', None, 3, grup=lambda a, d, k: ulke_grup(d))
     out += eslesme(rng, 'yapi', [(y, u, 'Dünya') for y, u in _satir(YAPILAR, 2)],
                    lambda a, d: f'“{a}” hangi ülkededir?',
                    lambda a, d: f'Aşağıdaki yapı ve eserlerden hangisi {d} sınırları içindedir?',
-                   lambda a, d: f'{a} {d} sınırları içindedir.', lambda a, d: f'{a} {d} sınırları içindedir.', 2)
+                   lambda a, d: f'{a} {d} sınırları içindedir.', lambda a, d: f'{a} {d} sınırları içindedir.', 3,
+                   grup=lambda a, d, k: ulke_grup(d))
     for u, d in _satir(DILLER, 2):
         out.append(q('dil', 'Dünya', f'{u} ülkesinin resmî dili aşağıdakilerden hangisidir?', d, sec(d, DIL_HAVUZ, rng),
                      f'{u} ülkesinin resmî dili {d}’dır.', 2))
@@ -1199,6 +1231,19 @@ def uret(rng):
                    lambda a, d: f'Aşağıdaki eserlerden hangisi {d} tarafından yazılmıştır?',
                    lambda a, d: f'“{a}” {d} tarafından yazılmıştır.', lambda a, d: f'“{a}” {d} tarafından yazılmıştır.', 2,
                    grup=lambda a, d, k: dict((e, g) for e, _, g in es)[a])
+    yazar_eser = {}
+    for e, y, g in es:
+        yazar_eser.setdefault(y, []).append((e, g))
+    for yz, ee in yazar_eser.items():
+        if len(ee) < 4:
+            continue
+        g0 = ee[0][1]
+        dis = [(f'{e}', f'“{e}” ise {y} eseridir.') for e, y, g in es if y != yz and g == g0]
+        for kok in (f'Aşağıdaki eserlerden hangisi {yz} tarafından yazılmamıştır?',
+                    f'Aşağıdakilerden hangisi {yz}’in eserlerinden biri değildir?'.replace('’in', '’ın') if yz[-1] in 'aıAI' else
+                    f'Aşağıdakilerden hangisi {yz} adlı yazarın eserlerinden biri değildir?'):
+            out.append(farkli(rng, 'eser_degil', 'Kültür', kok, [(e, '') for e, g in ee], dis,
+                              lambda m, a, ic, yz=yz: f'{a} Diğer seçenekler {yz} eserleridir.'))
     sn = _satir(SANAT, 3)
     out += eslesme(rng, 'sanat', [(e, s, 'Kültür') for e, s, _ in sn],
                    lambda a, d: f'“{a}” adlı eser hangi sanatçıya aittir?',
@@ -1229,21 +1274,27 @@ def uret(rng):
             say[s] = say.get(s, 0) + 1
         for y, s in rows:
             fiil = 'düzenlenecektir' if int(y) > 2026 else 'düzenlenmiştir'
+            yakin_ev = sorted(rows, key=lambda r: (abs(int(r[0]) - int(y)), rng.random()))
             out.append(q(f'olimpiyat_{ad.lower()}', 'Spor', f'{y} {ad} Olimpiyat Oyunları hangi şehirde {fiil}?', s,
-                         sec(s, sehirler, rng), f'{y} {ad} Olimpiyatları: {s}.', 2))
+                         sec2(s, [r[1] for r in yakin_ev[:7]], sehirler, rng),
+                         f'{y} {ad} Olimpiyatları: {s}. Diğer seçenekler yakın yıllardaki olimpiyatlara ev sahipliği yapmıştır.', 3))
             if say[s] == 1 and int(y) < 2026:
                 yil_havuz = [r[0] for r in rows if r[0] != y]
                 out.append(q(f'olimpiyat_{ad.lower()}_yil', 'Spor', f'{s} hangi yıl {ad} Olimpiyat Oyunları’na ev sahipliği yapmıştır?',
-                             y, sec(y, yil_havuz, rng), f'{s}, {y} {ad} Olimpiyatları’nın ev sahibidir.', 3))
-    for y, ev, sam in _satir(DUNYA_KUPASI, 3):
+                             y, yakin_sec(y, yil_havuz, lambda v: abs(int(v) - int(y)), rng, havuz=5),
+                             f'{s}, {y} {ad} Olimpiyatları’nın ev sahibidir.', 3))
+    dk = _satir(DUNYA_KUPASI, 3)
+    for y, ev, sam in dk:
         zaman = 'düzenlenmiştir'
-        out.append(q('dk_ev', 'Spor', f'{y} FIFA Dünya Kupası hangi ülkede {zaman}?', ev, sec(ev, DK_ULKE, rng),
-                     f'{y} Dünya Kupası ev sahibi: {ev}.', 2))
+        yakin_ev = [r[1] for r in sorted(dk, key=lambda r: (abs(int(r[0]) - int(y)), rng.random()))[:8]]
+        out.append(q('dk_ev', 'Spor', f'{y} FIFA Dünya Kupası hangi ülkede {zaman}?', ev, sec2(ev, yakin_ev, DK_ULKE, rng),
+                     f'{y} Dünya Kupası ev sahibi: {ev}. Diğer seçenekler yakın yıllarda turnuvaya ev sahipliği yapmıştır.', 3))
         if sam != '-':
             out.append(q('dk_sampiyon', 'Spor', f'{y} FIFA Dünya Kupası’nı hangi ülke kazanmıştır?', sam,
                          sec(sam, [u for u in DK_ULKE if u != 'Güney Kore ve Japonya'], rng), f'{y} şampiyonu: {sam}.', 3))
     for s, b in _satir(SPORCULAR, 2):
-        out.append(q('sporcu', 'Spor', f'{s} hangi spor dalında tanınmıştır?', b, sec(b, BRANSLAR, rng),
+        benzer = next((g for g in BRANS_GRUP if b in g), [])
+        out.append(q('sporcu', 'Spor', f'{s} hangi spor dalında tanınmıştır?', b, sec2(b, benzer, BRANSLAR, rng),
                      f'{s} {b.lower()} dalında tanınmıştır.', 2))
     for t, b in _satir(TERIMLER, 2):
         out.append(q('terim', 'Spor', f'“{t}” terimi hangi spor dalına aittir?', b, sec(b, TERIM_HAVUZ, rng),

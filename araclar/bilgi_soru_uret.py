@@ -110,6 +110,13 @@ def uret(ders, hedef=None, yaz=True):
         if k in kokler:
             atlanan['tekrar_kok'] += 1
             continue
+        # Doğru cevap kökte aynen geçiyor, çeldiricilerin hiçbiri geçmiyorsa soru cevabı ele verir
+        # (ör. “Seyhan Barajı hangi akarsu üzerinde?” → Seyhan); böyle sorular alınmaz.
+        kk = kok.casefold()
+        icinde = [len(o) >= 4 and o.casefold() in kk for o in opts]
+        if icinde[0] and not any(icinde[1:]):
+            atlanan['sizinti'] += 1
+            continue
         kokler.add(k)
         z = int(q.get('z', 2))
         turlu.setdefault(q['tur'], []).append(
