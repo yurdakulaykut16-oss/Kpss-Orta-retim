@@ -295,7 +295,7 @@ Temmuz: NATO Ankara, Milletler Ligi (Türkiye). Ağustos: Mekke paktı, Akdeniz 
 Konular: Ekim 2026; Son bir ay; Güncel tekrar kartları
 Kilit: Güncel bilgi "tazelik" ister. Bugün son bir ay + tahmin soruları.
 ## Giriş
-Bugün güncel bilgilerin son tekrarı. Yeni konu yok: 8 günde öğrendiklerini tazeleyeceğiz. Sınavda güncel sorular "tanıdık" gelecek çünkü bu kartları son 10 günde tekrar tekrar gördün.
+Bugün güncel bilgilerin son tekrarı. Yeni konu yok: kampta öğrendiklerini tazeleyeceğiz. Sınavda güncel sorular "tanıdık" gelecek çünkü bu kartları kamp boyunca tekrar tekrar gördün.
 
 ## Anlatım | 2026 Güncel: Sihirli 20 Kart
 1) CB: Erdoğan. 2) CB Yrd: Cevdet Yılmaz. 3) Adalet: Akın Gürlek. 4) İçişleri: Mustafa Çiftçi. 5) Hazine: Mehmet Şimşek. 6) MB: Fatih Karahan. 7) YSK: Serdar Mutta. 8) NATO Zirvesi: Ankara (Temmuz). 9) Mekke Paktı: 3 ülke (Ağustos). 10) Dünya Kupası: İspanya. 11) Milletler Ligi: Türkiye. 12) Kış Olimpiyatları: Norveç. 13) Akdeniz Oyunları: Türkiye 2. 14) Nobel Fizik: Halzen. 15) Nobel Kimya: Kagan-Soai. 16) Nobel Barış: Pillay. 17) Zeynep Sönmez: ilk 50. 18) Fon soruşturması: 2026. 19) Altın: 6.500+ TL. 20) TEKNOFEST: Şanlıurfa.

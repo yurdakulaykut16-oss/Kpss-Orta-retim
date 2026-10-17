@@ -3,7 +3,7 @@
   {
    "id": "DEN-01",
    "gun": 1,
-   "ad": "1. Gün Sonu Denemesi",
+   "ad": "1. Gün Denemesi A (17 Ekim içeriği)",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -27,8 +27,8 @@
   },
   {
    "id": "DEN-02",
-   "gun": 2,
-   "ad": "2. Gün Sonu Denemesi",
+   "gun": 1,
+   "ad": "1. Gün Denemesi B (17 Ekim içeriği)",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -52,8 +52,8 @@
   },
   {
    "id": "DEN-03",
-   "gun": 3,
-   "ad": "3. Gün Sonu Denemesi",
+   "gun": 1,
+   "ad": "1. Gün Sonu Denemesi",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -77,8 +77,8 @@
   },
   {
    "id": "DEN-04",
-   "gun": 4,
-   "ad": "4. Gün Sonu Denemesi",
+   "gun": 2,
+   "ad": "2. Gün Sonu Denemesi",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -102,7 +102,7 @@
   },
   {
    "id": "DEN-05",
-   "gun": 5,
+   "gun": 3,
    "ad": "Yarı Kamp Büyük Denemesi",
    "sure_dk": 40,
    "tur": "buyuk",
@@ -162,8 +162,8 @@
   },
   {
    "id": "DEN-06",
-   "gun": 6,
-   "ad": "6. Gün Sonu Denemesi",
+   "gun": 4,
+   "ad": "4. Gün Sonu Denemesi",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -187,8 +187,8 @@
   },
   {
    "id": "DEN-07",
-   "gun": 7,
-   "ad": "7. Gün Sonu Denemesi",
+   "gun": 5,
+   "ad": "5. Gün Sonu Denemesi",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -212,8 +212,8 @@
   },
   {
    "id": "DEN-08",
-   "gun": 8,
-   "ad": "8. Gün Sonu Denemesi",
+   "gun": 6,
+   "ad": "6. Gün Sonu Denemesi",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -237,8 +237,8 @@
   },
   {
    "id": "DEN-09",
-   "gun": 9,
-   "ad": "9. Gün Sonu Denemesi",
+   "gun": 7,
+   "ad": "Final Günü Mini Denemesi",
    "sure_dk": 12,
    "tur": "mini",
    "odak": "Gün içi konular %60, önceki günler %40",
@@ -262,7 +262,7 @@
   },
   {
    "id": "DEN-10",
-   "gun": 10,
+   "gun": 7,
    "ad": "Final Genel Denemesi",
    "sure_dk": 40,
    "tur": "buyuk",

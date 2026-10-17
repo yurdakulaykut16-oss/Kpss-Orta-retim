@@ -42,8 +42,8 @@ class KpssKapsamTest(unittest.TestCase):
 
     def test_tam_envanter_aktif_ve_bekleyen_ayri(self):
         self.assertEqual(set(self.index), set(self.policy['questions']))
-        self.assertEqual(len(self.index),3053)
-        self.assertEqual(len(self.active_ids),2869)
+        self.assertEqual(len(self.index),14404)
+        self.assertEqual(len(self.active_ids),14220)
         self.assertEqual(len(self.report['bekleyen_kayitlar']),184)
         self.assertEqual(self.active_ids | self.report['bekleyen_kayitlar'].keys(), self.index.keys())
         self.assertFalse(self.active_ids & self.report['bekleyen_kayitlar'].keys())
@@ -209,7 +209,8 @@ class KpssKapsamTest(unittest.TestCase):
             subprocess.run([sys.executable,str(script)],check=True,capture_output=True)
             self.assertEqual(first,(root/'data/denemeler.json').read_bytes())
             for exam in json.loads(first)['denemeler']:
-                self.assertEqual(len(exam['sorular']),50 if exam['gun'] in (5,10) else 15)
+                self.assertEqual(len(exam['sorular']),50 if exam['tur']=='buyuk' else 15)
+                self.assertIn(exam['gun'],range(1,8))
                 self.assertEqual(len(exam['sorular']),len(set(exam['sorular'])))
                 self.assertTrue(set(exam['sorular']) <= self.active_ids)
 
@@ -223,7 +224,7 @@ class KpssKapsamTest(unittest.TestCase):
     def test_meta_ve_rapor_aktif_sayiyi_gosterir(self):
         meta=self.client.get('/api/meta').get_json()
         self.assertEqual(meta['soru_sayilari'],{d:len(self.active[d]) for d in SUBJECTS})
-        self.assertEqual(meta['kapsam']['aktif'],2869)
+        self.assertEqual(meta['kapsam']['aktif'],14220)
         self.assertEqual(meta['kapsam']['bekleyen'],184)
         report=self.client.get('/api/kapsam').get_json()
         self.assertEqual(report,self.report)

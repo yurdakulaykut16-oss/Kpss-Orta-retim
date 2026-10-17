@@ -212,3 +212,34 @@ details summary:hover{color:var(--accent-2)}
 }
 
 .kapsam-notu{margin:0 0 14px;font-size:12px}.kapsam-notu summary{cursor:pointer}
+/* Öğrenme modu: yanlış → konu tekrarı → aynı konudan yeni soru */
+.ogrenme-durum{margin:12px 0;padding:12px 14px;border-radius:12px;background:#eff6ff;border:1px solid #bfdbfe;font-size:14px;line-height:1.5}
+.ogrenme-durum.uyari{background:#fff7ed;border-color:#fed7aa}
+.ogrenme-durum.basarili{background:#dcfce7;border-color:#86efac}
+.ogrenme-durum .seri{letter-spacing:2px;color:var(--orta);font-size:15px}
+.konu-tekrar{border-left:4px solid var(--accent);background:#fffbeb}
+.konu-tekrar details{margin-top:6px}
+.konu-tekrar summary{cursor:pointer;font-weight:600;color:var(--accent-2);font-size:13px}
+.anlatim-blok{margin:6px 0;padding:6px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff}
+.anlatim-blok summary{cursor:pointer}
+.anlatim-blok p{margin:6px 0 2px;line-height:1.55}
+/* Üç hocadan anlatım */
+.hoca-grup{margin:10px 0;border:1px solid #e5e7eb;border-radius:12px;background:#fff;overflow:hidden}
+.hoca-ana{padding:8px 12px;font-weight:700;background:#f8fafc;border-bottom:1px solid #e5e7eb}
+.hoca-ana span{font-weight:400;color:#64748b;font-size:13px}
+.hoca-sekmeler{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px 0}
+.hoca-sekme{flex:1 1 140px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 10px;border:1px solid #e5e7eb;border-bottom:none;border-radius:10px 10px 0 0;background:#f1f5f9;cursor:pointer;font:inherit;font-weight:600;color:#334155;text-align:left}
+.hoca-sekme small{font-weight:400;color:#64748b;font-size:12px}
+.hoca-sekme.aktif{background:#fff;color:var(--accent-2);box-shadow:inset 0 3px 0 var(--accent)}
+.hoca-panel{padding:10px 14px 12px;border-top:1px solid #e5e7eb}
+.hoca-yontem{margin:0 0 8px;padding:8px 10px;border-radius:8px;background:#fffbeb;font-size:13px;line-height:1.5}
+.hoca-metin h5{margin:12px 0 4px;font-size:14px;color:var(--accent-2)}
+.hoca-metin p{margin:3px 0;line-height:1.6}
+.hoca-panel[data-hoca="kemal"] .hoca-yontem{background:#fef3c7}
+.hoca-panel[data-hoca="ayse"] .hoca-yontem{background:#e0f2fe}
+.hoca-panel[data-hoca="murat"] .hoca-yontem{background:#dcfce7}
+.ek-kartlar{margin-top:8px}
+.ek-kartlar>summary{cursor:pointer;font-weight:600;color:var(--accent-2);font-size:13px}
+.hoca-bolum{margin-top:18px}
+.ogrenme-paneli{border-left:4px solid var(--accent-2);margin:14px 0}
+.ogrenme-paneli .adim-satir{flex-wrap:wrap;gap:8px}

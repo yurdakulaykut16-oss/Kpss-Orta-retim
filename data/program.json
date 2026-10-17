@@ -3,7 +3,7 @@
     "ad": "KPSS Ortaöğretim",
     "tarih": "2026-10-25",
     "gun_ad": "Pazar",
-    "not": "Sınav 25 Ekim 2026 Pazar. Kamp 15-24 Ekim (10 gün). 9-14 Ekim arası istersen 'Ön Hazırlık' yapabilirsin.",
+    "not": "Sınav 25 Ekim 2026 Pazar. Kamp 18–24 Ekim (7 gün): 18–23 Ekim her gün her dersten 400 test sorusu (denemeler hariç), 24 Ekim yalnız deneme ve tekrar. 17 Ekim'in içeriği (15–16 Ekim dahil) ve denemeleri 18 Ekim'e eklendi.",
     "testler": "Genel Yetenek (Türkçe + Matematik) + Genel Kültür (Tarih, Coğrafya, Vatandaşlık, Güncel Olaylar). Bu kamp: Türkçe, Tarih, Coğrafya, Vatandaşlık ve Güncel Bilgiler'i kapsar."
   },
   "temel_kurallar": [
@@ -11,18 +11,18 @@
     "Çekirdek program tam 120 dakikadır; vaktin yoksa kısaltma sırası: ağız tekrarı → ek soru turları → deneme analizinin detayı.",
     "Her derste önce KISA anlatım (8 dk), sonra 20 soru. Yanlışta: çözüm yöntemlerini oku, o konudan 2 benzer soru anında gelir.",
     "Yanlış yaptığın konular 'Hata Defteri'ne düşer; ertesi günün 20 sorusunun 8 tanesi bu zayıf konulardan gelir.",
-    "Gün sonunda 15 soruluk deneme var. 5. ve 10. günün yerine 50 soruluk BÜYÜK DENEME çözülür.",
-    "Kendini hazır hissedersen her dersten ek turlar aç: Hata Atölyesi sana maksimum 500 soruya kadar kişisel set kurar.",
+    "Gün sonunda 15 soruluk deneme var. 3. gün (20 Ekim) ve son gün (24 Ekim) 50 soruluk BÜYÜK DENEME çözülür.",
+    "Kendini hazır hissedersen her dersten ek turlar aç: Hata Atölyesi sana maksimum 400 soruya kadar kişisel set kurar.",
     "Soru çözme hızı: kolay 30 sn, orta 60 sn, zor 90 sn. Aşarsan işaretle ve geç — denemede de aynısını yap.",
-    "Günde 2 saat = 120 dk. Kamp boyunca toplam ~20 saat + ek turlar."
+    "Günde 2 saat = 120 dk. Kamp boyunca 6 test günü × her dersten 400 soru + son gün denemeler."
   ],
   "gunler": [
     {
       "no": 1,
       "gun_ad": "1. gun",
-      "tarih": "2026-10-15",
-      "tema": "Konu Maratonu I — 5 derste TÜM konular",
-      "hedef": "İlk 2 günde 5 dersin TÜM konuları bitirilir: hızlı tur + farklı anlatım oku, her konudan 10'ar soruluk test çöz. Yanlış yaptıkça konu başka türlü anlatılır.",
+      "tarih": "2026-10-18",
+      "tema": "Konu Maratonu + Ustalık 1 — 5 derste TÜM konular (17 Ekim içeriği dahil)",
+      "hedef": "Kampın ilk günü: 17 Ekim'e ayrılan Konu Maratonu (15–16 Ekim içeriğiyle birlikte) ve 18 Ekim'in Ustalık Günü 1 bu güne toplandı. 5 dersin TÜM konuları hızlı tur + 3 hocadan anlatımla okunur; her dersten 400 soru 10'ar soruluk testlerle çözülür. Bugün üç mini deneme var.",
       "plan": [
         {
           "tip": "okuma",
@@ -188,221 +188,38 @@
         }
       ],
       "deneme": {
-        "ad": "1. Gün Sonu Denemesi",
-        "soru_sayisi": 15,
-        "sure_dk": 12,
-        "odak": "Günün konuları + genel kültür nabzı"
+        "ad": "1. Gün Denemeleri (3 mini deneme)",
+        "soru_sayisi": 45,
+        "sure_dk": 36,
+        "odak": "17 Ekim'in iki mini denemesi + 18 Ekim gün sonu denemesi"
       },
       "genisletilmis": [
         {
-          "baslik": "Soru Maratonu (500'e kadar)",
+          "baslik": "Soru Maratonu (400'e kadar)",
           "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
+          "max_soru": 400
         },
         {
           "baslik": "Yanlış Telafisi",
           "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
+          "max_soru": 400
         }
       ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": true,
+      "maraton": true,
+      "deneme_idleri": [
+        "DEN-01",
+        "DEN-02",
+        "DEN-03"
+      ]
     },
     {
       "no": 2,
       "gun_ad": "2. gun",
-      "tarih": "2026-10-16",
-      "tema": "Konu Maratonu II — 5 derste TÜM konular",
-      "hedef": "İlk 2 günde 5 dersin TÜM konuları bitirilir: hızlı tur + farklı anlatım oku, her konudan 10'ar soruluk test çöz. Yanlış yaptıkça konu başka türlü anlatılır.",
-      "plan": [
-        {
-          "tip": "okuma",
-          "dk": 12,
-          "baslik": "Tarih — Konu Maratonu (hızlı tur)",
-          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
-        },
-        {
-          "tip": "test",
-          "dk": 12,
-          "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
-        },
-        {
-          "tip": "okuma",
-          "dk": 12,
-          "baslik": "Coğrafya — Konu Maratonu (hızlı tur)",
-          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
-        },
-        {
-          "tip": "test",
-          "dk": 12,
-          "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
-        },
-        {
-          "tip": "okuma",
-          "dk": 12,
-          "baslik": "Vatandaşlık — Konu Maratonu (hızlı tur)",
-          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
-        },
-        {
-          "tip": "test",
-          "dk": 12,
-          "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
-        },
-        {
-          "tip": "okuma",
-          "dk": 12,
-          "baslik": "Türkçe — Konu Maratonu (hızlı tur)",
-          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
-        },
-        {
-          "tip": "test",
-          "dk": 12,
-          "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
-        },
-        {
-          "tip": "okuma",
-          "dk": 12,
-          "baslik": "Güncel Bilgiler — Konu Maratonu (hızlı tur)",
-          "aciklama": "Tüm konuların özetini ve farklı anlatımını oku; sınav tuzaklarını işaretle."
-        },
-        {
-          "tip": "test",
-          "dk": 12,
-          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Her 10 soruda otomatik kontrol; yanlışlarda farklı anlatım + yeni sorular. Ustalana kadar devam."
-        }
-      ],
-      "dersler": [
-        {
-          "ders": "tarih",
-          "konular": [
-            "İlk Türk Devletleri",
-            "Göktürkler",
-            "Uygurlar",
-            "Karahanlılar",
-            "Gazneliler",
-            "Anadolu Selçuklu",
-            "Beylikler",
-            "Osmanlı Kuruluş",
-            "Fatih Dönemi",
-            "Kanuni Dönemi",
-            "Duraklama",
-            "Lale Devri",
-            "Islahatlar",
-            "Tanzimat",
-            "Meşrutiyet",
-            "Milli Mücadele",
-            "Lozan",
-            "Devrimler",
-            "Çağdaş Tarih"
-          ],
-          "sure_min": 24,
-          "soru_sayisi": 50
-        },
-        {
-          "ders": "cografya",
-          "konular": [
-            "Harita",
-            "Koordinat",
-            "Dünya",
-            "Türkiye İklimleri",
-            "Yer Şekilleri",
-            "İç Kuvvetler",
-            "Dış Kuvvetler",
-            "Kayaçlar",
-            "Nüfus",
-            "Tarım",
-            "Madenler",
-            "Enerji",
-            "Bölgeler",
-            "Afetler",
-            "Çevre",
-            "Su Kaynakları"
-          ],
-          "sure_min": 24,
-          "soru_sayisi": 50
-        },
-        {
-          "ders": "vatandaslik",
-          "konular": [
-            "Hukuk",
-            "Eşitlik",
-            "Hak-Ödev",
-            "Anayasa",
-            "Haklar",
-            "TBMM",
-            "Yürütme",
-            "Yargı",
-            "Kamu Hizmetleri",
-            "İnsan Hakları",
-            "Seçimler"
-          ],
-          "sure_min": 24,
-          "soru_sayisi": 50
-        },
-        {
-          "ders": "turkce",
-          "konular": [
-            "Sözcükte Anlam",
-            "Cümlede Anlam",
-            "Paragraf",
-            "Sözel Mantık",
-            "Anlatım",
-            "Ses Bilgisi",
-            "Yazım",
-            "Noktalama",
-            "Yapı Bilgisi",
-            "Cümle Türleri",
-            "Anlatım Bozuklukları"
-          ],
-          "sure_min": 24,
-          "soru_sayisi": 50
-        },
-        {
-          "ders": "guncel",
-          "konular": [
-            "Türkiye Yönetimi",
-            "Ekonomi",
-            "Kurumlar",
-            "Dünya",
-            "Spor",
-            "Bilim",
-            "Kültür",
-            "Son Olaylar"
-          ],
-          "sure_min": 24,
-          "soru_sayisi": 50
-        }
-      ],
-      "deneme": {
-        "ad": "2. Gün Sonu Denemesi",
-        "soru_sayisi": 15,
-        "sure_dk": 12,
-        "odak": "Günün konuları + genel kültür nabzı"
-      },
-      "genisletilmis": [
-        {
-          "baslik": "Soru Maratonu (500'e kadar)",
-          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
-        },
-        {
-          "baslik": "Yanlış Telafisi",
-          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
-        }
-      ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
-    },
-    {
-      "no": 3,
-      "gun_ad": "3. gun",
-      "tarih": "2026-10-17",
-      "tema": "Ustalık Günü 1 — hatalardan ustalığa",
-      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
+      "tarih": "2026-10-19",
+      "tema": "Ustalık Günü 2 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle her dersten 400 soru çöz. Aynı soru tekrar gelmez.",
       "plan": [
         {
           "tip": "tekrar",
@@ -414,7 +231,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -426,7 +243,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -438,7 +255,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -450,7 +267,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -462,7 +279,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
@@ -533,31 +350,35 @@
         }
       ],
       "deneme": {
-        "ad": "3. Gün Sonu Denemesi",
+        "ad": "2. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Günün konuları + genel kültür nabzı"
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "Soru Maratonu (500'e kadar)",
+          "baslik": "Soru Maratonu (400'e kadar)",
           "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
+          "max_soru": 400
         },
         {
           "baslik": "Yanlış Telafisi",
           "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
+          "max_soru": 400
         }
       ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": true,
+      "deneme_idleri": [
+        "DEN-04"
+      ]
     },
     {
-      "no": 4,
-      "gun_ad": "4. gun",
-      "tarih": "2026-10-18",
-      "tema": "Ustalık Günü 2 — hatalardan ustalığa",
-      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
+      "no": 3,
+      "gun_ad": "3. gun",
+      "tarih": "2026-10-20",
+      "tema": "Ustalık Günü 3 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle her dersten 400 soru çöz. Aynı soru tekrar gelmez.",
       "plan": [
         {
           "tip": "tekrar",
@@ -569,7 +390,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -581,7 +402,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -593,7 +414,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -605,7 +426,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -617,7 +438,166 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
+        }
+      ],
+      "dersler": [
+        {
+          "ders": "tarih",
+          "konular": [
+            "İlk Türk Devletleri",
+            "Göktürkler",
+            "Uygurlar",
+            "Karahanlılar",
+            "Gazneliler",
+            "Anadolu Selçuklu"
+          ],
+          "sure_min": 12,
+          "soru_sayisi": 100
+        },
+        {
+          "ders": "cografya",
+          "konular": [
+            "Harita",
+            "Koordinat",
+            "Dünya",
+            "Türkiye İklimleri",
+            "Yer Şekilleri",
+            "İç Kuvvetler"
+          ],
+          "sure_min": 12,
+          "soru_sayisi": 100
+        },
+        {
+          "ders": "vatandaslik",
+          "konular": [
+            "Hukuk",
+            "Eşitlik",
+            "Hak-Ödev",
+            "Anayasa",
+            "Haklar",
+            "TBMM"
+          ],
+          "sure_min": 12,
+          "soru_sayisi": 100
+        },
+        {
+          "ders": "turkce",
+          "konular": [
+            "Sözcükte Anlam",
+            "Cümlede Anlam",
+            "Paragraf",
+            "Sözel Mantık",
+            "Anlatım",
+            "Ses Bilgisi"
+          ],
+          "sure_min": 12,
+          "soru_sayisi": 100
+        },
+        {
+          "ders": "guncel",
+          "konular": [
+            "Türkiye Yönetimi",
+            "Ekonomi",
+            "Kurumlar",
+            "Dünya",
+            "Spor",
+            "Bilim"
+          ],
+          "sure_min": 12,
+          "soru_sayisi": 100
+        }
+      ],
+      "deneme": {
+        "ad": "Yarı Kamp Büyük Denemesi",
+        "soru_sayisi": 50,
+        "sure_dk": 40,
+        "odak": "Tüm konular karma — gerçek sınav provası"
+      },
+      "genisletilmis": [
+        {
+          "baslik": "Soru Maratonu (400'e kadar)",
+          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
+          "max_soru": 400
+        },
+        {
+          "baslik": "Yanlış Telafisi",
+          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
+          "max_soru": 400
+        }
+      ],
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": true,
+      "deneme_idleri": [
+        "DEN-05"
+      ]
+    },
+    {
+      "no": 4,
+      "gun_ad": "4. gun",
+      "tarih": "2026-10-21",
+      "tema": "Ustalık Günü 4 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle her dersten 400 soru çöz. Aynı soru tekrar gelmez.",
+      "plan": [
+        {
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Tarih — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
+        },
+        {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Tarih — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Coğrafya — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
+        },
+        {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Coğrafya — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Vatandaşlık — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
+        },
+        {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Vatandaşlık — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Türkçe — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
+        },
+        {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Türkçe — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
+        },
+        {
+          "tip": "tekrar",
+          "dk": 8,
+          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
+          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
+        },
+        {
+          "tip": "test",
+          "dk": 14,
+          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
@@ -691,28 +671,32 @@
         "ad": "4. Gün Sonu Denemesi",
         "soru_sayisi": 15,
         "sure_dk": 12,
-        "odak": "Günün konuları + genel kültür nabzı"
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "Soru Maratonu (500'e kadar)",
+          "baslik": "Soru Maratonu (400'e kadar)",
           "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
+          "max_soru": 400
         },
         {
           "baslik": "Yanlış Telafisi",
           "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
+          "max_soru": 400
         }
       ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": true,
+      "deneme_idleri": [
+        "DEN-06"
+      ]
     },
     {
       "no": 5,
       "gun_ad": "5. gun",
-      "tarih": "2026-10-19",
-      "tema": "Ustalık Günü 3 — hatalardan ustalığa",
-      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
+      "tarih": "2026-10-22",
+      "tema": "Ustalık Günü 5 — hatalardan ustalığa",
+      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle her dersten 400 soru çöz. Aynı soru tekrar gelmez. (Eski programdaki 6. Ustalık Günü'nün içeriği de bu güne eklendi.)",
       "plan": [
         {
           "tip": "tekrar",
@@ -724,7 +708,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -736,7 +720,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -748,7 +732,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -760,7 +744,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -772,7 +756,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
@@ -843,31 +827,35 @@
         }
       ],
       "deneme": {
-        "ad": "5. Gün Büyük Denemesi",
-        "soru_sayisi": 50,
-        "sure_dk": 40,
-        "odak": "Tüm konular karma — gerçek sınav provası"
+        "ad": "5. Gün Sonu Denemesi",
+        "soru_sayisi": 15,
+        "sure_dk": 12,
+        "odak": "Zayıf konular + karma genel kültür"
       },
       "genisletilmis": [
         {
-          "baslik": "Soru Maratonu (500'e kadar)",
+          "baslik": "Soru Maratonu (400'e kadar)",
           "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
+          "max_soru": 400
         },
         {
           "baslik": "Yanlış Telafisi",
           "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
+          "max_soru": 400
         }
       ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": true,
+      "deneme_idleri": [
+        "DEN-07"
+      ]
     },
     {
       "no": 6,
       "gun_ad": "6. gun",
-      "tarih": "2026-10-20",
-      "tema": "Ustalık Günü 4 — hatalardan ustalığa",
-      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
+      "tarih": "2026-10-23",
+      "tema": "Genel Tekrar — zayıf konu atağı",
+      "hedef": "Hata defterindeki tüm konulara saldır; her dersten 400 soruyu 10'luk testlerle tamamla. Yarın test hedefi yok: denemeler ve tekrar.",
       "plan": [
         {
           "tip": "tekrar",
@@ -879,7 +867,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -891,7 +879,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -903,7 +891,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -915,7 +903,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -927,7 +915,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
@@ -1005,489 +993,28 @@
       },
       "genisletilmis": [
         {
-          "baslik": "Soru Maratonu (500'e kadar)",
+          "baslik": "Soru Maratonu (400'e kadar)",
           "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
+          "max_soru": 400
         },
         {
           "baslik": "Yanlış Telafisi",
           "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
+          "max_soru": 400
         }
       ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": true,
+      "deneme_idleri": [
+        "DEN-08"
+      ]
     },
     {
       "no": 7,
       "gun_ad": "7. gun",
-      "tarih": "2026-10-21",
-      "tema": "Ustalık Günü 5 — hatalardan ustalığa",
-      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
-      "plan": [
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Tarih — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Coğrafya — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Vatandaşlık — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Türkçe — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        }
-      ],
-      "dersler": [
-        {
-          "ders": "tarih",
-          "konular": [
-            "İlk Türk Devletleri",
-            "Göktürkler",
-            "Uygurlar",
-            "Karahanlılar",
-            "Gazneliler",
-            "Anadolu Selçuklu"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "cografya",
-          "konular": [
-            "Harita",
-            "Koordinat",
-            "Dünya",
-            "Türkiye İklimleri",
-            "Yer Şekilleri",
-            "İç Kuvvetler"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "vatandaslik",
-          "konular": [
-            "Hukuk",
-            "Eşitlik",
-            "Hak-Ödev",
-            "Anayasa",
-            "Haklar",
-            "TBMM"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "turkce",
-          "konular": [
-            "Sözcükte Anlam",
-            "Cümlede Anlam",
-            "Paragraf",
-            "Sözel Mantık",
-            "Anlatım",
-            "Ses Bilgisi"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "guncel",
-          "konular": [
-            "Türkiye Yönetimi",
-            "Ekonomi",
-            "Kurumlar",
-            "Dünya",
-            "Spor",
-            "Bilim"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        }
-      ],
-      "deneme": {
-        "ad": "7. Gün Sonu Denemesi",
-        "soru_sayisi": 15,
-        "sure_dk": 12,
-        "odak": "Zayıf konular + karma genel kültür"
-      },
-      "genisletilmis": [
-        {
-          "baslik": "Soru Maratonu (500'e kadar)",
-          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
-        },
-        {
-          "baslik": "Yanlış Telafisi",
-          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
-        }
-      ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
-    },
-    {
-      "no": 8,
-      "gun_ad": "8. gun",
-      "tarih": "2026-10-22",
-      "tema": "Ustalık Günü 6 — hatalardan ustalığa",
-      "hedef": "Zayıf konuları farklı anlatımla tekrar et; 10'ar soruluk testlerle ustalana kadar çalış. Günde 500 soruya kadar çıkabilirsin — aynı soru tekrar gelmez.",
-      "plan": [
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Tarih — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Coğrafya — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Vatandaşlık — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Türkçe — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        }
-      ],
-      "dersler": [
-        {
-          "ders": "tarih",
-          "konular": [
-            "İlk Türk Devletleri",
-            "Göktürkler",
-            "Uygurlar",
-            "Karahanlılar",
-            "Gazneliler",
-            "Anadolu Selçuklu"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "cografya",
-          "konular": [
-            "Harita",
-            "Koordinat",
-            "Dünya",
-            "Türkiye İklimleri",
-            "Yer Şekilleri",
-            "İç Kuvvetler"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "vatandaslik",
-          "konular": [
-            "Hukuk",
-            "Eşitlik",
-            "Hak-Ödev",
-            "Anayasa",
-            "Haklar",
-            "TBMM"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "turkce",
-          "konular": [
-            "Sözcükte Anlam",
-            "Cümlede Anlam",
-            "Paragraf",
-            "Sözel Mantık",
-            "Anlatım",
-            "Ses Bilgisi"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "guncel",
-          "konular": [
-            "Türkiye Yönetimi",
-            "Ekonomi",
-            "Kurumlar",
-            "Dünya",
-            "Spor",
-            "Bilim"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        }
-      ],
-      "deneme": {
-        "ad": "8. Gün Sonu Denemesi",
-        "soru_sayisi": 15,
-        "sure_dk": 12,
-        "odak": "Zayıf konular + karma genel kültür"
-      },
-      "genisletilmis": [
-        {
-          "baslik": "Soru Maratonu (500'e kadar)",
-          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
-        },
-        {
-          "baslik": "Yanlış Telafisi",
-          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
-        }
-      ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
-    },
-    {
-      "no": 9,
-      "gun_ad": "9. gun",
-      "tarih": "2026-10-23",
-      "tema": "Genel Tekrar — zayıf konu atağı",
-      "hedef": "Hata defterindeki tüm konulara saldır; ustalaşamadığın konularda 10'luk testleri arka arkaya çöz. Büyük prova yarın!",
-      "plan": [
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Tarih — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Coğrafya — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Vatandaşlık — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Türkçe — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        },
-        {
-          "tip": "tekrar",
-          "dk": 8,
-          "baslik": "Güncel Bilgiler — zayıf konu tekrarı",
-          "aciklama": "Yanlış yaptığın konuları farklı anlatımla oku."
-        },
-        {
-          "tip": "test",
-          "dk": 14,
-          "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
-        }
-      ],
-      "dersler": [
-        {
-          "ders": "tarih",
-          "konular": [
-            "İlk Türk Devletleri",
-            "Göktürkler",
-            "Uygurlar",
-            "Karahanlılar",
-            "Gazneliler",
-            "Anadolu Selçuklu"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "cografya",
-          "konular": [
-            "Harita",
-            "Koordinat",
-            "Dünya",
-            "Türkiye İklimleri",
-            "Yer Şekilleri",
-            "İç Kuvvetler"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "vatandaslik",
-          "konular": [
-            "Hukuk",
-            "Eşitlik",
-            "Hak-Ödev",
-            "Anayasa",
-            "Haklar",
-            "TBMM"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "turkce",
-          "konular": [
-            "Sözcükte Anlam",
-            "Cümlede Anlam",
-            "Paragraf",
-            "Sözel Mantık",
-            "Anlatım",
-            "Ses Bilgisi"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        },
-        {
-          "ders": "guncel",
-          "konular": [
-            "Türkiye Yönetimi",
-            "Ekonomi",
-            "Kurumlar",
-            "Dünya",
-            "Spor",
-            "Bilim"
-          ],
-          "sure_min": 12,
-          "soru_sayisi": 100
-        }
-      ],
-      "deneme": {
-        "ad": "9. Gün Sonu Denemesi",
-        "soru_sayisi": 15,
-        "sure_dk": 12,
-        "odak": "Zayıf konular + karma genel kültür"
-      },
-      "genisletilmis": [
-        {
-          "baslik": "Soru Maratonu (500'e kadar)",
-          "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
-        },
-        {
-          "baslik": "Yanlış Telafisi",
-          "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
-        }
-      ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
-    },
-    {
-      "no": 10,
-      "gun_ad": "10. gun",
       "tarih": "2026-10-24",
-      "tema": "Final Provası — büyük deneme günü",
-      "hedef": "50 soruluk büyük deneme ile kendini test et; net hesapla, eksiklerini son kez kapat.",
+      "tema": "Final Provası — denemeler ve tekrar (test hedefi yok)",
+      "hedef": "Sınavdan önceki son gün: günlük 400 soru hedefi yoktur. İki deneme (final günü mini + 50 soruluk final) çöz, netini hesapla ve yalnız zayıf konuları tekrar et.",
       "plan": [
         {
           "tip": "tekrar",
@@ -1499,7 +1026,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Tarih — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -1511,7 +1038,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Coğrafya — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -1523,7 +1050,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Vatandaşlık — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -1535,7 +1062,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Türkçe — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         },
         {
           "tip": "tekrar",
@@ -1547,7 +1074,7 @@
           "tip": "test",
           "dk": 14,
           "baslik": "Güncel Bilgiler — 10'luk test(ler)",
-          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 500'e kadar çıkabilirsin."
+          "aciklama": "Yanlışlarına uygun sorular; her 10 soruda kontrol. 400'e kadar çıkabilirsin."
         }
       ],
       "dersler": [
@@ -1618,24 +1145,29 @@
         }
       ],
       "deneme": {
-        "ad": "10. Gün Büyük Denemesi",
-        "soru_sayisi": 50,
-        "sure_dk": 40,
+        "ad": "Final Denemeleri (mini + büyük)",
+        "soru_sayisi": 65,
+        "sure_dk": 52,
         "odak": "Tüm konular karma — gerçek sınav provası"
       },
       "genisletilmis": [
         {
-          "baslik": "Soru Maratonu (500'e kadar)",
+          "baslik": "Soru Maratonu (400'e kadar)",
           "aciklama": "10'ar soruluk testleri arka arkaya çöz; her turda otomatik kontrol, yanlış telafisi ve farklı anlatım devreye girer.",
-          "max_soru": 500
+          "max_soru": 400
         },
         {
           "baslik": "Yanlış Telafisi",
           "aciklama": "Bugüne kadar yanlış yaptığın konulardan yeni sorular gelir; ustalana kadar tekrar.",
-          "max_soru": 500
+          "max_soru": 400
         }
       ],
-      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin."
+      "motivasyon": "Her 10 soruluk turda bir adım ilerliyorsun. Yanlışlar seni yavaşlatmaz — ustalığa götüren merdiven basamaklarıdır. Bugün de yüzlerce soruluk havuzdan senin durumuna uygun sorular gelecek; aynı soruyu iki kez görmeyeceksin.",
+      "test_hedefi": false,
+      "deneme_idleri": [
+        "DEN-09",
+        "DEN-10"
+      ]
     }
   ]
 }

@@ -80,7 +80,7 @@ function mockFetch(url, opts) {
   };
   window.__smokeUneven = () => {
     const saved=JSON.parse(JSON.stringify(V.kayit));
-    const ids=Object.fromEntries(Array.from({length:2500},(_,i) => ["fake-"+i,1]));
+    const ids=Object.fromEntries(Array.from({length:2000},(_,i) => ["fake-"+i,1]));
     V.kayit.gunluk={tarih:gunTarihi(),ids};
     V.kayit.ders_gunluk=Object.fromEntries(Object.keys(DERSLER).map((d) => [d,{tarih:gunTarihi(),ids:d==="tarih" ? ids : {}}]));
     const result=gunlukRozet();V.kayit=saved;return result;
@@ -89,7 +89,20 @@ function mockFetch(url, opts) {
   window.__smokeExhaust = () => {
     Object.values(V.tumSorular).forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test"}; }); kaydet();
   };
+  window.__smokeDailyCap = (d) => {
+    const fresh=yeniSorular(V.sorular[d] || []).slice(0,DERS_HEDEF);
+    fresh.forEach((s) => { V.kayit.ayrilan_sorular[s.id]={tur:"test",gun:gunTarihi(),ders:d}; }); kaydet();
+    return {ayrilan:bugunAyrilan(d),kalan:gunlukKalan(d)};
+  };
   window.__smokeReload = async () => { await kayitYukle(); };
+  window.__smokeCurrent = () => { const x=V.oturum?.kuyruk[V.oturum.sira];
+    return x ? {id:x.s.id,ders:x.s.ders,konu:x.s.konu,dogru:x.s.dogru,tip:x.tip} : null; };
+  window.__smokeNext = () => { const x=V.oturum?.kuyruk[V.oturum.sira+1];
+    return x ? {id:x.s.id,konu:x.s.konu,tip:x.tip} : null; };
+  window.__smokeOgrenme = () => JSON.stringify(V.kayit.konu_ogrenme || {});
+  window.__smokeSetKonular = (ders) => testSeti(V.sorular[ders],10,{}).map((s) => konuAnahtar(s.ders,s.konu));
+  window.__smokeGenisKonu = (ders) => V.konuListe[ders].map((x) => [x.konu,yeniSorular(x.liste).length]).sort((a,b) => b[1]-a[1])[0][0];
+  window.__smokeYanlisYap = (ders,konu) => { ogrenmeGuncelle(V.sorular[ders].find((s) => s.konu===konu),false); kaydet(); };
   window.__smokeSeedOldTopics = () => {
     const a = dersAkisKaydi("guncel");
     a.biten = Array.from({length:30}, (_,i) => "Kapsam dışı eski konu " + i);
@@ -124,13 +137,32 @@ function mockFetch(url, opts) {
   ok("konu maratonu bölümü (1-2. gün)", has("Konu Maratonı") || has("Konu Tekrarı"));
   ok("10'ar soruluk testler bölümü", has("10'ar Soruluk Testler"));
   ok("deneme kartı", /DENEME/i.test(txt()) && has("dakika"));
-  ok("günlük hedef rozeti 0/2500", has("0/2500"));
+  ok("günlük hedef rozeti 0/2000", has("0/2000"));
 
   /* ---------- 6-8: konu anlatımı ---------- */
   await go("#/konular");
   ok("konu anlatımları sayfası", has("KONU ANLATIMLARI"));
+  {
+    const btn = [...doc.querySelectorAll("button[data-konu]")].find((b) => b.dataset.konu === "Paragraf") || doc.querySelector("button[data-konu]");
+    const d = btn?.closest(".ders-kart")?.className.split(" ").find((c) => c !== "ders-kart") || "turkce";
+    if (btn) { win.konuAc(d, btn); await tick(); }
+    const blok = doc.querySelectorAll(".anlatim-blok").length;
+    ok("konu kartında farklı yollardan anlatımlar (tablo, soru-cevap, örnek, hafıza kodu)", blok >= 4 && has("farklı yoldan anlatım"), `blok=${blok}`);
+    const grup = doc.querySelector(".hoca-grup");
+    const sekme = grup ? [...grup.querySelectorAll(".hoca-sekme")] : [];
+    const panel = grup ? [...grup.querySelectorAll(".hoca-panel")] : [];
+    ok("konu kartında 3 hocadan anlatım (Kemal, Ayşe, Murat)", sekme.length === 3 && panel.length === 3
+      && has("Kemal Hoca") && has("Ayşe Hoca") && has("Murat Hoca") && panel.filter((p) => !p.hidden).length === 1,
+      `sekme=${sekme.length} panel=${panel.length}`);
+    if (sekme[2]) win.hocaSec(sekme[2], 2);
+    ok("hoca sekmesi değişince yalnız seçilen hocanın anlatımı görünür",
+      panel.length === 3 && panel[2] && !panel[2].hidden && panel[0].hidden && sekme[2].classList.contains("aktif")
+      && panel[2].querySelectorAll("h5").length >= 3 && /Mini test/.test(panel[2].textContent));
+  }
   await go("#/ders/tarih/1");
   ok("modül anlatım sayfası", has("Sıradaki adım") && has("10'luk Test") && has("Okudum"));
+  ok("modül sayfasında 3 hocadan anlatım bölümü", has("3 hocadan anlatım") && doc.querySelectorAll(".hoca-bolum .hoca-grup").length >= 1
+    && new Set([...doc.querySelectorAll(".hoca-bolum .hoca-grup")].map((g) => g.dataset.ana)).size === doc.querySelectorAll(".hoca-bolum .hoca-grup").length);
   await go("#/konular/tarih");
   ok("konu modülü başlığı", has("Tarih") && (has("DERİN MODÜLLER") || has("modülü")));
 
@@ -138,16 +170,16 @@ function mockFetch(url, opts) {
   await go("#/coz");
   ok("test çöz hubı", has("TEST ÇÖZ"));
   ok("geçmiş KPSS konu filtresi görünür", has("Geçmiş KPSS konu filtresi açık"));
-  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 526 aktif") && has("2474 soru kaldı"));
-  ok("Güncel test havuzu denemelerden ayrı en az 500", has("526 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("500 kullanılmamış test sorusu"));
-  ok("deneme hariç beş ayrı 500 hedefi ve 50 set gösterilir",has("Deneme hariç günlük test hedefi") && has("50 × 10") && doc.querySelector(".gunluk-test-hedefi")?.textContent.includes("Vatandaşlık"));
-  ok("tek derste 2500 çözmek günlük hedefi tamamlamaz",!win.__smokeUneven().includes("yesil"));
+  ok("Güncel 3000 hedefi gerçek sayıyla karıştırılmaz", has("3000 farklı soru") && has("Şu an 2826 aktif") && has("174 soru kaldı"));
+  ok("Güncel test havuzu denemelerden ayrı en az 400", has("2826 farklı aktif soru") && has("26 soru denemeye ayrıldı") && has("2800 kullanılmamış test sorusu"));
+  ok("deneme hariç beş ayrı 400 hedefi ve 40 set gösterilir",has("Deneme hariç günlük test hedefi") && has("40 × 10") && has("fazla sorular sonraki günlere kalır") && doc.querySelector(".gunluk-test-hedefi")?.textContent.includes("Vatandaşlık"));
+  ok("tek derste 2000 çözmek günlük hedefi tamamlamaz",!win.__smokeUneven().includes("yesil"));
   ok("Türkiye gece yarısından önce günlük tarih",win.__smokeDateAt("2026-10-15T20:59:00Z")==="2026-10-15");
   ok("Türkiye gece yarısında günlük tarih yenilenir",win.__smokeDateAt("2026-10-15T21:00:00Z")==="2026-10-16");
   ok("gerçek çıkmış bölümü", has("Gerçek Çıkmış KPSS Soruları"));
   ok("çıkmış yıl butonları 2014/2024", has("2014-KPSS") && has("2024-KPSS"));
   ok("2022-KPSS butonu", has("2022-KPSS"));
-  ok("günlük akış butonu (500)", has("Günlük Akış (500)"));
+  ok("günlük akış butonu (400)", has("Günlük Akış (400)"));
   ok("maraton / telafi / hata butonları", has("Maraton (10'lu)") && has("Yanlış Telafisi") && has("Hata Atölyesi"));
 
   /* ---------- 15-22: konu testi akışı ---------- */
@@ -174,7 +206,7 @@ function mockFetch(url, opts) {
   ok("kontrol: net kutusu", has("Net") && has("Doğru"));
   ok("kontrol: yanlışlar veya hatasız", has("Yanlışların") || has("HATASIZ"));
   ok("kontrol: devam seçenekleri", has("Devam") || has("Günün rehberi"));
-  ok("günlük sayaç arttı", /Bugün: [1-9]/.test(txt()) || /[1-9]\d*\/2500/.test(txt()));
+  ok("günlük sayaç arttı", /Bugün: [1-9]/.test(txt()) || /[1-9]\d*\/2000/.test(txt()));
   ok("anti-repeat notu ekranda", has("Aynı soru yeni test veya denemede tekrar verilmez") || has("otomatik kontrol"));
 
   /* ---------- 23-26: karışık / odak / çıkmış ---------- */
@@ -223,7 +255,7 @@ function mockFetch(url, opts) {
   win.eval("denemeBitir()");
   await tick(80);
   ok("deneme bitti + net", has("DENEME BİTTİ") && has("Net:"));
-  ok("deneme cevapları ders başına 500 sayacını artırmaz",win.__smokeCounters()===testCountBeforeExam);
+  ok("deneme cevapları ders başına 400 sayacını artırmaz",win.__smokeCounters()===testCountBeforeExam);
   ok("yarının odağı üretildi", has("Yarının Odağı") || has("Odak"));
 
   /* ---------- 32-37: defter / istatistik / akış / ayarlar ---------- */
@@ -283,10 +315,50 @@ function mockFetch(url, opts) {
   const activeQuestions = ["tarih", "cografya", "vatandaslik", "turkce", "guncel"].flatMap((d) => loadFix(`sorular_${d}.json`, []));
   ok("bütün API fixture soruları konu kapsamı taşır", activeQuestions.length === kapsam.aktif && activeQuestions.every((s) => s.kpss_kapsam?.konular?.length));
   ok("bekleyen sorular hiçbir ders fixture'ında yok", activeQuestions.every((s) => !kapsam.bekleyen_kayitlar[s.id]));
+  /* ---------- öğrenme modu: yanlış → konu tekrarı → aynı konudan soru → art arda 2 doğru ---------- */
+  await go("#/coz/karisik/cografya");
+  const q1=win.__smokeCurrent();
+  const key1=`${q1.ders}|${q1.konu}`;
+  await sikSec((q1.dogru+1)%5);
+  ok("öğrenme: yanlışta konu hemen yeniden anlatılır", has("Konu tekrarı") && has("1. anlatım") && has("Hızlı tur") && !has("kısa anlatım kartı yok"));
+  ok("öğrenme: yanlışta konuyu bir hoca anlatır, diğer iki hoca sekmede", has("Bu kez konuyu") && has("Kemal Hoca") && doc.querySelectorAll(".konu-tekrar .hoca-grup .hoca-sekme").length >= 3);
+  ok("öğrenme: konu öğrenme listesine girer", has("öğrenme listene eklendi") && JSON.parse(win.__smokeOgrenme())[key1]?.aktif===true);
+  const n1=win.__smokeNext();
+  ok("öğrenme: sıradaki soru aynı konudan ve yeni", n1 && n1.konu===q1.konu && n1.id!==q1.id);
+  await sonraki();
+  ok("öğrenme: soru üstünde öğrenme modu bandı", has("öğrenme modunda") && has("0/2"));
+  const q2=win.__smokeCurrent();
+  await sikSec(q2.dogru);
+  ok("öğrenme: ilk doğru 1/2 ve sıradaki yine aynı konu", has("1/2") && win.__smokeNext()?.konu===q1.konu);
+  await sonraki();
+  const q3=win.__smokeCurrent();
+  await sikSec(q3.dogru);
+  ok("öğrenme: art arda 2 doğruda konu öğrenildi", has("öğrenildi") && JSON.parse(win.__smokeOgrenme())[key1]?.aktif===false);
+  await sonraki();
+  const q4=win.__smokeCurrent();
+  await sikSec((q4.dogru+1)%5);
+  ok("öğrenme: ikinci yanlışta farklı anlatım katmanı", has("Konu tekrarı") && (has("1. anlatım") || has("2. anlatım")));
+  // Geniş bir konuda yanlış yapılmış gibi işaretle: yeni karışık sette 10 sorunun 5'i o konudan gelmeli.
+  const genisKonu=win.__smokeGenisKonu("turkce");
+  win.__smokeYanlisYap("turkce",genisKonu);
+  const setKonular=win.__smokeSetKonular("turkce");
+  ok("öğrenme: yeni karışık testte yanlış konu setin yarısını alır", setKonular.length===10 && setKonular.filter((k) => k===`turkce|${genisKonu}`).length===5, JSON.stringify(setKonular));
+  await go("#/coz");
+  ok("öğrenme: test menüsünde öğrenmekte olduğun konular paneli", has("Öğrenmekte olduğun konular") && has("Tekrar anlat"));
+  await go(`#/tekrar/${q4.ders}/${encodeURIComponent(q4.konu)}`);
+  ok("öğrenme: konu tekrar sayfası tam anlatım gösterir", has("KONU TEKRARI") && has("Hızlı tur") && has("hikâyeyle") && has("Bu konudan 10 soru çöz"));
+
   win.__smokeSeedOldTopics();
   await go("#/akis/guncel");
-  ok("Güncel günlük akışında deneme hariç hedef görünür", has("526 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("50 × 10"));
+  ok("Güncel günlük akışında deneme hariç hedef görünür", has("2826 farklı aktif soru") && has("Deneme hariç günlük test hedefi") && has("40 × 10"));
   ok("kapsam dışı eski konular karışık test kilidini açmaz", has("Önce konu testlerini bitir") && !!doc.querySelector("button[disabled]"));
+
+  const cap=win.__smokeDailyCap("tarih");
+  ok("günlük üst sınır: 400 ayrılınca kalan 0",cap.ayrilan>=400 && cap.kalan===0);
+  await go("#/coz/karisik/tarih");
+  ok("günlük üst sınır dolunca yeni test açılmaz, fazlası sonraki günlere kalır",has("Bugünkü 400 soru tamamlandı") && has("sonraki günlere") && doc.querySelectorAll(".sik").length===0);
+  await go("#/coz/karisik/cografya");
+  ok("bir dersin sınırı başka dersi kilitlemez",doc.querySelectorAll(".sik").length>0);
 
   win.__smokeExhaust();
   await win.__smokeReload();
